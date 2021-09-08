@@ -1,0 +1,1043 @@
+%------------------------------------------------------------------------------%
+% \chapter{Matrizes}
+%------------------------------------------------------------------------------%
+
+%------------------------------------------------------------------------------%
+\begin{exercicios}{Matrizes}
+    
+    \begin{exercicio}
+        Indicar explicitamente os elementos da matriz $A=(a_{ij})_{2\times 3}$ tal que $a_{ij} = i - j$
+        \begin{answers}
+            \(\qquad A = \left[
+                \begin{array}{rrr}
+                	0 & -1 & -2 \\
+                	1 &  0 & -1
+                \end{array}
+                \right]
+            \)
+        \end{answers}
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Ache a matriz $A$ do tipo $2 \times 3$ definida por $a_{ij} = i j$ onde $i$ indica a linha e $j$, a coluna.
+        \begin{answers}
+            \( \qquad A = \left[
+            \begin{array}{rrr}
+            	1 & 2 & 3 \\
+            	2 & 4 & 6
+            \end{array}
+            \right]
+            \)
+        \end{answers}
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Construir as seguintes matrizes
+        \begin{alphalist}
+            \item $A=(a_{ij})_{3\times 3}$ tal que 
+                  \( a_{ij} =\begin{cases}
+                                1, & \text{se } i=j \\
+                                0, & \text{se } i\neq j
+                            \end{cases}  \)
+            \item $B=(b_{ij})_{3\times 3}$ tal que 
+                  \( b_{ij} =\begin{cases}
+                                1, & \text{se } i+j=4 \\
+                                0, & \text{se } i+j\neq 4
+                            \end{cases}  \)
+        \end{alphalist}
+        \begin{answers}
+            \begin{mathlist}[2]
+                \item A = 
+                    \left[
+                    \begin{array}{rrr}
+                    	1 & 0 & 0 \\
+                    	0 & 1 & 0 \\
+                    	0 & 0 & 1
+                    \end{array}
+                    \right]
+                \item A = 
+                    \left[
+                    \begin{array}{rrr}
+                    	0 & 0 & 1 \\
+                    	0 & 1 & 0 \\
+                    	1 & 0 & 0
+                    \end{array}
+                    \right]
+            \end{mathlist}
+        \end{answers}
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Construa a matriz $A = (a_{ij})_{2 \times 3}$ definida por
+        \[a_{ij} = \begin{cases}
+            3i + j,  & \text{se } i < j \\
+            7,       & \text{se } i = j \\
+            i^2 + j, & \text{se } i > j
+        \end{cases}\]
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Dada as matrizes
+        \[A = \left[\begin{array}{cc}
+            x + y &   1   \\
+             -5   & x - y
+        \end{array} \right]
+        \qquad
+        B = \left[\begin{array}{rr}
+             3 &  1 \\
+            -5 & -1
+        \end{array} \right]\]
+        calcule $x$ e $y$ de modo que $A=B$.
+    \end{exercicio}
+        
+\end{exercicios} % Matrizes
+
+%------------------------------------------------------------------------------%
+\begin{exercicios}{Operações com Matrizes}
+        
+    \begin{exercicio}
+        Datas as matrizes 
+        \[ A = \left[\begin{array}{cc}
+            5 & 6 \\
+            4 & 2
+        \end{array} \right]
+        \qquad
+        B = \left[\begin{array}{rr}
+            0 & -1 \\
+            5 & 4
+        \end{array} \right] \]
+        calcule $A+B$, $A-B$, $2A+3B$, $AB$, $BA$, $A^t$ e $A^t+B$.
+        \begin{answers}
+            \begin{mathlist}[2]
+                \item A+B   =   \left[
+                \begin{array}{rr}
+                    5 &  5 \\
+                    9 &  6 \\
+                \end{array}
+                \right]
+                \item A-B   =   \left[
+                \begin{array}{rr}
+                    5 &  7 \\
+                    -1 & -2 \\
+                \end{array}
+                \right]
+                \item 2A+3B =   \left[
+                \begin{array}{rr}
+                    10 &  9 \\
+                    23 & 16 \\
+                \end{array}
+                \right]
+                \item AB    =   \left[
+                \begin{array}{rr}
+                    30 & 19 \\
+                    10 &  4 \\
+                \end{array}
+                \right]
+                \item BA    =   \left[
+                \begin{array}{rr}
+                    -4 & -2 \\
+                    41 & 38 \\
+                \end{array}
+                \right]
+                \item A^t   =   \left[
+                \begin{array}{rr}
+                    5 &  4 \\
+                    6 &  2 \\
+                \end{array}
+                \right]
+                \item A^t+B =   \left[
+                \begin{array}{rr}
+                    5 &  3 \\
+                    11 &  6 \\
+                \end{array}
+                \right]
+            \end{mathlist}
+        \end{answers}
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Datas as matrizes
+        \[ A = \left[\begin{array}{rrr}
+            1 & 5 & 7 \\
+            3 & 9 & 11
+        \end{array} \right]
+        \]\[
+        B = \left[\begin{array}{rrr}
+            2 &  4 &  6 \\
+            8 & 10 & 12
+        \end{array} \right]
+        \]\[
+        C = \left[\begin{array}{rrr}
+            0 & -1 & -5 \\
+            1 &  4 &  7
+        \end{array} \right] \]
+        calcule, se possível, $A+B+C$, $A-B+C$, $A-B-C$, $-A+B-C$, $AB$, $BC$, $AB^t$, $CB^t$, $A^tB$ e $A^tB^t$.
+        \begin{answers}
+            \begin{mathlist}[2]
+            \item A+B+C    =   \left[
+            \begin{array}{rrr}
+                3 &  8 &  8 \\
+                12 & 23 & 30 \\
+            \end{array}
+            \right]
+            \item A-B+C    =   \left[
+            \begin{array}{rrr}
+                -1 &  0 & -4 \\
+                -4 &  3 &  6 \\
+            \end{array}
+            \right]
+            \item A-B-C    =   \left[
+            \begin{array}{rrr}
+                -1 &  2 &  6 \\
+                -6 & -5 & -8 \\
+            \end{array}
+            \right]
+            \item -A+B-C   =   \left[
+            \begin{array}{rrr}
+                1 &  0 &  4 \\
+                4 & -3 & -6 \\
+            \end{array}
+            \right]
+            \item AB \) Não pode ser calculada
+            \item BC \) Não pode ser calculada
+            \item AB^t     =   \left[
+            \begin{array}{rr}
+                64 & 142 \\
+                108 & 246 \\
+            \end{array}
+            \right]
+            \item CB^t     =   \left[
+            \begin{array}{rr}
+                -34 & -70 \\
+                60 & 132 \\
+            \end{array}
+            \right]
+            \item A^tB     =   \left[
+            \begin{array}{rrr}
+                26 & 34 & 42 \\
+                82 & 110 & 138 \\
+                102 & 138 & 174 \\
+            \end{array}
+            \right]
+            \item A^tB^t \) Não pode ser calculada
+            \end{mathlist}
+        \end{answers}
+    \end{exercicio}
+
+    \begin{exercicio}
+        Calcule os seguintes produtos matriciais
+        \begin{mathlist}
+            \item \left[\begin{array}{rrr}
+                  1 & 2 & 3 \\
+                  4 & 5 & 6
+                \end{array} \right] 
+                \left[\begin{array}{r}
+                    7 \\ 8 \\ 9
+                \end{array}\right]
+            \item \left[\begin{array}{rr}
+                   0 & 1 \\
+                   1 & 0
+                \end{array} \right] 
+                \left[\begin{array}{rr}
+                   4 & 7 \\ 
+                   2 & 3
+                \end{array}\right]
+            \item \left[\begin{array}{rrr}
+                    1 & 5 & 2 \\
+                   -1 & 4 & 7
+                \end{array} \right] 
+                \left[\begin{array}{rr}
+                    1 & -1 \\ 
+                    2 &  3 \\
+                   -3 &  0
+                \end{array}\right]
+            \item \left[\begin{array}{r}
+                    1 \\ 2 \\ 3 
+                \end{array} \right] 
+                \left[\begin{array}{rrrr}
+                    3 & 1 & 1 & 2
+                \end{array}\right]
+            \item \left[\begin{array}{rrrr}
+                   1 & -1 & 5 & 0 \\
+                   2 &  3 & 7 & 1 
+                \end{array} \right] 
+                \left[\begin{array}{rr}
+                   1 & 1 \\ 
+                   2 & 1 \\
+                   3 & 1 \\
+                   1 & 1
+                \end{array}\right]
+            \item \left[\begin{array}{rrr}
+                   0 & 1 & 1 \\
+                   2 & 2 & 0 \\
+                   0 & 3 & 4 
+                \end{array} \right] 
+                \left[\begin{array}{rrr}
+                   1 & 4 & 7 \\ 
+                   0 & 0 & 1 \\
+                   1 & 2 & 0
+                \end{array}\right]
+        \end{mathlist}
+        \begin{answers}
+            \begin{mathlist}[2]
+                \item   \left[
+                \begin{array}{r}
+                    50 \\
+                    122 \\
+                \end{array}
+                \right]
+                \item   \left[
+                \begin{array}{rr}
+                    2 &  3 \\
+                    4 &  7 \\
+                \end{array}
+                \right]
+                \item   \left[
+                \begin{array}{rr}
+                    5 & 14 \\
+                    -14 & 13 \\
+                \end{array}
+                \right]
+                \item   \left[
+                \begin{array}{rrrr}
+                    3 &  1 &  1 &  2 \\
+                    6 &  2 &  2 &  4 \\
+                    9 &  3 &  3 &  6 \\
+                \end{array}
+                \right]
+                \item   \left[
+                \begin{array}{rr}
+                    14 &  5 \\
+                    30 & 13 \\
+                \end{array}
+                \right]
+                \item   \left[
+                \begin{array}{rrr}
+                    1 &  2 &  1 \\
+                    2 &  8 & 16 \\
+                    4 &  8 &  3 \\
+                \end{array}
+                \right]
+            \end{mathlist}
+        \end{answers}
+    \end{exercicio}
+
+    \begin{exercicio}
+        Sendo \( A=\left[\begin{array}{rr}
+                                    1 & 1 \\
+                                    0 & 1
+                                 \end{array}\right] \)
+        calcule $A^2$, $A^3$, $A^4$ e $A^n$.
+        \begin{answers}
+            \begin{mathlist}[2]
+                \item A^2 =   \left[
+                \begin{array}{rr}
+                    1 &  2 \\
+                    0 &  1 \\
+                \end{array}
+                \right]
+                \item A^3 =   \left[
+                \begin{array}{rr}
+                    1 &  3 \\
+                    0 &  1 \\
+                \end{array}
+                \right]
+                \item A^4 =   \left[
+                \begin{array}{rr}
+                    1 &  4 \\
+                    0 &  1 \\
+                \end{array}
+                \right]
+                \item A^n =   \left[
+                \begin{array}{rr}
+                    1 &  n \\
+                    0 &  1 \\
+                \end{array}
+                \right]
+            \end{mathlist}
+        \end{answers}
+    \end{exercicio}
+        
+    \begin{exercicio}
+        Calcule $AB$, $BA$, $A^2$ e $B^2$ sabendo que
+        \[ A=\left[\begin{array}{rr}
+                     2 &  1 \\
+                    -4 & -2
+                    \end{array}\right]
+           \qquad
+           B=\left[\begin{array}{rr}
+                    2 & 1 \\
+                    1 & 0
+                   \end{array}\right]
+        \]
+        \begin{answers}
+            \begin{mathlist}[2]
+                \item AB  =   \left[
+                \begin{array}{rr}
+                    5 &  2 \\
+                    -10 & -4 \\
+                \end{array}
+                \right]
+                \item BA  =   \left[
+                \begin{array}{rr}
+                    0 &  0 \\
+                    2 &  1 \\
+                \end{array}
+                \right]
+                \item A^2 =   \left[
+                \begin{array}{rr}
+                    0 &  0 \\
+                    0 &  0 \\
+                \end{array}
+                \right]
+                \item B^2 =   \left[
+                \begin{array}{rr}
+                    5 &  2 \\
+                    2 &  1 \\
+                \end{array}
+                \right]
+            \end{mathlist}
+        \end{answers}
+    \end{exercicio}
+        
+    \begin{exercicio}
+        Calcular o produto $ABC$ sendo dados
+        \[   A=\left[\begin{array}{rr}
+                 1 & 2 \\
+                 5 & 1
+                \end{array}\right]
+            \hfill
+            B=\left[\begin{array}{rrr}
+                1 & 1 & 1\\
+                3 & 2 & 1
+                \end{array}\right]
+            \hfill
+            C=\left[\begin{array}{rr}
+                3 &  1 \\
+                1 &  0 \\
+                2 & -1
+                \end{array}\right]
+        \]
+        \begin{answers}
+            \[ ABC =   \left[
+                \begin{array}{rr}
+                	32 & 4 \\
+                	43 & 2
+                \end{array}
+                \right]
+            \]
+        \end{answers}
+    \end{exercicio}
+    
+   \begin{exercicio}
+       Considerando as matrizes
+       \[ A = \left[
+       \begin{array}{rrr}
+       1 & 2 & -3 \\
+       3 & 4 &  0
+       \end{array} 
+       \right]
+       \qquad
+       B = \left[
+       \begin{array}{rrr}
+       -2 & 1 &  5 \\
+       0 & 3 & -4
+       \end{array} 
+       \right]
+       \]
+       Calcule
+       \begin{mathlist}[2]
+           \item C = A + B
+           \item D = A - B
+           \item E = 2A + 3B
+           \item F = A^t + B^t
+           \item G = A B^t
+           \item H = A^t B
+        \end{mathlist}
+        \begin{answers}
+            \begin{mathlist}[2]
+                \item C =   \left[
+                \begin{array}{rrr}
+                    -1 &  3 &  2 \\
+                    3 &  7 & -4 \\
+                \end{array}
+                \right]
+                \item D =   \left[
+                \begin{array}{rrr}
+                    3 &  1 & -8 \\
+                    3 &  1 &  4 \\
+                \end{array}
+                \right]
+                \item E =   \left[
+                \begin{array}{rrr}
+                    -4 &  7 &  9 \\
+                    6 & 17 & -12 \\
+                \end{array}
+                \right]
+                \item F =   \left[
+                \begin{array}{rr}
+                    -1 &  3 \\
+                    3 &  7 \\
+                    2 & -4 \\
+                \end{array}
+                \right]
+                \item G =   \left[
+                \begin{array}{rr}
+                    -15 & 18 \\
+                    -2 & 12 \\
+                \end{array}
+                \right]
+                \item H =   \left[
+                \begin{array}{rrr}
+                    -2 & 10 & -7 \\
+                    -4 & 14 & -6 \\
+                    6 & -3 & -15 \\
+                \end{array}
+                \right]
+            \end{mathlist}
+        \end{answers}
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Considerando as matrizes
+        \[ A = \left[ 
+            \begin{array}{rrr}
+               	1 & 2 & -3 \\
+               	3 & 4 &  0
+            \end{array} 
+            \right]
+            \qquad
+            B = \left[
+            \begin{array}{rrr}
+               	-2 &  1 & 0 \\
+              	 0 &  3 & 0 \\
+              	 5 & -4 & 0
+            \end{array} 
+            \right]
+        \]
+        Calcule
+        \begin{mathlist}[2]
+            \item C = AB
+            \item D = A(3B)
+            \item E = B^2
+            \item F = B^3
+            \item G = B B^t
+            \item H = A^t A
+            \item J = A A^t
+        \end{mathlist}
+        \begin{answers}
+            \begin{mathlist}[2]
+                \item C =   \left[
+                \begin{array}{rrr}
+                    -17 & 19 &  0 \\
+                    -6 & 15 &  0 \\
+                \end{array}
+                \right]
+                \item D =   \left[
+                \begin{array}{rrr}
+                    -51 & 57 &  0 \\
+                    -18 & 45 &  0 \\
+                \end{array}
+                \right]
+                \item E =   \left[
+                \begin{array}{rrr}
+                    4 &  1 &  0 \\
+                    0 &  9 &  0 \\
+                    -10 & -7 &  0 \\
+                \end{array}
+                \right]
+                \item F =   \left[
+                \begin{array}{rrr}
+                    -8 &  7 &  0 \\
+                    0 & 27 &  0 \\
+                    20 & -31 &  0 \\
+                \end{array}
+                \right]
+                \item G =   \left[
+                \begin{array}{rrr}
+                    5 &  3 & -14 \\
+                    3 &  9 & -12 \\
+                    -14 & -12 & 41 \\
+                \end{array}
+                \right]
+                \item H =   \left[
+                \begin{array}{rrr}
+                    10 & 14 & -3 \\
+                    14 & 20 & -6 \\
+                    -3 & -6 &  9 \\
+                \end{array}
+                \right]
+                \item J =   \left[
+                \begin{array}{rr}
+                    14 & 11 \\
+                    11 & 25 \\
+                \end{array}
+                \right]
+            \end{mathlist}
+        \end{answers}
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Considere as seguintes matrizes
+        \[
+        A = \left[\begin{array}{cc}
+           	2 & 0 \\
+           	6 & 7
+        \end{array}\right]
+        \qquad
+        B = \left[\begin{array}{rr}
+           	0 &  4 \\
+           	2 & -8
+        \end{array}\right]
+        \]\[
+        C = \left[\begin{array}{rrr}
+           	-6 &  9 & -7 \\
+          	 7 & -3 & -2
+        \end{array}\right]
+        \]\[ 
+        D = \left[\begin{array}{rrr}
+           	-6 & 4 & 0 \\
+          	 1 & 1 & 4 \\
+           	-6 & 0 & 6
+        \end{array}\right] 
+        \qquad
+        E = \left[\begin{array}{rrr}
+          	 6 & 9 & -9 \\
+           	-1 & 0 & -4 \\
+           	-6 & 0 & -1
+        \end{array}\right] 
+        \]
+        Se for possível calcule
+        \begin{mathlist}[2]
+            \item AB-BA
+            \item 2C-D
+            \item (2D^t-3E^t)^t
+            \item D^2-DE
+        \end{mathlist}
+        \begin{answers}
+            \begin{mathlist}[2]
+                \item AB-BA         =   \left[
+                \begin{array}{rr}
+                    -24 & -20 \\
+                    58 & 24 \\
+                \end{array}
+                \right]
+                \item 2C-D \) Não pode ser calculada
+                \item (2D^t-3E^t)^t =   \left[
+                \begin{array}{rrr}
+                    -30 & -19 & 27 \\
+                    5 &  2 & 20 \\
+                    6 &  0 & 15 \\
+                \end{array}
+                \right]
+                \item D^2-DE        =   \left[
+                \begin{array}{rrr}
+                    80 & 34 & -22 \\
+                    -10 & -4 & 45 \\
+                    72 & 30 & -12 \\
+                \end{array}
+                \right]
+            \end{mathlist}
+        \end{answers}
+    \end{exercicio}    
+
+            
+    \begin{exercicio}
+        Sendo 
+        \[ A=\left[\begin{array}{rr}
+        	1 & 9 \\
+        	2 & 1
+        \end{array}\right]
+        \qquad
+        B=\left[\begin{array}{rr}
+        	0 & -8 \\
+        	3 & -1
+        \end{array}\right]\]
+        calcule
+        \begin{mathlist}[2]
+            \item (A+B)^2
+            \item (A+B)(A-B)
+            \item A^2 -2I_2A +I_2^2
+            \item A^3 - I_2^3
+        \end{mathlist}
+        \begin{answers}
+            \begin{mathlist}
+                \item (A+B)^2           =   \left[
+                \begin{array}{rr}
+                    6 &  1 \\
+                    5 &  5 \\
+                \end{array}
+                \right]
+                \item (A+B)(A-B)        =   \left[
+                \begin{array}{rr}
+                    0 & 19 \\
+                    5 & 85 \\
+                \end{array}
+                \right]
+                \item A^2 -2I_2A +I_2^2 =   \left[
+                \begin{array}{rr}
+                    18 &  0 \\
+                    0 & 18 \\
+                \end{array}
+                \right]
+                \item A^3 - I_2^3       =   \left[
+                \begin{array}{rr}
+                    54 & 189 \\
+                    42 & 54 \\
+                \end{array}
+                \right]
+            \end{mathlist}
+        \end{answers}
+    \end{exercicio}
+            
+    \begin{exercicio}
+        Sendo \( A=\left[\begin{array}{rr}
+                                    1 & -1 \\
+                                    0 &  2
+                                 \end{array}\right] \),
+        qual das matrizes comuta com $A$
+        \begin{mathlist}[2]
+            \item B = \left[\begin{array}{r}
+                    2 \\ 3
+                \end{array}\right]
+            \item C = \left[\begin{array}{rrr}
+                   1 & 3 & 2 \\
+                   4 & 5 & 1
+                \end{array}\right]
+            \item D = \left[\begin{array}{rr}
+                   0 & 0 \\
+                   1 & 0
+                \end{array}\right]
+            \item E = \left[\begin{array}{rr}
+                   5 & 2 \\
+                   0 & 3
+                \end{array}\right]
+        \end{mathlist}
+    \end{exercicio}
+        
+    \begin{exercicio}
+        Calcule $x$, $y$, $z$ e $t$ sabendo que
+        \[\left[\begin{array}{cc}
+        x & 1 \\
+        1 & 2
+        \end{array}\right] +
+        \left[\begin{array}{rr}
+        2 &  y \\
+        0 & -1
+        \end{array}\right]  = 
+        \left[\begin{array}{cc}
+        3 & 2 \\
+        z & t
+        \end{array}\right]\]
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Obtenha $X$ sabendo que 
+        \[ X + \left[\begin{array}{r} 1 \\  4 \\  7 \end{array} \right]
+        = \left[\begin{array}{r} 5 \\  7 \\  2 \end{array} \right]
+        + \left[\begin{array}{r} 1 \\ -1 \\ -2 \end{array} \right]
+        \]
+    \end{exercicio}        
+        
+    \begin{exercicio}
+        Determine $x$ e $y$ de modo que mas matrizes $A$ e $B$ comutem
+        \[ A=\left[\begin{array}{rr}
+                1 & 2 \\
+                1 & 0
+            \end{array}\right]
+            \qquad
+            B=\left[\begin{array}{rr}
+                0 & 1 \\
+                x & y
+            \end{array}\right]
+        \]
+    \end{exercicio}
+            
+    \begin{exercicio}
+        Obter todas as matrizes $B$ que comutem com 
+          \[ A=\left[\begin{array}{rr}
+                        1 & -1 \\
+                        3 &  0
+                    \end{array}\right]\]
+    \end{exercicio}
+
+    \begin{exercicio}
+        Dada as matrizes
+        \[A = \left[\begin{array}{r}
+            -1 \\
+             2
+        \end{array} \right]
+        \qquad
+        B = \left[\begin{array}{c}
+            3 \\
+            0
+        \end{array} \right]\] 
+        \[C = \left[\begin{array}{r}
+            -2 \\
+             4
+        \end{array} \right] 
+        \qquad
+        D = \left[\begin{array}{r}
+             1 \\
+            -1
+        \end{array} \right]\]
+        determine $X$ e $Y$, tais que
+        \begin{mathlist}[1]
+            \item X = A + 2B - C + D
+            \item \frac{Y + A}{2} = \frac{C}{2} + 2B - 3D
+        \end{mathlist}
+    \end{exercicio}
+
+    \begin{exercicio}
+        Sendo
+        \[A = \left[\begin{array}{cc}
+            3 & 1 \\
+            5 & 2
+        \end{array} \right]
+        \qquad
+        B = \left[\begin{array}{cc}
+            2 & 1 \\
+            1 & 1
+        \end{array} \right]\]
+        \[I = \left[\begin{array}{cc}
+            1 & 0 \\
+            0 & 1
+        \end{array} \right]    
+        \qquad
+        O = \left[\begin{array}{cc}
+            0 & 0 \\
+            0 & 0
+        \end{array} \right]\]
+        resolva o sistema, onde $X$ e $Y$ são matrizes quadradas de ordem 2
+        \[\begin{cases}
+            AX + Y = O \\
+            BX + Y = I
+        \end{cases}\]
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Calcule $x$, data a igualdade
+        \[\left[\begin{array}{cr}
+            x & 1  \\
+            3 & -1
+        \end{array} \right]
+        \left[\begin{array}{cc}
+            2 & 0 \\
+            1 & 1
+        \end{array} \right]    =
+        \left[\begin{array}{cr}
+            0 & 1  \\
+            5 & -1
+        \end{array} \right]\]
+    \end{exercicio}
+
+    \begin{exercicio}
+        Determine os valores de $x$, $y$ e $z$ na igualdade abaixo, envolvendo matrizes reais $2 \times 2$
+        \[\left[\begin{array}{cc}
+        0 & 0 \\
+        x & 0
+        \end{array} \right]    \,
+        \left[\begin{array}{cc}
+        0 & x \\
+        0 & 0
+        \end{array} \right] = 
+        \left[\begin{array}{cc}
+        x - y & 0 \\
+        x   & z
+        \end{array} \right] +
+        \left[\begin{array}{cc}
+        z - 4 & 0 \\
+        y - z & 0
+        \end{array} \right]\]
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Calcule $x$ de modo que as matrizes
+        \[A = \left[\begin{array}{rr}
+        2 & -3 \\
+        1 & 4
+        \end{array} \right]    
+        \qquad
+        B = \left[\begin{array}{cc}
+        4 & x \\
+        0 & 4
+        \end{array} \right]\]
+        sejam comutativas.
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Dada a matriz
+        \[ A = \left[\begin{array}{cc}
+        \sfrac{3}{4} & \sfrac{1}{2} \\[2mm]
+        \sfrac{1}{4} & \sfrac{1}{2}
+        \end{array} \right] \]
+        determine uma matriz real da forma
+        \[T = \left[\begin{array}{c}
+        x   \\
+        1 - x
+        \end{array} \right]\]
+        para a qual $AT = T$
+    \end{exercicio}
+
+    \begin{exercicio}
+       Seja, para cada $x$ real, a matriz quadrada de ordem~2
+       \[M (x) = \left[\begin{array}{rr}
+            x & -x \\
+           2x &  x
+       \end{array} \right]\]
+       Calcule o produto de $M(x)$ por $M(-x)$.
+    \end{exercicio}
+       
+   \begin{exercicio}
+       Se conhecemos apenas as matrizes $AB$ e $AC$ como podemos calcular as matrizes
+       \begin{mathlist}[2]
+           \item A(B+C)
+           \item B^tA^t
+           \item C^tA^t
+           \item (ABA)C
+       \end{mathlist}
+    \end{exercicio}
+
+    \begin{exercicio}
+        Mostre que as matrizes da forma
+        \[A = \left[ \begin{array}{ll}
+            1 & y^{-1} \\
+            y & 1
+        \end{array} \right]\]
+        em que $y$ é uma número real não nulo, verificam a equação \[X^2 = 2X\]
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Verifique se as identidades são verdadeiras
+        \begin{mathlist}
+            \item (A+B)^2 = A^2 + 2AB + B^2
+            \item (AB)C = C(AB)
+            \item (ABC)^t = C^tB^tA^t
+            \item (A+I)(A-I) = A^2 - I 
+        \end{mathlist}
+    \end{exercicio}
+
+\end{exercicios} % Operações com Matrizes
+
+%------------------------------------------------------------------------------%
+\begin{exercicios}{Matriz Transposta}
+
+    \begin{exercicio}
+        Dada a matriz
+        \[A = \left[\begin{array}{rrr}
+        	 1 &  4 & 0 \\
+        	-2 & -1 & 1 \\
+        	 3 &  5 & 2
+        \end{array} \right]    \]
+        calcule
+        \begin{mathlist}[2]
+            \item X = A + A^t
+            \item Y = A^t - A
+        \end{mathlist}
+        \begin{answers}
+            \begin{mathlist}[2]
+                \item X =   \left[
+                \begin{array}{rrr}
+                    2 &  2 &  3 \\
+                    2 & -2 &  6 \\
+                    3 &  6 &  4 \\
+                \end{array}
+                \right]
+                \item Y =   \left[
+                \begin{array}{rrr}
+                	 0 & -6 & 3 \\
+                	 6 &  0 & 4 \\
+                	-3 & -4 & 0
+                \end{array}
+                \right]
+            \end{mathlist}
+        \end{answers}
+    \end{exercicio}
+
+    \begin{exercicio}
+        Considere as matrizes
+        \[A = \left[\begin{array}{rrr}
+             a & b & 1 \\
+            -1 & 1 & a
+        \end{array} \right]
+        \qquad
+        B = \left[\begin{array}{rrr}
+            1 & -1 & 0 \\
+            0 &  1 & 0
+        \end{array} \right]\]
+        Determine $a$ e $b$, sabendo que
+        \[A B^t = \left[\begin{array}{rr}
+             3 & 4 \\
+            -2 & 1
+        \end{array} \right]\]
+    \end{exercicio}
+
+    \begin{exercicio}
+        Sabendo que 
+        \[ A = \left[ \begin{array}{r} x \\  4 \\ -2 \end{array} \right] \qquad
+           B = \left[ \begin{array}{r} 2 \\ -3 \\  5 \end{array} \right] \]
+        e que $A^tB=4$ determine o valor de $x$.
+    \end{exercicio}
+
+    \begin{exercicio}
+        Encontre um valor de $x$ tal que $AB^t=0$, sendo que 
+        \[ A = \left[ \begin{array}{ccc} x & 4 & -2 \end{array} \right]  \qquad
+           B = \left[ \begin{array}{ccc} 2 & -3 & 5 \end{array} \right]
+        \]
+    \end{exercicio}
+     
+\end{exercicios} % Matriz Transposta
+            
+%------------------------------------------------------------------------------%
+\begin{exercicios}{Matriz Inversa}
+        
+    \begin{exercicio}
+        Mostre que $A^{-1}$ é a inversa de $A$
+        \begin{mathlist}
+            \item A = \left[\begin{array}{cc}
+                     1 & 3 \\
+                     2 & 7
+                 \end{array} \right] 
+                 \quad
+                 A^{-1} = \left[\begin{array}{cc}
+                     7  & -3 \\
+                     -2 & 1
+                 \end{array} \right]
+            \item A = \left[\begin{array}{rrr}
+                                        1 & 2 & 7 \\
+                                        0 & 3 & 1 \\
+                                        0 & 5 & 2
+                                    \end{array} \right] \)
+                  \( A^{-1} = \left[ \begin{array}{rrr}
+                                            1 & 31 & -19 \\
+                                            0 &  2 &  -1 \\
+                                            0 & -5 &   3
+                                        \end{array} \right] \)
+        \end{mathlist}
+    \end{exercicio}
+
+    \begin{exercicio}
+        Resolva a equação  matricial $AX = B$, dadas as matrizes
+        \[A = \left[\begin{array}{rr}
+             2 & -1 \\
+            -3 &  2
+        \end{array} \right]    
+        \qquad
+        B = \left[\begin{array}{rr}
+             3 &  2 \\
+            -6 & -5
+        \end{array} \right]    \]
+    \end{exercicio}
+
+    \begin{exercicio}
+        Determine $a$ real de modo que a matriz 
+        \[A = \left[\begin{array}{cc}
+            1 & 2 \\
+            0 & a
+        \end{array} \right]\]
+        seja igual à sua inversa.
+    \end{exercicio}
+    
+\end{exercicios} % Matriz Inversa
+
+%------------------------------------------------------------------------------%

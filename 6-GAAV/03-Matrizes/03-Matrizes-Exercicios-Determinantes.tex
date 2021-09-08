@@ -1,0 +1,382 @@
+%------------------------------------------------------------------------------%
+% \chapter{Matrizes}
+%------------------------------------------------------------------------------%
+
+%------------------------------------------------------------------------------%
+\begin{exercicios}{Determinante de Uma Matriz e Suas Propriedades}
+    
+    \input{03-Matrizes/03-Matrizes-Exercicios-Determinantes-A}
+    
+    \begin{exercicio}
+        Determine $x$ tal que
+        \begin{mathlist}
+            \item \left|\begin{array}{cc}
+            	2x & 3x+2 \\
+            	 1 &    x
+            \end{array} \right| = 0
+            \item \left|\begin{array}{cc}
+            	 2x  & x-2  \\
+            	4x+5 & 3x-1
+            \end{array} \right| = 11
+        \end{mathlist}
+        \begin{answers}
+            \begin{mathlist}[2]
+                \item x_1 = - \sfrac{1}{2} \quad x_2 = 2
+                \item x_1 = -1 \quad x_2 = \sfrac{1}{2}
+            \end{mathlist}
+        \end{answers}
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Determine $x$ tal que
+        \begin{mathlist}
+            \item \left|\begin{array}{rcr}
+            	1 &  x  & x \\
+            	2 & 2x  & 1 \\
+            	3 & x+1 & 1
+            \end{array} \right| = 0
+            \item \left|\begin{array}{rrr}
+            	1 &  x & 1 \\
+            	1 & -1 & x \\
+            	1 & -x & 1
+            \end{array} \right| = 0
+            \item \left|\begin{array}{rrr}
+            	 1 &  x &  2 \\
+            	-2 &  x & -4 \\
+            	 1 & -3 & -x
+            \end{array} \right| = 0
+            \item \left|\begin{array}{ccr}
+            	x-1 &  2  &  x \\
+            	 0  &  1  & -1 \\
+            	3x  & x+1 & 2x
+            \end{array} \right| = 
+            \left|\begin{array}{cc}
+            	3x & 2x \\
+            	4  & -x
+            \end{array} \right|
+        \end{mathlist}
+        \begin{answers}
+            \begin{mathlist}[2]
+                \item x_1 = \sfrac{1}{2}
+                \item x_1 = 0 \quad x_2 = 1
+                \item x_1 = -2 \quad x_2 = 0
+                \item x_1 = - \sfrac{\sqrt{3}}{3} \quad x_2 = \sfrac{\sqrt{3}}{3}
+            \end{mathlist}
+        \end{answers}
+    \end{exercicio}
+
+    \begin{exercicio}
+        Encontre os valores de $a$ para os quais a matriz $A$ possui inversa.
+        \[A = \left[ 
+            \begin{array}{rrr}
+            	1 & 1 & 0 \\
+            	1 & 0 & 0 \\
+            	1 & 2 & a
+            \end{array}
+        \right] \]
+        \begin{answers} \(\qquad a\neq 0 \)
+        \end{answers}
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Calcule o determinante da matriz $M$ e determine para quais valores de $x$ ela possui inversa
+        \[M = \left[ 
+            \begin{array}{cccc}
+            	4 & x & 0 & x \\
+            	3 & 0 & 2 & 0 \\
+            	0 & 2 & 0 & 0 \\
+            	x & 0 & 1 & 0
+            \end{array}
+        \right]\]
+        \begin{answers} \(\qquad x\neq 0 \) e \( x\neq \sfrac{3}{2} \)
+        \end{answers}
+    \end{exercicio}
+
+    \begin{exercicio}
+        Calcule o determinante da matriz 
+        \[ A = \left[\begin{array}{cc}
+            	e^{rt}  &   te^{rt}    \\
+            	re^{rt} & (1+rt)e^{rt}
+            \end{array} \right] 
+        \]
+        \begin{answers} \(\qquad e^{2 r t}\)
+        \end{answers}
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Sabendo que $\det A = -3$ calcule
+        \begin{mathlist}[3]
+            \item \det A^2
+            \item \det A^3
+            \item \det A^t
+        \end{mathlist}
+        \begin{answers}
+            \begin{mathlist}[3]
+                \item 9
+                \item -27
+                \item(-3)^t
+            \end{mathlist}
+        \end{answers}
+    \end{exercicio}
+     
+     \begin{exercicio}
+         Determine os valores de $\lambda$ tais que \[\det(A-\lambda I) = 0\] para as matrizes
+         \begin{mathlist}
+            \item A = \left[
+                          \begin{array}{ccc}
+                              0 & 1 & 2 \\ 
+                              0 & 0 & 3 \\ 
+                              0 & 0 & 0
+                          \end{array}   
+                      \right]
+            \item A = \left[
+                        \begin{array}{rrr}
+                             1 & 0 &  0 \\ 
+                            -1 & 3 &  0 \\ 
+                             3 & 2 & -2
+                        \end{array}   
+                      \right]
+        \end{mathlist}
+    \end{exercicio}
+     
+    \begin{exercicio}
+        Calcule o determinantes das matrizes
+        \begin{mathlist}[2]
+            \item A = \left[
+                        \begin{array}{cc}
+                            4 & 2 \\ 
+                            3 & 2
+                        \end{array} 
+                      \right]
+            \item A = \left[
+                        \begin{array}{cc}
+                          1 & 2 \\ 
+                          0 & 4
+                        \end{array} 
+                      \right]
+            \item AB
+            \item 2A
+            \item A^tB
+            \item A^2B^{-1}
+        \end{mathlist}
+    \end{exercicio}
+
+    \begin{exercicio}
+        Calcule o determinante da matriz 
+        \( \left[\begin{array}{cc}
+        	a & b \\
+        	b & a
+        \end{array} \right] \), 
+        sabendo que $2a = e^x + e^{-x}$ e $2b = e^x - e ^{-x}$.
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Seja \( A = \left[\begin{array}{ccc}
+        	2 & n & 2 \\
+        	5 & 1 & m \\
+        	7 & 3 & 7
+        \end{array} \right] \)
+        \begin{alphalist}
+            \item Ache um valor de $m$, tal que $\det A = 0$, qualquer que seja $n$.
+            \item Esse valor de $m$ é o único com essa propriedade?
+        \end{alphalist}
+    \end{exercicio}
+    
+    \begin{exercicio}
+        A matriz real $A = (a_{ij})$ quadrada e de ordem~3, é definida pela regra
+        \[a_{ij} = \begin{cases}
+        	0,            & \text{se } i > j \\
+        	i^j,          & \text{se } i = j \\
+        	(-1)^{i + 1}, & \text{se } i < j
+        \end{cases}\]
+        \begin{alphalist}
+            \item Escreva a matriz $A$ na forma usual de linhas e colunas, onde o valor numérico de $a_{ij}$ está na $i$-ésima linha e na $j$-ésima coluna de $A$.
+            \item Calcule o determinante $D$ da matriz $A$.
+        \end{alphalist}
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Determine o valor de $x$ para que o determinante da matriz $C = AB^t$ seja igual a $602$, onde
+        \[A = \left[\begin{array}{rrr}
+        	1 & 2 & -3 \\
+        	4 & 1 &  2
+        \end{array} \right]
+        \qquad
+        B = \left[\begin{array}{crr}
+        	x - 1 & 8 & -5 \\
+        	 -2   & 7 &  4
+        \end{array} \right]\]
+        e $B^t$ é a matriz transposta de $B$.
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Duas matrizes de ordem $n$ são inversas quando o produto delas é a identidade de ordem $n$. A inversa da matriz
+        \[M = \left[\begin{array}{rrr}
+        	1 &  1 & 2 \\
+        	1 & -1 & 3 \\
+        	2 &  3 & 1
+        \end{array} \right]\]
+        é a matriz
+        \[
+        M^{-1} = \left[\begin{array}{ccc}
+        	x & 1 & 1 \\
+        	1 & y & z \\
+        	1 & z & w
+        \end{array} \right]\]
+        Encontre
+        \begin{alphalist}
+            \item o valor da expressão $A = x - 3y - z + w$.
+            \item $\det(2M)$.
+        \end{alphalist}
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Determine o conjunto solução da equação
+        \[\left|\begin{array}{lrc}
+        	3^x &  1 & 0 \\
+        	4   &  2 & 2 \\
+        	2   & -1 & 3
+        \end{array} \right| = \left|\begin{array}{cc}
+            4 & 2 \\ 
+            2 & 5
+        \end{array} \right|\]
+        \begin{answers} \( \qquad x = 1\)
+        \end{answers}
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Determine $x$ de modo que
+        \[\left|\begin{array}{crl}
+        	1 &  1 & 1   \\
+        	2 & -3 & x   \\
+        	4 &  9 & x^2
+        \end{array} \right| \geq 0 \]
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Resolva a equação
+        \[\left|\begin{array}{cccc}
+            1 & 1 & 0 & 1 \\ 
+            x & 1 & x & 0 \\ 
+            x & x & 1 & 0 \\ 
+            0 & 1 & 0 & 1
+        \end{array} \right| = 0\]
+        \begin{answers} \(\quad x_1 = -1 \quad x_2 = 1 \)
+        \end{answers}
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Desenvolva o determinante a seguir
+        \[x = \left|\begin{array}{rrrr}
+        	a & b  &  c & d \\
+        	0 & 1  &  2 & 0 \\
+        	1 & -1 &  0 & 1 \\
+        	0 & 1  & -1 & 0
+        \end{array} \right|\]
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Sabendo que
+        \( \left|\begin{array}{ccc}
+        	a & x & 1 \\
+        	b & y & 2 \\
+        	c & z & 3
+        \end{array} \right| = 4  \) \\
+        calcule
+        \( M = \left|\begin{array}{ccc}
+        	2a & 3x & -1 \\
+        	2c & 3z & -3 \\
+        	2b & 3y & -2
+        \end{array} \right|  \)
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Sem calcular os determinantes a seguir, justifique a sua nulidade
+        \begin{mathlist}[2]
+            \item \left|\begin{array}{rrr}
+            	2 & 0 & -1 \\
+            	5 & 0 &  5 \\
+            	4 & 0 &  2
+            \end{array} \right|
+            \item \left|\begin{array}{rrr}
+            	 a &  b &  c \\
+            	ka & kb & kc \\
+            	 x &  y &  m
+            \end{array} \right|
+            \item \left|\begin{array}{rrr}
+            	 5 &  4 & 3 \\
+            	-4 & -2 & 2 \\
+            	 4 &  5 & 6
+            \end{array} \right|
+            \item \left|\begin{array}{rrr}
+            	1 & 2 & 5 \\
+            	m & 5 & 4 \\
+            	1 & 2 & 5
+            \end{array} \right|
+            \item \left|\begin{array}{rrr}
+            	2 & 3 &  4 \\
+            	1 & 2 &  7 \\
+            	3 & 5 & 11
+            \end{array} \right|
+            \item \left|\begin{array}{rrrr}
+            	 1 &  2 &  3 &  4 \\
+            	 5 &  6 &  7 &  8 \\
+            	 9 & 10 & 11 & 12 \\
+            	13 & 14 & 15 & 16
+            \end{array} \right|
+        \end{mathlist}
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Calcule $x$ para que os determinantes das matrizes sejam iguais 
+        \[A=\left[\begin{array}{crcc}
+        	x + 1 &  0 & 0 & 2 \\
+        	  0   & -2 & 0 & 5 \\
+        	  x   &  0 & 3 & 0 \\
+        	  0   &  1 & 0 & 4
+        \end{array} \right] 
+        \qquad
+        B=
+        \left[\begin{array}{cc}
+        	1  & x \\
+        	78 & 0
+        \end{array} \right]\]
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Determine as condições que $x$ deve satisfazer para que a matriz $A$ seja inversível
+        \[A = \left[\begin{array}{cccc}
+            1 & 2 & 3 & 4 \\ 
+            1 & 3 & x & 5 \\ 
+            1 & 3 & 4 & 3 \\ 
+            1 & 6 & 5 & x
+        \end{array} \right]\]
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Seja a matriz 
+        \[A = \left[\begin{array}{ccc}
+            k & k & k \\ 
+            k & k & 5 \\ 
+            k & 5 & 5
+        \end{array} \right]\]
+        Determine $k \in \R$ de modo que a matriz $A$ não admita inversa.
+    \end{exercicio}
+    
+    \begin{exercicio}
+        Dadas as matrizes
+        \[A = \left[\begin{array}{cc}
+        	1 & 2 \\
+        	2 & 0
+        \end{array} \right]
+        \qquad
+        B = \left[\begin{array}{cr}
+        	4 & -4 \\
+        	1 &  4
+        \end{array} \right]\]
+        calcule o determinante da matriz $(AB)^{-1}$.
+    \end{exercicio}
+     
+\end{exercicios} % Determinante de Uma Matriz e Suas Propriedades
+
+%------------------------------------------------------------------------------%

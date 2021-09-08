@@ -1,0 +1,190 @@
+%------------------------------------------------------------------------------%
+\chapter{Plano Cartesiano e Equações}
+\label{cap:equacoes}
+
+%------------------------------------------------------------------------------%
+\section{Plano Cartesiano}
+
+\begin{teoria}{Plano Cartesiano}
+
+    \begin{minipage}[c]{.6\columnwidth}
+        Para identificar e localizar um ponto em um plano podemos usar o sistema de coordenadas Cartesiano.
+        \\
+        
+        Posicionamos duas retas reais perpendiculares uma a outra, chamamos a horizontal de 
+        \textbf{eixo~$\mathbf{x}$} e a vertical de \textbf{eixo~$\mathbf{y}$}.
+        \\
+        
+        O ponto onde as retas se cruzam é chamado \textbf{origem}.
+        \\
+        
+        Qualquer ponto do plano é identificado pelo par ordenado $\mathbf{(x,y)}$. 
+        \\
+        
+        O valor $\mathbf{x}$ é chamado \textbf{abscissa} e $\mathbf{y}$ é a \textbf{ordenada}.
+    \end{minipage}%        
+    \begin{minipage}[c]{.39\columnwidth}
+        \addgraphic{.8}{plano-cartesiano}
+    \end{minipage}
+            
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\section{Distância Entre pontos}
+
+\begin{teoria}{Distância entre pontos}
+    Para definirmos a distância entre dois pontos $A$ e $B$ conhecendo suas coordenadas $(x_A,y_A)$ e $(x_B,y_B)$,
+    usamos o teorema de Pitágoras em um triângulo definido com a hipotenusa ligando os pontos $A$ e $B$ 
+    e um cateto horizontal e outro vertical.
+    \[ D^2 = (x_B-x_A)^2 + (y_B-y_A)^2  \qquad \text{ou} \qquad D = \sqrt{ (x_B-x_A)^2 + (y_B-y_A)^2 \;} \]
+    
+    \todo{Incluir figura}
+    
+    Também podemos usar a notação 
+    \[ \dist(A,B) = \sqrt{(x_B-x_A)^2 + (y_B-y_A)^2} \]
+    para indicar a distância entre os pontos $A$ e $B$.
+\end{teoria}
+
+\begin{exemplos}
+    \begin{exemplo}
+        Calcule a distância entre os pontos $(4,2)$ e $(7,6)$.
+        \[ D^2  = (x_B-x_A)^2 + (y_B-y_A)^2 = (7-4)^2 + (6-2)^2 = 3^2 + 4^2 = 9 + 16 = 25 \]
+        \[ D    = \sqrt{25} = 5 \]    
+    \end{exemplo}
+\end{exemplos}
+
+%------------------------------------------------------------------------------%
+\section{Equação da Circunferência}
+
+\begin{observacao}
+    Quando resolvemos uma equação queremos todas as soluções possível. Encontrar apenas uma solução em geral não é suficiente.
+\end{observacao}
+
+\begin{teoria}{Equação do Círculo ou Circunferência}
+    Definimos uma circunferência como o conjunto de \textbf{todos os pontos} que estão a uma distância definida (\textbf{raio}) de um ponto dado (\textbf{centro}).
+    \\
+    
+    Dado um ponto $C=(x_0,\,y_0)$ e uma número positivo $r$ os pontos $P=(x,\,y)$ que pertencem a circunferência de raio $r$ e centro em $C$ obedecem a relação
+    \[ \dist(\,P,\,C\,) = r \]
+    isso é, dado um ponto $C=(x_0,\,y_0)$ e uma número positivo $r$ a equação da circunferência de raio $r$ e centro em $C$ é
+    \[ (x-x_0)^2 + (y-y_0)^2  = r^2 \]
+    Todo os pontos $P$ que satisfizerem essa equação estão na circunferência. 
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\section{Equação da Reta}
+
+\begin{teoria}{Declividade de uma reta}
+    Dados dois pontos $A=(x_a,y_a)$ e $B=(x_b,y_b)$ que pertencem a uma reta $r$ a declividade desta reta é
+    \[ m = \frac{\Delta y}{\Delta x} = \frac{y_b-y_a}{x_b-x_a} \]
+    Não importa que pontos são escolhidos a declividade da reta é sempre a mesma.
+    \\
+    
+    Se a reta for horizontal \tabto{38mm} $\Delta y = y_b-y_a = 0$ \tabto{69mm} a declividade é nula. \\
+    Se a reta for vertical   \tabto{38mm} $\Delta x = x_b-x_a = 0$ \tabto{69mm} a declividade não existe. 
+    
+\end{teoria}
+
+\begin{teoria}{Equação da reta}
+    A equação de uma reta vertical ($m$ não existe) é
+    \[ x = a \]
+    A equação de uma reta horizontal ($m=0$) é 
+    \[ y = b \]
+    A equação de uma reta com declividade $m$ que passa pelo ponto $(a,b)$ é
+    \[ m = \frac{y-b}{x-a} \qquad \text{ou equivalentemente} \qquad y = b + m(x-a) \]
+    
+    Escrevendo essa equação de forma resumida temos a equação reduzida da reta
+    \[ y = mx + c \]
+    
+\end{teoria}
+
+\begin{teoria}{Equação geral da reta}
+    Qualquer reta pode ser descrita pela equação 
+    \[ Ax + By + C = 0 \]
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\section{A Reta Tangente}
+
+\begin{teoria}{A Reta Tangente a uma Circunferência}
+    A reta tangente a uma circunferência é a reta que toca a circunferência em um único ponto.
+\end{teoria}
+
+\begin{teoria}{A Reta Tangente a uma Curva}
+    A reta tangente a uma curva qualquer é a reta que ``apenas toca'' a curva em um ponto.
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\section{Posição Relativa de Retas}
+
+\begin{teoria}{Posição relativa de retas}
+    \begin{description}
+        \item[Paralelas]       As retas nunca se encontram
+        \item[Concorretes]     As retas se encontram um um ponto
+        \item[Perpendiculares] As retas são concorrentes e fazem um ângulo reto ($90^o$) entre elas
+    \end{description}    
+\end{teoria}
+
+\begin{teoria}{Retas Paralelas}
+    Duas retas, $r$ e $s$, são paralelas, se e somente se, suas declividades são iguais 
+    \[ m_r = m_s \]
+    ou ambas as retas são verticais (a declividade não existe). 
+    Se $r$ é paralela a $s$ escrevemos $r\parallel s$.
+\end{teoria}
+
+\begin{teoria}{Retas Perpendiculares}
+    Duas retas, $r$ e $s$, são perpendiculares, se e somente se, suas declividades obedecem a relação
+    \[ m_r = -\frac{1}{\,m_s\,}\]
+    ou uma reta é vertical e a outra horizontal.  
+    Se $r$ é perpendicular a $s$ escrevemos $r\perp s$.
+\end{teoria}
+
+\begin{teoria}{Interseção Entre Retas}
+    Duas retas concorrentes tem um ponto em comum, esse ponto satisfaz as equações de ambas as retas.
+    Assim, para encontrarmos esse ponto basta resolvermos o sistema de equações lineares
+    composto de ambas as equações de reta. Por exemplo se queremos encontrar o ponto de interseção 
+    entre as retas $r\!:\, a_r x + b_r y + c_r = 0$ e $s\!:\, a_s x + b_s y + c_s = 0$
+    devemos resolver o sistema 
+    \[\left\{
+        \begin{array}{lclcll}
+        a_r x & + & b_r y & + & c_r & = 0 \\
+        a_s x & + & b_s y & + & c_s & = 0 
+        \end{array}
+    \right.
+    \]
+    Se desejarmos podemos escrever esse sistema na sua forma matricial $AX=B$
+    \[
+        \left[
+        \begin{array}{ll}
+            a_r & b_r \\
+            a_s & b_s 
+        \end{array}
+        \right]
+        \left[
+        \begin{array}{c} x \\ y \end{array}
+        \right]
+        =
+        \left[
+        \begin{array}{l} -c_r \\ -c_s \end{array}
+        \right]
+    \]
+    Dessa forma podemos usar o determinante da matriz $A$ para verificarmos se as retas possuem ou não um ponto em comum.
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+%------------------------------------------------------------------------------%
+\section{Exercícios}
+
+\openAnswers{04-Equacoes/04-Equacoes-Exercicios-ans}
+
+\vspace{\baselineskip}
+\input{04-Equacoes/04-Equacoes-Exercicios-Plano-Cartesiano}
+\input{04-Equacoes/04-Equacoes-Exercicios-Distancia}
+\input{04-Equacoes/04-Equacoes-Exercicios-Eq-Circunferencia}
+\input{04-Equacoes/04-Equacoes-Exercicios-Eq-Reta}
+\input{04-Equacoes/04-Equacoes-Exercicios-Posicao-Relativa}
+\input{04-Equacoes/04-Equacoes-Exercicios-Revisao}
+
+\writeAnswers{04-Equacoes/04-Equacoes-Exercicios-ans}
+
+%------------------------------------------------------------------------------%

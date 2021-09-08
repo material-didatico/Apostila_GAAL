@@ -1,0 +1,57 @@
+%------------------------------------------------------------------------------%
+% Luis A. D'Afonseca 
+% Notas Matematica 1
+%------------------------------------------------------------------------------%
+\documentclass[oneside,10pt,fleqn]{book}
+
+\usepackage{Gaav}
+
+\addbibresource{Gaav.bib}
+
+\graphicspath{{./01-Introducao/figs/},%
+              {./02-Revisao/figs/},%
+              {./03-Matrizes/figs/},%
+              {./04-Equacoes/figs/}}
+
+% Opções para imprimir
+%------------------------------------------------------------------------------%
+%\definecolor{lightgray}{gray}{0.8}
+%\renewenvironment{observacao}
+%    \begin{tcolorbox}[colback=white!5!white,%
+%                      colframe=lightgray!50!lightgray,%
+%                      colbacktitle=white!75!white,%
+%                      coltitle=black!75!black]}%
+%    {\end{tcolorbox}}
+%\renewenvironment{teoria}[1]{%
+%    \begin{tcolorbox}[title={#1},%
+%                      colback=white!5!white,%
+%                      colframe=lightgray!50!lightgray,%
+%                      colbacktitle=white!75!white,%
+%                      coltitle=black!75!black]}%
+%    {\end{tcolorbox}}
+
+\author{Prof. Luis Alberto D'Afonseca}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+    
+\frontmatter    
+\MakeTitlePage
+\tableofcontents
+
+%------------------------------------------------------------------------------%
+
+\mainmatter
+\include{01-Introducao/01-Introducao}
+\include{02-Revisao/02-Revisao-Teoria}
+\include{03-Matrizes/03-Matrizes-Teoria}
+\include{04-Equacoes/04-Equacoes-Teoria}
+
+%------------------------------------------------------------------------------%
+
+\backmatter
+\nocite{*}
+\printbibliography
+
+\end{document}
+%------------------------------------------------------------------------------%

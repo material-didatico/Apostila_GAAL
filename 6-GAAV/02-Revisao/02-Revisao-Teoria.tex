@@ -1,0 +1,491 @@
+%------------------------------------------------------------------------------%
+\chapter{Revisão}
+\label{cap:revisao}
+
+%------------------------------------------------------------------------------%
+\section{Preliminares}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Vocabulário}
+    
+    Alguns termos usados em textos matemáticos
+    \begin{description}
+        \item[Teorema] Uma afirmação matematicamente verdadeira
+        \item[Lema] Assim como o teorema, é uma afirmação matematicamente verdadeira. Geralmente recebe esse nome por fazer parte da demonstração de um teorema.
+        \item[Cololário] Também é uma afirmação matematicamente verdadeira. Recebe esse nome pois sua demonstração é ``fácil'' depois que um teorema foi demonstrado.
+        \item[Axiomas] São verdades não questionadas dentro de uma teoria Matemática, são consideradas ``evidentemente'' verdadeiras.
+    \end{description}
+
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Símbolos Matemáticos}
+    Alguns símbolos usados em textos matemáticos 
+    \begin{center}
+        \begin{tabular}{clcl} \hline
+            $=$            & \emph{Igual a}    & $2+2=4$               &                               \\
+            $\Rightarrow$  & \emph{Implica em} & $x>3 \Rightarrow x>2$ & Nunca usar no lugar do igual! \\
+            $\rightarrow$  & \emph{Tende para} & $x\to\infty$          & Usado no contexto de limites  \\
+            $\forall$      & \emph{Para todo}  & $x^2 \geq 0 \quad \forall x\in\R$ & \\
+            $\exists$      & \emph{Existe}     & $\exists  x \in\R \text{ tal que } x^2 > 4$ & \\
+            $\nexists$     & \emph{Não existe} & $\quad\nexists x \in\R \text{ tal que } x^2 < 0\quad$ & \\
+            $\infty$       & \emph{Infinito}   & \multicolumn{2}{c}{Infinto não é um número e não podemos fazer contas com ele} \\ \hline
+        \end{tabular}
+    \end{center}
+    
+    Os símbolos tem significados muito específicos, não troque um por outro sem ter certeza que de os significados são equivalentes. 
+    Por exemplo, sob hipótese nenhuma, troque o símbolo $=$ por $\to$ ou $\Rightarrow$. 
+
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\section{Conjuntos Numéricos e Desigualdades}
+
+%-----------------------------------------------------------------------------%
+\begin{teoria}{Conjuntos Numéricos}
+    Os conjuntos numéricos mais comuns, usados em Matemática, são  \\
+    \begin{tabular}{clcl}
+        $\N$ & \emph{Naturais}  &               $1,\,2,\,3,\,\dots$               & Números que usamos para contar                 \\
+        $\Z$ & \emph{Inteiros}  & $\dots,\text{-}2,\,\text{-}1,\,0,\,1,\,2,\dots$ & Todos os números inteiros                      \\
+        $\Q$ & \emph{Racionais} &         $\dfrac{1}{3},\; \dfrac{7}{9}$          & Frações, ou razões, entre números inteiros     \\
+        $\R$ & \emph{Reais}     &              $\sqrt{2},\;\pi,\;e $              & Todas as distâncias possíveis e seus negativos
+    \end{tabular}
+\end{teoria}    
+
+\begin{teoria}{}
+    Note que cada um desses conjuntos tem infinitos números e está contido dentro do próximo
+    \[ \N \subset \Z \subset \Q \subset \R \]
+\end{teoria}    
+
+\begin{teoria}{}
+    Um número real que não é um número racional é chamado de \textbf{Irracional}. 
+
+    Os números irracionais não possuem representação decimal finita
+    \begin{align*}
+            \sqrt{2} & =\,1,41421356237309514547462185873882845044136047363281\dots \\
+            e        & =\,2,71828182845904509079559829842764884233474731445312\dots \\
+            \pi      & =\,3,14159265358979311599796346854418516159057617187500\dots
+    \end{align*}
+    Nessa disciplina basta conhecer esses números com uma casa decimal, isso é,
+    \[\sqrt{2}=1,4 \qquad e=2,7 \qquad \pi=3,1\]
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Operações com Conjuntos}
+    
+    Se $A$ e $B$ são conjuntos, podemos definir as operações 
+    \begin{description}
+        \item[Interseção]  Conjunto formado pelos elementos que pertencem, ao mesmo tempo, a $A$ e a $B$
+        \[A\cap B\]
+        \item[União]       Conjunto formado pelos elementos que pertencem a $A$ ou a $B$
+        \[A\cup B\]
+        \item[Complemento] Conjunto formado pelos elementos de $A$ que não pertencem a $B$
+        \[A\setminus B\]
+    \end{description}
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Reta Real}
+    
+    Podemos pensar nos números reais, $\R$ como sendo todas as distâncias possíveis e seus negativos. 
+    Representamos esses números em uma reta, que chamamos de \textbf{Reta Real}.
+    
+    \addgraphic{0.5}{reta-real}
+    
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Intervalos}
+    
+    Em geral vamos trabalhar com subconjuntos dos números reais, 
+    podemos indicar esses subconjuntos com a notação de conjuntos
+    \[ A = \{ x\in\R \;/\; 2 < x < 4 \} \]
+    \[ B = \{ x\in\R \;/\; x < 0 \text{ ou } x > 5 \} \]
+    \[ C = \{ 1,\, 2,\, e,\, 3,\, \pi,\, 4 \} \]
+    
+    Porém, muitos desses subconjuntos são pedaços contínuos da reta real como o conjunto $A$ descrito acima. 
+    Esse tipo de subconjunto dos reais é chamado de \textbf{Intervalo}.
+\end{teoria}    
+
+\begin{teoria}{}
+    Os intervalos podem ser abertos ou fechados dependendo se os seus pontos extremos pertencem ou não aos intervalos.
+    \begin{align*}
+        [\,a,\,b\,] &\;= \{ x\in\R \st a \leq x \leq b \} \\
+        (\,a,\,b\,) &\;= \{ x\in\R \st a   <  x   <  b \} \\    
+        [\,a,\,b\,) &\;= \{ x\in\R \st a \leq x   <  b \} \\
+        (\,a,\,b\,] &\;= \{ x\in\R \st a   <  x \leq b \}
+    \end{align*}
+\end{teoria}    
+
+\begin{teoria}{}    
+    Cada um desses intervalos pode ser representado graficamente marcando um segmento 
+    da reta real e indicando se as extremidades pertencem ou não ao intervalo \\
+    \begin{tabular}{lll}
+        $[\,a,\,b\,]$  & \emph{Intervalo Fechado}     & {\includegraphics[height=4mm,width=.3\columnwidth,trim=0 30 0 40,clip]{intervalo-fechado}          } \\[5mm]
+        $(\,a,\,b\,)$  & \emph{Intervalo Aberto}      & {\includegraphics[height=4mm,width=.3\columnwidth,trim=0 34 0 50,clip]{intervalo-aberto}           } \\[5mm]
+        $[\,a,\,b\,)$  & \emph{Intervalo Semi-aberto} & {\includegraphics[height=4mm,width=.3\columnwidth,trim=0 30 0 40,clip]{intervalo-fechado-esquerda} } \\[5mm]
+        $(\,a,\,b\,]$  & \emph{Intervalo Semi-aberto} & {\includegraphics[height=4mm,width=.3\columnwidth,trim=0 30 0 40,clip]{intervalo-fechado-direita}  } \\[5mm]
+    \end{tabular}
+\end{teoria}    
+
+\begin{teoria}{}    
+    Os intervalos podem ser infinitos, mas, note que, os intervalos sempre são \textbf{abertos no infinito}. 
+    \[ [\,a,\,\infty\,) \qquad (\,-\infty,\,b\,] \qquad (\,-\infty,\,\infty\,)  \]
+\end{teoria}    
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Desigualdades}
+    Uma desigualdade são condições que envolvem relações de maior que, 
+    $>$, ou menor que, $<$. Muitas vezes suas soluções são expressas em 
+    termos de intervalos ou uniões de intervalos.
+    \\
+    
+    Propriedades das Desigualdades
+    \begin{propriedades}
+        \item Se $a<b$ e $b<c$, então $a<c$
+        \item Se $a<b$, então $a+c<b+c$
+        \item Se $a<b$ e $c>0$, então $ac<bc$
+        \item Se $a<b$ e $c<0$, então $ac>bc$
+    \end{propriedades}
+    
+    Propriedades análogas são válidas se a relação $<$ entre $a$ e $b$ for trocada por $\leq$, $>$ ou $\geqslant.$
+\end{teoria}    
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Valor Absoluto}
+    
+    O valor absoluto de um número é definido por
+    \[  \abs{x} = \begin{cases}
+    \phantom{-}x & \text{se } x \geq 0 \\
+    -x & \text{se } x < 0
+    \end{cases} \]
+\end{teoria}    
+
+\begin{teoria}{}   
+    Propriedades do Valor Absoluto
+    \begin{propriedades}
+        \item \( \abs{-x} = \abs{x}\)
+        \item \( \abs{xy} = \abs{x}\,\abs{y}\)
+        \item \( \abs{\frac{x}{y}} = \frac{\abs{x}}{\abs{y}} \qquad y\neq 0\)
+        \item \( \abs{x+y} \leq \abs{x}+\abs{y}\)
+    \end{propriedades}
+\end{teoria}    
+
+\begin{teoria}{}   
+    Se $a>0$ 
+    \begin{enumerate}
+        \item $\abs{x} = a\qquad$ significa o mesmo que $\qquad x=a$ ou $x=-a$
+        \item $\abs{x} < a\qquad$ significa o mesmo que $\qquad -a < x < a$
+        \item $\abs{x} > a\qquad$ significa o mesmo que $\qquad x > a$ ou $x<-a$
+    \end{enumerate}    
+\end{teoria}    
+
+%------------------------------------------------------------------------------%
+\section{Operações Aritméticas}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Precedência de Operadores}
+    Em primeiro lugar, deve-se efetuar as multiplicações e divisões, da esquerda para a direita. 
+    Em seguida, são efetuadas as somas e subtrações, também da esquerda para a direita.
+    Quando desejamos efetuar as operações em outra ordem, somos obrigados a usar parênteses.
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Propriedades da Soma e da Multiplicação}
+    Suponha que $a$, $b$ e $c$ sejam números reais.
+    \begin{propriedades}
+        \item $a + b = b + a$             \tabto{6cm} Comutatividade da soma
+        \item $(a + b) + c = a + (b + c)$ \tabto{6cm} Associatividade da soma
+        \item $a b = b a$                 \tabto{6cm} Comutatividade da multiplicação
+        \item $(ab)c = a(bc)$             \tabto{6cm} Associatividade da multiplicação
+        \item $a(b + c) = ab + ac$        \tabto{6cm} Distributividade
+    \end{propriedades}
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Propriedades de Números Negativos}
+    Suponha que $a$ e $b$ sejam números reais.
+    \begin{propriedades}
+        \item $(-1)a = -a$
+        \item $-(-a) = a$
+        \item $(-a)b = a(-b) = -(ab)$
+        \item $(-a)(-b) = ab$
+        \item $-(a + b) = -a - b$
+        \item $-(a - b) = -a + b = b - a$
+    \end{propriedades}
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Propriedades das Frações}
+    
+    Assumindo que $a$, $b$, $c$ e $d$ são números reais podemos escrever as seguintes propriedades das frações.
+    \\
+    
+    \textbf{Soma e diferença de frações com o mesmo denominador}. Se $c\neq 0$,
+    \[  \frac{a}{c} + \frac{b}{c} = \frac{a+b}{c}
+        \qquad
+        \frac{a}{c} - \frac{b}{c} = \frac{a-b}{c}
+    \]
+    
+    \textbf{Produto de frações}. Se $b\neq 0$ e $d\neq 0$,
+    \[ \frac{a}{b} \, \frac{c}{d} = \frac{a\,c}{b\,d}
+    \]
+    
+    \textbf{Divisão de frações}. Se $b\neq 0$, $c\neq 0$ e $d\neq 0$, 
+    \[ \dfrac{\,\dfrac{\,a\,}{b}\,}{\dfrac{\,c\,}{d}} = \frac{a}{b}\,\frac{d}{c} = \frac{a\,d}{b\,c}\]
+    
+    \textbf{Soma e diferença de frações com denominadores diferentes}. Se $b\neq 0$ e $d\neq 0$,
+    \[  \frac{a}{b} + \frac{c}{d} = \frac{ad+cb}{bd}
+        \qquad
+        \frac{a}{b} - \frac{c}{d} = \frac{ad-cb}{bd}
+    \]
+     
+    \textbf{Simplificação de uma fração}. Se $b\neq 0$ e $d\neq 0$,
+    \[ \frac{a\,d}{b\,d} = \frac{a}{b} \]
+    
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\section{Expoentes e Radicais}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Expoentes e Radicais}
+    
+    Se $b$ é um número real qualquer e $n$ um número inteiro positivo, a expressão $b^n$ representa
+    \[  b^n = \underbrace{\;b\;b\;b\;\cdots\;b\;}_{n \text{ fatores}} \]
+    $b$ é chamado base e $n$ é chamado potência. 
+    \\
+    
+    Na definição original $n$ é restrito a ser um número inteiro positivo, mas podemos estender essa definição para todos os reais.
+    Para $n=0$ impomos a condição $b\neq 0$ e definimos 
+    \[b^0=1\]
+    Para valores negativos definimos
+    \[ b^{-n} = \frac{1}{\;b^n\;} \]
+    Para valores fracionários, definimos que $b^{1/n}$ como o número tal que 
+    \[ (b^{1/n})^n = b \]
+    se esse número existir dizemos que ele é a raiz $n$-ésima de $b$
+    \[ b^{1/n} = \sqrt[n]{b\,} \]
+    
+\end{teoria}  
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Propriedades dos Expoentes}
+    \begin{propriedades}
+        \item \( a^m \times a^n = a^{m+n}\)
+        \item \( \frac{a^m}{a^n} = a^{m-n}  \qquad a\neq 0\)
+        \item \( (a^m)^n = a^{m\times n}\)
+        \item \( (ab)^n = a^n \times b^n\)
+        \item \( \left(\frac{a}{b}\right)^n = \frac{a^n}{b^n} \qquad b\neq 0\)
+    \end{propriedades}
+\end{teoria}  
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Propriedades na Forma de Raízes}
+    Algumas dessas expressões podem ser escritas na forma de raízes
+    \begin{propriedades}
+        \item \( \sqrt[n]{ab} = \sqrt[n]{a} \sqrt[n]{b} \)
+        \item \( \sqrt[n]{\frac{\;a\;}{b}\,} = \frac{\sqrt[n]{a\,}}{\sqrt[n]{b\,}} \)
+        \item \( a^{m/n} = \sqrt[n]{a^m\,}= \big(\sqrt[n]{a\,}\,\big)^m \)
+        \item \( \sqrt[m]{\sqrt[n]{a\,}\,} = \sqrt[mn]{a\,} \)
+        \item \( \sqrt[n]{a^n\,} = \begin{cases}
+                    \;a,     & \text{se } n \text{ é ímpar} \\
+                    \abs{a}, & \text{se } n \text{ é par}
+                 \end{cases} \)
+    \end{propriedades}
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Logaritmos}
+    Seja $a$ uma constante real tal que $a > 0$ e $a\neq 1$. Se $x > 0$, então dizemos que
+    \[ y = \log_a(x) \qquad \text{ se e somente se } \qquad a^y = x \]
+    Dizemos que $y = \log_a(x)$ é o logaritmo de $x$ na base $a$.
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Propriedades do Logaritmo}
+    
+    Propriedades derivadas da definição de logaritmo
+    \[
+    \begin{array}{ccc}
+    	\textbf{Propriedade} &                        \textbf{Motivo}                        &    \textbf{Exemplo}     \\[2mm]
+    	   \log_a(1) = 0     &                  \text{Sabemos que } a^0 = 1                  &      \log_8(1) = 0      \\[2mm]
+    	   \log_a(a) = 1     &                  \text{Sabemos que } a^1 = a                  &      \log_3(3) = 1      \\[2mm]
+    	  \log_a(a^x) = x    &             \log_a(x) \text{ é a inversa de } a^x             &    \log_7(7 4 ) = 4     \\[2mm]
+    	 a^{\log_a(x)} = x   & \null\qquad a^x \text{ é a inversa de } \log_a(x) \qquad\null & 10^{\log_{10}(13)} = 13
+    \end{array}
+    \]
+    
+    Seja $a$ uma constante real tal que $a > 0$ e $a\neq 1$, e seja $c$ uma constante real qualquer. \\
+    Se $x > 0$ e $y > 0$, então,
+    \begin{propriedades}
+        \item Logaritmo do produto   \tabto{5cm}  $\displaystyle \log_a(xy) = \log_a(x) + \log_a(y) $
+        \item Logaritmo do quociente \tabto{5cm}  $\displaystyle \log_a\left(\frac{x}{y}\right) = \log_a(x) - \log_a(y) $
+        \item Logaritmo da potência  \tabto{5cm}  $\displaystyle \log_a(x^c) = c\log_a(x) $
+    \end{propriedades}
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Logaritmos Usuais}
+    Os logaritmos mais comumente empregados possuem uma notação particular, para facilitar seu uso. São eles:
+    \\
+    
+    O logaritmo na base 10, também chamado \textbf{Logaritmo Comum ou Decimal}, que é apresentado sem a indicação da base.
+    \[\log(x) = \log_{10}(x) \]
+        
+    O logaritmo na base $e\approx 2,71$, também chamado \textbf{Logaritmo Natural ou Neperiano}, que é representado por $\ln$.
+    \[\ln(x) = \log_e(x)\]
+
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\section{Expressões Algébricas}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Expressões Algébricas}
+    
+    Expressões Algébricas são expressões que envolvem apenas as quatro operações básicas, expoentes e radicais.
+    
+    Propriedade Distributiva dos Números Reais
+    \begin{propriedades}
+        \item \( ab + ac = a\;(b+c) \)
+    \end{propriedades}
+    
+    Algumas identidades úteis para manipulações algébricas
+    \begin{enumerate}
+        \item \( (a+b)^2 = a^2 + 2ab + b^2 \)
+        \item \( (a-b)^2 = a^2 - 2ab + b^2 \)
+        \item \( a^2 - b^2 = (a+b)(a-b) \)
+        \item \( a^3 + b^3 = (a+b)(a^2-ab+b^2) \)
+        \item \( a^3 - b^3 = (a-b)(a^2+ab+b^2) \)
+    \end{enumerate}
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Fatoração}
+    \textbf{Fatoração} é o processo de decompor uma expressão algébrica como o produto de outras expressões algébricas.
+\end{teoria}
+    
+%------------------------------------------------------------------------------%
+\begin{exemplos}
+    \begin{exemplo}
+        Um exemplo do uso da propriedade distributiva para fatorar uma expressão, é a relação
+    \[ 3x^2 - x = x(3x-1)  \]    
+    \end{exemplo}
+\end{exemplos}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Polinômios}
+    Se $n$ é um número inteiro positivo, o termo $x^n$ é chamado monômio. 
+    Um polinômio é uma expressão da forma
+    \[ a_nx^n + a_{n-1}x^{n-1} + a_{n-2}x^{n-2} + \cdots + a_1x + a_0 \]
+    onde $n$ é um inteiro não negativo e é chamado de grau do polinômio, 
+    os coeficientes $a_i$ são números reais, com~$a_n\neq 0$.
+    \\
+    
+    Raiz de um polinômio é um número $x$ que faça com que o valor do polinômio seja zero
+    \[ a_nx^n + a_{n-1}x^{n-1} + a_{n-2}x^{n-2} + \cdots + a_1x + a_0 = 0 \]
+\end{teoria}    
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Polinômio do Segundo Grau}
+    Um polinômio do segundo grau tem a seguinte forma
+    \[ ax^2 + bx + c \]
+    onde $a\neq 0$. 
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Raízes de um Polinômio do Segundo Grau}
+    Suas raízes podem ser calculadas pela fórmula de Bhaskara
+    \[ x = \frac{-b\pm\sqrt{\Delta\,}}{2a} \qquad \Delta = b^2 -4ac \]
+    Se $\Delta < 0$ o polinômio não tem raízes reais, se $\Delta=0$ ele tem duas raízes iguais.
+    \\
+    
+    Se o polinômio de segundo grau possui duas raízes reais distintas, ele pode ser fatorado como 
+    \[ p = ax^2 + bx + c = a(x-x_1)(x-x_2)\]
+    Se ele possui duas raízes reais iguais, ele é fatorado como 
+    \[ p = ax^2 + bx + c = a(x-x_1)^2\]
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Coordenadas do Vértice da Parábola}
+    O vértice da parábola pode ser calculado pelas fórmulas
+    \[x_v = \frac{x_1+x_2}{2} = -\frac{b}{2a} \qquad y_v = f(x_v) = -\frac{\Delta}{4a}\]
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Inequações Quadráticas}
+    
+    Para determinar quais valores de $x$ real satisfazem cada uma dessas inequações
+    \[ p = ax^2 + bx + c > 0  \qquad \text{ ou }\qquad  p = ax^2 + bx + c < 0  \]
+    \begin{enumerate}
+        \item Calculamos as raízes do polinômio do segundo grau $x_1$ e $x_2$
+        \begin{enumerate}
+            \item Se não existirem raízes reais, o polinômio é sempre maior ou sempre menor do que zero
+            \item Se as raízes foram reais e iguais, o polinômio nunca muda de sinal, apenas se anula na raiz
+        \end{enumerate}
+        \item Se o polinômio tem duas raízes reais distintas, fatoramos o polinômio como 
+            \[ p = ax^2 + bx + c = a(x-x_1)(x-x_2)\]
+        \item Construímos a tabela 
+            \[\begin{array}{|c|c|c|c|} \hline
+            	\multicolumn{4}{|l|}{\hspace{28mm} x_1 \hspace{12mm} x_2}      \\ \hline
+                (x-x_1) & + \text{ ou } -  & + \text{ ou } - & + \text{ ou } - \\
+                (x-x_2) & + \text{ ou } -  & + \text{ ou } - & + \text{ ou } - \\ \hline
+                   p    & + \text{ ou } -  & + \text{ ou } - & + \text{ ou } - \\ \hline
+            \end{array} 
+            \]
+        \item Podemos agora determinar para quais valores de $x$ o polinômio $p$ é positivo ou negativo.
+    \end{enumerate}
+    
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\section{Geometria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Triângulos e Círculos}
+    
+    Em um triângulo retângulo vale o Teorema de Pitágoras
+    \[ a^2 = b^2 + c^2 \]
+    onde $a$ é a medida da hipotenusa e $b$ e $c$ são as medidas dos catetos.
+
+    A área de um triângulo de base $b$ e altura $h$ é \[A = \frac{bh}{2}\]
+        
+    A área de um círculo de raio $r$ é \[A=\pi r^2\]
+    O perímetro de um círculo de raio $r$ é \[P=2\pi r\]
+        
+\end{teoria}    
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Sólidos}
+    
+    O volume, $V$, e a área, $A$, de uma esfera de raio $r$ são
+    \[ V = \frac{4}{3} \pi r^3    \;\;\qquad A = 4\pi r^2 \]
+
+    O volume, $V$, e a área, $A$, de um cilindro de raio $r$ e altura $h$ são
+    \[ V = \pi r^2 h              \;\;\qquad A = 2\pi r^2 + 2\pi rh\]
+    
+    O volume, $V$, e a área, $A$, de um cone de raio $r$ e altura $h$ são
+    \[ V = \frac{1}{3}\pi r^2 h   \qquad   A = \pi r \sqrt{r^2+h^2} \]
+    
+\end{teoria}    
+
+%------------------------------------------------------------------------------%
+%------------------------------------------------------------------------------%
+\section{Exercícios}
+
+\openAnswers{02-Revisao/02-Revisao-Exercicios-ans}
+
+\vspace{\baselineskip}
+\input{02-Revisao/02-Revisao-Exercicios-Conjuntos-Desigualdades}
+\input{02-Revisao/02-Revisao-Exercicios-Operacoes}
+\input{02-Revisao/02-Revisao-Exercicios-Expoentes-Radicais}
+\input{02-Revisao/02-Revisao-Exercicios-Logaritmos}
+\input{02-Revisao/02-Revisao-Exercicios-Expressoes-Algebricas}
+\input{02-Revisao/02-Revisao-Exercicios-Polinomios}
+\input{02-Revisao/02-Revisao-Exercicios-Racionais}
+\input{02-Revisao/02-Revisao-Exercicios-Geometria}
+\input{02-Revisao/02-Revisao-Exercicios-Revisao}
+
+\writeAnswers{02-Revisao/02-Revisao-Exercicios-ans}
+
+%------------------------------------------------------------------------------%

@@ -1,0 +1,960 @@
+%------------------------------------------------------------------------------%
+\chapter{Matrizes}
+\label{cap:matrizes}
+
+%------------------------------------------------------------------------------%
+\section{Matrizes e operações matriciais }
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Matrizes}
+    
+    Definimos como matriz do tipo $m\times n$ o conjunto de números reais, dispostos em um quadro de $m$ linhas por $n$ colunas.
+    \[ A = \left[
+    \begin{array}{ccccc}
+        a_{11} & a_{12} & a_{13} & \cdots & a_{1n} \\
+        a_{21} & a_{22} & a_{23} & \cdots & a_{2n} \\
+        a_{31} & a_{32} & a_{33} & \cdots & a_{3n} \\
+        \vdots & \vdots & \vdots & \vdots & \vdots \\
+        a_{m1} & a_{m2} & a_{m3} & \cdots & a_{mn} 
+    \end{array}
+    \right] \]
+    Podemos definir uma matriz abreviadamente como $A=(a_{ij})_{m\times n}$.
+    Os valores $a_{ij}$ são chamados \textbf{elementos} de $A$.
+    \\
+    
+    Dizemos que uma Matriz é \textbf{Quadrada} se $m=n$. 
+    \\
+    
+    Uma matriz quadrada importante é a \textbf{Matriz Identidade}. Essas matrizes tem todos os elementos da diagonal iguais a $1$ e os demais elementos nulos
+    \[ 
+        I_2 = \left[\begin{array}{cc}
+            1 & 0 \\ 
+            0 & 1
+        \end{array}\right] 
+    \qquad\qquad
+         I_3 = \left[\begin{array}{ccc}
+             1 & 0 & 0 \\ 
+             0 & 1 & 0 \\
+             0 & 0 & 1 
+         \end{array}\right] 
+     \]
+     
+     Dizemos que duas matrizes são iguais se elas tem as mesmas dimensões e todos os seus elementos são iguais.
+     
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Transposição}
+    
+    \textbf{Matriz Transposta} ou transposta de uma matriz $A=(a_{ij})_{m\times n}$ é uma matriz construída trocando as linhas e colunas de~$A$
+    \[ A^t = (a_{ji})_{n\times m} \]
+    
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Soma}
+    
+    A \textbf{Soma} de duas matrizes de mesma dimensão $A=(a_{ij})_{m\times n}$ e $B=(b_{ij})_{m\times n}$
+    é uma matriz construída somando cada elemento de $A$ com o elemento correspondente de $B$. 
+    Assim \[C=A+B\] significa que
+    \[ C = (c_{ij})_{m\times n} = (a_{ij}+b_{ij})_{m\times n} =
+        \left[
+        \begin{array}{cccc}
+            a_{11} + b_{11} & a_{12} + b_{12} & \cdots & a_{1n} + b_{1n} \\
+            a_{21} + b_{21} & a_{22} + b_{22} & \cdots & a_{2n} + b_{2n} \\
+            \vdots          & \vdots          & \vdots & \vdots          \\
+            a_{m1} + b_{m1} & a_{m2} + b_{m2} & \cdots & a_{mn} + b_{mn}
+        \end{array}
+        \right]
+    \]
+        
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Subtração}
+    
+    A \textbf{Subtração} de matrizes é definida de modo equivalente a soma, ou seja, \[C=A-B\] significa que
+    \[ C = (c_{ij})_{m\times n} = (a_{ij}-b_{ij})_{m\times n} =
+        \left[
+        \begin{array}{cccc}
+            a_{11} - b_{11} & a_{12} - b_{12} & \cdots & a_{1n} - b_{1n} \\
+            a_{21} - b_{21} & a_{22} - b_{22} & \cdots & a_{2n} - b_{2n} \\
+            \vdots          & \vdots          & \vdots & \vdots          \\
+            a_{m1} - b_{m1} & a_{m2} - b_{m2} & \cdots & a_{mn} - b_{mn}
+        \end{array}
+        \right]
+    \]
+
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Multiplicação por um número real}
+        
+    \textbf{Multiplicação por um número real} ou Multiplicação por um Escalar é uma operação que multiplica cada elemento da matriz por um número, 
+    isso é, se $k$ é um número real, então \[B=kA\] é a operação
+    \[ B = (b_{ij})_{m\times n} = (ka_{ij})_{m\times n} =
+        \left[
+        \begin{array}{cccc}
+            k a_{11} & k a_{12} & \cdots & k a_{1n} \\
+            k a_{21} & k a_{22} & \cdots & k a_{2n} \\
+            \vdots   &   \vdots & \vdots &   \vdots \\
+            k a_{m1} & k a_{m2} & \cdots & k a_{mn}
+        \end{array}
+        \right]
+    \]    
+    
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Multiplicação de Matrizes}
+    
+    A \textbf{Multiplicação de Matrizes} é uma operação menos intuitiva do que as demais. 
+    Ela é definida entre duas matrizes tais que o número de linhas da segunda seja igual ao número de colunas da primeira.
+    Assim para multiplicarmos as matrizes $A$ e $B$ elas devem ter as dimensões compatíveis
+    \[ A=(a_{ij})_{m\times n} \qquad\qquad B=(b_{ij})_{n\times p} \]
+    A matriz \[C=AB\] terá dimensões $C = (c_{ij})_{m\times p}$ e seu elemento $c_{ij}$ é igual a soma dos produtos da $i$-ésima linha de $A$ 
+    com os elementos da $j$-ésima coluna de $B$.
+    \[ c_{ij} = \sum_{k=1}^{n} a_{ik}\,b_{kj}  \]
+    Por exemplo, se $A$ for uma matriz $2\times3$ e $B$ uma matriz $3\times2$ teremos
+    \[
+        \left[\begin{array}{ccc}
+            a & b & c \\ 
+            d & e & f
+        \end{array} \right]
+        \times
+        \left[\begin{array}{cc}
+            t & u \\ 
+            v & x \\ 
+            y & z
+        \end{array} \right]
+        =
+        \left[\begin{array}{cc}
+            at+bv+cy & au+bx+cz \\ 
+            dt+ev+fy & du+ex+fz
+        \end{array} \right]
+    \]
+    
+    A multiplicação de uma matriz pela matriz identidade retorna a matriz original
+    \[ AI_n = A \qquad\qquad I_mA=A  \]
+    
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\section{Propriedades das Operações com Matrizes}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Propriedades das Operações com Matrizes -- Soma}
+    
+    Sejam $A$, $B$ e $C$ matrizes com as dimensões apropriadas, 
+    então as operações com matrizes tem as seguintes propriedades
+    \begin{propriedades}
+        \item $A+B = B+A$                              \tabto{8cm} Comutatividade da soma
+        \item $A+(B+C) = (A+B)+C$                      \tabto{8cm} Associatividade da soma
+        \item Se $\mathbf{0}$ é uma matriz com todos os elementos nulos \\ então
+              $A+\mathbf{0}=A$                         \tabto{8cm} Elemento neutro da soma
+        \item Para cada matriz $A$ existe uma matriz \\ $-A=(-1)A$ tal que
+              $A+(-A)=\mathbf{0}$                      \tabto{8cm} Elemento simétrico
+    \end{propriedades}
+    
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Propriedades das Operações com Matrizes -- Produto por Escalar}
+    
+    Sejam $A$, $B$ e $C$ matrizes com as dimensões apropriadas e $\alpha$ e $\beta$ números reais (escalares), 
+    então as operações com matrizes tem as seguintes propriedades
+    \begin{propriedades}
+        \item $\alpha(\beta A)=(\alpha\beta)A$         \tabto{8cm} Associatividade do produto por escalar
+        \item $(\alpha+\beta)A= \alpha A + \beta A$    \tabto{8cm} Distributividade do produto por escalar
+        \item $\alpha(A+B)=\alpha A+\alpha B$          \tabto{8cm} Distributividade do produto por escalar
+    \end{propriedades}
+    
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Propriedades das Operações com Matrizes -- Produto}
+    
+    Sejam $A$, $B$ e $C$ matrizes com as dimensões apropriadas e $\alpha$ e $\beta$ números reais (escalares), 
+    então as operações com matrizes tem as seguintes propriedades
+    \begin{propriedades}
+        \item $A(BC) = (AB)C$                          \tabto{8cm} Associatividade do produto
+        \item $A(B+C) = AB+AC$                         \tabto{8cm} Distributividade do produto
+        \item $(B+C)A = BA+CA$                         \tabto{8cm} Distributividade do produto
+        \item A matriz identidade $I_n$ é tal que \\
+        $AI_n=I_mA=A$                            \tabto{8cm} Elemento neutro do produto
+        \item $\alpha(AB) = (\alpha A)B = A(\alpha B)$ \tabto{8cm} Associatividade dos produtos
+    \end{propriedades}
+    
+\end{teoria}
+
+\begin{observacao}
+    
+    A multiplicação de matrizes não é comutativa, isso é, em geral
+    \[ AB \neq BA \]
+    Na multiplicação de matrizes não vale a lei do anulamento do produto, é possível que $A\neq0$ e $B\neq0$ e mesmo assim $AB=0$
+    \\
+    
+    Se acontecer $AB=BA$ dizemos que as matrizes $A$ e $B$ são comutativas.
+    
+\end{observacao}
+
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Propriedades das Operações com Matrizes -- Transposição}
+    
+    Sejam $A$, $B$ e $C$ matrizes com as dimensões apropriadas e $\alpha$ e $\beta$ números reais (escalares), 
+    então as operações com matrizes tem as seguintes propriedades
+    \begin{propriedades}
+        \item $(A^t)^t=A$
+        \item $(A+B)^t =A^t + B^t$
+        \item $(\alpha A)^t = \alpha A^t$
+        \item $(AB)^t=B^tA^t$
+    \end{propriedades}
+    
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Simetria}
+
+    Dizemos que uma matriz $A$ é 
+    \begin{description}
+        \item[Simétrica]      \tabto{20mm} quando $A^t=A$
+        \item[Antissimétrica] \tabto{20mm} quando $A^t=-A$
+    \end{description}
+    
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{exemplos}
+    
+    \begin{exemplo}
+        Verifique se a identidade é verdadeira ou falsa
+        \[ (A+B)(A-B) = A^2 - B^2 \]
+        
+        Resolução:    
+        \begin{align*}
+            (A+B)(A-B) & = (A+B)A-(A+B)B \\
+                       & = AA + BA - AB - BB \\
+                       & = A^2 + BA - AB - B^2
+        \end{align*}
+        A identidade só será verdadeira se $BA - AB=0$ o que não é verdade em geral para matrizes. 
+        Portanto a identidade não é verdadeira.
+        
+        Fazendo as contas com um exemplo numérico simples
+        \[ A = \left[\begin{array}{cc}
+            0 & 0 \\ 
+            1 & 1
+            \end{array} \right] 
+            \qquad
+            B = \left[\begin{array}{cc}
+            1 & 0 \\ 
+            1 & 0
+            \end{array} \right] 
+        \]
+        Calculamos agora $(A+B)(A-B)$ e $A^2 - B^2$ e verificamos que os resultados não serão iguais
+        \[ A+B = \left[\begin{array}{cc}
+                0 & 0 \\ 
+                1 & 1
+                \end{array} \right] 
+                +
+                \left[\begin{array}{cc}
+                1 & 0 \\ 
+                1 & 0
+                \end{array} \right]
+              = \left[\begin{array}{cc}
+                1 & 0 \\ 
+                2 & 1
+                \end{array} \right]  
+        \]
+        \[ A-B = \left[\begin{array}{cc}
+                0 & 0 \\ 
+                1 & 1
+                \end{array} \right] 
+                -
+                \left[\begin{array}{cc}
+                1 & 0 \\ 
+                1 & 0
+                \end{array} \right]
+              = \left[\begin{array}{rc}
+                -1 & 0 \\ 
+                 0 & 1
+                \end{array} \right]  
+        \]    
+        \[ (A+B)(A-B) = \left[\begin{array}{cc}
+                1 & 0 \\ 
+                2 & 1
+                \end{array} \right]
+                \,
+                \left[\begin{array}{rc}
+                -1 & 0 \\ 
+                0 & 1
+                \end{array} \right]
+              = \left[\begin{array}{rc}
+                -1 & 0 \\ 
+                -2 & 1
+                \end{array} \right]  
+        \]
+        \[ A^2 = \left[\begin{array}{cc}
+                1 & 0 \\ 
+                1 & 0
+                \end{array} \right]^2
+              = \left[\begin{array}{cc}
+                1 & 0 \\ 
+                1 & 0
+                \end{array} \right]
+                \,
+                \left[\begin{array}{cc}
+                1 & 0 \\ 
+                1 & 0
+                \end{array} \right]
+              = \left[\begin{array}{cc}
+                0 & 0 \\ 
+                1 & 1
+                \end{array} \right]  
+        \]
+        \[ B^2 = \left[\begin{array}{cc}
+                0 & 0 \\ 
+                1 & 1
+                \end{array} \right]^2
+              = \left[\begin{array}{cc}
+                0 & 0 \\ 
+                1 & 1
+                \end{array} \right]
+                \,
+                \left[\begin{array}{cc}
+                0 & 0 \\ 
+                1 & 1
+                \end{array} \right]
+              = \left[\begin{array}{cc}
+                1 & 0 \\ 
+                1 & 0
+                \end{array} \right]  
+        \]
+        \[ A^2-B^2 = \left[\begin{array}{cc}
+                0 & 0 \\ 
+                1 & 1
+                \end{array} \right]
+                -
+                \left[\begin{array}{cc}
+                1 & 0 \\ 
+                1 & 0
+                \end{array} \right]
+                = \left[\begin{array}{rc}
+                -1 & 0 \\ 
+                 0 & 1
+                \end{array} \right]  
+        \]
+    \end{exemplo}
+                    
+\end{exemplos}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Matriz Inversa}
+    
+    Se $A$ é uma matriz quadrada de ordem $n$ se existir uma matriz $B$ com a mesma ordem que $A$ e que satisfaça
+    \[ AB = BA = I_n \]
+    a matriz $B$ é chamada de \textbf{Inversa} da matriz $A$.    
+    Se a inversa da matriz $A$ existe podemos indicá-la por $A^{-1}$. 
+    \\
+    
+    Quando $A$ não possui uma inversa dizermos que $A$ é uma \textbf{Matriz Singular}.
+    
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\section{Determinante de uma Matriz e suas Propriedades}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Determinante de uma Matriz Quadrada de Ordem 1}
+
+  O determinante de uma matriz com uma linha e uma coluna é igual ao valor do elemento da matriz
+  \[  A = [a_{11}]  \qquad \text{ então } \qquad  \det A = a_{11} \]
+
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Determinante de uma Matriz Quadrada de Ordem 2}
+    
+    Data uma matriz $A$ quadrada de ordem 2 
+    \[ A = \left[
+        \begin{array}{cc}
+            a & b \\ 
+            c & d
+        \end{array} 
+        \right]
+    \]
+    definimos o determinante de $A$ como sendo a subtração do produto dos elementos da diagonal principal menos o produto dos elementos da diagonal secundária
+    \[ \det A = \left|
+        \begin{array}{cc}
+            a & b \\ 
+            c & d
+        \end{array} 
+        \right|
+        = ad - bc    
+    \]
+    
+    Note a diferença na notação de Matriz $[\;\cdot\;]$ e de determinante $|\,\cdot\,|$.
+    
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Determinante de uma Matriz Quadrada de Ordem 3}
+    
+    Podemos calcular o determinante de uma matriz quadrada de ordem 3 pela \textbf{Regra de Sarrus}.
+    Considere a matriz
+    \[ A = \left[\begin{array}{ccc}
+        a_{11} & a_{12} & a_{13} \\ 
+        a_{21} & a_{22} & a_{23} \\ 
+        a_{31} & a_{32} & a_{33}
+        \end{array}\right]
+    \]
+    Copiamos as duas primeiras colunas no final da matriz e 
+    somamos os produtos dos elementos das diagonais à direita e subtraímos os produtos dos elementos das diagonais à esquerda
+
+    \addgraphic{0.3}{regra-sarrus}
+
+    Obtemos assim o resultado
+    \[ \det A = a_{11} a_{22} a_{33} + a_{12} a_{23} a_{33} + a_{13} a_{21} a_{32} 
+               -a_{13} a_{22} a_{31} - a_{11} a_{23} a_{32} - a_{12} a_{21} a_{33}
+     \]
+     
+     \begin{observacao}
+         Note que essa regra se aplica apenas a matrizes de ordem 3.
+     \end{observacao}
+    
+\end{teoria}
+
+\begin{observacao}
+    Para definirmos o determinante para matrizes quadradas de ordem maior do que 3 precisamos de algumas definições auxiliares e um teorema.
+\end{observacao}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Menor Complementar}
+
+    O \textbf{Menor complementar}, $\minor{A}_{ij}$, de uma matriz $A=(a_{ij})_{n\times n}$ relativo ao elemento $a_{ij}$ é o \textbf{determinante}
+    da matriz obtida removendo a linha $i$ e a coluna $j$ da matriz $A$. 
+
+\end{teoria}
+
+\begin{exemplos}
+    \begin{exemplo}
+        Se $A$ for a matriz
+        \[ A = \left[\begin{array}{ccc}
+        a_{11} & a_{12} & a_{13} \\ 
+        a_{21} & a_{22} & a_{23} \\ 
+        a_{31} & a_{32} & a_{33}
+        \end{array}\right]
+        \]
+        Então esses são alguns dos seus Menores Complementares
+        \[  \minor{A}_{11} = \left|\begin{array}{cc}
+        	a_{22} & a_{23} \\
+        	a_{32} & a_{33}
+        \end{array}\right| = a_{22} a_{33} - a_{23} a_{32} 
+        \]
+        \[ \minor{A}_{12} = \left|\begin{array}{cc}
+        	a_{21} & a_{23} \\
+        	a_{31} & a_{33}
+        \end{array}\right|
+        = a_{21} a_{33} - a_{23} a_{31}
+        \]
+        \[ \minor{A}_{23} = \left|\begin{array}{cc}
+        	a_{11} & a_{12} \\
+        	a_{31} & a_{32}
+        \end{array}\right|
+        = a_{11} a_{32} - a_{12} a_{31}
+        \]
+    \end{exemplo}
+\end{exemplos}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Cofator}
+
+    O \textbf{Cofator} do elemento $a_{ij}$ é o número obtido multiplicando $(-1)^{i+j}$ com o Menor Complementar de $a_{ij}$
+    \[ A_{ij} = (-1)^{i+j} \minor{A}_{ij} \]
+    
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Determinante de uma Matriz Qualquer Ordem -- Teorema de Laplace}
+    
+    O \textbf{Teorema de Laplace} nos diz como calcular o determinante de uma matriz $A$. \\
+    
+    O determinante é calculado somando os Cofatores de cada elemento de uma linha ou coluna da matriz.\\
+    
+    Se aplicarmos o teorema a primeira linha temos
+    \[ \det A = a_{11} A_{11} + a_{12} A_{12} + a_{13} A_{13} + \cdots + a_{1n} A_{1n} \]
+    Explicitando os Menores Complementares temos
+    \[ \det A = a_{11}(-1)^{1+1}\minor{A}_{11} + 
+                a_{12}(-1)^{1+2}\minor{A}_{12} + 
+                a_{13}(-1)^{1+3}\minor{A}_{13} + \cdots + 
+                a_{1n}(-1)^{1+n}\minor{A}_{1n} \]
+
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{exemplos}
+    
+    \begin{exemplo}
+        Calcule o determinante da matriz
+        \[ M = \left[
+            \begin{array}{cccc}
+                4 & x & 0 & x \\ 
+                3 & 0 & 2 & 0 \\ 
+                0 & 2 & 0 & 0 \\ 
+                x & 0 & 1 & 0
+            \end{array} 
+            \right]
+        \]
+        
+        Resolução:
+        \begin{align*}
+        \det M & = \left|
+                        \begin{array}{cccc}
+                        4 & x & 0 & x \\ 
+                        3 & 0 & 2 & 0 \\ 
+                        0 & 2 & 0 & 0 \\ 
+                        x & 0 & 1 & 0
+                        \end{array} 
+                        \right| \\
+            & =  a_{11} A_{11} + a_{12} A_{12} + a_{13} A_{13} + a_{14} A_{14} \\
+            & =  a_{11} \minor{A}_{11} - a_{12} \minor{A}_{12} + a_{13} \minor{A}_{13} - a_{14} \minor{A}_{14} \\
+            & = 4 \underbrace{\left|
+                    \begin{array}{ccc}
+                    0 & 2 & 0 \\ 
+                    2 & 0 & 0 \\ 
+                    0 & 1 & 0
+                    \end{array} 
+                    \right|}_{=0}
+              - x \underbrace{\left|
+                    \begin{array}{ccc}
+                    3 & 2 & 0 \\ 
+                    0 & 0 & 0 \\ 
+                    x & 1 & 0
+                    \end{array} 
+                    \right|}_{=0}
+              + 0 \left|
+                    \begin{array}{ccc}
+                    3 & 0 & 0 \\ 
+                    0 & 2 & 0 \\ 
+                    x & 0 & 0
+                    \end{array} 
+                    \right|
+              - x \left|
+                    \begin{array}{ccc}
+                    3 & 0 & 2 \\ 
+                    0 & 2 & 0 \\ 
+                    x & 0 & 1
+                    \end{array} 
+                    \right| 
+              = - x \left|
+                    \begin{array}{ccc}
+                    3 & 0 & 2 \\ 
+                    0 & 2 & 0 \\ 
+                    x & 0 & 1
+                    \end{array} 
+                    \right| \\
+            & = - x \left( \;
+                      3 \left|
+                        \begin{array}{cc}
+                        2 & 0 \\ 
+                        0 & 1
+                        \end{array} 
+                        \right|
+                     -0 \left|
+                        \begin{array}{cc}
+                        0 & 0 \\ 
+                        x & 1
+                        \end{array} 
+                        \right|
+                     +2 \left|
+                        \begin{array}{cc}
+                        0 & 2 \\ 
+                        x & 0
+                        \end{array} 
+                        \right| \;
+                    \right) \\
+            & = -x \big[ 3(2\times 1-0) +2(0-2x) \big] 
+              = -x (6-4x) 
+              = 2x(x-3)
+        \end{align*}
+    \end{exemplo}
+\end{exemplos}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Combinação Linear}
+    
+    Uma \textbf{Combinação Linear} de colunas de uma matriz é a soma de duas colunas podendo multiplicar cada uma delas por um número não negativo.
+    Por exemplo, considerando a matriz $A$
+    \[ A = \left[\begin{array}{ccc}
+        a_{11} & a_{12} & a_{13} \\ 
+        a_{21} & a_{22} & a_{23} \\ 
+        a_{31} & a_{32} & a_{33}
+        \end{array}\right]
+    \]
+    Podemos construir uma matriz $B$ fazendo uma combinação linear da primeira e segunda colunas de $A$
+    \[ B = \left[\begin{array}{ccc}
+        a_{11} & r a_{12} + s a_{11}& a_{13} \\ 
+        a_{21} & r a_{22} + s a_{21}& a_{23} \\ 
+        a_{31} & r a_{32} + s a_{31}& a_{33}
+    \end{array}\right]
+    \]
+    onde $r$ e $s$ são números reais não nulos.
+    O mesmo pode ser feito com as linhas de uma matriz.
+    
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Propriedades dos Determinantes}
+    
+    O determinante de uma matriz será zero quando
+    \begin{enumerate}
+        \item Todos os elementos de uma de suas linhas (ou colunas) forem zero
+        \item Quando a matriz possui duas linhas (ou colunas) iguais ou proporcionais
+        \item Quando uma linha (ou coluna) é a combinação linear de outras linhas (ou colunas)
+    \end{enumerate}
+    
+    Transformações que não alteram o determinante de uma matriz
+    \begin{enumerate}
+        \item Quando transpomos a matriz \[\det A^t = \det A\]
+        \item Quando somamos aos elementos de uma linha (ou coluna) os elementos de outra linha (ou coluna) multiplicados por uma constante
+    \end{enumerate}
+    
+    Transformações que alteram o determinante
+    \begin{enumerate}
+        \item O determinante muda de sinal se trocarmos duas linhas (ou colunas) de lugar
+        \item Se multiplicarmos linha (ou coluna) por uma constante o valor do determinante será multiplicado por essa mesma constante.
+    \end{enumerate}
+    
+    Se $A$ e $B$ forem duas matrizes quadradas de mesma ordem, então
+    \[ \det(AB) = \det A \det B \]
+    
+    O determinante de qualquer matriz identidade é sempre $1$
+    \[ \det I = 1 \]
+    
+    Uma matriz quadrada $A$ possui inversa se, e somente se, 
+    \[\det A\neq 0\]
+    
+    O determinante da inversa da matriz $A$ é
+    \[ \det A^{-1} = \frac{1}{\;\det A\;} \]
+    
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\section{Sistemas Lineares}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Sistemas Lineares}
+    Uma sistema linear  é um conjunto de $m$ equações lineares com $n$ incógnitas $x_1,\,x_2,\,\dots,\,x_n$
+    \[\left\{ 
+    \begin{array}{ccccccccl}
+        a_{11}x_1 & \!+\! &a_{12}x_2  & \!+\! &\cdots & \!+\! &a_{1n}x_n & \!=\! & b_1 \\ 
+        a_{21}x_1 & \!+\! &a_{22}x_2  & \!+\! &\cdots & \!+\! &a_{2n}x_n & \!=\! & b_2 \\ 
+        \vdots    &       &\vdots     &       &       &       &\vdots    &       & \vdots \\
+        a_{m1}x_1 & \!+\! &a_{m2}x_2  & \!+\! &\cdots & \!+\! &a_{mn}x_n & \!=\! & b_m
+    \end{array} 
+    \right.
+    \]
+\end{teoria}
+
+\begin{teoria}{}    
+    Em termos de número de soluções, um sistema linear pode ser classificado como
+    \begin{description}
+        \item[Possível] Admite pelo menos uma solução
+        \begin{description}
+            \item[Determinado]   \tabto{22mm} Admite uma única solução
+            \item[Indeterminado] \tabto{22mm} Admite infinitas soluções
+        \end{description}
+        \item[Impossível] Não existe nenhuma solução para o sistema 
+    \end{description}
+    
+    Dois sistema lineares são ditos \textbf{Sistemas Equivalentes} se e somente se admitem a mesma solução.
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Forma Matricial}
+    
+    Sempre podemos escrever um sistema linear em sua forma matricial 
+    \[\left[
+        \begin{array}{cccc}
+            a_{11} & a_{12}  & \cdots & a_{1n} \\ 
+            a_{21} & a_{22}  & \cdots & a_{2n} \\ 
+            \vdots & \vdots  &        & \vdots \\
+            a_{m1} & a_{m2}  & \cdots & a_{mn}
+        \end{array} 
+        \right]
+        \left[
+        \begin{array}{c} x_1 \\ x_2 \\ \vdots \\ x_n
+        \end{array} 
+        \right]
+        =                    
+        \left[
+        \begin{array}{c} b_1 \\ b_2 \\ \vdots \\ b_m
+        \end{array} 
+        \right]
+    \]    
+    Abreviadamente podemos escrever $AX=B$ onde 
+    \[A=\left[
+        \begin{array}{cccc}
+            a_{11} & a_{12}  & \cdots & a_{1n} \\ 
+            a_{21} & a_{22}  & \cdots & a_{2n} \\ 
+            \vdots & \vdots  &        & \vdots \\
+            a_{m1} & a_{m2}  & \cdots & a_{mn}
+        \end{array} 
+        \right]
+        \qquad X=
+        \left[
+        \begin{array}{c} x_1 \\ x_2 \\ \vdots \\ x_n
+        \end{array} 
+        \right]
+        \qquad B=                    
+        \left[
+        \begin{array}{c} b_1 \\ b_2 \\ \vdots \\ b_m
+        \end{array} 
+        \right]
+    \]
+    
+    Um sistema linear com o mesmo número de equações e incógnitas, $m=n$, será determinado
+    se, e somente se, a sua matriz $A$ for inversível, isso é $\det A \neq 0$.
+
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Sistemas Lineares Homogêneos}
+    
+    Sistema lineares homogêneos são sistemas onde os termos independentes, $b_i$ são todos nulos.
+    \[\left\{ 
+    \begin{array}{ccccccccl}
+    	a_{11}x_1 & \!+\! & a_{12}x_2 & \!+\! & \cdots & \!+\! & a_{1n}x_n & \!=\! & 0    \\
+    	a_{21}x_1 & \!+\! & a_{22}x_2 & \!+\! & \cdots & \!+\! & a_{2n}x_n & \!=\! & 0    \\
+    	 \vdots   &       &  \vdots   &       &        &       &  \vdots   &       & \vdots \\
+    	a_{m1}x_1 & \!+\! & a_{m2}x_2 & \!+\! & \cdots & \!+\! & a_{mn}x_n & \!=\! & 0
+    \end{array} 
+    \right.
+    \]    
+    ou matricialmente 
+    \[ AX = 0 \]
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{observacao}
+    Não deixe de conferir suas respostas. Uma pequena distração, como uma troca de sinal,
+    é suficiente para produzir falsos resultados.
+\end{observacao}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Regra de Cramer}
+    
+    A \textbf{Regra de Cramer} é um método para resolver um sistema linear, com $m=n$, determinado. A solução do sistema é calculada pela formula
+    \[  x_i = \frac{D_i}{\det A} \qquad i=1,\dots,n \]
+    onde $D_i$ é o determinante da matriz construída a partir da matriz $A$ substituindo a coluna $i$ pelos valores de $B$, por exemplo,
+    \[D_2 = \left[
+    \begin{array}{cccc}
+    a_{11} & b_{1}  & \cdots & a_{1n} \\ 
+    a_{21} & b_{2}  & \cdots & a_{2n} \\ 
+    \vdots & \vdots &        & \vdots \\
+    a_{n1} & b_{n}  & \cdots & a_{nn}
+    \end{array} 
+    \right]
+     \]
+
+    A Regra de Cramer tem grande importância teórica, mas existem métodos que demandam muito menos operações para chegar a solução de um sistema linear. 
+    Principalmente quando $n$ é grande.
+     
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\section{Método de Gauss}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Sistema Triangular Superior}
+    
+    Se a matriz de um sistema linear, com $m=n$, tiver todas as entradas abaixo da diagonal nulas, como nesse exemplo com $n=3$
+    \[ A = \left[
+        \begin{array}{ccc}
+            a_{11} & a_{12} & a_{13} \\ 
+            0      & a_{22} & a_{23} \\ 
+            0      & 0      & a_{33}
+        \end{array} 
+        \right]
+    \]    
+    Dizermos que o sistema é \textbf{Triangular Superior}.
+    \\
+    
+    Esse tipo de sistema pode ser facilmente resolvido se resolvermos primeiro a ultima equação encontrando $x_3$.
+    Então substituímos esse valor na segunda equação e calculamos $x_2$. Por fim substituímos $x_3$ e $x_2$ na primeira
+    equação e encontramos $x_1$. O mesmo método pode ser usado para resolver sistemas triangulares de qualquer dimensão.
+    
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{teoria}{Método de Gauss}
+
+    Como resolver um sistema triangular é relativamente fácil o \textbf{Método de Gauss} busca transformar
+    o sistema que desejamos resolver em um sistema equivalente que seja triangular superior.
+    \\
+
+    Para transformar um sistema qualquer em um sistema triangular superior equivalente podemos usar qualquer uma das seguintes operações elementares nas linhas da matriz do sistema
+    \begin{enumerate}
+        \item Trocar duas linhas entre si.
+        \item Multiplicar todos os elementos de uma linha por uma constante não-nula.
+        \item Substituir uma linha pela sua soma com um múltiplo de outra.
+    \end{enumerate}
+        
+    O Método de Gauss usa esses passos em uma sequencia específica que garante a transformação de qualquer matriz não singular em triangular superior.
+        
+\end{teoria}
+
+%------------------------------------------------------------------------------%
+\begin{exemplos}[2]
+       
+    \begin{exemplo}
+        Para ilustrar a aplicação do Método de Gauss apresentamos aqui um exemplo com uma matriz de ordem 3.
+        \begin{enumerate}
+            \item Construir a matriz aumentada do sistema $[ A | B ]$
+                \[ \left[
+                \begin{array}{ccc|c}
+                   	a_{11} & a_{12} & a_{13} & b_{1} \\
+                   	a_{21} & a_{22} & a_{23} & b_{2} \\
+                   	a_{31} & a_{32} & a_{33} & b_{3}
+                \end{array} 
+                \right]
+                \]
+            \item Queremos agora transformar anular os elementos abaixo da diagonal da matriz $A$. 
+                Primeiro dividimos todos os elementos da primeira linha por $a_{11}$, 
+                isso é, $L_1^{(1)} = L_1^{(0)} / a_{11}$, obtermos assim
+                \[ \left[
+                \begin{array}{ccc|c}
+                 	  1    & a_{12}^{(1)} & a_{13}^{(1)} & b_{1}^{(1)} \\
+                   	a_{21} &    a_{22}    &    a_{23}    &    b_{2}    \\
+                   	a_{31} &    a_{32}    &    a_{33}    &    b_{3}
+                \end{array} 
+                \right] \]
+            \item Substituímos agora a segunda linha por ela mesma subtraída da primeira linha multiplicada 
+                por $a_{21}$, isso é, $L_2^{(1)} = L_2^{(0)} - L_1^{(1)}a_{21}$
+                \[ \left[
+                \begin{array}{ccc|c}
+                 	  1    & a_{12}^{(1)} & a_{13}^{(1)} & b_{1}^{(1)} \\
+                 	  0    & a_{22}^{(1)} & a_{23}^{(1)} & b_{2}^{(1)} \\
+                   	a_{31} &    a_{32}    &    a_{33}    &    b_{3}
+                \end{array} 
+                \right] \]
+            \item Fazemos o procedimento equivalente para anular o termo $a_{31}$, 
+                isso é, $L_3^{(1)} = L_3^{(0)} - L_1^{(1)}a_{31}$
+                \[ \left[
+                \begin{array}{ccc|c}
+                   	1 & a_{12}^{(1)} & a_{13}^{(1)} & b_{1}^{(1)} \\
+                   	0 & a_{22}^{(1)} & a_{23}^{(1)} & b_{2}^{(1)} \\
+                   	0 & a_{32}^{(1)} & a_{33}^{(1)} & b_{3}^{(1)}
+                \end{array} 
+                \right] \]
+            \item Repetimos o processo para a segunda coluna. Primeiro dividimos a segunda 
+                linha por $a_{22}^{(1)}$, isso é, $L_2^{(2)} = L_2^{(1)} / a_{22}^{(1)}$
+                \[ \left[
+                \begin{array}{ccc|c}
+                   	1 & a_{12}^{(1)} & a_{13}^{(1)} & b_{1}^{(1)} \\
+                   	0 &      1       & a_{23}^{(2)} & b_{2}^{(2)} \\
+                   	0 & a_{32}^{(1)} & a_{33}^{(1)} & b_{3}^{(1)}
+                \end{array} 
+                \right] \]
+            \item Substituímos agora a terceira linha por ela mesma subtraída da segunda 
+                linha multiplicada por $a_{32}$, isso é, $L_3^{(2)} = L_3^{(1)} - L_2^{(1)}a_{32}$
+                \[ \left[
+                \begin{array}{ccc|c}
+                   	1 & a_{12}^{(1)} & a_{13}^{(1)} & b_{1}^{(1)} \\
+                   	0 &      1       & a_{23}^{(2)} & b_{2}^{(2)} \\
+                   	0 &      0       & a_{33}^{(2)} & b_{3}^{(2)}
+                \end{array} 
+                \right] \]
+            \item Dividimos agora a terceira linha por $a_{33}^(2)$, isso é, $L_3^{(3)} = L_3^{(2)} / a_{33}^{(2)}$
+                \[ \left[
+                \begin{array}{ccc|c}
+                   	1 & a_{12}^{(1)} & a_{13}^{(1)} & b_{1}^{(1)} \\
+                   	0 &      1       & a_{23}^{(2)} & b_{2}^{(2)} \\
+                   	0 &      0       &      1       & b_{3}^{(3)}
+                \end{array} 
+                \right] \]
+        \end{enumerate}
+        Obtemos assim um sistema equivalente ao original que pode ser resolvido com muito mais facilidade
+    \end{exemplo}
+
+    \begin{exemplo}
+        Resolva o sistema linear usando o Método de Gauss
+        \[\systeme{
+            	x  + y  + z  = 10,
+            	2x + y  + 4z = 20,
+            	2x + 3y + 5z = 25
+        }\]
+                
+        Construindo a matriz aumentada do sistema
+        \[\left[
+            \begin{array}{rrr|r}
+                1 & 1 & 1 & 10 \\ 
+                2 & 1 & 4 & 20 \\ 
+                2 & 3 & 5 & 25
+            \end{array} 
+            \right]
+        \]
+        Como o elemento $a_{11}$ já é igual a 1 não precisamos dividir a primeira linha por ele. 
+        Subtraímos a segunda linha menos a primeira vezes 2 e a terceira linha menos a primeira, também, vezes 2
+        \[\left[
+            \begin{array}{rrr|r}
+                1 &  1 & 1 & 10 \\ 
+                0 & -1 & 2 & 0 \\ 
+                0 &  1 & 3 & 5
+            \end{array} 
+            \right]
+        \]
+        Dividimos a segunda linha por $a_{22}=-1$ e obtemos
+        \[\left[
+            \begin{array}{rrr|r}
+                1 &  1 &  1 & 10 \\ 
+                0 &  1 & -2 & 0  \\ 
+                0 &  1 &  3 & 5
+            \end{array} 
+            \right]
+        \]
+        Subtraímos a terceira linha menos a segunda linha
+        \[\left[
+            \begin{array}{rrr|r}
+                1 &  1 &  1 & 10 \\ 
+                0 &  1 & -2 & 0  \\ 
+                0 &  0 &  5 & 5
+            \end{array} 
+            \right]
+        \]
+        Dividimos a terceira linha por $a_{33}=5$
+        \[\left[
+            \begin{array}{rrr|r}
+                1 &  1 &  1 & 10 \\ 
+                0 &  1 & -2 & 0  \\ 
+                0 &  0 &  1 & 1
+            \end{array} 
+            \right]
+        \]
+        Resolvemos a terceira equação
+        \[ \makebox[0pt][l]{$1z = 1$}\phantom{x + y + z = 10} \qquad \Rightarrow \qquad z = 1  \]
+        Substituímos esse valor na segunda equação e a resolvemos também
+        \[ \makebox[0pt][l]{$1y - 2z = 0$}\phantom{x + y + z = 10} \qquad \Rightarrow \qquad y = 2z = 2 \]
+        Agora resolvemos a primeira equação
+        \[ x + y + z = 10 \qquad \Rightarrow \qquad x = 10 - y - z = 10 -2 -1 = 7 \]
+        A solução do sistema é
+        \[ x = 7 \qquad y = 2 \qquad z = 1 \]
+    \end{exemplo}
+                            
+\end{exemplos}
+
+%------------------------------------------------------------------------------%
+%------------------------------------------------------------------------------%
+\section{Exercícios}
+
+\openAnswers{03-Matrizes/03-Matrizes-Exercicios-ans}
+
+\vspace{\baselineskip}
+\input{03-Matrizes/03-Matrizes-Exercicios-Operacoes}
+\input{03-Matrizes/03-Matrizes-Exercicios-Sistemas}
+\input{03-Matrizes/03-Matrizes-Exercicios-Determinantes}
+\input{03-Matrizes/03-Matrizes-Exercicios-Revisao}
+
+\writeAnswers{03-Matrizes/03-Matrizes-Exercicios-ans}
+
+%------------------------------------------------------------------------------%
