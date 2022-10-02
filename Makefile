@@ -4,7 +4,7 @@
 #
 #------------------------------------------------------------------------------#
 
-TEX_FILES=Gaav.tex
+TEX_FILES=Geometria_Analitica.tex
 PDF_FILES=$(TEX_FILES:.tex=.pdf)
 NON_FILES=$(TEX_FILES:.tex=)
 DIRS= 01-Introducao \
