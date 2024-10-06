@@ -65,6 +65,7 @@
 %------------------------------------------------------------------------------%
 %------------------------------------------------------------------------------%
 
+\RequirePackage{cmap}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[english,brazil]{babel}
 \RequirePackage{indentfirst}
@@ -77,7 +78,6 @@
 \RequirePackage{ae}
 \RequirePackage{fontenc}
 \RequirePackage{microtype}
-\RequirePackage{cmap}
 
 %------------------------------------------------------------------------------%
 %------------------------------------------------------------------------------%
@@ -94,7 +94,7 @@
 \definecolor{cpCoverBelt}            {gray}{0.99}
 \newcommand{\BeltOpacity}{1}
 \newlength{\BeltPosition}
-\setlength{\BeltPosition}{0.65\paperheight}
+\setlength{\BeltPosition}{35mm}
 
 % Titles
 \definecolor{cpTitlePart}   {HTML}{0f3057}
@@ -192,116 +192,14 @@
 
 \RequirePackage[fleqn]{amsmath}
 \RequirePackage{amsthm}
-\RequirePackage{amsfonts}
 \RequirePackage{amssymb}
-\RequirePackage{latexsym}
-\RequirePackage{bm}
-\RequirePackage{xfrac}
-\RequirePackage{mathtools}
-\RequirePackage{nccmath}
-\RequirePackage{array}
 
 \allowdisplaybreaks
 
 \newlength{\defaultMathIndent}
 \setlength{\defaultMathIndent}{2em}
 \setlength{\mathindent}{1\defaultMathIndent}
-
 \renewcommand*{\arraystretch}{1.2}
-
-\newcommand*{\hint}[1]{\underline{Dica}: \textit{#1}}
-
-% Redefine \(\) to display style
-\let\@om\(
-\let\@cm\)
-\renewcommand{\(}{\@om\displaystyle\,}
-\renewcommand{\)}{\,\@cm}
-
-% Translating mathematical function names to Portuguese
-
-\let\sin\relax
-\let\csc\relax
-\let\tan\relax
-\let\cot\relax
-
-\DeclareMathOperator{\sin}{sen}
-\DeclareMathOperator{\tan}{tg}
-\DeclareMathOperator{\cot}{cot}
-\DeclareMathOperator{\csc}{cossec}
-
-\let\sinh\relax
-\let\tanh\relax
-\let\coth\relax
-
-\DeclareMathOperator{\sinh}{senh}
-\DeclareMathOperator{\tanh}{tgh}
-\DeclareMathOperator{\coth}{coth}
-\DeclareMathOperator{\sech}{sech}
-\DeclareMathOperator{\csch}{cossech}
-
-\let\arcsin\relax
-\let\arctan\relax
-
-\DeclareMathOperator{\arcsin}{arcsen}
-\DeclareMathOperator{\arctan}{arctg}
-\DeclareMathOperator{\arccot}{arccot}
-\DeclareMathOperator{\arcsec}{arcsec}
-\DeclareMathOperator{\arccsc}{arccossec}
-
-\DeclareMathOperator{\sinc}{sinc}
-
-% Common numerical sets
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-
-\let\Re\relax  \DeclareMathOperator{\Re}{Re}
-\let\Im\relax  \DeclareMathOperator{\Im}{Im}
-
-\DeclareMathOperator{\dist}{dist}
-\DeclareMathOperator{\inv}{inv}
-
-% Command to define minor complement
-\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
-\newcommand{\minor}[1]{\overbar{#1}}
-
-\let\parallel\relax
-\newcommand{\parallel}{\mathbin{\!/\mkern-5mu/\!}}
-
-\newcommand{\st}{\mathrel{}\big/\mathrel{}}
-
-\DeclarePairedDelimiter{\abs}    {\lvert} {\rvert}
-\DeclarePairedDelimiter{\norm}   {\lVert} {\rVert}
-\DeclarePairedDelimiter{\ceil}   {\lceil} {\rceil}
-\DeclarePairedDelimiter{\floor}  {\lfloor}{\rfloor}
-\DeclarePairedDelimiter{\dotprod}{<}      {>}
-
-\let\oldabs\abs         \def\abs    {\@ifstar{\oldabs}    {\oldabs*}}
-\let\oldnorm\norm       \def\norm   {\@ifstar{\oldnorm}   {\oldnorm*}}
-\let\oldceil\ceil       \def\ceil   {\@ifstar{\oldceil}   {\oldceil*}}
-\let\oldfloor\floor     \def\floor  {\@ifstar{\oldfloor}  {\oldfloor*}}
-\let\olddotprod\dotprod \def\dotprod{\@ifstar{\olddotprod}{\olddotprod*}}
-
-% Define the evaluation operator
-\newcommand{\evalat}[2]{\bigg\rvert_{#1}^{#2}}
-
-%------------------------------------------------------------------------------%
-%------------------------------------------------------------------------------%
-% International System of Units
-%------------------------------------------------------------------------------%
-%------------------------------------------------------------------------------%
-
-\RequirePackage{siunitx}
-
-\sisetup{output-decimal-marker={,}}
-
-\newcommand{\reais}[1]{%
-  \SI[round-precision=2,
-      round-mode=places,
-      round-integer-to-decimal]{#1}[R\$\,]{}%
-}
 
 %------------------------------------------------------------------------------%
 %------------------------------------------------------------------------------%
@@ -441,6 +339,7 @@
 
 % Theory options
 \tcbset{theoryBox/.style={
+  minipage boxed title,
   attach boxed title to top left={%
     yshift = -1mm,
   },
@@ -522,9 +421,8 @@
   fonttitle = \scshape,
   boxrule   = 1pt,
   arc       = 0.5mm,
-  title     = {Exemplo~\thetcbcounter:},
+  before upper={\textsc{Exemplo~{\thetcbcounter}}:~\ },
   lower separated       = false,
-  attach title to upper = \quad,
   underlay={%
     \begin{tcbclipinterior}
       \draw[help lines,
@@ -1007,39 +905,41 @@
 \newcommand{\bookInformation}[1]{\renewcommand{\@bookInformation}{#1}}
 
 \newcommand{\makeBookCover}{%
+  \newgeometry{margin=1mm}%
+  \begingroup%
+  ~\vfill%
+  \setlength{\parskip}{1pt}%
+  \setstretch{1}%
   \ifbool{hasCoverArt}%
          {\ThisCenterWallPaper{1}{\@coverArt}}%
          {\pagecolor{cpCoverDefaultBackgound}}%
-  \vspace*{\BeltPosition}%
-  \begingroup%
-  \setlength{\parskip}{1pt}%
-  \setstretch{1}%
   \begin{tcolorbox}[
       beforeafter skip balanced = 0pt,
+      left skip        = 7mm,
       opacityback      = \BeltOpacity,
       sharp corners    = all,
       top              = 5mm,
       bottom           = 5mm,
       space            = 0.4,
       colback          = cpCoverBelt,
-      enlarge right by = 16mm,
-      width            = \linewidth+16mm,
+      enlarge right by = 11mm,
+      width            = \linewidth+11mm,
       frame empty,
       % Upper (Title) format
       colupper     = cpCoverTitle,
       fontupper    = \Huge,
       halign upper = flush left,
       valign upper = center,
-      leftupper    = 1cm,
-      rightupper   = 5mm,
+      leftupper    = 9mm,
+      rightupper   = 30mm,
       % Lower (Author) format
-      middle       = 5mm,
+      middle       = 3mm,
       collower     = cpCoverAuthor,
       fontlower    = \Large,
       halign lower = flush right,
       valign lower = center,
-      leftlower    = 2cm,
-      rightlower   = 2cm,
+      leftlower    = 20mm,
+      rightlower   = 29mm,
       % Separtion line
       lower separated = false,
     ]
@@ -1048,7 +948,9 @@
     \tcblower
     \@authorCover
   \end{tcolorbox}%
+  \vspace*{\BeltPosition}%
   \endgroup%
+  \restoregeometry%
   \clearpage%
   \pagecolor{cpPageBackground}%
 }
@@ -1318,6 +1220,7 @@
 \renewcommand{\mtcSfont}{\small\mdseries}
 
 \xpretocmd{\tableofcontents}{%
+  \dominitoc[n]%
   \begingroup%
   \setlength{\parskip}{3mm plus 1mm minus 1mm}%
   \addtocontents{toc}{\protect\label{cap:toc}}%
@@ -1325,6 +1228,7 @@
 
 \xapptocmd{\tableofcontents}{%
   \endgroup%
+  \adjustmtc%
 }{}{}
 
 %------------------------------------------------------------------------------%
