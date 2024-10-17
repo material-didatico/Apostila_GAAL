@@ -1,16 +1,11 @@
 #------------------------------------------------------------------------------#
-#
-# Main Makefile 
-#
-#------------------------------------------------------------------------------#
+
+# List of all subderectories
+SUBDIRS=`find -mindepth 1 -maxdepth 1 -type d -not -name '.*' -not -name '_*'`
 
 TEX_FILES=Geometria_Analitica.tex
 PDF_FILES=$(TEX_FILES:.tex=.pdf)
 NON_FILES=$(TEX_FILES:.tex=)
-DIRS= 01-Introducao \
-      02-Revisao    \
-      03-Matrizes   \
-      04-Equacoes
 
 all: $(PDF_FILES)
 
@@ -23,13 +18,15 @@ RUBBER_PDF= ${RUBBER} --pdf
 .PHONY: clean
 clean:
 	-@ rm -vf *~ .*~  *.bak \
-                  *.aux *.bbl *.blg *.lof *.log *.lot *.out *.toc \
-		  *.bcf *.run.xml .*.sw? *.synctex.gz
+       *.aux *.bbl *.blg *.lof *.log *.lot *.out *.toc \
+       *.bcf *.run.xml .*.sw? *.synctex.gz *.txss *.idx \
+       *.ilg *.ind *.lod *.mtc*
 	-@ for T in $(NON_FILES) ; do ${RUBBER} --clean --verbose $$T ; done
-	-@ for D in $(DIRS)      ; do make -C $$D clean               ; done
+	-@ for D in $(SUBDIRS)   ; do make -C $$D clean               ; done
 
 .PHONY: distclean
 distclean: clean
 	-@ rm -vf $(PDF_FILES)
+	-@ rm -vf _sandbox.pdf _exercises.pdf
 
 #------------------------------------------------------------------------------#
