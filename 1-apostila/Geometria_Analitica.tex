@@ -1,5 +1,5 @@
 %------------------------------------------------------------------------------%
-\documentclass[cc=by-nc-sa,fast]{nice-booklet}
+\documentclass[cc=by-nc-sa]{nice-booklet}
 
 \usepackage{geometria_analitica}
 
@@ -8,7 +8,7 @@
 %\def\input@path{{./1-Introducao/figs/}}
 \makeatother
 
-%\addbibresource{disciplinas.bib}
+\addbibresource{disciplinas.bib}
 
 %------------------------------------------------------------------------------%
 
@@ -38,13 +38,13 @@
 \begin{document}
 
 \frontmatter
-%\dominitoc[n]
+\include{0-Introducao/prefacio}
+
 \tableofcontents
 
 %------------------------------------------------------------------------------%
 
 \mainmatter
-\include{0-Introducao/prefacio}
 \include{1-Matrizes/matrizes}
 \include{2-Algebra/algebra}
 \include{3-Retas/retas}
@@ -57,12 +57,12 @@
 
 %------------------------------------------------------------------------------%
 
-%\nocite{*}
-%
-%\backmatter
-%\WriteAnswers
-%\printbibliography
-%\printindex
+\nocite{*}
+
+\backmatter
+\WriteAnswers
+\printbibliography
+\printindex
 
 \end{document}
 %------------------------------------------------------------------------------%
