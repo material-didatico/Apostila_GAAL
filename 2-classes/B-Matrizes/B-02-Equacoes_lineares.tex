@@ -1,0 +1,123 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Equações Lineares}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equações Lineares}
+  Equação linear com duas incógnitas
+  \[
+    ax + by = 0
+  \]
+
+  \pause
+  Equação linear com $n$ incógnitas
+  \[
+    a_1x_1 + a_2x_2 + \cdots + a_nx_n = 0
+  \]
+
+  \pause
+  Possuem infinitas soluções
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equação Linear Não Homogênea com Duas Incógnitas}
+  \onslide<+->{Equação linear não homogênea com duas incógnitas
+  \[
+    ax + by = c
+  \]}
+  \pause
+  \onslide<+->{Possui solução única se $a$ e $b$ não forem zero}
+  \begin{align*}
+    \onslide<+->{ax + by             & = c                \\}
+    \onslide<+->{ax + by - \emph{ax} & = c -\emph{ax}     \\}
+    \onslide<+->{by                  & = c - ax           \\}
+    \onslide<+->{\frac{by}{\emph{b}} & = \frac{c - ax}{\emph{b}} & \text{desde que, $b$ não seja zero} \\}
+    \onslide<+->{y                   & = \frac{c - ax}{b}}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Sistema de 3 Equações com 3 Incógnitas}
+  \systeme{
+    110 x + 120 y + 130 z = 100,
+    210 x + 220 y + 230 z = 200,
+    310 x + 320 y + 330 z = 300
+  }
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Sistema de $m$ Equações com $n$ Incógnitas}
+  \begin{align*}
+    a_{11} x_1 + a_{21} x_2 + \cdots + a_{n1}x_n & = b_1 \\
+    a_{12} x_1 + a_{22} x_2 + \cdots + a_{n2}x_n & = b_2 \\
+    a_{13} x_1 + a_{23} x_2 + \cdots + a_{n3}x_n & = b_3 \\
+    a_{14} x_1 + a_{24} x_2 + \cdots + a_{n4}x_n & = b_4 \\
+    & \vdots  \\
+    a_{1m} x_1 + a_{2m} x_2 + \cdots + a_{nm}x_n & = b_m
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Representação Matricial}
+  \[
+    A = \begin{pmatrix}
+      a_{11} & a_{21} & \cdots & a_{n1} \\
+      a_{12} & a_{22} & \cdots & a_{n2} \\
+      a_{13} & a_{23} & \cdots & a_{n3} \\
+      a_{14} & a_{24} & \cdots & a_{n4} \\
+      \vdots & \vdots & \vdots & \vdots \\
+      a_{1m} & a_{2m} & \cdots & a_{nm}
+    \end{pmatrix}
+    \pause
+    \qquad\qquad
+    x = \begin{pmatrix}
+      x_1    \\
+      x_2    \\
+      x_3    \\
+      x_4    \\
+      \vdots \\
+      x_m
+    \end{pmatrix}
+    \pause
+    \qquad\qquad
+    b = \begin{pmatrix}
+      b_1    \\
+      b_2    \\
+      b_3    \\
+      b_4    \\
+      \vdots \\
+      b_m
+    \end{pmatrix}
+  \]
+
+  \pause
+  \bigskip
+  \[
+    Ax = b
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

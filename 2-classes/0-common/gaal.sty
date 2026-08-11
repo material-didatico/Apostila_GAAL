@@ -1,0 +1,69 @@
+%------------------------------------------------------------------------------%
+% Definições particulares para as Apresentações de
+% GAAL
+%------------------------------------------------------------------------------%
+
+\usepackage{class_notes}
+\usepackage{mathconfig}
+\usepackage{qrcode}
+\usepackage{systeme}
+
+%------------------------------------------------------------------------------%
+
+% Issue an error is include file is missing
+\def\mkfilename#1{%
+  \if\relax\detokenize\expandafter{#1}\relax\else#1/\fi%
+}
+
+\AddToHook{include/before}{%
+  \IfFileExists{\mkfilename\CurrentFilePath\CurrentFile}{}{%
+    \GenericError{}{Error: File \mkfilename\CurrentFilePath\CurrentFile.tex not found!}{\@gobble}{}%
+}}
+
+%------------------------------------------------------------------------------%
+
+\graphicspath  {{./figs/},{./asy/}}
+\def\input@path{{./figs/},{./ex/}}
+\newcommand{\materialurl}{https://material-didatico.github.io/pages/gaal}
+
+\newcounter{exemplo}
+\setcounter{exemplo}{0}
+
+%------------------------------------------------------------------------------%
+
+\author{\large Luis Alberto D'Afonseca}
+\date  {Geometria Analítica e Álgebra Linear}
+
+\newcommand{\addtitle}{
+\begin{frame}
+  \titlepage
+  \addtext{4}{0.3,8.6}{\scriptsize\today}
+  \addtext{9}{9.4,8.4}{\tiny\url{\materialurl}}
+  \addtext{4}{14.2,6.8}{\href{\materialurl}{\qrcode[height=15mm]{\materialurl}}}
+\end{frame}
+}
+
+\setlength{\parskip}{0.5\baselineskip}
+
+%------------------------------------------------------------------------------%
+
+\newcommand*{\hint}[1]{\underline{Dica}: \textit{#1}}
+
+\newcommand{\vetor}[2]{\left(\begin{array}{c} #1 \\ #2 \end{array}\right)}
+\newcommand{\Vetor}[2]{\left(\begin{array}{c}
+  \displaystyle #1 \\[5mm]
+  \displaystyle #2
+\end{array}\right)}
+
+\newcommand{\vetortri}[3]{\left(\begin{array}{c} #1 \\ #2 \\ #3 \end{array}\right)}
+\newcommand{\Vetortri}[3]{\left(\begin{array}{c}
+  \displaystyle #1 \\[5mm]
+  \displaystyle #2 \\[5mm]
+  \displaystyle #3
+\end{array}\right)}
+
+\newcommand{\veci}{\bm{i}}
+\newcommand{\vecj}{\bm{j}}
+\newcommand{\veck}{\bm{k}}
+
+%------------------------------------------------------------------------------%

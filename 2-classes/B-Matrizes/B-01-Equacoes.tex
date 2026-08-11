@@ -1,0 +1,270 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Equações e Funções}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Coordenadas Cartesianas}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Sistema de Coordenadas Cartesianas}
+  \begin{enumerate}[<+->]
+  \setlength{\itemsep}{1em}
+    \item Cada ponto do plano é associado a um par de números reais $(x, y)$
+    \item Cada ``figura'' no plano corresponde a um subconjunto de $\R^2$
+    \item Na orientação convencional, $x$ aponta para a direita e $y$ para cima
+  \end{enumerate}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Sistema de Coordenadas Cartesianas}
+  \centering
+  \includegraphics{B_01_plano_cartesiano}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Funções}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Função}
+  Função é uma relação que associa a cada elementos
+  do domínio um único elemento do contradomínio
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Notação de Função}
+  \begin{align*}
+    f\colon A & \to B \\[-2mm]
+            x & \to f(x)
+  \end{align*}
+  \pause
+  $f$
+  \tabto{10mm}
+  é o nome da função
+
+  \pause
+  $A$
+  \tabto{10mm}
+  é o conjunto domínio
+
+  \pause
+  $B$
+  \tabto{10mm}
+  é o conjunto contradomínio
+
+  \pause
+  $x$
+  \tabto{10mm}
+  é um elemento qualquer de $A$
+
+  \pause
+  $f(x)$
+  \tabto{10mm}
+  é o único elemento de $B$ associado a $x$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Gráfico de uma Função Real}
+  Conjunto de pontos $(x, y) \in \R^2$ tais que \(y = f(x)\)
+
+  \pause
+  \bigskip
+  Para cada $x$, no domínio, existe \emph{um único} $y$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic{Gráfico de uma Função Real}{B_01_grafico_funcao_real}{}
+\framedgraphic{Gráfico de uma Função 2D}{mapa_meteorologico}{}
+\framedgraphic{Gráfico de uma Função 3D}{exemplo-peca-tensao}{}
+
+%------------------------------------------------------------------------------%
+\section{Equações}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Soluções de uma Equação}
+
+  Qualquer expressão da forma
+  \[
+    G(x, y) = 0
+  \]
+
+  \pause
+  Por exemplo,
+  \[
+    x^2 + y^2 = 4^2
+  \]
+
+  \pause
+  Queremos \emph{todos os pares} $(x, y)$ que satisfazem a equação
+
+  \pause
+  \medskip
+  Se faltar, ou sobrar, um, a solução está incompleta e portanto errada
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Soluções de uma Equação}
+  \centering
+  \includegraphics{B_01_grafico_equacao}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Inequações}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Desigualdades}
+  Desigualdades geralmente representam regiões no plano (ou espaço)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Desigualdades}
+  \centering
+  \includegraphics{B_01_grafico_desigualdade}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Linearidade}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Linearidade}
+  A \emph{Álgebra Linear} é a área a Matemática que estuda ``objetos'' lineares
+
+  \pause
+  \bigskip
+  Dizemos que algo é linear quando:
+  \begin{itemize}
+    \item podemos somar
+    \item podemos multiplicar por um escalar (um número)
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equação Linear}
+  Uma equação da forma
+  \[
+    L(x) = 0
+  \]
+  é linear se:
+  \bigskip
+
+  \pause
+  A soma de duas soluções quaisquer também é solução
+
+  \pause
+  \quad Se $\alpha$ e $\beta$ são soluções de $L(x)=0$ então $\alpha+\beta$ também é
+
+  \pause
+  Um múltiplo de uma solução de também é solução
+
+  \pause
+  \quad Se $\beta$ é solução e $a$ é um número então $a\beta$ também é solução
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo -- Equação Linear}
+  A equação
+  \[
+    L(x, y) = 4x + 2y = 0
+  \]
+  \emph{é linear}
+
+  \pause
+  Note que
+  \[
+    \alpha = (1, -2)
+    \quad\text{e}\quad
+    \beta = (-2, 4)
+  \]
+  são soluções,
+  \pause
+  então
+  \[
+    \alpha + \beta
+    \pause
+    = (1, -2) + (-2, 4)
+    \pause
+    = (-1, 2)
+  \]
+  \pause
+  também é solução
+  \[
+    \pause
+    L(-1, 2)
+    \pause
+    = 4(-1) + 2\times 2
+    \pause
+    = -4 + 4
+    \pause
+    = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Exemplo -- Equação Não Linear}
+  A equação
+  \[
+    M(x, y) = 4x^2 + 2y = 0
+  \]
+  \emph{não é linear}
+
+  \pause
+  Note que
+  \[
+    \alpha = (1, -2)
+    \quad\text{e}\quad
+    \beta  = (-1, -2)
+  \]
+  são soluções,
+  \pause
+  porém
+  \[
+    \alpha + \beta
+    \pause
+    = (1, -2) + (-1, -2)
+    \pause
+    = (0, -4)
+  \]
+  \pause
+  não é solução
+  \[
+    \pause
+    M(0, 4)
+    \pause
+    = 4\times 0 + 2\times 4
+    \pause
+    = 0 + 8
+    \pause
+    = 8
+    \pause
+    \neq 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Como Resolver}
+  Saber se uma equação é linear, ou não, determina como resolvê-la
+\end{frame}
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
