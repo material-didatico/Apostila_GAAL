@@ -7,9 +7,9 @@ import shutil as sh
 
 #------------------------------------------------------------------------------#
 
-title      = 'Materiais Didáticos para CFVVI'
-discipline = 'Cálculo de Funções de Várias Variáveis I'
-book_name  = 'Calculo_Varias_Variaveis-1.pdf'
+title      = 'Materiais Didáticos para GAAL'
+discipline = 'Geometria Analítica e Álgebra Linear'
+book_name  = 'Geometria_Analitica.pdf'
 add_book   = False
 
 #------------------------------------------------------------------------------#
