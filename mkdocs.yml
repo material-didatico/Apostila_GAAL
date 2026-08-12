@@ -4,7 +4,7 @@ site_url:  https://material-didatico.github.io/Apostila_GAAL
 
 nav:
   - Material Didático: https://material-didatico.github.io
-  - CFVVI: index.md
+  - GAAL: index.md
 
 theme:
   name:       material
