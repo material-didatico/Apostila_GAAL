@@ -1,0 +1,350 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Operações com Matrizes}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Igualdade, Soma, Subtração e Produto por Escalar}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Igualdade de matrizes}
+  \onslide<+->{Duas matrizes são iguais se}
+  \begin{enumerate}[<+->]
+    \item possuem a mesma ordem
+    \item os elementos correspondentes são iguais
+  \end{enumerate}
+
+  \onslide<+->{%
+  Assim,
+  \[
+    A = B
+  \]}
+  \onslide<+->{%
+  se, e somente se,
+  \[
+    a_{ij} = b_{ij}
+  \]}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/B-04-Operacoes-ex-01}
+\input{ex/B-04-Operacoes-ex-02}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Adição de Matrizes}
+A soma de duas matrizes é definida \emph{apenas} quando elas possuem
+a \emph{mesma ordem}
+
+\pause
+Se
+\[
+  A = \big( a_{ij} \big)_{m\times n}
+  \qquad\text{e}\qquad
+  B = \big( b_{ij} \big)_{m\times n}
+\]
+\pause
+então
+\[
+  A + B
+  \pause
+  = \big( a_{ij} + b_{ij} \big)_{m\times n}
+\]
+\pause
+ou seja, somamos os elementos correspondentes
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/B-04-Operacoes-ex-03}
+\input{ex/B-04-Operacoes-ex-04}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Subtração de Matrizes}
+A subtração só é definida para matrizes de \emph{mesma ordem}
+
+\pause
+Se
+\[
+  A = \big( a_{ij} \big)_{m\times n}
+  \qquad\text{e}\qquad
+  B = \big( b_{ij} \big)_{m\times n}
+\]
+\pause
+\[
+  A - B = \big( a_{ij} - b_{ij} \big)_{m\times n}
+\]
+
+\pause
+Podemos escrever
+\[
+  A - B = A + (-B)
+\]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/B-04-Operacoes-ex-05}
+\input{ex/B-04-Operacoes-ex-06}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Multiplicação por Escalar}
+  Se $c$ é um escalar (número real) e $A$ é uma matriz,
+  \pause
+  então
+  \[
+    cA
+  \]
+  \pause
+  é obtida multiplicando \emph{cada elemento} de $A$ por $c$
+
+  \pause
+  Se
+  \[
+    A = \big( a_{ij}\big)
+  \]
+  \pause
+  então
+  \[
+    cA = \big( ca_{ij} \big)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/B-04-Operacoes-ex-07}
+\input{ex/B-04-Operacoes-ex-08}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedades}
+Sejam $A$ e $B$ matrizes de ordem $m \times n$ e $\lambda_1$, $\lambda_2 \in \R$
+\pause
+\begin{enumerate}[<+->][(i)\;]
+\item $A + B = B + A$                                        \tabto{67mm} comutatividade
+\item $(A + B) + C = A + (B + C)$                            \tabto{67mm} associatividade
+\item $A + \mathcal{O} = A$                                  \tabto{67mm} elemento neutro na adição
+\item $\lambda (A + B) = \lambda A + \lambda B$              \tabto{67mm} distributividade do escalar
+\item $(\lambda_1 + \lambda_2)A = \lambda_1 A + \lambda_2 A$ \tabto{67mm} distributividade da matriz
+\item $0A = \mathcal{O}$
+\item $(\lambda_1 \lambda_2)A = \lambda_1 (\lambda_2 A)$
+\end{enumerate}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/B-04-Operacoes-ex-09}
+\input{ex/B-04-Operacoes-ex-10}
+
+%------------------------------------------------------------------------------%
+\section{Multiplicação}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Produto de Matrizes}
+Se
+\(
+  A_{m\times \emph{n}}
+\)
+\; e \;
+\(
+  B_{\emph{n}\times p}
+\)
+então o produto
+\[
+  AB
+\]
+é definido e resulta em uma matriz
+\[
+  M_{m\times p} = AB
+\]
+
+\medskip
+\emph{Condição}
+\[
+\text{número de colunas de }A
+=
+\text{número de linhas de }B
+\]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição}
+  Dadas duas matrizes $A_{m \times \emph{k}}$ e $B_{\emph{k} \times n}$,
+  \pause
+  podemos definir a \emph{matriz produto}
+  \[
+    C_{m \times n} = AB
+  \]
+  \pause
+  cujos elementos são obtidos pela fórmula
+  \[
+    c_{ij}
+    \pause
+    \;=\; a_{i1} b_{1j} + a_{i2} b_{2j} + \cdots + a_{ik} b_{kj}
+    \pause
+    \;=\; \sum_{l=1}^{k} a_{il} b_{lj}
+  \]
+  \pause
+  para $i = 1, \dots, m$ e $j = 1, \dots, n$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Calculando o Produto}
+Considere
+\[
+  A =
+  \begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix}
+  \qquad
+  B =
+  \begin{pmatrix}
+    e & f \\
+    g & h
+  \end{pmatrix}
+\]
+Então
+\[
+  AB =
+  \begin{pmatrix}
+    ae+bg & af+bh \\
+    ce+dg & cf+dh
+  \end{pmatrix}
+\]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedades do Produto Matricial}
+
+\begin{enumerate}[<+->][(i)\;]
+\itemsep=1em
+\item $A(BC) = (AB)C$
+      \tabto{85mm} associatividade
+\item \(I_m A_{m \times n} = A_{m \times n}\)
+      \quad e \quad
+      \(A_{m \times n} I_n = A_{m \times n}\)
+      \tabto{85mm} elemento neutro
+\item $A(B + C) = AB + AC$
+\item $(B + C)A = BA + CA$
+\item $\alpha(AB) = (\alpha A)B = A(\alpha B)$
+      \tabto{85mm} para qualquer escalar $\alpha$
+\end{enumerate}
+
+\bigskip
+\onslide<+->{\emph{Atenção}: em geral \quad
+\(
+  AB \neq BA
+\)}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/B-04-Operacoes-ex-11}
+\input{ex/B-04-Operacoes-ex-12}
+\input{ex/B-04-Operacoes-ex-13}
+
+%------------------------------------------------------------------------------%
+\section{Transposição}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Matriz Transposta}
+  A transposta de uma matriz $A$ é obtida trocando suas
+  linhas por colunas
+
+  \pause
+  A transposta de $A$ é indicada por
+  \[
+    A^T
+    \qquad\text{ ou }\qquad
+    A^t
+  \]
+
+  \pause
+  Se
+  \[
+    A = \big( a_{ij} \big)
+  \]
+  \pause
+  então
+  \[
+    A^T = A^t = \big( a_{ji} \big)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedades da Transposição}
+  \begin{enumerate}[<+->][(i)\;]
+  \itemsep=1.3em
+    \item $\left(A^t\right)^t = A$
+    \item $(A + B)^{t} = A^{t} + B^{t}$
+    \item $(AB)^{t} = B^t A^t$
+    \item $(\alpha A)^{t} = \alpha A^{t} $
+  \end{enumerate}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/B-04-Operacoes-ex-14}
+\input{ex/B-04-Operacoes-ex-15}
+\input{ex/B-04-Operacoes-ex-16}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Matrizes Simétricas}
+  Uma matriz quadrada, $A_n$, é dita \emph{simétrica},
+  \pause
+  se
+  \[
+    A = A^t
+  \]
+  \pause
+  isto é, se
+  \quad
+  \(
+    a_{ij} = a_{ji}
+    \qquad
+    \forall \quad 1 \leq i,j \leq n
+  \)
+
+  \pause
+  \bigskip
+  Ela á \emph{antissimétrica},
+  \pause
+  se
+  \[
+    A = -A^t
+  \]exemplo
+  \pause
+  isto é, se
+  \quad
+  \(
+    a_{ij} = -a_{ji}
+    \qquad
+    \forall \quad 1 \leq i,j \leq n
+  \)
+\end{frame}
+
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+
+
+
+
+\begin{frame}{Exercício: matriz transposta}
+
+\end{frame}
+

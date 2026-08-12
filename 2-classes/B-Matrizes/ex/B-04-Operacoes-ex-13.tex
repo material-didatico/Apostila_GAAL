@@ -1,0 +1,60 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+Calcule $AB$, onde
+\(
+  A=
+  \begin{pmatrix}
+    2 & -1 & 3 \\
+    0 & 4  & 1
+  \end{pmatrix}
+\)
+e
+\(
+  B=
+  \begin{pmatrix}
+    1  & 2 \\
+    3  & 0 \\
+    -1 & 4
+  \end{pmatrix}
+\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+Observe que a matriz
+\[
+  M = A_{2\times3}B_{3\times2}
+\]
+é definida e produz uma matriz $2\times2$
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{align*}
+  \onslide<+->{M = AB}
+  \onslide<+->{& =
+  \begin{pmatrix}
+    2 & -1 & 3 \\
+    0 & 4  & 1
+  \end{pmatrix}
+  \begin{pmatrix}
+    1  & 2 \\
+    3  & 0 \\
+    -1 & 4
+  \end{pmatrix}
+  \\[2mm]}
+  \onslide<+->{& =
+  \begin{pmatrix}
+    2 \times 1 +       (-1)3 + 3(-1) & 2\times 2 +     (-1)0 + 3 \times 4 \\
+    0 \times 1 +  4 \times 3 + 1(-1) & 0\times 2 + 4\times 0 + 1 \times 4
+  \end{pmatrix}
+  \\[2mm]}
+  \onslide<+->{& =
+  \begin{pmatrix}
+  -4 & 16\\
+  11 & 4
+  \end{pmatrix}}
+\end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

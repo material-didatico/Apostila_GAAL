@@ -21,76 +21,112 @@
 %------------------------------------------------------------------------------%
 \begin{frame}{Notação}
 \[
-  A_{4 \times 6}
+  A_{3 \times 5}
   \pause
-  = \left[
-  \begin{array}{cccccc}
-    80 & 38 & 24 & 8 & 6 & 29 \\
-    70 & 38 & 20 & 10 & 8 & 19\\
-    69 & 38 & 21 & 6 & 11 & 12 \\
-    69 & 38 & 19 & 12 & 7 & 18
-  \end{array}
-  \right]
+  \;=\;
+  \begin{bmatrix}
+    80 & 38 & 24 & 8  & 6  \\
+    70 & 38 & 20 & 10 & 8  \\
+    69 & 38 & 21 & 6  & 11
+  \end{bmatrix}
   \pause
-  =
-  \left(
-  \begin{array}{cccccc}
-    80 & 38 & 24 & 8 & 6 & 29 \\
-    70 & 38 & 20 & 10 & 8 & 19\\
-    69 & 38 & 21 & 6 & 11 & 12 \\
-    69 & 38 & 19 & 12 & 7 & 18
-  \end{array}
-  \right)
+  \;=\;
+  \begin{pmatrix}
+    80 & 38 & 24 & 8  & 6  \\
+    70 & 38 & 20 & 10 & 8  \\
+    69 & 38 & 21 & 6  & 11
+  \end{pmatrix}
 \]
+
 \pause
-Nomenclatura
-\begin{itemize}
-  \item Cada sequência de elementos dispostos na horizontal é uma \textbf{linha} da matriz. \\
-    \pause
-    A primeira linha da matriz acima é $[80 \ 38 \ 24 \ 8 \ 6 \ 29]$.
+$A$ é o nome da matriz
 
-    \pause
+\pause
+3 e 5 são os índices e indicam a ordem da matriz
+\end{frame}
 
-  \item Cada sequência de elementos dispostos na vertical é uma \textbf{coluna} da matriz. \\
-    \pause
-    A quarta coluna da matriz acima é $\left[ \begin{array}{c}8 \\
-    10 \\
-    6 \\
-    12
-    \end{array} \right]$
-\end{itemize}
+%------------------------------------------------------------------------------%array
+\begin{frame}{Notação}
+Elementos dispostos na horizontal compõem uma \emph{linha} da matriz
+
+\pause
+A primeira linha da matriz $A$ é
+\(
+  [80 \; 38 \; 24 \; 8 \; 6]
+\)
+
+\pause
+\bigskip
+\bigskip
+Elementos dispostos na vertical compõem uma \emph{coluna} da matriz
+
+\pause
+A quarta coluna da matriz $A$ é
+\(
+\begin{bmatrix}
+  8  \\
+  10 \\
+  6  \\
+  12
+\end{bmatrix}
+\)
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Notação}
-\begin{itemize}[<+->]
-  \item Na notação, $A_{m \times n}$ \\
-    $A$ é o nome da matriz \\
-    $m$ e $n$ são os índices e indicam a ordem da matriz
+  Elementos da matriz são denotados por $a_{ij}$
 
-  \item Elementos da matriz são denotados por $a_{ij}$
+  \pause
   \[
     a_{13} = 24\qquad
     a_{31} = 69\qquad
-    a_{44} = 12\qquad
-    a_{46} = 18
+    a_{44} = 12
   \]
-  \item A matriz pode ser denotada por
+
+  \pause
+  \bigskip
+  A matriz pode ser denotada por
   \[
      A = [a_{ij}]_{m \times n}
   \]
-\end{itemize}
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Matrizes Especiais}
-\begin{itemize}[<+->]
-  \item Uma matriz $A_{n \times n}$ é dita matriz quadrada
-  \item Uma matriz $\mathcal{O} = [0]_{m\times n}$, que tem todos os elementos nulos, é uma matriz nula
-  \item Uma matriz $B_{1\times n}$ é uma matriz coluna
-  \item Uma matriz $C_{m\times 1}$ é uma matriz linha
-  \item entre outros que veremos adiante
-\end{itemize}
+\begin{description}[<+->]
+  \item[Matriz Quadrada]   \tabto{13mm} matriz com o mesmo número de linhas e colunas
+                                       \onslide<+->{\emph{$A_n = A_{n \times n}$}}
+  \item[Matrix Coluna]     \tabto{13mm} matriz com uma única coluna $B_{1\times n}$
+  \item[Matriz Linha]      \tabto{13mm} matriz com uma única linha $C_{m\times 1}$
+  \item[Matriz Nula]       \tabto{13mm} matriz \emph{$\mathcal{O} = [0]_{m\times n}$},
+                                        com todos os elementos nulos
+  \item[Matrix Identidade] \tabto{13mm} matriz com uns na diagonal
+\end{description}
+\[
+  \onslide<+->{I_k}
+  \onslide<+->{= \big[\delta_{ij}\big]_{k \times k}}
+  \onslide<+->{= \begin{pmatrix}
+    1      & 0      & \cdots & 0      \\
+    0      & 1      & \cdots & 0      \\
+    \vdots & \vdots & \ddots & \vdots \\
+    0      & 0      & \cdots & 1
+  \end{pmatrix}}
+  \qquad\qquad
+  \onslide<+->{\delta_{ij} = \begin{cases}
+  1 & i = j \\
+  0 & i \neq j
+  \end{cases}}
+\]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Vetores e Escalares}
+Uma matriz coluna é considerada um \emph{vetor}
+
+\pause
+\bigskip
+\bigskip
+Um número é chamado de \emph{escalar}
 \end{frame}
 
 %------------------------------------------------------------------------------%
