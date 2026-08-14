@@ -1,0 +1,59 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+Determine os valores de $x$, $y$, $z$ e $w$ para que a matriz
+\[
+A=
+  \begin{pmatrix}
+    0  & x & 4 \\
+    -3 & 0 & y \\
+    z  & 2 & w
+  \end{pmatrix}
+\]
+seja antissimétrica
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}
+\column{0.4\linewidth}
+\begin{align*}
+  \onslide<+->{A & = -A^t}
+  \\
+  \onslide<+->{
+  \begin{pmatrix}
+    0  & x & 4 \\
+    -3 & 0 & y \\
+    z  & 2 & w
+  \end{pmatrix}
+  & = -
+  \begin{pmatrix}
+    0 & -3 &  z \\
+    x &  0 &  2 \\
+    4 &  y &  w
+  \end{pmatrix}}
+  \\
+  \onslide<+->{
+  \begin{pmatrix}
+    0  & x & 4 \\
+    -3 & 0 & y \\
+    z  & 2 & w
+  \end{pmatrix}
+  & =
+  \begin{pmatrix}
+     0 &  3 & -z \\
+    -x &  0 & -2 \\
+    -4 & -y & -w
+  \end{pmatrix}}
+\end{align*}
+\column{0.4\linewidth}
+\begin{align*}
+  \onslide<+->{x & = 3 \\}
+  \onslide<+->{y & = -2 \\}
+  \onslide<+->{z & = -4 \\[7mm]}
+  \onslide<+->{w & = -w \\}
+  \onslide<+->{w & = 0}
+\end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

@@ -30,6 +30,8 @@
   se, e somente se,
   \[
     a_{ij} = b_{ij}
+    \qquad\qquad
+    \forall i = 1, \dots, m \quad\text{e}\quad j = 1, \dots, n
   \]}
 \end{frame}
 
@@ -120,16 +122,17 @@ Podemos escrever
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Propriedades}
-Sejam $A$ e $B$ matrizes de ordem $m \times n$ e $\lambda_1$, $\lambda_2 \in \R$
+Sejam $A$ e $B$ matrizes de ordem $m \times n$ e $\alpha$, $\beta \in \R$
 \pause
 \begin{enumerate}[<+->][(i)\;]
-\item $A + B = B + A$                                        \tabto{67mm} comutatividade
-\item $(A + B) + C = A + (B + C)$                            \tabto{67mm} associatividade
-\item $A + \mathcal{O} = A$                                  \tabto{67mm} elemento neutro na adição
-\item $\lambda (A + B) = \lambda A + \lambda B$              \tabto{67mm} distributividade do escalar
-\item $(\lambda_1 + \lambda_2)A = \lambda_1 A + \lambda_2 A$ \tabto{67mm} distributividade da matriz
-\item $0A = \mathcal{O}$
-\item $(\lambda_1 \lambda_2)A = \lambda_1 (\lambda_2 A)$
+  \setlength\itemsep{1.3ex}
+  \item $A + B = B + A$                               \tabto{67mm} comutatividade
+  \item $(A + B) + C = A + (B + C)$                   \tabto{67mm} associatividade
+  \item $A + \mathcal{O} = A$                         \tabto{67mm} elemento neutro na adição
+  \item $\alpha (A + B) = \alpha A + \alpha B$        \tabto{67mm} distributividade do escalar
+  \item $(\alpha + \beta)A = \alpha A + \beta A$      \tabto{67mm} distributividade da matriz
+  \item $0A = \mathcal{O}$
+  \item $(\alpha \beta)A = \alpha (\beta A)$
 \end{enumerate}
 \end{frame}
 
@@ -144,21 +147,24 @@ Sejam $A$ e $B$ matrizes de ordem $m \times n$ e $\lambda_1$, $\lambda_2 \in \R$
 \begin{frame}{Produto de Matrizes}
 Se
 \(
-  A_{m\times \emph{n}}
+  A_{m\times \emph{k}}
 \)
 \; e \;
 \(
-  B_{\emph{n}\times p}
+  B_{\emph{k}\times n}
 \)
+\pause
 então o produto
 \[
   AB
 \]
+\pause
 é definido e resulta em uma matriz
 \[
-  M_{m\times p} = AB
+  C_{m\times n} = AB
 \]
 
+\pause
 \medskip
 \emph{Condição}
 \[
@@ -190,7 +196,7 @@ então o produto
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Calculando o Produto}
+\begin{frame}{Matrizes de Ordem $2\times 2$}
 Considere
 \[
   A =
@@ -205,8 +211,10 @@ Considere
     g & h
   \end{pmatrix}
 \]
+\pause
 Então
 \[
+  \setlength{\arraycolsep}{12pt}
   AB =
   \begin{pmatrix}
     ae+bg & af+bh \\
@@ -214,6 +222,12 @@ Então
   \end{pmatrix}
 \]
 \end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/B-04-Operacoes-ex-11}
+\input{ex/B-04-Operacoes-ex-12}
+\input{ex/B-04-Operacoes-ex-13}
+\input{ex/B-04-Operacoes-ex-14}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Propriedades do Produto Matricial}
@@ -240,9 +254,25 @@ Então
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\input{ex/B-04-Operacoes-ex-11}
-\input{ex/B-04-Operacoes-ex-12}
-\input{ex/B-04-Operacoes-ex-13}
+\begin{frame}{Produto de Hadamard ou Produto Elemento a Elemento}
+Para matrizes de mesma ordem,
+\[
+  A = \big( a_{ij} \big)_{m\times n}
+  \qquad\text{e}\qquad
+  B = \big( b_{ij} \big)_{m\times n}
+\]
+\pause
+o produto de Hadamard é
+\[
+  A\circ B = \big( a_{ij} b_{ij} \big)
+\]
+
+\pause
+Este produto é implementado em algumas linguagens de programação
+
+\pause
+\emph{Não utilizaremos} este produto nesta disciplina
+\end{frame}
 
 %------------------------------------------------------------------------------%
 \section{Transposição}
@@ -284,9 +314,10 @@ Então
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\input{ex/B-04-Operacoes-ex-14}
 \input{ex/B-04-Operacoes-ex-15}
 \input{ex/B-04-Operacoes-ex-16}
+\input{ex/B-04-Operacoes-ex-17}
+\input{ex/B-04-Operacoes-ex-18}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Matrizes Simétricas}
@@ -312,7 +343,7 @@ Então
   se
   \[
     A = -A^t
-  \]exemplo
+  \]
   \pause
   isto é, se
   \quad
@@ -322,29 +353,23 @@ Então
     \forall \quad 1 \leq i,j \leq n
   \)
 \end{frame}
-
+%------------------------------------------------------------------------------%
+\input{ex/B-04-Operacoes-ex-19}
+\input{ex/B-04-Operacoes-ex-20}
 
 %------------------------------------------------------------------------------%
-%\section{Lista Mínima}
-%
-%%------------------------------------------------------------------------------%
-%\begin{frame}{Lista Mínima}
-%  \begin{enumerate}
-%    \item
-%  \end{enumerate}
-%
-%  \vfill
-%  Atenção: A prova é baseada no livro, não nas apresentações
-%\end{frame}
+\section{Lista Mínima}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lista Mínima}
+  \begin{enumerate}
+    \item
+  \end{enumerate}
+
+  \vfill
+  Atenção: A prova é baseada no livro, não nas apresentações
+\end{frame}
 
 %------------------------------------------------------------------------------%
 \end{document}
 %------------------------------------------------------------------------------%
-
-
-
-
-\begin{frame}{Exercício: matriz transposta}
-
-\end{frame}
-
