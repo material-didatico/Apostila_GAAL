@@ -1,0 +1,193 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Escalonamento de Matrizes}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Sistemas Equivalentes}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Sistemas Equivalentes}
+  Dois sistemas lineares são equivalentes
+  \\ \pause
+  quando possuem as mesmas soluções
+
+  \bigskip
+  \pause
+  Operações elementares sobre linhas produzem sistemas equivalentes
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Operações Elementares Sobre Linhas}
+\begin{enumerate}[<+->]
+    \item Troca de duas linhas
+    \[
+      L_i\leftrightarrow L_j
+    \]
+
+    \item Multiplicação de uma linha por um número não nulo
+    \[
+      L_i\leftarrow kL_i,
+      \qquad k\neq0
+    \]
+
+    \item Adição de um múltiplo de uma linha a outra
+    \[
+      L_i\leftarrow L_i+kL_j
+    \]
+\end{enumerate}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/C-02-Escalonamento-ex-01}
+\input{ex/C-02-Escalonamento-ex-02}
+\input{ex/C-02-Escalonamento-ex-03}
+
+%------------------------------------------------------------------------------%
+\section{Escalonamento de Matrizes}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Por que escalonar uma matriz?}
+
+\onslide<+->{Transformar uma matriz em uma forma \emph{mais simples}} \\
+\onslide<+->{preservando informações importantes}
+
+\medskip
+
+\onslide<+->{Aplicações}
+\begin{itemize}[<+->]
+    \item resolução de sistemas lineares
+    \item determinação do posto de uma matriz
+    \item identificação da existência e quantidade de soluções
+    \item cálculo da inversa de uma matriz
+    \item análise de dependência linear
+\end{itemize}
+
+\medskip
+\onslide<+->{%
+Utilizar operações elementares para produzir
+\emph{zeros em posições estratégicas}
+}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Matriz Escalonada}
+\onslide<+->{Uma matriz está em \textbf{forma escalonada} quando:}
+\begin{enumerate}[<+->]
+    \item todas as linhas nulas estão abaixo das linhas não nulas
+
+    \item o \emph{pivo} (primeiro elemento não nulo da linha)
+    está à direita do pivo da linha anterior
+
+    \item todos os elementos abaixo de um pivô são nulos
+\end{enumerate}
+
+\medskip
+\onslide<+->{Exemplo de matriz escalonada
+\qquad
+\(
+\begin{pmatrix}
+  \emph{1} & 2        & 1        & 3  \\
+  \z       & \emph{1} & 4        & 2  \\
+  \z       & \z       & \emph{2} & 5  \\
+  \z       & \z       & \z       & \z
+\end{pmatrix}
+\)}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/C-02-Escalonamento-ex-04}
+\input{ex/C-02-Escalonamento-ex-05}
+\input{ex/C-02-Escalonamento-ex-06}
+
+%------------------------------------------------------------------------------%
+\section{Escalonamento de Sistemas Lineares}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Sistemas Lineares}
+O sistema
+\[
+  \begin{cases}
+    a_{11} x + a_{12} y + a_{13} z = b_1 \\
+    a_{21} x + a_{22} y + a_{23} z = b_2 \\
+    a_{21} x + a_{23} y + a_{33} z = b_3
+  \end{cases}
+\]
+\pause
+Pode ser representado matricialmente como
+\[
+  A {\bm x} = {\bm b}
+\]
+\pause
+onde
+\[
+  A =
+  \begin{bmatrix}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23} \\
+    a_{21} & a_{23} & a_{33}
+  \end{bmatrix}
+  \pause
+  \qquad
+  {\bm x} =
+  \begin{bmatrix}
+    x \\ y \\ z
+  \end{bmatrix}
+  \pause
+  \qquad
+  {\bm b} =
+  \begin{bmatrix}
+    b_1 \\ b_2 \\ b_3
+  \end{bmatrix}
+\]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Matriz Aumentada}
+  \emph{Matriz Aumentada} do sistema \(A{\bm x} = {\bm b}\)
+  \pause
+  \[
+    \; [ \, A \, | \, {\bm b} \, ]
+  \]
+  \[
+    \pause
+    \left[\begin{array}{rrr|r}
+      a_{11} & a_{12} & a_{13} & b_1 \\
+      a_{21} & a_{22} & a_{23} & b_2 \\
+      a_{21} & a_{23} & a_{33} & b_3
+    \end{array}\right]
+  \]
+
+  \pause
+  \medskip
+  Ao escalonar a matriz aumentada obtemos \\
+  uma versão simplificada do sistema linear original
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/C-02-Escalonamento-ex-07}
+\input{ex/C-02-Escalonamento-ex-08}
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

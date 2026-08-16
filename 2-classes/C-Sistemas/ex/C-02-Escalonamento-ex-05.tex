@@ -1,0 +1,186 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+Escalone a matriz
+\(
+  A=
+  \begin{pmatrix}
+    1  & 2  & -1 \\
+    2  & 5  & 1  \\
+    -1 & -1 & 2
+  \end{pmatrix}
+\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Utilizamos operações elementares sobre as linhas\\
+  até obter uma matriz em forma escalonada
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Primeira Coluna}
+\begin{columns}
+\column{0.3\linewidth}
+  \[
+  \begin{pmatrix}
+    1  & 2  & -1 \\
+    2  & 5  & 1  \\
+    -1 & -1 & 2
+  \end{pmatrix}
+  \]
+  \pause
+\column{0.7\linewidth}
+  Eliminamos os elementos abaixo do primeiro pivô
+  \\ \pause
+  \(L_2 \leftarrow L_2-2 L_1\)
+  \\ \pause
+  \(L_3\leftarrow L_3+L_1\)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  L'_2
+  \;=\;
+  L_2 - 2 L_1
+  \pause
+  \;=\;
+  \begin{pmatrix}
+    2  & 5  & 1
+  \end{pmatrix}
+  - 2
+  \begin{pmatrix}
+    1  & 2  & -1
+  \end{pmatrix}
+  \pause
+  \;=\;
+  \begin{pmatrix}
+    0 & 1 & 3
+  \end{pmatrix}
+\]
+\[
+  \pause
+  L'_3
+  \;=\;
+  L_3 + L_1
+  \pause
+  \;=\;
+  \begin{pmatrix}
+    -1 & -1 & 2
+  \end{pmatrix}
+  +
+  \begin{pmatrix}
+    1  & 2  & -1
+  \end{pmatrix}
+  \pause
+  \;=\;
+  \begin{pmatrix}
+    0 & 1 & 1
+  \end{pmatrix}
+\]
+\pause
+\[
+  \begin{pmatrix}
+    1 & 2 & -1 \\
+    0 & 1 & 3  \\
+    0 & 1 & 1
+  \end{pmatrix}
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Segunda Coluna}
+\begin{columns}
+\column{0.3\linewidth}
+  \[
+    \begin{pmatrix}
+      1 & 2 & -1 \\
+      0 & 1 & 3  \\
+      0 & 1 & 1
+    \end{pmatrix}
+  \]
+  \pause
+\column{0.7\linewidth}
+  Eliminamos os elementos abaixo do segundo pivô
+  \\ \pause
+  \(L_3\leftarrow L_3-L_2\)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  L'_3
+  \;=\;
+  L_3 - L_2
+  \pause
+  \;=\;
+  \begin{pmatrix}
+      0 & 1 & 1
+  \end{pmatrix}
+  -
+  \begin{pmatrix}
+    0 & 1 & 3
+  \end{pmatrix}
+  \pause
+  \;=\;
+  \begin{pmatrix}
+    0 & 0 & -2
+  \end{pmatrix}
+\]
+
+\pause
+\[
+  \begin{pmatrix}
+    1 & 2 & -1 \\
+    0 & 1 & 3  \\
+    0 & 0 & -2
+  \end{pmatrix}
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+Portanto, uma forma escalonada de $A$ é
+\[
+  \begin{pmatrix}
+    1 & 2 & -1 \\
+    0 & 1 & 3  \\
+    0 & 0 & -2
+  \end{pmatrix}
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Notação Resumida}
+\[
+\begin{NiceArray}{rrrl}[columns-width=3ex]
+    1 &  2 & -1  & \\
+    2 &  5 &  1  & \\
+   -1 & -1 &  2  &
+  \CodeAfter
+    \SubMatrix[{1-1}{3-3}]
+  \end{NiceArray}
+\]
+
+\pause
+\[
+  \begin{NiceArray}{rrrl}[columns-width=3ex]
+    \hpm 1 & 2 & -1 & \\
+         0 & 1 &  3 & \quad L_2 \leftarrow L_2-2 L_1 \\
+         0 & 1 &  1 & \quad L_3 \leftarrow L_3+L_1
+  \CodeAfter
+    \SubMatrix[{1-1}{3-3}]
+  \end{NiceArray}
+\]
+
+\pause
+\[
+  \begin{NiceArray}{rrrl}[columns-width=3ex]
+    \hpm 1 & 2 & -1 & \\
+         0 & 1 &  3 & \\
+         0 & 0 & -2 & \quad L_3\leftarrow L_3-L_2
+  \CodeAfter
+    \SubMatrix[{1-1}{3-3}]
+  \end{NiceArray}
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%

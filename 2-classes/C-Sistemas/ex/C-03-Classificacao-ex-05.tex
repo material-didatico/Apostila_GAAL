@@ -1,0 +1,84 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+Use escalonamento para analisar o sistema
+\[
+  \systeme{
+   x +  y = 4,
+  2x + 2y = 8
+  }
+\]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento}
+\begin{columns}
+\column{0.4\linewidth}
+  \[\;\;\,
+    \left[
+    \begin{array}{cc|c}
+      1 & 1 & 4 \\
+      2 & 2 & 8
+    \end{array}
+    \right]
+  \]
+  \pause
+\column{0.6\linewidth}
+  Aplicamos
+  \\ \pause
+  \(
+    L_2 \leftarrow L_2 - 2 L_1
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  L'_2
+  \;=\;
+  L_2 - 2 L_1
+  \pause
+  \;=\;
+  \left[
+  \begin{array}{cc|c}
+    2 & 2 & 8
+  \end{array}
+  \right]
+  - 2
+  \left[
+  \begin{array}{cc|c}
+    1 & 1 & 4
+  \end{array}
+  \right]
+  \pause
+  \;=\;
+  \left[
+  \begin{array}{cc|c}
+    0 & 0 & 0
+  \end{array}
+  \right]
+\]
+
+\pause
+\[
+\left[
+\begin{array}{cc|c}
+  1 & 1 & 4 \\
+  0 & 0 & 0
+\end{array}
+\right]
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+A segunda linha representa
+\[
+0 = 0
+\]
+
+\pause
+\bigskip
+Portanto, o sistema possui \emph{infinitas} soluções
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

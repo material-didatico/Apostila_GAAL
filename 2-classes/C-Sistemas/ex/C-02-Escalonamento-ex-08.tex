@@ -1,0 +1,281 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Resolva o sistema, utilizando escalonamento,
+  \[
+    \systeme{
+       x +  y + z = 6,
+      2x -  y + z = 3,
+       x + 2y - z = 2}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Matriz Aumentada}
+  Matriz aumentada
+  \[
+    \left[
+    \begin{array}{ccc|c}
+      1 & 1  & 1  & 6 \\
+      2 & -1 & 1  & 3 \\
+      1 & 2  & -1 & 2
+    \end{array}
+    \right]
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento do Sistema}
+\begin{columns}
+\column{0.4\linewidth}
+  \[\;\;\,
+    \left[
+    \begin{array}{ccc|c}
+      1 & 1  & 1  & 6 \\
+      2 & -1 & 1  & 3 \\
+      1 & 2  & -1 & 2
+    \end{array}
+    \right]
+  \]
+  \pause
+\column{0.6\linewidth}
+  Aplicamos
+  \\ \pause
+  \(
+    L_2 \leftarrow L_2 - 2 L_1
+  \)
+  \\ \pause
+  \(
+    L_3 \leftarrow L_3 - L_1
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  L'_2
+  \;=\;
+  L_2 - 2 L_1
+  \pause
+  \;=\;
+  \left[
+  \begin{array}{ccc|c}
+    2 & -1 & 1  & 3
+  \end{array}
+  \right]
+  - 2
+  \left[
+  \begin{array}{ccc|c}
+    1 & 1  & 1  & 6
+  \end{array}
+  \right]
+  \pause
+  \;=\;
+  \left[
+  \begin{array}{ccc|c}
+    0 & -3 & -1 & -9
+  \end{array}
+  \right]
+\]
+\[
+  \pause
+  L'_3
+  \;=\;
+    L_3 - L_1
+  \pause
+  \;=\;
+  \left[
+  \begin{array}{ccc|c}
+    1 & 2  & -1 & 2
+  \end{array}
+  \right]
+  -
+  \left[
+  \begin{array}{ccc|c}
+    1 & 1  & 1  & 6
+  \end{array}
+  \right]
+  \pause
+  \;=\;
+  \left[
+  \begin{array}{ccc|c}
+    0 & 1  & -2 & -4
+  \end{array}
+  \right]
+\]
+
+\pause
+\[
+  \left[
+  \begin{array}{ccc|c}
+    1 & 1  & 1  & 6  \\
+    0 & -3 & -1 & -9 \\
+    0 & 1  & -2 & -4
+  \end{array}
+  \right]
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento do Sistema}
+\begin{columns}
+\column{0.4\linewidth}
+  \[\;\;\,
+    \left[
+    \begin{array}{ccc|c}
+      1 & 1  & 1  & 6  \\
+      0 & -3 & -1 & -9 \\
+      0 & 1  & -2 & -4
+    \end{array}
+    \right]
+  \]
+  \pause
+\column{0.6\linewidth}
+  Trocamos a segunda e terceira linhas
+  \\
+  \(
+    L_2\leftrightarrow L_3
+  \)
+\end{columns}
+
+\pause
+\[
+  \left[
+  \begin{array}{ccc|c}
+    1 & 1  & 1  & 6  \\
+    0 & 1  & -2 & -4 \\
+    0 & -3 & -1 & -9
+  \end{array}
+  \right]
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento do Sistema}
+\begin{columns}
+\column{0.4\linewidth}
+  \[\;\;\,
+    \left[
+    \begin{array}{ccc|c}
+      1 & 1  & 1  & 6  \\
+      0 & 1  & -2 & -4 \\
+      0 & -3 & -1 & -9
+    \end{array}
+    \right]
+  \]
+  \pause
+\column{0.6\linewidth}
+  Aplicamos
+  \\ \pause
+  \(
+    L_3 \leftarrow L_3 + 3 L_2
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  L'_3
+  \;=\;
+    L_3 + 3 L_2
+  \pause
+  \;=\;
+  \left[
+  \begin{array}{ccc|c}
+    0 & -3 & -1 & -9
+  \end{array}
+  \right]
+  -
+  \left[
+  \begin{array}{ccc|c}
+    0 & 1  & -2 & -4
+  \end{array}
+  \right]
+\]
+\[
+  \pause
+  \hphantom{L'_3}
+  \;=\;
+  \left[
+  \begin{array}{ccc|c}
+    0 & 0 & -7 & -21
+  \end{array}
+  \right]
+\]
+
+\pause
+\[
+  \left[
+  \begin{array}{ccc|c}
+    1 & 1 & 1  & 6   \\
+    0 & 1 & -2 & -4  \\
+    0 & 0 & -7 & -21
+  \end{array}
+  \right]
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Sistema Linear Escalonado}
+Matriz aumentada do sistema escalonado
+\[
+  \left[
+  \begin{array}{ccc|c}
+    1  & 1  & 1  & 6   \\
+    \z & 1  & -2 & -4  \\
+    \z & \z & -7 & -21
+  \end{array}
+  \right]
+\]
+
+\pause
+Sistema linear escalonado
+\[
+  \systeme{
+    x + y +  z =  6,
+        y - 2z = -4,
+          - 7z = -21}
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Substituição Retroativa}
+\begin{columns}[t]
+\column{0.26\linewidth}
+\onslide<+->{\centerline{Última linha}}
+\begin{align*}
+  \onslide<+->{-7 z & = -21} \\
+  \onslide<+->{z    & = 3}
+\end{align*}
+\column{0.27\linewidth}
+\onslide<+->{\centerline{Segunda linha}}
+\begin{align*}
+  \onslide<+->{y -2 z        & = -4} \\
+  \onslide<+->{y -2 \times 3 & = -4} \\
+  \onslide<+->{y -6          & = -4} \\
+  \onslide<+->{y             & = 2}
+\end{align*}
+\column{0.4\linewidth}
+\onslide<+->{\centerline{Primeira linha}}
+\begin{align*}
+  \onslide<+->{x + y + z & = 6} \\
+  \onslide<+->{x + 2 + 3 & = 6} \\
+  \onslide<+->{x         & = 1}
+\end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+A solução do sistema é
+\(
+  {\bm x}
+  \;=\;
+  \begin{bmatrix}
+    x \\ y \\ z
+  \end{bmatrix}
+  \;=\;
+  \begin{bmatrix}
+    1 \\ 2 \\ 3
+  \end{bmatrix}
+\)
+\end{resolution}
+
+%------------------------------------------------------------------------------%

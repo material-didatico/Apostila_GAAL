@@ -1,0 +1,60 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Operação elementar: \emph{combinação de linhas}
+
+  Considerando
+  \(
+    A =
+    \begin{pmatrix}
+      1 & 2 & 3 \\
+      2 & 5 & 7
+    \end{pmatrix}
+  \)
+
+  Produza um zero abaixo do primeiro pivô, usando
+  \[
+    L_2\leftarrow L_2-2L_1
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\[
+  \begin{pmatrix}
+    1 & 2 & 3 \\
+    2 & 5 & 7
+  \end{pmatrix}
+\]
+
+\pause
+\[
+  L'_2
+  \pause
+  \;=\;
+   L_2 - 2L_1
+   \pause
+  \;=\;
+  \begin{pmatrix}
+    2 & 5 & 7
+  \end{pmatrix}
+  -
+  2\begin{pmatrix}
+    1 & 2 & 3
+  \end{pmatrix}
+  \pause
+  \;=\;
+  \begin{pmatrix}
+    0 & 1 & 1
+  \end{pmatrix}
+\]
+
+\pause
+\[
+  \begin{pmatrix}
+    1 & 2 & 3 \\
+    0 & 1 & 1
+  \end{pmatrix}
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%

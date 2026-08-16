@@ -1,0 +1,75 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+Use escalonamento para analisar o sistema
+\[
+  \systeme{
+     x + y = 4,
+    2x - y = 1
+  }
+\]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento}
+\begin{columns}
+\column{0.4\linewidth}
+  \[\;\;\,
+    \left[
+    \begin{array}{cc|c}
+      1 &  1 & 4 \\
+      2 & -1 & 1
+    \end{array}
+    \right]
+  \]
+  \pause
+\column{0.6\linewidth}
+  Aplicamos
+  \\ \pause
+  \(
+    L_2 \leftarrow L_2 - 2 L_1
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  L'_2
+  \;=\;
+  L_2 - 2 L_1
+  \pause
+  \;=\;
+  \left[
+  \begin{array}{cc|c}
+    2 & -1 & 1
+  \end{array}
+  \right]
+  - 2
+  \left[
+  \begin{array}{cc|c}
+    1 & 1 & 4
+  \end{array}
+  \right]
+  \pause
+  \;=\;
+  \left[
+  \begin{array}{cc|c}
+    0 & -3 & -7
+  \end{array}
+  \right]
+\]
+
+\pause
+\[
+\left[
+\begin{array}{cc|c}
+  1 &  1 & 4 \\
+  0 & -3 & -7
+\end{array}
+\right]
+\]
+
+\pause
+O escalonamento produz dois pivôs e, portanto, uma única solução
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

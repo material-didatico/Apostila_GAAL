@@ -1,0 +1,265 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Utilize o escalonamento para resolver o sistema linear
+  \[
+    \systeme{
+       x + 2y -  z = 3,
+      2x + 5y +  z = 8,
+      -x - y  + 2z = 1
+      }
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Matriz Aumentada}
+\[
+  A = \left[
+  \begin{array}{ccc}
+    1  & 2  & -1  \\
+    2  & 5  & 1   \\
+    -1 & -1 & 2
+  \end{array}
+  \right]
+  \pause
+  \qquad\qquad
+  {\bm b} = \left[
+  \begin{array}{ccc|c}
+     3 \\
+     8 \\
+     1
+  \end{array}
+  \right]
+\]
+
+\pause
+Matriz aumentada
+\[
+  \left[
+  \begin{array}{ccc|c}
+    1  & 2  & -1 & 3 \\
+    2  & 5  & 1  & 8 \\
+    -1 & -1 & 2  & 1
+  \end{array}
+  \right]
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento do Sistema}
+\begin{columns}
+\column{0.4\linewidth}
+  \[\;\;\,
+    \left[
+    \begin{array}{ccc|c}
+      1  & 2  & -1 & 3 \\
+      2  & 5  & 1  & 8 \\
+      -1 & -1 & 2  & 1
+    \end{array}
+    \right]
+  \]
+  \pause
+\column{0.6\linewidth}
+  Aplicamos
+  \\ \pause
+  \(
+    L_2 \leftarrow L_2 - 2 L_1
+  \)
+  \\ \pause
+  \(
+    L_3 \leftarrow L_3 + L_1
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  L'_2
+  \;=\;
+  L_2 - 2 L_1
+  \pause
+  \;=\;
+  \left[
+  \begin{array}{ccc|c}
+    2  & 5  & 1  & 8
+  \end{array}
+  \right]
+  -2
+  \left[
+  \begin{array}{ccc|c}
+    1  & 2  & -1 & 3
+  \end{array}
+  \right]
+  \pause
+  \;=\;
+  \left[
+  \begin{array}{ccc|c}
+    0 & 1 & 3  & 2
+  \end{array}
+  \right]
+\]
+\[
+  \pause
+  L'_3
+  \;=\;
+  L_3 + L_1
+  \pause
+  \;=\;
+  \left[
+  \begin{array}{ccc|c}
+    -1 & -1 & 2  & 1
+  \end{array}
+  \right]
+  +
+  \left[
+  \begin{array}{ccc|c}
+    1  & 2  & -1 & 3
+  \end{array}
+  \right]
+  \pause
+  \;=\;
+  \left[
+  \begin{array}{ccc|c}
+    0 & 1 & 1  & 4
+  \end{array}
+  \right]
+\]
+
+\pause
+\[
+  \left[
+  \begin{array}{ccc|c}
+    1 & 2 & -1 & 3 \\
+    0 & 1 & 3  & 2 \\
+    0 & 1 & 1  & 4
+  \end{array}
+  \right]
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento do Sistema}
+\begin{columns}
+\column{0.4\linewidth}
+  \[\;\;\,
+    \left[
+    \begin{array}{ccc|c}
+      1  & 2  & -1 & 3 \\
+      2  & 5  & 1  & 8 \\
+      -1 & -1 & 2  & 1
+    \end{array}
+    \right]
+  \]
+  \pause
+\column{0.6\linewidth}
+  Aplicamos \\
+  \(
+    L_3 \leftarrow L_3 - L_2
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  L'_3
+  \;=\;
+  L_3 - L_2
+  \pause
+  \;=\;
+  \left[
+  \begin{array}{ccc|c}
+    -1 & -1 & 2  & 1
+  \end{array}
+  \right]
+  -
+  \left[
+  \begin{array}{ccc|c}
+    2  & 5  & 1  & 8
+  \end{array}
+  \right]
+  \pause
+  \;=\;
+  \left[
+  \begin{array}{ccc|c}
+    0 & 0 & -2 & 2
+  \end{array}
+  \right]
+\]
+
+\pause
+\[
+  \left[
+  \begin{array}{ccc|c}
+    1 & 2 & -1 & 3 \\
+    0 & 1 & 3  & 2 \\
+    0 & 0 & -2 & 2
+  \end{array}
+  \right]
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Sistema Linear Escalonado}
+Matriz aumentada do sistema escalonado
+\[
+  \left[
+  \begin{array}{ccc|c}
+    1  & 2  & -1 & 3 \\
+    \z & 1  & 3  & 2 \\
+    \z & \z & -2 & 2
+  \end{array}
+  \right]
+\]
+
+\pause
+Sistema linear escalonado
+\[
+  \systeme{
+    x + 2y  -z = 3,
+         y +3z = 2,
+           -2z = 2}
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Substituição Retroativa}
+\begin{columns}[t]
+\column{0.26\linewidth}
+\onslide<+->{\centerline{Última linha}}
+\begin{align*}
+  \onslide<+->{-2z & = 2}  \\
+  \onslide<+->{z   & = -1}
+\end{align*}
+\column{0.27\linewidth}
+\onslide<+->{\centerline{Segunda linha}}
+\begin{align*}
+  \onslide<+->{y + 3z    & = 2} \\
+  \onslide<+->{y + 3(-1) & = 2} \\
+  \onslide<+->{y - 3     & = 2} \\
+  \onslide<+->{y         & = 5}
+\end{align*}
+\column{0.4\linewidth}
+\onslide<+->{\centerline{Primeira linha}}
+\begin{align*}
+  \onslide<+->{x + 2y - z          & = 3}  \\
+  \onslide<+->{x + 2\times 5 -(-1) & = 3}  \\
+  \onslide<+->{x + 10 + 1          & = 3}  \\
+  \onslide<+->{x                   & = -8}
+\end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+A solução do sistema é
+\(
+  {\bm x}
+  \;=\;
+  \begin{bmatrix}
+    x \\ y \\ z
+  \end{bmatrix}
+  \;=\;
+  \begin{bmatrix}
+    -8 \\ 5 \\ -1
+  \end{bmatrix}
+\)
+\end{resolution}
+
+%------------------------------------------------------------------------------%
