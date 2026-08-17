@@ -36,6 +36,7 @@ def folder_name(name: str) -> str:
     names = {
             'A-Introducao'  : 'A - Introdução',
             'B-Matrizes'    : 'B - Matrizes',
+            'C-Sistemas'    : 'C - Sistemas Lineares',
             }
 
     try:
@@ -54,6 +55,11 @@ def pdf_name(name: str) -> str:
         'B-01-Equacoes'           : 'B - 01 - Equações',
         'B-02-Equacoes_lineares'  : 'B - 02 - Equações Lineares',
         'B-03-Matrizes'           : 'B - 03 - Matrizes',
+        'B-04-Operacoes'          : 'B - 04 - Operações',
+        'C-01-Sistemas_lineares'  : 'C - 01 - Sistemas Lineares',
+        'C-02-Escalonamento'      : 'C - 02 - Escalonamento',
+        'C-03-Classificacao'      : 'C - 03 - Classificação',
+        'C-04-Gauss-Jordan'       : 'C - 04 - Método de Gauss-Jordan',
     }
 
     name = name.replace('pres_', '').replace('.pdf', '')
@@ -62,7 +68,7 @@ def pdf_name(name: str) -> str:
         return names[name]
 
     except KeyError:
-        return name.replace('_', ' ').replace('-', ' ')
+        return name.replace('_', ' ').replace('-', ' - ')
 
 
 #------------------------------------------------------------------------------#
