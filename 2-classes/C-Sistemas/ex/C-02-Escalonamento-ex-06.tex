@@ -3,52 +3,135 @@
 Escalone a matriz
 \(
   A =
-  \begin{pmatrix}
+  \begin{bmatrix}
     1  & 2  & 1 \\
     2  & 5  & 4 \\
     -1 & -1 & 1
-  \end{pmatrix}
+  \end{bmatrix}
 \)
 \end{question}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
+\begin{resolution}{Escalonamento}
+\begin{columns}
+\column{0.3\linewidth}
+  \[
+  \begin{bmatrix}
+    1  & 2  & 1 \\
+    2  & 5  & 4 \\
+    -1 & -1 & 1
+  \end{bmatrix}
+  \]
+  \pause
+\column{0.7\linewidth}
+  Eliminamos os elementos abaixo do primeiro pivô
+  \\ \pause
+  \(
+    L_2 \leftarrow L_2 - 2 L_1
+  \)
+  \\ \pause
+  \(
+    L_3 \leftarrow L_3 + L_1
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  L'_2
+  \;=\;
+  L_2 - 2 L_1
+  \pause
+  \;=\;
+  \begin{bmatrix}
+    2  & 5  & 4
+  \end{bmatrix}
+  - 2
+  \begin{bmatrix}
+    1  & 2  & 1
+  \end{bmatrix}
+  \pause
+  \;=\;
+  \begin{bmatrix}
+    0 & 1 & 2
+  \end{bmatrix}
+\]
+\[
+  \pause
+  L'_3
+  \;=\;
+  L_3 + L_1
+  \pause
+  \;=\;
+  \begin{bmatrix}
+    -1 & -1 & 1
+  \end{bmatrix}
+  +
+  \begin{bmatrix}
+    1  & 2  & 1
+  \end{bmatrix}
+  \pause
+  \;=\;
+  \begin{bmatrix}
+    0 & 1 & 2
+  \end{bmatrix}
+\]
+\pause
+\[
+  \begin{bmatrix}
+    1 & 2 & 1 \\
+    0 & 1 & 2 \\
+    0 & 1 & 2
+  \end{bmatrix}
+\]
+\end{resolution}
 
-Partimos de
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento}
+\begin{columns}
+\column{0.3\linewidth}
+  \[
+  \begin{bmatrix}
+    1 & 2 & 1 \\
+    0 & 1 & 2 \\
+    0 & 1 & 2
+  \end{bmatrix}
+  \]
+  \pause
+\column{0.7\linewidth}
+  Eliminamos os elementos abaixo do segundo pivô
+  \\ \pause
+  \(
+    L_3 \leftarrow L_3 - L_2
+  \)
+\end{columns}
+\vspace{-\baselineskip}
 \[
-\begin{pmatrix}
-1&2&1\\
-2&5&4\\
--1&-1&1
-\end{pmatrix}.
+  \pause
+  L'_3
+  \;=\;
+  L_3 - L_2
+  \pause
+  \;=\;
+  \begin{bmatrix}
+    0 & 1 & 2
+  \end{bmatrix}
+  -
+  \begin{bmatrix}
+    0 & 1 & 2
+  \end{bmatrix}
+  \pause
+  \;=\;
+  \begin{bmatrix}
+    0 & 0 & 0
+  \end{bmatrix}
 \]
-Aplicamos
+\pause
 \[
-L_2\leftarrow L_2-2L_1
-\]
-e
-\[
-L_3\leftarrow L_3+L_1.
-\]
-Obtemos
-\[
-\begin{pmatrix}
-1&2&1\\
-0&1&2\\
-0&1&2
-\end{pmatrix}.
-\]
-Agora fazemos
-\[
-L_3\leftarrow L_3-L_2.
-\]
-Portanto,
-\[
-\begin{pmatrix}
-1&2&1\\
-0&1&2\\
-0&0&0
-\end{pmatrix}.
+\begin{bmatrix}
+  1 & 2 & 1 \\
+  0 & 1 & 2 \\
+  0 & 0 & 0
+\end{bmatrix}
 \]
 \end{resolution}
 

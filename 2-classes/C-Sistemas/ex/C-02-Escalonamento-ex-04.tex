@@ -3,36 +3,36 @@
 Determine quais das matrizes abaixo estão em forma escalonada
 \[
   A =
-  \begin{pmatrix}
+  \begin{bmatrix}
     1 & 2 & 3 \\
     0 & 1 & 4 \\
     0 & 0 & 2
-  \end{pmatrix}
+  \end{bmatrix}
   \qquad
   B =
-  \begin{pmatrix}
+  \begin{bmatrix}
     1 & 2 & 3 \\
     0 & 0 & 4 \\
     0 & 2 & 5
-  \end{pmatrix}
+  \end{bmatrix}
   \qquad
   C =
-  \begin{pmatrix}
+  \begin{bmatrix}
     0 & 1 & 3 \\
     0 & 0 & 2 \\
     0 & 0 & 0
-  \end{pmatrix}
+  \end{bmatrix}
 \]
 \end{question}
 
 %------------------------------------------------------------------------------%
 \begin{resolutiont}{Solução}
 \onslide<+->{\[
-  A = \begin{pmatrix}
+  A = \begin{bmatrix}
     1 & 2 & 3 \\
     0 & 1 & 4 \\
     0 & 0 & 2
-  \end{pmatrix}
+  \end{bmatrix}
 \]}
 \onslide<+->{A matriz $A$ está escalonada}
 \begin{enumerate}[<+->]
@@ -44,24 +44,27 @@ Determine quais das matrizes abaixo estão em forma escalonada
 %------------------------------------------------------------------------------%
 \begin{resolutiont}{Solução}
 \onslide<+->{\[
-  B = \begin{pmatrix}
+  B = \begin{bmatrix}
     1 & 2                   & 3                   \\
     0 & 0                   & {\color<3->{red} 4} \\
     0 & {\color<3->{red} 2} & 5
-  \end{pmatrix}
+  \end{bmatrix}
 \]}%
 \onslide<+->{A matriz $B$ não está escalonada}  \\
 \onslide<+->{o pivô da terceira linha está à esquerda do pivô da segunda linha}
+
+\bigskip
+\onslide<+->{Pode ser escalonada com a troca da segunda e terceira linhas}
 \end{resolutiont}
 
 %------------------------------------------------------------------------------%
 \begin{resolutiont}{Solução}
 \onslide<+->{\[
-  C = \begin{pmatrix}
+  C = \begin{bmatrix}
     0 & 1 & 3 \\
     0 & 0 & 2 \\
     0 & 0 & 0
-  \end{pmatrix}
+  \end{bmatrix}
 \]}
 \onslide<+->{A matriz $C$ está escalonada}
 \begin{enumerate}[<+->]
