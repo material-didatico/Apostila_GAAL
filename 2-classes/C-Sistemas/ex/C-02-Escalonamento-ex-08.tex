@@ -13,13 +13,11 @@
 \begin{resolution}{Matriz Aumentada}
   Matriz aumentada
   \[
-    \left[
-    \begin{array}{ccc|c}
+    \left[\begin{array}{rrr|r}
       1 & 1  & 1  & 6 \\
       2 & -1 & 1  & 3 \\
       1 & 2  & -1 & 2
-    \end{array}
-    \right]
+    \end{array}\right]
   \]
 \end{resolution}
 
@@ -28,17 +26,15 @@
 \begin{columns}
 \column{0.4\linewidth}
   \[\;\;\,
-    \left[
-    \begin{array}{ccc|c}
+    \left[\begin{array}{rrr|r}
       1 & 1  & 1  & 6 \\
       2 & -1 & 1  & 3 \\
       1 & 2  & -1 & 2
-    \end{array}
-    \right]
+    \end{array}\right]
   \]
   \pause
 \column{0.6\linewidth}
-  Aplicamos
+  Eliminar os elementos abaixo do primeiro pivô
   \\ \pause
   \(
     L_2 \leftarrow L_2 - 2 L_1
@@ -56,24 +52,18 @@
   L_2 - 2 L_1
   \pause
   \;=\;
-  \left[
-  \begin{array}{ccc|c}
+  \left[\begin{array}{rrr|r}
     2 & -1 & 1  & 3
-  \end{array}
-  \right]
+  \end{array}\right]
   - 2
-  \left[
-  \begin{array}{ccc|c}
+  \left[\begin{array}{rrr|r}
     1 & 1  & 1  & 6
-  \end{array}
-  \right]
+  \end{array}\right]
   \pause
   \;=\;
-  \left[
-  \begin{array}{ccc|c}
+  \left[\begin{array}{rrr|r}
     0 & -3 & -1 & -9
-  \end{array}
-  \right]
+  \end{array}\right]
 \]
 \[
   \pause
@@ -82,35 +72,26 @@
     L_3 - L_1
   \pause
   \;=\;
-  \left[
-  \begin{array}{ccc|c}
+  \left[\begin{array}{rrr|r}
     1 & 2  & -1 & 2
-  \end{array}
-  \right]
+  \end{array}\right]
   -
-  \left[
-  \begin{array}{ccc|c}
+  \left[\begin{array}{rrr|r}
     1 & 1  & 1  & 6
-  \end{array}
-  \right]
+  \end{array}\right]
   \pause
   \;=\;
-  \left[
-  \begin{array}{ccc|c}
+  \left[\begin{array}{rrr|r}
     0 & 1  & -2 & -4
-  \end{array}
-  \right]
+  \end{array}\right]
 \]
-
 \pause
 \[
-  \left[
-  \begin{array}{ccc|c}
+  \left[\begin{array}{rrr|r}
     1 & 1  & 1  & 6  \\
     0 & -3 & -1 & -9 \\
     0 & 1  & -2 & -4
-  \end{array}
-  \right]
+  \end{array}\right]
 \]
 \end{resolution}
 
@@ -119,13 +100,11 @@
 \begin{columns}
 \column{0.4\linewidth}
   \[\;\;\,
-    \left[
-    \begin{array}{ccc|c}
+    \left[\begin{array}{rrr|r}
       1 & 1  & 1  & 6  \\
       0 & -3 & -1 & -9 \\
       0 & 1  & -2 & -4
-    \end{array}
-    \right]
+    \end{array}\right]
   \]
   \pause
 \column{0.6\linewidth}
@@ -143,11 +122,9 @@
   L_3
   \pause
   \;=\;
-  \left[
-  \begin{array}{ccc|c}
+  \left[\begin{array}{rrr|r}
     0 & 1  & -2 & -4
-  \end{array}
-  \right]
+  \end{array}\right]
 \]
 \[
   \pause
@@ -156,21 +133,17 @@
   L_2
   \pause
   \;=\;
-  \left[
-  \begin{array}{ccc|c}
+  \left[\begin{array}{rrr|r}
     0 & -3 & -1 & -9
-  \end{array}
-  \right]
+  \end{array}\right]
 \]
 \pause
 \[
-  \left[
-  \begin{array}{ccc|c}
+  \left[\begin{array}{rrr|r}
     1 & 1  & 1  & 6  \\
     0 & 1  & -2 & -4 \\
     0 & -3 & -1 & -9
-  \end{array}
-  \right]
+  \end{array}\right]
 \]
 \end{resolution}
 
@@ -179,17 +152,15 @@
 \begin{columns}
 \column{0.4\linewidth}
   \[\;\;\,
-    \left[
-    \begin{array}{ccc|c}
+    \left[\begin{array}{rrr|r}
       1 & 1  & 1  & 6  \\
       0 & 1  & -2 & -4 \\
       0 & -3 & -1 & -9
-    \end{array}
-    \right]
+    \end{array}\right]
   \]
   \pause
 \column{0.6\linewidth}
-  Aplicamos
+  Eliminar os elementos abaixo do segundo pivô
   \\ \pause
   \(
     L_3 \leftarrow L_3 + 3 L_2
@@ -203,37 +174,29 @@
     L_3 + 3 L_2
   \pause
   \;=\;
-  \left[
-  \begin{array}{ccc|c}
+  \left[\begin{array}{rrr|r}
     0 & -3 & -1 & -9
-  \end{array}
-  \right]
+  \end{array}\right]
   + 3
-  \left[
-  \begin{array}{ccc|c}
+  \left[\begin{array}{rrr|r}
     0 & 1  & -2 & -4
-  \end{array}
-  \right]
+  \end{array}\right]
 \]
 \[
   \pause
   \hphantom{L'_3}
   \;=\;
-  \left[
-  \begin{array}{ccc|c}
+  \left[\begin{array}{rrr|r}
     0 & 0 & -7 & -21
-  \end{array}
-  \right]
+  \end{array}\right]
 \]
 \pause
 \[
-  \left[
-  \begin{array}{ccc|c}
+  \left[\begin{array}{rrr|r}
     1 & 1 & 1  & 6   \\
     0 & 1 & -2 & -4  \\
     0 & 0 & -7 & -21
-  \end{array}
-  \right]
+  \end{array}\right]
 \]
 \end{resolution}
 
@@ -241,13 +204,11 @@
 \begin{resolution}{Sistema Linear Escalonado}
 Matriz aumentada do sistema escalonado
 \[
-  \left[
-  \begin{array}{ccc|c}
+  \left[\begin{array}{rrr|r}
     1  & 1  & 1  & 6   \\
     \z & 1  & -2 & -4  \\
     \z & \z & -7 & -21
-  \end{array}
-  \right]
+  \end{array}\right]
 \]
 
 \pause

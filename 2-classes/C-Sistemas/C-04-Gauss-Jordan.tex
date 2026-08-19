@@ -3,7 +3,7 @@
 
 \usepackage{gaal}
 
-\title{Classificação de Sistemas Lineares}
+\title{Método de Gauss-Jordan}
 
 %------------------------------------------------------------------------------%
 \begin{document}
@@ -11,34 +11,41 @@
 \addtitle
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Tipos de Sistemas Lineares}
-  \onslide<+->{Um sistema pode ser classificado com relação ao número de soluções}
-  \begin{itemize}
-    \setlength{\itemsep}{1em}
-    \item \onslide<+->{Sistema possível e determinado} \\
-          \onslide<+->{possui \emph{uma única} solução}
+\section{Forma Escalonada Reduzida}
 
-    \item \onslide<+->{Sistema possível e indeterminado} \\
-          \onslide<+->{possui \emph{infinitas} soluções}
-
-    \item \onslide<+->{Sistema impossível} \\
-          \onslide<+->{\emph{não possui} soluções}
+%------------------------------------------------------------------------------%
+\begin{frame}{Forma Escalonada Reduzida}
+  \onslide<+->{\emph{Forma escalonada reduzida}}
+  \begin{itemize}[<+->]
+    \item A matriz está em forma escalonada
+    \item Cada pivô é igual a 1
+    \item O pivô é o único elemento não nulo de sua coluna
   \end{itemize}
+
+\bigskip
+\onslide<+->{
+Exemplo de matriz escalonada reduzida
+\quad
+\(
+  \begin{bmatrix}
+    \emph{1} & \z       & 2  & \z       \\
+    \z       & \emph{1} & -1 & \z       \\
+    \z       & \z       & \z & \emph{1}
+  \end{bmatrix}
+\)}
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Identificando o Tipo de Sistema Linear}
-  Podemos identificar o tipo de sistema diretamente da sua forma escalonada
+\begin{frame}{Método de Gauss-Jordan}
+  O processo para obter a Forma Escalonada Reduzida é chamado de \\[3mm]
+  \emph{Eliminação de Gauss-Jordan}
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\input{ex/C-03-Classificacao-ex-01}
-\input{ex/C-03-Classificacao-ex-02}
-\input{ex/C-03-Classificacao-ex-03}
-\input{ex/C-03-Classificacao-ex-04}
-\input{ex/C-03-Classificacao-ex-05}
-\input{ex/C-03-Classificacao-ex-06}
-\input{ex/C-03-Classificacao-ex-07}
+\input{ex/C-04-Gauss-Jordan-ex-01}
+\input{ex/C-04-Gauss-Jordan-ex-02}
+\input{ex/C-04-Gauss-Jordan-ex-03}
+\input{ex/C-04-Gauss-Jordan-ex-04}
 
 %------------------------------------------------------------------------------%
 %\section{Lista Mínima}
@@ -56,5 +63,3 @@
 %------------------------------------------------------------------------------%
 \end{document}
 %------------------------------------------------------------------------------%
-
-

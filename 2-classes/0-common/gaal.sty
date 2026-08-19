@@ -48,6 +48,13 @@
 
 %------------------------------------------------------------------------------%
 
+% Redefine alinhamento padrão das matrizes para a direita
+\renewcommand*\env@matrix[1][r]{\hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{*\c@MaxMatrixCols #1}}
+
+%------------------------------------------------------------------------------%
+
 \newcommand*{\hint}[1]{\underline{Dica}: \textit{#1}}
 
 \newcommand{\vetor}[2]{\left(\begin{array}{c} #1 \\ #2 \end{array}\right)}

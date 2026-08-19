@@ -1,0 +1,451 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+Resolva o sistema linear pelo método de Gauss-Jordan
+\[
+  \systeme[sort={x,y,z,w,v}]{
+     x + 2y -  z +  w +  v =  3,
+    2x + 5y +  z + 2w +  v =  8,
+    -x -  y + 2z -  w + 2v = -1,
+          y +  z      + 3v =  2
+  }
+\]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Matriz Aumentada}
+  Matriz aumentada
+  \[
+    \left[\begin{array}{rrrrr|r}
+      1  & 2  & -1 & 1  & 1 & 3  \\
+      2  & 5  & 1  & 2  & 1 & 8  \\
+      -1 & -1 & 2  & -1 & 2 & -1 \\
+      0  & 1  & 1  & 0  & 3 & 2
+    \end{array}\right]
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento do Sistema}
+\begin{columns}
+\column{0.45\linewidth}
+  \[
+    \left[\begin{array}{rrrrr|r}
+      1  & 2  & -1 & 1  & 1 & 3  \\
+      2  & 5  & 1  & 2  & 1 & 8  \\
+      -1 & -1 & 2  & -1 & 2 & -1 \\
+      0  & 1  & 1  & 0  & 3 & 2
+    \end{array}\right]
+  \]
+  \pause
+\column{0.58\linewidth}
+  Eliminar os elementos abaixo do primeiro pivô
+  \\ \pause
+  \(
+    L_2 \leftarrow L_2 - 2 L_1
+  \)
+  \\ \pause
+  \(
+    L_3 \leftarrow L_3 + L_1
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  \hspace{-2.5em}
+  L'_2
+  \pause
+  \;=\;
+  \left[\begin{array}{rrrrr|r}
+    2  & 5  & 1  & 2  & 1 & 8
+  \end{array}\right]
+  -2
+  \left[\begin{array}{rrrrr|r}
+    1  & 2  & -1 & 1  & 1 & 3
+  \end{array}\right]
+  \pause
+  \;=\;
+  \left[\begin{array}{rrrrr|r}
+    0 & 1 & 3  & 0 & -1 & 2
+  \end{array}\right]
+\]
+\[
+  \pause
+  \hspace{-2.5em}
+  L'_3
+  \pause
+  \;=\;
+  \left[\begin{array}{rrrrr|r}
+    -1 & -1 & 2  & -1 & 2 & -1
+  \end{array}\right]
+  +
+  \left[\begin{array}{rrrrr|r}
+    1  & 2  & -1 & 1  & 1 & 3
+  \end{array}\right]
+  \pause
+  \;=\;
+  \left[\begin{array}{rrrrr|r}
+    0 & 1 & 1  & 0 & 3  & 2
+  \end{array}\right]
+\]
+\pause
+\[
+  \left[\begin{array}{rrrrr|r}
+    1 & 2 & -1 & 1 & 1  & 3 \\
+    0 & 1 & 3  & 0 & -1 & 2 \\
+    0 & 1 & 1  & 0 & 3  & 2 \\
+    0 & 1 & 1  & 0 & 3  & 2
+  \end{array}\right]
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento do Sistema}
+\begin{columns}
+\column{0.45\linewidth}
+  \[
+    \left[\begin{array}{rrrrr|r}
+      1 & 2 & -1 & 1 & 1  & 3 \\
+      0 & 1 & 3  & 0 & -1 & 2 \\
+      0 & 1 & 1  & 0 & 3  & 2 \\
+      0 & 1 & 1  & 0 & 3  & 2
+    \end{array}\right]
+  \]
+  \pause
+\column{0.58\linewidth}
+  Eliminar os elementos abaixo do segundo pivô
+  \\ \pause
+  \(
+    L_3 \leftarrow L_3 - L_2
+  \)
+  \\ \pause
+  \(
+    L_4 \leftarrow L_4 - L_2
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  \hspace{-1.5em}
+  L'_3
+  \pause
+  \;=\;
+  \left[\begin{array}{rrrrr|r}
+    0 & 1 & 1  & 0 & 3  & 2
+  \end{array}\right]
+  -
+  \left[\begin{array}{rrrrr|r}
+    0 & 1 & 3  & 0 & -1 & 2
+  \end{array}\right]
+  \pause
+  \;=\;
+  \left[\begin{array}{rrrrr|r}
+    0 & 0 & -2 & 0 & 4  & 0
+  \end{array}\right]
+\]
+\[
+  \pause
+  \hspace{-1.5em}
+  L'_4
+  \pause
+  \;=\;
+  \left[\begin{array}{rrrrr|r}
+    0 & 1 & 1  & 0 & 3  & 2
+  \end{array}\right]
+  -
+  \left[\begin{array}{rrrrr|r}
+    0 & 1 & 3  & 0 & -1 & 2
+  \end{array}\right]
+  \pause
+  \;=\;
+  \left[\begin{array}{rrrrr|r}
+    0 & 0 & -2 & 0 & 4  & 0
+  \end{array}\right]
+\]
+\pause
+\[
+  \left[\begin{array}{rrrrr|r}
+    1 & 2 & -1 & 1 & 1  & 3 \\
+    0 & 1 & 3  & 0 & -1 & 2 \\
+    0 & 0 & -2 & 0 & 4  & 0 \\
+    0 & 0 & -2 & 0 & 4  & 0
+  \end{array}\right]
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento do Sistema}
+\begin{columns}
+\column{0.45\linewidth}
+  \[
+    \left[\begin{array}{rrrrr|r}
+      1 & 2 & -1 & 1 & 1  & 3 \\
+      0 & 1 & 3  & 0 & -1 & 2 \\
+      0 & 0 & -2 & 0 & 4  & 0 \\
+      0 & 0 & -2 & 0 & 4  & 0
+    \end{array}\right]
+  \]
+  \pause
+\column{0.58\linewidth}
+  Tornar o terceiro pivô igual a 1
+  \\ \pause
+  \(
+    L_3 \leftarrow -\frac{1}{2}L_3
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  \hspace{-1.5em}
+  L'_3
+  \pause
+  \;=\;
+  -\frac{1}{2}
+  \left[\begin{array}{rrrrr|r}
+    0 & 0 & -2 & 0 & 4  & 0
+  \end{array}\right]
+  \pause
+  \;=\;
+  \left[\begin{array}{rrrrr|r}
+    0 & 0 & 1  & 0 & -2 & 0
+  \end{array}\right]
+\]
+\pause
+\[
+  \left[\begin{array}{rrrrr|r}
+    1 & 2 & -1 & 1 & 1  & 3 \\
+    0 & 1 & 3  & 0 & -1 & 2 \\
+    0 & 0 & 1  & 0 & -2 & 0 \\
+    0 & 0 & -2 & 0 & 4  & 0
+  \end{array}\right]
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento do Sistema}
+\begin{columns}
+\column{0.4\linewidth}
+  \[
+    \left[\begin{array}{rrrrr|r}
+      1 & 2 & -1 & 1 & 1  & 3 \\
+      0 & 1 & 3  & 0 & -1 & 2 \\
+      0 & 0 & 1  & 0 & -2 & 0 \\
+      0 & 0 & -2 & 0 & 4  & 0
+    \end{array}\right]
+  \]
+  \pause
+\column{0.6\linewidth}
+  Eliminar os elementos abaixo do terceiro pivô
+  \\ \pause
+  \(
+    L_4 \leftarrow L_4 +2 L_3
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  \hspace{-1.5em}
+  L'_4
+  \pause
+  \;=\;
+  \left[\begin{array}{rrrrr|r}
+    0 & 0 & -2 & 0 & 4  & 0
+  \end{array}\right]
+  +2
+  \left[\begin{array}{rrrrr|r}
+    0 & 0 & 1  & 0 & -2 & 0
+  \end{array}\right]
+  \pause
+  \;=\;
+  \left[\begin{array}{rrrrr|r}
+    0 & 0 & 0 & 0 & 0 & 0
+  \end{array}\right]
+\]
+\pause
+\[
+  \left[\begin{array}{rrrrr|r}
+    1 & 2 & -1 & 1 & 1  & 3 \\
+    0 & 1 & 3  & 0 & -1 & 2 \\
+    0 & 0 & 1  & 0 & -2 & 0 \\
+    0 & 0 & 0  & 0 &  0 & 0
+  \end{array}\right]
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento do Sistema}
+\begin{columns}
+\column{0.4\linewidth}
+  \[
+    \left[\begin{array}{rrrrr|r}
+      1 & 2 & -1 & 1 & 1  & 3 \\
+      0 & 1 & 3  & 0 & -1 & 2 \\
+      0 & 0 & 1  & 0 & -2 & 0 \\
+      0 & 0 & 0  & 0 &  0 & 0
+    \end{array}\right]
+  \]
+  \pause
+\column{0.6\linewidth}
+  Eliminar os elementos acima do terceiro pivô
+  \\ \pause
+  \(
+    L_2 \leftarrow L_2 -3 L_3
+  \)
+  \\ \pause
+  \(
+    L_1 \leftarrow L_1 + L_3
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  \hspace{-1.5em}
+  L'_2
+  \pause
+  \;=\;
+  \left[\begin{array}{rrrrr|r}
+    0 & 1 & 3  & 0 & -1 & 2
+  \end{array}\right]
+  -3
+  \left[\begin{array}{rrrrr|r}
+    0 & 0 & 1  & 0 & -2 & 0
+  \end{array}\right]
+  \pause
+  \;=\;
+  \left[\begin{array}{rrrrr|r}
+    0 & 1 & 0 & 0 & 5  & 2
+  \end{array}\right]
+\]
+\[
+  \pause
+  \hspace{-1.5em}
+  L'_1
+  \pause
+  \;=\;
+  \left[\begin{array}{rrrrr|r}
+    1 & 2 & -1 & 1 & 1  & 3
+  \end{array}\right]
+  +
+  \left[\begin{array}{rrrrr|r}
+    0 & 0 & 1  & 0 & -2 & 0
+  \end{array}\right]
+  \pause
+  \;=\;
+  \left[\begin{array}{rrrrr|r}
+    1 & 2 & 0 & 1 & -1 & 3
+  \end{array}\right]
+\]
+\pause
+\[
+  \left[\begin{array}{rrrrr|r}
+    1 & 2 & 0 & 1 & -1 & 3 \\
+    0 & 1 & 0 & 0 & 5  & 2 \\
+    0 & 0 & 1 & 0 & -2 & 0 \\
+    0 & 0 & 0 & 0 & 0  & 0
+  \end{array}\right]
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento do Sistema}
+\begin{columns}
+\column{0.4\linewidth}
+  \[
+    \left[\begin{array}{rrrrr|r}
+      1 & 2 & 0 & 1 & -1 & 3 \\
+      0 & 1 & 0 & 0 & 5  & 2 \\
+      0 & 0 & 1 & 0 & -2 & 0 \\
+      0 & 0 & 0 & 0 & 0  & 0
+    \end{array}\right]
+  \]
+  \pause
+\column{0.6\linewidth}
+  Eliminar os elementos acima do segundo pivô
+  \\ \pause
+  \(
+    L_1 \leftarrow L_1 - 2 L_2
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  \hspace{-1.5em}
+  L'_1
+  \pause
+  \;=\;
+  \left[\begin{array}{rrrrr|r}
+    1 & 2 & 0 & 1 & -1 & 3
+  \end{array}\right]
+  -2
+  \left[\begin{array}{rrrrr|r}
+    0 & 1 & 0 & 0 & 5  & 2
+  \end{array}\right]
+  \pause
+  \;=\;
+  \left[\begin{array}{rrrrr|r}
+    1 & 0 & 0 & 1 & -11 & -1
+  \end{array}\right]
+\]
+\pause
+\[
+  \left[\begin{array}{rrrrr|r}
+    1 & 0 & 0 & 1 & -11 & -1 \\
+    0 & 1 & 0 & 0 & 5   & 2  \\
+    0 & 0 & 1 & 0 & -2  & 0  \\
+    0 & 0 & 0 & 0 & 0   & 0
+  \end{array}\right]
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Sistema Linear Reduzido}
+\[
+  \systeme[sort={x,y,z,w,v}]{
+    x +  w -11v = -1,
+    y + 5v      = 2,
+    z - 2v      = 0
+  }
+\]
+\pause
+As incógnitas $w$ e $v$ não correspondem a pivôs
+
+\pause
+portanto são variáveis livres
+\begin{align*}
+  w & = s \\
+  v & = t
+\end{align*}
+para quaisquer valore reais $t$ e $s$
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\[
+  \systeme[sort={x,y,z,w,v}]{
+    x +  w -11v = -1,
+    y + 5v      = 2,
+    z - 2v      = 0
+  }
+\]
+\pause
+\vspace{-\baselineskip}
+\begin{columns}[t]
+\column{0.35\linewidth}
+  \begin{align*}
+    x & = 11v - w -1 \\[-1.5ex]
+    y & = 2 - 5v     \\[-1.5ex]
+    z & = 2v
+  \end{align*}
+  \pause
+\column{0.6\linewidth}
+  \begin{align*}
+    x & = 11t - s - 1 \\[-1.5ex]
+    y & = 2 - 5t      \\[-1.5ex]
+    z & = 2t          \qquad\qquad\qquad \forall (s, t) \in \R^2 \\[-1.5ex]
+    w & = s           \\[-1.5ex]
+    v & = t
+  \end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

@@ -15,7 +15,7 @@ Use escalonamento para analisar o sistema
 \column{0.4\linewidth}
   \[\;\;\,
     \left[
-    \begin{array}{cc|c}
+    \begin{array}{rr|r}
       1 &  1 & 4 \\
       2 & -1 & 1
     \end{array}
@@ -23,7 +23,7 @@ Use escalonamento para analisar o sistema
   \]
   \pause
 \column{0.6\linewidth}
-  Aplicamos
+  Eliminar os elementos abaixo do primeiro pivô
   \\ \pause
   \(
     L_2 \leftarrow L_2 - 2 L_1
@@ -38,20 +38,20 @@ Use escalonamento para analisar o sistema
   \pause
   \;=\;
   \left[
-  \begin{array}{cc|c}
+  \begin{array}{rr|r}
     2 & -1 & 1
   \end{array}
   \right]
   - 2
   \left[
-  \begin{array}{cc|c}
+  \begin{array}{rr|r}
     1 & 1 & 4
   \end{array}
   \right]
   \pause
   \;=\;
   \left[
-  \begin{array}{cc|c}
+  \begin{array}{rr|r}
     0 & -3 & -7
   \end{array}
   \right]
@@ -60,7 +60,7 @@ Use escalonamento para analisar o sistema
 \pause
 \[
 \left[
-\begin{array}{cc|c}
+\begin{array}{rr|r}
   1 &  1 & 4 \\
   0 & -3 & -7
 \end{array}

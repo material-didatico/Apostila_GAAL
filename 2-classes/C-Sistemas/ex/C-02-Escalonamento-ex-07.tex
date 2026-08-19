@@ -14,7 +14,7 @@
 \begin{resolution}{Matriz Aumentada}
 \[
   A = \left[
-  \begin{array}{ccc}
+  \begin{array}{rrr}
     1  & 2  & -1  \\
     2  & 5  & 1   \\
     -1 & -1 & 2
@@ -23,7 +23,7 @@
   \pause
   \qquad\qquad
   b = \left[
-  \begin{array}{ccc|c}
+  \begin{array}{rrr|r}
      3 \\
      8 \\
      1
@@ -35,7 +35,7 @@
 Matriz aumentada
 \[
   \left[
-  \begin{array}{ccc|c}
+  \begin{array}{rrr|r}
     1  & 2  & -1 & 3 \\
     2  & 5  & 1  & 8 \\
     -1 & -1 & 2  & 1
@@ -50,7 +50,7 @@ Matriz aumentada
 \column{0.4\linewidth}
   \[\;\;\,
     \left[
-    \begin{array}{ccc|c}
+    \begin{array}{rrr|r}
       1  & 2  & -1 & 3 \\
       2  & 5  & 1  & 8 \\
       -1 & -1 & 2  & 1
@@ -59,7 +59,7 @@ Matriz aumentada
   \]
   \pause
 \column{0.6\linewidth}
-  Aplicamos
+  Eliminar os elementos abaixo do primeiro pivô
   \\ \pause
   \(
     L_2 \leftarrow L_2 - 2 L_1
@@ -78,20 +78,20 @@ Matriz aumentada
   \pause
   \;=\;
   \left[
-  \begin{array}{ccc|c}
+  \begin{array}{rrr|r}
     2  & 5  & 1  & 8
   \end{array}
   \right]
   -2
   \left[
-  \begin{array}{ccc|c}
+  \begin{array}{rrr|r}
     1  & 2  & -1 & 3
   \end{array}
   \right]
   \pause
   \;=\;
   \left[
-  \begin{array}{ccc|c}
+  \begin{array}{rrr|r}
     0 & 1 & 3  & 2
   \end{array}
   \right]
@@ -104,20 +104,20 @@ Matriz aumentada
   \pause
   \;=\;
   \left[
-  \begin{array}{ccc|c}
+  \begin{array}{rrr|r}
     -1 & -1 & 2  & 1
   \end{array}
   \right]
   +
   \left[
-  \begin{array}{ccc|c}
+  \begin{array}{rrr|r}
     1  & 2  & -1 & 3
   \end{array}
   \right]
   \pause
   \;=\;
   \left[
-  \begin{array}{ccc|c}
+  \begin{array}{rrr|r}
     0 & 1 & 1  & 4
   \end{array}
   \right]
@@ -126,7 +126,7 @@ Matriz aumentada
 \pause
 \[
   \left[
-  \begin{array}{ccc|c}
+  \begin{array}{rrr|r}
     1 & 2 & -1 & 3 \\
     0 & 1 & 3  & 2 \\
     0 & 1 & 1  & 4
@@ -141,7 +141,7 @@ Matriz aumentada
 \column{0.4\linewidth}
   \[\;\;\,
     \left[
-    \begin{array}{ccc|c}
+    \begin{array}{rrr|r}
       1  & 2  & -1 & 3 \\
       2  & 5  & 1  & 8 \\
       -1 & -1 & 2  & 1
@@ -150,7 +150,8 @@ Matriz aumentada
   \]
   \pause
 \column{0.6\linewidth}
-  Aplicamos \\
+  Eliminar os elementos abaixo do segundo pivô
+  \\ \pause
   \(
     L_3 \leftarrow L_3 - L_2
   \)
@@ -164,20 +165,20 @@ Matriz aumentada
   \pause
   \;=\;
   \left[
-  \begin{array}{ccc|c}
+  \begin{array}{rrr|r}
     -1 & -1 & 2  & 1
   \end{array}
   \right]
   -
   \left[
-  \begin{array}{ccc|c}
+  \begin{array}{rrr|r}
     2  & 5  & 1  & 8
   \end{array}
   \right]
   \pause
   \;=\;
   \left[
-  \begin{array}{ccc|c}
+  \begin{array}{rrr|r}
     0 & 0 & -2 & 2
   \end{array}
   \right]
@@ -186,7 +187,7 @@ Matriz aumentada
 \pause
 \[
   \left[
-  \begin{array}{ccc|c}
+  \begin{array}{rrr|r}
     1 & 2 & -1 & 3 \\
     0 & 1 & 3  & 2 \\
     0 & 0 & -2 & 2
@@ -200,7 +201,7 @@ Matriz aumentada
 Matriz aumentada do sistema escalonado
 \[
   \left[
-  \begin{array}{ccc|c}
+  \begin{array}{rrr|r}
     1  & 2  & -1 & 3 \\
     \z & 1  & 3  & 2 \\
     \z & \z & -2 & 2
