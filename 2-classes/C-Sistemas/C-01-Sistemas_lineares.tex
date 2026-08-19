@@ -1,0 +1,854 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+\usepackage{mathtools}
+
+\title{Sistemas Lineares}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Sistemas Lineares}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Sistemas Lineares}
+  \emph{Sistemas lineares} \\
+  são conjuntos de equações lineares nas mesmas incógnitas \\
+  que precisam ser resolvidos simultaneamente
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Interpretação geométrica}
+Cada equação linear em duas incógnitas representa uma reta
+\[
+  \pause
+  x + y = 10
+\]
+\[
+  \pause
+  2x + 3y = 24
+\]
+
+\pause
+\medskip
+Resolver o sistema significa encontrar um ponto que \\
+pertence às duas retas simultaneamente
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Aplicação de Sistemas Lineares}
+\onslide<+->{Em aplicações, podemos ter milhares ou milhões de incógnitas}
+
+\onslide<+->{As equações podem representar:}
+\begin{itemize}[<+->]
+    \item distribuição de recursos
+    \item redes de transporte
+    \item circuitos elétricos
+    \item modelos econômicos
+    \item problemas de otimização
+    \item estruturas mecânicas
+    \item fenômenos físicos
+    \item aproximações numéricas de equações diferenciais
+\end{itemize}
+\end{frame}
+
+\end{document}
+
+% =========================================================
+% EXEMPLO CIRCUITOS
+% =========================================================
+
+\begin{frame}{Exemplo: circuitos elétricos}
+
+Considere um circuito elétrico com várias correntes desconhecidas.
+
+As leis de Kirchhoff fornecem relações entre as correntes.
+
+Por exemplo:
+
+\[
+\begin{cases}
+I_1+I_2-I_3=0,\\
+2I_1+3I_2=10,\\
+I_2+4I_3=8.
+\end{cases}
+\]
+
+As incógnitas
+
+\[
+I_1,\ I_2,\ I_3
+\]
+
+podem ser determinadas resolvendo um sistema linear.
+
+\medskip
+
+Assim, o sistema não é o problema em si.
+
+\begin{center}
+\textbf{Ele é uma representação matemática do problema.}
+\end{center}
+
+\end{frame}
+
+% =========================================================
+% EXEMPLO PRODUÇÃO
+% =========================================================
+
+\begin{frame}{Exemplo: produção}
+
+Uma empresa fabrica três produtos:
+
+\[
+A,\qquad B,\qquad C.
+\]
+
+Cada produto utiliza quantidades diferentes de três recursos.
+
+Se conhecemos a quantidade total disponível de cada recurso,
+podemos escrever equações relacionando as quantidades produzidas:
+
+\[
+\begin{cases}
+a_{11}x+a_{12}y+a_{13}z=b_1,\\
+a_{21}x+a_{22}y+a_{23}z=b_2,\\
+a_{31}x+a_{32}y+a_{33}z=b_3.
+\end{cases}
+\]
+
+Novamente aparece um sistema linear.
+
+\end{frame}
+
+% =========================================================
+% A MATRIZ
+% =========================================================
+
+\begin{frame}{Uma nova forma de representar o sistema}
+
+O sistema
+
+\[
+\begin{cases}
+a_{11}x_1+\cdots+a_{1n}x_n=b_1,\\
+a_{21}x_1+\cdots+a_{2n}x_n=b_2,\\
+\vdots\\
+a_{m1}x_1+\cdots+a_{mn}x_n=b_m
+\end{cases}
+\]
+
+pode ser escrito como
+
+\[
+A\mathbf{x}=\mathbf{b},
+\]
+
+onde
+
+\[
+A=
+\begin{pmatrix}
+a_{11}&\cdots&a_{1n}\\
+\vdots&&\vdots\\
+a_{m1}&\cdots&a_{mn}
+\end{pmatrix},
+\]
+
+\[
+\mathbf{x}=
+\begin{pmatrix}
+x_1\\
+\vdots\\
+x_n
+\end{pmatrix},
+\qquad
+\mathbf{b}=
+\begin{pmatrix}
+b_1\\
+\vdots\\
+b_m
+\end{pmatrix}.
+\]
+
+\end{frame}
+
+% =========================================================
+% VANTAGEM
+% =========================================================
+
+\begin{frame}{Por que essa representação é importante?}
+
+A notação
+
+\[
+A\mathbf{x}=\mathbf{b}
+\]
+
+permite separar:
+
+\begin{itemize}
+    \item $A$: informações sobre as relações entre as variáveis;
+    \item $\mathbf{x}$: quantidades desconhecidas;
+    \item $\mathbf{b}$: dados conhecidos do problema.
+\end{itemize}
+
+\medskip
+
+Além disso, podemos desenvolver métodos sistemáticos para resolver
+problemas com muitas incógnitas.
+
+\medskip
+
+Um desses métodos é o
+
+\begin{center}
+    \Large
+    \textbf{escalonamento de matrizes}.
+\end{center}
+
+\end{frame}
+
+% =========================================================
+% MAS POR QUE LINEAR?
+% =========================================================
+
+\begin{frame}{Por que ``linear''?}
+
+Uma equação linear possui incógnitas apenas na primeira potência
+e não apresenta produtos entre incógnitas.
+
+Por exemplo:
+
+\[
+2x+3y-z=5
+\]
+
+é linear.
+
+Já
+
+\[
+xy+z=5
+\]
+
+não é linear.
+
+Também não são lineares:
+
+\[
+x^2+y=4
+\]
+
+e
+
+\[
+\sin(x)+y=1.
+\]
+
+\medskip
+
+A linearidade permite utilizar uma estrutura matemática
+particularmente poderosa.
+
+\end{frame}
+
+% =========================================================
+% GRANDE APLICAÇÃO
+% =========================================================
+
+\begin{frame}{Uma aplicação mais sofisticada}
+
+Agora vamos considerar um problema diferente:
+
+\begin{center}
+    \Large
+    Como determinar a temperatura em uma região?
+\end{center}
+
+Imagine uma placa metálica cuja temperatura é mantida fixa
+em sua fronteira.
+
+No interior da placa, a temperatura se distribui de acordo com
+um princípio físico.
+
+\end{frame}
+
+% =========================================================
+% LAPLACE
+% =========================================================
+
+\begin{frame}{A equação de Laplace}
+
+Em regime estacionário, sem fontes ou sumidouros de calor,
+a temperatura $u(x,y)$ pode ser modelada pela equação de Laplace:
+
+\[
+\frac{\partial^2u}{\partial x^2}
++
+\frac{\partial^2u}{\partial y^2}
+=0.
+\]
+
+Ou, de forma compacta,
+
+\[
+\Delta u=0.
+\]
+
+\medskip
+
+Temos agora uma equação diferencial parcial.
+
+\medskip
+
+Como poderíamos utilizar um computador para obter uma
+aproximação da solução?
+
+\end{frame}
+
+% =========================================================
+% DISCRETIZAÇÃO
+% =========================================================
+
+\begin{frame}{Transformando o problema contínuo em um problema discreto}
+
+Em vez de procurar a temperatura em todos os pontos da placa,
+vamos considerar uma malha.
+
+\medskip
+
+Por exemplo:
+
+\[
+\begin{array}{ccccc}
+\bullet & \bullet & \bullet & \bullet & \bullet\\
+\bullet & \bullet & \bullet & \bullet & \bullet\\
+\bullet & \bullet & \bullet & \bullet & \bullet\\
+\bullet & \bullet & \bullet & \bullet & \bullet\\
+\bullet & \bullet & \bullet & \bullet & \bullet
+\end{array}
+\]
+
+Queremos aproximar a temperatura apenas nos pontos da malha.
+
+\medskip
+
+Chamaremos a temperatura no ponto $(x_i,y_j)$ de
+
+\[
+u_{ij}.
+\]
+
+\end{frame}
+
+% =========================================================
+% DIFERENÇAS FINITAS
+% =========================================================
+
+\begin{frame}{Aproximação por diferenças finitas}
+
+Para uma malha uniforme, podemos aproximar as derivadas
+segundas por diferenças finitas.
+
+Temos aproximadamente:
+
+\[
+\frac{\partial^2u}{\partial x^2}
+\approx
+\frac{u_{i+1,j}-2u_{i,j}+u_{i-1,j}}{h^2}
+\]
+
+e
+
+\[
+\frac{\partial^2u}{\partial y^2}
+\approx
+\frac{u_{i,j+1}-2u_{i,j}+u_{i,j-1}}{h^2}.
+\]
+
+Substituindo na equação de Laplace:
+
+\[
+\frac{u_{i+1,j}-2u_{i,j}+u_{i-1,j}}{h^2}
++
+\frac{u_{i,j+1}-2u_{i,j}+u_{i,j-1}}{h^2}
+=0.
+\]
+
+\end{frame}
+
+% =========================================================
+% EQUAÇÃO DISCRETA
+% =========================================================
+
+\begin{frame}{A equação discreta}
+
+Multiplicando por $h^2$:
+
+\[
+u_{i+1,j}-2u_{i,j}+u_{i-1,j}
++
+u_{i,j+1}-2u_{i,j}+u_{i,j-1}
+=0.
+\]
+
+Reorganizando:
+
+\[
+4u_{i,j}
+=
+u_{i+1,j}
++
+u_{i-1,j}
++
+u_{i,j+1}
++
+u_{i,j-1}.
+\]
+
+Portanto,
+
+\[
+u_{i,j}
+=
+\frac{
+u_{i+1,j}
++
+u_{i-1,j}
++
+u_{i,j+1}
++
+u_{i,j-1}
+}{4}.
+\]
+
+\medskip
+
+A temperatura em cada ponto interior é aproximadamente a
+\textbf{média das temperaturas dos quatro vizinhos}.
+
+\end{frame}
+
+% =========================================================
+% PEQUENA MALHA
+% =========================================================
+
+\begin{frame}{Uma pequena malha}
+
+Considere uma malha com quatro pontos interiores:
+
+\[
+\begin{array}{ccccc}
+10 & 10 & 10 & 10 & 10\\
+10 & u_1 & u_2 & 10 & 10\\
+10 & u_3 & u_4 & 10 & 10\\
+10 & 10 & 10 & 10 & 10
+\end{array}
+\]
+
+Os valores $10$ representam temperaturas conhecidas na fronteira.
+
+As incógnitas são
+
+\[
+u_1,\quad u_2,\quad u_3,\quad u_4.
+\]
+
+\end{frame}
+
+% =========================================================
+% EQUAÇÕES
+% =========================================================
+
+\begin{frame}{Obtendo as equações}
+
+Para $u_1$:
+
+\[
+4u_1=10+u_2+10+u_3.
+\]
+
+Portanto,
+
+\[
+4u_1-u_2-u_3=20.
+\]
+
+Para $u_2$:
+
+\[
+4u_2=u_1+10+10+u_4,
+\]
+
+logo,
+
+\[
+-u_1+4u_2-u_4=20.
+\]
+
+\end{frame}
+
+\begin{frame}{Obtendo as equações}
+
+Para $u_3$:
+
+\[
+4u_3=10+u_4+10+u_1,
+\]
+
+portanto,
+
+\[
+-u_1+4u_3-u_4=20.
+\]
+
+Para $u_4$:
+
+\[
+4u_4=u_3+10+10+u_2,
+\]
+
+logo,
+
+\[
+-u_2-u_3+4u_4=20.
+\]
+
+\end{frame}
+
+% =========================================================
+% SISTEMA
+% =========================================================
+
+\begin{frame}{O sistema linear aparece naturalmente}
+
+As quatro equações formam o sistema
+
+\[
+\begin{cases}
+4u_1-u_2-u_3=20,\\
+-u_1+4u_2-u_4=20,\\
+-u_1+4u_3-u_4=20,\\
+-u_2-u_3+4u_4=20.
+\end{cases}
+\]
+
+Agora temos exatamente o tipo de problema que estamos estudando:
+
+\[
+A\mathbf{u}=\mathbf{b}.
+\]
+
+\end{frame}
+
+% =========================================================
+% MATRIZ
+% =========================================================
+
+\begin{frame}{Representação matricial}
+
+O sistema pode ser escrito como
+
+\[
+\begin{pmatrix}
+4&-1&-1&0\\
+-1&4&0&-1\\
+-1&0&4&-1\\
+0&-1&-1&4
+\end{pmatrix}
+\begin{pmatrix}
+u_1\\
+u_2\\
+u_3\\
+u_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+20\\
+20\\
+20\\
+20
+\end{pmatrix}.
+\]
+
+Ou simplesmente,
+
+\[
+A\mathbf{u}=\mathbf{b}.
+\]
+
+\medskip
+
+O problema de determinar a distribuição de temperatura foi
+transformado em um problema de \textbf{Álgebra Linear}.
+
+\end{frame}
+
+% =========================================================
+% RESOLUÇÃO
+% =========================================================
+
+\begin{frame}{Resolvendo o sistema}
+
+Por simetria, podemos esperar que
+
+\[
+u_1=u_2=u_3=u_4.
+\]
+
+Se
+
+\[
+u_1=u_2=u_3=u_4=u,
+\]
+
+a primeira equação fornece
+
+\[
+4u-u-u=20.
+\]
+
+Logo,
+
+\[
+2u=20
+\]
+
+e
+
+\[
+u=10.
+\]
+
+Portanto,
+
+\[
+u_1=u_2=u_3=u_4=10.
+\]
+
+\end{frame}
+
+% =========================================================
+% INTERPRETAÇÃO
+% =========================================================
+
+\begin{frame}{O que acabamos de fazer?}
+
+Começamos com um problema físico:
+
+\[
+\text{distribuição de temperatura em uma placa}.
+\]
+
+\medskip
+
+Utilizamos:
+
+\[
+\text{equação de Laplace}
+\]
+
+\[
+\Downarrow
+\]
+
+\text{diferenças finitas}
+
+\[
+\Downarrow
+\]
+
+\text{equações lineares}
+
+\[
+\Downarrow
+\]
+
+\text{sistema linear}
+
+\[
+\Downarrow
+\]
+
+\text{matriz}
+
+\[
+\Downarrow
+\]
+
+\text{escalonamento / métodos numéricos}.
+
+\end{frame}
+
+% =========================================================
+% MALHA MAIOR
+% =========================================================
+
+\begin{frame}{E se a malha for maior?}
+
+Na nossa pequena malha tivemos apenas quatro incógnitas.
+
+Mas imagine uma malha com:
+
+\[
+100\times100
+\]
+
+pontos interiores.
+
+Teremos aproximadamente
+
+\[
+10\,000
+\]
+
+temperaturas desconhecidas.
+
+O modelo produzirá um sistema com milhares de equações e
+milhares de incógnitas.
+
+\medskip
+
+Ainda assim, sua estrutura será
+
+\[
+A\mathbf{u}=\mathbf{b}.
+\]
+
+\end{frame}
+
+% =========================================================
+% COMPUTAÇÃO
+% =========================================================
+
+\begin{frame}{E é aqui que a Álgebra Linear se torna computacional}
+
+Para sistemas pequenos, podemos utilizar o escalonamento
+manualmente.
+
+Para sistemas com milhares ou milhões de incógnitas,
+precisamos de algoritmos computacionais.
+
+Alguns métodos importantes incluem:
+
+\begin{itemize}
+    \item eliminação de Gauss;
+    \item fatoração $LU$;
+    \item métodos iterativos;
+    \item métodos específicos para matrizes esparsas.
+\end{itemize}
+
+\medskip
+
+A Álgebra Linear fornece a linguagem e as ferramentas para
+esses métodos.
+
+\end{frame}
+
+% =========================================================
+% ESTRUTURA DA MATRIZ
+% =========================================================
+
+\begin{frame}{Uma característica importante}
+
+Observe a matriz
+
+\[
+A=
+\begin{pmatrix}
+4&-1&-1&0\\
+-1&4&0&-1\\
+-1&0&4&-1\\
+0&-1&-1&4
+\end{pmatrix}.
+\]
+
+A maioria dos elementos é zero.
+
+Uma matriz com muitos elementos iguais a zero é chamada de
+\textbf{matriz esparsa}.
+
+\medskip
+
+Essa estrutura não é um detalhe:
+
+\begin{center}
+\Large
+\textbf{ela pode ser explorada pelos algoritmos numéricos.}
+\end{center}
+
+\end{frame}
+
+% =========================================================
+% A IDEIA CENTRAL
+% =========================================================
+
+\begin{frame}{A ideia central}
+
+Sistemas lineares não são apenas um tópico algébrico.
+
+Eles aparecem quando transformamos problemas reais em modelos
+matemáticos.
+
+\medskip
+
+Um mesmo objeto matemático,
+
+\[
+A\mathbf{x}=\mathbf{b},
+\]
+
+pode representar:
+
+\begin{itemize}
+    \item um circuito elétrico;
+    \item um problema de produção;
+    \item uma rede de transporte;
+    \item uma estrutura mecânica;
+    \item uma aproximação de uma equação diferencial;
+    \item a distribuição de temperatura em uma placa.
+\end{itemize}
+
+\end{frame}
+
+% =========================================================
+% FECHAMENTO
+% =========================================================
+
+\begin{frame}{Por que estudar sistemas lineares?}
+
+Porque aprender a resolver
+
+\[
+A\mathbf{x}=\mathbf{b}
+\]
+
+significa adquirir uma ferramenta que aparece em
+diversas áreas da Matemática, da Ciência e da Engenharia.
+
+\medskip
+
+O escalonamento que fazemos com algumas linhas e colunas em uma
+aula pode ser o mesmo princípio matemático utilizado para resolver
+sistemas com milhares ou milhões de incógnitas.
+
+\medskip
+
+\begin{center}
+\Large
+\textbf{O sistema linear é uma ponte entre a modelagem e a solução.}
+\end{center}
+
+\end{frame}
+
+%------------------------------------------------------------------------------%
+% \framedgraphic{Gráfico de uma Função Real}{B_01_grafico_funcao_real}{}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
