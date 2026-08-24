@@ -1,0 +1,127 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Sistemas Lineares Homogêneos}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Sistemas Lineares Homogêneos}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Sistemas Lineares Homogêneos}
+  Um sistema linear \emph{homogêneo} tem todos os
+  \emph{termos independentes iguais a zero}
+  \pause
+  \[
+    \left\{\begin{array}{lll}
+      a_{11} x_1 + \cdots + a_{1n} x_n    & \!\! = & \emph{0} \\
+      a_{21} x_1 + \cdots + a_{2n} x_n    & \!\! = & \emph{0} \\
+      \hphantom{a_{21} x_1 + } \quad \vdots &        &   \\
+      a_{m1} x_1 + \cdots + a_{mn} x_n    & \!\! = & \emph{0}
+    \end{array}\right.
+  \]
+
+  \pause
+  Na forma matricial
+  \[
+    A_{m\times n} \; \mathbf{x}_{n\times 1} = \emph{\mnula}_{m\times 1}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Existência de Solução}
+  Todo sistema homogêneo possui pelo menos a \emph{solução trivial}
+  \pause
+  \[
+    \mathbf{x}_{n\times 1}
+    =
+    \mnula_{n\times 1}
+    \pause
+    =
+    \begin{bmatrix}
+      0      \\
+      \multicolumn{1}{c}{\vdots} \\
+      0
+    \end{bmatrix}_{n\times 1}
+  \]
+
+  \pause
+  pois
+  \[
+    A\mathbf{x}
+    \pause
+    = A\mnula
+    \pause
+    = \mnula
+  \]
+
+  \emph{Atenção:} As ordens das matrizes precisam ser compatíveis
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Soluções de um Sistema Homogêneo}
+  Um sistema homogêneo pode possuir
+  \pause
+  \begin{itemize}
+    \item somente a solução trivial
+    \pause
+    \item infinitas soluções
+  \end{itemize}
+
+  \pause
+  \bigskip
+  Qualquer solução
+  \;\(
+    \mathbf{x} \neq \mnula
+  \)\;
+  \pause
+  é chamada \emph{solução não trivial}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/C-05-Sistemas_homogeneos-ex-01}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Forma Escalonada e Soluções}
+  Se todas as incógnitas correspondem a posições de pivô
+  \\ \pause
+  a única solução possível é a solução trivial
+
+  \pause
+  \bigskip
+
+  Se existir pelo menos uma variável livre
+  \\ \pause
+  podemos atribuir valores a essa variável e obter soluções não triviais
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/C-05-Sistemas_homogeneos-ex-02}
+\input{ex/C-05-Sistemas_homogeneos-ex-03}
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+
+
+
+

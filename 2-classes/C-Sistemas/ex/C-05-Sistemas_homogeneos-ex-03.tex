@@ -1,0 +1,131 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine o conjunto solução do sistema
+  \[
+    \systeme[sort={x, y, z, w}]{
+       x +  y +  z +  w = 0,
+      2x + 2y + 2z + 2w = 0
+    }
+  \]
+
+  \bigskip
+  \[
+    A =
+    \begin{bmatrix}
+      1 & 1 & 1 & 1 \\
+      2 & 2 & 2 & 2
+    \end{bmatrix}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento}
+  \begin{columns}
+  \column{0.3\linewidth}
+    \[\;\;\;
+      \begin{bmatrix}
+        1 & 1 & 1 & 1 \\
+        2 & 2 & 2 & 2
+      \end{bmatrix}
+    \]
+    \pause
+  \column{0.7\linewidth}
+    Eliminamos os elementos abaixo do primeiro pivô
+    \\ \pause
+    \(
+      L_2 \leftarrow L_2 - 2 L_1
+    \)
+  \end{columns}
+  \vspace{-\baselineskip}
+  \[
+    \pause
+    L'_2
+    \;=\;
+    L_2 - 2 L_1
+    \pause
+    \;=\;
+    \begin{bmatrix}
+      2 & 2 & 2 & 2
+    \end{bmatrix}
+    - 2
+    \begin{bmatrix}
+      1 & 1 & 1 & 1
+    \end{bmatrix}
+    \pause
+    \;=\;
+    \begin{bmatrix}
+      0 & 0 & 0 & 0
+    \end{bmatrix}
+  \]
+  \pause
+  \[
+    \begin{bmatrix}
+      1 & 1 & 1 & 1 \\
+      0 & 0 & 0 & 0
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Sistema reduzido}
+  \begin{gather*}
+    \onslide<+->{x + y + z + w = 0 \\}
+    \onslide<+->{x = -y -z -w}
+  \end{gather*}
+  \onslide<+->{As variáveis $y$, $z$ e $w$ são livres}
+  \begin{align*}
+    \onslide<+->{y & = r & \forall\, r \in \R \\}
+    \onslide<+->{z & = s & \forall\, s \in \R \\}
+    \onslide<+->{w & = t & \forall\, t \in \R \\}
+    \onslide<+->{x & = -r -s -t}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Vetorialmente
+  \[
+    \mathbf{x}
+    \pause
+    \;=\;
+    \begin{pmatrix}
+      -r-s-t \\
+      r      \\
+      s      \\
+      t
+    \end{pmatrix}
+    \pause
+    \;=\;
+    r \begin{pmatrix} -1 \\ 1 \\ 0 \\ 0 \end{pmatrix} +
+    s \begin{pmatrix} -1 \\ 0 \\ 1 \\ 0 \end{pmatrix} +
+    t \begin{pmatrix} -1 \\ 0 \\ 0 \\ 1 \end{pmatrix}
+  \]
+  \pause
+  com
+  \(
+    r, s, t \in \R
+  \)
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Conjunto Solução}
+  \[
+    S = \left\{
+      r\, \mathbf{V}_1 +
+      s\, \mathbf{V}_2 +
+      t\, \mathbf{V}_3
+      \st
+      (r, s, t) \in \R^3
+    \right\}
+  \]
+  com
+  \[
+    \mathbf{V}_1 = \begin{pmatrix} -1 \\ 1 \\ 0 \\ 0 \end{pmatrix} \qquad
+    \mathbf{V}_2 = \begin{pmatrix} -1 \\ 0 \\ 1 \\ 0 \end{pmatrix} \qquad
+    \mathbf{V}_3 = \begin{pmatrix} -1 \\ 0 \\ 0 \\ 1 \end{pmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

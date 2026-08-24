@@ -1,0 +1,195 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine as soluções do sistema
+  \[
+    \systeme{
+       x + 2y = 0,
+      3x -  y = 0
+    }
+  \]
+
+  \bigskip
+  \pause
+  Matriz aumentada
+  \[
+    \begin{amatrix}{2}
+      1 & 2  & 0 \\
+      3 & -1 & 0
+    \end{amatrix}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento}
+  \begin{columns}
+  \column{0.3\linewidth}
+    \[\;\;\;
+    \left[\begin{array}{cc|c}
+      1 & 2  & 0 \\
+      3 & -1 & 0
+    \end{array}\right]
+    \]
+    \pause
+  \column{0.7\linewidth}
+    Eliminamos os elementos abaixo do primeiro pivô
+    \\ \pause
+    \(
+      L_2 \leftarrow L_2 - 3 L_1
+    \)
+  \end{columns}
+  \vspace{-\baselineskip}
+  \[
+    \pause
+    L'_2
+    \;=\;
+    L_2 - 3 L_1
+    \pause
+    \;=\;
+    \left[\begin{array}{cc|c}
+      3 & -1 & 0
+    \end{array}\right]
+    - 3
+    \left[\begin{array}{cc|c}
+      1 & 2  & 0
+    \end{array}\right]
+    \pause
+    \;=\;
+    \left[\begin{array}{cc|c}
+      0 & -7 & 0
+    \end{array}\right]
+  \]
+  \pause
+  \[
+    \left[\begin{array}{cc|c}
+      1 & 2  & 0 \\
+      0 & -7 & 0
+    \end{array}\right]
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento}
+  \begin{columns}
+  \column{0.3\linewidth}
+    \[\;\;\;
+    \left[\begin{array}{cc|c}
+      1 & 2  & 0 \\
+      0 & -7 & 0
+    \end{array}\right]
+    \]
+    \pause
+  \column{0.7\linewidth}
+    Tornando o segundo pivô igual a 1
+    \\ \pause
+    \(
+      L_2 \leftarrow - \frac{1}{7} L_2
+    \)
+  \end{columns}
+  \vspace{-\baselineskip}
+  \[
+    \pause
+    L'_2
+    \;=\;
+    - \frac{1}{7} L_2
+    \pause
+    \;=\;
+    - \frac{1}{7}
+    \left[\begin{array}{cc|c}
+      0 & -7 & 0
+    \end{array}\right]
+    \pause
+    \;=\;
+    \left[\begin{array}{cc|c}
+      0 & 1 & 0
+    \end{array}\right]
+  \]
+  \pause
+  \[
+    \left[\begin{array}{cc|c}
+      1 & 2 & 0 \\
+      0 & 1 & 0
+    \end{array}\right]
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento}
+  \begin{columns}
+  \column{0.3\linewidth}
+    \[\;\;\;
+    \left[\begin{array}{cc|c}
+      1 & 2 & 0 \\
+      0 & 1 & 0
+    \end{array}\right]
+    \]
+    \pause
+  \column{0.7\linewidth}
+    Eliminamos os elementos a cima do segundo pivô
+    \\ \pause
+    \(
+      L_1 \leftarrow L_1 - 2 L_2
+    \)
+  \end{columns}
+  \vspace{-\baselineskip}
+  \[
+    \pause
+    L'_1
+    \;=\;
+    L_1 - 2 L_2
+    \pause
+    \;=\;
+    \left[\begin{array}{cc|c}
+      1 & 2 & 0
+    \end{array}\right]
+    - 2
+    \left[\begin{array}{cc|c}
+      0 & 1 & 0
+    \end{array}\right]
+    \pause
+    \;=\;
+    \left[\begin{array}{cc|c}
+      1 & 0 & 0
+    \end{array}\right]
+  \]
+  \pause
+  \[
+    \left[\begin{array}{cc|c}
+      1 & 0 & 0 \\
+      0 & 1 & 0
+    \end{array}\right]
+  \]
+
+  \pause
+  \bigskip
+  Observe que o a última coluna da matriz aumentada sempre ficou igual a zero
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  A única solução é
+  \begin{align*}
+    x & = 0 \\
+    y & = 0
+  \end{align*}
+
+  \pause
+  Vetorialmente
+  \[
+    \mathbf{x}
+    \pause
+    =
+    \begin{bmatrix}
+      x \\
+      y
+    \end{bmatrix}
+    \pause
+    =
+    \begin{bmatrix}
+      0 \\
+      0
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

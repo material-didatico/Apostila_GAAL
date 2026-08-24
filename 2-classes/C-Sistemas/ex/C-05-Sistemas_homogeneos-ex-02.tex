@@ -1,0 +1,308 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine o conjunto solução do sistema
+  \[
+    \systeme{
+       x + 2y -  z = 0,
+      2x + 4y - 2z = 0,
+       x +  y +  z = 0
+    }
+  \]
+
+  \bigskip
+  \begin{columns}[t]
+  \column{0.3\linewidth}
+    \pause
+    Matriz aumentada
+    \[
+      \begin{amatrix}{3}
+        1 & 2 & -1 & 0 \\
+        2 & 4 & -2 & 0 \\
+        1 & 1 & 1  & 0
+      \end{amatrix}
+    \]
+  \column{0.4\linewidth}
+    \pause
+    Basta escalonar a matriz $A$
+    \[
+      A =
+      \begin{bmatrix}
+        1 & 2 & -1  \\
+        2 & 4 & -2  \\
+        1 & 1 &  1
+      \end{bmatrix}
+    \]
+  \end{columns}
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento}
+  \begin{columns}
+  \column{0.3\linewidth}
+    \[\;\;\;
+      \begin{bmatrix}
+        1 & 2 & -1 \\
+        2 & 4 & -2 \\
+        1 & 1 &  1
+      \end{bmatrix}
+    \]
+    \pause
+  \column{0.7\linewidth}
+    Eliminamos os elementos abaixo do primeiro pivô
+    \\ \pause
+    \(
+      L_2 \leftarrow L_2 - 2 L_1
+    \)
+    \\ \pause
+    \(
+      L_3 \leftarrow L_3 - L_1
+    \)
+  \end{columns}
+  \vspace{-\baselineskip}
+  \[
+    \pause
+    L'_2
+    \;=\;
+    L_2 - 2 L_1
+    \pause
+    \;=\;
+    \begin{bmatrix}
+      2 & 4 & -2
+    \end{bmatrix}
+    - 2
+    \begin{bmatrix}
+      1 & 2 & -1
+    \end{bmatrix}
+    \pause
+    \;=\;
+    \begin{bmatrix}
+      0 & 0  & 0
+    \end{bmatrix}
+  \]
+  \[
+    \pause
+    L'_3
+    \;=\;
+    L_3 - L_1
+    \pause
+    \;=\;
+    \begin{bmatrix}
+      1 & 1 &  1
+    \end{bmatrix}
+    -
+    \begin{bmatrix}
+      1 & 2 & -1
+    \end{bmatrix}
+    \pause
+    \;=\;
+    \begin{bmatrix}
+      0 & -1 & 2
+    \end{bmatrix}
+  \]
+  \pause
+  \[
+    \begin{bmatrix}
+      1 & 2  & -1 \\
+      0 & 0  & 0  \\
+      0 & -1 & 2
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento}
+  \begin{columns}
+  \column{0.3\linewidth}
+    \[\;\;\;
+      \begin{bmatrix}
+        1 & 2  & -1 \\
+        0 & 0  & 0  \\
+        0 & -1 & 2
+      \end{bmatrix}
+    \]
+    \pause
+  \column{0.7\linewidth}
+    Trocamos as linhas $L_2$ e $L_3$
+  \end{columns}
+
+  \pause
+  \[
+    \begin{bmatrix}
+      1 & 2  & -1 \\
+      0 & -1 & 2  \\
+      0 & 0  & 0
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento}
+  \begin{columns}
+  \column{0.3\linewidth}
+    \[\;\;\;
+      \begin{bmatrix}
+        1 & 2  & -1 \\
+        0 & -1 & 2  \\
+        0 & 0  & 0
+      \end{bmatrix}
+    \]
+    \pause
+  \column{0.7\linewidth}
+    Tornando o segundo pivô igual a 1
+    \\ \pause
+    \(
+      L_2 \leftarrow - L_2
+    \)
+  \end{columns}
+  \vspace{-\baselineskip}
+  \[
+    \pause
+    L'_2
+    \;=\;
+    - L_2
+    \pause
+    \;=\;
+    -
+    \begin{bmatrix}
+      0 & -1 & 2
+    \end{bmatrix}
+    \pause
+    \;=\;
+    \begin{bmatrix}
+      0 & 1 & -2
+    \end{bmatrix}
+  \]
+  \pause
+  \[
+    \begin{bmatrix}
+      1 & 2 & -1 \\
+      0 & 1 & -2 \\
+      0 & 0 & 0
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento}
+  \begin{columns}
+  \column{0.3\linewidth}
+    \[\;\;\;
+      \begin{bmatrix}
+        1 & 2 & -1 \\
+        0 & 1 & -2 \\
+        0 & 0 & 0
+      \end{bmatrix}
+    \]
+    \pause
+  \column{0.7\linewidth}
+    Eliminamos os elementos a cima do segundo pivô
+    \\ \pause
+    \(
+      L_1 \leftarrow L_1 - 2 L_2
+    \)
+  \end{columns}
+  \vspace{-\baselineskip}
+  \[
+    \pause
+    L'_1
+    \;=\;
+    L_1 - 2 L_2
+    \pause
+    \;=\;
+    \begin{bmatrix}
+      1 & 2 & -1
+    \end{bmatrix}
+    - 2
+    \begin{bmatrix}
+      0 & 1 & -2
+    \end{bmatrix}
+    \pause
+    \;=\;
+    \begin{bmatrix}
+      1 & 0 & 3
+    \end{bmatrix}
+  \]
+  \pause
+  \[
+    \begin{bmatrix}
+      1 & 0 & 3  \\
+      0 & 1 & -2 \\
+      0 & 0 & 0
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Sistema reduzido
+  \[
+    \systeme{
+      x   + 3z = 0,
+        y - 2z = 0
+    }
+  \]
+
+  \pause
+  \bigskip
+  A variável $z$ é livre
+  \[
+    z = t
+    \qquad
+    \forall\, t \in \R
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Solução
+  \begin{align*}
+    x & = -3t \\
+    y & =  2t
+  \end{align*}
+
+  \pause
+  Vetorialmente
+  \[
+    \mathbf{x}
+    \pause
+    \;=\;
+    \begin{bmatrix}
+      -3t \\
+      2t  \\
+      t
+    \end{bmatrix}
+    \pause
+    \;=\;
+    t
+    \begin{bmatrix}
+      -3 \\
+      2  \\
+      1
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Conjunto Solução}
+  O \emph{conjunto solução} é
+  \[
+    S
+    =
+    \left\{
+    t
+    \begin{bmatrix}
+      -3 \\
+      2  \\
+      1
+    \end{bmatrix}
+    \st
+    t\in\mathbb{R}
+    \right\}
+  \]
+
+  \pause
+  O conjunto solução forma uma reta que passa pela origem
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
