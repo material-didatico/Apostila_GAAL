@@ -1,0 +1,142 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Posto de Uma Matriz}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Posto de uma matriz}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Posto de Uma Matriz}
+  \emph{Posto} de uma matriz
+  \pause
+  \begin{itemize}
+    \item o \emph{número de pivôs} que aparecem em sua forma escalonada
+    \pause
+    \item o \emph{número de linhas não nulas} de uma matriz em forma escalonada
+  \end{itemize}
+
+  \pause
+  \medskip
+  \[
+    \posto(A)
+    \pause
+    \;=\;
+    \rank(A)
+    \pause
+    \;=\;
+    \text{número de pivôs de }A
+  \]
+
+  \pause
+  \medskip
+  Veremos adiante que o posto é o número de linhas independentes da matriz
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/C-06-Posto-ex-01}
+\input{ex/C-06-Posto-ex-02}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Posto e Variáveis Livres}
+  Dado o sistema linear com \emph{$n$ incógnitas}
+  \[
+    A_{m\times n} \; \mathbf{x}_{n\times 1} = \mathbf{b}_{m\times 1}
+  \]
+  \pause
+  \(
+    \emph{\posto(A) = r}
+  \)\;
+  \pause
+  existem $r$ variáveis associadas a pivôs
+
+  \medskip
+  \pause
+  As demais
+  \(
+    \emph{n - r}
+  \)
+  variáveis são livres,
+  \pause
+  desde que o sistema seja compatível
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/C-06-Posto-ex-03}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Posto de Uma Matriz Quadrada}
+  Para uma matriz quadrada
+  \(
+    A\in\mathbb{R}^{n\times n}
+  \)
+
+  \pause
+  temos
+  \[
+    \posto(A) \leq n
+  \]
+
+  \pause
+  \bigskip
+  Quando
+  \;\(
+    \posto(A) = n
+  \)\;
+  \pause
+  dizemos que $A$ possui \emph{posto completo}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/C-06-Posto-ex-04}
+\input{ex/C-06-Posto-ex-05}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teorema Fundamental para Sistemas Homogêneos}
+  Dado um sistema homogêneo com $n$ incógnitas
+  \[
+    A \mathbf{x} = \mnula
+  \]
+
+  \pause
+  \medskip
+  Se
+  \;\(
+    \posto(A) = n
+  \)\;
+  \pause
+  o sistema possui somente a solução trivial
+
+  \pause
+  \medskip
+  Se
+  \:\(
+    \posto(A) < n
+  \)\:
+  \pause
+  existem variáveis livres e   soluções não triviais
+\end{frame}
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
