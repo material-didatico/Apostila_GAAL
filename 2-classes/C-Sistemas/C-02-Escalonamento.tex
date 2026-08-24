@@ -26,7 +26,7 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Operações Elementares Sobre Linhas}
-\begin{enumerate}[<+->]
+  \begin{enumerate}[<+->]
     \item Troca de duas linhas
     \[
       L_i \leftrightarrow L_j
@@ -42,7 +42,7 @@
     \[
       L_i \leftarrow L_i + k L_j
     \]
-\end{enumerate}
+  \end{enumerate}
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -55,52 +55,50 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Por que escalonar uma matriz?}
+  \onslide<+->{Transformar uma matriz em uma forma \emph{mais simples}} \\
+  \onslide<+->{preservando informações importantes}
 
-\onslide<+->{Transformar uma matriz em uma forma \emph{mais simples}} \\
-\onslide<+->{preservando informações importantes}
+  \medskip
+  \onslide<+->{%
+    Utilizar operações elementares para produzir
+    \emph{zeros em posições estratégicas}
+  }
 
-\medskip
-\onslide<+->{%
-Utilizar operações elementares para produzir
-\emph{zeros em posições estratégicas}
-}
-
-\medskip
-\onslide<+->{Aplicações:}
-\vspace{-0.5\baselineskip}
-\begin{itemize}[<+->]
+  \medskip
+  \onslide<+->{Aplicações:}
+  \vspace{-0.5\baselineskip}
+  \begin{itemize}[<+->]
     \item resolução de sistemas lineares
     \item identificação da existência e quantidade de soluções
     \item determinação do posto de uma matriz
     \item cálculo da inversa de uma matriz
     \item análise de dependência linear
-\end{itemize}
-
+  \end{itemize}
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Matriz Escalonada}
-\onslide<+->{Uma matriz está em \emph{forma escalonada} quando:}
-\begin{enumerate}[<+->]
-    \item todas as linhas nulas estão abaixo das linhas não nulas
+  \onslide<+->{Uma matriz está em \emph{forma escalonada} quando:}
+  \begin{enumerate}[<+->]
+      \item todas as linhas nulas estão abaixo das linhas não nulas
 
-    \item o \emph{pivô} (primeiro elemento não nulo da linha)
-    está à direita do pivô da linha anterior
+      \item o \emph{pivô} (primeiro elemento não nulo da linha)
+      está à direita do pivô da linha anterior
 
-    \item todos os elementos abaixo de um pivô são nulos
-\end{enumerate}
+      \item todos os elementos abaixo de um pivô são nulos
+  \end{enumerate}
 
-\medskip
-\onslide<+->{Exemplo de matriz escalonada
-\qquad
-\(
-\begin{bmatrix}
-  \emph{1} & 2        & 1  & 3        \\
-  \z       & \emph{1} & 4  & 2        \\
-  \z       & \z       & \z & \emph{2} \\
-  \z       & \z       & \z & \z
-\end{bmatrix}
-\)}
+  \medskip
+  \onslide<+->{Exemplo de matriz escalonada
+  \qquad
+  \(
+  \begin{bmatrix}
+    \emph{1} & 2        & 1  & 3        \\
+    \z       & \emph{1} & 4  & 2        \\
+    \z       & \z       & \z & \emph{2} \\
+    \z       & \z       & \z & \z
+  \end{bmatrix}
+  \)}
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -113,41 +111,41 @@ Utilizar operações elementares para produzir
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Sistemas Lineares}
-O sistema
-\[
-  \begin{cases}
-    a_{11} \, x + a_{12} \, y + a_{13} \, z = b_1 \\
-    a_{21} \, x + a_{22} \, y + a_{23} \, z = b_2 \\
-    a_{21} \, x + a_{23} \, y + a_{33} \, z = b_3
-  \end{cases}
-\]
-\pause
-Pode ser representado matricialmente como
-\[
-  A\,\bm{\bar{x}} = \bm{\bar{b}}
-\]
-\pause
-com
-\[
-  A =
-  \begin{bmatrix}
-    a_{11} & a_{12} & a_{13} \\
-    a_{21} & a_{22} & a_{23} \\
-    a_{21} & a_{23} & a_{33}
-  \end{bmatrix}
+  O sistema
+  \[
+    \begin{cases}
+      a_{11} \, x + a_{12} \, y + a_{13} \, z = b_1 \\
+      a_{21} \, x + a_{22} \, y + a_{23} \, z = b_2 \\
+      a_{21} \, x + a_{23} \, y + a_{33} \, z = b_3
+    \end{cases}
+  \]
   \pause
-  \qquad
-  \bm{\bar{x}} =
-  \begin{bmatrix}
-    x \\ y \\ z
-  \end{bmatrix}
+  Pode ser representado matricialmente como
+  \[
+    A\,\bm{\bar{x}} = \bm{\bar{b}}
+  \]
   \pause
-  \qquad
-  \bm{\bar{b}} =
-  \begin{bmatrix}
-    b_1 \\ b_2 \\ b_3
-  \end{bmatrix}
-\]
+  com
+  \[
+    A =
+    \begin{bmatrix}
+      a_{11} & a_{12} & a_{13} \\
+      a_{21} & a_{22} & a_{23} \\
+      a_{21} & a_{23} & a_{33}
+    \end{bmatrix}
+    \pause
+    \qquad
+    \bm{\bar{x}} =
+    \begin{bmatrix}
+      x \\ y \\ z
+    \end{bmatrix}
+    \pause
+    \qquad
+    \bm{\bar{b}} =
+    \begin{bmatrix}
+      b_1 \\ b_2 \\ b_3
+    \end{bmatrix}
+  \]
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -161,11 +159,11 @@ com
   \]
   \[
     \pause
-    \left[\begin{array}{rrr|r}
+    \begin{amatrix}{3}
       a_{11} & a_{12} & a_{13} & b_1 \\
       a_{21} & a_{22} & a_{23} & b_2 \\
       a_{21} & a_{23} & a_{33} & b_3
-    \end{array}\right]
+    \end{amatrix}
   \]
 
   \pause

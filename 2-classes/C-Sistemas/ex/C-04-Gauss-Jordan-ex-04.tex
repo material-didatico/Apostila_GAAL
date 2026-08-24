@@ -15,12 +15,12 @@ Resolva o sistema linear pelo método de Gauss-Jordan
 \begin{resolution}{Matriz Aumentada}
   Matriz aumentada
   \[
-    \left[\begin{array}{rrrrr|r}
+    \begin{amatrix}{5}
       1  & 2  & -1 & 1  & 1 & 3  \\
       2  & 5  & 1  & 2  & 1 & 8  \\
       -1 & -1 & 2  & -1 & 2 & -1 \\
       0  & 1  & 1  & 0  & 3 & 2
-    \end{array}\right]
+    \end{amatrix}
   \]
 \end{resolution}
 
@@ -29,12 +29,12 @@ Resolva o sistema linear pelo método de Gauss-Jordan
 \begin{columns}
 \column{0.45\linewidth}
   \[
-    \left[\begin{array}{rrrrr|r}
+    \begin{amatrix}{5}
       1  & 2  & -1 & 1  & 1 & 3  \\
       2  & 5  & 1  & 2  & 1 & 8  \\
       -1 & -1 & 2  & -1 & 2 & -1 \\
       0  & 1  & 1  & 0  & 3 & 2
-    \end{array}\right]
+    \end{amatrix}
   \]
   \pause
 \column{0.58\linewidth}
@@ -55,18 +55,18 @@ Resolva o sistema linear pelo método de Gauss-Jordan
   L'_2
   \pause
   \;=\;
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     2  & 5  & 1  & 2  & 1 & 8
-  \end{array}\right]
+  \end{amatrix}
   -2
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     1  & 2  & -1 & 1  & 1 & 3
-  \end{array}\right]
+  \end{amatrix}
   \pause
   \;=\;
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     0 & 1 & 3  & 0 & -1 & 2
-  \end{array}\right]
+  \end{amatrix}
 \]
 \[
   \pause
@@ -74,27 +74,27 @@ Resolva o sistema linear pelo método de Gauss-Jordan
   L'_3
   \pause
   \;=\;
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     -1 & -1 & 2  & -1 & 2 & -1
-  \end{array}\right]
+  \end{amatrix}
   +
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     1  & 2  & -1 & 1  & 1 & 3
-  \end{array}\right]
+  \end{amatrix}
   \pause
   \;=\;
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     0 & 1 & 1  & 0 & 3  & 2
-  \end{array}\right]
+  \end{amatrix}
 \]
 \pause
 \[
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     1 & 2 & -1 & 1 & 1  & 3 \\
     0 & 1 & 3  & 0 & -1 & 2 \\
     0 & 1 & 1  & 0 & 3  & 2 \\
     0 & 1 & 1  & 0 & 3  & 2
-  \end{array}\right]
+  \end{amatrix}
 \]
 \end{resolution}
 
@@ -103,12 +103,12 @@ Resolva o sistema linear pelo método de Gauss-Jordan
 \begin{columns}
 \column{0.45\linewidth}
   \[
-    \left[\begin{array}{rrrrr|r}
+    \begin{amatrix}{5}
       1 & 2 & -1 & 1 & 1  & 3 \\
       0 & 1 & 3  & 0 & -1 & 2 \\
       0 & 1 & 1  & 0 & 3  & 2 \\
       0 & 1 & 1  & 0 & 3  & 2
-    \end{array}\right]
+    \end{amatrix}
   \]
   \pause
 \column{0.58\linewidth}
@@ -129,18 +129,18 @@ Resolva o sistema linear pelo método de Gauss-Jordan
   L'_3
   \pause
   \;=\;
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     0 & 1 & 1  & 0 & 3  & 2
-  \end{array}\right]
+  \end{amatrix}
   -
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     0 & 1 & 3  & 0 & -1 & 2
-  \end{array}\right]
+  \end{amatrix}
   \pause
   \;=\;
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     0 & 0 & -2 & 0 & 4  & 0
-  \end{array}\right]
+  \end{amatrix}
 \]
 \[
   \pause
@@ -148,27 +148,27 @@ Resolva o sistema linear pelo método de Gauss-Jordan
   L'_4
   \pause
   \;=\;
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     0 & 1 & 1  & 0 & 3  & 2
-  \end{array}\right]
+  \end{amatrix}
   -
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     0 & 1 & 3  & 0 & -1 & 2
-  \end{array}\right]
+  \end{amatrix}
   \pause
   \;=\;
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     0 & 0 & -2 & 0 & 4  & 0
-  \end{array}\right]
+  \end{amatrix}
 \]
 \pause
 \[
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     1 & 2 & -1 & 1 & 1  & 3 \\
     0 & 1 & 3  & 0 & -1 & 2 \\
     0 & 0 & -2 & 0 & 4  & 0 \\
     0 & 0 & -2 & 0 & 4  & 0
-  \end{array}\right]
+  \end{amatrix}
 \]
 \end{resolution}
 
@@ -177,12 +177,12 @@ Resolva o sistema linear pelo método de Gauss-Jordan
 \begin{columns}
 \column{0.45\linewidth}
   \[
-    \left[\begin{array}{rrrrr|r}
+    \begin{amatrix}{5}
       1 & 2 & -1 & 1 & 1  & 3 \\
       0 & 1 & 3  & 0 & -1 & 2 \\
       0 & 0 & -2 & 0 & 4  & 0 \\
       0 & 0 & -2 & 0 & 4  & 0
-    \end{array}\right]
+    \end{amatrix}
   \]
   \pause
 \column{0.58\linewidth}
@@ -200,23 +200,23 @@ Resolva o sistema linear pelo método de Gauss-Jordan
   \pause
   \;=\;
   -\frac{1}{2}
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     0 & 0 & -2 & 0 & 4  & 0
-  \end{array}\right]
+  \end{amatrix}
   \pause
   \;=\;
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     0 & 0 & 1  & 0 & -2 & 0
-  \end{array}\right]
+  \end{amatrix}
 \]
 \pause
 \[
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     1 & 2 & -1 & 1 & 1  & 3 \\
     0 & 1 & 3  & 0 & -1 & 2 \\
     0 & 0 & 1  & 0 & -2 & 0 \\
     0 & 0 & -2 & 0 & 4  & 0
-  \end{array}\right]
+  \end{amatrix}
 \]
 \end{resolution}
 
@@ -225,12 +225,12 @@ Resolva o sistema linear pelo método de Gauss-Jordan
 \begin{columns}
 \column{0.4\linewidth}
   \[
-    \left[\begin{array}{rrrrr|r}
+    \begin{amatrix}{5}
       1 & 2 & -1 & 1 & 1  & 3 \\
       0 & 1 & 3  & 0 & -1 & 2 \\
       0 & 0 & 1  & 0 & -2 & 0 \\
       0 & 0 & -2 & 0 & 4  & 0
-    \end{array}\right]
+    \end{amatrix}
   \]
   \pause
 \column{0.6\linewidth}
@@ -247,27 +247,27 @@ Resolva o sistema linear pelo método de Gauss-Jordan
   L'_4
   \pause
   \;=\;
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     0 & 0 & -2 & 0 & 4  & 0
-  \end{array}\right]
+  \end{amatrix}
   +2
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     0 & 0 & 1  & 0 & -2 & 0
-  \end{array}\right]
+  \end{amatrix}
   \pause
   \;=\;
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     0 & 0 & 0 & 0 & 0 & 0
-  \end{array}\right]
+  \end{amatrix}
 \]
 \pause
 \[
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     1 & 2 & -1 & 1 & 1  & 3 \\
     0 & 1 & 3  & 0 & -1 & 2 \\
     0 & 0 & 1  & 0 & -2 & 0 \\
     0 & 0 & 0  & 0 &  0 & 0
-  \end{array}\right]
+  \end{amatrix}
 \]
 \end{resolution}
 
@@ -276,12 +276,12 @@ Resolva o sistema linear pelo método de Gauss-Jordan
 \begin{columns}
 \column{0.4\linewidth}
   \[
-    \left[\begin{array}{rrrrr|r}
+    \begin{amatrix}{5}
       1 & 2 & -1 & 1 & 1  & 3 \\
       0 & 1 & 3  & 0 & -1 & 2 \\
       0 & 0 & 1  & 0 & -2 & 0 \\
       0 & 0 & 0  & 0 &  0 & 0
-    \end{array}\right]
+    \end{amatrix}
   \]
   \pause
 \column{0.6\linewidth}
@@ -302,18 +302,18 @@ Resolva o sistema linear pelo método de Gauss-Jordan
   L'_2
   \pause
   \;=\;
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     0 & 1 & 3  & 0 & -1 & 2
-  \end{array}\right]
+  \end{amatrix}
   -3
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     0 & 0 & 1  & 0 & -2 & 0
-  \end{array}\right]
+  \end{amatrix}
   \pause
   \;=\;
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     0 & 1 & 0 & 0 & 5  & 2
-  \end{array}\right]
+  \end{amatrix}
 \]
 \[
   \pause
@@ -321,27 +321,27 @@ Resolva o sistema linear pelo método de Gauss-Jordan
   L'_1
   \pause
   \;=\;
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     1 & 2 & -1 & 1 & 1  & 3
-  \end{array}\right]
+  \end{amatrix}
   +
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     0 & 0 & 1  & 0 & -2 & 0
-  \end{array}\right]
+  \end{amatrix}
   \pause
   \;=\;
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     1 & 2 & 0 & 1 & -1 & 3
-  \end{array}\right]
+  \end{amatrix}
 \]
 \pause
 \[
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     1 & 2 & 0 & 1 & -1 & 3 \\
     0 & 1 & 0 & 0 & 5  & 2 \\
     0 & 0 & 1 & 0 & -2 & 0 \\
     0 & 0 & 0 & 0 & 0  & 0
-  \end{array}\right]
+  \end{amatrix}
 \]
 \end{resolution}
 
@@ -350,12 +350,12 @@ Resolva o sistema linear pelo método de Gauss-Jordan
 \begin{columns}
 \column{0.4\linewidth}
   \[
-    \left[\begin{array}{rrrrr|r}
+    \begin{amatrix}{5}
       1 & 2 & 0 & 1 & -1 & 3 \\
       0 & 1 & 0 & 0 & 5  & 2 \\
       0 & 0 & 1 & 0 & -2 & 0 \\
       0 & 0 & 0 & 0 & 0  & 0
-    \end{array}\right]
+    \end{amatrix}
   \]
   \pause
 \column{0.6\linewidth}
@@ -372,27 +372,27 @@ Resolva o sistema linear pelo método de Gauss-Jordan
   L'_1
   \pause
   \;=\;
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     1 & 2 & 0 & 1 & -1 & 3
-  \end{array}\right]
+  \end{amatrix}
   -2
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     0 & 1 & 0 & 0 & 5  & 2
-  \end{array}\right]
+  \end{amatrix}
   \pause
   \;=\;
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     1 & 0 & 0 & 1 & -11 & -1
-  \end{array}\right]
+  \end{amatrix}
 \]
 \pause
 \[
-  \left[\begin{array}{rrrrr|r}
+  \begin{amatrix}{5}
     1 & 0 & 0 & 1 & -11 & -1 \\
     0 & 1 & 0 & 0 & 5   & 2  \\
     0 & 0 & 1 & 0 & -2  & 0  \\
     0 & 0 & 0 & 0 & 0   & 0
-  \end{array}\right]
+  \end{amatrix}
 \]
 \end{resolution}
 

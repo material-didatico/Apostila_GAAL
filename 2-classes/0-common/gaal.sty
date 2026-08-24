@@ -49,9 +49,19 @@
 %------------------------------------------------------------------------------%
 
 % Redefine alinhamento padrão das matrizes para a direita
-\renewcommand*\env@matrix[1][r]{\hskip -\arraycolsep
+\renewcommand*\env@matrix[1][r]%
+{%
+  \hskip -\arraycolsep
   \let\@ifnextchar\new@ifnextchar
-  \array{*\c@MaxMatrixCols #1}}
+  \array{*\c@MaxMatrixCols #1}%
+}
+
+\newenvironment{amatrix}[1]%
+{%
+  \left[\begin{array}{@{}*{#1}{r}|r@{}}
+}{%
+  \end{array}\right]
+}
 
 %------------------------------------------------------------------------------%
 
@@ -75,5 +85,7 @@
 \newcommand{\veck}{\bm{k}}
 
 \newcommand{\z}{{\color{gray}0}}
+\newcommand{\mnula}{\mathbf{0}}
+\newcommand{\I}{\mathcal{I}}
 
 %------------------------------------------------------------------------------%

@@ -3,8 +3,8 @@
 Use escalonamento para analisar o sistema
 \[
   \systeme{
-   x +  y = 4,
-  2x + 2y = 8
+     x +  y = 4,
+    2x + 2y = 8
   }
 \]
 \end{question}
@@ -14,12 +14,10 @@ Use escalonamento para analisar o sistema
 \begin{columns}
 \column{0.4\linewidth}
   \[\;\;\,
-    \left[
-    \begin{array}{rr|r}
+    \begin{amatrix}{2}
       1 & 1 & 4 \\
       2 & 2 & 8
-    \end{array}
-    \right]
+    \end{amatrix}
   \]
   \pause
 \column{0.6\linewidth}
@@ -37,34 +35,26 @@ Use escalonamento para analisar o sistema
   L_2 - 2 L_1
   \pause
   \;=\;
-  \left[
-  \begin{array}{rr|r}
+  \begin{amatrix}{2}
     2 & 2 & 8
-  \end{array}
-  \right]
+  \end{amatrix}
   - 2
-  \left[
-  \begin{array}{rr|r}
+  \begin{amatrix}{2}
     1 & 1 & 4
-  \end{array}
-  \right]
+  \end{amatrix}
   \pause
   \;=\;
-  \left[
-  \begin{array}{rr|r}
+  \begin{amatrix}{2}
     0 & 0 & 0
-  \end{array}
-  \right]
+  \end{amatrix}
 \]
 
 \pause
 \[
-\left[
-\begin{array}{rr|r}
+\begin{amatrix}{2}
   1 & 1 & 4 \\
   0 & 0 & 0
-\end{array}
-\right]
+\end{amatrix}
 \]
 \end{resolution}
 
@@ -72,7 +62,7 @@ Use escalonamento para analisar o sistema
 \begin{resolution}{Solução}
 A segunda linha representa
 \[
-0 = 0
+  0 = 0
 \]
 
 \pause
