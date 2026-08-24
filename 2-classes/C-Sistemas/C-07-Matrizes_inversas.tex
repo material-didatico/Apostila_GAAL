@@ -1,0 +1,164 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Matrizes Inversas}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Matrizes Inversas}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Matriz inversa}
+  Dada uma matriz quadrada $A$
+
+  \pause
+  $A$ é \emph{invertível}
+  \pause
+  quando existe uma matriz
+  \emph{$A^{-1}$}
+
+  \pause
+  tal que
+  \[
+    \pause
+    A A^{-1} = I
+  \]
+  \[
+    \pause
+    A^{-1} A = I
+  \]
+  \pause
+  $I$ é a matriz identidade
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex//C-07-Matrizes_inversas-ex-01}
+
+%------------------------------------------------------------------------------%
+\section{Calculando a Matriz Inversa}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Calculando a Matriz Inversa}
+  Podemos calcular a matriz inversa usando o escalonamento de Gauss-Jordan
+
+  \pause
+  Começamos com a matriz aumentada com a identidade
+
+  \[
+    \left[ \;A\; \middle| \;I\; \right]
+  \]
+
+  \pause
+  Escalonamos $A$
+
+  \pause
+  O método transforma $I$ em $A^{-1}$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex//C-07-Matrizes_inversas-ex-02}
+\input{ex//C-07-Matrizes_inversas-ex-03}
+\input{ex//C-07-Matrizes_inversas-ex-04}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Conexão Importante}
+  \onslide<+->{Para uma matriz quadrada $A_{n}$ é equivalente}
+  \begin{itemize}[<+->]
+  \setlength{\itemsep}{1em}
+  \item
+    \(
+      A \text{ é invertível}
+    \)
+  \item
+    \(
+      A \mathbf{x} = \mnula
+    \)
+    possui somente a solução trivial
+  \item
+    \(
+      \posto(A) = n
+    \)
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Inversa e Sistemas Lineares}
+  \onslide<+->{Dado
+  \[
+    A \mathbf{x} = \mathbf{b}
+  \]}
+  \onslide<+->{Se $A$ é invertível,}
+  \onslide<+->{podemos multiplicar os dois lados por $A^{-1}$}
+  \begin{align*}
+    \onslide<+->{A \mathbf{x}        & = \mathbf{b}        \\}
+    \onslide<+->{A^{-1} A \mathbf{x} & = A^{-1} \mathbf{b} \\}
+    \onslide<+->{I \mathbf{x}        & = A^{-1} \mathbf{b} \\}
+    \onslide<+->{\mathbf{x}          & = A^{-1} \mathbf{b}}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex//C-07-Matrizes_inversas-ex-05}
+\input{ex//C-07-Matrizes_inversas-ex-06}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedades da matriz inversa}
+  \onslide<+->{Se $A$ e $B$ são matrizes invertíveis de mesma ordem}
+  \begin{gather*}
+    \onslide<+->{\left(AB\right)^{-1} \;=\; B^{-1}A^{-1}}
+    \\
+    \onslide<+->{\left(A^{-1}\right)^{-1} \;=\; A}
+    \\
+    \onslide<+->{I^{-1} \;=\; I}
+    \\
+    \onslide<+->{\left(\lambda A\right)^{-1} \;=\; \frac{1}{\lambda} A^{-1}
+    \qquad\qquad
+    \text{ para um escalar } \lambda \neq 0}
+    \\
+    \onslide<+->{\left(A^t\right)^{-1} \;=\; \left(A^{-1}\right)^t}
+  \end{gather*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Matriz Singular}
+  Uma matriz quadrada $A$ que não possui inversa
+  \pause
+  é \emph{singular}
+
+  \pause
+  Nesse caso
+  \[
+    \posto(A) < n
+  \]
+
+  \pause
+  \(
+    A\mathbf{x} = \mnula
+  \)
+  possui uma solução não trivial
+\end{frame}
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+
+

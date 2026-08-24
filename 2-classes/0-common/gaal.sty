@@ -56,9 +56,16 @@
   \array{*\c@MaxMatrixCols #1}%
 }
 
-\newenvironment{amatrix}[1]%
+%\newenvironment{amatrix}[1]%
+%{%
+%  \left[\begin{array}{@{}*{#1}{r}|r@{}}
+%}{%
+%  \end{array}\right]
+%}
+
+\newenvironment{amatrix}[2][1]%
 {%
-  \left[\begin{array}{@{}*{#1}{r}|r@{}}
+  \left[\begin{array}{@{}*{#2}{r}|*{#1}{r}@{}}
 }{%
   \end{array}\right]
 }

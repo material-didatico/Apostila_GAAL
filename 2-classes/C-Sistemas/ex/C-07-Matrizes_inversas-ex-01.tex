@@ -1,0 +1,203 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Dadas as matrizes
+  \[
+    A = \begin{pmatrix}
+      1 & 2 & 0 \\
+      0 & 1 & 1 \\
+      1 & 0 & 1
+    \end{pmatrix}
+    \quad
+    \text{e}
+    \quad
+    B = \begin{pmatrix}
+      1  & -2 & 2  \\
+      1  & 1  & -1 \\
+      -1 & 2  & 1
+    \end{pmatrix}
+  \]
+  verifique se \(B\) é a matriz inversa de \(A\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Precisamos
+  \begin{enumerate}
+      \item Calcular o produto \(AB\)
+      \item Calcular o produto \(BA\)
+      \item Comparar os resultados obtidos com a matriz identidade \(I_3\)
+  \end{enumerate}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{{Cálculo de \(AB\)}}
+  \begin{align*}
+    \onslide<+->{AB}
+    \onslide<+->{& =
+    \begin{pmatrix}
+      1 & 2 & 0 \\
+      0 & 1 & 1 \\
+      1 & 0 & 1
+    \end{pmatrix}
+    \;
+    \begin{pmatrix}
+      1  & -2 & 2  \\
+      1  & 1  & -1 \\
+      -1 & 2  & 1
+    \end{pmatrix}}
+    \onslide<+->{\\ & =
+    \begin{pmatrix}
+      1\cdot1+2\cdot1+0\cdot(-1) & 1\cdot(-2)+2\cdot1+0\cdot2 & 1\cdot2+2\cdot(-1)+0\cdot1 \\
+      0\cdot1+1\cdot1+1\cdot(-1) & 0\cdot(-2)+1\cdot1+1\cdot2 & 0\cdot2+1\cdot(-1)+1\cdot1 \\
+      1\cdot1+0\cdot1+1\cdot(-1) & 1\cdot(-2)+0\cdot1+1\cdot2 & 1\cdot2+0\cdot(-1)+1\cdot1
+    \end{pmatrix}}
+    \onslide<+->{\\ & =
+    \begin{pmatrix}
+      1+2+0 & -2+2+0 & 2-2+0 \\
+      0+1-1 & 0+1+2  & 0-1+1 \\
+      1+0-1 & -2+0+2 & 2+0+1
+    \end{pmatrix}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{{Cálculo de \(AB\)}}
+  \begin{align*}
+    \onslide<+->{AB & =
+    \begin{pmatrix}
+      1+2+0 & -2+2+0 & 2-2+0 \\
+      0+1-1 & 0+1+2  & 0-1+1 \\
+      1+0-1 & -2+0+2 & 2+0+1
+    \end{pmatrix}}
+    \onslide<+->{\\ & =
+    \begin{pmatrix}
+      3 & 0 & 0 \\
+      0 & 3 & 0 \\
+      0 & 0 & 3
+    \end{pmatrix}}
+    \onslide<+->{\\ & =
+    3I_3}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{{Cálculo de \(BA\)}}
+  \begin{align*}
+    \onslide<+->{BA}
+    \onslide<+->{& =
+    \begin{pmatrix}
+      1  & -2 & 2  \\
+      1  & 1  & -1 \\
+      -1 & 2  & 1
+    \end{pmatrix}
+    \;
+    \begin{pmatrix}
+      1 & 2 & 0 \\
+      0 & 1 & 1 \\
+      1 & 0 & 1
+    \end{pmatrix}}
+    \onslide<+->{\\ & =
+    \begin{pmatrix}
+      1\cdot1+(-2)\cdot0+2\cdot1 & 1\cdot2+(-2)\cdot1+2\cdot0 & 1\cdot0+(-2)\cdot1+2\cdot1 \\
+      1\cdot1+1\cdot0+(-1)\cdot1 & 1\cdot2+1\cdot1+(-1)\cdot0 & 1\cdot0+1\cdot1+(-1)\cdot1 \\
+      (-1)\cdot1+2\cdot0+1\cdot1 & (-1)\cdot2+2\cdot1+1\cdot0 & (-1)\cdot0+2\cdot1+1\cdot1
+    \end{pmatrix}}
+    \onslide<+->{\\ & =
+    \begin{pmatrix}
+      1+0+2  & 2-2+0  & 0-2+2 \\
+      1+0-1  & 2+1+0  & 0+1-1 \\
+      -1+0+1 & -2+2+0 & 0+2+1
+    \end{pmatrix}}
+  \end{align*}
+\end{resolution}
+
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{{Cálculo de \(BA\)}}
+  \begin{align*}
+    \onslide<+->{BA & =
+    \begin{pmatrix}
+      1+0+2  & 2-2+0  & 0-2+2 \\
+      1+0-1  & 2+1+0  & 0+1-1 \\
+      -1+0+1 & -2+2+0 & 0+2+1
+    \end{pmatrix}}
+    \onslide<+->{\\ & =
+    \begin{pmatrix}
+      3 & 0 & 0 \\
+      0 & 3 & 0 \\
+      0 & 0 & 3
+    \end{pmatrix}}
+    \onslide<+->{\\ & =
+    3I_3}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Como
+  \[
+    AB = 3I_3 \neq I_3
+  \]
+  \[
+    BA = 3I_3 \neq I_3
+  \]
+  \pause
+  $B$ não é a inversa de $A$
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Porém
+  \[
+    \pause
+    A^{-1} = \frac{1}{3} B
+  \]
+  \pause
+  pois
+  \[
+    \pause
+    AA^{-1}
+    \pause
+    \;=\;
+    A \frac{1}{3} B
+    \pause
+    \;=\;
+    \frac{1}{3} AB
+    \pause
+    \;=\;
+    \frac{1}{3} \; 3 \; I_3
+    \pause
+    \;=\;
+    I_3
+  \]
+  \[
+    \pause
+    A^{-1}A
+    \pause
+    \;=\;
+    \frac{1}{3} BA
+    \pause
+    \;=\;
+    \frac{1}{3} \; 3 \; I_3
+    \pause
+    \;=\;
+    I_3
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
+\subsection*{Comparação com a identidade}
+
+
+\subsection*{Conclusão}
+
+Como
+\[
+A \cdot B = B \cdot A = 3I_3 \neq I_3,
+\]
+concluímos que \(B\) \textbf{não} é a matriz inversa de \(A\).
+
+A inversa de \(A\), caso exista, seria \(\dfrac{1}{3}B\).
+
+\end{document}

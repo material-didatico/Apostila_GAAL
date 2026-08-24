@@ -1,0 +1,180 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Encontre a inversa da matriz
+  \quad
+  \(
+    A =
+    \begin{pmatrix}
+      1 & 1 & 1 \\
+      0 & 1 & 1 \\
+      0 & 0 & 1
+    \end{pmatrix}
+  \)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Matriz Aumentada}
+  Matriz aumentada
+  \[
+    \begin{amatrix}[3]{3}
+      1 & 1 & 1 & 1 & 0 & 0 \\
+      0 & 1 & 1 & 0 & 1 & 0 \\
+      0 & 0 & 1 & 0 & 0 & 1
+    \end{amatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento}
+\begin{columns}
+\column{0.3\linewidth}
+  \[\;\;\;
+    \begin{amatrix}[3]{3}
+      1 & 1 & 1 & 1 & 0 & 0 \\
+      0 & 1 & 1 & 0 & 1 & 0 \\
+      0 & 0 & 1 & 0 & 0 & 1
+    \end{amatrix}
+  \]
+  \pause
+\column{0.7\linewidth}
+  Eliminamos os elementos acima do terceiro pivô
+  \\ \pause
+  \(
+    L_2 \leftarrow L_2 - L_3
+  \)
+  \\ \pause
+  \(
+    L_1 \leftarrow L_1 - L_3
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \hspace{-3ex}
+  \pause
+  L'_2
+  \;=\;
+  L_2 - L_3
+  \pause
+  \;=\;
+  \begin{amatrix}[3]{3}
+    0 & 1 & 1 & 0 & 1 & 0
+  \end{amatrix}
+  -
+  \begin{amatrix}[3]{3}
+    0 & 0 & 1 & 0 & 0 & 1
+  \end{amatrix}
+  \pause
+  \;=\;
+  \begin{amatrix}[3]{3}
+    0 & 1 & 0 & 0 & 1 & -1
+  \end{amatrix}
+\]
+\[
+  \hspace{-3ex}
+  \pause
+  L'_1
+  \;=\;
+  L_1 - L_3
+  \pause
+  \;=\;
+  \begin{amatrix}[3]{3}
+    1 & 1 & 1 & 1 & 0 & 0
+  \end{amatrix}
+  -
+  \begin{amatrix}[3]{3}
+    0 & 0 & 1 & 0 & 0 & 1
+  \end{amatrix}
+  \pause
+  \;=\;
+  \begin{amatrix}[3]{3}
+    1 & 1 & 0 & 1 & 0 & -1
+  \end{amatrix}
+\]
+\pause
+\[
+  \begin{amatrix}[3]{3}
+    1 & 1 & 0 & 1 & 0 & -1 \\
+    0 & 1 & 0 & 0 & 1 & -1 \\
+    0 & 0 & 1 & 0 & 0 & 1
+  \end{amatrix}
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento}
+\begin{columns}
+\column{0.3\linewidth}
+  \[\;\;\;
+    \begin{amatrix}[3]{3}
+      1 & 1 & 0 & 1 & 0 & -1 \\
+      0 & 1 & 0 & 0 & 1 & -1 \\
+      0 & 0 & 1 & 0 & 0 & 1
+    \end{amatrix}
+  \]
+  \pause
+\column{0.7\linewidth}
+  Eliminamos os elementos acima do terceiro pivô
+  \\ \pause
+  \(
+    L_1 \leftarrow L_1 - L_2
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  L'_1
+  \;=\;
+  L_1 - L_2
+  \pause
+  \;=\;
+  \begin{amatrix}[3]{3}
+    1 & 1 & 0 & 1 & 0 & -1
+  \end{amatrix}
+  -
+  \begin{amatrix}[3]{3}
+    0 & 1 & 0 & 0 & 1 & -1
+  \end{amatrix}
+  \pause
+  \;=\;
+  \begin{amatrix}[3]{3}
+    1 & 0 & 0 & 1 & -1 & 0
+  \end{amatrix}
+\]
+\pause
+\[
+  \begin{amatrix}[3]{3}
+    1 & 0 & 0 & 1 & -1 & 0  \\
+    0 & 1 & 0 & 0 & 1  & -1 \\
+    0 & 0 & 1 & 0 & 0  & 1
+  \end{amatrix}
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    \begin{amatrix}[3]{3}
+      1 & 0 & 0 & 1 & -1 & 0  \\
+      0 & 1 & 0 & 0 & 1  & -1 \\
+      0 & 0 & 1 & 0 & 0  & 1
+    \end{amatrix}
+  \]
+
+  \pause
+  Como a matriz tem posto completo
+
+  \pause
+  A inversa existe e pode ser lida do lado direito
+  \pause
+  \[
+    A^{-1} =
+    \begin{bmatrix}
+      1 & -1 & 0  \\
+      0 & 1  & -1 \\
+      0 & 0  & 1
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

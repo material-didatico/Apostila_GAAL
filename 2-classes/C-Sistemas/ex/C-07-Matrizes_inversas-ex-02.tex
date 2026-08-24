@@ -1,0 +1,255 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Encontre a inversa de
+  \quad
+  \(
+    A =
+    \begin{bmatrix}
+      2 & 1 \\
+      1 & 1
+    \end{bmatrix}
+  \)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Matriz Aumentada}
+  Matriz aumentada \([\,A\,|\,I\,]\)
+  \pause
+  \[
+    \begin{amatrix}[2]{2}
+      \emph{2} & \emph{1} & 1 & 0 \\
+      \emph{1} & \emph{1} & 0 & 1
+    \end{amatrix}
+  \]
+
+  \pause
+  Queremos transformar a parte da esquerda na identidade $I_2$
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento}
+\begin{columns}
+\column{0.3\linewidth}
+  \[\;\;\;
+    \begin{amatrix}[2]{2}
+      2 & 1 & 1 & 0 \\
+      1 & 1 & 0 & 1
+    \end{amatrix}
+  \]
+  \pause
+\column{0.7\linewidth}
+  Trocamos as linhas
+  \\ \pause
+  \(
+    L_1\leftrightarrow L_2
+  \)
+\end{columns}
+
+\pause
+\[
+  \begin{amatrix}[2]{2}
+    1 & 1 & 0 & 1 \\
+    2 & 1 & 1 & 0
+  \end{amatrix}
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento}
+\begin{columns}
+\column{0.3\linewidth}
+  \[\;\;\;
+    \begin{amatrix}[2]{2}
+      1 & 1 & 0 & 1 \\
+      2 & 1 & 1 & 0
+    \end{amatrix}
+  \]
+  \pause
+\column{0.7\linewidth}
+  Eliminamos os elementos abaixo do primeiro pivô
+  \\ \pause
+  \(
+    L_2 \leftarrow L_2 - 2 L_1
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  L'_2
+  \;=\;
+  L_2 - 2 L_1
+  \pause
+  \;=\;
+  \begin{amatrix}[2]{2}
+    2 & 1 & 1 & 0
+  \end{amatrix}
+  - 2
+  \begin{amatrix}[2]{2}
+    1 & 1 & 0 & 1
+  \end{amatrix}
+  \pause
+  \;=\;
+  \begin{amatrix}[2]{2}
+    0 & -1 & 1 & -2
+  \end{amatrix}
+\]
+\pause
+\[
+  \begin{amatrix}[2]{2}
+    1 & 1  & 0 & 1  \\
+    0 & -1 & 1 & -2
+  \end{amatrix}
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento}
+\begin{columns}
+\column{0.3\linewidth}
+  \[\;\;\;
+    \begin{amatrix}[2]{2}
+      1 & 1  & 0 & 1  \\
+      0 & -1 & 1 & -2
+    \end{amatrix}
+  \]
+  \pause
+\column{0.7\linewidth}
+  Tornando o segundo pivô igual a 1
+  \\ \pause
+  \(
+    L_2 \leftarrow - L_2
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  L'_2
+  \;=\;
+   - L_2
+  \pause
+  \;=\;
+  -
+  \begin{amatrix}[2]{2}
+    0 & -1 & 1 & -2
+  \end{amatrix}
+  \pause
+  \;=\;
+  \begin{amatrix}[2]{2}
+    0 & 1 & -1 & 2
+  \end{amatrix}
+\]
+\pause
+\[
+  \begin{amatrix}[2]{2}
+    1 & 1 & 0  & 1 \\
+    0 & 1 & -1 & 2
+  \end{amatrix}
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento}
+\begin{columns}
+\column{0.3\linewidth}
+  \[\;\;\;
+    \begin{amatrix}[2]{2}
+      1 & 1 & 0  & 1 \\
+      0 & 1 & -1 & 2
+    \end{amatrix}
+  \]
+  \pause
+\column{0.7\linewidth}
+  Eliminamos os elementos acima do segundo pivô
+  \\ \pause
+  \(
+    L_1 \leftarrow L_1 - L_2
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  L'_1
+  \;=\;
+  L_1 - L_2
+  \pause
+  \;=\;
+  \begin{amatrix}[2]{2}
+    1 & 1 & 0  & 1
+  \end{amatrix}
+  -
+  \begin{amatrix}[2]{2}
+    0 & 1 & -1 & 2
+  \end{amatrix}
+  \pause
+  \;=\;
+  \begin{amatrix}[2]{2}
+    1 & 0 & 1  & -1
+  \end{amatrix}
+\]
+\pause
+\[
+  \begin{amatrix}[2]{2}
+    1 & 0 & 1  & -1 \\
+    0 & 1 & -1 & 2
+  \end{amatrix}
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    \begin{amatrix}[2]{2}
+      1 & 0 & 1  & -1 \\
+      0 & 1 & -1 & 2
+    \end{amatrix}
+  \]
+
+  \pause
+  Como a matriz tem posto completo
+
+  \pause
+  a inversa exite e pode ser lida do lado direito
+  \pause
+  \[
+    A^{-1} =
+    \begin{bmatrix}
+      1  & -1 \\
+      -1 & 2
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Verificação}
+  \onslide<+->{Podemos verificar o resultado calculando}
+  \begin{align*}
+    \onslide<+->{AA^{-1}}
+    \onslide<+->{& =
+      \begin{bmatrix}
+        2 & 1 \\
+        1 & 1
+      \end{bmatrix}
+      \begin{bmatrix}
+        1  & -1 \\
+        -1 & 2
+      \end{bmatrix}}
+    \\
+    \onslide<+->{& =
+      \begin{bmatrix}
+        2\times 1 + 1 (-1) &  2(-1) + 1 \times 2\\
+        1\times 1 + 1 (-1) &  1(-1) + 1 \times 2
+      \end{bmatrix}}
+    \\
+    \onslide<+->{& =
+      \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+      \end{bmatrix}}
+      \\
+    \onslide<+->{& = I}
+  \end{align*}
+  \onslide<+->{Portanto, a matriz encontrada é realmente a inversa de $A$}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

@@ -1,0 +1,100 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Tente calcular a inversa da matriz
+  \quad
+  \(
+    A =
+    \begin{pmatrix}
+      1 & 2 \\
+      2 & 4
+    \end{pmatrix}
+  \)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Matriz Aumentada}
+  Matriz aumentada \([\,A\,|\,I\,]\)
+  \pause
+  \[
+    \begin{amatrix}[2]{2}
+      1 & 2 & 1 & 0 \\
+      2 & 4 & 0 & 1
+    \end{amatrix}
+  \]
+
+  \pause
+  Queremos transformar a parte da esquerda na identidade $I_2$
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Escalonamento}
+\begin{columns}
+\column{0.3\linewidth}
+  \[\;\;\;
+    \begin{amatrix}[2]{2}
+      1 & 2 & 1 & 0 \\
+      2 & 4 & 0 & 1
+    \end{amatrix}
+  \]
+  \pause
+\column{0.7\linewidth}
+  Eliminamos os elementos abaixo do primeiro pivô
+  \\ \pause
+  \(
+    L_2 \leftarrow L_2 - 2 L_1
+  \)
+\end{columns}
+\vspace{-\baselineskip}
+\[
+  \pause
+  L'_2
+  \;=\;
+  L_2 - 2 L_1
+  \pause
+  \;=\;
+  \begin{amatrix}[2]{2}
+    2 & 4 & 0 & 1
+  \end{amatrix}
+  - 2
+  \begin{amatrix}[2]{2}
+    1 & 2 & 1 & 0
+  \end{amatrix}
+  \pause
+  \;=\;
+  \begin{amatrix}[2]{2}
+    0 & 0 & -2 & 1
+  \end{amatrix}
+\]
+\pause
+\[
+  \begin{amatrix}[2]{2}
+    1 & 2 & 1 & 0 \\
+    0 & 0 & -2 & 1
+  \end{amatrix}
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    \begin{amatrix}[2]{2}
+      1 & 2 & 1 & 0 \\
+      0 & 0 & -2 & 1
+    \end{amatrix}
+  \]
+
+  \pause
+  O escalonamento da matriz $A$ produziu uma linha nula
+
+  \pause
+  A matriz $A$ não tem posto completo
+
+  \pause
+  A matriz $A$ é singular
+
+  \pause
+  A matriz $A$ não possui inversa
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
