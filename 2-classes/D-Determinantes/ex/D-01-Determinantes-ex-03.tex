@@ -1,0 +1,45 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine o cofator associado ao elemento $a_{12}$
+  da matriz
+  \[
+    A =
+    \begin{bmatrix}
+      1 & 2 & 3 \\
+      4 & 5 & 6 \\
+      7 & 8 & 9
+    \end{bmatrix}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    \onslide<+->{C_{12}}
+    \onslide<+->{\;=\; (-1)^{1+2}M_{12}}
+    \onslide<+->{\;=\; -M_{12}}
+    \onslide<+->{\;=\;
+    -\det
+    \begin{bmatrix}
+      4 & 6 \\
+      7 & 9
+    \end{bmatrix}}
+    \onslide<+->{\;=\;
+      -\begin{vmatrix}
+        4 & 6 \\
+        7 & 9
+      \end{vmatrix}}
+  \]
+  \[
+    \hphantom{C_{12}}
+    \onslide<+->{\;=\; -(4 \times 9 - 6 \times 7)}
+    \onslide<+->{\;=\; 7}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
+
+
+
+

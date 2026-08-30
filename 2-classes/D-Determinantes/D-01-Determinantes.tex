@@ -1,0 +1,280 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Determinantes}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Determinantes}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Determinantes}
+  O determinante é uma função que associa um número real a uma matriz quadrada
+
+  \pause
+  \medskip
+
+  Para uma matriz quadrada $A$, o determinante é denotado por
+  \[
+    \det(A)
+  \]
+  \pause
+  outra notação para o determinante é colocar os elementos entre linhas verticais
+  \[
+    \det(A) = \abs{A}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Determinantes}
+  O determinante possui aplicações importantes
+  \begin{itemize}[<+->]
+%    \setlength{\itemsep}{1em}
+    \item verificar se uma matriz é invertível
+    \item analisar sistemas lineares
+    \item determinar dependência linear
+    \item calcular áreas e volumes
+    \item estudar transformações lineares
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Definição}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Determinante de uma matriz $1\times 1$}
+  Para uma matriz de ordem 1
+  \[
+    A =
+    \begin{pmatrix}
+      a_{11}
+    \end{pmatrix}
+  \]
+  \pause
+  definimos
+  \[
+    \det(A) = a_{11}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Determinante de uma matriz $2\times 2$}
+  O determinante da matriz $2\times 2$
+  \[
+    A =
+    \begin{pmatrix}
+      {\color<7>{magenta} a} & {\color<7>{green} b}   \\
+      {\color<7>{green} c}   & {\color<7>{magenta} d}
+    \end{pmatrix}
+  \]
+
+  \pause
+  é o produto dos elementos da \emph{diagonal}
+  \pause
+  \emph{menos}
+  \\ \pause
+  o produto dos elementos da \emph{diagonal secundária} (invertida)
+  \pause
+  \[
+    \det(A)
+    \pause
+    \;=\;
+    \begin{vmatrix}
+      {\color<7>{magenta} a} & {\color<7>{green} b}   \\
+      {\color<7>{green} c}   & {\color<7>{magenta} d}
+    \end{vmatrix}
+    \pause
+    \;=\;
+    {\color<7>{magenta}ad} - {\color<7>{green}bc}
+  \]
+
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/D-01-Determinantes-ex-01}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Determinante de uma matrizes $n\times n$}
+  \onslide<+->{Para definir determinantes de matrizes de ordem maior}
+
+  \onslide<+->{Precisamos definir operações conceitos intermediários}
+  \begin{itemize}[<+->]
+  \item Menor complementar
+  \item Cofator
+  \end{itemize}
+  \onslide<+->{para apresentarmos o \emph{Teorema de Laplace}}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Menor complementar}
+  Dada uma matriz $A=(a_{ij})$ de ordem $n$
+
+  \pause
+  O \emph{menor complementar} $M_{ij}$
+  \pause
+  é o determinante da matriz obtida
+
+  \pause
+  eliminando a linha $i$ e a coluna $j$ de $A$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/D-01-Determinantes-ex-02}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Cofator}
+  O \emph{cofator} associado ao elemento $a_{ij}$ é definido por
+  \pause
+  \[
+    C_{ij} = (-1)^{i+j }M_{ij}
+  \]
+
+  \pause
+  \bigskip
+  Isto é
+  \[
+    \pause
+    C_{ij} = \hpm M_{ij}
+    \qquad
+    \text{ quando } \;i+j\; \text{ é par}
+  \]
+  \[
+    \pause
+    C_{ij} = -M_{ij}
+    \qquad
+    \text{ quando } \;i+j\; \text{ é ímpar}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/D-01-Determinantes-ex-03}
+
+%------------------------------------------------------------------------------%
+\section{Teorema de Laplace}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teorema de Laplace}
+  \emph{Teorema de Laplace}
+
+  \pause
+  permite calcular o determinante de uma matriz quadrada
+
+  \pause
+  expandindo-o por qualquer linha ou qualquer coluna
+
+  \pause
+  \bigskip
+  \bigskip
+  A escolha da linha ou coluna é livre
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teorema de Laplace -- Expansão por Linha}
+  Expandindo pela linha $i$
+  \[
+    \det(A) \;=\;
+    \sum_{\emph{j}=1}^{n} a_{i\emph{j}} C_{i\emph{j}}
+  \]
+  \[
+    C_{ij} = (-1)^{i+j }M_{ij}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teorema de Laplace -- Expansão por Coluna}
+  Expandindo pela coluna $j$
+  \[
+    \det(A) \;=\;
+    \sum_{\vphantom{j}\emph{i}=1}^{n} a_{\emph{i}j} C_{\emph{i}j}
+  \]
+  \[
+    C_{ij} = (-1)^{i+j }M_{ij}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/D-01-Determinantes-ex-04}
+\input{ex/D-01-Determinantes-ex-05}
+
+%------------------------------------------------------------------------------%
+\section{Regra de Sarrus}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Regra de Sarrus}
+  \emph{APENAS} para matrizes $3\times 3$
+
+  \pause
+  existe um procedimento conhecido como \emph{Regra de Sarrus}
+
+  \pause
+  Para
+  \[
+    A=
+    \begin{pmatrix}
+      a & b & c \\
+      d & e & f \\
+      g & h & i
+    \end{pmatrix}
+  \]
+  \pause
+  \[
+    \det(A) = aei + bfg + cdh - ceg - bdi - afh
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Diagrama da Regra de Sarrus}
+  \[
+    \begin{bNiceMatrix}
+      a & b & c & a & b \\
+      d & e & f & d & e \\
+      g & h & i & g & h
+    \CodeAfter
+      \tikz \draw[black,   thick] (1-|4) -- (4-|4);
+      \onslide<2->{\tikz \draw[blue,    thick] (1-|1) -- (4-|4);}
+      \onslide<3->{\tikz \draw[blue,    thick] (1-|2) -- (4-|5);}
+      \onslide<4->{\tikz \draw[blue,    thick] (1-|3) -- (4-|6);}
+      \onslide<5->{\tikz \draw[magenta, thick] (1-|6) -- (4-|3);}
+      \onslide<6->{\tikz \draw[magenta, thick] (1-|5) -- (4-|2);}
+      \onslide<7->{\tikz \draw[magenta, thick] (1-|4) -- (4-|1);}
+    \end{bNiceMatrix}
+  \]
+
+  \bigskip
+  \[
+    \onslide<1->{\det(A)}
+    \onslide<2->{\;=\; aei}
+    \onslide<3->{\;+\; bfg}
+    \onslide<4->{\;+\; cdh}
+    \onslide<5->{\;-\; ceg}
+    \onslide<6->{\;-\; bdi}
+    \onslide<7->{\;-\; afh}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/D-01-Determinantes-ex-06}
+
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
