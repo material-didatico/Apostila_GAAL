@@ -1,0 +1,78 @@
+\endinput
+%------------------------------------------------------------------------------%
+\begin{question}
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
+
+\begin{frame}{Exemplo -- Escolhendo a melhor expansão}
+Considere
+\[
+A=
+\begin{pmatrix}
+1&2&0&0\\
+0&3&0&0\\
+2&1&4&5\\
+0&0&6&7
+\end{pmatrix}.
+\]
+\medskip
+
+A segunda coluna não possui muitos zeros, enquanto a segunda
+linha possui três zeros. Portanto, é conveniente expandir pela
+segunda linha:
+\[
+\det(A)
+=
+3C_{22}.
+\]
+\medskip
+
+Como $2+2$ é par,
+\[
+C_{22}=M_{22}.
+\]
+\end{frame}
+
+\begin{frame}{Exemplo -- Escolhendo a melhor expansão}
+Temos
+\[
+M_{22}
+=
+\begin{vmatrix}
+1&0&0\\
+2&4&5\\
+0&6&7
+\end{vmatrix}.
+\]
+\medskip
+
+Expandindo pela primeira linha:
+\[
+M_{22}
+=
+\begin{vmatrix}
+4&5\\
+6&7
+\end{vmatrix}
+=28-30=-2.
+\]
+\medskip
+
+Portanto,
+\[
+\det(A)=3(-2)=-6.
+\]
+\medskip
+
+Assim,
+\[
+\boxed{\det(A)=-6}.
+\]
+\end{frame}
+

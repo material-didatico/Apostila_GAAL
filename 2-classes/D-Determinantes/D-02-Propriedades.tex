@@ -1,0 +1,298 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Determinantes}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Propriedades dos Determinantes}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedade 1 -- Matriz triangular}
+Se $A$ é uma matriz triangular superior ou inferior
+\[
+  \pause
+  A =
+  \begin{pmatrix}[cccc]
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    0      & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    0      & 0      & \cdots & a_{nn}
+  \end{pmatrix}
+  \pause
+  \qquad\text{ ou }\qquad
+  A =
+  \begin{pmatrix}[cccc]
+    a_{11} & 0      & \cdots & 0      \\
+    a_{21} & a_{22} & \cdots & 0      \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn}
+  \end{pmatrix}
+\]
+
+\pause
+então
+\[
+  \det(A) = a_{11}\; a_{22}\; \cdots\; a_{nn}
+\]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/D-02-Propriedades-01}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedade 2 -- Matriz diagonal}
+  Se $A$ é diagonal
+  \[
+    A =
+    \begin{pmatrix}[cccc]
+      a_{11} & 0      & \cdots & 0      \\
+      0      & a_{22} & \cdots & 0      \\
+      \vdots & \vdots & \ddots & \vdots \\
+      0      & 0      & \cdots & a_{nn}
+    \end{pmatrix}
+  \]
+  \pause
+  então
+  \[
+    \det(A) = a_{11} \; a_{22} \; \cdots \; a_{nn}
+  \]
+
+  \pause
+  Em particular
+  \[
+    \det(I_n) = 1
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedade 3 -- Troca de linhas}
+  Quando duas linhas de uma matriz são trocadas
+  \[
+    L_i \leftrightarrow L_j
+  \]
+  o determinante muda de sinal
+  \[
+  \det(B) = -\det(A)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/D-02-Propriedades-02}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedade 4 -- Multiplicação de uma linha}
+  Quando todos os elementos de uma linha são multiplicados por $k$
+  \pause
+  \[
+    L_i \leftarrow k L_i
+  \]
+
+  \pause
+  o determinante também é multiplicado por $k$
+  \pause
+  \[
+    \det(B) = k\det(A)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedade 4 -- Multiplicação de uma linha}
+  Note que se multiplicarmos todas as linhas por $k$
+
+  \pause
+  o determinante é multiplicado por $k^n$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/D-02-Propriedades-03}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedade 5 -- Adição de múltiplo de uma linha}
+  Adicionar um múltiplo de uma linha
+  \[
+    L_i \leftarrow L_i + k L_j
+    \qquad i\neq j
+  \]
+
+  \pause
+  \emph{não altera o determinante}
+  \[
+    \det(B) = \det(A)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/D-02-Propriedades-04}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedade 6 -- Linha nula}
+  Se uma matriz possui uma linha ou coluna composta somente por zeros
+  \pause
+  \[
+    \det(A) = 0
+  \]
+
+  \pause
+  \bigskip
+  Consequência do Teorema de Laplace
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedade 7 -- Linhas iguais}
+  Se duas linhas de uma matriz são iguais
+  \pause
+  \[
+    \det(A) = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedade 7 -- Linhas iguais}
+  Se trocarmos duas linhas o determinante muda de sinal
+  \[
+    \pause
+    \det(B) = - \det(A)
+  \]
+  \pause
+  Mas como as linhas são iguais, a matriz não muda \(B=A\)
+  \[
+    \pause
+    \det(A) = - \det(A)
+  \]
+  \pause
+  Logo
+  \[
+    \det(A) = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedade 8 -- Linhas proporcionais}
+  Se duas linhas de uma matriz são proporcionais
+  \[
+    \det(A) = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/D-02-Propriedades-05}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedade 9 -- Transposta}
+  O determinante de uma matriz é igual ao determinante de sua transposta
+  \[
+    \det\left(A^t\right) = \det(A)
+  \]
+
+  \pause
+  As propriedades nas linhas também valem para as colunas
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedade 10 -- Produto de matrizes}
+  Se $A$ e $B$ são matrizes quadradas de mesma ordem
+  \[
+    \det(AB) = \det(A) \det(B)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedade 10 -- Produto de matrizes}
+  Se $A$ é invertível
+  \pause
+  \[
+    \det(A)\det\left(A^{-1}\right)
+    \pause
+    \;=\; \det\left(AA^{-1}\right)
+    \pause
+    \;=\; \det(I)
+    \pause
+    \;=\; 1
+  \]
+
+  \pause
+  Logo
+  \[
+    \det(A^{-1})
+    \;=\; \frac{1}{\det(A)}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Determinante e matriz inversa}
+  Para uma matriz quadrada $A$
+  \pause
+  \[
+    \det(A) \neq 0
+    \pause
+    \qquad\Leftrightarrow\qquad
+    A \text{ é invertível}
+  \]
+
+  \pause
+  Equivalentemente
+  \[
+    \det(A) = 0
+    \pause
+    \qquad\Leftrightarrow\qquad
+    A \text{ não é invertível}
+  \]
+
+  \pause
+  Essa é uma das aplicações mais importantes do determinante
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/D-02-Propriedades-06}
+\input{ex/D-02-Propriedades-07}
+\input{ex/D-02-Propriedades-08}
+\input{ex/D-02-Propriedades-09}
+\input{ex/D-02-Propriedades-10}
+
+%------------------------------------------------------------------------------%
+\section{Resumo}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Resumo das principais propriedades}
+  Para uma matriz quadrada $A$
+  \begin{enumerate}
+    \item matriz triangular
+    \(
+      \det(A) = a_{11} a_{22} \cdots a_{nn}
+    \)
+    \item troca de duas linhas muda o sinal do determinante
+    \item multiplicação de uma linha por $k$ multiplica o determinante por $k$
+    \item adicionar um múltiplo de uma linha a outra não altera o determinante
+    \item uma linha nula implica determinante nulo
+    \item duas linhas iguais ou proporcionais implicam determinante nulo
+    \item \(\det(A^t) = \det(A)\)
+    \item \(\det(AB) = \det(A)\det(B)\)
+  \end{enumerate}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+% \framedgraphic{Gráfico de uma Função Real}{B_01_grafico_funcao_real}{}
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

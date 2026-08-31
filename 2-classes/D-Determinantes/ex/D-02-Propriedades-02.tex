@@ -1,0 +1,52 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Calcule o determinante da matriz
+  \[
+    A =
+    \begin{pmatrix}
+      1 & 2 \\
+      3 & 4
+    \end{pmatrix}
+  \]
+  Crie a matriz $B$ trocando as linhas \(L_1 \leftrightarrow L_2\)
+
+  Calcule \(\det(B)\)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}
+\column{0.4\linewidth}
+  \onslide<+->{\[
+    A=
+    \begin{pmatrix}
+      1 & 2 \\
+      3 & 4
+    \end{pmatrix}
+  \]}
+  \begin{align*}
+    \onslide<+->{\det(A)}
+    \onslide<+->{& = 1 \times 4 - 2 \times 3 \\}
+    \onslide<+->{& = 4 - 6 \\}
+    \onslide<+->{& = -2}
+  \end{align*}
+\column{0.4\linewidth}
+  \onslide<+->{\[
+    B =
+    \begin{pmatrix}
+      3 & 4 \\
+      1 & 2
+    \end{pmatrix}
+  \]}
+  \begin{align*}
+    \onslide<+->{\det(B)}
+    \onslide<+->{& = 3 \times 2 - 4 \times 1 \\}
+    \onslide<+->{& = 6 - 4 \\}
+    \onslide<+->{& = 2 \\}
+    \onslide<+->{& = -\det(A)}
+  \end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
