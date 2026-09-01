@@ -1,14 +1,22 @@
 %------------------------------------------------------------------------------%
 \begin{question}
-Resolva o sistema linear pelo método de Gauss-Jordan
-\[
-  \systeme[sort={x,y,z,w,v}]{
-     x + 2y -  z +  w +  v =  3,
-    2x + 5y +  z + 2w +  v =  8,
-    -x -  y + 2z -  w + 2v = -1,
-          y +  z      + 3v =  2
-  }
-\]
+  Resolva o sistema linear pelo método de Gauss-Jordan
+%  \[
+%    \systeme[sort={x,y,z,w,v}]{
+%       x + 2y -  z +  w +  v =  3,
+%      2x + 5y +  z + 2w +  v =  8,
+%      -x -  y + 2z -  w + 2v = -1,
+%            y +  z      + 3v =  2
+%    }
+%  \]
+  \[
+    \left\{\begin{array}{rrrrrr}
+       x & + 2y & -  z & +  w & +  v & = \hpm 3 \\
+      2x & + 5y & +  z & + 2w & +  v & = \hpm 8 \\
+      -x & -  y & + 2z & -  w & + 2v & =     -1 \\
+         &    y & +  z &      & + 3v & = \hpm 2
+    \end{array}\right.
+  \]
 \end{question}
 
 %------------------------------------------------------------------------------%
@@ -398,53 +406,67 @@ Resolva o sistema linear pelo método de Gauss-Jordan
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Sistema Linear Reduzido}
-\[
-  \systeme[sort={x,y,z,w,v}]{
-    x +  w -11v = -1,
-    y + 5v      = 2,
-    z - 2v      = 0
-  }
-\]
-\pause
-As incógnitas $w$ e $v$ não correspondem a pivôs
+%  \[
+%    \systeme[sort={x,y,z,w,v}]{
+%      x +  w -11v = -1,
+%      y + 5v      = 2,
+%      z - 2v      = 0
+%    }
+%  \]
+  \[
+    \left\{\begin{array}{llllll}
+      x &   &   & + w & - 11v & = -1 \\
+        & y &   &     & +  5v & = \hpm 2 \\
+        &   & z &     & -  2v & = \hpm 0
+    \end{array}\right.
+  \]
+  \pause
+  As incógnitas $w$ e $v$ não correspondem a pivôs
 
-\pause
-portanto são variáveis livres
-\begin{align*}
-  w & = s \\
-  v & = t
-\end{align*}
-para quaisquer valore reais $t$ e $s$
+  \pause
+  portanto são variáveis livres
+  \begin{align*}
+    w & = s \\
+    v & = t
+  \end{align*}
+  para quaisquer valore reais $t$ e $s$
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
-\[
-  \systeme[sort={x,y,z,w,v}]{
-    x +  w -11v = -1,
-    y + 5v      = 2,
-    z - 2v      = 0
-  }
-\]
-\pause
-\vspace{-\baselineskip}
-\begin{columns}[t]
-\column{0.35\linewidth}
-  \begin{align*}
-    x & = 11v - w -1 \\[-1.5ex]
-    y & = 2 - 5v     \\[-1.5ex]
-    z & = 2v
-  \end{align*}
+  \[
+    \left\{\begin{array}{llllll}
+      x &   &   & + w & - 11v & = -1 \\
+        & y &   &     & +  5v & = \hpm 2 \\
+        &   & z &     & -  2v & = \hpm 0
+    \end{array}\right.
+  \]
+%  \[
+%    \systeme[sort={x,y,z,w,v}]{
+%      x +  w -11v = -1,
+%      y + 5v      = 2,
+%      z - 2v      = 0
+%    }
+%  \]
   \pause
-\column{0.6\linewidth}
-  \begin{align*}
-    x & = 11t - s - 1 \\[-1.5ex]
-    y & = 2 - 5t      \\[-1.5ex]
-    z & = 2t          \qquad\qquad\qquad \forall (s, t) \in \R^2 \\[-1.5ex]
-    w & = s           \\[-1.5ex]
-    v & = t
-  \end{align*}
-\end{columns}
+  \vspace{-\baselineskip}
+  \begin{columns}[t]
+  \column{0.35\linewidth}
+    \begin{align*}
+      x & = 11v - w -1 \\[-1.5ex]
+      y & = 2 - 5v     \\[-1.5ex]
+      z & = 2v
+    \end{align*}
+    \pause
+  \column{0.6\linewidth}
+    \begin{align*}
+      x & = 11t - s - 1 \\[-1.5ex]
+      y & = 2 - 5t      \\[-1.5ex]
+      z & = 2t          \qquad\qquad\qquad \forall (s, t) \in \R^2 \\[-1.5ex]
+      w & = s           \\[-1.5ex]
+      v & = t
+    \end{align*}
+  \end{columns}
 \end{resolution}
 
 %------------------------------------------------------------------------------%

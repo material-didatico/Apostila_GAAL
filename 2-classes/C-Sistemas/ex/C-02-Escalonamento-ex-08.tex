@@ -1,11 +1,18 @@
 %------------------------------------------------------------------------------%
 \begin{question}
   Resolva o sistema, utilizando escalonamento,
+  % \[
+  %   \systeme{
+  %      x +  y + z = 6,
+  %     2x -  y + z = 3,
+  %      x + 2y - z = 2}
+  % \]
   \[
-    \systeme{
-       x +  y + z = 6,
-      2x -  y + z = 3,
-       x + 2y - z = 2}
+    \left\{\begin{array}{rrrr}
+      x  & +  y & + z & = 6 \\
+      2x & -  y & + z & = 3 \\
+      x  & + 2y & - z & = 2
+    \end{array}\right.
   \]
 \end{question}
 
@@ -202,50 +209,57 @@
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Sistema Linear Escalonado}
-Matriz aumentada do sistema escalonado
-\[
-  \begin{amatrix}{3}
-    1  & 1  & 1  & 6   \\
-    \z & 1  & -2 & -4  \\
-    \z & \z & -7 & -21
-  \end{amatrix}
-\]
-
-\pause
-Sistema linear escalonado
-\[
-  \systeme{
-    x + y +  z =  6,
-        y - 2z = -4,
-          - 7z = -21}
-\]
+  Matriz aumentada do sistema escalonado
+  \[
+    \begin{amatrix}{3}
+      1  & 1  & 1  & 6   \\
+      \z & 1  & -2 & -4  \\
+      \z & \z & -7 & -21
+    \end{amatrix}
+  \]
+  
+  \pause
+  Sistema linear escalonado
+  % \[
+  %   \systeme{
+  %     x + y +  z =  6,
+  %         y - 2z = -4,
+  %           - 7z = -21}
+  % \]
+  \[
+    \left\{\begin{array}{rrrr}
+      x & + y & +  z & =  6 \\
+        &   y & - 2z & = -4 \\
+        &     & - 7z & = -21
+    \end{array}\right.
+  \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Substituição Retroativa}
-\begin{columns}[t]
-\column{0.26\linewidth}
-\onslide<+->{\centerline{Última linha}}
-\begin{align*}
-  \onslide<+->{-7 z & = -21} \\
-  \onslide<+->{z    & = 3}
-\end{align*}
-\column{0.27\linewidth}
-\onslide<+->{\centerline{Segunda linha}}
-\begin{align*}
-  \onslide<+->{y -2 z        & = -4} \\
-  \onslide<+->{y -2 \times 3 & = -4} \\
-  \onslide<+->{y -6          & = -4} \\
-  \onslide<+->{y             & = 2}
-\end{align*}
-\column{0.4\linewidth}
-\onslide<+->{\centerline{Primeira linha}}
-\begin{align*}
-  \onslide<+->{x + y + z & = 6} \\
-  \onslide<+->{x + 2 + 3 & = 6} \\
-  \onslide<+->{x         & = 1}
-\end{align*}
-\end{columns}
+ \begin{columns}[t]
+ \column{0.26\linewidth}
+ \onslide<+->{\centerline{Última linha}}
+ \begin{align*}
+   \onslide<+->{-7 z & = -21} \\
+   \onslide<+->{z    & = 3}
+ \end{align*}
+ \column{0.27\linewidth}
+ \onslide<+->{\centerline{Segunda linha}}
+ \begin{align*}
+   \onslide<+->{y -2 z        & = -4} \\
+   \onslide<+->{y -2 \times 3 & = -4} \\
+   \onslide<+->{y -6          & = -4} \\
+   \onslide<+->{y             & = 2}
+ \end{align*}
+ \column{0.4\linewidth}
+ \onslide<+->{\centerline{Primeira linha}}
+ \begin{align*}
+   \onslide<+->{x + y + z & = 6} \\
+   \onslide<+->{x + 2 + 3 & = 6} \\
+   \onslide<+->{x         & = 1}
+ \end{align*}
+ \end{columns}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
