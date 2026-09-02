@@ -1,0 +1,190 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Definição de Vetores}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Vetores}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Vetor}
+  Vetores são ``setinhas''
+
+  \pause
+  \bigskip
+  Precisamos dizer isso de forma \emph{precisa}
+  \pause
+  e que nos permita fazer \emph{cálculos}
+\end{frame}
+
+\framedgraphic{Mapa de Ventos}{mapa_ventos}{}
+\framedgraphic{Mapa de Ventos}{ventos_regiao_sul}{}
+\framedgraphic{Fluxo em um Aerofólio}{aerofolio}{}
+\framedgraphic{Linhas de Fluxo}{aviao}{}
+
+%------------------------------------------------------------------------------%
+\section{Definição Geométrica}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição geométrica de vetor}
+  \onslide<+->{Um vetor é representado por um segmento de reta orientado}
+
+  \onslide<+->{Representamos um vetor por uma seta
+  \[
+    \overrightarrow{AB}
+  \]}
+  \onslide<+->{O ponto $A$ é a origem do vetor}
+
+  \onslide<+->{O ponto $B$ é sua extremidade}
+
+  \onslide<+->{O vetor $\overrightarrow{AB}$ representa um \emph{deslocamento}}
+  \onslide<+->{do ponto $A$ para o ponto $B$}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Características dos vetores}
+  \onslide<+->{Um vetor possui três características fundamentais}
+  \begin{description}[<+->]
+      \item[módulo] seu comprimento
+      \item[direção] a direção da reta que o contém
+      \item[sentido] indicado pela orientação da seta
+  \end{description}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+%\begin{frame}{Representação geométrica}
+%\begin{center}
+%\begin{tikzpicture}[scale=1.2,>=Stealth]
+%    \draw[->] (0,0) -- (5,0) node[right] {$x$};
+%    \draw[->] (0,0) -- (0,3) node[above] {$y$};
+%
+%    \draw[->,thick] (1,0.7) -- (4,2.3);
+%
+%    \fill (1,0.7) circle (2pt) node[below left] {$A$};
+%    \fill (4,2.3) circle (2pt) node[above right] {$B$};
+%
+%    \node at (2.7,1.8) {$\overrightarrow{AB}$};
+%\end{tikzpicture}
+%\end{center}
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Vetores iguais}
+  \onslide<+->{Dois vetores são considerados iguais quando possuem}
+  \begin{itemize}[<+->]
+      \item o mesmo módulo
+      \item a mesma direção
+      \item o mesmo sentido
+  \end{itemize}
+
+  \onslide<+->{A posição em que o vetor é desenhado \emph{não} determina o vetor}
+
+  \onslide<+->{Podemos deslocar um vetor paralelamente sem alterar suas características}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Vetor representado a partir da origem}
+  Frequentemente, representamos um vetor partindo da origem
+  \pause
+  \[
+    O = (0, 0)
+  \]
+  \pause
+  Notação
+  \[
+    \vec{v} = \overrightarrow{OP}
+  \]
+  \pause
+  Se
+  \[
+    P = ( 3, 2 )
+  \]
+  \pause
+  o vetor pode ser representado por
+  \[
+    \vec{v}
+    = ( 3, 2 )
+    = \vetor{3}{2}
+  \]
+  \pause
+  Essa representação é conveniente para realizar cálculos
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Independência do Ponto de Origem}
+  O vetor não está associado exclusivamente à origem
+
+  \pause
+  O mesmo vetor pode ser representado a partir de qualquer ponto do plano
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/E-01-Vetores-ex-01}
+
+%------------------------------------------------------------------------------%
+\section{Definição algébrica}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição Algébrica}
+  No plano, $\R^2$, cada vetor pode ser representado por um par ordenado
+  \[
+    \vec{v}
+    = ( v_1, v_2 )
+    = \vetor{v_1}{v_2}
+  \]
+  \pause
+  No espaço tridimensional, $\R^3$,
+  \[
+    \vec{v}
+    = ( v_1, v_2, v_3 )
+    = \vetortri{v_1}{v_2}{v_3}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição Algébrica}
+  Um vetor de $\R^n$ é uma $n$-upla
+  \[
+    \vec{v}
+    = ( v_1, v_2, \ldots, v_n )
+    = \begin{pmatrix}[c]
+        v_1 \\
+        v_2 \\
+        \vdots \\
+        v_n
+    \end{pmatrix}
+  \]
+  \pause
+  Os números $v_1$, $v_2$, \dots, $v_n$ são as \emph{componentes} do vetor
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/E-01-Vetores-ex-02}
+\input{ex/E-01-Vetores-ex-03}
+\input{ex/E-01-Vetores-ex-04}
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+
+
