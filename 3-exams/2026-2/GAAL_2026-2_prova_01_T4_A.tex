@@ -1,0 +1,436 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{gaal}
+
+%\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{GAAL}{Prova 1 -- Turma 4}{26/08/2026}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Dados
+\[
+  A = \begin{bmatrix}
+    1 & 2 & -1 \\
+    0 & 3 & 2
+  \end{bmatrix}
+\qquad
+  B = \begin{bmatrix}
+    2 & -1 & 0 \\
+    1 & 1  & 3
+  \end{bmatrix}
+\qquad
+  C = \begin{bmatrix}
+    1 & 2  & 3 \\
+    0 & -1 & 1
+  \end{bmatrix}
+\]
+calcule \(AC^t + BC^t\)
+
+\begin{answer}
+  \[
+    AC + BC
+    = (A + B)C
+  \]
+  \begin{align*}
+    A + B
+    & =
+      \begin{bmatrix}
+        1 & 2 & -1 \\
+        0 & 3 & 2
+      \end{bmatrix}
+      +
+      \begin{bmatrix}
+        2 & -1 & 0 \\
+        1 & 1  & 3
+      \end{bmatrix}
+    \\[2mm]
+    & =
+      \begin{bmatrix}
+        1 + 2 & 2 - 1 & -1 + 0 \\
+        0 + 1 & 3 + 1 &  2 + 3
+      \end{bmatrix}
+    \\[2mm]
+    & =
+      \begin{bmatrix}
+        3 & 1 & -1 \\
+        1 & 4 &  5
+      \end{bmatrix}
+  \end{align*}
+  \begin{align*}
+    AC + BC
+    & = (A + B)C
+    \\
+    & =
+      \begin{bmatrix}
+        3 & 1 & -1 \\
+        1 & 4 &  5
+      \end{bmatrix}
+      \begin{bmatrix}
+        1 & 0  \\
+        2 & -1 \\
+        3 & 1
+      \end{bmatrix}
+    \\[2mm]
+    & =
+      \begin{bmatrix}
+        3 \cdot 1 + 1 \cdot 2 + (-1) 3 &
+        3 \cdot 0 + 1 (-1)    + (-1) 1
+        \\
+        1 \cdot 1 + 4 \cdot 2 +  5 \cdot 3 &
+        1 \cdot 0 + 4 (-1)    +  5 \cdot 1
+      \end{bmatrix}
+    \\[2mm]
+    & =
+      \begin{bmatrix}
+        3 + 2 -  3 & 0 - 1 - 1 \\
+        1 + 8 + 15 & 0 - 4 + 5
+      \end{bmatrix}
+    \\[2mm]
+    & =
+      \begin{bmatrix}
+        2 & -2 \\
+        24 & 1
+      \end{bmatrix}
+  \end{align*}
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Resolva o sistema linear por Gauss--Jordan
+\[
+  \systeme[sort={x, y, z, w}]{
+     x + 2y -  z + w = 3,
+    2x + 5y +      w = 7,
+    -x -  y + 2z - w = -1
+  }
+\]
+
+\begin{answer}
+Matriz aumentada
+\[
+\begin{amatrix}{4}
+  1  & 2  & -1 & 1  & 3  \\
+  2  & 5  & 0  & 1  & 7  \\
+  -1 & -1 & 2  & -1 & -1
+\end{amatrix}
+\]
+Utilizamos a primeira linha para eliminar os elementos abaixo
+do primeiro pivô
+\[
+  L_2\leftarrow L_2-2L_1
+\]
+\[
+  L_3\leftarrow L_3+L_1
+\]
+Assim
+\[
+\begin{amatrix}{4}
+  1 & 2 & -1 & 1  & 3 \\
+  0 & 1 & 2  & -1 & 1 \\
+  0 & 1 & 1  & 0  & 2
+\end{amatrix}
+\]
+Agora eliminamos o elemento abaixo do segundo pivô
+\[
+  L_3 \leftarrow L_3 - L_2
+\]
+Obtemos
+\[
+\begin{amatrix}{4}
+  1 & 2 & -1 & 1  & 3 \\
+  0 & 1 & 2  & -1 & 1 \\
+  0 & 0 & -1 & 1  & 1
+\end{amatrix}
+\]
+Multiplicando a terceira linha por $-1$
+\[
+  L_3 \leftarrow - L_3
+\]
+resulta em
+\[
+\begin{amatrix}{4}
+  1 & 2 & -1 & 1  & 3  \\
+  0 & 1 & 2  & -1 & 1  \\
+  0 & 0 & 1  & -1 & -1
+\end{amatrix}
+\]
+Eliminamos o elemento acima do terceiro pivô
+\[
+  L_2 \leftarrow L_2 - 2 L_3
+\]
+\[
+  L_1 \leftarrow L_1 + L_3
+\]
+Assim
+\[
+\begin{amatrix}{4}
+  1 & 2 & 0 & 0  & 2  \\
+  0 & 1 & 0 & 1  & 3  \\
+  0 & 0 & 1 & -1 & -1
+\end{amatrix}
+\]
+Agora eliminamos o elemento acima do segundo pivô
+\[
+  L_1\leftarrow L_1 - 2 L_2
+\]
+Logo
+\[
+\begin{amatrix}{4}
+  1 & 0 & 0 & -2 & -4 \\
+  0 & 1 & 0 & 1  & 3  \\
+  0 & 0 & 1 & -1 & -1
+\end{amatrix}
+\]
+A matriz escalonada reduzida representa o sistema
+\[
+  \systeme[sort={x, y, z, w}]{
+    x-2w=-4,
+    y+w=3,
+    z-w=-1
+  }
+\]
+A variável $w$ é livre pois não possui pivô
+\[
+  w=t
+  \qquad t \in \R
+\]
+Então
+\[
+  x=2t-4
+\]
+\[
+  y=3-t
+\]
+\[
+  z=t-1
+\]
+Portanto, a solução geral do sistema é
+\[
+  \begin{pmatrix}
+    x \\
+    y \\
+    z \\
+    w
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    -4 \\
+    3  \\
+    -1 \\
+    0
+  \end{pmatrix}
+  +
+  t
+  \begin{pmatrix}
+    2  \\
+    -1 \\
+    1  \\
+    1
+  \end{pmatrix}
+  \qquad t \in \R
+\]
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Utilize o método de Gauss--Jordan para inverter a matriz
+\[
+  A =
+  \begin{bmatrix}
+    2 & 1 & 0 \\
+    1 & 1 & 1 \\
+    0 & 1 & 1
+  \end{bmatrix}
+\]
+
+\begin{answer}
+Matriz aumentada
+\[
+  \begin{amatrix}[3]{3}
+    2 & 1 & 0 & 1 & 0 & 0 \\
+    1 & 1 & 1 & 0 & 1 & 0 \\
+    0 & 1 & 1 & 0 & 0 & 1
+  \end{amatrix}
+\]
+Trocamos as linhas $L_1$ e $L_2$
+\[
+  L_1 \leftrightarrow L_2
+\]
+Obtemos
+\[
+\begin{amatrix}[3]{3}
+  1 & 1 & 1 & 0 & 1 & 0 \\
+  2 & 1 & 0 & 1 & 0 & 0 \\
+  0 & 1 & 1 & 0 & 0 & 1
+\end{amatrix}
+\]
+Aplicamos
+\[
+  L_2 \leftarrow L_2 - 2 L_1
+\]
+Então
+\[
+\begin{amatrix}[3]{3}
+  1 & 1  & 1  & 0 & 1  & 0 \\
+  0 & -1 & -2 & 1 & -2 & 0 \\
+  0 & 1  & 1  & 0 & 0  & 1
+\end{amatrix}
+\]
+Fazemos
+\[
+  L_2 \leftarrow - L_2
+\]
+Logo
+\[
+\begin{amatrix}[3]{3}
+  1 & 1 & 1 & 0  & 1 & 0 \\
+  0 & 1 & 2 & -1 & 2 & 0 \\
+  0 & 1 & 1 & 0  & 0 & 1
+\end{amatrix}
+\]
+Agora
+\[
+  L_3 \leftarrow L_3 - L_2
+\]
+Obtemos
+\[
+\begin{amatrix}[3]{3}
+  1 & 1 & 1  & 0  & 1  & 0 \\
+  0 & 1 & 2  & -1 & 2  & 0 \\
+  0 & 0 & -1 & 1  & -2 & 1
+\end{amatrix}
+\]
+Multiplicamos a terceira linha por $-1$
+\[
+  L_3 \leftarrow - L_3
+\]
+Assim
+\[
+\begin{amatrix}[3]{3}
+  1 & 1 & 1 & 0  & 1 & 0  \\
+  0 & 1 & 2 & -1 & 2 & 0  \\
+  0 & 0 & 1 & -1 & 2 & -1
+\end{amatrix}
+\]
+Eliminamos os elementos acima do terceiro pivô
+\[
+  L_2 \leftarrow L_2 - 2 L_3
+\]
+\[
+  L_1 \leftarrow L_1 - L_3
+\]
+Resulta
+\[
+\begin{amatrix}[3]{3}
+  1 & 1 & 0 &  1 & -1 &  1 \\
+  0 & 1 & 0 &  1 & -2 &  2 \\
+  0 & 0 & 1 & -1 &  2 & -1
+\end{amatrix}
+\]
+Finalmente
+\[
+  L_1 \leftarrow L_1 - L_2
+\]
+Obtemos
+\[
+\begin{amatrix}[3]{3}
+  1&0&0&0&1&-1\\
+  0&1&0&1&-2&2\\
+  0&0&1&-1&2&-1
+\end{amatrix}
+\]
+Portanto
+\[
+  A^{-1} =
+  \begin{bmatrix}
+    0  & 1  & -1 \\
+    1  & -2 & 2  \\
+    -1 & 2  & -1
+  \end{bmatrix}
+\]
+\end{answer}
+
+% 04
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Utilize a inversa para resolver o sistema linear
+\[
+  \systeme{
+    2x + y     = 8,
+     x + y + z = 9,
+         y + z = 6
+  }
+\]
+\hint{Veja o exercício anterior}
+
+\begin{answer}
+A matriz do sistema é
+\[
+  A =
+  \begin{bmatrix}
+    2 & 1 & 0 \\
+    1 & 1 & 1 \\
+    0 & 1 & 1
+  \end{bmatrix}
+\]
+No exercício anterior calculamos
+\[
+  A^{-1} =
+  \begin{bmatrix}
+    0  & 1  & -1 \\
+    1  & -2 & 2  \\
+    -1 & 2  & -1
+  \end{bmatrix}
+\]
+A solução do sistema é
+\begin{align*}
+  \mathbf{x}
+  & = A^{-1} \mathbf{b}
+  \\[2mm]
+  & =
+    \begin{bmatrix}
+      0  & 1  & -1 \\
+      1  & -2 & 2  \\
+      -1 & 2  & -1
+    \end{bmatrix}
+    \begin{bmatrix}
+      8 \\
+      9 \\
+      6
+    \end{bmatrix}
+  \\[2mm]
+  & =
+    \begin{bmatrix}
+       0 \cdot 8 + 1 \cdot 9 - 1 \cdot 6 \\
+       1 \cdot 8 - 2 \cdot 9 + 2 \cdot 6 \\
+      -1 \cdot 8 + 2 \cdot 9 - 1 \cdot 6
+    \end{bmatrix}
+  \\[2mm]
+  & =
+    \begin{bmatrix}
+      0 +  9 - 6  \\
+      8 - 18 + 12 \\
+     -8 + 18 - 6
+    \end{bmatrix}
+  \\[2mm]
+  & =
+    \begin{bmatrix}
+      3 \\
+      2 \\
+      4
+    \end{bmatrix}
+\end{align*}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+

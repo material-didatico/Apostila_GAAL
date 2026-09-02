@@ -1,0 +1,355 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{gaal}
+
+%\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{GAAL}{Prova 1 -- Turma 7}{26/08/2026}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Dados
+\[
+  A =
+  \begin{bmatrix}
+    1 & 2 & -1 \\
+    0 & 3 & 2  \\
+    1 & 1 & 3
+  \end{bmatrix}
+\qquad
+  \mathbf{x} =
+  \begin{bmatrix}
+    x \\ y \\ z
+  \end{bmatrix}
+\]
+calcule \(\mathbf{x}^t A \mathbf{x}\)
+
+\begin{answer}
+  \begin{align*}
+    \mathbf{x}^t A
+    & =
+    \begin{bmatrix}
+      x \\ y \\ z
+    \end{bmatrix}^t
+    \begin{bmatrix}
+      1 & 2 & -1 \\
+      0 & 3 & 2  \\
+      1 & 1 & 3
+    \end{bmatrix}
+    \\[2mm]
+    & =
+    \begin{bmatrix}
+      x & y & z
+    \end{bmatrix}
+    \begin{bmatrix}
+      1 & 2 & -1 \\
+      0 & 3 & 2  \\
+      1 & 1 & 3
+    \end{bmatrix}
+    \\[2mm]
+    & =
+    \begin{bmatrix}
+      x \cdot 1 + y \cdot 0 + z \cdot 1 &
+      x \cdot 2 + y \cdot 3 + z \cdot 2 &
+      x \cdot 1 + y \cdot 1 + z \cdot 3
+    \end{bmatrix}
+    \\[2mm]
+    & =
+    \begin{bmatrix}
+      x + z &
+      2x + 3y + 2z &
+      x + y + 3z
+    \end{bmatrix}
+  \end{align*}
+  \begin{align*}
+    \mathbf{x}^t A \mathbf{x}
+    & =
+    \begin{bmatrix}
+      x + z &
+      2x + 3y + 2z &
+      x + y + 3z
+    \end{bmatrix}
+    \begin{bmatrix}
+      x \\ y \\ z
+    \end{bmatrix}
+    \\[2mm]
+    & =
+    \begin{bmatrix}
+      (x + z)x +
+      (2x + 3y + 2z)y +
+      {x + y + 3z}z
+    \end{bmatrix}
+    \\[2mm]
+    & =
+      x^2 + xz +
+      2xy + 3y^2 + 2yz +
+      xz + yz + 3z^2
+    \\[2mm]
+    & =
+      x^2 + 3y^2 + 3z^2 + 2xy + 2xz + + 3yz
+  \end{align*}
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Resolva o sistema linear por Gauss--Jordan
+\[
+  \systeme{
+     x + 2y -  z = 0,
+    2x + 4y - 2z = 0,
+     x +  y +  z = 0
+  }
+\]
+
+\begin{answer}
+Vamos escalonar a matriz do sistema
+\[
+  \begin{bmatrix}
+    1 & 2 & -1 \\
+    2 & 4 & -2 \\
+    1 & 1 &  1
+  \end{bmatrix}
+\]
+Eliminando os elementos abaixo do primeiro pivô
+\begin{gather*}
+  L_2 \leftarrow L_2 - 2 L_1 \\
+  L_3 \leftarrow L_3 - L_1
+\end{gather*}
+\[
+\begin{bmatrix}
+  1 & 2  & -1 \\
+  0 & 0  & 0  \\
+  0 & -1 & 2
+\end{bmatrix}
+\]
+Trocando $L_2$ e $L_3$
+\[
+\begin{bmatrix}
+  1 & 2  & -1 \\
+  0 & -1 & 2  \\
+  0 & 0  & 0
+\end{bmatrix}
+\]
+Igualando o segundo pivô a 1
+\[
+  L_2 \leftarrow - L_2
+\]
+\[
+\begin{bmatrix}
+  1 & 2 & -1 \\
+  0 & 1 & -2 \\
+  0 & 0 & 0
+\end{bmatrix}
+\]
+Eliminando os elementos acima do segundo pivô
+\[
+  L_1 \leftarrow L_1 - 2 L_2
+\]
+\[
+\begin{bmatrix}
+  1 & 0 &  3 \\
+  0 & 1 & -2 \\
+  0 & 0 &  0
+\end{bmatrix}
+\]
+A variável $z$ é livre.
+
+Fazemos $z=t$
+\[
+  x= -3t
+  \qquad
+  y = 2t
+\]
+A solução é
+\[
+  \mathbf{x}
+  =
+  t\begin{bmatrix}
+    -3 \\
+    2  \\
+    1
+  \end{bmatrix}
+  \qquad t \in \R
+\]
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Utilize o método de Gauss--Jordan para inverter a matriz
+\[
+  A =
+  \begin{bmatrix}
+    1 & 1 & 0 \\
+    0 & 1 & 1 \\
+    1 & 0 & 1
+  \end{bmatrix}
+\]
+
+\begin{answer}
+Matriz aumentada
+\[
+  \begin{amatrix}[3]{3}
+    1 & 1 & 0 & 1 & 0 & 0 \\
+    0 & 1 & 1 & 0 & 1 & 0 \\
+    1 & 0 & 1 & 0 & 0 & 1
+  \end{amatrix}
+\]
+Aplicamos
+\[
+  L_3 \leftarrow L_3 - L_1
+\]
+\[
+  \begin{amatrix}[3]{3}
+    1 & 1  & 0 & 1  & 0 & 0 \\
+    0 & 1  & 1 & 0  & 1 & 0 \\
+    0 & -1 & 1 & -1 & 0 & 1
+  \end{amatrix}
+\]
+Agora
+\[
+ L_3 \leftarrow L_3 + L_2
+\]
+Obtemos
+\[
+  \begin{amatrix}[3]{3}
+    1 & 1 & 0 & 1  & 0 & 0 \\
+    0 & 1 & 1 & 0  & 1 & 0 \\
+    0 & 0 & 2 & -1 & 1 & 1
+  \end{amatrix}
+\]
+Dividimos a terceira linha por $2$
+\[
+  L_3 \leftarrow \sfrac{1}{2} L_3
+\]
+Logo
+\[
+  \begin{amatrix}[3]{3}
+    1 & 1 & 0 & 1            & 0           & 0           \\
+    0 & 1 & 1 & 0            & 1           & 0           \\
+    0 & 0 & 1 & -\sfrac{1}{2} & \sfrac{1}{2} & \sfrac{1}{2}
+  \end{amatrix}
+\]
+Eliminamos o elemento acima do terceiro pivô
+\[
+  L_2 \leftarrow L_2 - L_3
+\]
+Então
+\[
+  \begin{amatrix}[3]{3}
+    1 & 1 & 0 & 1            & 0           & 0            \\
+    0 & 1 & 0 & \sfrac{1}{2}  & \sfrac{1}{2} & -\sfrac{1}{2} \\
+    0 & 0 & 1 & -\sfrac{1}{2} & \sfrac{1}{2} & \sfrac{1}{2}
+  \end{amatrix}
+\]
+Finalmente
+\[
+  L_1 \leftarrow L_1 - L_2
+\]
+Assim
+\[
+  \begin{amatrix}[3]{3}
+    1 & 0 & 0 & \sfrac{1}{2}  & -\sfrac{1}{2} & \sfrac{1}{2}  \\
+    0 & 1 & 0 & \sfrac{1}{2}  & \sfrac{1}{2}  & -\sfrac{1}{2} \\
+    0 & 0 & 1 & -\sfrac{1}{2} & \sfrac{1}{2}  & \sfrac{1}{2}
+  \end{amatrix}
+\]
+Portanto
+\[
+  A^{-1} =
+  \begin{bmatrix}
+    \sfrac{1}{2}  & -\sfrac{1}{2} & \sfrac{1}{2}  \\
+    \sfrac{1}{2}  & \sfrac{1}{2}  & -\sfrac{1}{2} \\
+    -\sfrac{1}{2} & \sfrac{1}{2}  & \sfrac{1}{2}
+  \end{bmatrix}
+\]
+\end{answer}
+
+% 04
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Utilize a inversa para resolver o sistema linear
+\[
+  \systeme{
+  x + y = 7,
+  y + z = 4,
+  x + z = 5
+  }
+\]
+\hint{Veja o exercício anterior}
+
+\begin{answer}
+A matriz do sistema é
+\[
+  A =
+  \begin{bmatrix}
+    1 & 1 & 0 \\
+    0 & 1 & 1 \\
+    1 & 0 & 1
+  \end{bmatrix}
+\]
+No exercício anterior calculamos
+\[
+  A^{-1} =
+  \begin{bmatrix}
+    \sfrac{1}{2}  & -\sfrac{1}{2} & \sfrac{1}{2}  \\
+    \sfrac{1}{2}  & \sfrac{1}{2}  & -\sfrac{1}{2} \\
+    -\sfrac{1}{2} & \sfrac{1}{2}  & \sfrac{1}{2}
+  \end{bmatrix}
+\]
+A solução do sistema é
+\begin{align*}
+  \mathbf{x}
+  & = A^{-1} \mathbf{b}
+  \\[2mm]
+  & =
+    \begin{bmatrix}
+      \sfrac{1}{2}  & -\sfrac{1}{2} & \sfrac{1}{2}  \\
+      \sfrac{1}{2}  & \sfrac{1}{2}  & -\sfrac{1}{2} \\
+      -\sfrac{1}{2} & \sfrac{1}{2}  & \sfrac{1}{2}
+    \end{bmatrix}
+    \begin{bmatrix}
+      7 \\
+      4 \\
+      5 \\
+    \end{bmatrix}
+  \\[2mm]
+  & =
+    \begin{bmatrix}
+       \dfrac{1}{2}\, 7 - \dfrac{1}{2}\, 4 + \dfrac{1}{2}\, 5 \\[3mm]
+       \dfrac{1}{2}\, 7 + \dfrac{1}{2}\, 4 - \dfrac{1}{2}\, 5 \\[3mm]
+      -\dfrac{1}{2}\, 7 + \dfrac{1}{2}\, 4 + \dfrac{1}{2}\, 5
+    \end{bmatrix}
+  \\[2mm]
+  & =
+    \begin{bmatrix}
+      \dfrac{ 7 - 4 + 5}{2} \\[3mm]
+      \dfrac{ 7 + 4 - 5}{2} \\[3mm]
+      \dfrac{-7 + 4 + 5}{2}
+    \end{bmatrix}
+  \\[2mm]
+  & =
+    \begin{bmatrix}
+      \dfrac{8}{2} \\[3mm]
+      \dfrac{6}{2} \\[3mm]
+      \dfrac{2}{2}
+    \end{bmatrix}
+  \\[2mm]
+  & =
+    \begin{bmatrix}
+      4 \\[3mm]
+      3 \\[3mm]
+      2
+    \end{bmatrix}
+\end{align*}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

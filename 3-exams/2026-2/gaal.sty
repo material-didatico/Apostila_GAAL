@@ -1,0 +1,74 @@
+%------------------------------------------------------------------------------%
+% Definições particulares para as Apresentações de
+% GAAL
+%------------------------------------------------------------------------------%
+
+\usepackage{avaliacao}
+\usepackage{mathconfig}
+\usepackage{qrcode}
+\usepackage{systeme}
+\usepackage{nicematrix}
+
+%------------------------------------------------------------------------------%
+
+% Issue an error is include file is missing
+\def\mkfilename#1{%
+  \if\relax\detokenize\expandafter{#1}\relax\else#1/\fi%
+}
+
+\AddToHook{include/before}{%
+  \IfFileExists{\mkfilename\CurrentFilePath\CurrentFile}{}{%
+    \GenericError{}{Error: File \mkfilename\CurrentFilePath\CurrentFile.tex not found!}{\@gobble}{}%
+}}
+
+%------------------------------------------------------------------------------%
+
+\graphicspath  {{./figs/},{./asy/}}
+\def\input@path{{./figs/},{./ex/}}
+
+%------------------------------------------------------------------------------%
+
+% Redefine alinhamento padrão das matrizes para a direita
+\renewcommand*\env@matrix[1][r]%
+{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{*\c@MaxMatrixCols #1}%
+}
+
+\newenvironment{amatrix}[2][1]%
+{%
+  \left[\begin{array}{@{}*{#2}{r}|*{#1}{r}@{}}
+}{%
+  \end{array}\right]
+}
+
+%------------------------------------------------------------------------------%
+
+\newcommand*{\hint}[1]{\underline{Dica}: \textit{#1}}
+
+\newcommand{\vetor}[2]{\left(\begin{array}{c} #1 \\ #2 \end{array}\right)}
+\newcommand{\Vetor}[2]{\left(\begin{array}{c}
+  \displaystyle #1 \\[5mm]
+  \displaystyle #2
+\end{array}\right)}
+
+\newcommand{\vetortri}[3]{\left(\begin{array}{c} #1 \\ #2 \\ #3 \end{array}\right)}
+\newcommand{\Vetortri}[3]{\left(\begin{array}{c}
+  \displaystyle #1 \\[5mm]
+  \displaystyle #2 \\[5mm]
+  \displaystyle #3
+\end{array}\right)}
+
+\newcommand{\veci}{\mathbf{i}}
+\newcommand{\vecj}{\mathbf{j}}
+\newcommand{\veck}{\mathbf{k}}
+
+\newcommand{\z}{{\color{gray}0}}
+\newcommand{\mnula}{\mathbf{0}}
+\newcommand{\I}{\mathcal{I}}
+
+\DeclareMathOperator{\posto}{posto}
+\DeclareMathOperator{\rank}{rank}
+
+%------------------------------------------------------------------------------%
