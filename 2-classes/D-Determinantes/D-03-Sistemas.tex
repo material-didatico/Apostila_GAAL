@@ -1,0 +1,199 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Determinantes e Sistemas Lineares}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Determinantes e Sistemas Lineares}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Determinantes e Sistemas Lineares}
+  \onslide<+->{O determinante de $A$ }
+  \\
+  \onslide<+->{permite responder questões sobre o sistema
+  \(
+    A \mathbf{x} = \mathbf{b}
+  \)}
+  \begin{itemize}[<+->]
+      \item O sistema possui solução?
+      \item A solução é única?
+      \item Existem infinitas soluções?
+      \item O sistema homogêneo possui soluções não triviais?
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Relação Fundamental}
+  \onslide<+->{Relação fundamental
+  \[
+    \det(A)\neq0
+    \qquad\Leftrightarrow\qquad
+    A\text{ é invertível}
+  \]}
+
+  \onslide<+->{Se
+  \(
+    \;\det(A) \neq 0\;
+  \)}
+  \begin{align*}
+    \onslide<+->{A \mathbf{x}        & = \mathbf{b}        \\}
+    \onslide<+->{A^{-1} A \mathbf{x} & = A^{-1} \mathbf{b} \\}
+    \onslide<+->{\mathbf{x}          & = A^{-1} \mathbf{b}
+    \qquad\text{ solução única}}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Classificação de sistemas}
+  \onslide<+->{Um sistema linear quadrado
+  \(
+    \;A \mathbf{x} = \mathbf{b}\;
+  \)}
+  \onslide<+->{pode ser}
+  \begin{itemize}[<+->]
+      \item possível e determinado
+      \item possível e indeterminado
+      \item impossível
+  \end{itemize}
+
+  \bigskip
+
+  \onslide<+->{Se
+  \(
+    \;\det(A) \neq 0\;
+  \)}
+  \onslide<+->{o sistema é necessariamente \emph{possível e determinado}}
+
+  \onslide<+->{Se
+  \(
+    \;\det(A) = 0\;
+  \)}
+  \onslide<+->{o sistema pode ser \emph{possível e indeterminado} ou \emph{impossível}}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/D-03-Sistemas-ex-01}
+
+%------------------------------------------------------------------------------%
+\section{Regra de Cramer}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Regra de Cramer}
+  Dado o sistema
+  \(
+    A \mathbf{x} = \mathbf{b}
+  \)
+
+  \pause
+  com $A$ é quadrada e
+  \(
+    \det(A) \neq 0
+  \)
+
+  \pause
+  \bigskip
+  A \emph{Regra de Cramer} fornece a solução do sistema por determinantes
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Regra de Cramer para Sistemas $2 \times 2$}
+  \[
+    \begin{cases}
+      a_{11}\, x + a_{12}\, y = b_1  \\
+      a_{21}\, x + a_{22}\, y = b_2
+    \end{cases}
+  \]
+  \pause
+  \[
+    x = \frac{\det(A_x)}{\det(A)}
+    \qquad\qquad
+    y = \frac{\det(A_y)}{\det(A)}
+  \]
+
+  \pause
+  $A_x$ e $A_y$ são obtidas substituindo a coluna correspondente por $\mathbf{b}$
+  \pause
+  \[
+    A_x =
+    \begin{pmatrix}
+      \emph{b_1} & a_{12} \\
+      \emph{b_2} & a_{22}
+    \end{pmatrix}
+  \pause
+  \qquad\qquad
+    A_y =
+    \begin{pmatrix}
+      a_{11} & \emph{b_1} \\
+      a_{21} & \emph{b_2}
+    \end{pmatrix}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/D-03-Sistemas-ex-02}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Regra de Cramer para Sistemas $3 \times 3$}
+  \[
+    A
+    \begin{pmatrix}
+      x \\
+      y \\
+      z
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      b_1 \\
+      b_2 \\
+      b_3
+    \end{pmatrix}
+  \]
+
+  \pause
+  Se
+  \(
+  \det(A)\neq0
+  \)
+  então
+
+  \pause
+  \[
+    x = \frac{\det(A_x)}{\det(A)}
+    \qquad\qquad
+    y = \frac{\det(A_y)}{\det(A)}
+    \qquad\qquad
+    z = \frac{\det(A_z)}{\det(A)}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/D-03-Sistemas-ex-03}
+\input{ex/D-03-Sistemas-ex-04}
+\input{ex/D-03-Sistemas-ex-05}
+
+%------------------------------------------------------------------------------%
+% \framedgraphic{Gráfico de uma Função Real}{B_01_grafico_funcao_real}{}
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

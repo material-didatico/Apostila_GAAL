@@ -1,0 +1,186 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Resolva pelo Método de Cramer
+  \[
+    \begin{cases}
+      x   +y + z = 6 \\
+      2x  -y + z = 3 \\
+      x  +2y - z = 2
+    \end{cases}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{\[
+    A =
+    \begin{pmatrix}
+      1 & 1  & 1  \\
+      2 & -1 & 1  \\
+      1 & 2  & -1
+    \end{pmatrix}
+  \]}
+
+  \onslide<+->{Pela Regra de Sarrus}
+  \begin{align*}
+    \onslide<+->{\det(A) & =}
+    \onslide<+->{    1(-1)(-1)}
+    \onslide<+->{  + 1(1)(1) }
+    \onslide<+->{  + 1(2)(2)}
+    \onslide<+->{  - 1(-1)(1)}
+    \onslide<+->{  - 1(2)(-1)}
+    \onslide<+->{  - 1(1)(2)}
+    \\
+    \onslide<+->{& = 1 + 1 + 4 + 1 + 2 - 2 \\}
+    \onslide<+->{& = 7}
+  \end{align*}
+  \onslide<+->{Como
+  \(
+    \det(A) \neq 0
+  \)}
+  \onslide<+->{o sistema possui uma única solução}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Cálculo do Determinante de $A_x$}
+  \onslide<+->{\[
+    A_x =
+    \begin{pmatrix}
+      6 & 1  & 1  \\
+      3 & -1 & 1  \\
+      2 & 2  & -1
+    \end{pmatrix}
+  \]}
+  \begin{align*}
+    \onslide<+->{\det(A_x)}
+    \onslide<+->{& = 6(-1)^{1+1}
+      \begin{vmatrix}
+        -1 & 1  \\
+        2  & -1
+      \end{vmatrix}}
+    \onslide<+->{  + 1 (-1)^{1+2}
+      \begin{vmatrix}
+        3 & 1  \\
+        2 & -1
+      \end{vmatrix}}
+    \onslide<+->{  + 1 (-1)^{1+3}
+      \begin{vmatrix}
+        3 & -1 \\
+        2 & 2
+      \end{vmatrix}}
+    \\
+    \onslide<+->{& = 6\big[(-1)(-1)  -1 \times 2\big]}
+    \onslide<+->{  -  \big[3(-1) - 1 \times 2\big]}
+    \onslide<+->{  +  \big[3\times 2 - (-1)2 \big] \\}
+    \onslide<+->{& = -6 + 5 + 8  \\}
+    \onslide<+->{& = 7}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Cálculo do Determinante de $A_y$}
+  \onslide<+->{\[
+    A_y =
+    \begin{pmatrix}
+      1 & 6 & 1  \\
+      2 & 3 & 1  \\
+      1 & 2 & -1
+    \end{pmatrix}
+  \]}
+  \begin{align*}
+    \onslide<+->{\det(A_y)}
+    \onslide<+->{& = 1 (-1)^{1+1}
+        \begin{vmatrix}
+          3 & 1  \\
+          2 & -1
+        \end{vmatrix}}
+    \onslide<+->{  + 6 (-1)^{1+2}
+        \begin{vmatrix}
+          2 & 1  \\
+          1 & -1
+        \end{vmatrix}}
+    \onslide<+->{  + 1 (-1)^{1+3}
+        \begin{vmatrix}
+        2&3\\
+        1&2
+        \end{vmatrix} \\}
+    \onslide<+->{& = 1\big[3(-1) - 1 \times 2\big] }
+    \onslide<+->{  - 6\big[2(-1) - 1 \times 1\big]}
+    \onslide<+->{  +  \big[2 \times 2 - 3 \times 1\big] \\}
+    \onslide<+->{& = -5+18+1  \\}
+    \onslide<+->{& = 14}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Cálculo do Determinante de $A_z$}
+  \onslide<+->{\[
+    A_z =
+    \begin{pmatrix}
+      1 & 1  & 6 \\
+      2 & -1 & 3 \\
+      1 & 2  & 2
+    \end{pmatrix}
+  \]}
+  \begin{align*}
+    \onslide<+->{\det(A_z)}
+    \onslide<+->{& = 1 (-1)^{1+1}
+        \begin{vmatrix}
+          -1 & 3 \\
+          2  & 2
+        \end{vmatrix}}
+    \onslide<+->{  + 1 (-1)^{1+2}
+        \begin{vmatrix}
+          2 & 3 \\
+          1 & 2
+        \end{vmatrix}}
+    \onslide<+->{  + 6 (-1)^{1+3}
+        \begin{vmatrix}
+          2 & -1 \\
+          1 & 2
+        \end{vmatrix} \\}
+    \onslide<+->{& = 1\big[(-1)2 - 3 \times 2\big] }
+    \onslide<+->{  -  \big[2 \times 2 - 3 \times 1\big]}
+    \onslide<+->{  + 6\big[2 \times 2 - (-1)1\big] \\}
+    \onslide<+->{& = -8 -1 +30 \\}
+    \onslide<+->{& = 21}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\[
+  x
+  \pause
+  \;=\; \frac{\det(A_x)}{\det(A)}
+  \pause
+  \;=\; \frac{7}{7}
+  \pause
+  \;=\; 1
+\]
+
+\pause
+\[
+  y
+  \pause
+  \;=\; \frac{\det(A_y)}{\det(A)}
+  \pause
+  \;=\; \frac{14}{7}
+  \pause
+  \;=\; 2
+\]
+
+\pause
+\[
+  z
+  \pause
+  \;=\; \frac{\det(A_z)}{\det(A)}
+  \pause
+  \;=\; \frac{21}{7}
+  \pause
+  \;=\; 3
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

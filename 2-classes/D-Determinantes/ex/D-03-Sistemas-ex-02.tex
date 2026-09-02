@@ -1,0 +1,122 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Resolva o sistema pela Regra de Cramer
+  \[
+    \left\{\begin{array}{rrr}
+      2x & +y & = 5 \\
+       x & -y & = 1
+    \end{array}\right.
+  \]
+
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{\[
+    A =
+    \begin{pmatrix}
+      2 & 1  \\
+      1 & -1
+    \end{pmatrix}
+    \qquad\qquad
+    \mathbf{b} =
+    \begin{pmatrix}
+      5 \\
+      1
+    \end{pmatrix}
+  \]}
+  \begin{align*}
+    \onslide<+->{\det(A)}
+    \onslide<+->{& = 2(-1) - 1 \times 1 \\}
+    \onslide<+->{& = -2 -1 \\}
+    \onslide<+->{& = -3}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Determinando $x$}
+  \[
+    A =
+    \begin{pmatrix}
+      2 & 1  \\
+      1 & -1
+    \end{pmatrix}
+  \qquad\qquad
+    \mathbf{b} =
+    \begin{pmatrix}
+      5 \\
+      1
+    \end{pmatrix}
+  \qquad\qquad
+    A_x =
+    \begin{pmatrix}
+      5 & 1  \\
+      1 & -1
+    \end{pmatrix}
+  \]
+
+  \pause
+  \[
+    \det(A_x)
+    \pause
+    \;=\; 5(-1) - 1(1)
+    \pause
+    \;=\; -6
+  \]
+
+  \[
+  \pause
+    x
+    \pause
+    \;=\; \frac{\det(A_x)}{\det(A)}
+    \pause
+    \;=\; \frac{-6}{-3}
+    \pause
+    \;=\; 2
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Determinando $x$}
+  \[
+    A =
+    \begin{pmatrix}
+      2 & 1  \\
+      1 & -1
+    \end{pmatrix}
+  \qquad\qquad
+    \mathbf{b} =
+    \begin{pmatrix}
+      5 \\
+      1
+    \end{pmatrix}
+  \qquad\qquad
+    A_y =
+    \begin{pmatrix}
+      2 & 5 \\
+      1 & 1
+    \end{pmatrix}
+  \]
+
+  \pause
+  \[
+    \det(A_y)
+    \pause
+    \;=\; 2 \times 1 - 5 \times 1
+    \pause
+    \;=\; -3
+  \]
+
+  \[
+    y
+    \pause
+    \;=\; \frac{\det(A_y)}{\det(A)}
+    \pause
+    \;=\; \frac{-3}{-3}
+    \pause
+    \;=\; 1
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
