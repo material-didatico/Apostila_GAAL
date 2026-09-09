@@ -1,0 +1,50 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine $p$ para que os vetores \(\vec{u}\) e \(\vec{v}\) sejam paralelos
+  \[
+    \vec{u} = ( 2, -1, 3 )
+  \]
+  \[
+    \vec{v} = (-6, 3, p)
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Os vetores serão paralelos se um for múltiplo do outro,}
+  \onslide<+->{isto é, se \emph{existir $\lambda$} tal que}
+  \begin{align*}
+    \onslide<+->{\vec{v}    & = \lambda\vec{u}       \\}
+    \onslide<+->{(-6, 3, p) & = \lambda ( 2, -1, 3 ) \\}
+    \onslide<+->{(-6, 3, p) & = \big( \lambda 2,\, \lambda (-1),\, \lambda 3 \big)\\}
+    \onslide<+->{(-6, 3, p) & = \big( 2\lambda,\, -\lambda,\, 3\lambda \big)}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{columns}[t]
+  \column{0.25\linewidth}
+    \begin{align*}
+      \onslide<+->{-6       & = 2\lambda \\}
+      \onslide<+->{2\lambda & = -6       \\}
+      \onslide<+->{\lambda  & = -3}
+    \end{align*}
+  \column{0.4\linewidth}
+    \begin{align*}
+      \onslide<+->{3        & = -\lambda \\}
+      \onslide<+->{-\lambda & = 3        \\}
+      \onslide<+->{\lambda  & = -3}
+    \end{align*}
+    \qquad\onslide<+->{compatível}
+  \column{0.35\linewidth}
+    \begin{align*}
+      \onslide<+->{p & = 3\lambda \\}
+      \onslide<+->{  & = 3(-3)    \\}
+      \onslide<+->{  & = -9}
+    \end{align*}
+  \end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

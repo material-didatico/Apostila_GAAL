@@ -1,0 +1,47 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Dados
+  \(
+    \vec{u} = \vetor{2}{-1}
+  \) e
+  \(
+    \vec{v} = \vetor{-4}{3}
+  \)
+
+  \bigskip
+  Determine $\lambda$ de modo que
+  \(
+    \norm{2\vec{u} + \vec{v} + \vetor{\lambda}{1}} = 3
+  \)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{align*}
+    \onslide<+->{\vec{w}}
+    \onslide<+->{& = 2\vec{u} + \vec{v} + \vetor{\lambda}{1}              \\}
+    \onslide<+->{& = 2\vetor{2}{-1} + \vetor{-4}{3} + \vetor{\lambda}{1}  \\}
+    \onslide<+->{& = \vetor{4}{-2} + \vetor{-4}{3} + \vetor{\lambda}{1}   \\}
+    \onslide<+->{& = \vetor{4-4+\lambda}{-2+3+1}                          \\}
+    \onslide<+->{& = \vetor{\lambda}{2}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{align*}
+    \onslide<+->{\norm{\vec{w}}}
+    \onslide<+->{= \norm{\vetor{\lambda}{2}}}
+    \onslide<+->{& = 3 \\}
+    \onslide<+->{\sqrt{\lambda^2 + 2^2} & = 3        \\}
+    \onslide<+->{\lambda^2 + 4          & = 3^2      \\}
+    \onslide<+->{\lambda^2              & = 9 - 4    \\}
+    \onslide<+->{\lambda^2              & = 5        \\}
+    \onslide<+->{\abs{\lambda}          & = \sqrt{5} \\}
+    \onslide<+->{\lambda = \sqrt{5}     & }
+    \onslide<+->{\quad \text{ou} \quad \lambda = -\sqrt{5}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
