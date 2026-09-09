@@ -1,5 +1,7 @@
 _*
 
+.syncthing.*.tmp
+
 octave-workspace
 *.rubbercache
 
