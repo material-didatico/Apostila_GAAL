@@ -1,0 +1,145 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Produto por Escalar}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Produto por Escalar}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Produto de um Vetor por um Escalar}
+  O produto de $\vec{u} \in \R^n$
+  \pause
+  por $\lambda \in \R$ é um novo vetor
+  \[
+    \pause
+    \vec{v} = \lambda \vec{u}
+  \]
+
+  \pause
+  O vetor $\vec{u}$ é escalado pelo valor $\lambda$
+
+  \pause
+  O vetor $\vec{v}$ é um múltiplo do vetor $\vec{u}$
+
+  \pause
+  O vetor $\vec{v}$ é colinear, ou paralelo, ao vetor $\vec{u}$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Interpretação Geométrica}{E-02-Produto_por_escalar-1}{}
+\framedgraphic*{Interpretação Geométrica}{E-02-Produto_por_escalar-2}{}
+\framedgraphic*{Interpretação Geométrica}{E-02-Produto_por_escalar-3}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Produto de um Vetor por um Escalar}
+  \pause
+  Se \; $\lambda>1$   \tabto{30mm} o vetor aumenta de comprimento
+
+  \pause
+  \smallskip
+  Se \; $0<\lambda<1$ \tabto{30mm} o vetor diminui de comprimento
+
+  \pause
+  \smallskip
+  Se \; $\lambda<0$   \tabto{30mm} o sentido é invertido
+
+  \pause
+  \smallskip
+  Se \; $\lambda=0$   \tabto{30mm} obtemos o vetor nulo
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Cálculo do Produto por Escalar}
+  Para
+  \(
+    \lambda \in \R
+  \)
+  \pause
+  e
+  \(
+    \vec{u}
+    = ( u_1, u_2 )
+    \in \R^2
+  \)
+
+  \pause
+  \[
+    \lambda\vec{u}
+    \pause
+    = \lambda \left( u_1, u_2 \right)
+    \pause
+    = \left( \lambda u_1, \lambda u_2 \right)
+    \pause
+    = \vetor{\lambda u_1}{\lambda u_2}
+    \pause
+    = \lambda \vetor{u_1}{u_2}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/E-02-Produto_por_escalar-ex-1}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedades do Produto por Escalar}
+  Para escalares $\lambda$ e $\mu$ e vetores $\vec{u}$ e $\vec{v}$
+  \[
+    \pause
+    1 \, \vec{u} = \vec{u}
+  \]
+
+  \[
+    \pause
+    0 \, \vec{u} = \vec{0}
+  \]
+
+  \[
+    \pause
+    (-1)\vec{u} = -\vec{u}
+  \]
+
+  \[
+    \pause
+    \lambda(\mu\vec{u}) = (\lambda\mu)\vec{u}
+  \]
+
+  \[
+    \pause
+    (\lambda+\mu)\vec{u} = \lambda\vec{u}+\mu\vec{u}
+  \]
+
+  \[
+    \pause
+    \lambda(\vec{u}+\vec{v}) = \lambda\vec{u}+\lambda\vec{v}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/E-02-Produto_por_escalar-ex-2}
+\input{ex/E-02-Produto_por_escalar-ex-3}
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+
+

@@ -1,0 +1,191 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Norma de um Vetor}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Norma de um Vetor}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Norma de um Vetor}
+  \emph{Norma}, \emph{Comprimento} ou \emph{Módulo} do vetor
+
+  \pause
+  é o comprimento do segmento orientado
+  \pause
+  \[
+    \norm{\vec{u}}
+    \pause
+    = \abs{\vec{u}}
+    \pause
+    = \abs{\overrightarrow{AB}}
+  \]
+
+  \pause
+  Direção e sentido não interferem na norma
+
+  \pause
+  A norma é uma grandeza escalar (número real) não negativa
+  \[
+    \pause
+    \norm{\vec{u}} \in \R
+    \qquad\qquad
+    \norm{\vec{u}} \geq 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Interpretação Geométrica}{E-04-Norma-1}{}
+\framedgraphic*{Interpretação Geométrica}{E-04-Norma-2}{}
+\framedgraphic*{Interpretação Geométrica}{E-04-Norma-3}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Cálculo da Norma}
+  \vspace{1\baselineskip}
+
+  Para um vetor no plano $\vec{u} \in \R^2$
+  \[
+    \pause
+    \vec{u}
+    \pause
+    = ( u_1, u_2 )
+    \pause
+    = \vetor{u_1}{u_2}
+  \]
+
+  \pause
+  Pelo Teorema de Pitágoras
+  \[
+    \pause
+    \norm{\vec{u}}
+    \pause
+    = \sqrt{ u_1^2 + u_2^2 }
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Cálculo da Norma}
+  \vspace{1\baselineskip}
+
+  Para um vetor no espaço $\vec{u} \in \R^3$
+  \[
+    \pause
+    \vec{u}
+    = ( u_1, u_2, u_3 )
+    \pause
+    = \vetortri{u_1}{u_2}{u_3}
+  \]
+
+  \pause
+  Pelo Teorema de Pitágoras
+  \[
+    \pause
+    \norm{\vec{u}}
+    \pause
+    = \sqrt{ u_1^2 + u_2^2 + u_3^2 }
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Cálculo da Norma}
+  \vspace{1\baselineskip}
+
+  De forma geral, $\vec{u} \in \R^n$
+  \[
+    \pause
+    \vec{u}
+    \pause
+    = ( u_1, u_2, \dots, u_n )
+    \pause
+    = \begin{pmatrix}[c]
+      u_1 \\
+      u_2 \\
+      \vdots \\
+      u_n
+    \end{pmatrix}
+  \]
+  \pause
+  Pelo Teorema de Pitágoras
+  \[
+    \pause
+    \norm{\vec{u}}
+    \pause
+    = \sqrt{ u_1^2 + u_2^2 + \cdots + u_n^2 }
+    \pause
+    = \sqrt{ \; \sum_{i=1}^{n} u_i^2 \; }
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/E-04-Norma-ex-1}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedades da Norma}
+  Para quaisquer vetores $\vec{u}$ e $\vec{v}$ de mesma dimensão
+  \pause
+  \[
+    \norm{\vec{u}} \geq 0
+  \]
+
+  \pause
+  \[
+    \norm{\vec{u}} = 0
+    \qquad\Leftrightarrow\qquad
+    \vec{u} = \vec{0}
+  \]
+
+  \pause
+  \[
+    \norm{-\vec{u}} = \norm{\vec{u}}
+  \]
+
+  \pause
+  \[
+    \norm{\vec{u}+\vec{v}}
+    \leq
+    \norm{\vec{u}} + \norm{\vec{v}}
+    \pause
+    \qquad
+    \text{\emph{desigualdade triangular}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Relação Entre Norma e Produto por Escalar}
+  O norma do produto por escalar satisfaz
+  \[
+    \norm{\lambda\vec{u}} = \abs{\lambda} \; \norm{\vec{u}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/E-04-Norma-ex-2}
+\input{ex/E-04-Norma-ex-3}
+\input{ex/E-04-Norma-ex-4}
+\input{ex/E-04-Norma-ex-5}
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+
+

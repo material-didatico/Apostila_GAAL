@@ -1,0 +1,167 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Soma de Vetores}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Soma de Vetores}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Soma de Vetores}
+  Dados dois vetores
+  \(
+    \vec{u}
+  \)
+  e
+  \(
+    \vec{v}
+  \)
+  em \(\R^n\)
+
+  \pause
+  Representamos sua soma por
+  \[
+    \pause
+    \vec{w} = \vec{u} + \vec{v}
+  \]
+
+  \pause
+  A soma representa o ``deslocamento acumulado'' dos dois vetores
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Interpretação Geométrica}
+  Para realizar a soma
+  \(
+    \vec{w} = \vec{u} + \vec{v}
+  \)
+  geometricamente
+  \pause
+  \begin{itemize}
+      \item colocamos a origem de $\vec{v}$ na extremidade de $\vec{u}$
+      \pause
+      \item o vetor soma \(\vec{w}\) liga a origem de $\vec{u}$ à extremidade de $\vec{v}$
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Interpretação Geométrica}{E-03-Soma-1}{}
+\framedgraphic*{Interpretação Geométrica}{E-03-Soma-2}{}
+\framedgraphic*{Interpretação Geométrica}{E-03-Soma-3}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição Algébrica da Soma}
+  Dados
+  \(
+    \vec{u} = \vetor{u_1}{u_2}
+  \)
+  e
+  \(
+    \vec{v} = \vetor{v_1}{v_2}
+  \)
+
+  \pause
+  \medskip
+  A soma é efetuada componente a componente
+  \pause
+  \[
+    \vec{u}+\vec{v}
+    \pause
+    \;=\; \vetor{u_1}{u_2} + \vetor{v_1}{v_2}
+    \pause
+    \;=\; \vetor{u_1+v_1}{u_2+v_2}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/E-03-Soma-ex-1}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedades da soma}
+  Para quaisquer vetores $\vec{u}$, $\vec{v}$ e $\vec{w}$
+
+  \pause
+  \[
+    \vec{u}+\vec{v} = \vec{v}+\vec{u}
+  \]
+
+  \pause
+  \[
+    (\vec{u}+\vec{v})+\vec{w} = \vec{u}+(\vec{v}+\vec{w})
+  \]
+
+  \pause
+  \[
+    \vec{u}+\vec{0} = \vec{u}
+  \]
+
+  \pause
+  \[
+    \vec{u}+(-\vec{u}) = \vec{0}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Subtração de vetores}
+  \onslide<+->{A subtração é definida pela soma com o vetor oposto}
+  \begin{align*}
+    \onslide<+->{\vec{u}-\vec{v}}
+    \onslide<+->{& = \vec{u} + (-\vec{v})}
+    \onslide<+->{  = \vec{u} + (-1)\vec{v}                   \\[3mm]}
+    \onslide<+->{& = \vetor{u_1}{u_2} + (-1)\vetor{v_1}{v_2} \\[3mm]}
+    \onslide<+->{& = \vetor{u_1}{u_2} + \vetor{-v_1}{-v_2}   \\[3mm]}
+    \onslide<+->{& = \vetor{u_1-v_1}{u_2-v_2}}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Interpretação geométrica da diferença}
+  A diferença
+  \(
+    \vec{u} - \vec{v}
+  \)
+  pode ser interpretada como
+
+  \pause
+  o vetor que vai da extremidade de $\vec{v}$
+
+  \pause
+  à extremidade de $\vec{u}$
+
+  \pause
+  quando os dois vetores possuem a mesma origem
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Interpretação Geométrica}{E-03-Soma-subtracao-1}{}
+\framedgraphic*{Interpretação Geométrica}{E-03-Soma-subtracao-2}{}
+
+%------------------------------------------------------------------------------%
+\input{ex/E-03-Soma-ex-2}
+\input{ex/E-03-Soma-ex-3}
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+
+
