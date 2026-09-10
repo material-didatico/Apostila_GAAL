@@ -2,7 +2,7 @@
 
 import "../../0-common/asy/utils.ah" as utils;
 
-size(6cm);
+size(0, 7cm);
 
 real x_min = -4;
 real x_max =  4;
