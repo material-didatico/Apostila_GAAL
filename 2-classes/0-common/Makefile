@@ -51,7 +51,7 @@ $(ASY_DONE):
 clean:
 	@ echo Cleaning $(notdir $(CURDIR))
 	@ $(MAKE) asy clean
-	@ rm -f ./ex/*.aux
+	@ rm -f ./ex/*.aux ./ex/*.log
 	@ rm -f *~ .*~ *.bak                                    \
           *.aux *.bbl *.blg *.lof *.log *.lot *.out *.toc \
           *.bcf *.run.xml *.snm *.nav *.vrb .*.sw?        \
