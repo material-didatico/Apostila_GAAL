@@ -1,0 +1,121 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Ângulo entre Vetores}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Ângulo entre Vetores}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Calculando o Ângulo}
+  \onslide<+->{Com as componentes dos vetores podemos calcular o ângulo entre eles}
+
+  \onslide<+->{Se nenhum vetor é nulo}
+  \begin{align*}
+    \onslide<+->{\vec{u}\cdot\vec{v} &  = \norm{\vec{u}} \norm{\vec{v}} \cos(\theta) \\}
+    \onslide<+->{\cos\theta & = \frac{\vec{u}\cdot\vec{v}}{\norm{\vec{u}} \norm{\vec{v}}} \\}
+    \onslide<+->{\theta & = \arccos \left(
+                  \frac{\vec{u}\cdot\vec{v}}{\norm{\vec{u}} \norm{\vec{v}}}
+                 \right)}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Dimensões Maiores}
+  A  expressão
+  \(\;
+    \vec{u}\cdot\vec{v}
+    \;=\; \norm{\vec{u}} \norm{\vec{v}} \cos(\theta)
+  \;\)
+  vale em $\R^n$
+
+  \pause
+  \bigskip
+  Definimos o ângulo entre vetores em dimensões maiores por
+  \pause
+  \[
+    \theta = \arccos \left(
+              \frac{\vec{u}\cdot\vec{v}}{\norm{\vec{u}} \norm{\vec{v}}}
+             \right)
+  \]
+  \pause
+  desde que
+  \(
+    \vec{u} \neq \vec{0}
+  \)
+  e
+  \(
+    \vec{v} \neq \vec{0}
+  \)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/E-06-Angulo-ex-1}
+\input{ex/E-06-Angulo-ex-2}
+
+%------------------------------------------------------------------------------%
+\section{Ortogonalidade}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Ortogonalidade}
+  Dois vetores não nulos são \emph{ortogonais}
+
+  \pause
+  quando o ângulo entre eles é reto,
+  \(
+    \theta = \frac{\pi}{2}
+  \)
+  \pause
+  \[
+    \cos(\theta)
+    \pause
+    \;=\; \cos\left(\frac{\pi}{2}\right)
+    \pause
+    \;=\; 0
+  \]
+  \[
+    \pause
+    \vec{u}\cdot\vec{v}
+    \pause
+    \;=\; \norm{\vec{u}} \norm{\vec{v}} \cos(\theta)
+    \pause
+    \;=\; \norm{\vec{u}} \norm{\vec{v}} \cos\left(\frac{\pi}{2}\right)
+    \pause
+    \;=\; 0
+  \]
+
+  \pause
+  Portanto
+  \[
+    \vec{u}\perp\vec{v}
+    \quad\Leftrightarrow\quad
+    \vec{u}\cdot\vec{v} = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/E-06-Angulo-ex-3}
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

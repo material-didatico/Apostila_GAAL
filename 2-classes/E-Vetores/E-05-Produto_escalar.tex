@@ -1,0 +1,248 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Produto Escalar}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Produto escalar}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Produto escalar}
+  Dados os vetores $\vec{u}$ por $\vec{v}$ em $\R^n$
+  \[
+    \vec{u} = (u_1, u_2, \ldots, u_n)
+  \]
+  \[
+    \vec{v} = (v_1, v_2, \ldots, v_n)
+  \]
+
+  \pause
+  O \emph{produto escalar}
+  \pause
+  ou \emph{produto interno}
+  \pause
+  de $\vec{u}$ por $\vec{v}$ é
+  \[
+    \pause
+    \vec{u}\cdot\vec{v}
+    \pause
+    \;=\; u_1v_1 + u_2v_2 + \cdots + u_nv_n
+    \pause
+    \;=\; \sum_{i=1}^n u_i v_i
+  \]
+
+  \pause
+  O resultado do produto escalar é um número real
+  \[
+    \vec{u}\cdot\vec{v} \in \R
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/E-05-Produto_escalar-ex-1}
+\input{ex/E-05-Produto_escalar-ex-2}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Calculando a Norma pelo Produto Escalar}
+  \onslide<+->{Dado um vetor
+  \(
+    \vec{u} = ( u_1, \ldots, u_n ) \in \R^n
+  \)}
+
+  \onslide<+->{Calculamos}
+  \begin{align*}
+    \onslide<+->{\vec{u}\cdot\vec{u} = u_1^2 + \cdots + u_n^2     \\}
+    \onslide<+->{\norm{\vec{u}}      = \sqrt{u_1^2 + \cdots + u_n^2}}
+  \end{align*}
+
+  \onslide<+->{Comparando temos}
+  \[
+    \onslide<+->{\vec{u}\cdot\vec{u} = \norm{\vec{u}}^2}
+    \qquad\qquad\qquad
+    \onslide<+->{\norm{\vec{u}} = \sqrt{\vec{u}\cdot\vec{u}}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Morma como Consequência do Produto Escalar}
+  A relação
+  \[
+    \norm{\vec{u}} = \sqrt{\vec{u}\cdot\vec{u}\,}
+  \]
+  mostra que o produto escalar \emph{determina} a norma
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/E-05-Produto_escalar-ex-3}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedades do produto escalar}
+  Para vetores $\vec{u}$, $\vec{v}$ e $\vec{w}$ e escalare $\lambda$
+
+  \pause
+  \[
+    \vec{u}\cdot\vec{v} = \vec{v}\cdot\vec{u}
+  \]
+
+  \pause
+  \[
+    (\vec{u}+\vec{v})\cdot\vec{w}
+    \;=\; \vec{u}\cdot\vec{w} + \vec{v}\cdot\vec{w}
+  \]
+
+  \pause
+  \[
+    (\lambda\vec{u})\cdot\vec{v}
+    \;=\; \lambda(\vec{u}\cdot\vec{v})
+  \]
+
+  \pause
+  \[
+    \vec{u}\cdot\vec{u}
+    \;=\; \norm{\vec{u}}^2
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+%\input{file}
+
+%------------------------------------------------------------------------------%
+\section{Fórmula Alternativa}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Fórmula Alternativa}
+  Dados vetores $\vec{u}$ e $\vec{v}$ com a mesma origem
+
+  \pause
+  \medskip
+  Seja $\theta$ o ângulo entre eles
+
+  \pause
+  \medskip
+  Queremos relacionar as componentes dos vetores com o ângulo $\theta$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Formula Alternativa}{E-05-Produto_escalar-cosseno-1}{}
+\framedgraphic*{Formula Alternativa}{E-05-Produto_escalar-cosseno-2}{}
+\framedgraphic*{Formula Alternativa}{E-05-Produto_escalar-cosseno-3}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Lei dos cossenos}
+  Lei dos cossenos
+  \[
+    c^2 = a^2 + b^2 - 2ab\cos(\theta)
+  \]
+  \pause
+  No triângulo
+  \[
+    \pause
+    a = \norm{\vec{u}}
+    \pause\qquad\qquad
+    b = \norm{\vec{v}}
+    \pause\qquad\qquad
+    c = \norm{\vec{u}-\vec{v}}
+  \]
+  \pause
+  Portanto
+  \[
+    \pause
+    \norm{\vec{u}-\vec{v}}^2
+    \;=\; \norm{\vec{u}}^2 + \norm{\vec{v}}^2 - 2\norm{\vec{u}}\norm{\vec{v}}\cos(\theta)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Fórmula Alternativa}
+  \begin{align*}
+    \onslide<+->{\norm{\vec{u}-\vec{v}}^2
+    & = \norm{\vec{u}}^2 + \norm{\vec{v}}^2 - 2\norm{\vec{u}}\norm{\vec{v}}\cos(\theta) \\}
+    \onslide<+->{2\norm{\vec{u}}\norm{\vec{v}}\cos(\theta)
+    & = \norm{\vec{u}}^2 + \norm{\vec{v}}^2 - \norm{\vec{u}-\vec{v}}^2 \\}
+    \onslide<+->{& = \vec{u}\cdot\vec{u}
+      + \vec{v}\cdot\vec{v}
+      - (\vec{u}-\vec{v})\cdot(\vec{u}-\vec{v}) \\}
+    \onslide<+->{& = \vec{u}\cdot\vec{u} + \vec{v}\cdot\vec{v}
+      - \left(
+          \vec{u}\cdot\vec{u} - 2\vec{u}\cdot\vec{v} + \vec{v}\cdot\vec{v}
+        \right) \\}
+    \onslide<+->{& = \vec{u}\cdot\vec{u}
+      + \vec{v}\cdot\vec{v}
+      - \vec{u}\cdot\vec{u}
+      +2\vec{u}\cdot\vec{v}
+      - \vec{v}\cdot\vec{v} \\}
+    \onslide<+->{& = 2 \vec{u}\cdot\vec{v}  \\}
+    \onslide<+->{\norm{\vec{u}}\norm{\vec{v}}\cos(\theta)
+    & = \vec{u}\cdot\vec{v}}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Significado Geométrico}
+  A fórmula
+  \[
+    \vec{u}\cdot\vec{v} \;=\; \norm{\vec{u}}\norm{\vec{v}}\cos(\theta)
+  \]
+  \pause
+  mostra que o produto escalar depende
+  \pause
+  \begin{itemize}
+      \item do comprimento de $\vec{u}$ \pause
+      \item do comprimento de $\vec{v}$ \pause
+      \item do ângulo entre os vetores
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Significado Geométrico}
+  Como
+  \(
+    -1 \leq \cos(\theta) \leq 1
+  \)
+  temos
+
+  \pause
+  \[
+    -\norm{\vec{u}}\norm{\vec{v}}
+    \;\leq\;
+    \vec{u}\cdot\vec{v}
+    \;\leq\;
+    \norm{\vec{u}}\norm{\vec{v}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+%\input{file}
+
+%------------------------------------------------------------------------------%
+%\input{ex}
+%\input{ex}
+%\input{ex}
+%\input{ex}
+%\input{ex}
+%\input{ex}
+%\input{ex}
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

@@ -1,0 +1,63 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine o ângulo entre os vetores
+  \[
+    \vec{u} = (1, 1, 0)
+    \qquad
+    \vec{v} = (1, 0, 1)
+  \]
+
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Produto Escalar}
+  \onslide<+->{Produto Escalar}
+  \begin{align*}
+    \onslide<+->{\vec{u}\cdot\vec{v}}
+    \onslide<+->{& = (1, 1, 0) \cdot  (1, 0, 1) \\}
+    \onslide<+->{& = 1 \times 1 + 1 \times 0 + 0 \times 1 \\}
+    \onslide<+->{& = 1}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Norma}
+\begin{columns}[t]
+\column{0.4\linewidth}
+  \onslide<+->{Norma de $\vec{u}$}
+  \begin{align*}
+    \onslide<+->{\norm{u}}
+    \onslide<+->{& = \sqrt{u_1^2 + u_2^2 + u_3^2} \\}
+    \onslide<+->{& = \sqrt{1^2 + 1^2 + 0^2} \\}
+    \onslide<+->{& = \sqrt{2}}
+  \end{align*}
+\column{0.5\linewidth}
+  \onslide<+->{Norma de $\vec{u}$}
+  \begin{align*}
+    \onslide<+->{\norm{v}}
+    \onslide<+->{& = \sqrt{v_1^2 + v_2^2 + v_3^2} \\}
+    \onslide<+->{& = \sqrt{1^2 + 0^2 + 1^2} \\}
+    \onslide<+->{& = \sqrt{2}}
+  \end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.5\linewidth}
+  \begin{align*}
+    \onslide<+->{\cos(\theta)}
+    \onslide<+->{& = \frac{u \cdot v}{\norm{u} \, \norm{v}} \\}
+    \onslide<+->{& = \frac{1}{\sqrt{2}\sqrt{2}} \\}
+    \onslide<+->{& = \frac{1}{2} }
+  \end{align*}
+\column{0.5\linewidth}
+  \onslide<+->{\[
+    \theta = \frac{\pi}{3}
+  \]}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
