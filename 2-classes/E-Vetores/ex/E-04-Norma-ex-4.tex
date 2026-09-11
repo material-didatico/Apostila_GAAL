@@ -1,48 +1,32 @@
 %------------------------------------------------------------------------------%
 \begin{question}
-  Avalie
-  \(
-    \norm{\vec{u} + 2 \vec{v}}
-  \)
-  para
+  Encontre o vetor unitário na mesma direção e sentido do vetor
   \[
-    \vec{u} = \vetortri{2}{-1}{3}
-    \qquad\qquad
-    \vec{v} = \vetortri{1}{4}{-2}
+    \vec{u} = \vetortri{1}{3}{-2}
   \]
 \end{question}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
-  \[
-    2\vec{v}
-    \pause
-    \;=\; 2 \vetortri{2}{-1}{3}
-    \pause
-    \;=\; \vetortri{2\times 2}{2(-1)}{2\times 3}
-    \pause
-    \;=\; \vetortri{2}{8}{-4}
-  \]
-  \pause
-  \[
-    \vec{u} + 2 \vec{v}
-    \pause
-    \;=\; \vetortri{2}{-1}{3} + \vetortri{2}{8}{-4}
-    \pause
-    \;=\; \vetortri{4}{7}{-1}
-  \]
-  \pause
-  \[
-    \norm{\vec{u} + 2 \vec{v}}
-    \pause
-    \;=\; \norm{\vetortri{4}{7}{-1}}
-    \pause
-    \;=\; \sqrt{4^2 + 7^2 + (-1)^2\,}
-    \pause
-    \;=\; \sqrt{16 + 49 + 1\,}
-    \pause
-    \;=\; \sqrt{66}
-  \]
+\begin{columns}[t]
+\column{0.4\textwidth}
+  \onslide<+->{Norma do vetor $\vec{u}$}
+  \begin{align*}
+    \onslide<+->{\norm{\vec{u}}}
+    \onslide<+->{& = \norm{\vetortri{1}{3}{-2}} \\}
+    \onslide<+->{& = \sqrt{ 1^2 + 3^2 + (-2)^2} \\}
+    \onslide<+->{& = \sqrt{ 1 + 9 + 4} \\}
+    \onslide<+->{& = \sqrt{14}}
+  \end{align*}
+\column{0.6\textwidth}
+  \onslide<+->{Vetor unitário}
+  \begin{align*}
+    \onslide<+->{\hat{u} }
+    \onslide<+->{= \frac{\vec{u}}{\norm{\vec{u}}} }
+    \onslide<+->{= \frac{1}{\sqrt{14}}\vetortri{1}{3}{-2} }
+    \onslide<+->{= \Vetortri{\frac{1}{\sqrt{14}}}{\frac{3}{\sqrt{14}}}{\frac{-2}{\sqrt{14}}}}
+  \end{align*}
+\end{columns}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
