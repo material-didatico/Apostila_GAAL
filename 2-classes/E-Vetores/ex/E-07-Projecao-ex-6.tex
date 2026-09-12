@@ -1,0 +1,42 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Dados
+  \[
+    \vec{w} = \vetortri{2}{-1}{3}
+    \qquad
+    \vec{v} = \vetortri{1}{2}{2}
+  \]
+  Determine a decomposição
+  \[
+    \vec{w} = \vec{w}_{\parallel} + \vec{w}_{\perp}
+  \]
+
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Do exercício anterior temos
+  \pause
+  \[
+    \vec{w}_{\parallel}
+    \pause
+    \;=\; \projuv{w}{v}
+    \pause
+    \;=\; \Vetortri{\frac{2}{3}}{\frac{4}{3}}{\frac{4}{3}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{align*}
+    \onslide<+->{\vec{w}_{\perp}}
+    \onslide<+->{\;=\; \vec{w} - \vec{w}_{\parallel}}
+    \onslide<+->{& =   \vetortri{2}{-1}{3} - \Vetortri{\frac{2}{3}}{\frac{4}{3}}{\frac{4}{3}}}
+    \onslide<+->{\;=\; \Vetortri{2-\frac{2}{3}}{-1-\frac{4}{3}}{3-\frac{4}{3}} \\}
+    \onslide<+->{& =   \Vetortri{\frac{6-2}{3}}{\frac{-3-4}{3}}{\frac{9-4}{3}}}
+    \onslide<+->{\;=\; \Vetortri{\frac{4}{3}}{-\frac{7}{3}}{\frac{5}{3}}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

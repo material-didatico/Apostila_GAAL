@@ -1,0 +1,50 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Dados
+  \[
+    \vec{w} = (3, 4)
+    \qquad
+    \vec{v} = (1, 0)
+  \]
+  Calcule a projeção de $\vec{w}$ sobre $\vec{v}$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Queremos a projeção de $\vec{w}$ em $\vec{v}$
+  \pause
+  \[
+    \projuv{w}{v}
+    \;=\; \frac{\vec{w}\cdot\vec{v}}{\vec{v}\cdot\vec{v}} \, \vec{v}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{w} \cdot \vec{v}}
+    \onslide<+->{& = (3, 4) \cdot (1, 0) \\}
+    \onslide<+->{& = 3 \times 1 + 4 \times 0 \\}
+    \onslide<+->{& = 3}
+  \end{align*}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{v}\cdot\vec{v}}
+    \onslide<+->{& = (1, 0) \cdot (1, 0) \\}
+    \onslide<+->{& = 1 \times 1 + 0 \times 0 \\}
+    \onslide<+->{& = 1}
+  \end{align*}
+\end{columns}
+  \vspace{-\baselineskip}
+  \[
+    \onslide<+->{\projuv{w}{v}}
+    \onslide<+->{\;=\; \frac{\vec{w}\cdot\vec{v}}{\vec{v}\cdot\vec{v}} \, \vec{v}}
+    \onslide<+->{\;=\; \frac{3}{1} \vetor{1}{0}}
+    \onslide<+->{\;=\; \vetor{3}{0}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

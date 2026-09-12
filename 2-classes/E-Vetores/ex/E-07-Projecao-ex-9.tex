@@ -1,0 +1,117 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine a distância entre a extremidade de
+  \[
+    \vec{w} = (3, 4)
+  \]
+  e a reta determinada por
+  \[
+    \vec{v} = (1, 2)
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  A distância é a norma da componente perpendicular da projeção
+  de $\vec{w}$ em $\vec{v}$
+  \[
+    \dist
+    \;=\; \norm{w_\perp}
+    \;=\; \norm{w - w_{\parallel}}
+    \;=\; \norm{w - \projuv{w}{v}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Projeção}
+\begin{columns}[t]
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{w} \cdot \vec{v}}
+    \onslide<+->{& = (3, 4) \cdot (1, 2) \\}
+    \onslide<+->{& = 3 \times 1 + 4 \times 2 \\}
+    \onslide<+->{& = 3 + 4 \\}
+    \onslide<+->{& = 7}
+  \end{align*}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{v}\cdot\vec{v}}
+    \onslide<+->{& = (1, 2) \cdot (1, 2) \\}
+    \onslide<+->{& = 1^2 + 2^2 \\}
+    \onslide<+->{& = 1 + 4 \\}
+    \onslide<+->{& = 5}
+  \end{align*}
+\end{columns}
+  \[
+    \onslide<+->{\projuv{w}{v}}
+    \onslide<+->{\;=\; \frac{\vec{w}\cdot\vec{v}}{\vec{v}\cdot\vec{v}} \, \vec{v}}
+    \onslide<+->{\;=\; \frac{7}{5} \vetor{1}{2}}
+    \onslide<+->{\;=\; \Vetor{\frac{7}{5}}{\frac{7}{10}}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Componente Perpendicular}
+  \begin{align*}
+    w_\perp
+    \;=\; w - \projuv{w}{v}
+    & =\; \vetor{3}{4} - \Vetor{\frac{7}{5}}{\frac{7}{10}}
+    \;=\;\Vetor{\frac{3 \times 5 - 7}{5}}{\frac{4 \times 10 - 7}{10}} \\
+    & =\;\Vetor{\frac{15 - 7}{5}}{\frac{40 - 7}{10}}
+    \;=\;\Vetor{\frac{8}{5}}{\frac{33}{10}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Distância}
+
+    \[
+      \dist
+      \;=\; \norm{w_\perp}
+      \;=\; \norm{w - w_{\parallel}}
+      \;=\; \norm{w - \projuv{w}{v}}
+    \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
+
+
+
+\pause
+
+A projeção é
+
+\[
+\operatorname{proj}_{\vec{v}}\vec{w}
+=
+(3,0)
+\]
+
+Logo
+
+\[
+\vec{w}_{\perp}
+=
+(3,4)-(3,0)
+\]
+
+\[
+\vec{w}_{\perp}
+=
+(0,4)
+\]
+
+Portanto
+
+\[
+\operatorname{dist}
+=
+\|\vec{w}_{\perp}\|
+\]
+
+\[
+\operatorname{dist}=4
+\]
+
+\end{frame}

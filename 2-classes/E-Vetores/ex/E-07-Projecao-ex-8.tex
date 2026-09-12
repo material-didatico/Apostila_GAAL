@@ -1,0 +1,72 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Uma força é representada pelo vetor
+  \[
+    \vec{F} = (6, -2, 3)
+  \]
+  e atua sobre um objeto que se desloca na direção
+  \[
+    \vec{d} = (2, 1, 2)
+  \]
+  Determine as componentes da força paralela e perpendicular à direção $\vec{d}$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{F} \cdot \vec{d}}
+    \onslide<+->{& = \vetortri{6}{-2}{3} \cdot \vetortri{2}{1}{2} \\}
+    \onslide<+->{& = 6 \times 2 + (-2)1 + 3 \times 2 \\}
+    \onslide<+->{& = 12 - 2 + 6\\}
+    \onslide<+->{& = 16}
+  \end{align*}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{d}\cdot\vec{d}}
+    \onslide<+->{& = \vetortri{2}{1}{2} \cdot \vetortri{2}{1}{2} \\}
+    \onslide<+->{& = 2^2 + 1^2 + 2^2 \\}
+    \onslide<+->{& = 4 + 1 + 4 \\}
+    \onslide<+->{& = 9}
+  \end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    \onslide<+->{\projuv{F}{d}}
+    \onslide<+->{\;=\; \frac{\vec{F}\cdot\vec{d}}{\vec{d}\cdot\vec{d}} \, \vec{d}}
+    \onslide<+->{\;=\; \frac{16}{9} \vetortri{2}{1}{2}}
+    \onslide<+->{\;=\; \Vetortri{\frac{16\times 2}{9}}{\frac{16}{9}}{\frac{16 \times 2}{9}}}
+    \onslide<+->{\;=\; \Vetortri{\frac{32}{9}}{\frac{16}{9}}{\frac{32}{9}}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  A componente paralela da força é
+  \[
+    \vec{F}_{\parallel}
+    \;=\; \projuv{F}{d}
+    \;=\; \Vetortri{\frac{32}{9}}{\frac{16}{9}}{\frac{32}{9}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  A componente perpendicular é
+  \[
+    \vec{F}_{\perp}
+    \;=\; \vec{F} - \vec{F}_{\parallel}
+    \;=\; \vetortri{6}{-2}{3} - \Vetortri{\frac{32}{9}}{\frac{16}{9}}{\frac{32}{9}}
+    \;=\; \Vetortri{\frac{ 6 \times 9 - 32}{9}}
+                   {\frac{-2 \times 9 - 16}{9}}
+                   {\frac{ 3 \times 9 - 32}{9}}
+    \;=\; \Vetortri{\frac{22}{9}}{-\frac{34}{9}}{-\frac{5}{9}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

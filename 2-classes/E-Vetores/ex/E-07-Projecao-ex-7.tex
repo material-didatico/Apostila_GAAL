@@ -1,0 +1,47 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine a projeção de $\vec{w}$ sobre $\vec{v}$
+  \[
+    \vec{w} = (1,\, 2,\, 3,\,  4,\, 5)
+  \]
+  \[
+    \vec{v} = (2,\, 0,\, 1,\, -1,\, 2)
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{align*}
+    \onslide<+->{\vec{w}\cdot\vec{v}}
+    \onslide<+->{& = (1, 2, 3,  4, 5) \cdot (2, 0, 1, -1, 2) \\}
+    \onslide<+->{& = 1 \times 2 + 2 \times 0 + 3 \times 1 + 4(-1) + 5 \times 2 \\}
+    \onslide<+->{& = 2 + 0 + 3 - 4 + 10}
+    \onslide<+->{\;=\; 11}
+  \end{align*}
+  \begin{align*}
+    \onslide<+->{\vec{v}\cdot\vec{v}}
+    \onslide<+->{& = (2, 0, 1, -1, 2) \cdot (2, 0, 1, -1, 2) \\}
+    \onslide<+->{& = 2^2 + 0^2 + 1^2 + (-1)^2 + 2^2 \\}
+    \onslide<+->{& = 4 + 0 + 1 + 1 + 4}
+    \onslide<+->{\;=\; 10}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{align*}
+    \onslide<+->{\projuv{w}{v}}
+    \onslide<+->{& = \frac{\vec{w}\cdot\vec{v}}{\vec{v}\cdot\vec{v}} \, \vec{v} \\[2mm]}
+    \onslide<+->{& = \frac{11}{10} (2,\, 0,\, 1,\, -1,\, 2) \\[2mm]}
+    \onslide<+->{& = \left(
+      \frac{11}{5},\;
+      0,\;
+      \frac{11}{10},\;
+     -\frac{11}{10},\;
+      \frac{11}{5}
+    \right)}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

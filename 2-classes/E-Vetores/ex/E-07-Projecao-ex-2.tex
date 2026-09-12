@@ -1,0 +1,53 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Dados
+  \[
+    \vec{w} = (3, 4)
+    \qquad
+    \vec{v} = (2, 1)
+  \]
+  Calcule a projeção de $\vec{w}$ sobre $\vec{v}$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Queremos a projeção de $\vec{w}$ em $\vec{v}$
+  \pause
+  \[
+    \projuv{w}{v}
+    \;=\; \frac{\vec{w}\cdot\vec{v}}{\vec{v}\cdot\vec{v}} \, \vec{v}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{w} \cdot \vec{v}}
+    \onslide<+->{& = (3, 4) \cdot (2, 1) \\}
+    \onslide<+->{& = 3 \times 2 + 4 \times 1 \\}
+    \onslide<+->{& = 6 + 4 \\}
+    \onslide<+->{& = 10}
+  \end{align*}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{v}\cdot\vec{v}}
+    \onslide<+->{& = (2, 1) \cdot (2, 1) \\}
+    \onslide<+->{& = 2^2 + 1^2 \\}
+    \onslide<+->{& = 4 + 1 \\}
+    \onslide<+->{& = 5}
+  \end{align*}
+\end{columns}
+  \vspace{-\baselineskip}
+  \[
+    \onslide<+->{\projuv{w}{v}}
+    \onslide<+->{\;=\; \frac{\vec{w}\cdot\vec{v}}{\vec{v}\cdot\vec{v}} \, \vec{v}}
+    \onslide<+->{\;=\; \frac{10}{5} \vetor{2}{1}}
+    \onslide<+->{\;=\; 2 \vetor{2}{1}}
+    \onslide<+->{\;=\; \vetor{4}{2}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

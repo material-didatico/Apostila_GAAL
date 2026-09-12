@@ -1,0 +1,221 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Projeção Ortogonal}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Decomposição de Vetores}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Decomposição de Vetores}
+  Pode ser conveniente decompor o vetor em uma soma de vetores
+
+  \pause
+  \bigskip
+  Por exemplo,
+
+  \pause
+  Podemos decompor qualquer vetor em vetores alinhados com os eixos do $\R^n$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Decomposição de Vetores}{E-07-Projecao-decomposicao-1}{}
+\framedgraphic*{Decomposição de Vetores}{E-07-Projecao-decomposicao-2}{}
+\framedgraphic*{Decomposição de Vetores}{E-07-Projecao-decomposicao-3}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Decomposição de Vetores}
+  Muitas vezes precisamos decompor um vetor na direção de outo
+
+  \pause
+  \bigskip
+  Para isso precisamos da \emph{projeção ortogonal} de um vetor em outro
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Decomposição Ortogonal}{E-07-Projecao-decom-ortogonal-1}{}
+\framedgraphic*{Decomposição Ortogonal}{E-07-Projecao-decom-ortogonal-2}{}
+\framedgraphic*{Decomposição Ortogonal}{E-07-Projecao-decom-ortogonal-3}{}
+\framedgraphic*{Decomposição Ortogonal}{E-07-Projecao-decom-ortogonal-4}{}
+
+%------------------------------------------------------------------------------%
+\section{Projeção Ortogonal}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Projeção ortogonal}
+  Considere os vetores $\vec{w}$ e $\vec{v}$
+
+  \pause
+  Queremos determinar a componente de $\vec{w}$ na direção de $\vec{v}$
+
+  \pause
+  A \emph{projeção ortogonal} de $\vec{w}$ sobre $\vec{v}$
+
+  \pause
+  é o vetor paralelo a $\vec{v}$
+
+  \pause
+  obtido ao projetar ortogonalmente $\vec{w}$
+
+  \pause
+  sobre a reta determinada por $\vec{v}$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Projeção Vetorial}
+\begin{columns}
+\column{0.5\textwidth}
+  \onslide<+->{Se $\theta$ é o ângulo entre $\vec{w}$ e $\vec{v}$}
+
+  \onslide<+->{A componente de $\vec{w}$ na direção de $\vec{v}$ \\}
+  \onslide<+->{possui comprimento
+  \[
+    \norm{\vec{w}}\cos(\theta)
+  \]}
+  \onslide<+->{Do produto escalar temos}
+  \begin{align*}
+    \onslide<+->{\vec{w}\cdot\vec{v} & = \norm{\vec{w}} \norm{\vec{v}} \cos(\theta) \\}
+    \onslide<+->{\norm{\vec{w}} \cos(\theta) & = \frac{\vec{w}\cdot\vec{v}}{\norm{\vec{v}}}}
+  \end{align*}
+\column{0.4\textwidth}
+  \includegraphics{E-07-Projecao-pytagoras}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Projeção Vetorial}
+  Queremos agora um vetor na direção de $\vec{v}$,
+  \pause
+  com comprimento
+  \(
+    \frac{\vec{w}\cdot\vec{v}}{\norm{\vec{v}}}
+  \)
+
+  \pause
+  O vetor unitário na direção de $\vec{v}$ é
+  \(
+    \frac{\vec{v}}{\norm{\vec{v}}}
+  \)
+
+  \pause
+  Portanto
+  \[
+    \pause
+    \projuv{w}{v}
+    \pause
+    \;=\; \left( \frac{\vec{w}\cdot\vec{v}}{\norm{\vec{v}}} \right)
+          \frac{\vec{v}}{\norm{\vec{v}}}
+    \pause
+    \;=\; \frac{\vec{w}\cdot\vec{v}}{\norm{\vec{v}}^2} \, \vec{v}
+    \pause
+    \;=\; \frac{\vec{w}\cdot\vec{v}}{\vec{v}\cdot\vec{v}} \, \vec{v}
+  \]
+
+  \pause
+  desde que
+  \(
+    \vec{v} \neq \vec{0}
+  \)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Projeção Vetorial}
+  Projeção do vetor \({\color{blue}w}\)
+  na direção do vetor \({\color{magenta}v} \neq \vec{0} \)
+  \Large
+  \[
+    \projuv{{\color{blue}w}}{{\color{magenta}v}}
+    \;=\; \frac{\vec{{\color{blue}w}}\cdot\vec{{\color{magenta}v}}}
+               {\vec{{\color{magenta}v}}\cdot\vec{{\color{magenta}v}}}
+               \, \vec{{\color{magenta}v}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/E-07-Projecao-ex-1}
+\input{ex/E-07-Projecao-ex-2}
+\input{ex/E-07-Projecao-ex-3}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Decomposição Ortogonal}
+  \onslide<+->{Um vetor $\vec{w}$ pode ser decomposto em duas componentes}
+  \[
+    \onslide<+->{\vec{w}}
+    \onslide<+->{= \vec{w}_{\parallel} + \vec{w}_{\perp}}
+  \]
+  \onslide<+->{onde}
+  \begin{align*}
+    \onslide<+->{\vec{w}_{\parallel\;} & = \projuv{w}{v}}
+    & &
+    \onslide<7->{\vec{w}_{\parallel\;\,} \text{ é paralelo a } \vec{v}}
+    \\
+    \onslide<+->{\vec{w}_{\perp}     & = \vec{w}-\vec{w}_{\parallel}}
+    & &
+    \onslide<8->{\vec{w}_{\perp} \text{ é ortogonal a } \vec{v}}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/E-07-Projecao-ex-4}
+\input{ex/E-07-Projecao-ex-5}
+\input{ex/E-07-Projecao-ex-6}
+\input{ex/E-07-Projecao-ex-7}
+\input{ex/E-07-Projecao-ex-8}
+
+%------------------------------------------------------------------------------%
+\section{Distância}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Projeção e Distância}
+  A componente perpendicular da decomposição
+  \pause
+  \[
+    \vec{w}_{\perp}
+    \pause
+    \;=\; \vec{w} - \projuv{w}{v}
+  \]
+  \pause
+  é ortogonal a $\vec{v}$
+
+  \pause
+  Sua norma é a distância entre o ponto, $P$, final de $\vec{u}$
+
+  \pause
+  e a reta, $r$, que contém o vetor $\vec{v}$
+
+  \pause
+  \[
+    \dist(P, r)
+    \pause
+    \;=\; \norm{\vec{w}_{\perp}}
+    \pause
+    \;=\; \norm{\vec{w} - \projuv{w}{v}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/E-07-Projecao-ex-9}
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

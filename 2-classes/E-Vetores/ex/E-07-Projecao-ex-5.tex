@@ -1,0 +1,45 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Dados
+  \[
+    \vec{w} = \vetortri{2}{-1}{3}
+    \qquad
+    \vec{v} = \vetortri{1}{2}{2}
+  \]
+  Determine
+  \[
+    \projuv{w}{v}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{w} \cdot \vec{v}}
+    \onslide<+->{& = \vetortri{2}{-1}{3} \cdot \vetortri{1}{2}{2} \\}
+    \onslide<+->{& = 2 \times 1 + (-1)2 + 3 \times 2 \\}
+    \onslide<+->{& = 2 - 2 + 6}
+    \onslide<+->{  = 6}
+  \end{align*}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{v}\cdot\vec{v}}
+    \onslide<+->{& = \vetortri{1}{2}{2} \cdot \vetortri{1}{2}{2} \\}
+    \onslide<+->{& = 1^2 + 2^2 + 2^2 \\}
+    \onslide<+->{& = 1 + 4 + 4}
+    \onslide<+->{  = 9}
+  \end{align*}
+\end{columns}
+  \[
+    \onslide<+->{\projuv{w}{v}}
+    \onslide<+->{\;=\; \frac{\vec{w}\cdot\vec{v}}{\vec{v}\cdot\vec{v}} \, \vec{v}}
+    \onslide<+->{\;=\; \frac{6}{9} \vetortri{1}{2}{2}}
+    \onslide<+->{\;=\; \frac{2}{3} \vetortri{1}{2}{2}}
+    \onslide<+->{\;=\; \vetortri{\sfrac{2}{3}}{\sfrac{4}{3}}{\sfrac{4}{3}}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

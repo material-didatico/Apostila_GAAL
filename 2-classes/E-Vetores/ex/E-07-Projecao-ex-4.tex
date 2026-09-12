@@ -1,0 +1,70 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Dados
+  \[
+    \vec{w} = \vetor{5}{2}
+    \qquad
+    \vec{v} = \vetor{1}{2}
+  \]
+  Determine a componente de $\vec{w}$ perpendicular a $\vec{v}$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Queremos a \emph{componente perpendicular} de $\vec{w}$ em $\vec{v}$
+  \pause
+  \[
+    \vec{w}_\perp
+    \;=\; \vec{w} - \projuv{w}{v}
+    \;=\; \vec{w} - \frac{\vec{w}\cdot\vec{v}}{\vec{v}\cdot\vec{v}} \, \vec{v}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Projeção Ortogonal}
+\begin{columns}[t]
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{w} \cdot \vec{v}}
+    \onslide<+->{& = \vetor{5}{2} \cdot \vetor{1}{2} \\}
+    \onslide<+->{& = 5 \times 1 + 2 \times 2\\}
+    \onslide<+->{& = 5 + 4 \\}
+    \onslide<+->{& = 9}
+  \end{align*}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{v}\cdot\vec{v}}
+    \onslide<+->{& = \vetor{1}{2} \cdot \vetor{1}{2} \\}
+    \onslide<+->{& = 1^2 + 2^2 \\}
+    \onslide<+->{& = 1 + 4 \\}
+    \onslide<+->{& = 5 }
+  \end{align*}
+\end{columns}
+  \vspace{-\baselineskip}
+  \[
+    \onslide<+->{\projuv{w}{v}}
+    \onslide<+->{\;=\; \frac{\vec{w}\cdot\vec{v}}{\vec{v}\cdot\vec{v}} \, \vec{v}}
+    \onslide<+->{\;=\; \frac{9}{5} \vetor{1}{2}}
+    \onslide<+->{\;=\; \Vetor{\frac{9}{5}}{\frac{18}{5}}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Componente Perpendicular}
+  \begin{align*}
+    \onslide<+->{\vec{w}_\perp}
+    \onslide<+->{& =   \vec{w} - \projuv{w}{v}}
+    \\
+    \onslide<+->{& =   \vetor{5}{2} - \Vetor{\frac{9}{5}}{\frac{18}{5}} }
+    \onslide<+->{\;=\; \Vetor{5-\frac{9}{5}}{2-\frac{18}{5}}}
+    \onslide<+->{\;=\; \Vetor{\frac{5\times 5}{5} - \frac{9}{5}}
+                             {\frac{2\times 5}{5} - \frac{18}{5}}}
+    \\[3mm]
+    \onslide<+->{& =   \Vetor{\frac{25-9}{5}}{\frac{10-18}{5}}}
+    \onslide<+->{\;=\; \Vetor{\frac{16}{5}}{\frac{-8}{5}}}
+    \onslide<+->{\;=\; -\frac{8}{5}\vetor{2}{1}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
