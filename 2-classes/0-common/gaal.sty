@@ -58,13 +58,7 @@
   \array{*\c@MaxMatrixCols #1}%
 }
 
-%\newenvironment{amatrix}[1]%
-%{%
-%  \left[\begin{array}{@{}*{#1}{r}|r@{}}
-%}{%
-%  \end{array}\right]
-%}
-
+% Defnie embiente para a matriz aumentada
 \newenvironment{amatrix}[2][1]%
 {%
   \left[\begin{array}{@{}*{#2}{r}|*{#1}{r}@{}}
@@ -99,5 +93,7 @@
 
 \DeclareMathOperator{\posto}{posto}
 \DeclareMathOperator{\rank}{rank}
+
+\newcommand{\projuv}[2]{\proj_{\vec{#2}}\vec{#1}}
 
 %------------------------------------------------------------------------------%
