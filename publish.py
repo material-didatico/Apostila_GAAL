@@ -34,9 +34,11 @@ tab = 4*' '
 def folder_name(name: str) -> str:
 
     names = {
-            'A-Introducao'  : 'A - Introdução',
-            'B-Matrizes'    : 'B - Matrizes',
-            'C-Sistemas'    : 'C - Sistemas Lineares',
+            'A-Introducao'    : 'A - Introdução',
+            'B-Matrizes'      : 'B - Matrizes',
+            'C-Sistemas'      : 'C - Sistemas Lineares',
+            'D-Determinantes' : 'D - Determinantes',
+            'E-Vetores'       : 'E - Vetores',
             }
 
     try:
@@ -50,16 +52,31 @@ def folder_name(name: str) -> str:
 def pdf_name(name: str) -> str:
 
     names = {
-        'A-01-Apresentacao'       : 'A - 01 - Apresentação',
-        'A-02-Metodo_Matematico'  : 'A - 02 - Método Matemático',
-        'B-01-Equacoes'           : 'B - 01 - Equações',
-        'B-02-Equacoes_lineares'  : 'B - 02 - Equações Lineares',
-        'B-03-Matrizes'           : 'B - 03 - Matrizes',
-        'B-04-Operacoes'          : 'B - 04 - Operações',
-        'C-01-Sistemas_lineares'  : 'C - 01 - Sistemas Lineares',
-        'C-02-Escalonamento'      : 'C - 02 - Escalonamento',
-        'C-03-Classificacao'      : 'C - 03 - Classificação',
-        'C-04-Gauss-Jordan'       : 'C - 04 - Método de Gauss-Jordan',
+        'A-01-Apresentacao'        : 'A - 01 - Apresentação',
+        'A-02-Metodo_Matematico'   : 'A - 02 - Método Matemático',
+        'B-01-Equacoes'            : 'B - 01 - Equações',
+        'B-02-Equacoes_lineares'   : 'B - 02 - Equações Lineares',
+        'B-03-Matrizes'            : 'B - 03 - Matrizes',
+        'B-04-Operacoes'           : 'B - 04 - Operações',
+        'C-01-Sistemas_lineares'   : 'C - 01 - Sistemas Lineares',
+        'C-02-Escalonamento'       : 'C - 02 - Escalonamento',
+        'C-03-Classificacao'       : 'C - 03 - Classificação',
+        'C-04-Gauss-Jordan'        : 'C - 04 - Método de Gauss-Jordan',
+        'C-05-Sistemas_homogeneos' : 'C - 05 - Sistemas Homogêneos',
+        'C-06-Posto'               : 'C - 06 - Posto',
+        'C-07-Matrizes_inversas'   : 'C - 07 - Matrizes Inversas',
+        'D-01-Determinantes'       : 'D - 01 - Determinantes',
+        'D-02-Propriedades'        : 'D - 02 - Propriedades',
+        'D-03-Sistemas'            : 'D - 03 - Sistemas',
+        'E-01-Vetores'             : 'E - 01 - Vetores',
+        'E-02-Produto_por_escalar' : 'E - 02 - Produto por Escalar',
+        'E-03-Soma'                : 'E - 03 - Soma',
+        'E-04-Norma'               : 'E - 04 - Norma',
+        'E-05-Produto_escalar'     : 'E - 05 - Produto Escalar',
+        'E-06-Angulo'              : 'E - 06 - Ângulo',
+        'E-07-Projecao'            : 'E - 07 - Projeção',
+        'E-08-Produto_vetorial'    : 'E - 08 - Produto Vetorial',
+        'E-09-Area_paralelogramo'  : 'E - 09 - Area do Paralelogramo',
     }
 
     name = name.replace('pres_', '').replace('.pdf', '')
