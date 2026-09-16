@@ -1,0 +1,193 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Produto Vetorial}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Introdução}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Produto Vetorial}{}
+  \onslide<1->{\emph{\color<2>{red}Apenas para vetores em $\R^3$}}
+
+  \bigskip
+  \onslide<3->{é possível definir uma operação de produto entre vetores}
+
+  \bigskip
+  \onslide<4->{que produz um novo vetor ortogonal a ambos os vetores originais}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Produto Vetorial}
+  Dados dois vetores não nulos
+  \[
+    \vec{v},\; \vec{w} \in \emph{\R^3}
+  \]
+  \pause
+  O \emph{produto escalar} produz um número
+  \[
+    \vec{v} \cdot \vec{w} \in \emph{\R}
+  \]
+  \pause
+  O \emph{produto vetorial} produz um vetor ortogonal aos dois vetores
+  \[
+    \vec{v} \times \vec{w} \in \emph{\R^3}
+  \]
+  \pause
+  \emph{Não misture as notações: \; $\cdot$ \; $\times$}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição Geométrica}
+  Considere dois vetores com a mesma origem
+  \[
+    \vec{v},\; \vec{w} \in \R^3
+  \]
+  \pause
+  O produto vetorial \(\vec{v}\times\vec{w}\)
+  \pause
+  \begin{itemize}[<+->]
+      \item é ortogonal a $\vec{v}$
+      \item é ortogonal a $\vec{w}$
+      \item seu sentido é determinado pela regra da mão direita
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Regra da Mão Direita}
+  \onslide<+->{O sentido do produto vetorial é determinado pela regra da mão direita}
+  \only<+->{\addgraphic{6}{9,2.5}{Right_hand_rule_cross_product}}
+
+  \bigskip
+  \begin{itemize}[<+->]
+      \item aponte o dedo indicador na direção de $\vec{v}$
+      \item aponte o dedo médio na direção a $\vec{w}$
+      \item o polegar indica a direção de $\vec{v}\times\vec{w}$
+  \end{itemize}
+
+  \bigskip
+  \onslide<+->{\emph{A ordem dos vetores é importante}}
+  \onslide<+->{
+  \[
+    \vec{v}\times\vec{w} \;=\; -\left(\vec{w}\times\vec{v}\right)
+  \]}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Definição}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição Algébrica}
+  Dados \quad
+  \(
+    \vec{v} = \vetortri{v_1}{v_2}{v_3}
+    \qquad
+    \vec{w} = \vetortri{w_1}{w_2}{w_3}
+  \)
+
+  \pause
+  \bigskip
+  O produto vetorial é definido por
+  \[
+    \vec{v}\times\vec{w}
+    = \vetortri{v_2w_3-v_3w_2}{v_3w_1-v_1w_3}{v_1w_2-v_2w_1}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Representação Alternativa}
+  Definindo os vetores
+  \(
+    \quad
+    \vec{i} = \vetortri{1}{0}{0}
+    \qquad
+    \vec{j} = \vetortri{0}{1}{0}
+    \qquad
+    \vec{k} = \vetortri{0}{0}{1}
+  \)
+
+  \pause
+  \bigskip
+  Temos
+   \[
+    \vec{v}\times\vec{w}
+    \;=\; \left( v_2 w_3 - v_3 w_2 \right) \vec{i}
+    \;+\; \left( v_3 w_1 - v_1 w_3 \right) \vec{j}
+    \;+\; \left( v_1 w_2 - v_2 w_1 \right) \vec{k}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Forma por Determinante}
+  Cálculo pelo determinante
+  \[
+    \vec{v}\times\vec{w}
+    \;=\;
+    \begin{vmatrix}[c]
+      \vec{i} & \vec{j} & \vec{k} \\
+      v_1     & v_2     & v_3     \\
+      w_1     & w_2     & w_3
+    \end{vmatrix}
+  \]
+
+  \pause
+  Expandindo pela primeira linha
+  \[
+    \vec{v} \times \vec{w}
+    \;=\;
+    \begin{vmatrix}
+      v_2 & v_3 \\
+      w_2 & w_3
+    \end{vmatrix}
+    \vec{i}
+    \;-\;
+    \begin{vmatrix}
+      v_1 & v_3 \\
+      w_1 & w_3
+    \end{vmatrix}
+    \vec{j}
+    \;+\;
+    \begin{vmatrix}
+      v_1 & v_2 \\
+      w_1 & w_2
+    \end{vmatrix}
+    \vec{k}
+  \]
+  \pause
+  Lembre-se do Teorema de Laplace -- \emph{Atenção aos sinais}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Exemplos}
+
+\input{ex/E-08-Produto_vetorial-ex-1}
+\input{ex/E-08-Produto_vetorial-ex-2}
+\input{ex/E-08-Produto_vetorial-ex-3}
+\input{ex/E-08-Produto_vetorial-ex-4}
+\input{ex/E-08-Produto_vetorial-ex-5}
+%\input{ex/E-08-Produto_vetorial-ex-6}
+%\input{ex/E-08-Produto_vetorial-ex-7}
+
+%%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
