@@ -1,0 +1,94 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine a área do triângulo determinado pelos pontos
+  \begin{align*}
+    A & = (1, 1, 0) \\
+    B & = (4, 2, 1) \\
+    C & = (2, 5, 2)
+  \end{align*}
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Vetores}
+  \[
+    \vec{v}
+    \pause
+    \;=\; \overrightarrow{AB}
+    \pause
+    \;=\; \vetortri{4}{2}{1} - \vetortri{1}{1}{0}
+    \pause
+    \;=\; \vetortri{3}{1}{1}
+  \]
+
+  \pause
+  \[
+    \vec{w}
+    \pause
+    \;=\; \overrightarrow{AC}
+    \pause
+    \;=\; \vetortri{2}{5}{2} - \vetortri{1}{1}{0}
+    \pause
+    \;=\; \vetortri{1}{4}{2}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Produto Vetorial}
+  \begin{align*}
+    \onslide<+->{\vec{v}\times\vec{w}}
+    \onslide<+->{& = \begin{vmatrix}
+      \vec{i} & \vec{j} & \vec{k} \\
+      3       &  1      &  1      \\
+      1       &  4      &  2
+    \end{vmatrix}}
+    \\
+    \onslide<+->{& = \begin{vmatrix}
+         1 &  1 \\
+         4 &  2
+      \end{vmatrix}
+      \vec{i}
+      \;-\;
+      \begin{vmatrix}
+        3 &  1 \\
+        1 &  2
+      \end{vmatrix}
+      \vec{j}
+      \;+\;
+      \begin{vmatrix}
+        3 &  1 \\
+        1 &  4
+      \end{vmatrix}
+      \vec{k}}
+    \\
+    \onslide<+->{
+    & = \big( 1 \times 2 - 1 \times 4 \big) \vec{i}
+      - \big( 3 \times 2 - 1 \times 1 \big) \vec{j}
+      + \big( 3 \times 4 - 1 \times 1 \big) \vec{k}}
+    \\
+    \onslide<+->{& = -2 \vec{i} -5 \vec{j} + 11 \vec{k}}
+    \onslide<+->{\;=\; \vetortri{-2}{-5}{11}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Norma}
+  \begin{align*}
+    \onslide<+->{\norm{\vec{v}\times\vec{w}}}
+    \onslide<+->{& = \norm{\vetortri{-2}{-5}{11}} \\}
+    \onslide<+->{& = \sqrt{(-2)^2 + (-5)^2 + 11^2} \\}
+    \onslide<+->{& = \sqrt{4 + 25 + 121} \\}
+    \onslide<+->{& = \sqrt{150}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Área}
+  \[
+    \onslide<+->{A_T}
+    \onslide<+->{\;=\; \frac{1}{2} \norm{\vec{v}\times\vec{w}}}
+    \onslide<+->{\;=\; \frac{1}{2}\sqrt{150}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

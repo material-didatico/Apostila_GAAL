@@ -165,15 +165,92 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\section{Exemplos}
-
 \input{ex/E-08-Produto_vetorial-ex-1}
+
+%------------------------------------------------------------------------------%
+\section{Produto Vetorial em $\R^2$}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Produto Vetorial em $\R^2$}
+\begin{columns}
+\column{0.5\textwidth}
+  O produto vetorial só é definido em $\R^3$
+
+  \pause
+  \bigskip
+  Porém, para vetores do plano
+  \[
+    \vec v = \vetor{v_1}{v_2}
+    \qquad
+    \vec w = \vetor{w_1}{w_2}
+  \]
+  \pause
+  consideramos suas versões em $\R^3$
+  \[
+    \vec v = \vetortri{v_1}{v_2}{\emph{0}}
+    \qquad
+    \vec w = \vetortri{w_1}{w_2}{\emph{0}}
+  \]
+\column{0.5\textwidth}
+  \pause
+  Então
+  \[
+    \vec{v}\times\vec{w} = \vetortri{0}{0}{v_1w_2-v_2w_1}
+  \]
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
 \input{ex/E-08-Produto_vetorial-ex-2}
 \input{ex/E-08-Produto_vetorial-ex-3}
 \input{ex/E-08-Produto_vetorial-ex-4}
 \input{ex/E-08-Produto_vetorial-ex-5}
-%\input{ex/E-08-Produto_vetorial-ex-6}
-%\input{ex/E-08-Produto_vetorial-ex-7}
+
+%------------------------------------------------------------------------------%
+\section{Norma do Produto Vetorial}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Norma do Produto Vetorial}
+  Dados
+  \[
+    \vec{v} = \vetortri{v_1}{v_2}{v_3}
+    \qquad
+    \vec{w} = \vetortri{w_1}{w_2}{w_3}
+  \]
+  \pause
+  Temos
+  \[
+    \vec{v}\times\vec{w}
+    =
+    \vetortri{v_2w_3-v_3w_2}{v_3w_1-v_1w_3}{v_1w_2-v_2w_1}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Norma do Produto Vetorial}
+  \begin{align*}
+    \onslide<+->{\norm{\vec{v}\times\vec{w}}}
+    \onslide<+->{& = \sqrt{ (v_2w_3-v_3w_2)^2 + (v_3w_1-v_1w_3)^2 + (v_1w_2-v_2w_1)^2 }  \\[5mm]}
+    \onslide<+->{& \;\; \vdots \qquad \text{manipulações simples, mas longas e tediosas} \\[5mm]}
+    \onslide<+->{& = \sqrt{\norm{\vec{v}}^2 \, \norm{\vec{w}}^2 - \left(\vec{v}\cdot\vec{w}\right)^2}}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Norma do Produto Vetorial}
+  \begin{align*}
+    \onslide<+->{\norm{\vec{v}\times\vec{w}}
+                 & = \sqrt{\norm{\vec{v}}^2 \, \norm{\vec{w}}^2 - \left(\vec{v}\cdot\vec{w}\right)^2} \\}
+    \onslide<+->{& = \sqrt{\norm{\vec{v}}^2 \, \norm{\vec{w}}^2 - \left(\norm{\vec{v}}\, \norm{\vec{w}} \cos(\theta)\right)^2} \\}
+    \onslide<+->{& = \sqrt{\norm{\vec{v}}^2 \, \norm{\vec{w}}^2 - \norm{\vec{v}}^2 \norm{\vec{w}}^2 \cos^2(\theta)} \\}
+    \onslide<+->{& = \sqrt{\norm{\vec{v}}^2 \, \norm{\vec{w}}^2 \left( 1 -  \cos^2(\theta)\right)} \\}
+    \onslide<+->{& = \sqrt{\norm{\vec{v}}^2 \, \norm{\vec{w}}^2 \sin^2(\theta)} }
+  \end{align*}
+  \onslide<+->{Para \(0 \leq \theta \leq \pi\) temos \(\sin(\theta) \geq 0\)}
+  \onslide<+->{\[
+    \norm{\vec{v}\times\vec{w}} \;=\; \norm{\vec{v}} \, \norm{\vec{w}} \sin(\theta)
+  \]}
+\end{frame}
 
 %%------------------------------------------------------------------------------%
 %\section{Lista Mínima}
@@ -191,3 +268,365 @@
 %------------------------------------------------------------------------------%
 \end{document}
 %------------------------------------------------------------------------------%
+
+
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Construindo a norma do produto vetorial}
+Considere
+\[
+\vec v=(v_1,v_2,v_3)
+\]
+\[
+\vec w=(w_1,w_2,w_3)
+\]
+Pela definição
+\[
+\vec v\times\vec w
+=
+\left(
+v_2w_3-v_3w_2
+,
+v_3w_1-v_1w_3
+,
+v_1w_2-v_2w_1
+\right)
+\]
+Queremos determinar
+\[
+\|\vec v\times\vec w\|
+\]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Calculando o quadrado da norma}
+É conveniente calcular primeiro o quadrado da norma
+\[
+\|\vec v\times\vec w\|^2
+\]
+Temos
+\[
+\begin{aligned}
+\|\vec v\times\vec w\|^2
+={}&
+(v_2w_3-v_3w_2)^2\\
+&+
+(v_3w_1-v_1w_3)^2\\
+&+
+(v_1w_2-v_2w_1)^2
+\end{aligned}
+\]
+Vamos desenvolver os três quadrados
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Desenvolvendo os quadrados}
+\[
+\begin{aligned}
+\|\vec v\times\vec w\|^2
+={}&
+v_2^2w_3^2
++
+v_3^2w_2^2
+-
+2v_2v_3w_2w_3\\
+&+
+v_3^2w_1^2
++
+v_1^2w_3^2
+-
+2v_3v_1w_3w_1\\
+&+
+v_1^2w_2^2
++
+v_2^2w_1^2
+-
+2v_1v_2w_1w_2
+\end{aligned}
+\]
+Os termos podem ser reorganizados para revelar uma identidade importante
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Uma identidade importante}
+Observe que
+\[
+\|\vec v\|^2
+=
+v_1^2+v_2^2+v_3^2
+\]
+\[
+\|\vec w\|^2
+=
+w_1^2+w_2^2+w_3^2
+\]
+Portanto
+\[
+\begin{aligned}
+\|\vec v\|^2\|\vec w\|^2
+={}&
+v_1^2w_1^2+
+v_1^2w_2^2+
+v_1^2w_3^2\\
+&+
+v_2^2w_1^2+
+v_2^2w_2^2+
+v_2^2w_3^2\\
+&+
+v_3^2w_1^2+
+v_3^2w_2^2+
+v_3^2w_3^2
+\end{aligned}
+\]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{O papel do produto escalar}
+Temos
+\[
+\vec v\cdot\vec w
+=
+v_1w_1+v_2w_2+v_3w_3
+\]
+Logo
+\[
+(\vec v\cdot\vec w)^2
+=
+v_1^2w_1^2+
+v_2^2w_2^2+
+v_3^2w_3^2
+\]
+\[
++
+2v_1v_2w_1w_2
++
+2v_1v_3w_1w_3
++
+2v_2v_3w_2w_3
+\]
+Comparando as duas expressões obtemos
+\[
+\boxed{
+\|\vec v\times\vec w\|^2
+=
+\|\vec v\|^2\|\vec w\|^2
+-
+(\vec v\cdot\vec w)^2
+}
+\]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Extraindo a raiz}
+Como uma norma é sempre não negativa
+\[
+\|\vec v\times\vec w\|\geq 0
+\]
+podemos escrever
+\[
+\|\vec v\times\vec w\|
+=
+\sqrt{
+\|\vec v\|^2\|\vec w\|^2
+-
+(\vec v\cdot\vec w)^2
+}
+\]
+Esta é uma fórmula para calcular diretamente a norma do produto vetorial
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Introduzindo o ângulo}
+Do produto escalar sabemos que
+\[
+\vec v\cdot\vec w
+=
+\|\vec v\|\|\vec w\|\cos\theta
+\]
+Substituindo na expressão anterior
+\[
+\begin{aligned}
+\|\vec v\times\vec w\|
+&=
+\sqrt{
+\|\vec v\|^2\|\vec w\|^2
+-
+\|\vec v\|^2\|\vec w\|^2\cos^2\theta
+}
+\end{aligned}
+\]
+Colocando o fator comum em evidência
+\[
+\|\vec v\times\vec w\|
+=
+\sqrt{
+\|\vec v\|^2\|\vec w\|^2
+(1-\cos^2\theta)
+}
+\]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Aparece o seno}
+Pela identidade trigonométrica
+\[
+1-\cos^2\theta=\sin^2\theta
+\]
+temos
+\[
+\|\vec v\times\vec w\|
+=
+\sqrt{
+\|\vec v\|^2
+\|\vec w\|^2
+\sin^2\theta
+}
+\]
+Como
+\[
+\|\vec v\|\geq0
+\]
+\[
+\|\vec w\|\geq0
+\]
+\[
+0\leq\theta\leq\pi
+\]
+temos
+\[
+\sin\theta\geq0
+\]
+Portanto
+\[
+\boxed{
+\|\vec v\times\vec w\|
+=
+\|\vec v\|\|\vec w\|\sin\theta
+}
+\]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Duas formas equivalentes}
+A norma do produto vetorial pode ser calculada de duas maneiras
+\[
+\|\vec v\times\vec w\|
+=
+\sqrt{
+\|\vec v\|^2\|\vec w\|^2
+-
+(\vec v\cdot\vec w)^2
+}
+\]
+ou
+\[
+\|\vec v\times\vec w\|
+=
+\|\vec v\|\|\vec w\|\sin\theta
+\]
+A primeira é particularmente útil quando conhecemos as coordenadas dos vetores
+
+A segunda evidencia a interpretação geométrica
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Interpretação geométrica}
+A expressão
+\[
+\|\vec v\|\|\vec w\|\sin\theta
+\]
+pode ser interpretada como
+\[
+\text{base}\times\text{altura}
+\]
+Escolhendo $\vec v$ como base
+\[
+\text{base}=\|\vec v\|
+\]
+\[
+\text{altura}=\|\vec w\|\sin\theta
+\]
+Logo
+\[
+\|\vec v\times\vec w\|
+=
+\text{área do paralelogramo}
+\]
+
+\begin{center}
+\begin{asy}
+size(8cm,0);
+
+pair O=(0,0);
+pair A=(4,1);
+pair B=(1.5,3);
+pair C=A+B;
+
+draw(O--A,Arrow);
+draw(O--B,Arrow);
+draw(A--C);
+draw(B--C);
+
+draw(B--(B.x,1),dashed);
+
+dot(O);
+dot(A);
+dot(B);
+dot(C);
+
+label("$O$",O,SW);
+label("$\vec v$",A/2,SE);
+label("$\vec w$",B/2,NW);
+label("$\|\vec v\|$",A/2,S);
+label("$h=\|\vec w\|\sin\theta$",(B+(B.x,1))/2,E);
+
+\end{asy}
+\end{center}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Um caso particular}
+Se
+\[
+\vec v\perp\vec w
+\]
+então
+\[
+\theta=\frac{\pi}{2}
+\]
+\[
+\sin\theta=1
+\]
+Portanto
+\[
+\|\vec v\times\vec w\|
+=
+\|\vec v\|\|\vec w\|
+\]
+Neste caso o paralelogramo é um retângulo
+\end{frame}
+
+
+\begin{frame}{Outro caso particular}
+Se os vetores são paralelos
+\[
+\theta=0
+\]
+ou
+\[
+\theta=\pi
+\]
+então
+\[
+\sin\theta=0
+\]
+Logo
+\[
+\vec v\times\vec w=\vec 0
+\]
+Geometricamente
+\[
+\text{área}=0
+\]
+Os dois vetores não determinam um paralelogramo não degenerado
+\end{frame}

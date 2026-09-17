@@ -1,0 +1,63 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Considere quatro pontos no espaço
+  \begin{align*}
+    A = (1, 0, 2) \\
+    B = (4, 1, 3) \\
+    C = (2, 4, 1) \\
+    D = (5, 5, 2)
+  \end{align*}
+  Verifique se $ABCD$ é um paralelogramo, se for calcule sua área
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Verificação}
+  \onslide<+->{Se $ABCD$ é um paralelogramo}
+
+  \onslide<+->{ele pode ser definido pelos vetores}
+  \begin{align*}
+    \onslide<+->{\vec{v} & = \overrightarrow{AB} \\}
+    \onslide<+->{\vec{w} & = \overrightarrow{AD}}
+  \end{align*}
+  \onslide<+->{com}
+  \[
+    \onslide<+->{C \;=\; \overrightarrow{AB} + \overrightarrow{AD}}
+    \onslide<+->{  \;=\; \vec{v} + \vec{w}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Verificação}
+\begin{columns}[t]
+\column{0.3\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{v}}
+    \onslide<+->{& = \overrightarrow{AB} \\}
+    \onslide<+->{& = B - A \\}
+    \onslide<+->{& = (4, 1, 3) - (1, 0, 2) \\}
+    \onslide<+->{& = (3, 1, 1)}
+  \end{align*}
+\column{0.3\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{w}}
+    \onslide<+->{& = \overrightarrow{AD} \\}
+    \onslide<+->{& = D - A \\}
+    \onslide<+->{& = (5, 5, 2) - (1, 0, 2) \\}
+    \onslide<+->{& = (4, 5, 0)}
+  \end{align*}
+\column{0.4\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{v} + \vec{w}}
+    \onslide<+->{& = (3, 1, 1) + (4, 5, 0) \\}
+    \onslide<+->{& = (7, 6, 1)             \\}
+    \onslide<+->{& \neq (2, 4, 1)}
+    \onslide<+->{\;=\; C}
+  \end{align*}
+\end{columns}
+
+\bigskip
+\onslide<+->{Os pontos não formam um paralelogramo}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

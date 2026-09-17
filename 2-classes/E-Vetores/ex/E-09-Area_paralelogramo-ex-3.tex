@@ -1,0 +1,75 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine a área do paralelogramo determinado por
+  \[
+    \vec{v} = \vetor{3}{1}
+    \qquad
+    \vec{w} = \vetor{1}{4}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Vetores}
+  Consideramos as versões dos vetores em $\R^3$
+  \[
+    \vec{v} = \vetortri{3}{1}{0}
+    \qquad
+    \vec{w} = \vetortri{1}{4}{0}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Produto Vetorial}
+  \begin{align*}
+    \onslide<+->{\vec{v}\times\vec{w}}
+    \onslide<+->{& = \begin{vmatrix}
+      \vec{i} & \vec{j} & \vec{k} \\
+      3       &  1      &  0      \\
+      1       &  4      &  0
+    \end{vmatrix}}
+    \\
+    \onslide<+->{& = \begin{vmatrix}
+         1 &  0 \\
+         4 &  0
+      \end{vmatrix}
+      \vec{i}
+      \;-\;
+      \begin{vmatrix}
+        3 &  0 \\
+        1 &  0
+      \end{vmatrix}
+      \vec{j}
+      \;+\;
+      \begin{vmatrix}
+        3 &  1 \\
+        1 &  4
+      \end{vmatrix}
+      \vec{k}}
+    \\
+    \onslide<+->{
+    & = \big( 3 \times 4 - 1 \times 1 \big) \vec{k}}
+    \\
+    \onslide<+->{& = 11 \vec{k}}
+    \onslide<+->{\;=\; \vetortri{0}{0}{11}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Norma e Área}
+  \[
+    \onslide<+->{\norm{\vec{v}\times\vec{w}}}
+    \onslide<+->{\;=\; \norm{\vetortri{0}{0}{11}}}
+    \onslide<+->{\;=\; \sqrt{11^2}}
+    \onslide<+->{\;=\; 11}
+  \]
+
+  \bigskip
+  \[
+    \onslide<+->{A}
+    \onslide<+->{\;=\; \norm{\vec{v}\times\vec{w}}}
+    \onslide<+->{\;=\; 11}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

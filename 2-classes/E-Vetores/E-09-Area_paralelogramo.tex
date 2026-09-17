@@ -1,0 +1,156 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Área do Paralelogramo}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Área do Paralelogramo}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Paralelogramo Determinado por Dois Vetores}
+  Dois vetores com a mesma origem determinam um paralelogramo
+
+  \pause
+  Qual a área desse paralelogramo?
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Paralelogramo Determinado por Dois Vetores}{E-09-Area_paralelogramo-1}{}
+\framedgraphic*{Paralelogramo Determinado por Dois Vetores}{E-09-Area_paralelogramo-2}{}
+\framedgraphic*{Paralelogramo Determinado por Dois Vetores}{E-09-Area_paralelogramo-3}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Área do Paralelogramo}
+\begin{columns}%
+\column{0.3\textwidth}%
+  \onslide<2->{\[
+    \text{área} = \text{base} + \text{altura}
+  \]}%
+  \onslide<3->{\[
+    A = bh
+  \]}%
+\column{0.6\textwidth}%
+  \only<1>  {\includegraphics{E-09-Area_paralelogramo-2D-1}}%
+  \only<2-3>{\includegraphics{E-09-Area_paralelogramo-2D-2}}%
+  \only<4>  {\includegraphics{E-09-Area_paralelogramo-2D-3}}%
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Base e Altura do Paralelogramo}
+\begin{columns}%
+\column{0.3\textwidth}%
+  \onslide<+->{Escolhendo $\vec v$ como base}
+  \onslide<+->{\[
+    b \;=\; \norm{\vec v}
+  \]}
+
+  \onslide<+->{A altura é a componente de $\vec{w}$ ortogonal a $\vec{v}$}
+  \begin{align*}
+    \onslide<+->{\sin(\theta) & = \frac{h}{\norm{\vec{w}}} \\}
+    \onslide<+->{h & = \norm{\vec{w}} \sin{\theta}}
+  \end{align*}
+\column{0.6\textwidth}%
+  \only<1-2>{\includegraphics{E-09-Area_paralelogramo-2D-3}}%
+  \only<3-> {\includegraphics{E-09-Area_paralelogramo-2D-4}}%
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Área do Paralelogramo}
+  \begin{align*}
+    \onslide<+->{A}
+    \onslide<+->{& = bh \\}
+    \onslide<+->{& = \norm{\vec{v}} \norm{\vec{w}} \sin{\theta} \\}
+    \onslide<+->{& = \norm{\vec{v}\times\vec{w}}}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/E-09-Area_paralelogramo-ex-1}
+
+%------------------------------------------------------------------------------%
+\section{Área do Triângulo}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Área do triângulo}
+  Os mesmos dois vetores determinam também um triângulo
+
+  \pause
+  A área do triângulo é metade da área do paralelogramo
+  \[
+    \pause
+    A_T = \frac{1}{2} \norm{\vec{v}\times\vec{w}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Área Determinada por Três Pontos}
+  Considere três pontos
+  \(
+    \pause
+    A,\; B,\; C
+  \)
+
+  \pause
+  Construímos os vetores
+  \[
+    \pause
+    \vec{v}
+    \pause
+    \;=\; \overrightarrow{AB}
+    \pause
+    \;=\; B - A
+  \]
+  \[
+    \pause
+    \vec{w}
+    \pause
+    \;=\; \overrightarrow{AC}
+    \pause
+    \;=\; C - A
+  \]
+  \pause
+  Área do paralelogramo determinado pelos pontos
+  \[
+    \pause
+    A_P \;=\; \norm{\vec{v}\times\vec{w}}
+  \]
+  \pause
+  Área do triângulo determinado pelos pontos
+  \[
+    \pause
+    A_T \;=\; \frac{A_P}{2}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/E-09-Area_paralelogramo-ex-2}
+\input{ex/E-09-Area_paralelogramo-ex-3}
+\input{ex/E-09-Area_paralelogramo-ex-4}
+\input{ex/E-09-Area_paralelogramo-ex-5}
+\input{ex/E-09-Area_paralelogramo-ex-6}
+
+%%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

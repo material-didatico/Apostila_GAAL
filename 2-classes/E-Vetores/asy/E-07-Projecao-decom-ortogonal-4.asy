@@ -29,7 +29,7 @@ draw( X--V, pens[2], Arrow );
 label( "$\vec{w}$", V/2, NW );
 label( "$\vec{v}$", U/2, SE );
 label( "\large $\operatorname{proj}_{\vec{v}}\vec{w}$", 0.95X, SE, pens[1] );
-label( "\large $\vec{v}-\operatorname{proj}_{\vec{v}}\vec{w}$", X+0.65Y, E, pens[2] );
+label( "\large $\vec{w}-\operatorname{proj}_{\vec{v}}\vec{w}$", X+0.65Y, E, pens[2] );
 
 clip_to_axis();
 

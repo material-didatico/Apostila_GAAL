@@ -1,0 +1,70 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine a área do paralelogramo determinado pelos vetores
+  \[
+    \vec{v} = (2, -1, 3)
+    \qquad
+    \vec{w} = (1, 4, -2)
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Produto Vetorial}
+  \begin{align*}
+    \onslide<+->{\vec{v}\times\vec{w}}
+    \onslide<+->{& = \begin{vmatrix}
+      \vec{i} & \vec{j} & \vec{k} \\
+      2       &  -1     &   3     \\
+      1       &   4     &  -2
+    \end{vmatrix}}
+    \\
+    \onslide<+->{& = \begin{vmatrix}
+        -1 &  3 \\
+         4 & -2
+      \end{vmatrix}
+      \vec{i}
+      \;-\;
+      \begin{vmatrix}
+        2 &  3 \\
+        1 & -2
+      \end{vmatrix}
+      \vec{j}
+      \;+\;
+      \begin{vmatrix}
+        2 & -1 \\
+        1 &  4
+      \end{vmatrix}
+      \vec{k}}
+    \\
+    \onslide<+->{
+    & = \big( (-1)(-2) - 3 \times 4 \big) \vec{i}
+      - \big( 2(-2) - 3 \times 1 \big) \vec{j}
+      + \big( 2 \times 4 - (-1)1 \big) \vec{k}}
+    \\
+    \onslide<+->{& = -10 \vec{i} + 7 \vec{j} + 9 \vec{k}}
+    \onslide<+->{\;=\; \vetortri{-10}{7}{9}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Norma e Área}
+\begin{columns}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{\norm{\vec{v}\times\vec{w}}}
+    \onslide<+->{& = \norm{\vetortri{-10}{7}{9}} \\}
+    \onslide<+->{& = \sqrt{(-10)^2 + 7^2 + 9^2} \\}
+    \onslide<+->{& = \sqrt{100 + 49 + 81} \\}
+    \onslide<+->{& = \sqrt{230}}
+  \end{align*}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{A}
+    \onslide<+->{\;=\; \norm{\vec{v}\times\vec{w}}}
+    \onslide<+->{\;=\; \sqrt{230}}
+  \end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

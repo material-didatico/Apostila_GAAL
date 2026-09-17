@@ -1,0 +1,82 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine o valor de $k$ para que o paralelogramo determinado pelos vetores
+  \[
+    \vec{v} = \vetortri{k}{2}{1}
+    \qquad
+    \vec{w} = \vetortri{1}{-1}{2}
+  \]
+  tenha área igual a
+  \(
+    3\sqrt{6}
+  \)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Produto Vetorial}
+  \begin{align*}
+    \onslide<+->{\vec{v}\times\vec{w}}
+    \onslide<+->{& = \begin{vmatrix}
+      \vec{i} & \vec{j} & \vec{k} \\
+      k       &   2     &   1     \\
+      1       &  -1     &   2
+    \end{vmatrix}}
+    \\
+    \onslide<+->{& = \begin{vmatrix}
+         2 &  1 \\
+        -1 &  2
+      \end{vmatrix}
+      \vec{i}
+      \;-\;
+      \begin{vmatrix}
+        k &  1 \\
+        1 &  2
+      \end{vmatrix}
+      \vec{j}
+      \;+\;
+      \begin{vmatrix}
+        k &  2 \\
+        1 & -1
+      \end{vmatrix}
+      \vec{k}}
+    \\
+    \onslide<+->{
+    & = \big( 2 \times 2 + 1(-1) \big) \vec{i}
+      - \big( 2k - 1 \big) \vec{j}
+      + \big( -k - 2 \big) \vec{k}}
+    \\
+    \onslide<+->{& = 3 \vec{i} + (1-2k) \vec{j} + (-k-2) \vec{k}}
+    \onslide<+->{\;=\; \vetortri{3}{1-2k}{-k-2}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Norma}
+  \begin{align*}
+    \onslide<+->{\norm{\vec{v}\times\vec{w}}}
+    \onslide<+->{& = \norm{\vetortri{3}{1-2k}{-k-2}} \\}
+    \onslide<+->{& = \sqrt{3^2 + (1-2k)^2 + (-k-2)^2} \\}
+    \onslide<+->{& = \sqrt{9 + 1^2 -4k + 4k^2 + k^2 + 4k + 4} \\}
+    \onslide<+->{& = \sqrt{9 + 1 + 4 -4k + 4k + 4k^2 + k^2} \\}
+    \onslide<+->{& = \sqrt{14 + 5k^2}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Área}
+  \begin{align*}
+    \onslide<+->{A = \norm{\vec{v}\times\vec{w}} & = 3\sqrt{6}                \\}
+    \onslide<+->{\sqrt{14 + 5k^2}                & = 3\sqrt{6}                \\}
+    \onslide<+->{14 + 5k^2                       & = \left(3\sqrt{6}\right)^2 \\}
+    \onslide<+->{14 + 5k^2                       & = 9 \times 6               \\}
+    \onslide<+->{5k^2                            & = 54 - 14 }
+    \onslide<+->{                                \;=\; 40                     \\}
+    \onslide<+->{k^2                             & = \frac{40}{5} }
+    \onslide<+->{                                \;=\; 8                      \\}
+    \onslide<+->{k                               & = \pm \sqrt{8}}
+    \onslide<+->{                                \;=\; \pm 2 \sqrt{2}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
