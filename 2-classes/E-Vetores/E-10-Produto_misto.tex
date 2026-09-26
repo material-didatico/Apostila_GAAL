@@ -34,55 +34,17 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{question}
-  Calcule o produto misto dos vetores
-  \[
-  \vec{v}=(1,2,3)
-  \]
-  \[
-  \vec{w}=(2,-1,1)
-  \]
-  \[
-  \vec{z}=(3,1,-2)
-  \]
-\end{question}
-
-\begin{resolution}{Resolução}
-  \[
-    \vec{v}\times\vec{w}
-    \pause
-    = \begin{vmatrix}
-      \vec i & \vec j & \vec k \\
-      1      & 2      & 3      \\
-      2      & -1     & 1
-    \end{vmatrix}
-    \pause
-    = (5,5,-5)
-  \]
-
-  \pause
-  \[
-    \left(\vec{v}\times\vec{w}\right)\cdot\vec{z}
-    \pause
-    = (5,5,-5)\cdot(3,1,-2)
-    \pause
-    = 15+5+10
-    \pause
-    = 30
-  \]
-\end{resolution}
+\input{ex/E-10-Produto_misto-ex-1}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Calculando o Produto Misto Diretamente}
   Se
   \[
-    \vec{v}=(v_1,v_2,v_3)
-  \]
-  \[
-    \vec{w}=(w_1,w_2,w_3)
-  \]
-  \[
-    \vec{z}=(z_1,z_2,z_3)
+    \vec{v} = \vetortri{v_1}{v_2}{v_3}
+    \qquad
+    \vec{w} = \vetortri{w_1}{w_2}{w_3}
+    \qquad
+    \vec{z} = \vetortri{z_1}{z_2}{z_3}
   \]
   \pause
   então
@@ -97,53 +59,8 @@
   \]
 \end{frame}
 
-
 %------------------------------------------------------------------------------%
-\section{Exemplos}
-
-%------------------------------------------------------------------------------%
-\begin{question}
-Calcule o produto misto
-\(
-  \left(\vec{v}\times\vec{w}\right)\cdot\vec{z}
-\)
-para
-\[
-  \vec{v}=(2,1,0)
-\]
-\[
-  \vec{w}=(1,-1,2)
-\]
-\[
-  \vec{z}=(3,2,1)
-\]
-\end{question}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  \begin{align*}
-  \onslide<+->{\left(\vec{v}\times\vec{w}\right)\cdot\vec{z}}
-  \onslide<+->{& = \begin{vmatrix}
-      2 & 1  & 0 \\
-      1 & -1 & 2 \\
-      3 & 2  & 1
-    \end{vmatrix}}
-  \\
-  \onslide<+->{& = 2
-    \begin{vmatrix}
-      -1 & 2 \\
-      2  & 1
-    \end{vmatrix}
-    - \begin{vmatrix}
-      1 & 2 \\
-      3 & 1
-    \end{vmatrix}}
-  \\
-  \onslide<+->{& = 2(-5)-(-5)}
-  \\
-  \onslide<+->{& = - 5}
-  \end{align*}
-\end{resolution}
+\input{ex/E-10-Produto_misto-ex-2}
 
 %------------------------------------------------------------------------------%
 \section{Propriedades}
@@ -176,74 +93,23 @@ para
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Propriedade de Permutação}
-  \onslide<+->{Permutações \emph{cíclicas} preservam o valor}
-  \begin{align*}
-      \onslide<+->{\left(\vec{v}\times\vec{w}\right)\cdot\vec{z}}
-      \onslide<+->{& = \left(\vec{w}\times\vec{z}\right)\cdot\vec{v} \\}
-      \onslide<+->{& = \left(\vec{z}\times\vec{v}\right)\cdot\vec{w}}
-  \end{align*}
-
   \onslide<+->{\emph{Trocas} de duas posições mudam o sinal}
   \begin{align*}
     \onslide<+->{\left(\vec{v}\times\vec{w}\right)\cdot\vec{z} & = - \left(\vec{w}\times\vec{v}\right)\cdot\vec{z} \\}
     \onslide<+->{\left(\vec{v}\times\vec{w}\right)\cdot\vec{z} & = - \left(\vec{v}\times\vec{z}\right)\cdot\vec{w} \\}
     \onslide<+->{\left(\vec{v}\times\vec{w}\right)\cdot\vec{z} & = - \left(\vec{z}\times\vec{w}\right)\cdot\vec{v}}
   \end{align*}
+
+  \onslide<+->{\emph{Permutações cíclicas} preservam o valor}
+  \[
+      \onslide<+->{\left(\vec{v}\times\vec{w}\right)\cdot\vec{z}}
+      \onslide<+->{\;=\; \left(\vec{w}\times\vec{z}\right)\cdot\vec{v}}
+      \onslide<+->{\;=\; \left(\vec{z}\times\vec{v}\right)\cdot\vec{w}}
+  \]
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{question}
-  Dados
-  \[
-    \vec{v}=(1,2,0)
-  \]
-  \[
-    \vec{w}=(2,-1,1)
-  \]
-  \[
-    \vec{z}=(1,0,3)
-  \]
-  Calcule
-  \[
-    \left(\vec{v}\times\vec{w}\right)\cdot\vec{z}
-  \]
-  \[
-    \left(\vec{w}\times\vec{v}\right)\cdot\vec{z}
-  \]
-\end{question}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Resolução}
-  \begin{align*}
-    \onslide<+->{\left(\vec{v}\times\vec{w}\right)\cdot\vec{z}}
-    \onslide<+->{& = \begin{vmatrix}
-      1 & 2  & 0 \\
-      2 & -1 & 1 \\
-      1 & 0  & 3
-    \end{vmatrix}}
-    \\
-    \onslide<+->{& = 1 \begin{vmatrix}
-        -1 & 1 \\
-        0  & 3
-      \end{vmatrix}
-      - 2
-      \begin{vmatrix}
-        2 & 1 \\
-        1 & 3
-      \end{vmatrix}}
-    \\
-    \onslide<+->{& = -3 - 10}
-    \\
-    \onslide<+->{& = -13}
-  \end{align*}
-
-  \[
-    \onslide<+->{\left(\vec{w}\times\vec{v}\right)\cdot\vec{z}}
-    \onslide<+->{= -\left(\vec{v}\times\vec{w}\right)\cdot\vec{z}}
-    \onslide<+->{= - (-13)}
-    \onslide<+->{= 13}
-  \]
-\end{resolution}
+\input{ex/E-10-Produto_misto-ex-3}
 
 %------------------------------------------------------------------------------%
 \section{Coplanaridade}
@@ -261,108 +127,8 @@ para
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{question}
-  Verifique se os vetores são coplanares
-  \[
-  \vec{v}=(1,2,1)
-  \]
-  \[
-  \vec{w}=(2,-1,3)
-  \]
-  \[
-  \vec{z}=(5,3,5)
-  \]
-\end{question}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Resolução}
-  \begin{align*}
-    \onslide<+->{\left(\vec{v}\times\vec{w}\right)\cdot\vec{z}}
-    \onslide<+->{& = \begin{vmatrix}
-        1 & 2  & 1 \\
-        2 & -1 & 3 \\
-        5 & 3  & 5
-      \end{vmatrix}}
-    \\
-    \onslide<+->{& = \begin{vmatrix}
-        -1 & 3 \\
-        3  & 5
-      \end{vmatrix}
-      - 2 \begin{vmatrix}
-        2 & 3 \\
-        5 & 5
-      \end{vmatrix}
-      + \begin{vmatrix}
-          2 & -1 \\
-          5 & 3
-        \end{vmatrix}}
-    \\
-    \onslide<+->{& = (-14) -2(-5) + 11 \\}
-    \onslide<+->{& = 7}
-    \onslide<+->{\neq 0}
-  \end{align*}
-  \onslide<+->{Os três vetores não são coplanares}
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{question}
-  Determine $k$ para que os vetores sejam coplanares
-  \[
-    \vec{v} = (1, 2, 3)
-  \]
-  \[
-    \vec{w} = (2, -1, 1)
-  \]
-  \[
-    \vec{z} = (k, 3, 4)
-  \]
-
-  \pause
-  \bigskip
-  Condição de coplanaridade
-  \[
-    \left(\vec{v}\times\vec{w}\right)\cdot\vec{z} = 0
-  \]
-\end{question}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Resolução}
-\begin{columns}[t]
-\column{0.6\textwidth}
-  \begin{align*}
-  \onslide<+->{p & = \left(\vec{v}\times\vec{w}\right)\cdot\vec{z} \\}
-  \onslide<+->{& = \begin{vmatrix}
-    1 & 2  & 3 \\
-    2 & -1 & 1 \\
-    k & 3  & 4
-  \end{vmatrix}}
-  \\
-  \onslide<+->{& = \begin{vmatrix}
-      -1 & 1 \\
-      3  & 4
-    \end{vmatrix}
-    - 2 \begin{vmatrix}
-      2 & 1 \\
-      k & 4
-    \end{vmatrix}
-    + 3 \begin{vmatrix}
-      2 & -1 \\
-      k & 3
-    \end{vmatrix}}
-  \\
-  \onslide<+->{& = -7-2(8-k)+3(6+k) \\}
-  \onslide<+->{& = -7-16+2k+18+3k   \\}
-  \onslide<+->{& = 5k-5}
-  \end{align*}
-\column{0.4\textwidth}
-  \begin{align*}
-    \onslide<+->{\left(\vec{v}\times\vec{w}\right)\cdot\vec{z} & = 0 \\}
-    \onslide<+->{5k-5                                          & = 0 \\}
-    \onslide<+->{5k                                            & = 5 \\}
-    \onslide<+->{k                                             & = 1}
-  \end{align*}
-\end{columns}
-\end{resolution}
+\input{ex/E-10-Produto_misto-ex-4}
+\input{ex/E-10-Produto_misto-ex-5}
 
 %%------------------------------------------------------------------------------%
 %\section{Lista Mínima}

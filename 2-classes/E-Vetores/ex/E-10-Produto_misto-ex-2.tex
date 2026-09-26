@@ -1,0 +1,45 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+Calcule o produto misto
+\(
+  \left(\vec{v}\times\vec{w}\right)\cdot\vec{z}
+\)
+para
+\[
+  \vec{v} = \vetortri{2}{ 1}{0}
+  \qquad
+  \vec{w} = \vetortri{1}{-1}{2}
+  \qquad
+  \vec{z} = \vetortri{3}{ 2}{1}
+\]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{align*}
+  \onslide<+->{\left(\vec{v}\times\vec{w}\right)\cdot\vec{z}}
+  \onslide<+->{& = \begin{vmatrix}
+      2 & 1  & 0 \\
+      1 & -1 & 2 \\
+      3 & 2  & 1
+    \end{vmatrix}}
+  \\
+  \onslide<+->{& = 2
+    \begin{vmatrix}
+      -1 & 2 \\
+      2  & 1
+    \end{vmatrix}
+    - \begin{vmatrix}
+      1 & 2 \\
+      3 & 1
+    \end{vmatrix}
+    + 0}
+  \\
+  \onslide<+->{& = 2(-1-4)-(1-6)}
+  \\
+  \onslide<+->{& = 2(-5)-(-5)}
+  \\
+  \onslide<+->{& = - 5}
+  \end{align*}
+\end{resolution}
+
