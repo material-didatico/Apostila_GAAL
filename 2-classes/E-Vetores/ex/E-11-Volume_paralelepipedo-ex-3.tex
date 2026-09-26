@@ -1,0 +1,82 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Considere os pontos
+  \begin{align*}
+    A & = ( 1, 1, 0 ) \\
+    B & = ( 3, 2, 1 ) \\
+    C & = ( 2, 4, 1 ) \\
+    D & = ( 1, 1, 3 )
+  \end{align*}
+  Determine o volume do paralelepípedo que possui $A$ como vértice
+  e é determinado pelos vetores
+  \[
+    \overrightarrow{AB}
+    \qquad
+    \overrightarrow{AC}
+    \qquad
+    \overrightarrow{AD}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Resolução}
+  \[
+    \overrightarrow{AB}
+    \pause
+    = B-A
+    \pause
+    = \vetortri{2}{1}{1}
+  \]
+
+  \[
+    \pause
+    \overrightarrow{AC}
+    \pause
+    = C-A
+    \pause
+    = \vetortri{1}{3}{1}
+  \]
+
+  \[
+    \pause
+    \overrightarrow{AD}
+    \pause
+    = D-A
+    \pause
+    = \vetortri{0}{0}{3}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Resolução}
+\begin{columns}[t]
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{p}
+    \onslide<+->{& = \left(\overrightarrow{AB} \times \overrightarrow{AC}\right) \cdot \overrightarrow{AD}}
+    \\
+    \onslide<+->{& = \begin{vmatrix}
+          2 & 1 & 1 \\
+          1 & 3 & 1 \\
+          0 & 0 & 3
+        \end{vmatrix}}
+    \\
+    \onslide<+->{& = 3 (-1)^{3+3}
+        \begin{vmatrix}
+          2 & 1 \\
+          1 & 3
+        \end{vmatrix}}
+    \\
+    \onslide<+->{& = 3(6-1)} \\
+    \onslide<+->{& = 15}
+  \end{align*}
+\column{0.5\textwidth}
+  \[
+    \onslide<+->{V}
+    \onslide<+->{= \abs{p}}
+    \onslide<+->{= \abs{15}}
+    \onslide<+->{= 15}
+  \]
+\end{columns}
+\end{resolution}
+%------------------------------------------------------------------------------%

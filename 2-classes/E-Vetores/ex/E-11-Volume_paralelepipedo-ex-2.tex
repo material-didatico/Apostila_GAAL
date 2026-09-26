@@ -1,0 +1,52 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Calcule o volume do paralelepípedo determinado pelos vetores
+  \[
+    \vec{v} = \vetortri{2}{ 1}{ 1}
+    \qquad
+    \vec{w} = \vetortri{3}{ 2}{-1}
+    \qquad
+    \vec{z} = \vetortri{1}{-1}{ 2}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Resolução}
+  \begin{align*}
+    \onslide<+->{p & = \left( \vec{v}\times\vec{w} \right)\cdot\vec{z}}
+    \onslide<+->{\;=\; \begin{vmatrix}
+                         2 & 1  & 1  \\
+                         3 & 2  & -1 \\
+                         1 & -1 & 2
+                       \end{vmatrix}}
+    \\
+    \onslide<+->{& = 2
+      \begin{vmatrix}
+        2  & -1 \\
+        -1 & 2
+      \end{vmatrix}
+      -
+      \begin{vmatrix}
+        3 & -1 \\
+        1 & 2
+      \end{vmatrix}
+      +
+      \begin{vmatrix}
+        3 & 2  \\
+        1 & -1
+      \end{vmatrix}}
+    \\
+    \onslide<+->{& = 2(4-1) - (6+1) + (-3-2)} \\
+    \onslide<+->{& = 2 \times 3 - 7 - 5}
+    \onslide<+->{\;=\; -6}
+  \end{align*}
+
+  \[
+    \onslide<+->{V}
+    \onslide<+->{\;=\; \abs{p}}
+    \onslide<+->{\;=\; \abs{-6}}
+    \onslide<+->{\;=\; 6}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%

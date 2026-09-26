@@ -10,14 +10,19 @@
 
 \addtitle
 
-%------------------------------------------------
-
-\begin{frame}{Três vetores determinam um paralelepípedo}
+%------------------------------------------------------------------------------%
+\begin{frame}{Três Vetores Determinam um Paralelepípedo}
   Três vetores
   \(
-    \vec{v}, \vec{w}, \vec{z}
+    \vec{v}
+  \),
+  \(
+    \vec{w}
+  \) e
+  \(
+    \vec{z}
   \)
-  com a mesma origem
+  com mesma origem
 
   \pause
   \bigskip
@@ -25,844 +30,104 @@
 
   \pause
   \bigskip
-  O volume desse paralelepípedo é
+  Qual o volume desse paralelepípedo?
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Três Vetores Determinam um Paralelepípedo}{E-11-Volume_paralelepipedo-1}{}
+\framedgraphic*{Três Vetores Determinam um Paralelepípedo}{E-11-Volume_paralelepipedo-2}{}
+\framedgraphic*{Três Vetores Determinam um Paralelepípedo}{E-11-Volume_paralelepipedo-3}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Volume}
+  Volume do paralelepípedo
   \[
-    V \;=\;
-    \abs{\left( \vec{v}\times\vec{w} \right)\cdot\vec{z}}
+    \pause
+    \text{Volume} = \text{Área da Base} \times \text{Altura}
+  \]
+  \[
+    \pause
+    V = Ah
   \]
 
   \pause
+  A área da base é
+  \[
+    \pause
+    A = \norm{\vec{v}\times\vec{w}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Altura}{E-11-Volume_paralelepipedo-angulo-1}{}
+\framedgraphic*{Altura}{E-11-Volume_paralelepipedo-angulo-2}{}
+\framedgraphic*{Altura}{E-11-Volume_paralelepipedo-angulo-3}{}
+\framedgraphic*{Altura}{E-11-Volume_paralelepipedo-angulo-4}{}
+\framedgraphic*{Altura}{E-11-Volume_paralelepipedo-angulo-5}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Altura}
+  Se $\phi$ é o ângulo entre $\vec{z}$ e o vetor normal à base, a altura é
+  \[
+    h = \norm{\vec{z}} \; \abs{\cos(\phi)}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Volume}
+  Volume
+  \[
+    V = \norm{\vec{v}\times\vec{w}} \; \norm{\vec{z}} \; \abs{\cos(\phi)}
+  \]
+  \pause
+  Comparando com o produto escalar
+  \[
+    \vec{p} \cdot \vec{q} = \norm{\vec{p}} \; \norm{\vec{q}} \cos(\theta)
+  \]
+  \[
+    \pause
+    (\vec{v}\times\vec{w}) \cdot \vec{z} = \norm{\vec{v}\times\vec{w}} \; \norm{\vec{z}} \cos(\phi)
+  \]
+  \pause
+  \[
+    V = \abs{(\vec{v}\times\vec{w}) \cdot \vec{z}\,}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Volume do Paralelepípedo}
+  Dados três vetores
+  \(
+    \vec{v}
+  \),
+  \(
+    \vec{w}
+  \) e
+  \(
+    \vec{z}
+  \)
+  com mesma origem
+
+  \pause
   \bigskip
+  O volume do paralelepípedo é
+  \[
+    V \;=\;
+    \abs{\,\left( \vec{v}\times\vec{w} \right)\cdot\vec{z}\,}
+  \]
+
+  \pause
+  \smallskip
   O valor absoluto é necessário porque volume é uma grandeza não negativa
 \end{frame}
 
-%\begin{frame}{Volume: base vezes altura}
-%Escolhemos $\vec{v}$ e $\vec{w}$ para determinar a base
-%A área da base é
-%\[
-%A_B=\norm{\vec{v}\times\vec{w}}
-%\]
-%Se $\phi$ é o ângulo entre $\vec{z}$ e o vetor normal à base, a altura é
-%\[
-%h=\norm{\vec{z}}|\cos\phi|
-%\]
-%Portanto
-%\[
-%V=A_Bh
-%\]
-%\end{frame}
-%\begin{frame}{Construindo a fórmula}
-%Substituindo a área da base
-%\[
-%V=
-%\norm{\vec{v}\times\vec{w}}
-%\norm{\vec{z}}
-%|\cos\phi|
-%\]
-%O vetor $\vec{v}\times\vec{w}$ é normal à base
-%Assim
-%\[
-%\phi
-%\]
-%é o ângulo entre $\vec{v}\times\vec{w}$ e $\vec{z}$
-%Pela definição do produto escalar
-%\[
-%(\vec{v}\times\vec{w})\cdot\vec{z}
-%=
-%\norm{\vec{v}\times\vec{w}}
-%\norm{\vec{z}}
-%\cos\phi
-%\]
-%Logo
-%\[
-%V=
-%\left|
-%(\vec{v}\times\vec{w})\cdot\vec{z}
-%\right|
-%\]
-%\end{frame}
+%------------------------------------------------------------------------------%
+\input{ex/E-11-Volume_paralelepipedo-ex-1}
+\input{ex/E-11-Volume_paralelepipedo-ex-2}
+\input{ex/E-11-Volume_paralelepipedo-ex-3}
+%\input{ex/E-11-Volume_paralelepipedo-ex-4}
+%\input{ex/E-11-Volume_paralelepipedo-ex-5}
 
-%------------------------------------------------
-
-%\begin{frame}{Fórmula do volume}
-%Como
-%\[
-%[\vec{v},\vec{w},\vec{z}]
-%=
-%(\vec{v}\times\vec{w})\cdot\vec{z}
-%\]
-%temos
-%\[
-%V=
-%|[\vec{v},\vec{w},\vec{z}]|
-%\]
-%Portanto
-%\[
-%V=
-%\left|
-%\begin{vmatrix}
-%v_1&v_2&v_3\\
-%w_1&w_2&w_3\\
-%z_1&z_2&z_3
-%\end{vmatrix}
-%\right|
-%\]
-%O valor absoluto é necessário porque volume é uma grandeza não negativa
-%\end{frame}
-
-%------------------------------------------------
-
-\section{Exemplos}
-
-\begin{question}
-  Determine o volume do paralelepípedo determinado pelos vetores
-  \[
-    \vec{v} = (1, 2, 0)
-  \]
-  \[
-    \vec{w} = (2, -1, 1)
-  \]
-  \[
-    \vec{z} = (1, 0, 3)
-  \]
-\end{question}
-
-\begin{resolution}{Exemplo 1 — Resolução}
-  \begin{align*}
-    \onslide<+->{V & = \abs{\left( \vec{v}\times\vec{w} \right)\cdot\vec{z}}}
-    \\
-    \onslide<+->{& = \abs{\;\det \begin{pmatrix}
-      1 & 2  & 0 \\
-      2 & -1 & 1 \\
-      1 & 0  & 3
-    \end{pmatrix}\;}}
-    \\
-    \onslide<+->{& = \abs{\; \begin{vmatrix}
-        -1 & 1 \\
-        0  & 3
-      \end{vmatrix}
-      - 2 \begin{vmatrix}
-        2 & 1 \\
-        1 & 3
-      \end{vmatrix}^{\vphantom{I}}\;}}
-    \\
-    \onslide<+->{& = \abs{-3-10} \\}
-    \onslide<+->{& = 13}
-  \end{align*}
-\end{resolution}
-
-%------------------------------------------------
-
-\begin{question}
-  Calcule o volume do paralelepípedo determinado pelos vetores
-  \[
-    \vec{v} = (2, 1, 1)
-  \]
-  \[
-    \vec{w} = (1, -1, 2)
-  \]
-  \[
-    \vec{z} =(3, 2, -1)
-  \]
-\end{question}
-
-\begin{resolution}{Resolução}
-  \begin{align*}
-    \onslide<+->{p & = \left( \vec{v}\times\vec{w} \right)\cdot\vec{z}}
-    \onslide<+->{\;=\; \begin{vmatrix}
-                         2 & 1  & 1  \\
-                         1 & -1 & 2  \\
-                         3 & 2  & -1
-                       \end{vmatrix}}
-    \\
-    \onslide<+->{& = 2
-      \begin{vmatrix}
-      -1&2\\
-      2&-1
-      \end{vmatrix}
-      -
-      \begin{vmatrix}
-      1&2\\
-      3&-1
-      \end{vmatrix}
-      +
-      \begin{vmatrix}
-      1&-1\\
-      3&2
-      \end{vmatrix}}
-    \\
-    \onslide<+->{& = 2(-3)-(-7)+5} \\
-    \onslide<+->{& = 6}
-  \end{align*}
-
-  \[
-    \onslide<+->{V}
-    \onslide<+->{\;=\; \abs{6}}
-    \onslide<+->{\;=\; 6}
-  \]
-\end{resolution}
-
-%%------------------------------------------------
-%
-%\begin{frame}{Exemplo 3 — Volume determinado por pontos}
-%Considere os pontos
-%\[
-%A=(1,1,0)
-%\]
-%\[
-%B=(3,2,1)
-%\]
-%\[
-%C=(2,4,1)
-%\]
-%\[
-%D=(1,1,3)
-%\]
-%Determine o volume do paralelepípedo que possui $A$ como vértice e é determinado pelos vetores
-%\[
-%\overrightarrow{AB}
-%\qquad
-%\overrightarrow{AC}
-%\qquad
-%\overrightarrow{AD}
-%\]
-%\end{frame}
-%
-%\begin{frame}{Exemplo 3 — Resolução}
-%Calculamos os três vetores
-%\[
-%\overrightarrow{AB}
-%=
-%B-A
-%=
-%(2,1,1)
-%\]
-%\[
-%\overrightarrow{AC}
-%=
-%C-A
-%=
-%(1,3,1)
-%\]
-%\[
-%\overrightarrow{AD}
-%=
-%D-A
-%=
-%(0,0,3)
-%\]
-%O volume é
-%\[
-%V=
-%\left|
-%[\overrightarrow{AB},\overrightarrow{AC},\overrightarrow{AD}]
-%\right|
-%\]
-%\end{frame}
-%
-%\begin{frame}{Exemplo 3 — Resolução}
-%Temos
-%\[
-%V=
-%\left|
-%\begin{vmatrix}
-%2&1&1\\
-%1&3&1\\
-%0&0&3
-%\end{vmatrix}
-%\right|
-%\]
-%Expandindo pela terceira linha
-%\[
-%V=
-%3
-%\left|
-%\begin{vmatrix}
-%2&1\\
-%1&3
-%\end{vmatrix}
-%\right|
-%\]
-%\[
-%V=3|6-1|
-%\]
-%\[
-%V=15
-%\]
-%Portanto o volume do paralelepípedo é
-%\[
-%V=15
-%\]
-%\end{frame}
-%
-%%------------------------------------------------
-%
-%\begin{frame}{Exemplo 4 — Volume de um tetraedro}
-%Considere os pontos
-%\[
-%A=(0,0,0)
-%\]
-%\[
-%B=(2,1,0)
-%\]
-%\[
-%C=(1,3,2)
-%\]
-%\[
-%D=(0,1,4)
-%\]
-%Determine o volume do tetraedro $ABCD$
-%\end{frame}
-%
-%\begin{frame}{Exemplo 4 — Resolução}
-%Construímos
-%\[
-%\overrightarrow{AB}=(2,1,0)
-%\]
-%\[
-%\overrightarrow{AC}=(1,3,2)
-%\]
-%\[
-%\overrightarrow{AD}=(0,1,4)
-%\]
-%O paralelepípedo correspondente possui volume
-%\[
-%V_P=
-%\left|
-%\begin{vmatrix}
-%2&1&0\\
-%1&3&2\\
-%0&1&4
-%\end{vmatrix}
-%\right|
-%\]
-%\end{frame}
-%
-%\begin{frame}{Exemplo 4 — Resolução}
-%Calculando o determinante
-%\[
-%V_P=
-%\left|
-%2
-%\begin{vmatrix}
-%3&2\\
-%1&4
-%\end{vmatrix}
-%-
-%\begin{vmatrix}
-%1&2\\
-%0&4
-%\end{vmatrix}
-%\right|
-%\]
-%\[
-%V_P=|2(10)-4|
-%\]
-%\[
-%V_P=16
-%\]
-%Um tetraedro ocupa um sexto do paralelepípedo determinado pelos mesmos três vetores
-%\[
-%V_T=\frac16V_P
-%\]
-%\[
-%V_T=\frac{16}{6}
-%\]
-%\[
-%V_T=\frac83
-%\]
-%\end{frame}
-%
-%%------------------------------------------------
-%
-%\begin{frame}{Exemplo 5 — Determinação de um parâmetro}
-%Determine $k$ para que o paralelepípedo determinado por
-%\[
-%\vec{v}=(1,2,1)
-%\]
-%\[
-%\vec{w}=(2,-1,3)
-%\]
-%\[
-%\vec{z}=(k,1,2)
-%\]
-%tenha volume igual a $6$
-%\end{frame}
-%
-%\begin{frame}{Exemplo 5 — Resolução}
-%O volume é
-%\[
-%V=
-%\left|
-%\begin{vmatrix}
-%1&2&1\\
-%2&-1&3\\
-%k&1&2
-%\end{vmatrix}
-%\right|
-%\]
-%Expandindo pela primeira linha
-%\[
-%V=
-%\left|
-%\begin{vmatrix}
-%-1&3\\
-%1&2
-%\end{vmatrix}
-%-
-%2
-%\begin{vmatrix}
-%2&3\\
-%k&2
-%\end{vmatrix}
-%+
-%\begin{vmatrix}
-%2&-1\\
-%k&1
-%\end{vmatrix}
-%\right|
-%\]
-%\[
-%V=
-%|-5-2(4-3k)+(2+k)|
-%\]
-%\[
-%V=
-%|6k-11|
-%\]
-%Como o volume deve ser $6$
-%\[
-%|6k-11|=6
-%\]
-%\end{frame}
-%
-%\begin{frame}{Exemplo 5 — Resolução}
-%Temos duas possibilidades
-%\[
-%6k-11=6
-%\]
-%ou
-%\[
-%6k-11=-6
-%\]
-%Da primeira
-%\[
-%6k=17
-%\]
-%\[
-%k=\frac{17}{6}
-%\]
-%Da segunda
-%\[
-%6k=5
-%\]
-%\[
-%k=\frac56
-%\]
-%Portanto os valores possíveis são
-%\[
-%k=\frac56
-%\]
-%e
-%\[
-%k=\frac{17}{6}
-%\]
-%\end{frame}
-%
-%%------------------------------------------------
-%
-%\begin{frame}{Exemplo 6 — Vetores ortogonais}
-%Considere três vetores mutuamente ortogonais
-%\[
-%\vec{v}=(2,0,0)
-%\]
-%\[
-%\vec{w}=(0,3,0)
-%\]
-%\[
-%\vec{z}=(0,0,5)
-%\]
-%Determine o volume do paralelepípedo
-%\end{frame}
-%
-%\begin{frame}{Exemplo 6 — Resolução}
-%Como os vetores são mutuamente ortogonais
-%\[
-%\norm{\vec{v}}=2
-%\]
-%\[
-%\norm{\vec{w}}=3
-%\]
-%\[
-%\norm{\vec{z}}=5
-%\]
-%A base é um retângulo
-%\[
-%A_B=\norm{\vec{v}}\norm{\vec{w}}
-%\]
-%\[
-%A_B=6
-%\]
-%A altura é
-%\[
-%h=\norm{\vec{z}}=5
-%\]
-%Logo
-%\[
-%V=A_Bh
-%\]
-%\[
-%V=6\cdot5
-%\]
-%\[
-%V=30
-%\]
-%\end{frame}
-%
-%%------------------------------------------------
-%
-%\begin{frame}{Exemplo 7 — Volume a partir de área e altura}
-%Um paralelepípedo possui uma base com área
-%\[
-%A_B=12
-%\]
-%e uma aresta
-%\[
-%\vec{z}
-%\]
-%de módulo
-%\[
-%\norm{\vec{z}}=5
-%\]
-%O ângulo entre $\vec{z}$ e o vetor normal à base é
-%\[
-%\phi=\frac{\pi}{3}
-%\]
-%Determine o volume
-%\end{frame}
-%
-%\begin{frame}{Exemplo 7 — Resolução}
-%A altura é a componente de $\vec{z}$ na direção normal à base
-%\[
-%h=\norm{\vec{z}}|\cos\phi|
-%\]
-%Substituindo
-%\[
-%h=5\cos\frac{\pi}{3}
-%\]
-%\[
-%h=\frac52
-%\]
-%Portanto
-%\[
-%V=A_Bh
-%\]
-%\[
-%V=12\cdot\frac52
-%\]
-%\[
-%V=30
-%\]
-%\end{frame}
-%
-%%------------------------------------------------
-%
-%\begin{frame}{Exemplo 8 — Paralelismo e volume}
-%Considere
-%\[
-%\vec{v}=(1,2,1)
-%\]
-%\[
-%\vec{w}=(2,-1,3)
-%\]
-%\[
-%\vec{z}=2\vec{v}+\vec{w}
-%\]
-%Determine o volume do paralelepípedo determinado pelos três vetores
-%\end{frame}
-%
-%\begin{frame}{Exemplo 8 — Resolução}
-%Temos
-%\[
-%\vec{z}=2\vec{v}+\vec{w}
-%\]
-%Pela linearidade do produto misto
-%\[
-%[\vec{v},\vec{w},\vec{z}]
-%=
-%[\vec{v},\vec{w},2\vec{v}+\vec{w}]
-%\]
-%\[
-%[\vec{v},\vec{w},\vec{z}]
-%=
-%2[\vec{v},\vec{w},\vec{v}]
-%+
-%[\vec{v},\vec{w},\vec{w}]
-%\]
-%Como
-%\[
-%[\vec{v},\vec{w},\vec{v}]=0
-%\]
-%e
-%\[
-%[\vec{v},\vec{w},\vec{w}]=0
-%\]
-%temos
-%\[
-%[\vec{v},\vec{w},\vec{z}]=0
-%\]
-%Portanto
-%\[
-%V=0
-%\]
-%\end{frame}
-%
-%%------------------------------------------------
-%
-%\begin{frame}{Interpretação do Exemplo 8}
-%O vetor
-%\[
-%\vec{z}=2\vec{v}+\vec{w}
-%\]
-%pertence ao plano gerado por $\vec{v}$ e $\vec{w}$
-%Assim os três vetores são coplanares
-%Consequentemente
-%\[
-%[\vec{v},\vec{w},\vec{z}]=0
-%\]
-%e
-%\[
-%V=0
-%\]
-%O paralelepípedo é degenerado
-%\end{frame}
-%
-%%------------------------------------------------
-%
-%\begin{frame}{Exemplo 9 — Aplicação em engenharia}
-%Uma célula tridimensional de um modelo geométrico é definida pelas arestas
-%\[
-%\vec{v}=(4,1,0)
-%\]
-%\[
-%\vec{w}=(1,3,1)
-%\]
-%\[
-%\vec{z}=(0,2,4)
-%\]
-%Determine o volume da célula
-%\end{frame}
-%
-%\begin{frame}{Exemplo 9 — Resolução}
-%O volume é
-%\[
-%V=
-%\left|
-%\begin{vmatrix}
-%4&1&0\\
-%1&3&1\\
-%0&2&4
-%\end{vmatrix}
-%\right|
-%\]
-%Expandindo pela primeira linha
-%\[
-%V=
-%\left|
-%4
-%\begin{vmatrix}
-%3&1\\
-%2&4
-%\end{vmatrix}
-%-
-%\begin{vmatrix}
-%1&1\\
-%0&4
-%\end{vmatrix}
-%\right|
-%\]
-%\[
-%V=|4(10)-4|
-%\]
-%\[
-%V=36
-%\]
-%Portanto a célula possui volume
-%\[
-%V=36
-%\]
-%\end{frame}
-%
-%%------------------------------------------------
-%
-%\begin{frame}{Exemplo 10 — Volume de um sólido definido por pontos}
-%Considere os pontos
-%\[
-%A=(1,0,1)
-%\]
-%\[
-%B=(5,1,2)
-%\]
-%\[
-%C=(2,4,1)
-%\]
-%\[
-%D=(0,2,6)
-%\]
-%Determine o volume do paralelepípedo com vértice em $A$ e arestas
-%\[
-%\overrightarrow{AB}
-%\qquad
-%\overrightarrow{AC}
-%\qquad
-%\overrightarrow{AD}
-%\]
-%\end{frame}
-%
-%\begin{frame}{Exemplo 10 — Resolução}
-%Calculamos
-%\[
-%\overrightarrow{AB}=(4,1,1)
-%\]
-%\[
-%\overrightarrow{AC}=(1,4,0)
-%\]
-%\[
-%\overrightarrow{AD}=(-1,2,5)
-%\]
-%Logo
-%\[
-%V=
-%\left|
-%\begin{vmatrix}
-%4&1&1\\
-%1&4&0\\
-%-1&2&5
-%\end{vmatrix}
-%\right|
-%\]
-%\end{frame}
-%
-%\begin{frame}{Exemplo 10 — Resolução}
-%Expandindo pela primeira linha
-%\[
-%V=
-%\left|
-%4
-%\begin{vmatrix}
-%4&0\\
-%2&5
-%\end{vmatrix}
-%-
-%\begin{vmatrix}
-%1&0\\
-%-1&5
-%\end{vmatrix}
-%+
-%\begin{vmatrix}
-%1&4\\
-%-1&2
-%\end{vmatrix}
-%\right|
-%\]
-%\[
-%V=|4(20)-5+6|
-%\]
-%\[
-%V=81
-%\]
-%Portanto
-%\[
-%V=81
-%\]
-%\end{frame}
-%
-%%------------------------------------------------
-%
-%\section{Conexões}
-%
-%\begin{frame}{Paralelepípedo e produto misto}
-%As três etapas fundamentais são
-%\[
-%A_B=\norm{\vec{v}\times\vec{w}}
-%\]
-%\[
-%h=\norm{\vec{z}}|\cos\phi|
-%\]
-%e
-%\[
-%V=A_Bh
-%\]
-%Portanto
-%\[
-%V=
-%\left|
-%(\vec{v}\times\vec{w})\cdot\vec{z}
-%\right|
-%\]
-%ou
-%\[
-%V=|[\vec{v},\vec{w},\vec{z}]|
-%\]
-%\end{frame}
-%
-%%------------------------------------------------
-%
-%\begin{frame}{Paralelogramo, triângulo e paralelepípedo}
-%Para dois vetores
-%\[
-%A_P=\norm{\vec{v}\times\vec{w}}
-%\]
-%Para o triângulo
-%\[
-%A_T=\frac12\norm{\vec{v}\times\vec{w}}
-%\]
-%Para três vetores
-%\[
-%V_P=
-%|(\vec{v}\times\vec{w})\cdot\vec{z}|
-%\]
-%Para o tetraedro
-%\[
-%V_T=
-%\frac16
-%|(\vec{v}\times\vec{w})\cdot\vec{z}|
-%\]
-%\end{frame}
-%
-%%------------------------------------------------
-%
-%\begin{frame}{Síntese}
-%O produto vetorial fornece a área da base
-%\[
-%\norm{\vec{v}\times\vec{w}}
-%\]
-%O produto misto incorpora a altura
-%\[
-%[\vec{v},\vec{w},\vec{z}]
-%=
-%(\vec{v}\times\vec{w})\cdot\vec{z}
-%\]
-%Assim o volume do paralelepípedo é
-%\[
-%V=|[\vec{v},\vec{w},\vec{z}]|
-%\]
-%ou
-%\[
-%V=
-%\left|
-%\begin{vmatrix}
-%v_1&v_2&v_3\\
-%w_1&w_2&w_3\\
-%z_1&z_2&z_3
-%\end{vmatrix}
-%\right|
-%\]
-%\end{frame}
-
-%%------------------------------------------------------------------------------%
-%% \framedgraphic{Gráfico de uma Função Real}{B_01_grafico_funcao_real}{}
-%
 %%------------------------------------------------------------------------------%
 %\section{Lista Mínima}
 %
