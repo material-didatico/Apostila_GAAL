@@ -1,0 +1,272 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{gaal}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{GAAL}{Prova 2 -- Turma 4}{23/09/2026}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{20\%}
+Calcule determinante de
+\(
+  A =
+  \begin{pmatrix}
+    1 & 2 & 1 & 0 \\
+    2 & 1 & 0 & 1 \\
+    1 & 0 & 2 & 1 \\
+    0 & 1 & 1 & 2
+  \end{pmatrix}
+\)
+e determine se a matriz é invertível
+
+\begin{answer}
+\begin{align*}
+  \det(A)
+  & = a_{11}(-1)^{1+1} M_{11}
+    + a_{12}(-1)^{1+2} M_{12}
+    + a_{13}(-1)^{1+3} M_{13}
+    + a_{14}(-1)^{1+4} M_{14} \\
+  & = 1 M_{11} - 2 M_{12} + 1 M_{13} - 0 M_{14}   \\
+  & = M_{11} - 2 M_{12} + M_{13}
+\end{align*}
+\[
+  M_{11}
+  = \begin{vmatrix}
+      1 & 0 & 1 \\
+      0 & 2 & 1 \\
+      1 & 1 & 2
+    \end{vmatrix}
+  = 1 (-1)^{1+1}
+    \begin{vmatrix}
+      2 & 1 \\
+      1 & 2
+    \end{vmatrix}
+    + 0
+    + 1 (-1)^{1+3}
+    \begin{vmatrix}
+      0 & 2 \\
+      1 & 1
+    \end{vmatrix}
+  = (4-1)+(0-2)
+  = 3 - 2
+  = 1
+\]
+\[
+  M_{12}
+  = \begin{vmatrix}
+    2 & 0 & 1 \\
+    1 & 2 & 1 \\
+    0 & 1 & 2
+  \end{vmatrix}
+  = 2  (-1)^{1+1}
+  \begin{vmatrix}
+    2 & 1 \\
+    1 & 2
+  \end{vmatrix}
+  + 0
+  + 1 (-1)^{1+2}
+  \begin{vmatrix}
+    1 & 2 \\
+    0 & 1
+  \end{vmatrix}
+  = 2(4-1)+(1-0)
+  = 6 + 1
+  = 7
+\]
+\[
+  M_{13}
+  = \begin{vmatrix}
+    2 & 1 & 1 \\
+    1 & 0 & 1 \\
+    0 & 1 & 2
+  \end{vmatrix}
+  = 1 (-1)^{2+1}
+  \begin{vmatrix}
+    1 & 1 \\
+    1 & 2
+  \end{vmatrix}
+  + 0
+  - 1 (-1)^{2+3}
+  \begin{vmatrix}
+    2 & 1 \\
+    0 & 1
+  \end{vmatrix}
+  = -(4-0) - (2-0)
+  = -4 - 2
+  = -6
+\]
+\[
+  \det(A) = 1 -2 \times 7 -6 = -19
+\]
+
+Como
+\(
+  \det(A) \neq 0,
+\)
+$A$ é invertível
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Calcule a projeção ortogonal de
+\(
+  \vec{r} = \vetortri{1}{2}{-1}
+\)
+em
+\(
+  \vec{s} = \vetortri{2}{-1}{3}
+\)
+
+\begin{answer}
+  \[
+    \vec{r}\cdot\vec{s}
+    = \vetortri{1}{2}{-1} \cdot \vetortri{2}{-1}{3}
+    = 1 \times 2 + 2(-1) + (-1)3
+    = 2 - 2 - 3
+    = -3
+  \]
+  \[
+    \vec{s}\cdot\vec{s}
+    = \vetortri{2}{-1}{3} \cdot \vetortri{2}{-1}{3}
+    = 2^2 + (-1)^2 + 3^2
+    = 4 + 1 + 9
+    = 14
+  \]
+  \[
+    \projuv{r}{s}
+    = \frac{\vec{r}\cdot\vec{s}}{\vec{s}\cdot\vec{s}} \, \vec{s}
+    = \frac{-3}{14} \vetortri{2}{-1}{3}
+    = \Vetortri{\frac{-3}{7}}{\frac{3}{14}}{\frac{-9}{14}}
+  \]
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{20\%}
+Encontre o vetor unitário na direção e sentido de
+\(
+  \vec{\psi} = 2 \vetortri{2}{-1}{3} - 3 \vetortri{1}{2}{-1}
+\)
+
+\begin{answer}
+  \[
+    \vec{\psi}
+    = 2\vetortri{2}{-1}{3} - 3\vetortri{1}{2}{-1}
+    = \vetortri{4}{-2}{6} + \vetortri{-3}{-6}{3}
+    = \vetortri{1}{-8}{9}
+  \]
+  \[
+    \norm{\vec{\psi}}
+    = \norm{\vetortri{1}{-8}{9}}
+    = \sqrt{1^2+(-8)^2+9^2}
+    = \sqrt{1+64+81}
+    = \sqrt{146}
+  \]
+  \[
+    \hat{\psi}
+    = \frac{\vec{\psi}}{\norm{\vec{\psi}}}
+    = \frac{1}{\sqrt{146}} \vetortri{1}{-8}{9}
+    = \Vetortri{\frac{1}{\sqrt{146}}}{\frac{-8}{\sqrt{146}}}{\frac{9}{\sqrt{146}}}
+  \]
+\end{answer}
+
+% 04
+%------------------------------------------------------------------------------%
+\exercise{20\%}
+Calcule
+\(
+  \norm{(1,  2, 1) \times (2, -1, 3)}
+\)
+\begin{answer}
+  \begin{align*}
+    \vec{\psi}
+    & = (1,  2, 1) \times (2, -1, 3) \\
+    & = \begin{vmatrix}
+          \vec{i} & \vec{j} & \vec{k} \\
+          1        & 2        & 1       \\
+          2        & -1       & 3
+        \end{vmatrix}
+    \\
+    & = \vec{i}\, (-1)^{1+1}
+        \begin{vmatrix}
+          2 & 1 \\
+          -1 & 3
+        \end{vmatrix}
+      + \vec{j}\, (-1)^{1+2}
+        \begin{vmatrix}
+          1 & 1 \\
+          2 & 3
+        \end{vmatrix}
+      + \vec{k}\, (-1)^{1+3}
+        \begin{vmatrix}
+          1 & 2 \\
+          2 & -1
+        \end{vmatrix}
+    \\
+    & = \vec{i} (6 + 1)
+      - \vec{j} (3 - 2)
+      + \vec{k} (-1 -4) \\
+    & = 7\vec{i} - \vec{j} -5\vec{k} \\
+    & = \vetortri{7}{-1}{-5}
+  \end{align*}
+  \[
+    \norm{\vec{\psi}}
+    = \norm{\vetortri{7}{-1}{5}}
+    = \sqrt{7^2 + (-1)^2 + 5^2}
+    = \sqrt{49 + 1 + 25}
+    = \sqrt{75}
+  \]
+\end{answer}
+
+% 05
+%------------------------------------------------------------------------------%
+\exercise{20\%}
+calcule o produto misto dos vetores
+\(
+  \vec{p} = \vetortri{1}{2}{0}
+\),
+\(
+  \vec{q} = \vetortri{2}{-1}{1}
+\) e
+\(
+  \vec{r} = \vetortri{1}{0}{3}
+\)
+
+\begin{answer}
+\begin{align*}
+  \left(\vec{p} \times \vec{q}\right) \cdot \vec{r}
+  & = \begin{vmatrix}
+    1 & 2  & 0 \\
+    2 & -1 & 1 \\
+    1 & 0  & 3
+  \end{vmatrix}
+  \\
+  & = 1
+    \begin{vmatrix}
+      -1 & 1 \\
+      0  & 3
+    \end{vmatrix}
+    - 2
+    \begin{vmatrix}
+      2 & 1 \\
+      1 & 3
+    \end{vmatrix}
+    + 0
+  \\
+  & = 1(-3-0) -2(6-1) \\
+  & = -3 - 10 \\
+  & = -13
+\end{align*}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+
