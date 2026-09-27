@@ -1,0 +1,103 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine a posição relativa entre as retas
+  \[
+    r\colon
+    \begin{cases}
+      x = t   \\
+      y = 1+t \\
+      z = 2t
+    \end{cases}
+  \qquad\qquad
+    s\colon
+    \begin{cases}
+      x = 1+\tau \\
+      y = 2-\tau \\
+      z = 1+\tau
+    \end{cases}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Os vetores diretores são
+  \[
+    \vec{v} = (1, 1, 2)
+  \]
+  \[
+    \vec{w} = (1, -1, 1)
+  \]
+
+  \pause
+  Eles não são paralelos
+
+  \pause
+  Então, as retas podem ser concorrentes ou reversas
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Construindo o vetor conectando as duas retas
+  \[
+    \pause
+    \vec{p} = (0, 1, 0)
+  \]
+
+  \[
+    \pause
+    \vec{q} = (1, 2, 1)
+  \]
+
+  \[
+    \pause
+    \vec{d}
+    \pause
+    = \vec{q} - \vec{p}
+    \pause
+    = (1, 2, 1) - (0, 1, 0)
+    \pause
+    = (1, 1, 1)
+  \]
+
+  \pause
+  Precisamos verificar se os vetores $\vec{v}$, $\vec{w}$ e $\vec{d}$ são coplanares
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Produto misto}
+  \begin{align*}
+    \onslide<+->{(\vec{v} \times \vec{w}) \cdot \vec{d}}
+    \onslide<+->{& = \begin{vmatrix}
+          1 & 1  & 2 \\
+          1 & -1 & 1 \\
+          1 & 1  & 1
+        \end{vmatrix}}
+    \onslide<+->{\;=\; 1
+      \begin{vmatrix}
+        -1 & 1 \\
+        1  & 1
+      \end{vmatrix}
+      - 1
+      \begin{vmatrix}
+        1 & 1 \\
+        1 & 1
+      \end{vmatrix}
+      + 2
+      \begin{vmatrix}
+        1 & -1 \\
+        1 & 1
+      \end{vmatrix}}
+    \\
+    \onslide<+->{& = (-1-1)-0+2(1+1) \\}
+    \onslide<+->{& = 2}
+    \onslide<+->{\neq 0}
+  \end{align*}
+
+  \onslide<+->{Os vetores não são coplanares}
+
+  \onslide<+->{Consequentemente, as retas são reversas}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

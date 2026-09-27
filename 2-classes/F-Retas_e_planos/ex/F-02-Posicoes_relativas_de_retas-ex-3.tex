@@ -1,0 +1,68 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine a posição relativa entre as retas e, caso exista, o ponto de interseção
+  \[
+    r\colon
+    \begin{cases}
+      x = 1 +  t  \\
+      y = 2 -  t  \\
+      z = 3 + 2t
+    \end{cases}
+  \qquad\qquad
+    s\colon
+    \begin{cases}
+      x = 3 - 5    \\
+      y =     \tau \\
+      z = 7 -2\tau
+    \end{cases}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Os vetores diretores são
+  \[
+    \vec{v} = (1, -1, 2)
+  \]
+  \[
+    \vec{w} = (-1, 1, -2)
+  \]
+
+  \pause
+  Como
+  \[
+    \vec{w} = -\vec{v}
+  \]
+  \pause
+  as retas são paralelas
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Para verificar se são coincidentes,
+  \pause
+  comparamos os pontos
+  \[
+    P = (1,2,3)
+  \]
+  \[
+    Q = (3,0,7)
+  \]
+  \pause
+  Temos
+  \[
+    Q - P
+    \pause
+    = (2, -2, 4)
+    \pause
+    = 2\vec{v}
+  \]
+  \pause
+  Portanto, o ponto $Q$ pertence à reta $r$
+
+  \pause
+  Consequentemente, as duas retas são coincidentes
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

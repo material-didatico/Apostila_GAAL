@@ -1,0 +1,64 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine a posição relativa entre as retas
+  \[
+    r\colon
+    \begin{cases}
+      x =  1 +  t \\
+      y =  2 + 2t \\
+      z = -1 + 3t
+    \end{cases}
+  \qquad\qquad
+    s\colon
+    \begin{cases}
+      x & = 4 + 2\tau \\
+      y & = 1 + 4\tau \\
+      z & = 2 + 6\tau
+    \end{cases}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.3\textwidth}
+  \onslide<+->{Os vetores diretores são}
+  \[
+    \onslide<+->{\vec{v} = (1, 2, 3)}
+  \]
+  \[
+    \onslide<+->{\vec{w} = (2, 4, 6)}
+  \]
+  \onslide<+->{Como
+  \[
+    \vec{w} = 2\vec{v}
+  \]}
+  \onslide<+->{as retas são paralelas}
+\column{0.3\textwidth}
+  \onslide<+->{Verificar se
+  \[
+    P = (1, 2, -1) \in s
+  \]}
+  \vspace{-\baselineskip}
+  \begin{align*}
+    \onslide<+->{x     & = 4 + 2\tau    \\}
+    \onslide<+->{1     & = 4 + 2\tau    \\}
+    \onslide<+->{2\tau & = -3           \\}
+    \onslide<+->{\tau  & = \frac{-3}{2}}
+  \end{align*}
+\column{0.3\textwidth}
+  \begin{align*}
+    \onslide<+->{y & = 1 + 4\tau         \\}
+    \onslide<+->{  & = 1 + 4\frac{-3}{2} \\}
+    \onslide<+->{  & = -5 \\}
+    \onslide<+->{  & \neq 2}
+  \end{align*}
+  \onslide<+->{portanto, \(P\notin s\)}
+
+  \medskip
+  \onslide<+->{As retas são\\ paralelas distintas}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

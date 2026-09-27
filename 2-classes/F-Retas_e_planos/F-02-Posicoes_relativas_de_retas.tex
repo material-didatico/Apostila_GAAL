@@ -1,0 +1,308 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Posições Relativas de Retas}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Posições Relativas no Plano}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Posições Relativas no Plano}
+  \centering%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-conc-1}\;\pause%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-para-1}\;\pause%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-coin-1}%
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Posições Relativas entre Duas Retas no Plano}
+  No plano, duas retas podem ser
+  \pause
+  \begin{itemize}
+      \item concorrentes        \pause \tabto{36mm} --- \quad se tocam em um único ponto \pause
+      \item paralelas distintas \pause \tabto{36mm} --- \quad não se tocam               \pause
+      \item coincidentes        \pause \tabto{36mm} --- \quad são a mesma reta
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Determinando a Posição Relativa entre Duas Retas no Plano}
+  Dadas duas retas
+  \begin{align*}
+    r\colon \; \vec{r} & = \vec{p} + t    \, \vec{v} \\
+    s\colon \; \vec{r} & = \vec{q} + \tau \, \vec{w}
+  \end{align*}
+
+  \pause
+  Analisamos os vetores diretores  \(\vec{v}\) e \(\vec{w}\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}<handout:0>{Posições Relativas}
+  \centering%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-conc-1}\;%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-para-1}\;%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-coin-1}%
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}<handout:0>{Posições Relativas}
+  \centering%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-conc-2}\;%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-para-1}\;%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-coin-1}%
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}<handout:0>{Posições Relativas}
+  \centering%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-conc-2}\;%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-para-2}\;%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-coin-1}%
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Posições Relativas}
+  \centering%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-conc-2}\;%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-para-2}\;%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-coin-2}%
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Retas Paralelas no Plano}
+  Se $\vec{v}$ e $\vec{w}$ \emph{não} são paralelos,
+  \pause
+  as retas são \emph{concorrentes}
+
+  \bigskip
+  \pause
+  Se os vetores são \emph{paralelos},
+  \pause
+  i.e., existe $\alpha\in\R$ tal que
+  \[
+    \vec{w} = \alpha\vec{v}
+  \]
+  \pause
+  as retas são
+  \pause
+  \begin{itemize}
+    \item \emph{coincidentes}, \pause se possuem um ponto em comum \pause
+    \item \emph{paralelas distintas}, caso contrário
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/F-02-Posicoes_relativas_de_retas-ex-1}
+\input{ex/F-02-Posicoes_relativas_de_retas-ex-2}
+
+%------------------------------------------------------------------------------%
+\section{Posições Relativas no Espaço}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Posições Relativas entre Retas no Espaço}
+  No \emph{espaço}, duas retas podem ser
+  \pause
+  \begin{itemize}
+    \item concorrentes        \pause \tabto{34mm} --- \quad se tocam em um único ponto \pause
+    \item paralelas distintas \pause \tabto{34mm} --- \quad ``mantêm a distância''     \pause
+    \item coincidentes        \pause \tabto{34mm} --- \quad são a mesma reta           \pause
+    \item reversas            \pause \tabto{34mm} --- \quad
+          não são paralelas \pause
+          e não possuem ponto de interseção
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Retas Reversas em $\R^3$}
+  Dadas duas retas
+  \begin{align*}
+    r\colon \; \vec{r} & = \vec{p} + t    \, \vec{v} \\
+    s\colon \; \vec{r} & = \vec{q} + \tau \, \vec{w}
+  \end{align*}
+  \pause
+  Verificamos se existe $\alpha$, tal que
+  \[
+    \vec{v} = \alpha\vec{w}
+  \]
+  \pause
+  Se os vetores forem paralelos as retas são
+  \emph{paralelas distintas} ou \emph{coincidentes}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Retas Reversas em $\R^3$}
+  Se os vetores \emph{não} forem paralelos
+
+  \pause
+  \bigskip
+  Se as retas estiverem no mesmo plano elas são \emph{concorrentes}
+
+  \pause
+  \bigskip
+  Se estiverem em planos diferentes são \emph{reversas}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}<handout:0>{Retas Reversas}
+  \centering%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-conc-2}\;%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-para-2}\;%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-coin-2}%
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}<handout:0>{Retas Reversas}
+  \centering%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-conc-3}\;%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-para-2}\;%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-coin-2}%
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}<handout:0>{Retas Reversas}
+  \centering%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-conc-3}\;%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-para-3}\;%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-coin-2}%
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Retas Reversas}
+  \centering%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-conc-3}\;%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-para-3}\;%
+  \includegraphics{F-02-Posicoes_relativas_de_retas-coin-3}%
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Retas Reversas em $\R^3$}
+  As retas são coplanares,
+  \pause
+  se os vetores
+  \(
+    \vec{v}
+  \)
+  \(
+    \vec{w}
+  \)
+  e
+  \(
+    \vec{q}-\vec{p}
+  \)
+  são coplanares
+  \pause
+  \[
+    \left(\vec{v} \times \vec{w}\right) \cdot \left(\vec{p}-\vec{q}\right) = 0
+  \]
+  \pause
+  nesse caso, as retas são \emph{concorrentes}
+
+  \pause
+  \bigskip
+  Se
+  \(
+    \left(\vec{v} \times \vec{w}\right) \cdot \left(\vec{p}-\vec{q}\right) \neq 0
+  \)
+  \pause
+  as retas são \emph{reversas}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/F-02-Posicoes_relativas_de_retas-ex-3}
+\input{ex/F-02-Posicoes_relativas_de_retas-ex-4}
+\input{ex/F-02-Posicoes_relativas_de_retas-ex-5}
+
+%------------------------------------------------------------------------------%
+\section{Procedimento Geral}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Determinar a Posição Relativa}
+  Dadas as retas
+  \begin{align*}
+    r\colon \; \vec{r} & = \vec{p} + t    \, \vec{v} \\
+    s\colon \; \vec{r} & = \vec{q} + \tau \, \vec{w}
+  \end{align*}
+
+  \pause
+  Verificamos se os vetores diretores são paralelos
+  \[
+    \vec{w} \;\stackrel{?}{=}\; \alpha \vec{v}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Determinar a Posição Relativa}
+  Se os vetores diretores forem \emph{paralelos}
+  \[
+    \pause
+    \vec{v} = \alpha \vec{w}
+  \]
+  \pause
+  as retas são paralelas ou coincidentes
+
+  \bigskip
+  \pause
+  Se
+  \(
+    \vec{p}-\vec{q}
+  \)
+  \pause
+  é paralelo a \(\vec{v}\)
+  \pause
+  e as retas são coincidentes
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Determinar a Posição Relativa}
+  Se os vetores \emph{não} forem paralelos
+
+  \bigskip
+  \pause
+  No \emph{plano}: as retas são concorrente
+
+  \bigskip
+  \pause
+  No \emph{espaço}: calculamos o produto misto \;
+  \(
+    \left(\vec{v} \times \vec{w}\right) \cdot \left(\vec{p}-\vec{q}\right)
+  \)
+
+  \medskip
+  \pause
+  \qquad Se o produto misto for zero,
+  \pause
+  as retas são coplanares e concorrentes
+
+  \pause
+  \qquad Se o produto misto for diferente de zero,
+  \pause
+  as retas são reversas
+\end{frame}
+
+%------------------------------------------------------------------------------%
+%\input{ex/F-02-Posicoes_relativas_de_retas-ex-6}
+
+%%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
