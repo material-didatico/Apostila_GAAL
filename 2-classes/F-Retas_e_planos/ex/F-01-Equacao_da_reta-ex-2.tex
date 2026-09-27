@@ -1,0 +1,48 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine as equações paramétricas da reta que passa pelos pontos
+  \[
+    A = (1, 2, -1)
+  \]
+  \[
+    B = (4, -2, 5)
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Vetor diretor
+  \pause
+  \[
+    \vec{v}
+    \pause
+    = \overrightarrow{AB}
+    \pause
+    = B - A
+    \pause
+    = \vetortri{4}{-2}{5} - \vetortri{1}{2}{-1}
+    \pause
+    = \vetortri{3}{-4}{6}
+  \]
+
+  \pause
+  Equação da reta
+  \(
+    \pause
+    \vec{r} = A + t\vec{v}
+  \)
+  \[
+    \pause
+    \vetortri{x}{y}{z} = \vetortri{1}{2}{-1} + t\vetortri{3}{-4}{6}
+  \qquad\qquad\qquad
+    \pause
+    \begin{cases}
+      x =  1 + 3t \\
+      y =  2 - 4t \\
+      z = -1 + 6t
+    \end{cases}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

@@ -1,0 +1,181 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Equação da Reta}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Equação Vetorial da Reta}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Equação Vetorial da Reta}{F-01-Equacao_da_reta-1}{}
+\framedgraphic*{Equação Vetorial da Reta}{F-01-Equacao_da_reta-2}{}
+\framedgraphic*{Equação Vetorial da Reta}{F-01-Equacao_da_reta-3}{}
+\framedgraphic*{Equação Vetorial da Reta}{F-01-Equacao_da_reta-4}{}
+\framedgraphic*{Equação Vetorial da Reta}{F-01-Equacao_da_reta-5}{}
+\framedgraphic*{Equação Vetorial da Reta}{F-01-Equacao_da_reta-6}{}
+\framedgraphic*{Equação Vetorial da Reta}{F-01-Equacao_da_reta-7}{}
+\framedgraphic*{Equação Vetorial da Reta}{F-01-Equacao_da_reta-8}{}
+\framedgraphic*{Equação Vetorial da Reta}{F-01-Equacao_da_reta-9}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equação Vetorial da Reta}
+  \onslide<+->{Uma reta é determinada por}
+  \begin{itemize}[<+->]
+      \item um ponto pertencente à reta
+      \item um vetor não nulo paralelo à reta
+            \onslide<+->{(vetor diretor)}
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equação Vetorial da Reta}
+  Dados um \emph{ponto da reta}, $P$,
+  \pause
+  e um \emph{vetor diretor}, $\vec{v}$
+
+  \pause
+  Para qualquer ponto $R$ da reta
+
+  \pause
+  o vetor $\overrightarrow{PR}$ é paralelo a $\vec{v}$
+
+  \pause
+  Assim, existe $t\in\R$, tal que
+  \[
+    \pause
+    \overrightarrow{PR} = t\vec{v}
+  \]
+  \pause
+  então
+  \[
+    R = P + t\vec{v}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equação vetorial da reta}
+  Se\quad
+  \(
+    \vec{p} = \vetortri{a}{b}{c}         \qquad \pause
+    \vec{v} = \vetortri{v_1}{v_2}{v_3}   \qquad \pause
+    \vec{r} = \vetortri{x}{y}{z}
+  \)
+
+  \pause
+  A equação vetorial
+  \[
+    \vec{r} = \vec{p} + t\vec{v}
+  \]
+  \pause
+  é escrita como
+  \[
+    \pause
+    \vetortri{x}{y}{z}
+    \pause
+    \;=\; \vetortri{a}{b}{c}
+    \pause
+    \;+\; t\; \vetortri{v_1}{v_2}{v_3}
+    \pause
+    \qquad t \in \R
+  \]
+
+  \pause
+  $\vec{r}$ é chamado de \emph{vetor posição} e representa um ponto qualquer
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/F-01-Equacao_da_reta-ex-1}
+
+%------------------------------------------------------------------------------%
+\section{Equações Paramétricas}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equações Paramétricas}
+  Escrevendo
+ \[
+    \vetortri{x}{y}{z}
+    \;=\; \vetortri{a}{b}{c}
+    \;+\; t\; \vetortri{v_1}{v_2}{v_3}
+    \qquad t \in \R
+  \]
+  \pause
+  separadamente para cada coordenada,
+  \pause
+  temos as \emph{Equações Paramétricas da Reta}
+  \[
+    \pause
+    \begin{cases}
+      x = a + t\,v_1 \\
+      y = b + t\,v_2 \\
+      z = c + t\,v_3
+    \end{cases}
+  \]
+  \pause
+  $t \in \R$ é o \emph{parâmetro}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/F-01-Equacao_da_reta-ex-2}
+\input{ex/F-01-Equacao_da_reta-ex-3}
+
+%------------------------------------------------------------------------------%
+\section{Equações Simétricas}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equações Simétricas}
+  Se $v_1$, $v_2$ e $v_3$ forem diferentes de zero,
+  \pause
+  isolamos o $t$ em
+  \[
+    \pause
+    \begin{cases}
+      x = a + tv_1 \\
+      y = b + tv_2 \\
+      z = c + tv_3
+    \end{cases}
+  \]
+  \pause
+  obtendo
+  \[
+    \pause
+    t = \frac{x-a}{v_1} \qquad \pause
+    t = \frac{y-b}{v_2} \qquad \pause
+    t = \frac{z-c}{v_3}
+  \]
+  \pause
+  Para qualquer ponto na reta
+  \[
+    \pause
+    \frac{x-a}{v_1} \;=\;
+    \frac{y-b}{v_2} \;=\;
+    \frac{z-c}{v_3}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/F-01-Equacao_da_reta-ex-4}
+\input{ex/F-01-Equacao_da_reta-ex-5}
+
+%%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
