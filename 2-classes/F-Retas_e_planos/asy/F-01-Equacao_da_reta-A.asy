@@ -17,7 +17,7 @@ dot( V );
 dot( W );
 
 draw( P--V, pens[0]+1.2, Arrow(size=4mm) );
-
+draw( P--W, pens[1]+0.7, Arrow(size=4mm) );
 
 dot( P );
 
@@ -28,11 +28,11 @@ label( "$R$", W, N );
 
 label( "$\vec{p} = (a, b)$", P, SE );
 label( "$\vec{q} = (c, d)$", V, SE );
-label( "?",                  W, SE );
+label( "$\vec{r} = \vec{p} + t\vec{v} = (a+tv_1, b+tv_2)$", W, SE );
 
+label( "$t\vec{v}$", 0.8W, SE );
 
-
-label( "$\vec{v}\vphantom{(}$", 0.5V, SE );
+label( "$\vec{v}=\vec{q}-\vec{p}=(v_1, v_2)=(c-a, d-b)$", 0.5V, SE );
 
 draw( box_min--box_max, invisible );
 clip(box(box_min, box_max));

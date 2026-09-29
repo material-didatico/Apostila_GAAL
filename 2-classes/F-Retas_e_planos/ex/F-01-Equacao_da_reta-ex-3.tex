@@ -1,10 +1,14 @@
 %------------------------------------------------------------------------------%
 \begin{question}
-  Determine se o ponto
+  Determine se os pontos
   \(
     P = (0, 7, 8)
   \)
-  pertence à reta
+  e
+  \(
+    Q = (1, 5, 9)
+  \)
+  pertencem à reta
   \[
     r\colon
     \begin{cases}
@@ -17,23 +21,23 @@
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
-  \onslide<+->{Para que $P$ pertença à reta,}
+  \onslide<+->{Para que $P = (0, 7, 8)$ pertença à reta,}
   \onslide<+->{deve existir um mesmo valor de $t\in\R$} \\
   \onslide<+->{que satisfaça as três equações}
 \begin{columns}
-\column{0.3\textheight}
+\column{0.2\textwidth}
   \begin{align*}
     \onslide<+->{x & = 2 - t \\}
     \onslide<+->{0 & = 2 - t \\}
     \onslide<+->{t & = 2}
   \end{align*}
-\column{0.3\textheight}
+\column{0.2\textwidth}
   \begin{align*}
     \onslide<+->{y & = 1 + 3t \\}
     \onslide<+->{  & = 1 + 3\times 2 \\}
     \onslide<+->{  & = 7}
   \end{align*}
-\column{0.3\textheight}
+\column{0.2\textwidth}
   \begin{align*}
     \onslide<+->{z & = 4 + 2t \\}
     \onslide<+->{  & = 4 + 2\times 2 \\}
@@ -43,6 +47,30 @@
 
   \onslide<+->{As três coordenadas são satisfeitas pelo mesmo parâmetro,} \\
   \onslide<+->{portanto, $P\in r$}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Para $Q = (1, 5, 9)$}
+\begin{columns}
+\column{0.2\textwidth}
+  \begin{align*}
+    \onslide<+->{x & = 2 - t \\}
+    \onslide<+->{1 & = 2 - t \\}
+    \onslide<+->{t & = 2 - 1 \\}
+    \onslide<+->{t & = 1 }
+  \end{align*}
+\column{0.2\textwidth}
+  \begin{align*}
+    \onslide<+->{y & = 1 + 3t \\}
+    \onslide<+->{  & = 1 + 3\times 1 \\}
+    \onslide<+->{  & = 4 \\}
+    \onslide<+->{  & \neq 5}
+  \end{align*}
+\end{columns}
+
+  \onslide<+->{Não existe um valor de $t$ que satistaça as três coordenadas} \\
+  \onslide<+->{portanto, $Q\notin r$}
 \end{resolution}
 
 %------------------------------------------------------------------------------%

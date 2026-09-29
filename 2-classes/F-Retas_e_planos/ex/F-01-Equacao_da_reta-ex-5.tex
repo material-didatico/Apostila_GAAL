@@ -10,40 +10,45 @@
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
-  Introduzimos um parâmetro comum
-  \pause
+  \onslide<+->{Introduzimos um parâmetro comum}
   \[
-    \frac{x-1}{2}
+    \onslide<+->{\frac{x-1}{2}
     = \frac{y+3}{-1}
-    = \frac{z-2}{4} \pause
-    \;=\; t
+    = \frac{z-2}{4}}
+    \onslide<+->{\;=\; t}
   \]
-  \pause
-  Assim,
-  \[
-    x =  1 + 2t \qquad\pause
-    y = -3 -  t \qquad\pause
-    z =  2 + 4t
-  \]
-  \pause
-  Portanto
+  \onslide<+->{Isolando as coordenadas}
+\begin{columns}
+\column{0.2\textwidth}
+  \begin{gather*}
+    \onslide<+->{\frac{x-1}{2} = t       \\}
+    \onslide<+->{x             =  1 + 2t}
+  \end{gather*}
+\column{0.2\textwidth}
+  \begin{gather*}
+    \onslide<+->{\frac{y+3}{-1} = t       \\}
+    \onslide<+->{y              = -3 -  t}
+  \end{gather*}
+\column{0.2\textwidth}
+  \begin{gather*}
+    \onslide<+->{\frac{z-2}{4} = t       \\}
+    \onslide<+->{z             =  2 + 4t}
+  \end{gather*}
+\end{columns}
+  \onslide<+->{Equação Vetorial
   \[
     (x, y, z) = (1, -3, 2) +t(2, -1, 4)
-  \]
-
-  \pause
-  O ponto
-  \(
-    P = (1, -3, 2)
-  \)
-  pertence à reta
-
-  \pause
-  e
-  \(
-    \vec{v} = (2, -1, 4)
-  \)
-  é um vetor diretor
+  \]}
+%  O ponto
+%  \(
+%    P = (1, -3, 2)
+%  \)
+%  pertence à reta
+%  e
+%  \(
+%    \vec{v} = (2, -1, 4)
+%  \)
+%  é um vetor diretor
 \end{resolution}
 
 %------------------------------------------------------------------------------%

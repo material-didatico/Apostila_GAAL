@@ -5,7 +5,7 @@ import "../../0-common/asy/utils.ah" as utils;
 size(0, 7.5cm);
 
 pair box_min = (-1, -1);
-pair box_max = ( 8,  5);
+pair box_max = (9, 5);
 
 pair P = ( 0, 0 );
 pair V = ( 3, 2 );
