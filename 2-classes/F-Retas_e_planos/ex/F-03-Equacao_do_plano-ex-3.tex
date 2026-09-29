@@ -1,0 +1,75 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine a equação geral do plano que passa pelos pontos
+  \[
+    A = (1, 0, 2)
+  \]
+  \[
+    B = (3, 1, 1)
+  \]
+  \[
+    C = (0, 2, 3)
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Construímos dois vetores contidos no plano
+
+  \pause
+  \[
+    \vec{v}
+    \pause
+    = \overrightarrow{AB}
+    \pause
+    = B - A
+    \pause
+    = (3, 1, 1) - (1, 0, 2)
+    \pause
+    = (2, 1, -1)
+  \]
+
+  \pause
+  \[
+    \vec{w}
+    \pause
+    = \overrightarrow{AC}
+    \pause
+    = C - A
+    \pause
+    = (0, 2, 3) - (1, 0, 2)
+    \pause
+    = (-1, 2, 1)
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Um vetor normal é}
+  \begin{align*}
+    \onslide<+->{\vec{n}}
+    \onslide<+->{& = \vec{v} \times \vec{w} \\}
+    \onslide<+->{& = \begin{vmatrix}
+          \vec{i} & \vec{j} & \vec{k} \\
+          2       & 1       & -1      \\
+          -1      & 2       & 1
+        \end{vmatrix}}
+    \\
+    \onslide<+->{& = (3, -1 ,5)}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Usando o ponto $A=(1,0,2)$}
+  \begin{align*}
+    \onslide<+->{\vec{n} \cdot \overrightarrow{AP} & = 0 \\}
+    \onslide<+->{(3, -1 ,5) \cdot (x-1, y-0, z-2)  & = 0 \\}
+    \onslide<+->{3(x-1)-y+5(z-2)                   & = 0 \\}
+    \onslide<+->{3x-3-y+5z-10                      & = 0 \\}
+    \onslide<+->{3x-y+5z-13                        & = 0}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

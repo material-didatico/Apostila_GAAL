@@ -1,0 +1,174 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Equação do Plano}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Equação Vetorial do Plano}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Plano Determinado por um Ponto e Dois Vetores}
+  \onslide<+->{Um plano pode ser determinado por}
+  \begin{itemize}[<+->]
+      \item um ponto $A$ pertencente ao plano
+      \item dois vetores não nulos e não paralelos $\vec{v}$ e $\vec{w}$
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic{Plano Determinado por um Ponto e Dois Vetores}{F-03-Equacao_do_plano-1}{}
+\framedgraphic{Plano Determinado por um Ponto e Dois Vetores}{F-03-Equacao_do_plano-2}{}
+\framedgraphic{Plano Determinado por um Ponto e Dois Vetores}{F-03-Equacao_do_plano-3}{}
+\framedgraphic{Plano Determinado por um Ponto e Dois Vetores}{F-03-Equacao_do_plano-4}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Plano Determinado por um Ponto e Dois Vetores}
+  \onslide<+->{Se $P$ é um ponto qualquer do plano,}
+
+  \onslide<+->{então o vetor $\overrightarrow{AP}$}
+
+  \onslide<+->{pode ser escrito como combinação linear de $\vec{v}$ e $\vec{w}$}
+  \begin{align*}
+    \onslide<+->{\overrightarrow{AP} & = s\vec{v} + t\vec{w} \\}
+    \onslide<+->{P - A & = s\vec{v} + t\vec{w} \\}
+    \onslide<+->{P & = A + s\vec{v} + t\vec{w} }
+  \end{align*}
+  \onslide<+->{com $s$, $t\in\R$}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equação Vetorial do Plano}
+  Se
+  \(
+    \pause
+    A = \vetortri{x_0}{y_0}{z_0}
+    \pause\qquad
+    \vec{v} = \vetortri{a}{b}{c}
+    \pause\qquad
+    \vec{w} = \vetortri{d}{e}{f}
+  \)
+
+  \pause
+  \smallskip
+  a \emph{Equação Vetorial do Plano} é
+  \[
+    \pause
+    \vec{r} = A + s\vec{v} + t\vec{w}
+  \]
+  \[
+    \pause
+    \vetortri{x}{y}{z}
+    = \vetortri{x_0}{y_0}{z_0}
+    + s\vetortri{a}{b}{c}
+    + t\vetortri{d}{e}{f}
+    \qquad\qquad
+    s, \, t \in \R
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equações Paramétricas do Plano}
+  Reescrevendo
+  \[
+    \vetortri{x}{y}{z}
+    = \vetortri{x_0}{y_0}{z_0}
+    + s\vetortri{a}{b}{c}
+    + t\vetortri{d}{e}{f}
+  \]
+  \pause
+  compomente por componente,
+  \pause
+  obtemos as \emph{Equações Paramétricas do Plano}
+  \[
+    \pause
+    \begin{cases}
+      x = x_0 + as + dt \\
+      y = y_0 + bs + et \\
+      z = z_0 + cs + ft
+    \end{cases}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/F-03-Equacao_do_plano-ex-1}
+
+%------------------------------------------------------------------------------%
+\section{Equação Geral do Plano}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Vetor Normal ao Plano}
+  Qualquer vetor ortogonal ao plano é um vetor \emph{normal ao plano}
+
+  \pause
+  \bigskip
+  Um vetor normal a um plano é ortogonal a todos os vetores contidos no plano
+
+  \pause
+  \bigskip
+  Dados vetores $\vec{v}$ e $\vec{w}$ não nulos e não paralelos no plano
+
+  \pause
+  \bigskip
+  \(\vec{v} \times \vec{w}\) é um vetor normal ao plano
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equação Geral do Plano}
+  Considere um plano que contém o \emph{ponto}
+  \[
+    A = (x_0, y_0, z_0)
+  \]
+  \pause
+  e possui \emph{vetor normal}
+  \[
+    \vec{n} = \vetortri{a}{b}{c}
+  \]
+  \pause
+  Se $P = (x, y, z)$ pertence ao plano
+  \pause
+  \(
+    \overrightarrow{AP}
+  \)
+  é perpendicular a $\vec{n}$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equação Geral do Plano}
+\begin{align*}
+  \onslide<+->{\vec{n} \cdot \overrightarrow{AP}     & = 0 \\}
+  \onslide<+->{\vetortri{a}{b}{c} \cdot \vetortri{x-x_0}{y-y_0}{z-z_0} & = 0 \\}
+  \onslide<+->{a(x-x_0) + b(y-y_0) + c(z-z_0)        & = 0 \\}
+  \onslide<+->{ax + by + cz + (-ax_0 - by_0 - cz_0)  & = 0 \\[3mm]}
+  \onslide<+->{ax + by + cz + d                      & = 0}
+\end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/F-03-Equacao_do_plano-ex-2}
+\input{ex/F-03-Equacao_do_plano-ex-3}
+\input{ex/F-03-Equacao_do_plano-ex-4}
+\input{ex/F-03-Equacao_do_plano-ex-5}
+
+%%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
