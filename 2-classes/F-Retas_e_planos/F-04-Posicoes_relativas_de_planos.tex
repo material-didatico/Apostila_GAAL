@@ -1,0 +1,134 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Posições Relativas de Planos}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Posições Relativas entre Planos}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Posições Relativas entre Dois Planos em $\R^3$}
+  Dois planos podem ser
+  \pause
+  \begin{itemize}[<+->]
+      \item coincidentes
+      \item paralelos distintos
+      \item secantes ou concorrentes
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Posições Relativas entre Dois Planos}
+  Considere dois planos
+  \[
+    \pause
+    \alpha\colon a_1x + b_1y + c_1z + d_1 = 0
+  \]
+  \[
+    \pause
+    \beta\colon  a_2x + b_2y + c_2z + d_2  =0
+  \]
+
+  \pause
+  Seus vetores normais são
+  \[
+    \pause
+    \vec{n}_1 = \vetortri{a_1}{b_1}{c_1}
+    \pause \qquad\qquad
+    \vec{n}_2 = \vetortri{a_2}{b_2}{c_2}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Planos Paralelos}
+  Os planos são paralelos quando seus vetores normais são paralelos
+  \[
+    \pause
+    \vec{n}_2 = \lambda\vec{n}_1
+  \]
+  \pause
+  Eles podem ser paralelos distintos ou coincidentes
+
+  \pause
+  \bigskip
+  Se
+  \(\;
+    \vec{n}_2 = \lambda\vec{n}_1
+  \;\)
+  e
+  \(\;
+    d_2 = \lambda d_1
+  \;\)
+  \pause
+  os planos são \emph{coincidentes}
+
+  \pause
+  \bigskip
+  Se os vetores normais são paralelos,
+  \pause
+  mas as equações não são proporcionais, \\
+  \pause
+  os planos são \emph{paralelos distintos}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Planos Secantes}
+  Se
+  \(
+    \vec{n}_1
+  \)
+  e
+  \(
+    \vec{n}_2
+  \)
+  não são paralelos
+
+  \pause
+  os planos são \emph{secantes} (ou \emph{concorrentes})
+
+  \pause
+  \bigskip
+  Nesse caso, eles possuem uma reta em comum
+ \end{frame}
+
+ %------------------------------------------------------------------------------%
+ \begin{frame}{Interseção entre os Planos Secantes}
+  A direção da reta de interseção é perpendicular aos dois vetores normais
+
+  \pause
+  \bigskip
+  Vetor diretor da reta comum aos planos pode ser
+  \[
+    \pause
+    \vec{v} = \vec{n}_1\times\vec{n}_2
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/F-04-Posicoes_relativas_de_planos-ex-1}
+\input{ex/F-04-Posicoes_relativas_de_planos-ex-2}
+\input{ex/F-04-Posicoes_relativas_de_planos-ex-3}
+
+%%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

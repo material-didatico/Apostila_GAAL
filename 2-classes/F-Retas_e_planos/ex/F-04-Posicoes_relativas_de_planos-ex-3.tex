@@ -1,0 +1,105 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Mostre que os planos
+  \[
+    \pi_{1}\colon x + y + z - 3 = 0
+  \]
+  \[
+    \pi_{2}\colon 2x - y + z - 1 = 0
+  \]
+  são secantes e determine uma equação paramétrica para a reta de interseção
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Os vetores normais são
+  \[
+    \vec{n}_{1} = \vetortri{1}{1}{1}
+    \qquad\qquad
+    \vec{n}_{2} = \vetortri{2}{-1}{1}
+  \]}
+  \onslide<+->{Não são paralelos, pois}
+  \begin{align*}
+    \onslide<+->{1 & = 1} \\
+    \onslide<+->{2 & \neq -1}
+  \end{align*}
+  \onslide<+->{Os planos são secantes}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{A direção da reta de interseção é}
+  \begin{align*}
+    \onslide<+->{\vec{v} & = \vec{n}_{1}\times\vec{n}_{2} \\}
+    \onslide<+->{& = \begin{vmatrix}
+      \vec{i} & \vec{j} & \vec{k} \\
+      1       & 1       & 1       \\
+      2       & -1      & 1
+    \end{vmatrix}}
+    \\
+    \onslide<+->{& = (2, 1, -3)}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.4\textwidth}
+  \onslide<+->{Ponto comum aos dois planos}
+  \onslide<+->{\[
+    \begin{cases}
+       x + y + z = 3  \\
+      2x - y + z = 1
+    \end{cases}
+  \]}
+  \onslide<+->{Escolhemos $z = 0$}
+  \onslide<+->{\[
+    \begin{cases}
+       x + y = 3  \\
+      2x - y = 1
+    \end{cases}
+  \]}
+\column{0.3\textwidth}
+  \onslide<+->{Somando as equações}
+  \begin{align*}
+    \onslide<+->{3x & = 4 \\}
+    \onslide<+->{x  & = \frac{4}{3} \\}
+    \onslide<+->{y  & = 3-x \\}
+    \onslide<+->{   & = 3 - \frac{4}{3}\\}
+    \onslide<+->{   & = \frac{5}{3}}
+  \end{align*}
+\column{0.3\textwidth}
+  \onslide<+->{Um ponto da reta é
+  \[
+    A = \left( \frac{4}{3}, \frac{5}{3}, 0 \right)
+  \]}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.5\textwidth}
+  \onslide<+->{Equação vetorial da reta de interseção}
+  \onslide<+->{\[
+    \vetortri{x}{y}{z}
+    = \Vetortri{\frac{4}{3}}{\frac{5}{3}}{0}
+    + t \vetortri{2}{1}{-3}
+  \]}
+\column{0.5\textwidth}
+  \onslide<+->{A equação paramétrica é}
+  \onslide<+->{
+  \[
+    \begin{cases}
+      x = \dfrac{4}{3} + 2t \\[5mm]
+      y = \dfrac{5}{3} +  t \\[5mm]
+      z = -3t
+    \end{cases}
+  \]}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
+
+
