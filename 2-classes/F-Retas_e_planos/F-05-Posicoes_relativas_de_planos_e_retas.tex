@@ -1,0 +1,103 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Posições Relativas entre Planos e Retas}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Posições Relativas entre uma Reta e um Plano}
+  \onslide<+->{Existem três possibilidades}
+  \begin{itemize}[<+->]
+      \item a reta está contida no plano
+      \item a reta é paralela ao plano e não está contida nele
+      \item a reta é secante ao plano
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Posições Relativas entre uma Reta e um Plano}
+  Considere a reta
+  \tabto{40mm}
+  \(
+    r\colon \vec{r} = \vec{p} + t\vec{v}
+  \)
+
+  \pause
+  \medskip
+  e o plano
+  \tabto{40mm}
+  \(
+    \pi\colon ax + by + cz + d = 0
+  \)
+
+  \pause
+  \smallskip
+  com vetor normal
+  \tabto{40mm}
+  \(
+    \vec{n} = (a, b, c)
+  \)
+
+  \pause
+  \medskip
+  Comparamos o vetor diretor $\vec{v}$ da reta
+  \pause
+  com o vetor normal $\vec{n}$ do plano
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Critério Usando o Vetor Diretor}
+\begin{columns}[t]
+\column{0.3\textwidth}
+  Se
+  \[
+    \vec{v}\cdot\vec{n} \neq 0
+  \]
+  \pause
+  a reta é \emph{secante} ao plano
+\column{0.5\textwidth}
+\pause
+  Se
+  \[
+    \vec{v}\cdot\vec{n} = 0
+  \]
+  \pause
+  a reta é paralela ou está contida no plano
+
+  \bigskip
+  \bigskip
+  \pause
+  Se houver um ponto em comum a reta está contida no plano
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/F-05-Posicoes_relativas_de_planos_e_retas-ex-1}
+\input{ex/F-05-Posicoes_relativas_de_planos_e_retas-ex-2}
+\input{ex/F-05-Posicoes_relativas_de_planos_e_retas-ex-3}
+
+%%------------------------------------------------------------------------------%
+%% \framedgraphic{Gráfico de uma Função Real}{B_01_grafico_funcao_real}{}
+%
+%%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

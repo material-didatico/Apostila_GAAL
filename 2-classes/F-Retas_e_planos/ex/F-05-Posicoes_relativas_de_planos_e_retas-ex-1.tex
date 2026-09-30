@@ -1,0 +1,81 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine a posição relativa entre a reta e o plano \\
+  e o ponto de interseção, se ele existir
+  \[
+    r:
+    \begin{cases}
+      x = 1 +  t \\
+      y = 2 -  t \\
+      z = 3 + 2t
+    \end{cases}
+  \]
+  \[
+    \gamma: x + y + z - 6 = 0
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Posição Relativa}
+  \onslide<+->{O vetor diretor da reta é \qquad
+  \(
+    \vec{v} = (1, -1, 2)
+  \)}
+
+  \onslide<+->{O vetor normal do plano é \quad
+  \(
+    \vec{n} = (1, 1, 1)
+  \)}
+  \begin{align*}
+    \onslide<+->{\vec{v} \cdot \vec{n}}
+    \onslide<+->{& = 1 \times 1 + (- 1)1 + 2 \times 1} \\
+    \onslide<+->{& = 1 - 1 + 2} \\
+    \onslide<+->{& = 2} \\
+    \onslide<+->{& \neq 0}
+  \end{align*}
+  \onslide<+->{a reta é secante ao plano}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Ponto de Interseção}
+\begin{columns}
+\column{0.35\textwidth}
+  \onslide<+->{Substituir a equação da reta
+  \[
+    \begin{cases}
+      x = 1 +  t \\
+      y = 2 -  t \\
+      z = 3 + 2t
+    \end{cases}
+  \]}
+  \onslide<+->{na equação do plano}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{x + y + z - 6              & = 0 \\}
+    \onslide<+->{(1+t) + (2-t) + (3+2t) - 6 & = 0 \\}
+    \onslide<+->{t - t + 2t + 1 + 2 + 3 - 6 & = 0 \\}
+    \onslide<+->{2t                         & = 0 \\}
+    \onslide<+->{t                          & = 0}
+  \end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Ponto de Interseção}
+  \onslide<+->{Coordenadas do ponto com $t=0$}
+  \begin{align*}
+    \onslide<+->{x & = 1 + t }
+    \onslide<+->{  \;=\; 1 \\}
+    \onslide<+->{y & = 2 - t}
+    \onslide<+->{  \;=\; 2 \\}
+    \onslide<+->{z & = 3 + 2t}
+    \onslide<+->{  \;=\; 3}
+  \end{align*}
+
+  \onslide<+->{\[
+    P = (1, 2, 3)
+  \]}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

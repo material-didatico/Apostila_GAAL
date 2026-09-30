@@ -1,0 +1,77 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine a posição relativa entre a reta e o plano \\
+  e o ponto de interseção, se ele existir
+  \[
+    r\colon
+    \begin{cases}
+      x = 1 + t \\
+      y = 2 - t \\
+      z = 3
+    \end{cases}
+  \]
+  \[
+    \gamma\colon x + y - 3 = 0
+  \]
+
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Posição Relativa}
+  \onslide<+->{O vetor diretor da reta é \qquad
+  \(
+    \vec{v} = (1, -1, 0)
+  \)}
+
+  \onslide<+->{O vetor normal do plano é \quad
+  \(
+    \vec{n} = (1, 1, 0)
+  \)}
+  \begin{align*}
+    \onslide<+->{\vec{v} \cdot \vec{n}}
+    \onslide<+->{& = 1 \times 1 + (- 1)1 + 0 \times 0} \\
+    \onslide<+->{& = 1 - 1 + 0} \\
+    \onslide<+->{& = 0}
+  \end{align*}
+  \onslide<+->{a reta é paralela ao plano ou está contida nele}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Ponto de Interseção}
+  Escolhemos o ponto da reta
+  \[
+    A = (1, 2, 3)
+  \]
+  \pause
+  e substituimos na equação do plano
+  \pause
+  \[
+    x + y - 3
+    \pause
+    = 1 + 2 - 3
+    \pause
+    = 0
+  \]
+  \pause
+  Como o ponto da reta satisfaz a equação do plano
+  \[
+    \pause
+    A\in\gamma
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Ponto de Interseção}
+  Como a reta possui um ponto no plano e é paralela ao plano
+
+  \pause
+  todos os seus pontos pertencem ao plano
+  \pause
+  \[
+    r\subset\gamma
+  \]
+  A reta está \emph{contida no plano}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
