@@ -1,0 +1,258 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Distâncias}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Distância entre Pontos}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Distância entre Dois Pontos}{F-06-Distancias-pitagoras}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Distância entre Dois Pontos}
+  Dados
+  \[
+    A = ( x_1, y_1 )
+    \qquad\qquad
+    B = ( x_2, y_2 )
+  \]
+  \pause
+  O vetor que liga $A$ a $B$ é
+  \[
+    \pause
+    \overrightarrow{AB} = \vetor{x_2-x_1}{y_2-y_1}
+  \]
+  \pause
+  A distância entre os pontos é a norma do vetor
+  \[
+    \pause
+    d(A, B)
+    \pause
+    = \norm{\overrightarrow{AB}}
+    \pause
+    = \sqrt{(x_2-x_1)^{2} + (y_2-y_1)^{2}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Distância no Espaço $\R^3$}
+  Dados
+  \[
+    A = (x_1, y_1, z_1)
+    \qquad\qquad
+    B = (x_2, y_2, z_2)
+  \]
+  \pause
+  Temos
+  \[
+    \overrightarrow{AB}
+    = \vetortri{x_2-x_1}{y_2-y_1}{z_2-z_1}
+  \]
+  \pause
+  Assim
+  \[
+    d(A, B)
+    \pause
+    = \norm{\overrightarrow{AB}}
+    \pause
+    = \sqrt{ (x_2-x_1)^{2} + (y_2-y_1)^{2} + (z_2-z_1)^{2} }
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Propriedades da Distância}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedades}
+  Para quaisquer pontos $A$, $B$ e $C$
+  \[
+    \pause
+    d(A, B) \geq 0
+  \]
+
+  \[
+    \pause
+    d(A, B) = 0 \iff A = B
+  \]
+
+  \[
+    \pause
+    d(A, B) = d(B, A)
+  \]
+
+  \pause
+  Desigualdade triangular
+  \[
+    \pause
+    d(A, C) \leq d(A, B) + d(B, C)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/F-06-Distancias-ex-1}
+\input{ex/F-06-Distancias-ex-2}
+\input{ex/F-06-Distancias-ex-3}
+%\input{ex/F-06-Distancias-ex-4}
+
+%------------------------------------------------------------------------------%
+%\input{ex/F-06-Distancias-ex-5}
+
+%%------------------------------------------------------------------------------%
+%\section{Ponto médio}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Ponto médio de um segmento}
+%  Considere
+%  \[
+%  A=(x_1,y_1)
+%  \]
+%  e
+%  \[
+%  B=(x_2,y_2)
+%  \]
+%
+%  O ponto médio $M$ é dado por
+%  \[
+%  M=
+%  \left(
+%  \frac{x_1+x_2}{2},
+%  \frac{y_1+y_2}{2}
+%  \right)
+%  \]
+%
+%  No espaço:
+%  \[
+%  M=
+%  \left(
+%  \frac{x_1+x_2}{2},
+%  \frac{y_1+y_2}{2},
+%  \frac{z_1+z_2}{2}
+%  \right)
+%  \]
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+%\input{ex/F-06-Distancias-ex-6}
+%\input{ex/F-06-Distancias-ex-7}
+\input{ex/F-06-Distancias-ex-8}
+
+%------------------------------------------------------------------------------%
+\section{Distância entre Retas Paralelas}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Distância entre Retas Paralelas}{F-06-Distancias-paralelas-1}{}
+\framedgraphic*{Distância entre Retas Paralelas}{F-06-Distancias-paralelas-2}{}
+\framedgraphic*{Distância entre Retas Paralelas}{F-06-Distancias-paralelas-3}{}
+\framedgraphic*{Distância entre Retas Paralelas}{F-06-Distancias-paralelas-4}{}
+\framedgraphic*{Distância entre Retas Paralelas}{F-06-Distancias-paralelas-5}{}
+\framedgraphic*{Distância entre Retas Paralelas}{F-06-Distancias-paralelas-6}{}
+
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Distância entre Retas Paralelas}
+  A distância entre as \emph{retas paralelas}
+  \[
+    r\colon \vec{r} = \vec{p} + t\vec{v}
+    \qquad\qquad
+    s\colon \vec{r} = \vec{q} + \tau\vec{w}
+    \qquad\qquad
+    \vec{w} = \lambda\vec{v}
+  \]
+  \pause
+  é a norma da componente perpendicular da decomposição de
+  \[
+    \vec{h} = \vec{q} - \vec{p}
+  \]
+  \pause
+  com relação ao vetor diretor $\vec{v}$
+  \[
+    \pause
+    d(r, s)
+    \pause
+    = \norm{\vec{h}_\perp}
+    \pause
+    = \norm{\vec{h} - \projuv{h}{v}}
+    \pause
+    = \norm{\,\vec{h} - \frac{\;\vec{h}\cdot\vec{v}\;}{\vec{v}\cdot\vec{v}}\vec{v}\,}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Fórmula Alternativa}{F-06-Distancias-paralelogramo-1}{}
+\framedgraphic*{Fórmula Alternativa}{F-06-Distancias-paralelogramo-2}{}
+\framedgraphic*{Fórmula Alternativa}{F-06-Distancias-paralelogramo-3}{}
+\framedgraphic*{Fórmula Alternativa}{F-06-Distancias-paralelogramo-4}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Fórmula Alternativa}
+  \onslide<+->{Área do paralelogramo definido pelos vetores $\vec{v}$ e $\vec{h}$}
+  \[
+    \onslide<+->{A = \norm{\vec{h}\times\vec{v}}}
+  \]
+  \[
+    \onslide<+->{A}
+    \onslide<+->{= \text{base} \times \text{altura}}
+    \onslide<+->{= \norm{\vec{v}} \, d(r, s)}
+  \]
+  \begin{align*}
+    \onslide<+->{\norm{\vec{v}} \, d(r, s) & = \norm{\vec{h}\times\vec{v}} \\}
+    \onslide<+->{d(r, s) & =  \frac{\norm{\vec{h}\times\vec{v}}}{\norm{\vec{v}}}}
+    \onslide<+->{        \;=\; \frac{\norm{(\vec{q}-\vec{q})\times\vec v}}{\norm{\vec{v}}}}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/F-06-Distancias-ex-9}
+
+%------------------------------------------------------------------------------%
+\section{Distância de Ponto a Plano}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Distância de um Ponto a um Plano}
+  Dados o plano \(\gamma\) e o ponto $P$
+  \[
+    \gamma\colon ax + by + cz + d = 0
+    \qquad\qquad
+    P = (x_0, y_0, z_0)
+  \]
+
+  \pause
+  A distância de $P$ ao plano é
+  \[
+    \pause
+    d(P, \gamma)
+    \pause
+    = \frac{\, \abs{ax_0 + by_0 + cz_0 + d} \,}{\norm{\vec{n}}}
+    \pause
+    \qquad\qquad
+    \vec{n} = (a, b, c)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/F-06-Distancias-ex-A}
+
+%%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

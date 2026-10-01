@@ -1,0 +1,90 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Calcule a distância entre as retas
+  \[
+    r\colon
+    \begin{cases}
+      x = t   \\
+      y = 1+t \\
+      z = 2
+    \end{cases}
+  \]
+  \[
+    s\colon
+    \begin{cases}
+      x = 1+\tau \\
+      y = 3+\tau \\
+      z = 4
+    \end{cases}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Vetores diretores
+  \[
+    \vec{w} = \vec{v} = (1, 1, 0)
+  \]
+  \pause
+  Ponto em $r$
+  \[
+    P = ( 0, 1, 2)
+  \]
+  \pause
+  Ponto em $s$
+  \[
+    Q = (1, 3, 4)
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    \vec{h}
+    \pause
+    = Q - P
+    \pause
+    = (1, 3, 4) - ( 0, 1, 2)
+    \pause
+    = (1, 2, 2)
+  \]
+  \[
+    \pause
+    \vec{h}\times\vec{v}
+    \pause
+    = \begin{vmatrix}
+      \vec{i} & \vec{j} & \vec{k} \\
+      1       & 2       & 2       \\
+      1       & 1       & 0
+    \end{vmatrix}
+    \pause
+    = (-2, 2, -1)
+  \]
+  \[
+    \pause
+    \norm{\vec{h}\times\vec{v}}
+    \pause
+    = \sqrt{4+4+1}
+    \pause
+    = 3
+  \]
+  \[
+    \pause
+    \norm{\vec{v}}
+    \pause
+    = \sqrt{1+1}
+    \pause
+    = \sqrt{2}
+  \]
+  \[
+    \pause
+    d(r, s)
+    \pause
+    = \frac{\norm{(\vec{h})\times\vec v}}{\norm{\vec{v}}}
+    \pause
+    = \frac{3}{\sqrt{2}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

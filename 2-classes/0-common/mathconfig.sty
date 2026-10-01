@@ -77,10 +77,10 @@
 \let\Re\relax  \DeclareMathOperator{\Re}{Re}
 \let\Im\relax  \DeclareMathOperator{\Im}{Im}
 
-\let\parallel\relax
-\newcommand{\parallel}{\mathbin{\!/\mkern-5mu/\!}}
-
+\renewcommand{\iff}{\quad\Leftrightarrow\quad}
+\renewcommand{\parallel}{\mathbin{\!/\mkern-5mu/\!}}
 \newcommand{\st}{\mathrel{}\big/\mathrel{}}
+
 
 \DeclarePairedDelimiter{\@abs}    {\lvert} {\rvert}
 \DeclarePairedDelimiter{\@norm}   {\lVert} {\rVert}
@@ -105,9 +105,6 @@
 % Command to define minor complement
 \newcommand{\@overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 \newcommand{\minor}[1]{\@overbar{#1}}
-
-\let\parallel\relax
-\newcommand{\parallel}{\mathbin{\!/\mkern-5mu/\!}}
 
 \DeclareMathOperator{\tr}  {tr}
 \DeclareMathOperator{\ger} {ger}

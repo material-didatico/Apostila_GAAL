@@ -1,0 +1,57 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine o valor de $k$ para que a distância entre
+  \[
+    A = (k, 2)
+  \]
+  \[
+    B = (3, -2)
+  \]
+  seja igual a 5
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{d(A, B)}
+    \onslide<+->{& = \norm{\overrightarrow{AB}}  \\}
+    \onslide<+->{& = \sqrt{(3-k)^{2}+(-2-2)^{2}} \\}
+    \onslide<+->{& = \sqrt{(3-k)^{2}+16}}
+  \end{align*}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{d(A, B)             & = 5     \\}
+    \onslide<+->{\sqrt{(3-k)^{2}+16} & = 5     \\}
+    \onslide<+->{(3-k)^{2} + 16      & = 25    \\}
+    \onslide<+->{(3-k)^{2}           & = 9     \\}
+    \onslide<+->{\abs{3-k}           & = 3     \\}
+    \onslide<+->{3-k                 & = \pm 3}
+  \end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.3\textwidth}
+  \begin{align*}
+    \onslide<+->{3-k & = 3 \\}
+    \onslide<+->{-k  & = 0 \\}
+    \onslide<+->{k   & = 0}
+  \end{align*}
+\column{0.3\textwidth}
+  \begin{align*}
+    \onslide<+->{3-k & = -3 \\}
+    \onslide<+->{-k  & = -6 \\}
+    \onslide<+->{k   & = 6}
+  \end{align*}
+\end{columns}
+
+  \bigskip
+  \onslide<+->{Portanto, \( k = 0 \) ou \( k = 6 \)}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
