@@ -1,62 +1,34 @@
 %------------------------------------------------------------------------------%
 \begin{question}
-Determine o ângulo entre os planos
+  Determine o ângulo entre
   \[
-    \alpha\colon x + y + z - 1 = 0
+    \vec{v} = (1, 2, 2)
   \]
   \[
-    \beta\colon 2x - y + 2z + 3 = 0
+    \vec{w} = (2, -1, 2)
   \]
 \end{question}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Solução}
-  Vetores normais
-  \[
-    \vec{n}_{1} = (1,  1, 1)
-    \qquad\qquad
-    \vec{n}_{2} = (2, -1, 2)
-  \]
+  \begin{align*}
+    \vec{v}\cdot\vec{w} & = 1\cdot2+2\cdot(-1)+2\cdot2 \\
+                        & = 2-2+4 = 4
+  \end{align*}
+
+  \begin{align*}
+    \norm{\vec{v}} & = \sqrt{1^2+2^2+2^2} = 3 \\
+    \norm{\vec{w}} & = \sqrt{2^2+(-1)^2+2^2} = 3
+  \end{align*}
+
+  \begin{align*}
+    \cos\theta & = \frac{4}{3\cdot3} = \frac{4}{9}
+  \end{align*}
 
   \[
-    \pause
-    \vec{n}_{1}\cdot\vec{n}_{2}
-    \pause
-    = 2 - 1 + 2
-    \pause
-    = 3
+    \theta=\arccos\left(\frac{4}{9}\right)
   \]
 
-  \[
-    \pause
-    \norm{\vec{n}_{1}}
-    \pause
-    = \sqrt{3}
-  \]
-
-  \[
-    \pause
-    \norm{\vec{n}_{2}}
-    \pause
-    = \sqrt{4 + 1 + 4}
-    \pause
-    = 3
-  \]
-
-  \[
-    \pause
-    \cos{\theta}
-    \pause
-    = \frac{3}{3\sqrt{3}}
-    \pause
-    = \frac{1}{\sqrt{3}}
-  \]
-
-  \[
-    \pause
-    \theta
-    = \arccos{\left(\frac{1}{\sqrt{3}}\right)}
-  \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%

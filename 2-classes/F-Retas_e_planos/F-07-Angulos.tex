@@ -3,7 +3,7 @@
 
 \usepackage{gaal}
 
-\title{Ângulo entre Planos}
+\title{Ângulos entre Vetores, Retas e Planos}
 
 %------------------------------------------------------------------------------%
 \begin{document}
@@ -11,21 +11,201 @@
 \addtitle
 
 %------------------------------------------------------------------------------%
-\section{Ângulo entre planos}
+\section{Ângulo entre Vetores}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Ângulo entre Vetores}{F-07-Angulos-vetores-1}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Ângulo entre Vetores}
+  Sejam \(\vec{v}\neq\vec{0}\) e \(\vec{w}\neq\vec{0}\)
+
+  \pause
+  \bigskip
+  O ângulo $\theta$ entre $\vec{v}$ e $\vec{w}$ satisfaz
+  \[
+    \pause
+    \cos\theta = \frac{\vec{v}\cdot\vec{w}}{\norm{\vec{v}}\norm{\vec{w}}}
+  \]
+  \pause
+  com
+  \[
+    0 \leq \theta \leq \pi
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/F-07-Angulos-ex-1}
+
+%------------------------------------------------------------------------------%
+\section{Ângulo entre Retas}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Ângulo entre Retas}{F-07-Angulos-retas-1}{}
+\framedgraphic*{Ângulo entre Retas}{F-07-Angulos-retas-2}{}
+\framedgraphic*{Ângulo entre Retas}{F-07-Angulos-retas-3}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Ângulo entre Retas}
+  Considere duas retas
+  \[
+    r\colon \vec{r} = \vec{p} + t\vec{v}
+  \]
+  \[
+    s\colon \vec{r} = \vec{q} + \tau\vec{w}
+  \]
+
+  \pause
+  Os vetores
+  \(
+    \vec{v}
+  \) e
+  \(
+    \vec{w}
+  \)
+  são vetores diretores das retas
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Ângulo entre Retas}
+  O ângulo entre as retas é determinado pelos vetores diretores
+  \pause
+  \[
+    \cos\theta = \frac{\left|\vec{v}\cdot\vec{w}\right|}{\norm{\vec{v}}\norm{\vec{w}}}
+  \]
+  \pause
+  \[
+    0\leq\theta\leq\frac{\pi}{2}
+  \]
+
+  \pause
+  Por que o módulo?
+
+  \pause
+  Os vetores \(\vec{v}\) e \(-\vec{v}\)
+  determinam a mesma direção em uma reta
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/F-07-Angulos-ex-2}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Retas Paralelas}
+  Se os vetores diretores são paralelos
+  \[
+    \vec{w} = \lambda\vec{v}
+  \]
+  \pause
+  então
+  \[
+    \theta = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Retas Ortogonais}
+  Se
+  \[
+    \vec{v}\cdot\vec{w} = 0
+  \]
+  \pause
+  então
+  \[
+    \theta = \frac{\pi}{2}
+  \]
+  \pause
+  As retas são ortogonais
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Ângulo entre Reta e Plano}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Ângulo entre Retas}{F-07-Angulos-plano-reta-1}{}
+\framedgraphic*{Ângulo entre Retas}{F-07-Angulos-plano-reta-2}{}
+\framedgraphic*{Ângulo entre Retas}{F-07-Angulos-plano-reta-3}{}
+\framedgraphic*{Ângulo entre Retas}{F-07-Angulos-plano-reta-4}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Reta e Plano}
+  Dada a reta
+  \[
+    r\colon
+    \vec{r} = \vec{p} + t\vec{v}
+  \]
+  \pause
+  e o plano
+  \[
+    \gamma\colon ax + by + cz + d = 0
+  \]
+  \pause
+  com vetor normal
+  \[
+    \vec{n} = (a, b, c)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Ângulo entre Reta e Plano}
+  Se
+  \(
+    \theta
+  \)
+  é o ângulo entre a reta e o plano e
+  \(
+    \phi
+  \)
+  é o ângulo entre o vetor diretor e o vetor normal
+
+  Então
+  \[
+    \theta + \phi = \frac{\pi}{2}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Relação entre $\theta$ e $\phi$}{F-07-Angulos-sin-cos-1}{}
+\framedgraphic*{Relação entre $\theta$ e $\phi$}{F-07-Angulos-sin-cos-2}{}
+\framedgraphic*{Relação entre $\theta$ e $\phi$}{F-07-Angulos-sin-cos-3}{}
+\framedgraphic*{Relação entre $\theta$ e $\phi$}{F-07-Angulos-sin-cos-4}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Fórmula}
+  O ângulo entre uma reta e um plano satisfaz
+  \[
+    \sin\theta = \frac{|\vec{v}\cdot\vec{n}|}{\norm{\vec{v}}\norm{\vec{n}}}
+  \]
+  com
+  \[
+    0 \leq \theta \leq \frac{\pi}{2}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/F-07-Angulos-ex-3}
+
+%------------------------------------------------------------------------------%
+\section{Ângulo entre Planos}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Ângulo entre Retas}{F-07-Angulos-planos-1}{}
+\framedgraphic*{Ângulo entre Retas}{F-07-Angulos-planos-2}{}
+\framedgraphic*{Ângulo entre Retas}{F-07-Angulos-planos-3}{}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Ângulo entre dois planos}
   Se
   \(
-  \vec{n}_{1}
-  \)  e
+    \vec{n}_{1}
+  \) e
   \(
-  \vec{n}_{2}
+    \vec{n}_{2}
   \)
   são vetores normais aos planos
 
   \pause
-  O ângulo entre dois planos é
+  \bigskip
+  O ângulo entre os dois planos é
   \pause
   \[
     \cos{\theta}
@@ -36,12 +216,15 @@
       \norm{\vec{n}_{2}}
     }
   \]
+
   \pause
+  \bigskip
   O módulo permite escolher o menor ângulo entre os planos
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\input{ex/F-07-Angulos-ex-1}
+\input{ex/F-07-Angulos-ex-4}
+\input{ex/F-07-Angulos-ex-5}
 
 %%------------------------------------------------------------------------------%
 %\section{Lista Mínima}
