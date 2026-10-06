@@ -1,0 +1,304 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Espaços Vetoriais}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Espaços Vetoriais}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Motivação}
+  \begin{itemize}[<+->]
+    \setlength{\itemsep}{1em}
+    \item Vetores aparecem em diferentes contextos
+    \item As operações podem ter naturezas diferentes
+    \item A mesma estrutura algébrica está presente em todos eles
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Abstração}
+  O vetor não precisa ser uma seta
+
+  \pause
+  Qualquer elemento matemático que podemos
+  \pause
+  \begin{enumerate}
+    \item somar
+    \pause
+    \item multiplicar por escalar
+  \end{enumerate}
+  \pause
+  Pode ser pensado como vetor
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Corpo}
+  Um conjunto $K$ que possui operações de soma e produto
+
+  \pause
+  \medskip
+  com as mesmas propriedades da soma e produto dos números reais
+
+  \pause
+  \medskip
+  é chamado de \emph{Corpo}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Espaços Vetoriais}
+  Um \emph{Espaço vetorial} consiste de
+
+  \pause
+  \quad um conjunto \quad $V$
+
+  \pause
+  \quad um corpo \quad\quad $K$
+
+  \pause
+  \quad uma operação de soma \quad \(+\colon V\times V \to V\)
+
+  \pause
+  \quad um produto dor escalar \quad \(\cdot\,\colon V\times K \to V\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Operações}
+  Para quais quer \(\vec{v}\), \(\vec{w}\in V\) e \(\alpha\in K\)
+
+  \pause
+  \[
+    \vec{v}+\vec{w} \in V
+  \]
+
+  \pause
+  \[
+    \alpha\vec{v} \in V
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Axiomas}
+  Para quaisquer \(\vec{u}\), \(\vec{v}\), \(\vec{w}\in V\)
+  \pause
+  e \(\alpha\), \(\beta\in K\)
+  \[
+    \pause
+    \vec{u}+\vec{v} \;=\; \vec{v}+\vec{u}
+  \]
+
+  \[
+    \pause
+    (\vec{u}+\vec{v})+\vec{w} \;=\; \vec{u}+(\vec{v}+\vec{w})
+  \]
+
+  \[
+    \pause
+    \exists\,\vec{0}\in V
+    \qquad
+    \vec{v}+\vec{0} = \vec{v}
+  \]
+
+  \[
+    \pause
+    \forall\,\vec{v}\in V
+    \qquad
+    \exists\,(-\vec{v})\in V
+    \qquad
+    \vec{v}+(-\vec{v}) = \vec{0}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Axiomas}
+  Para quaisquer \(\vec{u}\), \(\vec{v}\in V\)
+  \pause
+  e \(\alpha\), \(\beta\in K\)
+  \[
+    \pause
+    \alpha(\vec{u}+\vec{v}) \;=\; \alpha\vec{u}+\alpha\vec{v}
+  \]
+
+  \[
+    \pause
+    (\alpha+\beta)\vec{v} \;=\; \alpha\vec{v}+\beta\vec{v}
+  \]
+
+  \[
+    \pause
+    \alpha(\beta\vec{v}) \;=\; (\alpha\beta)\vec{v}
+  \]
+
+  \[
+    \pause
+    1\vec{v} \;=\; \vec{v}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Espaços Vetoriais Usuais}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{O espaço $\R^2$}
+  Conjunto
+  \[
+    \R^2 = \left\{ (x, y) \mid x, y \in\R \right\}
+  \]
+
+  \pause
+  Soma
+  \[
+    (x_1, y_1) + (x_2, y_2) = (x_1+x_2,,\ y_1+y_2)
+  \]
+
+  \pause
+  Produto por escalar
+  \[
+    \alpha(x, y) = (\alpha x, \alpha y)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{O espaço $\R^n$}
+  Conjunto
+  \[
+    \R^n = \left\{ (x_1, x_2, \ldots, x_n) \mid x_i\in\R \right\}
+  \]
+
+  \pause
+  Soma
+  \[
+    (x_1, \ldots, x_n) + (y_1, \ldots, y_n) = (x_1 + y_1, \ldots, x_n + y_n)
+  \]
+
+  \pause
+  Produto por escalar
+  \[
+    \alpha(x_1, \ldots, x_n) = (\alpha x_1, \ldots, \alpha x_n)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Polinômios de Grau $n$}
+  Conjunto
+  \[
+    \mathcal{P}_n = \left\{ a_0 + a_1x + \cdots + a_nx^n \mid a_i\in\R \right\}
+  \]
+
+  \pause
+  Soma
+  \[
+    p(x) + q(x)
+  \]
+
+  \pause
+  Produto por escalar
+  \[
+    \alpha p(x)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Funções Reais}
+  Conjunto de todas as funções reais de variável real
+  \[
+    \mathcal{F}\left(\R, \R\right)
+  \]
+  \[
+    f\colon \R \to \R
+  \]
+
+  \pause
+  Soma
+  \[
+    (f+g)(x) = f(x) + g(x)
+  \]
+
+  \pause
+  Produto por escalar
+  \[
+    (\alpha f)(x) = \alpha f(x)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Matrizes}
+\begin{columns}
+\column{0.4\textwidth}
+  Conjunto das matrizes reais
+  \[
+    M_{m\times n}\left(\R\right)
+  \]
+  \pause
+  \[
+    A =
+    \begin{pmatrix}
+      a_{11} & \cdots & a_{1n} \\
+      \vdots & \ddots & \vdots \\
+      a_{m1} & \cdots & a_{mn}
+    \end{pmatrix}
+  \]
+\column{0.4\textwidth}
+  \pause
+  Soma
+  \[
+    A + B
+    = \left( a_{ij} + b_{ij} \right)
+  \]
+
+  \pause
+  Produto por escalar
+  \[
+    \alpha A = \left(\alpha a_{ij}\right)
+  \]
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Nem Sempre o Conjunto é um Espaço Vetorial}
+  O conjunto das matrizes
+  \(
+    M_{n\times n}(\R)
+  \)
+  é um espaço vetorial
+
+  \pause
+  Mas o conjunto das \emph{matrizes invertíveis}
+  \[
+    GL_n(\R)
+  \]
+  \pause
+  não é um espaço vetorial com as operações usuais
+
+  \[
+    \pause
+    I \in GL_n(\R)
+    \pause
+    \quad\text{ mas }\quad
+    0I \notin GL_n(\R)
+  \]
+\end{frame}
+
+%%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
