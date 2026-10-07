@@ -1,0 +1,65 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine se
+  \[
+    \vec{p} = \vetortri{4}{3}{-1}
+  \]
+  é combinação linear dos vetores
+  \[
+    \vec{v} = \vetortri{0}{1}{0}
+    \qquad
+    \vec{w} = \vetortri{0}{2}{1}
+    \qquad
+    \vec{z} = \vetortri{2}{1}{0}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Para que \(\vec{p}\) seja combinação linear de
+  \(\vec{v}\), \(\vec{w}\) e \(\vec{z}\)
+
+  \pause
+  é necessário que existam escalares $a$, $b$ e $c$,
+  tais que
+  \pause
+  \[
+    \vec{p} = a\vec{v} + b\vec{w} + c \vec{z}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.6\textwidth}
+  \onslide<+->{\[
+    \vetortri{4}{3}{-1}
+    = a\vetortri{0}{1}{0}
+    + b\vetortri{0}{2}{1}
+    + c\vetortri{2}{1}{0}
+  \]}
+  \onslide<+->{\[
+    \begin{cases}
+    0a + 0b + 2c = 4 \\
+    1a + 2b + 1c = 3 \\
+    0a + 1b + 0c = -1
+    \end{cases}
+  \]}
+  \onslide<+->{\[
+    b = -1
+  \]}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{2c & = 4 \\}
+    \onslide<+->{ c & = 2 \\[3mm]}
+    \onslide<+->{a + 2b + c    & = 3 \\}
+    \onslide<+->{a + 2(-1) + 2 & = 3 \\}
+    \onslide<+->{a             & = 3}
+  \end{align*}
+  \onslide<+->{$\vec{p}$ é combinação linear de
+  $\vec{v}$, $\vec{w}$ e $\vec{z}$}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
