@@ -1,0 +1,59 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine se
+  \[
+    \vec{v}_1 = (1, 2, 0)
+  \]
+
+  \[
+    \vec{v}_2 = (0, 1, 1)
+  \]
+
+  \[
+    \vec{v}_3 = (2, 0, 1)
+  \]
+  são linearmente independentes
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    \onslide<+->{A
+    \;=\; \begin{pmatrix}
+          \vec{v}_1 & \vec{v}_2 & \vec{v}_3
+        \end{pmatrix}}
+    \onslide<+->{\;=\; \begin{pmatrix}
+          1 & 0 & 2 \\
+          2 & 1 & 0 \\
+          0 & 1 & 1
+        \end{pmatrix}}
+  \]
+  \bigskip
+  \[
+    \onslide<+->{\det(A)}
+    \onslide<+->{= 1
+      \begin{vmatrix}
+        1 & 0 \\
+        1 & 1
+      \end{vmatrix}
+      - 0
+      + 2
+      \begin{vmatrix}
+        2 & 1 \\
+        0 & 1
+      \end{vmatrix}}
+    \onslide<+->{= 1 + 4}
+    \onslide<+->{= 5}
+  \]
+
+  \onslide<+->{
+  \bigskip
+  Como
+  \(
+    \det(A) = 5 \neq 0
+  \)}
+  \onslide<+->{os vetores são linearmente independentes}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

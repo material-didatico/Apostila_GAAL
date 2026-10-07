@@ -1,0 +1,50 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine se os vetores
+  \[
+    \vec{v}_1 = (1, 2)
+  \]
+  \[
+    \vec{v}_2 = (2, 4)
+  \]
+  são linearmente dependentes
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[onlytextwidth]
+\column{0.5\textwidth}
+  \begin{gather*}
+    \onslide<+->{\alpha\vec{v}_1+\beta\vec{v}_2 = \vec{0} }
+  \\
+    \onslide<+->{\alpha\vetor{1}{2} + \beta\vetor{2}{4} = \vetor{0}{0}}
+  \\
+    \onslide<+->{\begin{cases}
+      \alpha+2\beta  = 0 \\
+      2\alpha+4\beta = 0
+    \end{cases}}
+  \\
+    \onslide<+->{\alpha = -2\beta}
+  \end{gather*}
+  \onslide<+->{Escolhendo
+  \(
+    \beta = 1
+  \)}
+  \onslide<+->{temos
+  \(
+    \alpha = -2
+  \)}
+\column{0.5\textwidth}
+  \onslide<+->{Verificando}
+  \begin{align*}
+    \onslide<+->{\alpha\vec{v}_1+\beta\vec{v}_2}
+    \onslide<+->{& = -2\vetor{1}{2} + 1\vetor{2}{4} \\}
+    \onslide<+->{& = \vetor{-2}{-4} + \vetor{2}{4} \\}
+    \onslide<+->{& = \vetor{0}{0}}
+  \end{align*}
+  \onslide<+->{Os vetores são linearmente dependentes}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

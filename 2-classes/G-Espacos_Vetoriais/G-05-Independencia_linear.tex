@@ -1,0 +1,250 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Dependência e Independência Linear}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Dependência e Independência Linear}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Combinação Linear}
+  Sejam
+  \[
+    \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \in \R^n
+  \]
+  \[
+    \pause
+    \alpha_1, \alpha_2, \ldots, \alpha_k \in \R
+  \]
+
+  \pause
+  Uma \emph{combinação linear} é
+  \[
+    \pause
+    \alpha_1\vec{v}_1+
+    \alpha_2\vec{v}_2+
+    \cdots+
+    \alpha_k\vec{v}_k
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Dependência Linear}
+  Os vetores
+  \[
+    \pause
+    \vec{v}_1, \ldots, \vec{v}_k
+  \]
+  \pause
+  são \emph{linearmente dependentes} se existem escalares
+  \[
+    \pause
+    \alpha_1, \ldots, \alpha_k
+  \]
+  \pause
+  \emph{não todos nulos} tais que
+  \[
+    \pause
+    \alpha_1\vec{v}_1 + \cdots + \alpha_k\vec{v}_k
+    \pause
+    = \vec{0}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Dependência Linear}
+  Se
+  \[
+    \alpha_1\vec{v}_1 + \cdots + \alpha_k\vec{v}_k = \vec{0}
+  \]
+  \pause
+  com algum \(\alpha_i \neq 0\)
+
+  \pause
+  \bigskip
+  Podemos isolar o vetor \(\vec{v}_i\)
+  \[
+    \pause
+    \vec{v}_i = \frac{\alpha_1}{\alpha_i}\vec{v}_1 + \cdots + \frac{\alpha_k}{\alpha_i}\vec{v}_k
+  \]
+  \pause
+  e escreve-lo como combinação dos demais
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Independência Linear}
+  Os vetores
+  \[
+    \pause
+    \vec{v}_1, \ldots, \vec{v}_k
+  \]
+  \pause
+  são \emph{linearmente independentes} se
+  \[
+    \pause
+    \alpha_1\vec{v}_1 + \cdots + \alpha_k\vec{v}_k = \vec{0}
+  \]
+  \pause
+  só é possível com
+  \[
+    \pause
+    \alpha_1 = \cdots = \alpha_k = 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Independência Linear}
+  Se
+  \[
+    \alpha_1\vec{v}_1 + \cdots + \alpha_k\vec{v}_k = \vec{0}
+  \]
+  \pause
+  só é possível com todos \(\alpha_i = 0\)
+
+  \pause
+  \bigskip
+  Não é possível escrever nenhum vetor como combinação dos demais
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/G-05-Independencia_linear-ex-1}
+\input{ex/G-05-Independencia_linear-ex-2}
+
+%------------------------------------------------------------------------------%
+\section{Matrizes e Sistema Lineares}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Sistema Homogêneo}
+  Se
+  \[
+    \pause
+    \alpha_1\vec{v}_1 + \cdots + \alpha_k\vec{v}_k = \vec{0}
+  \]
+  \pause
+  Colocando os vetores como colunas de uma matriz
+  \[
+    \pause
+    A =
+    \begin{bmatrix}
+      \vec{v}_1 & \vec{v}_2 & \cdots & \vec{v}_k
+    \end{bmatrix}
+  \]
+  \pause
+  temos
+  \[
+    \pause
+    A
+    \begin{pmatrix}
+      \alpha_1 \\
+      \alpha_2 \\
+      \vdots   \\
+      \alpha_k
+    \end{pmatrix}
+    = \vec{0}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Critério para Independência Linear}
+  Os vetores são linearmente independentes
+  \pause
+  se o sistema
+  \[
+    \pause
+    A\vec{x} = \vec{0}
+  \]
+  \pause
+  possui somente a solução trivial
+  \[
+    \pause
+    \vec{x} = \vec{0}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/G-05-Independencia_linear-ex-3}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Determinante}
+  Dados os vetores
+  \[
+    \pause
+    \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n \in \R^n
+  \]
+  \pause
+  formamos a matriz quadrada
+  \[
+    \pause
+    A =
+    \begin{bmatrix}
+      \vec{v}_1 & \vec{v}_2 & \cdots & \vec{v}_n
+    \end{bmatrix}
+  \]
+  \pause
+  Se
+  \[
+    \det(A) \neq 0
+  \]
+  \pause
+  os vetores são linearmente independentes
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Vetor nulo}
+  Qualquer conjunto que contenha
+  \[
+    \vec{0}
+  \]
+  \pause
+  é linearmente dependente
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Múltiplos}
+  Se
+  \[
+    \vec{v}_2 = \alpha\vec{v}_1
+  \]
+  \pause
+  para algum
+  \[
+    \alpha\in\R
+  \]
+  \pause
+  então
+  \[
+    \vec{v}_1
+    \quad\text{e}\quad
+    \vec{v}_2
+  \]
+  \pause
+  são linearmente dependentes
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/G-05-Independencia_linear-ex-4}
+\input{ex/G-05-Independencia_linear-ex-5}
+
+%%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

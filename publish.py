@@ -34,12 +34,13 @@ tab = 4*' '
 def folder_name(name: str) -> str:
 
     names = {
-            'A-Introducao'     : 'A - Introdução',
-            'B-Matrizes'       : 'B - Matrizes',
-            'C-Sistemas'       : 'C - Sistemas Lineares',
-            'D-Determinantes'  : 'D - Determinantes',
-            'E-Vetores'        : 'E - Vetores',
-            'F-Retas_e_planos' : 'F - Retas e Planos',
+            'A-Introducao'        : 'A - Introdução',
+            'B-Matrizes'          : 'B - Matrizes',
+            'C-Sistemas'          : 'C - Sistemas Lineares',
+            'D-Determinantes'     : 'D - Determinantes',
+            'E-Vetores'           : 'E - Vetores',
+            'F-Retas_e_planos'    : 'F - Retas e Planos',
+            'G-Espacos_Vetoriais' : 'G - Espaços Vetoriais',
             }
 
     try:
@@ -78,15 +79,20 @@ def pdf_name(name: str) -> str:
         'E-07-Projecao'                             : 'E - 07 - Projeção',
         'E-08-Produto_vetorial'                     : 'E - 08 - Produto Vetorial',
         'E-09-Area_paralelogramo'                   : 'E - 09 - Area do Paralelogramo',
-        'E-10-Produto_misto'                        : 'E - 10 - Produto misto',
-        'E-11-Volume_paralelepipedo'                : 'E - 11 - Volume paralelepípedo',
-        'F-01-Equacao_da_reta'                      : 'F - 01 - Equação da reta',
-        'F-02-Posicoes_relativas_de_retas'          : 'F - 02 - Posições relativas entre retas',
-        'F-03-Equacao_do_plano'                     : 'F - 03 - Equação do plano',
-        'F-04-Posicoes_relativas_de_planos'         : 'F - 04 - Posições relativas de planos',
-        'F-05-Posicoes_relativas_de_planos_e_retas' : 'F - 05 - Posições relativas de planos e retas',
+        'E-10-Produto_misto'                        : 'E - 10 - Produto Misto',
+        'E-11-Volume_paralelepipedo'                : 'E - 11 - Volume Paralelepípedo',
+        'F-01-Equacao_da_reta'                      : 'F - 01 - Equação da Reta',
+        'F-02-Posicoes_relativas_de_retas'          : 'F - 02 - Posições Relativas Entre Retas',
+        'F-03-Equacao_do_plano'                     : 'F - 03 - Equação do Plano',
+        'F-04-Posicoes_relativas_de_planos'         : 'F - 04 - Posições Relativas de Planos',
+        'F-05-Posicoes_relativas_de_planos_e_retas' : 'F - 05 - Posições Relativas de Planos e Retas',
         'F-06-Distancias'                           : 'F - 06 - Distâncias',
         'F-07-Angulos'                              : 'F - 07 - Ângulos',
+        'G-01-Espacos_Vetoriais'                    : 'G - 01  -Espaços Vetoriais',
+        'G-02-Espacos_Rn'                           : 'G - 02  -Espaços Rn',
+        'G-03-Combinacao_linear'                    : 'G - 03  -Combinação Linear',
+        'G-04-Representacao_Matricial'              : 'G - 04  -Representação Matricial',
+        'G-05-Independencia_linear'                 : 'G - 05  -Independência Linear',
     }
 
     name = name.replace('pres_', '').replace('.pdf', '')

@@ -1,0 +1,79 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine se
+  \[
+    \vec{v}_1 = (1, 0, 2)
+  \]
+
+  \[
+    \vec{v}_2 = (2, 1, 1)
+  \]
+
+  \[
+    \vec{v}_3 = (0, 1, 3)
+  \]
+  são linearmente independentes
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[onlytextwidth]
+\column{0.65\textwidth}
+  \[\onslide<+->{
+    \alpha\vec{v}_1 + \beta\vec{v}_2 + \gamma\vec{v}_3 = \vec{0}}
+  \]
+
+  \[\onslide<+->{
+      \alpha \vetortri{1}{0}{2}
+    + \beta  \vetortri{2}{1}{1}
+    + \gamma \vetortri{0}{1}{3}
+    = \vetortri{0}{0}{0}}
+  \]
+
+  \[\onslide<+->{
+    \begin{cases}
+      \alpha+2\beta         = 0 \\
+      \beta+\gamma          = 0 \\
+      2\alpha+\beta+3\gamma = 0
+    \end{cases}}
+  \]
+\column{0.35\textwidth}
+    \onslide<+->{Da primeira equação}
+    \onslide<+->{\[
+      \alpha = -2\beta
+    \]}
+    \onslide<+->{Da segunda equação}
+    \onslide<+->{\[
+      \gamma = -\beta
+    \]}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[onlytextwidth]
+\column{0.5\textwidth}
+  \onslide<+->{Substituindo na terceira}
+  \begin{align*}
+    \onslide<+->{2\alpha+\beta+3\gamma      & = 0 \\}
+    \onslide<+->{2(-2\beta)+\beta+3(-\beta) & = 0 \\}
+    \onslide<+->{-4\beta+\beta-3\beta       & = 0 \\}
+    \onslide<+->{-6\beta                    & = 0 \\}
+    \onslide<+->{\beta                      & = 0}
+  \end{align*}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{\alpha & = -2\beta = 0 \\}
+    \onslide<+->{\gamma & =  -\beta = 0}
+  \end{align*}
+  \onslide<+->{Portanto
+  \(
+    \alpha=\beta=\gamma=0
+  \)}
+
+  \onslide<+->{e os vetores são linearente independentes}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

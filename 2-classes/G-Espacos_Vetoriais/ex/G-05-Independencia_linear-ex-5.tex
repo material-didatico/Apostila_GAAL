@@ -1,0 +1,83 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine se
+  \[
+    \vec{v}_1 = (1, 2, 1)
+  \]
+
+  \[
+    \vec{v}_2 = (2, 1, 0)
+  \]
+
+  \[
+    \vec{v}_3 = (3, 3, 1)
+  \]
+  são linearmente independentes
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}
+\column{0.5\textwidth}
+  \[
+    \onslide<+->{\alpha\vec{v}_1 + \beta\vec{v}_2 + \gamma\vec{v}_3 = \vec{0}}
+  \]
+
+  \[
+    \onslide<+->{\begin{cases}
+      \alpha+2\beta+3\gamma = 0 \\
+      2\alpha+\beta+3\gamma = 0 \\
+      \alpha+\gamma         = 0
+    \end{cases}}
+  \]
+  \onslide<+->{Da terceira equação
+  \[
+    \alpha = -\gamma
+  \]}
+\column{0.5\textwidth}
+  \onslide<+->{Substituindo na primeira}
+  \begin{align*}
+    \onslide<+->{\alpha+2\beta+3\gamma  & = 0       \\}
+    \onslide<+->{-\gamma+2\beta+3\gamma & = 0       \\}
+    \onslide<+->{2\beta+2\gamma         & = 0       \\}
+    \onslide<+->{\beta                  & = -\gamma}
+  \end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}
+\column{0.5\textwidth}
+  \onslide<+->{Substituindo na segunda}
+  \begin{align*}
+    \onslide<+->{2\alpha+\beta+3\gamma        & = 0  \\}
+    \onslide<+->{2(-\gamma)+(-\gamma)+3\gamma & =  0 \\}
+    \onslide<+->{0                            & = 0}
+  \end{align*}
+  \onslide<+->{Logo $\gamma$ é livre}
+
+  \onslide<+->{Tomando
+  \(
+    \gamma = 1
+  \)}
+  \onslide<+->{obtemos}
+  \[
+    \onslide<+->{\alpha = -\gamma = -1}
+    \qquad
+    \onslide<+->{\beta = -\gamma = -1}
+  \]
+\column{0.5\textwidth}
+  \onslide<+->{Temos a relação}
+  \[
+    \onslide<+->{-\vec{v}_1-\vec{v}_2+\vec{v}_3 = \vec{0}}
+  \]
+  \[
+    \onslide<+->{\vec{v}_3 = \vec{v}_1 + \vec{v}_2}
+  \]
+  \onslide<+->{Portanto os vetores são linearmente dependentes}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
