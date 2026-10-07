@@ -1,0 +1,69 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Verifique que a transformação
+  \(
+    T\left(\vetor{x}{y}\right) = \vetor{2x-y}{x+3y}
+  \)
+  é linear
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Temos que mostrar que para quais quer vetores
+  \[
+    \vec{v} = \vetor{r}{s}
+    \qquad\qquad
+    \vec{w} = \vetor{p}{q}
+  \]
+  e qualquer escalar $c$
+
+  \[
+    T(\vec{v}+\vec{w}) = T(\vec{v}) + T(\vec{w})
+  \]
+  \[
+    T(c\vec{v}) = c T(\vec{v})
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Soma}
+  \begin{align*}
+    \onslide<+->{T(\vec{v}+\vec{w})}
+    \onslide<+->{  = T\left(\vetor{r}{s}+\vetor{p}{q}\right)}
+    \onslide<+->{& = T\left(\vetor{r+p}{s+q}\right) \\}
+    \onslide<+->{& = \vetor{2x-y}{x+3y} \evalat{x=r+p, \; y=s+q}{} \\}
+    \onslide<+->{& = \vetor{2(r+p)-(s+q)}{(r+p)+3(s+q)} \\}
+    \onslide<+->{& = \vetor{2p - q + 2r - s}{p + 3q + r + 3s}}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Soma}
+  \begin{align*}
+    \onslide<+->{T(\vec{v}) + T(\vec{w})}
+    \onslide<+->{& = T\left(\vetor{r}{s}\right) + T\left(\vetor{p}{q}\right) \\}
+    \onslide<+->{& = \vetor{2x-y}{x+3y} \evalat{x=r, \; y=s}{}}
+    \onslide<+->{  + \vetor{2x-y}{x+3y} \evalat{x=p, \; y=q}{} \\}
+    \onslide<+->{& = \vetor{2r-s}{r+3s} }
+    \onslide<+->{  + \vetor{2p-q}{p+3q} \\}
+    \onslide<+->{& = \vetor{2p - q + 2r - s}{p + 3q + r + 3s} \\}
+    \onslide<+->{& = T(\vec{v}+\vec{w})}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Produto por Escalar}
+    \begin{align*}
+      \onslide<+->{T(c\vec{v})}
+      \onslide<+->{  = T\left(\vetor{cr}{cs}\right)}
+      \onslide<+->{& = \vetor{2x-y}{x+3y} \evalat{x=cr, \; y=cs}{} \\}
+      \onslide<+->{& = \vetor{2cr-cs}{cr+3cs} \\}
+      \onslide<+->{& = \vetor{c(2r-s)}{c(r+3s)} \\}
+      \onslide<+->{& = c\vetor{2r-s}{r+3s}}
+      \onslide<+->{\;=\; c T(\vec{v})}
+    \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
+\end{frame}

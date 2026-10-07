@@ -1,0 +1,137 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Representação Matricial}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Representação Matricial}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Vetores como Matrizes Coluna}
+  Podemos escrever um vetor de $\R^n$ como uma matriz coluna
+  \[
+    v = \begin{pmatrix}[c]
+      v_1    \\
+      v_2    \\
+      \vdots \\
+      v_n
+    \end{pmatrix}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Operações}
+  \[
+    v + w = \begin{pmatrix}[c]
+      v_1+w_1 \\
+      v_2+w_2 \\
+      \vdots  \\
+      v_n+w_n
+    \end{pmatrix}
+  \qquad\qquad\qquad\pause
+    \alpha v = \begin{pmatrix}[l]
+      \alpha v_1 \\
+      \alpha v_2 \\
+      \vdots     \\
+      \alpha v_n
+    \end{pmatrix}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Produto Escalar}
+  O produto escalar entre $v$ e $w$ é
+  \pause
+  \[
+    v^t w
+    \pause
+    \;=\;
+    \begin{pmatrix}
+      v_1 & v_2 & \cdots & v_n
+    \end{pmatrix}
+    \begin{pmatrix}[c]
+      w_1    \\
+      w_2    \\
+      \vdots \\
+      w_n
+    \end{pmatrix}
+    \pause
+    \;=\;
+    \sum_{i=1}^{n} v_i w_i
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Transformações Lineares}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Transformação linear}
+  Uma aplicação (função)
+  \[
+    T\colon \R^n \to \R^m
+  \]
+  é linear quando
+  \[
+    T(v+w) = T(v) + T(w)
+  \]
+  \[
+    T(cv) = cT(v)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Combinações Lineares}
+  As duas propriedades equivalem a
+  \[
+    T\left( c_1\vec{v}_1 + \cdots + c_k\vec{v}_k \right)
+    = c_1 T(\vec{v}_1) + \cdots + c_kT(\vec{v}_k)
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/G-04-Representacao_Matricial-ex-1}
+\input{ex/G-04-Representacao_Matricial-ex-2}
+\input{ex/G-04-Representacao_Matricial-ex-3}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Transformações Lineares e Matrizes}
+  Uma transformação linear
+  \[
+    T\colon \R^n \to \R^m
+  \]
+  pode ser representada por uma matriz
+  \[
+    A \in \R^{m\times n}
+  \]
+  tal que
+  \[
+    T(v) = A v
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/G-04-Representacao_Matricial-ex-4}
+
+%%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

@@ -1,0 +1,38 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Sabendo que
+  \[
+    T\left(\vec{i}\right) = \vetor{3}{5}
+    \qquad\qquad
+    T\left(\vec{j}\right) = \vetor{2}{1}
+  \]
+  calcule a transformação linear $T(\vec{v})$ para
+  \[
+    \vec{v} = \vetor{3}{4}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.3\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{v}
+    & = \vetor{3}{4} \\}
+    \onslide<+->{& = \vetor{3}{0} + \vetor{0}{4} \\}
+    \onslide<+->{& = 3 \vec{i} + 4 \vec{j}}
+  \end{align*}
+\column{0.6\textwidth}
+  \begin{align*}
+    \onslide<+->{T(\vec{v})}
+    \onslide<+->{& = T\left(3 \vec{i} + 4 \vec{j}\right) \\}
+    \onslide<+->{& = 3T\left(\vec{i}\right) + 4T\left(\vec{j}\right) \\}
+    \onslide<+->{& = 3 \vetor{3}{5} + 4 \vetor{2}{1} \\}
+    \onslide<+->{& = \vetor{9}{15} + \vetor{8}{4}}
+    \onslide<+->{\;=\; \vetor{17}{19}}
+  \end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
