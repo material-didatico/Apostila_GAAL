@@ -88,11 +88,14 @@ def pdf_name(name: str) -> str:
         'F-05-Posicoes_relativas_de_planos_e_retas' : 'F - 05 - Posições Relativas de Planos e Retas',
         'F-06-Distancias'                           : 'F - 06 - Distâncias',
         'F-07-Angulos'                              : 'F - 07 - Ângulos',
-        'G-01-Espacos_Vetoriais'                    : 'G - 01  -Espaços Vetoriais',
-        'G-02-Espacos_Rn'                           : 'G - 02  -Espaços Rn',
-        'G-03-Combinacao_linear'                    : 'G - 03  -Combinação Linear',
-        'G-04-Representacao_Matricial'              : 'G - 04  -Representação Matricial',
-        'G-05-Independencia_linear'                 : 'G - 05  -Independência Linear',
+        'G-01-Espacos_Vetoriais'                    : 'G - 01 - Espaços Vetoriais',
+        'G-02-Espacos_Rn'                           : 'G - 02 - Espaços Rn',
+        'G-03-Combinacao_linear'                    : 'G - 03 - Combinação Linear',
+        'G-04-Representacao_Matricial'              : 'G - 04 - Representação Matricial',
+        'G-05-Independencia_linear'                 : 'G - 05 - Independência Linear',
+        'G-06-Base_dimensao'                        : 'G - 06 - Base e Dimensão'  
+        'G-07-Subespacos'                           : 'G - 07 - Subespaços'     
+        'G-08-Ortogonalizacao'                      : 'G - 08 - Ortogonalização'
     }
 
     name = name.replace('pres_', '').replace('.pdf', '')
