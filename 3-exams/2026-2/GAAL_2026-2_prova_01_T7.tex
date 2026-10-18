@@ -3,7 +3,7 @@
 
 \usepackage{gaal}
 
-%\ShowAnswers
+\ShowAnswers
 
 %------------------------------------------------------------------------------%
 \begin{document}
@@ -55,15 +55,15 @@ calcule \(\mathbf{x}^t A \mathbf{x}\)
     & =
     \begin{bmatrix}
       x \cdot 1 + y \cdot 0 + z \cdot 1 &
-      x \cdot 2 + y \cdot 3 + z \cdot 2 &
-      x \cdot 1 + y \cdot 1 + z \cdot 3
+      x \cdot 2 + y \cdot 3 + z \cdot 1 &
+      x(-1)     + y \cdot 2 + z \cdot 3
     \end{bmatrix}
     \\[2mm]
     & =
     \begin{bmatrix}
       x + z &
-      2x + 3y + 2z &
-      x + y + 3z
+      2x + 3y + z &
+      -x + 2y + 3z
     \end{bmatrix}
   \end{align*}
   \begin{align*}
@@ -71,8 +71,8 @@ calcule \(\mathbf{x}^t A \mathbf{x}\)
     & =
     \begin{bmatrix}
       x + z &
-      2x + 3y + 2z &
-      x + y + 3z
+      2x + 3y + z &
+      -x + 2y + 3z
     \end{bmatrix}
     \begin{bmatrix}
       x \\ y \\ z
@@ -81,17 +81,17 @@ calcule \(\mathbf{x}^t A \mathbf{x}\)
     & =
     \begin{bmatrix}
       (x + z)x +
-      (2x + 3y + 2z)y +
-      {x + y + 3z}z
+      (2x + 3y + z)y +
+      (-x + 2y + 3z)z
     \end{bmatrix}
     \\[2mm]
     & =
-      x^2 + xz +
-      2xy + 3y^2 + 2yz +
-      xz + yz + 3z^2
+      x^2 + xz
+      + 2xy + 3y^2 + yz
+      - xz + 2yz + 3z^2
     \\[2mm]
     & =
-      x^2 + 3y^2 + 3z^2 + 2xy + 2xz + + 3yz
+      x^2 + 3y^2 + 3z^2 + 2xy + 3yz
   \end{align*}
 \end{answer}
 
@@ -108,6 +108,7 @@ Resolva o sistema linear por Gauss--Jordan
 \]
 
 \begin{answer}
+\begin{multicols}{2}
 Vamos escalonar a matriz do sistema
 \[
   \begin{bmatrix}
@@ -177,6 +178,7 @@ A solução é
   \end{bmatrix}
   \qquad t \in \R
 \]
+\end{multicols}
 \end{answer}
 
 % 03
@@ -193,6 +195,7 @@ Utilize o método de Gauss--Jordan para inverter a matriz
 \]
 
 \begin{answer}
+\begin{multicols}{2}
 Matriz aumentada
 \[
   \begin{amatrix}[3]{3}
@@ -261,14 +264,22 @@ Assim
   \end{amatrix}
 \]
 Portanto
-\[
-  A^{-1} =
-  \begin{bmatrix}
+\begin{align*}
+  A^{-1}
+  & = \begin{bmatrix}
     \sfrac{1}{2}  & -\sfrac{1}{2} & \sfrac{1}{2}  \\
     \sfrac{1}{2}  & \sfrac{1}{2}  & -\sfrac{1}{2} \\
     -\sfrac{1}{2} & \sfrac{1}{2}  & \sfrac{1}{2}
   \end{bmatrix}
-\]
+  \\
+  & = \frac{1}{2}
+  \begin{bmatrix}
+     1 & -1 &  1 \\
+     1 &  1 & -1 \\
+    -1 &  1 &  1
+  \end{bmatrix}
+\end{align*}
+\end{multicols}
 \end{answer}
 
 % 04
@@ -307,45 +318,40 @@ A solução do sistema é
 \begin{align*}
   \mathbf{x}
   & = A^{-1} \mathbf{b}
-  \\[2mm]
-  & =
+  =
     \begin{bmatrix}
-      \sfrac{1}{2}  & -\sfrac{1}{2} & \sfrac{1}{2}  \\
-      \sfrac{1}{2}  & \sfrac{1}{2}  & -\sfrac{1}{2} \\
-      -\sfrac{1}{2} & \sfrac{1}{2}  & \sfrac{1}{2}
+       \dfrac{1}{2} & -\dfrac{1}{2} &  \dfrac{1}{2} \\[3mm]
+       \dfrac{1}{2} &  \dfrac{1}{2} & -\dfrac{1}{2} \\[3mm]
+      -\dfrac{1}{2} &  \dfrac{1}{2} &  \dfrac{1}{2}
     \end{bmatrix}
     \begin{bmatrix}
       7 \\
       4 \\
       5 \\
     \end{bmatrix}
-  \\[2mm]
-  & =
+  =
     \begin{bmatrix}
        \dfrac{1}{2}\, 7 - \dfrac{1}{2}\, 4 + \dfrac{1}{2}\, 5 \\[3mm]
        \dfrac{1}{2}\, 7 + \dfrac{1}{2}\, 4 - \dfrac{1}{2}\, 5 \\[3mm]
       -\dfrac{1}{2}\, 7 + \dfrac{1}{2}\, 4 + \dfrac{1}{2}\, 5
     \end{bmatrix}
-  \\[2mm]
-  & =
+  =
     \begin{bmatrix}
       \dfrac{ 7 - 4 + 5}{2} \\[3mm]
       \dfrac{ 7 + 4 - 5}{2} \\[3mm]
       \dfrac{-7 + 4 + 5}{2}
     \end{bmatrix}
-  \\[2mm]
-  & =
+  =
     \begin{bmatrix}
-      \dfrac{8}{2} \\[3mm]
-      \dfrac{6}{2} \\[3mm]
-      \dfrac{2}{2}
+      \sfrac{8}{2} \\[3mm]
+      \sfrac{6}{2} \\[3mm]
+      \sfrac{2}{2}
     \end{bmatrix}
-  \\[2mm]
-  & =
+  =
     \begin{bmatrix}
       4 \\[3mm]
       3 \\[3mm]
-      2
+      1
     \end{bmatrix}
 \end{align*}
 \end{answer}
