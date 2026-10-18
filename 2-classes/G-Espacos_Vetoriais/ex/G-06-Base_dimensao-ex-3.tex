@@ -1,0 +1,61 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine se
+  \[
+  \mathcal{B}=
+  \left\{
+  \begin{pmatrix}
+  1\\2\\0
+  \end{pmatrix}
+  ,
+  \begin{pmatrix}
+  0\\1\\1
+  \end{pmatrix}
+  ,
+  \begin{pmatrix}
+  2\\0\\1
+  \end{pmatrix}
+  \right\}
+  \]
+  é uma base de $\R^{3}$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{align*}
+  A&=
+  \begin{pmatrix}
+  1&0&2\\
+  2&1&0\\
+  0&1&1
+  \end{pmatrix}\\
+  \det(A)
+  &=
+  1
+  \begin{vmatrix}
+  1&0\\
+  1&1
+  \end{vmatrix}
+  +
+  2
+  \begin{vmatrix}
+  2&1\\
+  0&1
+  \end{vmatrix}\\
+  &=1+4\\
+  &=5
+  \end{align*}
+  Como
+  \[
+  \det(A)\neq0
+  \]
+  os três vetores são LI.
+  Logo
+  \[
+  \mathcal{B}
+  \]
+  é uma base de $\R^{3}$
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

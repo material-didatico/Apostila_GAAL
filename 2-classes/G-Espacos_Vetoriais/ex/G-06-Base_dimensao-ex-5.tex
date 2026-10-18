@@ -1,0 +1,51 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine as coordenadas do vetor
+  \[
+    \vec{v} = \vetor{5}{1}
+  \]
+  na base
+  \[
+    \mathcal{B} = \left\{
+      \vetor{1}{1},
+      \vetor{1}{-1}
+    \right\}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[]
+\column{0.4\textwidth}
+  \onslide<+->{Procuramos $a$ e $b$ tais que}
+  \[
+    \onslide<+->{a \vetor{1}{1} + b \vetor{1}{-1} = \vetor{5}{1}}
+  \]
+  \[
+    \onslide<+->{\begin{cases}
+      a + b = 5\\
+      a - b = 1
+    \end{cases}}
+  \]
+
+  \onslide<+->{Somando as equações}
+  \begin{align*}
+    \onslide<+->{2a & = 6 \\}
+    \onslide<+->{a  & = 3}
+  \end{align*}
+\column{0.4\textwidth}
+  \onslide<+->{Substituindo na primeira}
+  \begin{align*}
+    \onslide<+->{a + b & = 5 \\}
+    \onslide<+->{3 + b & = 5 \\}
+    \onslide<+->{b     & = 2}
+  \end{align*}
+  \onslide<+->{Logo
+  \[
+    [\,\vec{v}\,]_{\mathcal{B}} = \vetor{3}{2}
+  \]}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

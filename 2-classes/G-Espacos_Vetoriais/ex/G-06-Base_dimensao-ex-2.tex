@@ -1,0 +1,87 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine se
+  \[
+    \mathcal{B} = \left\{
+      \vetor{1}{2},
+      \vetor{3}{1}
+    \right\}
+  \]
+  é uma base de $\R^{2}$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Primeiro vamos verificar se os vetores são linearmente independentes
+
+  \pause
+  Se forem LI verificamos se eles geram $\R^2$
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Formamos uma matriz com os vetores de $\mathcal{B}$ nas colunas}
+  \[
+    \onslide<+->{A =
+    \begin{pmatrix}
+      1 & 3 \\
+      2 & 1
+    \end{pmatrix}}
+  \]
+  \begin{align*}
+    \onslide<+->{\det(A)}
+     \onslide<+->{& = 1\cdot1-3\cdot2 \\}
+     \onslide<+->{& = 1-6             \\}
+     \onslide<+->{& = -5}
+     \onslide<+->{\neq 0}
+  \end{align*}
+  \onslide<+->{os vetores são LI}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \onslide<+->{Seja
+  \(
+    \vec{v} = \vetor{x}{y} \in \R^{2}
+  \)}
+
+  \onslide<+->{Queremos saber se para quaisquer $x$ e $y$}
+  \onslide<+->{existem $a$ e $b$ tais que
+  \[
+    a\vetor{1}{2} + b\vetor{3}{1} = \vetor{x}{y}
+  \]}
+  \[
+    \onslide<+->{\begin{cases}
+    a + 3b = x \\
+    2a + b = y
+    \end{cases}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.2\textwidth}
+  \begin{align*}
+    \onslide<+->{a + 3b & = x      \\}
+    \onslide<+->{a      & = x - 3b}
+  \end{align*}
+\column{0.3\textwidth}
+  \begin{align*}
+    \onslide<+->{2a + b        & = y              \\}
+    \onslide<+->{2(x - 3b) + b & = y              \\}
+    \onslide<+->{2x - 6b + b   & = y              \\}
+    \onslide<+->{2x - 5b       & = y              \\}
+    \onslide<+->{- 5b          & = y - 2x         \\}
+    \onslide<+->{b             & = \frac{2x-y}{5}}
+  \end{align*}
+\column{0.3\textwidth}
+  \begin{align*}
+    \onslide<+->{a & = x - 3b              \\}
+    \onslide<+->{a & = x - 3\frac{2x-y}{5}}
+  \end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

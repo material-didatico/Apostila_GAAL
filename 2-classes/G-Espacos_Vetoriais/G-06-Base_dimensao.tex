@@ -1,0 +1,277 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Base e Dimensão}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Base}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Conjunto Gerador}
+  Um conjunto
+  \[
+    G = \left\{ \vec{v}_{1}, \ldots, \vec{v}_{k} \right\}
+  \]
+  \pause
+  é um \emph{conjunto gerador} do \emph{espaço vetorial} $V$
+
+  \pause
+  quando todo elemento de $V$ pode ser gerado
+
+  \pause
+  como \emph{combinação linear} dos elementos de $G$
+  \[
+    \pause
+    \forall \vec{v}\in V
+    \qquad
+    \pause
+    \vec{v} = \alpha_1\vec{v}_{1} + \cdots + \alpha_k\vec{v}_{k}
+  \]
+  \pause
+  Dizemos que \(G\) gera \(V\)
+  \[
+    \pause
+    V
+    = \ger(G)
+    \pause
+    = \ger\left\{ \vec{v}_{1}, \ldots, \vec{v}_{k} \right\}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Base}
+  Um conjunto gerador
+  \[
+    \pause
+    \mathcal{B} = \left\{ \vec{v}_{1}, \ldots, \vec{v}_{k} \right\}
+  \]
+  \pause
+  é uma \emph{base} para o espaço vetorial $V$
+
+  \pause
+  se seus elementos são \emph{linearmente independentes}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Base canônica de $\R^2$}
+  A \emph{base canônica} para o espaço vetorial \(\R^2\)
+  \pause
+  é
+  \[
+    \mathcal{E}
+    = \left\{ \vec{i}, \vec{j} \right\}
+    \pause
+    = \left\{ \vec{e}_{1}, \vec{e}_{2} \right\}
+  \]
+  \pause
+  com
+  \[
+    \vec{i} = \vec{e}_1 = \vetor{1}{0} \pause \qquad
+    \vec{j} = \vec{e}_2 = \vetor{0}{1}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Base canônica de $\R^3$}
+  A \emph{base canônica} para o espaço vetorial \(\R^3\)
+  \pause
+  é
+  \[
+    \mathcal{E}
+    = \left\{ \vec{i}, \vec{j}, \vec{k} \right\}
+    \pause
+    = \left\{ \vec{e}_{1}, \vec{e}_{2}, \vec{e}_{3} \right\}
+  \]
+  \pause
+  com
+  \[
+    \vec{i} = \vec{e}_1 = \vetortri{1}{0}{0} \pause \qquad
+    \vec{j} = \vec{e}_2 = \vetortri{0}{1}{0} \pause \qquad
+    \vec{k} = \vec{e}_3 = \vetortri{0}{0}{1}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}[t]{Base canônica de $\R^n$}
+  A \emph{base canônica} para o espaço vetorial \(\R^n\)
+  \pause
+  é
+  \[
+    \mathcal{E} = \left\{ \vec{e}_{1}, \ldots, \vec{e}_{n} \right\}
+  \]
+  \pause
+  com
+  \[
+    \vec{e}_1 =
+    \begin{pmatrix}[c]
+      1      \\
+      0      \\
+      0      \\
+      \vdots \\
+      0
+    \end{pmatrix}
+    \pause
+    \qquad
+    \vec{e}_2 =
+    \begin{pmatrix}[c]
+      0      \\
+      1      \\
+      0      \\
+      \vdots \\
+      0
+    \end{pmatrix}
+    \pause
+    \qquad
+    \vec{e}_3 =
+    \begin{pmatrix}[c]
+      0      \\
+      0      \\
+      1      \\
+      \vdots \\
+      0
+    \end{pmatrix}
+    \pause
+    \qquad
+    \cdots
+    \qquad
+    \vec{e}_n =
+    \begin{pmatrix}[c]
+      0      \\
+      0      \\
+      0      \\
+      \vdots \\
+      1
+    \end{pmatrix}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/G-06-Base_dimensao-ex-1}
+\input{ex/G-06-Base_dimensao-ex-2}
+%\input{ex/G-06-Base_dimensao-ex-3}
+\input{ex/G-06-Base_dimensao-ex-4}
+
+%------------------------------------------------------------------------------%
+\section{Dimensão}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Dimensão}
+  Se
+  \(
+    \mathcal{B} = \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n} \right\}
+  \)
+  é uma base de $V$
+
+  \pause o número de elementos de \(\mathcal{B}\)
+  \pause é a \emph{dimensão} e $V$
+  \[
+    \pause
+    \dim(V) = n
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Dimensão de $\R^{n}$}
+  Como a base canônica de $\R^n$ possui $n$ vetores
+  \[
+    \dim\left(\R^{n}\right) = n
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Base de $P_{n}$}
+  O espaço dos polinômios de grau $n$
+  \[
+    \pause
+    P_{n} = \left\{ a_{0} + a_1x + \cdots + a_nx^n \st a_i \in \R \right\}
+  \]
+  \pause
+  possui a base canônica
+  \[
+    \pause
+    \mathcal{B} = \left\{ 1, x, x^2, \ldots, x^n \right\}
+  \]
+
+  \pause
+  Como a base possui $n+1$ elementos
+  \[
+    \pause
+    \dim(P_n) = n + 1
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Coordenadas}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Coordenadas em uma Base}
+  Se
+  \(
+    \mathcal{B} = \left\{ \vec{v}_{1}, \ldots, \vec{v}_{n} \right\}
+  \)
+  é uma base de $V$
+
+  \pause
+  todo vetor $\vec{v}\in V$ pode ser escrito de maneira \emph{única}
+  \[
+    \pause
+    \vec{v} = a_1\vec{v}_1 + \cdots + a_n\vec{v}_n
+  \]
+
+  \pause
+  Os escalares
+  \[
+    \pause
+    a_1, \ldots, a_n
+  \]
+  \pause
+  são as \emph{coordenadas} de $\vec{v}$ na base $\mathcal{B}$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Notação}
+  As \emph{coordenadas} de $\vec{v}$ na base $\mathcal{B}$
+  \[
+    \vec{v} = a_1\vec{v}_1 + \cdots + a_n\vec{v}_n
+  \]
+  \pause
+  são denotadas por
+  \[
+    \pause
+    \left[\,\vec{v}\,\right]_{\mathcal{B}}
+    \pause =
+    \begin{pmatrix}[c]
+      a_{1}  \\
+      \vdots \\
+      a_{n}
+    \end{pmatrix}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/G-06-Base_dimensao-ex-5}
+
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

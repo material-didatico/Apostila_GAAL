@@ -1,0 +1,61 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Verifique que
+  \[
+    \mathcal{E} = \left\{
+      \vetor{1}{0},
+      \vetor{0}{1}
+    \right\}
+  \]
+  é uma base de $\R^{2}$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Seja
+  \[
+    \vec{v} = \vetor{x}{y} \in \R^{2}
+  \]
+  \pause
+  Então
+  \[
+    \vec{v}
+    \pause
+    = \vetor{x}{y}
+    \pause
+    = \vetor{x}{0} + \vetor{0}{y}
+    \pause
+    = x \vetor{1}{0} + y \vetor{0}{1}
+  \]
+  \pause
+  Logo, $\mathcal{E}$ gera $\R^2$
+  \[
+    \pause
+    \R^2 = \ger\left(\mathcal{E}\right)
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Verificando a independência
+  \[
+    \pause
+    a \vetor{1}{0} + b \vetor{0}{1} = \vetor{0}{0}
+  \]
+  \pause
+  corresponde ao sistema
+  \[
+    \begin{cases}
+      a = 0 \\
+      b = 0
+    \end{cases}
+  \]
+  \pause
+  Logo $\mathcal{E}$ é LI e gera $\R^{2}$
+
+  \pause
+  Portanto $\mathcal{E}$ é uma base
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
