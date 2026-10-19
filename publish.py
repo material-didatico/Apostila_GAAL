@@ -93,9 +93,9 @@ def pdf_name(name: str) -> str:
         'G-03-Combinacao_linear'                    : 'G - 03 - Combinação Linear',
         'G-04-Representacao_Matricial'              : 'G - 04 - Representação Matricial',
         'G-05-Independencia_linear'                 : 'G - 05 - Independência Linear',
-        'G-06-Base_dimensao'                        : 'G - 06 - Base e Dimensão'  
-        'G-07-Subespacos'                           : 'G - 07 - Subespaços'     
-        'G-08-Ortogonalizacao'                      : 'G - 08 - Ortogonalização'
+        'G-06-Base_dimensao'                        : 'G - 06 - Base e Dimensão',
+        'G-07-Subespacos'                           : 'G - 07 - Subespaços',
+        'G-08-Ortogonalizacao'                      : 'G - 08 - Ortogonalização',
     }
 
     name = name.replace('pres_', '').replace('.pdf', '')
