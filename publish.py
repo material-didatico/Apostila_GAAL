@@ -34,14 +34,14 @@ tab = 4*' '
 def folder_name(name: str) -> str:
 
     names = {
-            'A-Introducao'        : 'A - Introdução',
-            'B-Matrizes'          : 'B - Matrizes',
-            'C-Sistemas'          : 'C - Sistemas Lineares',
-            'D-Determinantes'     : 'D - Determinantes',
-            'E-Vetores'           : 'E - Vetores',
-            'F-Retas_e_planos'    : 'F - Retas e Planos',
-            'G-Espacos_Vetoriais' : 'G - Espaços Vetoriais',
-            }
+        'A-Introducao'        : 'A - Introdução',
+        'B-Matrizes'          : 'B - Matrizes',
+        'C-Sistemas'          : 'C - Sistemas Lineares',
+        'D-Determinantes'     : 'D - Determinantes',
+        'E-Vetores'           : 'E - Vetores',
+        'F-Retas_e_planos'    : 'F - Retas e Planos',
+        'G-Espacos_Vetoriais' : 'G - Espaços Vetoriais',
+    }
 
     try:
         return names[name]
@@ -95,7 +95,8 @@ def pdf_name(name: str) -> str:
         'G-05-Independencia_linear'                 : 'G - 05 - Independência Linear',
         'G-06-Base_dimensao'                        : 'G - 06 - Base e Dimensão',
         'G-07-Subespacos'                           : 'G - 07 - Subespaços',
-        'G-08-Ortogonalizacao'                      : 'G - 08 - Ortogonalização',
+        'G-08-Bases_ortogonais'                     : 'G - 08 - Bases Ortogonais',
+        'G-09-Gram-Schmidt'                         : 'G - 09 - Gram-Schmidt',
     }
 
     name = name.replace('pres_', '').replace('.pdf', '')
