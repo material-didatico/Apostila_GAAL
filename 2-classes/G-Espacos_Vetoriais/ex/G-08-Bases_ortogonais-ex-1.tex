@@ -1,0 +1,91 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine se
+  \[
+    \mathcal{B}
+    = \left\{
+      \vec{v}_1, \vec{v}_3, \vec{v}_3
+    \right\}
+    = \left\{
+      \vetortri{1}{1}{0}, \,
+      \vetortri{1}{-1}{0}, \,
+      \vetortri{0}{0}{2}
+    \right\}
+  \]
+  é uma base ortogonal ou ortonormal de $\R^3$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    \vec{v}_1\cdot\vec{v}_2
+    \pause
+    = \vetortri{1}{1}{0} \cdot \vetortri{1}{-1}{0}
+    \pause
+    = 1 \times 1 + 1(-1) + 0 \times 0
+    \pause
+    = 1 - 1 + 0
+    \pause
+    = 0
+  \]
+  \[
+    \pause
+    \vec{v}_1\cdot\vec{v}_3
+    \pause
+    = \vetortri{1}{1}{0} \cdot \vetortri{0}{0}{2}
+    \pause
+    = 1 \times 0 + 1 \times 0 + 0 \times 2
+    \pause
+    = 0
+  \]
+  \[
+    \pause
+    \vec{v}_2\cdot\vec{v}_3
+    \pause
+    = \vetortri{1}{-1}{0} \cdot \vetortri{0}{0}{2}
+    \pause
+    = 1 \times 0 + (-1)0 + 0 \times 2
+    \pause
+    = 0
+  \]
+  \pause
+  Logo $\mathcal{B}$ é ortogonal
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    \norm{\vec{v}_1}
+    \pause
+    = \norm{\vetortri{1}{1}{0}}
+    \pause
+    = \sqrt{1^2 + 1^2}
+    \pause
+    = \sqrt{2}
+  \]
+  \[
+    \pause
+    \norm{\vec{v}_2}
+    \pause
+    = \norm{\vetortri{1}{-1}{0}}
+    \pause
+    = \sqrt{1^2 + 1^2}
+    \pause
+    = \sqrt{2}
+  \]
+  \[
+    \pause
+    \norm{\vec{v}_3}
+    \pause
+    = \norm{\vetortri{0}{0}{2}}
+    \pause
+    = \sqrt{2^2}
+    \pause
+    = 2
+  \]
+  \pause
+  Logo $\mathcal{B}$ não é ortonormal
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

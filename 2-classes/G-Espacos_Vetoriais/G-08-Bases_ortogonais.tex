@@ -1,0 +1,211 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Bases Ortogonias e Ortonormais}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Bases e Coordenadas}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Base}
+  Uma base de um espaço vetorial $V$
+  \[
+    \pause
+    \mathcal{B} = \{\vec{v}_1,\ldots,\vec{v}_n\}
+  \]
+  \pause
+  é um conjunto de vetores que
+  \pause
+  \begin{itemize}
+    \item gera o espaço
+      \[
+        \pause
+        V = \ger\left(\mathcal{B}\right)
+        \pause
+      \]
+    \item é linearmente independente
+      \[
+        \pause
+        c_1\vec{v}_1+\cdots+c_n\vec{v}_n = \vec{0}
+        \pause
+        \quad\Rightarrow\quad
+        c_i = 0
+      \]
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Coordenadas em uma Base}
+  Considerando uma base ordenada de $V$
+  \[
+    \pause
+    \mathcal{B} = \{\vec{v}_1,\ldots,\vec{v}_n\}
+  \]
+
+  \pause
+  Existe uma única representação para cada vetor \(\vec{v}\in V\)
+  \[
+    \pause
+    \left[\,\vec{v}\,\right]_{\mathcal{B}}
+    \pause =
+    \begin{pmatrix}[c]
+      a_{1}  \\
+      \vdots \\
+      a_{n}
+    \end{pmatrix}
+  \]
+  \pause
+  tal que
+  \(
+    \vec{v} = a_1\vec{v}_1 + \cdots + a_n\vec{v}_n
+  \)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Bases Ortogonais}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Independência de Vetores Ortogonais}
+  \onslide<+->{Vetores ortogonais
+  \(
+    \vec{v}_1, \ldots, \vec{v}_n
+  \)}
+  \onslide<+->{são \emph{linearmente independentes}}
+  \begin{align*}
+    \onslide<+->{\vec{0} & = c_1\vec{v}_1+\cdots+c_n\vec{v}_n \\}
+    \onslide<+->{\vec{0} \cdot \vec{v}_i & = \left(c_1\vec{v}_1+\cdots+c_n\vec{v}_n\right) \cdot \vec{v}_i \\}
+    \onslide<+->{0 & = c_1\vec{v}_1 \cdot \vec{v}_i + \cdots + c_i\vec{v}_i \cdot \vec{v}_i + \cdots + c_n\vec{v}_n \cdot \vec{v}_i \\}
+    \onslide<+->{0 & = 0 + \cdots + c_i\vec{v}_i \cdot \vec{v}_i + \cdots + 0\\}
+    \onslide<+->{0 & = c_i \norm{\vec{v}_i}^2 \\}
+    \onslide<+->{c_i & = 0}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Base Ortogonal}
+  Uma base
+  \[
+    \mathcal{B} = \{\vec{v}_1, \ldots, \vec{v}_n\}
+  \]
+  \pause
+  é \emph{ortogonal} quando
+  \[
+    \pause
+    \vec{v}_i\cdot\vec{v}_j = 0
+    \qquad
+    i \neq j
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Coordenadas em uma Base Ortogonal}
+  \onslide<+->{Se $\mathcal{B}$ é ortogonal}
+  \begin{align*}
+    \onslide<+->{\vec{x} & = c_1\vec{v}_1 + \cdots + c_n\vec{v}_n \\}
+    \onslide<+->{\vec{x} \cdot \vec{v}_j & = \left(c_1\vec{v}_1 + \cdots + c_n\vec{v}_n\right)  \cdot \vec{v}_j \\}
+    \onslide<+->{\vec{x} \cdot \vec{v}_j & = c_1\vec{v}_1 \cdot \vec{v}_j + \cdots + c_j\vec{v}_j \cdot \vec{v}_j + \cdots + c_n\vec{v}_n \cdot \vec{v}_j \\}
+    \onslide<+->{\vec{x} \cdot \vec{v}_j & = 0 + \cdots + c_j\vec{v}_j \cdot \vec{v}_j + \cdots + 0\\}
+    \onslide<+->{\vec{x} \cdot \vec{v}_j & = c_j \norm{\vec{v}_j}^2 \\}
+    \onslide<+->{c_j & = \frac{\vec{x}\cdot\vec{v}_j}{\norm{\vec{v}_j}^{2}}}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Coordenadas em uma Base Ortogonal}
+  Em qualquer base ortogonal
+  \[
+    \vec{x} = \sum_{j=1}^{n} \;\;
+    \frac{\vec{x}\cdot\vec{v}_j}{\norm{\vec{v}_j}^{2}} \;\; \vec{v}_j
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Bases Ortonormais}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Base Ortonormal}
+  Uma base
+  \[
+   \mathcal{B} = \{\vec{v}_1, \ldots, \vec{v}_n\}
+  \]
+  \pause
+  é \emph{ortonormal} quando
+  \[
+    \pause
+    \vec{v}_i\cdot\vec{v}_j = 0
+    \qquad
+    i\neq j
+  \]
+  \[
+    \pause
+    \norm{\vec{v}_i}=1
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Base Ortonormal Definição Equivalente}
+  \[
+    \vec{v}_i\cdot\vec{v}_j
+    \pause
+    = \delta_{ij}
+    \pause
+    =
+    \begin{cases}
+    1 & i = j\\
+    0 & i \neq j
+    \end{cases}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Coordenadas em uma Base Ortonormal}
+  Se $\mathcal{B}$ é ortonormal
+  \[
+    \pause
+    \norm{\vec{v}_j}^{2} = 1
+  \]
+
+  \pause
+  \[
+    c_j
+    = \frac{\vec{x}\cdot\vec{v}_j}{\norm{\vec{v}_j}^{2}}
+    \pause
+    = \vec{x} \cdot \vec{v}_j
+  \]
+
+  \pause
+  \[
+    \vec{x} = \sum_{j=1}^{n} \;\;
+    (\vec{x}\cdot\vec{v}_j) \;\; \vec{v}_j
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Exemplos}
+
+\input{ex/G-08-Bases_ortogonais-ex-1}
+\input{ex/G-08-Bases_ortogonais-ex-2}
+
+%%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
