@@ -1,0 +1,316 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Subespaços Vetoriais}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Definição}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Subespaço}
+  Dado um espaço vetorial $V$
+
+  \pause
+  \medskip
+  Um \emph{subconjunto} $W\subseteq V$
+  \pause
+  é um \emph{subespaço} de $V$
+
+  \pause
+  \medskip
+  quando $W$ também é um \emph{espaço vetorial} com as operações de $V$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Critério de Subespaço}
+  Um subconjunto $W\subseteq V$ é um subespaço se
+  \[
+    \pause
+    \vec{0}\in W
+  \]
+
+  \[
+    \pause
+    \vec{u}, \vec{v} \in W
+    \pause
+    \quad\Rightarrow\quad
+    \vec{u} + \vec{v} \in W
+  \]
+
+  \[
+    \pause
+    \vec{u} \in W
+    \pause
+    \quad a \in \R
+    \pause
+    \quad\Rightarrow\quad
+    a\vec{u} \in W
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Critério Alternativo}
+  Basta verificar
+  \[
+    \pause
+    \vec{0} \in W
+  \]
+  \pause
+  \[
+    a\vec{u}+b\vec{v}\in W
+    \pause
+    \qquad
+    \text{ para quaisquer }
+    \vec{u},
+    \vec{v}\in W
+    \quad
+    a, b\in\R
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Subespaços Triviais}
+  Todo espaço vetorial possui dois subespaços
+  \[
+    \pause
+    W_1 = \{\vec{0}\}
+  \]
+  \pause e
+  \[
+    W_2 = V
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Subespaços de $\R^n$}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Subespaços de $\R^2$}
+  Os subespaços de $\R^{2}$ podem ser
+  \[
+    \pause
+    W_1 = \{\vec{0}\}
+  \]
+
+  \[
+    \pause
+    W_2 = \text{uma reta que passa pela origem}
+  \]
+
+  \[
+    \pause
+    W_3 = \R^2
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Subespaços de $\R^{3}$}
+  Os subespaços de $\R^{3}$ podem ser
+  \[
+    \pause
+    W_1 = \{\vec{0}\}
+  \]
+
+  \[
+    \pause
+    W_2 = \text{uma reta que passa pela origem}
+  \]
+
+  \[
+    \pause
+    W_3 = \text{um plano que passa pela origem}
+  \]
+
+  \[
+    \pause
+    W_4 = \R^{3}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Subespaços Gerados}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Subespaço Gerado}
+  Dado um conjunto de vetores de um espaço vetorial $V$
+  \[
+    G = \left\{ \vec{v}_{1}, \ldots, \vec{v}_{k} \right\}
+  \]
+
+  \bigskip
+  \pause
+  O conunto dos vetores gerados por $G$
+  \[
+    \pause
+    W = \ger(G) = \ger \left\{ \vec{v}_{1}, \ldots, \vec{v}_{k} \right\}
+  \]
+  \pause
+  é um subespaço de $V$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{O Subespaço Gerado Contém o Vetor Nulo}
+  Seja
+  \[
+    W
+    = \ger(G)
+    \pause
+    = \ger \left\{ \vec{v}_{1}, \ldots, \vec{v}_{k} \right\}
+    \pause
+    \subset V
+  \]
+  \pause
+  O vetor nulo pertence a $W$
+  \[
+    \vec{0} \in W
+  \]
+  \pause
+  pois
+  \[
+    \vec{0} = 0\vec{v}_{1} + \cdots + 0\vec{v}_{k}
+  \]
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{O Subespaço Gerado é Fechado}
+  Sejam \(\vec{r}\) e \(\vec{s}\) vetores em
+  \[
+    W = \ger(G) = \ger \left\{ \vec{v}_{1}, \ldots, \vec{v}_{k} \right\}
+  \]
+  \pause
+  precisamos mostrar que \(a\vec{r} + b\vec{s} \in W\)
+
+  \pause
+  Sabemos que
+  \[
+    \pause
+    \vec{r} = c_1\vec{v}_1 + c_2\vec{v}_2 + \cdots + c_k\vec{v}_k
+  \]
+  \[
+    \pause
+    \vec{s} = d_1\vec{v}_1 + d_2\vec{v}_2 + \cdots + d_k\vec{v}_k
+  \]
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{O Subespaço Gerado é Fechado}
+  \begin{align*}
+    \onslide<+->{a\vec{r} + b\vec{s}}
+    \onslide<+->{& = a\left(c_1\vec{v}_1 + c_2\vec{v}_2 + \cdots + c_k\vec{v}_k\right)}
+    \onslide<+->{  + b\left(d_1\vec{v}_1 + d_2\vec{v}_2 + \cdots + d_k\vec{v}_k\right)}
+    \\
+    \onslide<+->{& = ac_1\vec{v}_1 + ac_2\vec{v}_2 + \cdots + ac_k\vec{v}_k}
+    \onslide<+->{  + bd_1\vec{v}_1 + bd_2\vec{v}_2 + \cdots + bd_k\vec{v}_k}
+    \\
+    \onslide<+->{& = (ac_1+ bd_1)\vec{v}_1 + (ac_2 + bd_2)\vec{v}_2 + \cdots + (ac_k + bd_k)\vec{v}_k}
+    \\
+    \onslide<+->{& = p_1\vec{v}_1 + p_2\vec{v}_2 + \cdots + p_k\vec{v}_k}
+  \end{align*}
+  \onslide<+->{Então \(a\vec{r} + b\vec{s} \in W\)}
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\section{Solução de Sistemas Lineares}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Espaço Solução}
+  Considere um sistema homogêneo
+  \[
+    A\vec{x} = \vec{0}
+  \]
+  \pause
+  O conjunto solução é
+  \[
+    \pause
+    W = \left\{ \vec{x}\in\R^n \st A\vec{x} = \vec{0} \right\}
+  \]
+  \pause
+  Esse conjunto é sempre um subespaço de $\R^n$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{O Conjunto Solução Contém o Vetor Nulo}
+  Seja
+  \[
+    W = \left\{ \vec{x}\in\R^n \st A\vec{x} = \vec{0} \right\}
+    \subset \R^n
+  \]
+  \pause
+  O vetor nulo pertence a $W$
+  \[
+    \vec{0} \in W
+  \]
+  \pause
+  pois
+  \[
+    A \vec{0} = \vec{0}
+  \]
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{O Conjunto Solução é Fechado}
+  Sejam \(\vec{r}\) e \(\vec{s}\) vetores em
+  \[
+    W = \left\{ \vec{x}\in\R^n \st A\vec{x} = \vec{0} \right\}
+  \]
+  \pause
+  precisamos mostrar que \(a\vec{r} + b\vec{s} \in W\)
+
+  \pause
+  Sabemos que
+  \[
+    \pause
+    A \vec{r} = \vec{0}
+    \qquad\qquad
+    \pause
+    A \vec{s} = \vec{0}
+  \]
+  \pause
+  Portanto
+  \[
+    \pause
+    A\left(a\vec{r} + b\vec{s}\right)
+    \pause
+    = aA\vec{r} + bA\vec{s}
+    \pause
+    = a\vec{0} + b\vec{0}
+    \pause
+    = \vec{0}
+  \]
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\input{ex/G-07-Subespacos-ex-1}
+\input{ex/G-07-Subespacos-ex-2}
+\input{ex/G-07-Subespacos-ex-3}
+\input{ex/G-07-Subespacos-ex-4}
+%\input{ex/G-07-Subespacos-ex-5}
+\input{ex/G-07-Subespacos-ex-6}
+\input{ex/G-07-Subespacos-ex-7}
+%\input{ex/G-07-Subespacos-ex-8}
+%\input{ex/G-07-Subespacos-ex-9}
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+,

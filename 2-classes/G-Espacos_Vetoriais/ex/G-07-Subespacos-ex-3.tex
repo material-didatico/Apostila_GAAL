@@ -1,0 +1,85 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine se
+  \[
+    W = \left\{ \vetortri{x}{y}{z} \in\R^{3} \st x+y-z=0 \right\}
+  \]
+  é um subespaço de $\R^{3}$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Vetor Nulo}
+  O vetor nulo \(\vetortri{0}{0}{0}\) pertence a $W$?
+
+  \pause
+  \[
+    x + y - z
+    \pause
+    = 0 + 0 - 0
+    \pause
+    = 0
+  \]
+
+  \pause
+  Portanto
+  \[
+    \vec{0} \in W
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Combinação Linear}
+  A combinação linear de dois vetores em $W$ pertence a $W$?
+  \[
+    \pause
+    \vec{v}, \; \vec{w} \; \in W
+    \pause
+    \quad\Rightarrow\quad
+    a \vec{v} + b\vec{w} \; \in W
+  \]
+
+  \pause
+  Se \(\vec{v} = \vetortri{v_1}{v_2}{v_3}\) e \(\vec{w} = \vetortri{w_1}{w_2}{w_3}\in W\)
+
+  \pause
+  \[
+    \vec{p}
+    = a\vec{v}+b\vec{w}
+    \pause
+    = a \vetortri{v_1}{v_2}{v_3} + b \vetortri{w_1}{w_2}{w_3}
+    \pause
+    = \vetortri{av_1+bw_1}{av_2+bw_2}{av_3+bw_3}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Combinação Linear}
+  \onslide<+->{Como \(\vec{v}, \vec{w} \in W\)}
+  \[
+    \onslide<+->{v_1 + v_2 - v_3 = 0}
+    \qquad
+    \onslide<+->{w_1 + w_2 - w_3 = 0}
+  \]
+  \onslide<+->{Verificando se \(\vec{p} \in W\)}
+  \begin{align*}
+    \onslide<+->{x + y - z}
+    \onslide<+->{& = p_1 + p_2 - p_3                         \\}
+    \onslide<+->{& = (av_1+bw_1) + (av_2+bw_2) - (av_3+bw_3) \\}
+    \onslide<+->{& = a(v_1+v_2-v_3) + b(w_1+w_2-w_3)         \\}
+    \onslide<+->{& = a\times 0 + b\times 0                   \\}
+    \onslide<+->{& = 0}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Combinação Linear}
+  \onslide<+->{Logo
+  \(
+    \vec{p}\in W
+  \)}
+
+  \onslide<+->{Portanto $W$ é subespaço de $\R^3$}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

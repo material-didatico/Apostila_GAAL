@@ -1,0 +1,75 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine se
+  \[
+    W = \left\{ \vetor{x}{y} \in\R^{2} \st y = 2x \right\}
+  \]
+  é um subespaço de $\R^{2}$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Vetor Nulo}
+  O vetor nulo \(\vetor{0}{0}\) pertence a $W$?
+
+  \pause
+  Se $x=0$ então
+  \[
+    \pause
+    y
+    \pause
+    = 2x
+    \pause
+    = 2\times 0
+    \pause
+    = 0
+  \]
+
+  \pause
+  Portanto
+  \[
+    \vec{0} \in W
+  \]
+
+\end{resolution}
+%------------------------------------------------------------------------------%
+\begin{resolution}{Combinação Linear}
+  A combinação linear de dois vetores em $W$ pertence a $W$?
+  \[
+    \pause
+    \vec{v}, \; \vec{w} \; \in W
+    \pause
+    \quad\Rightarrow\quad
+    a \vec{v} + b\vec{w} \; \in W
+  \]
+
+  \pause
+  Se \(\vec{v}, \vec{w} \in W\)
+  \pause
+  então
+  \(
+    \vec{v} = \vetor{p}{2p}
+    \quad
+    \vec{w} = \vetor{q}{2q}
+  \)
+  \pause
+  \[
+    a\vec{v}+b\vec{w}
+    \pause
+    = a\vetor{p}{2p} + b\vetor{q}{2q}
+    \pause
+    = \vetor{ap+bq}{2(ap+bq)}
+    \pause
+    = \vetor{x}{2x}
+  \]
+   \pause
+  Logo
+  \(
+    a\vec{u}+b\vec{v}\in W
+  \)
+
+  \pause
+  Portanto, $W$ é subespaço de $\R^2$
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

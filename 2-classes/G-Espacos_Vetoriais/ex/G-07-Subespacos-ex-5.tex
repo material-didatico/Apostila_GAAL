@@ -1,0 +1,68 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine uma descrição paramétrica do subespaço
+  \[
+  W=
+  \left\{
+  \begin{pmatrix}
+  x\\y\\z
+  \end{pmatrix}
+  \in\R^{3}
+  \;\middle|\;
+  2x-y+z=0
+  \right\}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Da equação
+  \begin{align*}
+  2x-y+z&=0\\
+  z&=-2x+y
+  \end{align*}
+  Tomando
+  \[
+  x=s
+  \qquad
+  y=t
+  \]
+  obtemos
+  \begin{align*}
+  \begin{pmatrix}
+  x\\y\\z
+  \end{pmatrix}
+  &=
+  \begin{pmatrix}
+  s\\t\\-2s+t
+  \end{pmatrix}\\
+  &=
+  s
+  \begin{pmatrix}
+  1\\0\\-2
+  \end{pmatrix}
+  +
+  t
+  \begin{pmatrix}
+  0\\1\\1
+  \end{pmatrix}
+  \end{align*}
+  Logo
+  \[
+  W=
+  \operatorname{span}
+  \left\{
+  \begin{pmatrix}
+  1\\0\\-2
+  \end{pmatrix}
+  ,
+  \begin{pmatrix}
+  0\\1\\1
+  \end{pmatrix}
+  \right\}
+  \]
+
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

@@ -1,0 +1,51 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine se
+  \[
+  W=
+  \left\{
+  \begin{pmatrix}
+  x\\y\\z
+  \end{pmatrix}
+  \in\R^{3}
+  \;\middle|\;
+  xy=0
+  \right\}
+  \]
+  é um subespaço de $\R^{3}$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  Temos
+  \[
+  \vec{u}=
+  \begin{pmatrix}
+  1\\0\\0
+  \end{pmatrix}
+  \in W
+  \qquad
+  \vec{v}=
+  \begin{pmatrix}
+  0\\1\\0
+  \end{pmatrix}
+  \in W
+  \]
+  Mas
+  \begin{align*}
+  \vec{u}+\vec{v}
+  &=
+  \begin{pmatrix}
+  1\\1\\0
+  \end{pmatrix}\\
+  1\cdot1&=1\neq0
+  \end{align*}
+  Logo
+  \[
+  \vec{u}+\vec{v}\notin W
+  \]
+  Portanto $W$ não é subespaço
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

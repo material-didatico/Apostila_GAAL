@@ -1,0 +1,84 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine se o conjunto das matrizes simétricas de ordem 2
+  \[
+    W=
+    \left\{
+    \begin{pmatrix}[cc]
+      a & b \\
+      b & c
+    \end{pmatrix}
+    \st
+    a, b, c \in \R
+    \right\}
+  \]
+  é um subespaço de $M_{2\times2}$
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Matriz Nula}
+  Escolhendo $a$, $b$ e $c$ iguais a zero
+
+  \pause
+  verificamos que a matriz nula pertence a $W$
+  \[
+    \pause
+    \begin{pmatrix}
+      0 & 0 \\
+      0 & 0
+    \end{pmatrix}
+    \in W
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Combinação Linear}
+  Sejam
+  \[
+    A =
+    \begin{pmatrix}
+      a & b \\
+      b & c
+    \end{pmatrix}
+    \qquad
+    \pause
+    B =
+    \begin{pmatrix}
+      d & e \\
+      e & f
+    \end{pmatrix}
+    \qquad
+    \pause
+    \lambda, \mu\in\R
+  \]
+  \pause
+  \[
+    \lambda A + \mu B
+    \pause
+    = \lambda
+    \begin{pmatrix}
+      a & b \\
+      b & c
+    \end{pmatrix}
+    + \mu
+    \begin{pmatrix}
+      d & e \\
+      e & f
+    \end{pmatrix}
+    \pause
+    =
+    \begin{pmatrix}
+      \lambda a+\mu d & \lambda b+\mu e \\
+      \lambda b+\mu e & \lambda c+\mu f
+    \end{pmatrix}
+  \]
+
+  \pause
+  A matriz resultante é simétrica
+
+  \pause
+  Logo $W$ é subespaço
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

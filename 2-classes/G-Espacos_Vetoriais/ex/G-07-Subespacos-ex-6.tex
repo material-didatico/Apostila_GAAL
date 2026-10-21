@@ -1,0 +1,43 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine o espaço solução de
+  \[
+  \begin{cases}
+    x + y + z = 0 \\
+    x - y + z = 0
+  \end{cases}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}
+\column{0.5\textwidth}
+  \onslide<+->{Subtraindo as equações}
+  \begin{align*}
+    \onslide<+->{(x+y+z)-(x-y+z) & = 0 \\}
+    \onslide<+->{2y              & = 0 \\}
+    \onslide<+->{y               & = 0}
+  \end{align*}
+  \onslide<+->{Substituindo}
+  \begin{align*}
+    \onslide<+->{x + y + z & =  0  \\}
+    \onslide<+->{x + z     & =  0  \\}
+    \onslide<+->{x         & = -z}
+  \end{align*}
+  \column{0.5\textwidth}
+  \onslide<+->{Tomando $z=t$}
+  \[
+    \onslide<+->{\vetortri{x}{y}{z}}
+    \onslide<+->{= \vetortri{-t}{0}{t}}
+    \onslide<+->{= t \vetortri{-1}{0}{1}}
+  \]
+  \onslide<+->{Logo
+  \[
+    W = \ger \left\{ \vetortri{-1}{0}{1} \right\}
+  \]}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
