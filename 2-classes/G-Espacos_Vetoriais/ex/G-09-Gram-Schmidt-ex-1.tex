@@ -1,0 +1,79 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Ortonormalize, pelo processo de Gram--Schmidt,
+  \[
+    \vec{v}_1 = (1,1,0)
+    \qquad
+    \vec{v}_2 = (1,0,1)
+  \]
+  e obtenha uma base ortonormal de
+  \(
+    \ger\{\vec{v}_1,\vec{v}_2\}
+  \)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    \vec{u}_1
+    \pause
+    = \vec{v}_1
+    \pause
+    = (1, 1, 0)
+  \]
+
+  \pause
+  \[
+    \norm{\vec{u}_1}
+    \pause
+    = \sqrt{2}
+  \]
+
+  \pause
+  \[
+    \vec{e}_1
+    \pause
+    = \frac{1}{\sqrt{2}}(1,1,0)
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.3\textwidth}
+  \begin{align*}
+  \onslide<+->{\vec{u}_2}
+  \onslide<+->{& = \vec{v}_2 - \frac{\vec{v}_2\cdot\vec{u}_1}{\norm{\vec{u}_1}^{2}} \; \vec{u}_1 \\}
+  \onslide<+->{& = (1,0,1) - \frac{1}{2}(1,1,0) \\}
+  \onslide<+->{& = \left( \frac{1}{2}, -\frac{1}{2}, 1 \right)}
+  \end{align*}
+\column{0.3\textwidth}
+  \begin{align*}
+    \onslide<+->{\norm{\vec{u}_2}^{2}}
+    \onslide<+->{& = \frac{1}{4}+\frac{1}{4}+1\\}
+    \onslide<+->{& = \frac{3}{2} \\}
+    \onslide<+->{\norm{\vec{u}_2}}
+    \onslide<+->{& = \frac{\sqrt{6}}{2}}
+  \end{align*}
+\column{0.3\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{e}_2}
+    \onslide<+->{& = \frac{\vec{u}_2}{\norm{\vec{u}_2}}\\}
+    \onslide<+->{& = \frac{1}{\sqrt{6}}(1,-1,2)}
+  \end{align*}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    \mathcal{B} =
+    \left\{
+      \frac{1}{\sqrt{2}}(1, 1, 0),
+      \frac{1}{\sqrt{6}}(1, -1, 2)
+    \right\}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

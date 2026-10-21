@@ -1,0 +1,97 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Considere
+  \[
+  W=
+  \left\{
+  (x,y,z)\in\R^3
+  :
+  x+y+z=0
+  \right\}
+  \]
+  Obtenha uma base ortonormal de $W$ pelo processo de Gram--Schmidt
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+Uma base de $W$ pode ser obtida de
+\[
+x=-y-z
+\]
+\[
+(x,y,z)
+=
+y(-1,1,0)
++
+z(-1,0,1)
+\]
+Escolha
+\[
+\vec{v}_1=(-1,1,0)
+\qquad
+\vec{v}_2=(-1,0,1)
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{align*}
+\vec{u}_1
+&=(-1,1,0)\\
+\norm{\vec{u}_1}
+&=\sqrt{2}\\
+\vec{e}_1
+&=
+\frac{1}{\sqrt{2}}(-1,1,0)
+\end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{align*}
+\vec{u}_2
+&=
+(-1,0,1)
+-
+\frac{(-1,0,1)\cdot(-1,1,0)}
+{2}
+(-1,1,0)\\
+&=
+(-1,0,1)
+-
+\frac{1}{2}(-1,1,0)\\
+&=
+\left(
+-\frac{1}{2},
+-\frac{1}{2},
+1
+\right)\\
+&=
+\frac{1}{2}(-1,-1,2)
+\end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{align*}
+\norm{\vec{u}_2}
+&=
+\frac{\sqrt{6}}{2}\\
+\vec{e}_2
+&=
+\frac{1}{\sqrt{6}}(-1,-1,2)
+\end{align*}
+Portanto
+\[
+B_{\mathrm{on}}
+=
+\left\{
+\frac{1}{\sqrt{2}}(-1,1,0)
+,
+\frac{1}{\sqrt{6}}(-1,-1,2)
+\right\}
+\]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

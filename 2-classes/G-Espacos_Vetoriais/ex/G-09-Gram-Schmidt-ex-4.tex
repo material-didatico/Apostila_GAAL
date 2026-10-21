@@ -1,0 +1,61 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine as coordenadas de
+  \[
+    \vec{x} = (4, 2)
+  \]
+  na base ortonormal
+  \[
+    \mathcal{B} =
+    \left\{
+      \frac{1}{\sqrt{2}}(1 ,1),
+      \frac{1}{\sqrt{2}}(1, -1)
+    \right\}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.2\textwidth}
+  \begin{align*}
+    \onslide<+->{c_1}
+    \onslide<+->{& = \vec{x}\cdot\vec{e}_1\\}
+    \onslide<+->{& = \frac{4+2}{\sqrt{2}}\\}
+    \onslide<+->{& = 3\sqrt{2}}
+  \end{align*}
+\column{0.2\textwidth}
+  \begin{align*}
+    \onslide<+->{c_2}
+    \onslide<+->{& = \vec{x}\cdot\vec{e}_2\\}
+    \onslide<+->{& = \frac{4-2}{\sqrt{2}}\\}
+    \onslide<+->{& = \sqrt{2}}
+  \end{align*}
+\column{0.4\textwidth}
+  \onslide<+->{\[
+    [\vec{x}]_\mathcal{B}
+    = \Vetor{3\sqrt{2}}{\sqrt{2}}
+  \]}
+\end{columns}
+\end{resolution}
+
+%%------------------------------------------------------------------------------%
+%\begin{resolution}{Solução}
+%\begin{align*}
+%\norm{\vec{x}}^{2}
+%&=
+%4^{2}+2^{2}\\
+%&=20\\
+%c_1^{2}+c_2^{2}
+%&=
+%(3\sqrt{2})^{2}
+%+
+%(\sqrt{2})^{2}\\
+%&=
+%18+2\\
+%&=20
+%\end{align*}
+%\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

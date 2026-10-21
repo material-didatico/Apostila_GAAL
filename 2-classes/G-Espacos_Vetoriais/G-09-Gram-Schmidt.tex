@@ -1,0 +1,161 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Ortogonalização de Gram--Schmidt}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Projeção ortogonal}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Projeção Ortogonal}
+  A projeção de $\vec{v}$ sobre $\vec{w}$ é
+  \[
+    \pause
+    \vec{v}_{\parallel}
+    \pause
+    \;=\; \proj_{\vec{w}}(\vec{v})
+    \pause
+    \;=\; \frac{\vec{v}\cdot\vec{w}} {\norm{\vec{w}}^{2}} \; \vec{w}
+  \]
+
+  \pause
+  A componente perpendicular é
+  \[
+    \pause
+    \vec{v}_{\perp}
+    \pause
+    \;=\; \vec{v} - \proj_{\vec{w}}(\vec{v})
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Ortogonalização de Gram--Schmidt}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Gram--Schmidt}
+  Dados vetores \emph{linearmente independentes}
+  \[
+    \pause
+    \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n
+  \]
+  \pause
+  o processo de \emph{Gram--Schmidt} constrói vetores \emph{ortogonais}
+  \[
+    \pause
+    \vec{u}_1, \vec{u}_2, \ldots, \vec{u}_n
+  \]
+  \pause
+  que podem ser normalizados para produzir uma \emph{base ortonormal}
+  \[
+    \pause
+    \vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n
+  \]
+  \pause
+  com \;
+  \(
+    \pause
+    \ger \{\vec{e}_1,\ldots,\vec{e}_k\}
+    \;=\; \ger \{\vec{u}_1,\ldots,\vec{u}_k\}
+    \;=\; \ger \{\vec{v}_1,\ldots,\vec{v}_k\}
+  \)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Gram--Schmidt: Orimeiro Vetor}
+  Escolha
+  \[
+    \vec{u}_1 = \vec{v}_1
+  \]
+
+  \pause
+  Normalize
+  \[
+    \vec{e}_1 = \frac{\vec{u}_1}{\norm{\vec{u}_1}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Gram--Schmidt: segundo vetor}
+  \onslide<+->{Retire de $\vec{v}_2$ sua componente na direção de $\vec{u}_1$}
+  \begin{align*}
+    \onslide<+->{\vec{u}_2}
+    \onslide<+->{& = \vec{v}_2 - \proj_{\vec{u}_1}(\vec{v}_2)}
+    \\
+    \onslide<+->{& = \vec{v}_2
+      - \frac{\vec{v}_2\cdot\vec{u}_1} {\norm{\vec{u}_1}^{2}} \; \vec{u}_1}
+  \end{align*}
+  \onslide<+->{Depois normalize}
+  \[
+    \onslide<+->{\vec{e}_2 = \frac{\vec{u}_2}{\norm{\vec{u}_2}}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Gram--Schmidt: terceiro vetor}
+  \onslide<+->{Retire de $\vec{v}_3$ as componentes nas direções anteriores}
+  \begin{align*}
+    \onslide<+->{\vec{u}_3}
+    \onslide<+->{& = \vec{v}_3
+      - \proj_{\vec{u}_1}(\vec{v}_3)
+      - \proj_{\vec{u}_2}(\vec{v}_3)}
+    \\
+    \onslide<+->{& = \vec{v}_3
+      - \frac{\vec{v}_3\cdot\vec{u}_1}{\norm{\vec{u}_1}^{2}} \; \vec{u}_1
+      - \frac{\vec{v}_3\cdot\vec{u}_2}{\norm{\vec{u}_2}^{2}} \; \vec{u}_2}
+  \end{align*}
+  \onslide<+->{Depois normalize}
+  \[
+    \onslide<+->{\vec{e}_3 = \frac{\vec{u}_3}{\norm{\vec{u}_3}}}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Gram--Schmidt em $\R^n$}
+  \onslide<+->{Para $k\geq 2$}
+  \onslide<+->{\[
+    \vec{u}_k
+    = \vec{v}_k
+    - \sum_{j=1}^{k-1} \; \frac{\vec{v}_k\cdot\vec{u}_j} {\norm{\vec{u}_j}^{2}} \; \vec{u}_j
+  \]}
+  \onslide<+->{Depois
+  \[
+    \vec{e}_k = \frac{\vec{u}_k}{\norm{\vec{u}_k}}
+  \]}
+  \onslide<+->{Resultado
+  \(
+    \{\vec{e}_1, \ldots, \vec{e}_n\}
+  \)
+  é uma \emph{base ortonormal}}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Exemplos}
+
+\input{ex/G-09-Gram-Schmidt-ex-1}
+\input{ex/G-09-Gram-Schmidt-ex-2}
+%\input{ex/G-09-Gram-Schmidt-ex-3}
+\input{ex/G-09-Gram-Schmidt-ex-4}
+
+%%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
