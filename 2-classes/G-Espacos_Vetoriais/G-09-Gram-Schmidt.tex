@@ -23,6 +23,8 @@
     \;=\; \proj_{\vec{w}}(\vec{v})
     \pause
     \;=\; \frac{\vec{v}\cdot\vec{w}} {\norm{\vec{w}}^{2}} \; \vec{w}
+    \pause
+    \;=\; \frac{\vec{v}\cdot\vec{w}} {\vec{w}\cdot\vec{w}} \; \vec{w}
   \]
 
   \pause
@@ -89,7 +91,7 @@
     \onslide<+->{& = \vec{v}_2 - \proj_{\vec{u}_1}(\vec{v}_2)}
     \\
     \onslide<+->{& = \vec{v}_2
-      - \frac{\vec{v}_2\cdot\vec{u}_1} {\norm{\vec{u}_1}^{2}} \; \vec{u}_1}
+      - \frac{\vec{v}_2\cdot\vec{u}_1}{\vec{u}_1\cdot\vec{u}_1} \; \vec{u}_1}
   \end{align*}
   \onslide<+->{Depois normalize}
   \[
@@ -107,8 +109,8 @@
       - \proj_{\vec{u}_2}(\vec{v}_3)}
     \\
     \onslide<+->{& = \vec{v}_3
-      - \frac{\vec{v}_3\cdot\vec{u}_1}{\norm{\vec{u}_1}^{2}} \; \vec{u}_1
-      - \frac{\vec{v}_3\cdot\vec{u}_2}{\norm{\vec{u}_2}^{2}} \; \vec{u}_2}
+      - \frac{\vec{v}_3\cdot\vec{u}_1}{\vec{u}_1\cdot\vec{u}_1} \; \vec{u}_1
+      - \frac{\vec{v}_3\cdot\vec{u}_2}{\vec{u}_2\cdot\vec{u}_2} \; \vec{u}_2}
   \end{align*}
   \onslide<+->{Depois normalize}
   \[
@@ -122,7 +124,8 @@
   \onslide<+->{\[
     \vec{u}_k
     = \vec{v}_k
-    - \sum_{j=1}^{k-1} \; \frac{\vec{v}_k\cdot\vec{u}_j} {\norm{\vec{u}_j}^{2}} \; \vec{u}_j
+    - \sum_{j=1}^{k-1} \;
+      \frac{\vec{v}_k\cdot\vec{u}_j}{\vec{u}_j\cdot\vec{u}_j} \; \vec{u}_j
   \]}
   \onslide<+->{Depois
   \[

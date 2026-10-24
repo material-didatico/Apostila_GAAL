@@ -17,22 +17,47 @@
 \begin{frame}{Combinação Linear}
   Sejam
   \[
-    \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k \in \R^n
+    \vec{v}_1,\; \vec{v}_2,\; \ldots,\; \vec{v}_k \in \R^n
   \]
   \[
     \pause
-    \alpha_1, \alpha_2, \ldots, \alpha_k \in \R
+    \alpha_1,\, \alpha_2,\, \ldots,\, \alpha_k \in \R
   \]
 
   \pause
   Uma \emph{combinação linear} é
   \[
     \pause
-    \alpha_1\vec{v}_1+
-    \alpha_2\vec{v}_2+
-    \cdots+
+    \alpha_1\vec{v}_1 \;+\;
+    \alpha_2\vec{v}_2 \;+\;
+    \cdots            \;+\;
     \alpha_k\vec{v}_k
   \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Independência Linear}
+  Os vetores
+  \pause
+  \(
+    \vec{v}_1, \ldots, \vec{v}_k
+  \)
+  \pause
+  são \emph{Linearmente Independentes} (LI) se
+  \[
+    \pause
+    \alpha_1\vec{v}_1 + \cdots + \alpha_k\vec{v}_k = \vec{0}
+  \]
+  \pause
+  só é possível com
+  \[
+    \pause
+    \alpha_1 = \cdots = \alpha_k = 0
+  \]
+
+  \pause
+  \medskip
+  Não é possível escrever nenhum vetor como combinação dos demais
 \end{frame}
 
 %------------------------------------------------------------------------------%
@@ -43,7 +68,7 @@
     \vec{v}_1, \ldots, \vec{v}_k
   \]
   \pause
-  são \emph{linearmente dependentes} se existem escalares
+  são \emph{Linearmente Dependentes} (LD), se existem escalares
   \[
     \pause
     \alpha_1, \ldots, \alpha_k
@@ -60,62 +85,21 @@
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Dependência Linear}
-  Se
-  \[
-    \alpha_1\vec{v}_1 + \cdots + \alpha_k\vec{v}_k = \vec{0}
-  \]
-  \pause
-  com algum \(\alpha_i \neq 0\)
+  \onslide<+->{Assumindo que \(\alpha_1 \neq 0\)}
 
-  \pause
-  \bigskip
-  Podemos isolar o vetor \(\vec{v}_i\)
-  \[
-    \pause
-    \vec{v}_i = \frac{\alpha_1}{\alpha_i}\vec{v}_1 + \cdots + \frac{\alpha_k}{\alpha_i}\vec{v}_k
-  \]
-  \pause
-  e escreve-lo como combinação dos demais
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Independência Linear}
-  Os vetores
-  \[
-    \pause
-    \vec{v}_1, \ldots, \vec{v}_k
-  \]
-  \pause
-  são \emph{linearmente independentes} se
-  \[
-    \pause
-    \alpha_1\vec{v}_1 + \cdots + \alpha_k\vec{v}_k = \vec{0}
-  \]
-  \pause
-  só é possível com
-  \[
-    \pause
-    \alpha_1 = \cdots = \alpha_k = 0
-  \]
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Independência Linear}
-  Se
-  \[
-    \alpha_1\vec{v}_1 + \cdots + \alpha_k\vec{v}_k = \vec{0}
-  \]
-  \pause
-  só é possível com todos \(\alpha_i = 0\)
-
-  \pause
-  \bigskip
-  Não é possível escrever nenhum vetor como combinação dos demais
+  \onslide<+->{Podemos escrever \(\vec{v}_1\) como combinação dos demais}
+  \begin{align*}
+    \onslide<+->{\alpha_1\vec{v}_1 & + \alpha_2\vec{v}_2 + \cdots + \alpha_k\vec{v}_k = \vec{0} \\}
+    \onslide<+->{\alpha_1\vec{v}_1 & = - \alpha_2\vec{v}_2 - \cdots - \alpha_k\vec{v}_k \\}
+    \onslide<+->{\vec{v}_1 & = - \frac{\alpha_2}{\alpha_1}\vec{v}_2 - \cdots - \frac{\alpha_k}{\alpha_1}\vec{v}_k }
+  \end{align*}
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \input{ex/G-05-Independencia_linear-ex-1}
 \input{ex/G-05-Independencia_linear-ex-2}
+\input{ex/G-05-Independencia_linear-ex-3}
+\input{ex/G-05-Independencia_linear-ex-5}
 
 %------------------------------------------------------------------------------%
 \section{Matrizes e Sistema Lineares}
@@ -139,14 +123,20 @@
   Corresponde à
   \[
     \pause
-    A
-    \begin{pmatrix}[c]
+    \begin{bmatrix}[c]
+      |         & |         &        & |         \\
+      \vec{v}_1 & \vec{v}_2 & \cdots & \vec{v}_k \\
+      |         & |         &        & |
+    \end{bmatrix} \;
+    \begin{bmatrix}[c]
       \alpha_1 \\
-      \alpha_2 \\
       \vdots   \\
       \alpha_k
-    \end{pmatrix}
-    = \vec{0}
+    \end{bmatrix}
+    \pause
+    \;=\; A \vec{x}
+    \pause
+    \;=\; \vec{0}
   \]
 \end{frame}
 
@@ -161,18 +151,15 @@
   \]
   \pause
   possui somente a solução trivial
-  \[
+  \(
     \pause
     \vec{x} = \vec{0}
-  \]
+  \)
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\input{ex/G-05-Independencia_linear-ex-3}
-
-%------------------------------------------------------------------------------%
 \begin{frame}{Determinante}
-  Dados os vetores
+  Dados $n$ vetores
   \[
     \pause
     \vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n \in \R^n
@@ -229,7 +216,6 @@
 
 %------------------------------------------------------------------------------%
 \input{ex/G-05-Independencia_linear-ex-4}
-\input{ex/G-05-Independencia_linear-ex-5}
 
 %%------------------------------------------------------------------------------%
 %\section{Lista Mínima}

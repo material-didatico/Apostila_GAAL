@@ -2,9 +2,9 @@
 \begin{question}
   Ortonormalize, pelo processo de Gram--Schmidt,
   \[
-    \vec{v}_1 = (1,1,0)
+    \vec{v}_1 = (1, 1, 0)
     \qquad
-    \vec{v}_2 = (1,0,1)
+    \vec{v}_2 = (1, 0, 1)
   \]
   e obtenha uma base ortonormal de
   \(
@@ -13,7 +13,7 @@
 \end{question}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
+\begin{resolution}{Ortogonalização}
   \[
     \vec{u}_1
     \pause
@@ -21,56 +21,109 @@
     \pause
     = (1, 1, 0)
   \]
-
-  \pause
-  \[
-    \norm{\vec{u}_1}
-    \pause
-    = \sqrt{2}
-  \]
-
-  \pause
-  \[
-    \vec{e}_1
-    \pause
-    = \frac{1}{\sqrt{2}}(1,1,0)
-  \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
+\begin{resolution}{Ortogonalização}
 \begin{columns}[t]
-\column{0.3\textwidth}
+\column{0.4\textwidth}
   \begin{align*}
-  \onslide<+->{\vec{u}_2}
-  \onslide<+->{& = \vec{v}_2 - \frac{\vec{v}_2\cdot\vec{u}_1}{\norm{\vec{u}_1}^{2}} \; \vec{u}_1 \\}
-  \onslide<+->{& = (1,0,1) - \frac{1}{2}(1,1,0) \\}
-  \onslide<+->{& = \left( \frac{1}{2}, -\frac{1}{2}, 1 \right)}
+    \onslide<+->{\vec{v}_2\cdot\vec{u}_1}
+    \onslide<+->{& = (1, 0, 1) \cdot (1, 1, 0) \\}
+    \onslide<+->{& = 1 \cdot 1 + 0 \cdot 1 + 1 \cdot 0 \\}
+    \onslide<+->{& = 1}
   \end{align*}
-\column{0.3\textwidth}
   \begin{align*}
-    \onslide<+->{\norm{\vec{u}_2}^{2}}
-    \onslide<+->{& = \frac{1}{4}+\frac{1}{4}+1\\}
-    \onslide<+->{& = \frac{3}{2} \\}
-    \onslide<+->{\norm{\vec{u}_2}}
-    \onslide<+->{& = \frac{\sqrt{6}}{2}}
+    \onslide<+->{\vec{u}_1 \cdot \vec{u}_1}
+    \onslide<+->{& = (1, 1, 0) \cdot (1, 1, 0) \\}
+    \onslide<+->{& = 1^2 + 1^2 + 0^2  \\}
+    \onslide<+->{& = 2}
   \end{align*}
-\column{0.3\textwidth}
+\column{0.5\textwidth}
   \begin{align*}
-    \onslide<+->{\vec{e}_2}
-    \onslide<+->{& = \frac{\vec{u}_2}{\norm{\vec{u}_2}}\\}
-    \onslide<+->{& = \frac{1}{\sqrt{6}}(1,-1,2)}
+    \onslide<+->{\vec{u}_2}
+    \onslide<+->{& = \vec{v}_2 - \frac{\vec{v}_2\cdot\vec{u}_1}{\vec{u}_1 \cdot \vec{u}_1} \; \vec{u}_1 \\}
+    \onslide<+->{& = (1, 0, 1) - \frac{1}{2}(1, 1, 0) \\}
+    \onslide<+->{& = (1, 0, 1) - \left(\frac{1}{2}, \frac{1}{2}, 0 \right) \\}
+    \onslide<+->{& = \left( \frac{1}{2}, -\frac{1}{2}, 1 \right)}
   \end{align*}
 \end{columns}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
+\begin{resolution}{Base Ortogonal}
   \[
-    \mathcal{B} =
-    \left\{
-      \frac{1}{\sqrt{2}}(1, 1, 0),
-      \frac{1}{\sqrt{6}}(1, -1, 2)
+    \mathcal{B}_1
+    \;=\; \{ \vec{u}_1, \vec{u}_2 \}
+    \;=\; \left\{ (1, 1, 0), \, \left( \frac{1}{2}, -\frac{1}{2}, 1 \right) \right\}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Normalização}
+  \[
+    \norm{\vec{u}_1}
+    \pause
+    \;=\; \norm{(1, 1, 0)}
+    \pause
+    \;=\; \sqrt{1^2 + 1^2 + 0^2}
+    \pause
+    \;=\; \sqrt{2}
+  \]
+
+  \pause
+  \bigskip
+  \[
+    \vec{e}_1
+    \pause
+    \;=\; \frac{\vec{u}_1}{\norm{\vec{u}_1}}
+    \pause
+    \;=\; \frac{1}{\sqrt{2}}(1, 1, 0)
+    \pause
+    \;=\; \left(\frac{1}{\sqrt{2}}, \, \frac{1}{\sqrt{2}},\, 0 \right)
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Normalização}
+  \[
+    \norm{\vec{u}_2}
+    \pause
+    \;=\; \norm{\left( \frac{1}{2}, -\frac{1}{2}, 1 \right)}
+    \pause
+    \;=\; \sqrt{\left(\frac{1}{2}\right)^2 + \left(-\frac{1}{2}\right)^2 + 1^2}
+  \]
+  \[
+    \hphantom{\norm{\vec{u}_2}}
+    \pause
+    \;=\; \sqrt{\frac{1}{4} + \frac{1}{4} + \frac{4}{4}}
+    \pause
+    \;=\; \sqrt{\frac{6}{4}}
+    \pause
+    \;=\; \frac{\sqrt{6}}{2}
+  \]
+
+  \bigskip
+  \[
+    \pause
+    \vec{e}_2
+    \pause
+    \;=\; \frac{\vec{u}_2}{\norm{\vec{u}_2}}
+    \pause
+    \;=\; \frac{2}{\sqrt{6}} \left( \frac{1}{2}, -\frac{1}{2}, 1 \right)
+    \pause
+    \;=\; \left( \frac{1}{\sqrt{6}}, -\frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}} \right)
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Base Ortonormal}
+  \[
+    \mathcal{B}_2
+    \;=\; \{ \vec{e}_1, \vec{e}_2 \}
+    \;=\; \left\{
+      \left(\frac{1}{\sqrt{2}}, \, \frac{1}{\sqrt{2}},\, 0 \right), \,
+      \left( \frac{1}{\sqrt{6}}, -\frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}} \right)
     \right\}
   \]
 \end{resolution}
