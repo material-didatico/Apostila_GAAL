@@ -1,0 +1,115 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Represente matricialmente a transformação linear
+  \[
+    T\colon \R^2\longrightarrow\R^2
+  \]
+  definida por
+  \[
+    T(x, y) = (3x, 2y)
+  \]
+
+  \medskip
+  Avalie $T$ em
+  \(
+    \vec{u} = \vetor{1}{1}
+  \),
+  \(
+    \vec{v} = \vetor{1}{0}
+  \)
+  e
+  \(
+    \vec{v} = \vetor{0}{1}
+  \)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Representação Matricial}
+    A representação matricial da transformação linear
+    \[
+      T(x, y) = (3x, 2y)
+    \]
+    \pause
+    é
+    \[
+      T \vetor{x}{y} =
+      \begin{bmatrix}
+        3 & 0 \\
+        0 & 2
+      \end{bmatrix}
+      \vetor{x}{y}
+    \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Avalianção do Vetor $\vec{u}$}
+  Avaliando $T$ no vetor
+  \[
+    \vec{u} = \vetor{1}{1}
+  \]
+  \pause
+  obtemos
+  \[
+    T(\vec{u})
+    \pause
+    = \begin{bmatrix}
+        3 & 0\\
+        0 & 2
+    \end{bmatrix} \vetor{1}{1}
+    \pause
+    = \vetor{3}{2}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Avalianção do Vetor $\vec{v}$}
+  Avaliando $T$ no vetor
+  \[
+    \vec{v} = \vetor{1}{0}
+  \]
+  \pause
+  obtemos
+  \[
+    T(\vec{v})
+    \pause
+    = \begin{bmatrix}
+        3 & 0\\
+        0 & 2
+    \end{bmatrix} \vetor{1}{0}
+    \pause
+    = \vetor{3}{0}
+    \pause
+    = 3 \vec{v}
+  \]
+
+  \pause
+  \emph{A direção do vetor foi preservada}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Avalianção do Vetor $\vec{w}$}
+  Avaliando $T$ no vetor
+  \[
+    \vec{w} = \vetor{0}{1}
+  \]
+  \pause
+  obtemos
+  \[
+    T(\vec{w})
+    \pause
+    = \begin{bmatrix}
+        3 & 0\\
+        0 & 2
+    \end{bmatrix} \vetor{0}{1}
+    \pause
+    = \vetor{0}{2}
+    \pause
+    = 2 \vec{w}
+  \]
+
+  \pause
+  \emph{A direção do vetor foi preservada}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

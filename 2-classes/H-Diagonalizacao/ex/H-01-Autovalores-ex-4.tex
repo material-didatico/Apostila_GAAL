@@ -1,0 +1,151 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine os autovetores da matriz
+  \(
+    A =
+    \begin{bmatrix}
+      4 & 1 \\
+      2 & 3
+    \end{bmatrix}
+  \)
+
+  \bigskip
+  Note que, no exercício anterior, determinamos que os autovalores de $A$ são
+  \[
+    \lambda_1 = 5
+    \qquad
+    \lambda_2 = 2
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores Associados a \(\lambda_1 = 5\)}
+\begin{columns}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{(A-\lambda_1 I)\vec{v} & = \vec{0} \\}
+    \onslide<+->{(A-5I)\vec{v} & = \vec{0}}
+    \\
+    \onslide<+->{\left(
+      \begin{bmatrix}
+        4 & 1 \\
+        2 & 3
+      \end{bmatrix}
+      -
+      \begin{bmatrix}
+        5 & 0 \\
+        0 & 5
+      \end{bmatrix}
+    \right)
+        \begin{bmatrix} x \\ y \end{bmatrix}
+    & = \begin{bmatrix} 0 \\ 0 \end{bmatrix}}
+    \\
+    \onslide<+->{\begin{bmatrix}
+      -1  &  1  \\
+       2  & -2
+    \end{bmatrix}
+        \begin{bmatrix} x \\ y \end{bmatrix}
+    & = \begin{bmatrix} 0 \\ 0 \end{bmatrix}}
+    \\
+    \onslide<+->{\begin{cases}
+      -x +  y = 0 \\
+      2x - 2y = 0
+    \end{cases}}
+  \end{align*}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{-x + y & = 0 \\}
+    \onslide<+->{     y & = x}
+  \end{align*}
+  \onslide<+->{Assim}
+  \(
+    \onslide<+->{\vec{v}}
+    \onslide<+->{=   \begin{bmatrix} x \\ x \end{bmatrix}}
+    \onslide<+->{= x \begin{bmatrix} 1 \\ 1 \end{bmatrix}}
+  \)
+
+  \medskip
+  \onslide<+->{Os autovetores são \\
+  os múltiplos não nulos}
+  \onslide<+->{de
+  \[
+    \vec{v}_1 =
+    \begin{bmatrix}
+      1 \\
+      1
+    \end{bmatrix}
+  \]}
+\end{columns}
+\end{resolution}
+
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores Associados a \(\lambda_2 = 2\)}
+\begin{columns}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{(A-\lambda_2 I)\vec{v} & = \vec{0} \\}
+    \onslide<+->{(A-2I)\vec{v} & = \vec{0} }
+    \\
+    \onslide<+->{\left(
+      \begin{bmatrix}
+        4 & 1 \\
+        2 & 3
+      \end{bmatrix}
+      -
+      \begin{bmatrix}
+        2 & 0 \\
+        0 & 2
+      \end{bmatrix}
+    \right)
+        \begin{bmatrix} x \\ y \end{bmatrix}
+    & = \begin{bmatrix} 0 \\ 0 \end{bmatrix}}
+    \\
+    \onslide<+->{\begin{bmatrix}
+      2 & 1  \\
+      2 & 1
+    \end{bmatrix}
+        \begin{bmatrix} x \\ y \end{bmatrix}
+    & = \begin{bmatrix} 0 \\ 0 \end{bmatrix}}
+    \\
+    \onslide<+->{\begin{cases}
+      2x + y = 0 \\
+      2x + y = 0
+    \end{cases}}
+  \end{align*}
+\column{0.5\textwidth}
+  \[
+    \onslide<+->{y = -2x}
+  \]
+  \onslide<+->{Assim}
+  \(
+    \onslide<+->{\vec{v}}
+    \onslide<+->{= \begin{bmatrix}
+      x \\
+      -2x
+    \end{bmatrix}}
+    \onslide<+->{= x
+    \begin{bmatrix}
+      1 \\
+      -2
+    \end{bmatrix}}
+  \)
+
+  \medskip
+  \onslide<+->{Os autovetores são \\
+  os múltiplos não nulos}
+  \onslide<+->{de
+  \[
+    \vec{v}_2 =
+    \begin{bmatrix}
+      1 \\
+      -2
+    \end{bmatrix}
+  \]}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
+
+

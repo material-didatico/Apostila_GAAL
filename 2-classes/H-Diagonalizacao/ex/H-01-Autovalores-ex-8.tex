@@ -1,0 +1,372 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine os autovalores, os autovetores e os autoespaços da matriz
+  \[
+    B =
+    \begin{bmatrix}
+      4 & 1 & 0 \\
+      1 & 4 & 0 \\
+      0 & 0 & 2
+    \end{bmatrix}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovalores}
+  Polinômio característico
+  \begin{align*}
+    p(\lambda)
+    & = \det(B-\lambda I) \\
+    & = \det\left(
+          \begin{bmatrix}
+            2 & 1 & 0 \\
+            0 & 2 & 0 \\
+            0 & 0 & 5
+          \end{bmatrix}
+          -
+          \begin{bmatrix}
+            \lambda & 0       & 0       \\
+            0       & \lambda & 0       \\
+            0       & 0       & \lambda
+          \end{bmatrix}
+          \right)
+    \;=\; \begin{vmatrix}
+      2-\lambda & 1         & 0         \\
+      0         & 2-\lambda & 0         \\
+      0         & 0         & 5-\lambda
+    \end{vmatrix}
+    \\
+    & = (2-\lambda)^2(5-\lambda)
+  \end{align*}
+  Logo, os autovalores são
+  \[
+    \lambda_{1} = 2
+    \qquad
+    \lambda_{2} = 5
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores de \(\lambda=2\)}
+\begin{columns}
+\column{0.5\textwidth}
+  \begin{align*}
+    (B-2I)\vec{v} & = \vec{0}
+    \\[1mm]
+    \begin{bmatrix}[c]
+      2-2 & 1   & 0   \\
+      0   & 2-2 & 0   \\
+      0   & 0   & 5-2
+    \end{bmatrix} & =
+    \begin{bmatrix}
+      0 \\
+      0 \\
+      0
+    \end{bmatrix}
+    \\[3mm]
+    \begin{bmatrix}
+      0 & 1 & 0 \\
+      0 & 0 & 0 \\
+      0 & 0 & 3
+    \end{bmatrix}
+    \begin{bmatrix}
+      x \\
+      y \\
+      z
+    \end{bmatrix}
+    & =
+    \begin{bmatrix}
+      0 \\
+      0 \\
+      0
+    \end{bmatrix}
+   \end{align*}
+\column{0.4\textwidth}
+  Solução
+  \begin{align*}
+    x & = t \in \R \\
+    y & = 0 \\
+    z & = 0
+  \end{align*}
+  Um autovetor
+  \[
+    \vec{v}_1
+    = \vetortri{1}{0}{0}
+  \]
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autoespaço de \(\lambda=2\)}
+  \[
+    E(2)
+    = \left\{
+      \begin{bmatrix}
+        t \\
+        0 \\
+        0
+      \end{bmatrix}
+      \st t \in \R
+    \right\}
+    = \ger\left\{
+      \begin{bmatrix}
+        1 \\
+        0 \\
+        0
+      \end{bmatrix}
+    \right\}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores de \(\lambda=5\)}
+\begin{columns}
+\column{0.5\textwidth}
+  \begin{align*}
+    (B-5I)\vec{v} & = \vec{0}
+    \\[1mm]
+    \begin{bmatrix}[c]
+      2-5 & 1   & 0   \\
+      0   & 2-5 & 0   \\
+      0   & 0   & 5-5
+    \end{bmatrix} & =
+    \begin{bmatrix}
+      0 \\
+      0 \\
+      0
+    \end{bmatrix}
+    \\[3mm]
+    \begin{bmatrix}
+      -3 & 1  & 0 \\
+      0  & -3 & 0 \\
+      0  & 0  & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+      x \\
+      y \\
+      z
+    \end{bmatrix}
+    & =
+    \begin{bmatrix}
+      0 \\
+      0 \\
+      0
+    \end{bmatrix}
+   \end{align*}
+\column{0.4\textwidth}
+  Solução
+  \begin{align*}
+    -3y   & = 0     \\
+    -3x+y & = 0     \\
+    x     & = y = 0 \\
+    z     & = t \in \R
+  \end{align*}
+  Um autovetor
+  \[
+    \vec{v}_2
+    = \vetortri{0}{0}{1}
+  \]
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autoespaço de \(\lambda=5\)}
+  \[
+    E_5
+    = \left\{
+      \begin{bmatrix}
+        0 \\
+        0 \\
+        t
+      \end{bmatrix}
+      \st t \in \R
+    \right\}
+    = \ger\left\{
+      \begin{bmatrix}
+        0 \\
+        0 \\
+        1
+      \end{bmatrix}
+    \right\}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
+
+
+
+\begin{frame}{Exemplo 4: autovalores}
+    Os autovalores são as raízes do polinômio característico
+    \begin{align*}
+        p(\lambda)
+        &=\det(B-\lambda I)\\
+        &=
+        \begin{vmatrix}
+            4-\lambda & 1 & 0\\
+            1 & 4-\lambda & 0\\
+            0 & 0 & 2-\lambda
+        \end{vmatrix}\\
+        &=(2-\lambda)
+        \begin{vmatrix}
+            4-\lambda & 1\\
+            1 & 4-\lambda
+        \end{vmatrix}\\
+        &=(2-\lambda)
+        \left[(4-\lambda)^2-1\right]\\
+        &=(2-\lambda)(3-\lambda)(5-\lambda)
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Exemplo 4: autovalores}
+    Resolvendo
+    \[
+        (2-\lambda)(3-\lambda)(5-\lambda)=0
+    \]
+
+    Obtemos
+    \[
+        \lambda_{1}=2
+        \qquad
+        \lambda_{2}=3
+        \qquad
+        \lambda_{3}=5
+    \]
+\end{frame}
+
+\begin{frame}{Exemplo 4: autovetores para $\lambda=2$}
+    Resolvemos o sistema
+    \begin{align*}
+        (B-2I)\vec{x}&=\vec{0}\\
+        \begin{bmatrix}
+            2 & 1 & 0\\
+            1 & 2 & 0\\
+            0 & 0 & 0
+        \end{bmatrix}
+        \begin{bmatrix}
+            x\\y\\z
+        \end{bmatrix}
+        &=
+        \begin{bmatrix}
+            0\\0\\0
+        \end{bmatrix}
+    \end{align*}
+
+    A forma escalonada do sistema fornece
+    \begin{align*}
+        2x+y&=0\\
+        x+2y&=0\\
+        z&\in\mathbb{R}
+    \end{align*}
+
+    Logo
+    \begin{align*}
+        x&=0\\
+        y&=0
+    \end{align*}
+
+    Portanto
+    \[
+        E_{2}=
+        \operatorname{span}
+        \left\{\vetortri{0}{0}{1}\right\}
+    \]
+\end{frame}
+
+\begin{frame}{Exemplo 4: autovetores para $\lambda=3$}
+    Resolvemos o sistema
+    \begin{align*}
+        (B-3I)\vec{x}&=\vec{0}\\
+        \begin{bmatrix}
+            1 & 1 & 0\\
+            1 & 1 & 0\\
+            0 & 0 & -1
+        \end{bmatrix}
+        \begin{bmatrix}
+            x\\y\\z
+        \end{bmatrix}
+        &=
+        \begin{bmatrix}
+            0\\0\\0
+        \end{bmatrix}
+    \end{align*}
+
+    Obtemos
+    \begin{align*}
+        x+y&=0\\
+        z&=0\\
+        y&=-x
+    \end{align*}
+
+    Portanto
+    \[
+        E_{3}=
+        \left\{
+            \vetortri{t}{-t}{0}
+            \mid t\in\mathbb{R}
+        \right\}
+        =
+        \operatorname{span}
+        \left\{\vetortri{1}{-1}{0}\right\}
+    \]
+\end{frame}
+
+\begin{frame}{Exemplo 4: autovetores para $\lambda=5$}
+    Resolvemos o sistema
+    \begin{align*}
+        (B-5I)\vec{x}&=\vec{0}\\
+        \begin{bmatrix}
+            -1 & 1 & 0\\
+            1 & -1 & 0\\
+            0 & 0 & -3
+        \end{bmatrix}
+        \begin{bmatrix}
+            x\\y\\z
+        \end{bmatrix}
+        &=
+        \begin{bmatrix}
+            0\\0\\0
+        \end{bmatrix}
+    \end{align*}
+
+    Obtemos
+    \begin{align*}
+        -x+y&=0\\
+        z&=0\\
+        y&=x
+    \end{align*}
+
+    Portanto
+    \[
+        E_{5}=
+        \left\{
+            \vetortri{t}{t}{0}
+            \mid t\in\mathbb{R}
+        \right\}
+        =
+        \operatorname{span}
+        \left\{\vetortri{1}{1}{0}\right\}
+    \]
+\end{frame}
+
+\begin{frame}{Exemplo 4: resposta}
+    \[
+        \lambda_{1}=2
+        \qquad
+        \lambda_{2}=3
+        \qquad
+        \lambda_{3}=5
+    \]
+
+    Os autoespaços são
+    \begin{align*}
+        E_{2}&=\operatorname{span}
+        \left\{\vetortri{0}{0}{1}\right\}\\
+        E_{3}&=\operatorname{span}
+        \left\{\vetortri{1}{-1}{0}\right\}\\
+        E_{5}&=\operatorname{span}
+        \left\{\vetortri{1}{1}{0}\right\}
+    \end{align*}
+
+    Os autovetores são todos os vetores não nulos pertencentes aos respectivos autoespaços
+\end{frame}

@@ -1,0 +1,242 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Autovalores e Autovetores}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Transformações Lineares}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Transformações Lineares}
+  Uma \emph{transformação linear} é uma função
+  \[
+    \pause
+    T\colon \R^n \longrightarrow \R^m
+  \]
+  \pause
+  que satisfaz as seguintes propriedades
+  \[
+    \pause
+    T(\vec{u}+\vec{v}) = T(\vec{u}) + T(\vec{v})
+  \]
+  \[
+    \pause
+    T(\alpha\vec{v})=\alpha T(\vec{v})
+  \]
+  \pause
+  para quaisquer $\vec{u}$, $\vec{v}\in\R^n$ e $\alpha\in\R$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Representação Matricial}
+  Toda \emph{transformação linear}
+  \[
+    T\colon \R^n\longrightarrow\R^m
+  \]
+
+  \pause
+  \medskip
+  pode ser representada por uma \emph{matriz} $A$
+  \pause
+  de ordem $m\times n$
+  \pause
+  \[
+    T(\vec{x}) = A\vec{x}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Representação Matricial}
+  Escrevendo
+  \[
+    A
+    \pause
+    = \begin{bmatrix}[c]
+      a_{11} & \cdots & a_{1n} \\
+      \vdots & \ddots & \vdots \\
+      a_{m1} & \cdots & a_{mn}
+    \end{bmatrix}
+    \qquad\qquad\pause
+    \vec{x} =
+    \begin{bmatrix}[c]
+      x_1    \\
+      \vdots \\
+      x_n
+    \end{bmatrix}
+  \]
+
+  \pause
+  \medskip
+  A transformação linear fica
+  \[
+    \pause
+    T(\vec{x}) =
+    \begin{bmatrix}[c]
+      a_{11}x_1+\cdots+a_{1n}x_n \\
+      \vdots                     \\
+      a_{m1}x_1+\cdots+a_{mn}x_n
+    \end{bmatrix}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/H-01-Autovalores-ex-1}
+\input{ex/H-01-Autovalores-ex-2}
+
+%------------------------------------------------------------------------------%
+\section{Autovetores}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Autovetores de uma Transformação Linear}
+  Em uma transformação linear
+
+  \pause
+  alguns vetores especiais têm sua direção preservada
+
+  \pause
+  Para esses vetores, a imagem é um múltiplo escalar do próprio vetor
+  \[
+    \pause
+    T(\vec{v}) = \lambda\vec{v}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Autovetores Representados Matricialmente}
+  Como \(T(\vec{v}) = A\vec{v}\),
+  \pause
+  podemos escrever
+  \[
+    A\vec{v} = \lambda\vec{v}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Autovalores}
+  Um \emph{autovetor} é um vetor cuja direção é preservada
+
+  \pause
+  quando o multiplicamos por uma matriz
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Definição}
+  Dada uma matriz \(A\in\R^{n\times n}\)
+
+  \pause
+  \bigskip
+  Um vetor \(\vec{v}\neq\vec{0}\) é um \emph{autovetor} de \(A\) quando
+  \[
+    \pause
+    A\vec{v} = \lambda\vec{v}
+  \]
+
+  \pause
+  \medskip
+  \(\lambda\) é o \emph{autovalor} de \(A\) associado a \(\vec{v}\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equação Característica}
+  Temos $n$ equações
+
+  \pause
+  \bigskip
+  Precisamos determinar $n+1$ incognitas
+
+  \pause
+  \qquad As $n$ componentes do autovetor $\vec{v}$
+
+  \pause
+  \qquad O autovalor $\lambda$
+
+  \pause
+  \bigskip
+  Precisamos de mais uma equação
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equação Característica}
+\begin{align*}
+  \onslide<+->{A\vec{v}                  & = \lambda\vec{v} \\}
+  \onslide<+->{A\vec{v} - \lambda\vec{v} & = \vec{0}        \\}
+  \onslide<+->{(A-\lambda I)\vec{v}      & = \vec{0}}
+\end{align*}
+
+  \medskip
+  \onslide<+->{Para existir uma solução não nula}
+  \[
+    \onslide<+->{\det(A-\lambda I) = 0}
+  \]
+
+  \smallskip
+  \onslide<+->{Essa é a \emph{equação característica} de \(A\)}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Polinômio Característico}
+  O \emph{polinômio característico} é
+  \[
+    \pause
+    p_{A}(\lambda) = \det(A-\lambda I)
+  \]
+
+  \pause
+  Suas raízes são os autovalores de \(A\)
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/H-01-Autovalores-ex-3}
+\input{ex/H-01-Autovalores-ex-4}
+
+%------------------------------------------------------------------------------%
+\section{Autoespaços}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Autoespaços}
+  O \emph{autoespaço} associado a um autovalor \(\lambda\)
+
+  \pause
+  contém o \emph{vetor nulo} e todos os autovetores associados a \(\lambda\)
+
+  \pause
+  \[
+    E(\lambda) =
+    \left\{\,
+      \vec{v} \in \R^n \st
+      (A-\lambda I)\vec{v} = \vec{0}
+    \,\right\}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/H-01-Autovalores-ex-5}
+\input{ex/H-01-Autovalores-ex-6}
+\input{ex/H-01-Autovalores-ex-7}
+%\input{ex/H-01-Autovalores-ex-8}
+%\input{ex/H-01-Autovalores-ex-9}
+%\input{ex/H-01-Autovalores-ex-A}
+
+%%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

@@ -1,0 +1,174 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine os autovalores, os autovetores e os autoespaços da matriz
+  \[
+    B =
+    \begin{bmatrix}
+      2 & 1 & 0 \\
+      0 & 2 & 0 \\
+      0 & 0 & 5
+    \end{bmatrix}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovalores}
+  \onslide<+->{Polinômio característico}
+  \begin{align*}
+    \onslide<+->{p(\lambda)}
+    \onslide<+->{& = \det(B - \lambda I) \\}
+    \onslide<+->{& = \det\left(
+          \begin{bmatrix}
+            2 & 1 & 0 \\
+            0 & 2 & 0 \\
+            0 & 0 & 5
+          \end{bmatrix}
+          -
+          \begin{bmatrix}
+            \lambda & 0       & 0       \\
+            0       & \lambda & 0       \\
+            0       & 0       & \lambda
+          \end{bmatrix}
+          \right)}
+    \onslide<+->{\;=\; \begin{vmatrix}
+      2-\lambda & 1         & 0         \\
+      0         & 2-\lambda & 0         \\
+      0         & 0         & 5-\lambda
+    \end{vmatrix}}
+    \\
+    \onslide<+->{& = (2-\lambda)^2(5-\lambda)}
+  \end{align*}
+  \onslide<+->{Os autovalores são}
+  \[
+    \onslide<+->{\lambda_{1} = 2
+    \quad\text{ e }\quad
+    \lambda_{2} = 5}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores de \(\lambda=2\)}
+\begin{columns}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{(B-2I)\vec{v} & = \vec{0}}
+    \\[1mm]
+    \onslide<+->{\begin{bmatrix}[c]
+      2-2 & 1   & 0   \\
+      0   & 2-2 & 0   \\
+      0   & 0   & 5-2
+    \end{bmatrix}
+    \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+    & =
+    \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}}
+    \\[3mm]
+    \onslide<+->{\begin{bmatrix}
+      0 & 1 & 0 \\
+      0 & 0 & 0 \\
+      0 & 0 & 3
+    \end{bmatrix}
+    \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+    & = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}}
+   \end{align*}
+\column{0.4\textwidth}
+  \begin{align*}
+    \onslide<+->{x & = t \in \R \\}
+    \onslide<+->{y & = 0 \\}
+    \onslide<+->{z & = 0}
+  \end{align*}
+  \onslide<+->{Autovetor associado a $\lambda = 2$}
+  \[
+    \onslide<+->{\vec{v}_1
+    = \vetortri{1}{0}{0}}
+  \]
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autoespaço de \(\lambda=2\)}
+  \[
+    E(2)
+    \pause
+    = \left\{\vetortri{t}{0}{0} \st t \in \R \right\}
+    \pause
+    = \ger\left\{ \vetortri{1}{0}{0} \right\}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores de \(\lambda=5\)}
+\begin{columns}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{(B-5I)\vec{v} & = \vec{0}}
+    \\[1mm]
+    \onslide<+->{\begin{bmatrix}[c]
+      2-5 & 1   & 0   \\
+      0   & 2-5 & 0   \\
+      0   & 0   & 5-5
+    \end{bmatrix}
+    \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+    & = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}}
+    \\[3mm]
+    \onslide<+->{\begin{bmatrix}
+      -3 & 1  & 0 \\
+      0  & -3 & 0 \\
+      0  & 0  & 0
+    \end{bmatrix}
+    \begin{bmatrix} x \\ y \\ z \end{bmatrix}
+    & = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}}
+   \end{align*}
+\column{0.4\textwidth}
+  \begin{align*}
+    \onslide<+->{-3y   & = 0     \\}
+    \onslide<+->{-3x+y & = 0     \\}
+    \onslide<+->{x     & = y = 0 \\}
+    \onslide<+->{z     & = t \in \R}
+  \end{align*}
+  \onslide<+->{Autovetor associado a $\lambda = 5$}
+  \[
+    \onslide<+->{\vec{v}_2
+    = \vetortri{0}{0}{1}}
+  \]
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autoespaço de \(\lambda=5\)}
+  \[
+    E(5)
+    \pause
+    = \left\{\vetortri{0}{0}{t} \st t \in \R \right\}
+    \pause
+    = \ger\left\{ \vetortri{0}{0}{1} \right\}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Resposta}
+  Autovalores
+  \(
+    \lambda_{1} = 2
+    \quad\text{ e }\quad
+    \lambda_{2} = 5
+  \)
+
+  \pause
+  Autovetor e autoespaço associados a \(\lambda_{1} = 2\)
+  \[
+    \vec{v}_1 = \vetortri{1}{0}{0}
+    \quad\text{ e }\quad
+    E(2) = \ger\left\{ \vetortri{1}{0}{0} \right\}
+  \]
+
+  \pause
+  Autovetor e autoespaço associados a \(\lambda_{2} = 5\)
+  \[
+    \vec{v}_2 = \vetortri{0}{0}{1}
+    \quad\text{ e }\quad
+    E(5) = \ger\left\{ \vetortri{0}{0}{1} \right\}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

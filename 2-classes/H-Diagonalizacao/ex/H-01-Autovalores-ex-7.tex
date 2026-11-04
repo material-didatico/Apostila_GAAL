@@ -1,0 +1,224 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine os autovalores, os autovetores e os autoespaços da matriz
+  \[
+    A =
+    \begin{bmatrix}
+      2 & 1 & 0  \\
+      0 & 3 & 0  \\
+      0 & 0 & -1
+    \end{bmatrix}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovalores}
+  \onslide<+->{Os autovalores são as raízes do polinômio característico}
+  \begin{align*}
+      \onslide<+->{p(\lambda)}
+      \onslide<+->{& = \det(A-\lambda I)}
+      \\
+      \onslide<+->{& = \det\left( \begin{bmatrix}
+          2 & 1 & 0  \\
+          0 & 3 & 0  \\
+          0 & 0 & -1
+        \end{bmatrix}
+      - \lambda\begin{bmatrix}
+          1 & 0 & 0  \\
+          0 & 1 & 0  \\
+          0 & 0 & 1
+        \end{bmatrix}
+      \right)}
+      \onslide<+->{\;=\; \begin{vmatrix}[c]
+        2-\lambda & 1         & 0          \\
+        0         & 3-\lambda & 0          \\
+        0         & 0         & -1-\lambda
+      \end{vmatrix}}
+      \\
+      \onslide<+->{& = (2-\lambda)(3-\lambda)(-1-\lambda)}
+  \end{align*}
+
+  \onslide<+->{Portanto
+  \[
+    \lambda_{1} = 2
+    \qquad
+    \lambda_{2} = 3
+    \qquad
+    \lambda_{3} = -1
+  \]}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores para $\lambda=2$}
+\begin{columns}
+\column{0.7\textwidth}
+  \begin{align*}
+    \onslide<+->{(A-2I)\vec{x} & = \vec{0}}
+    \\[3mm]
+    \onslide<+->{\left(
+      \begin{bmatrix}
+        2 & 1 & 0  \\
+        0 & 3 & 0  \\
+        0 & 0 & -1
+      \end{bmatrix}
+    - \begin{bmatrix}
+        2 & 0 & 0  \\
+        0 & 2 & 0  \\
+        0 & 0 & 2
+      \end{bmatrix}
+    \right)
+    \vetortri{x}{y}{z}
+    & = \vetortri{0}{0}{0}}
+    \\[3mm]
+    \onslide<+->{\begin{bmatrix}
+      0 & 1 & 0  \\
+      0 & 1 & 0  \\
+      0 & 0 & -3
+    \end{bmatrix}
+    \vetortri{x}{y}{z}
+    & = \vetortri{0}{0}{0}}
+  \end{align*}
+
+\column{0.3\textwidth}
+  \begin{align*}
+    \onslide<+->{x & \in \R \\}
+    \onslide<+->{y & = 0    \\}
+    \onslide<+->{z & = 0}
+  \end{align*}
+
+  \onslide<+->{Autovetor
+  \[
+    \vec{v}_1 = \vetortri{1}{0}{0}
+  \]}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores para $\lambda=3$}
+\begin{columns}
+\column{0.7\textwidth}
+  \begin{align*}
+    \onslide<+->{(A-3I)\vec{x} & = \vec{0}}
+    \\[3mm]
+    \onslide<+->{\left(
+      \begin{bmatrix}
+        2 & 1 & 0  \\
+        0 & 3 & 0  \\
+        0 & 0 & -1
+      \end{bmatrix}
+    - \begin{bmatrix}
+        3 & 0 & 0  \\
+        0 & 3 & 0  \\
+        0 & 0 & 3
+      \end{bmatrix}
+    \right)
+    \vetortri{x}{y}{z}
+    & = \vetortri{0}{0}{0}}
+    \\[3mm]
+    \onslide<+->{\begin{bmatrix}
+      -1 & 1 & 0  \\
+      0  & 0 & 0  \\
+      0  & 0 & -4
+    \end{bmatrix}
+    \vetortri{x}{y}{z}
+    & = \vetortri{0}{0}{0}}
+  \end{align*}
+
+\column{0.3\textwidth}
+  \begin{align*}
+    \onslide<+->{-x+y & = 0 \\}
+    \onslide<+->{z    & = 0 \\}
+    \onslide<+->{y    & = x}
+  \end{align*}
+
+  \onslide<+->{Autovetor
+  \[
+    \vec{v}_2 = \vetortri{1}{1}{0}
+  \]}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores para $\lambda=-1$}
+\begin{columns}
+\column{0.7\textwidth}
+  \begin{align*}
+    \onslide<+->{(A-(-1)I)\vec{x} & = \vec{0}}
+    \\[3mm]
+    \onslide<+->{\left(
+      \begin{bmatrix}
+        2 & 1 & 0  \\
+        0 & 3 & 0  \\
+        0 & 0 & -1
+      \end{bmatrix}
+    + \begin{bmatrix}
+        1 & 0 & 0  \\
+        0 & 1 & 0  \\
+        0 & 0 & 1
+      \end{bmatrix}
+    \right)
+    \vetortri{x}{y}{z}
+    & = \vetortri{0}{0}{0}}
+    \\[3mm]
+    \onslide<+->{\begin{bmatrix}
+      3 & 1 & 0 \\
+      0 & 4 & 0 \\
+      0 & 0 & 0
+    \end{bmatrix}
+    \vetortri{x}{y}{z}
+    & = \vetortri{0}{0}{0}}
+  \end{align*}
+
+\column{0.3\textwidth}
+  \begin{align*}
+    \onslide<+->{z    & \in \R \\}
+    \onslide<+->{3x+y & = 0    \\}
+    \onslide<+->{y    & = 0    \\}
+    \onslide<+->{x    & = 0}
+  \end{align*}
+
+  \onslide<+->{Autovetor
+  \[
+    \vec{v}_3 = \vetortri{0}{0}{1}
+  \]}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Resposta}
+  \begin{columns}
+  \column{0.33\textwidth}
+  \[
+    \lambda_{1} = 2
+  \]
+  \[
+    \vec{v}_1 = \vetortri{1}{0}{0}
+  \]
+  \[
+    E(2) = \ger\left\{\vec{v}_1\right\}
+  \]
+  \column{0.33\textwidth}
+  \[
+    \lambda_{2} = 3
+  \]
+  \[
+    \vec{v}_2 = \vetortri{1}{1}{0}
+  \]
+  \[
+    E(3) = \ger\left\{\vec{v}_2\right\}
+  \]
+  \column{0.35\textwidth}
+  \[
+    \lambda_{3} = -1
+  \]
+  \[
+    \vec{v}_3 = \vetortri{0}{0}{1}
+  \]
+  \[
+    E(-1) = \ger\left\{\vec{v}_3\right\}
+  \]
+  \end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

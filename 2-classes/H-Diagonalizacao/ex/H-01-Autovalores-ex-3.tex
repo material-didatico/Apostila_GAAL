@@ -1,0 +1,97 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Determine os autovalores da matriz
+  \(
+    A =
+    \begin{bmatrix}
+      4 & 1 \\
+      2 & 3
+    \end{bmatrix}
+  \)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Polinômio Característica}
+  \begin{align*}
+    \onslide<+->{p(\lambda)}
+    \onslide<+->{& = \det(A - \lambda I)}
+    \\
+    \onslide<+->{& = \det\left(
+          \begin{bmatrix}
+            4 & 1 \\
+            2 & 3
+          \end{bmatrix}
+          - \lambda
+          \begin{bmatrix}
+            1 & 0 \\
+            0 & 1
+          \end{bmatrix}
+    \right)}
+    \\
+    \onslide<+->{& = \begin{vmatrix}
+          4-\lambda & 1         \\
+          2         & 3-\lambda
+        \end{vmatrix}}
+    \\
+    \onslide<+->{& = (4-\lambda)(3-\lambda) - 1 \times 2  \\}
+    \onslide<+->{& = 12 - 4\lambda - 3\lambda + \lambda^2 - 2        \\}
+    \onslide<+->{& = \lambda^2 - 7\lambda + 10}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Equação Característica}
+  \[
+    p(\lambda)
+    \;=\; \lambda^2 - 7\lambda + 10
+    \pause
+    \;=\; 0
+  \]
+
+  \[
+    \pause
+    \Delta
+    \pause
+    \;=\; b^2 - 4ac
+    \pause
+    \;=\; (-7)^2 - 4 \times 1 \times 10
+    \pause
+    \;=\; 49 - 40
+    \pause
+    \;=\; 9
+  \]
+
+  \[
+    \pause
+    \sqrt{\Delta}
+    \pause
+    \;=\; \sqrt{9}
+    \pause
+    \;=\; 3
+  \]
+
+  \[
+    \pause
+    \lambda_1
+    \pause
+    \;=\; \frac{-b + \sqrt{\Delta}}{2a}
+    \pause
+    \;=\; \frac{7 + 3}{2}
+    \pause
+    \;=\; 5
+  \]
+
+  \[
+    \pause
+    \lambda_2
+    \pause
+    \;=\; \frac{-b - \sqrt{\Delta}}{2a}
+    \pause
+    \;=\; \frac{7 - 3}{2}
+    \pause
+    \;=\; 2
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
