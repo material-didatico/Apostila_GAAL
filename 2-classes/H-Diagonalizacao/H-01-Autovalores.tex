@@ -18,7 +18,7 @@
   Uma \emph{transformação linear} é uma função
   \[
     \pause
-    T\colon \R^n \longrightarrow \R^m
+    T\colon \R^n \to \R^m
   \]
   \pause
   que satisfaz as seguintes propriedades
@@ -38,7 +38,7 @@
 \begin{frame}{Representação Matricial}
   Toda \emph{transformação linear}
   \[
-    T\colon \R^n\longrightarrow\R^m
+    T\colon \R^n \to \R^m
   \]
 
   \pause
@@ -106,10 +106,11 @@
     \pause
     T(\vec{v}) = \lambda\vec{v}
   \]
-\end{frame}
 
-%------------------------------------------------------------------------------%
-\begin{frame}{Autovetores Representados Matricialmente}
+  \pause
+  Representação Matricial
+
+  \pause
   Como \(T(\vec{v}) = A\vec{v}\),
   \pause
   podemos escrever
@@ -185,16 +186,25 @@
   O \emph{polinômio característico} é
   \[
     \pause
-    p_{A}(\lambda) = \det(A-\lambda I)
+    p_{A}(\lambda)
+    \pause
+    = \det(A-\lambda I)
+    \pause
+    = a_n\lambda^n
+    + a_{n-1}\lambda^{n-1}
+    + \cdots
+    + a_1 \lambda
+    + a_0
   \]
 
   \pause
-  Suas raízes são os autovalores de \(A\)
+  Suas raízes são os \emph{autovalores} de \(A\)
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \input{ex/H-01-Autovalores-ex-3}
 \input{ex/H-01-Autovalores-ex-4}
+\input{ex/H-01-Autovalores-ex-5}
 
 %------------------------------------------------------------------------------%
 \section{Autoespaços}
@@ -217,12 +227,12 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\input{ex/H-01-Autovalores-ex-5}
 \input{ex/H-01-Autovalores-ex-6}
 \input{ex/H-01-Autovalores-ex-7}
-%\input{ex/H-01-Autovalores-ex-8}
-%\input{ex/H-01-Autovalores-ex-9}
+\input{ex/H-01-Autovalores-ex-8}
+\input{ex/H-01-Autovalores-ex-9}
 %\input{ex/H-01-Autovalores-ex-A}
+%\input{ex/H-01-Autovalores-ex-B}
 
 %%------------------------------------------------------------------------------%
 %\section{Lista Mínima}

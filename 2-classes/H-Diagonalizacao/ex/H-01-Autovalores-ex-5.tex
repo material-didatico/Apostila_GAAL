@@ -1,47 +1,54 @@
 %------------------------------------------------------------------------------%
 \begin{question}
-  Determine os autoespaços da matriz
+  Determine os autovalores e autovetores da matriz
   \[
     A =
     \begin{bmatrix}
-      4 & 1 \\
-      2 & 3
+      0 & -1 \\
+      1 & 0
     \end{bmatrix}
   \]
-
-  \bigskip
-  Note que é a mesma matriz dos exemplos anteriores
 \end{question}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
+\begin{resolution}{Autovalores}
+  \onslide<+->{Os autovalores são as raízes do polinômio característico}
   \[
-    E(5)
-    \pause
-    = \ger \left\{ \vetor{1}{1} \right\}
-    \pause
-    = \left\{
-        \vetor{x}{y}
-        \st
-        x, y \in \R \text{ e }
-        y = x
-      \right\}
+    \onslide<+->{p(\lambda)}
+    \onslide<+->{= \det(A-\lambda I)}
+    \onslide<+->{= \begin{vmatrix}
+        -\lambda & -1       \\
+        1        & -\lambda
+      \end{vmatrix}}
+    \onslide<+->{= \lambda^{2}+1}
   \]
+  \begin{align*}
+    \onslide<+->{\lambda^{2}+1 & =  0 \\}
+    \onslide<+->{\lambda^{2}   & = -1}
+  \end{align*}
+  \[
+    \onslide<+->{\nexists \, \lambda \in \R}
+  \]
+\end{resolution}
 
-  \pause
-  \bigskip
-  \[
-    E(2)
+%------------------------------------------------------------------------------%
+\begin{resolution}{Interpretação geométrica}
+  Matriz de rotação de $90^\circ$ no sentido anti-horário
+
+\begin{center}
+  \begin{tikzpicture}[scale=2,>=stealth]
+    \draw[->] (-1.8,0)--(1.8,0) node[right] {$x$};
+    \draw[->] (0,-0.5)--(0,1.8) node[above] {$y$};
+
     \pause
-    = \ger \left\{ \vetor{1}{-2} \right\}
+    \draw[->,thick,blue] (0,0)--(1.2,0.5) node[right] {$\vec{v}$};
+
     \pause
-    = \left\{
-        \vetor{x}{y}
-        \st
-        x, y \in \R \text{ e }
-        y = -2x
-      \right\}
-  \]
+    \draw[->,thick,red] (0,0)--(-0.5,1.2) node[above left] {$A\vec{v}$};
+
+    \draw[->,dashed] (0.65,0.27) arc[start angle=22.6,end angle=112.6,radius=0.7];
+  \end{tikzpicture}
+\end{center}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
