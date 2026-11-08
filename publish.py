@@ -41,6 +41,8 @@ def folder_name(name: str) -> str:
         'E-Vetores'           : 'E - Vetores',
         'F-Retas_e_planos'    : 'F - Retas e Planos',
         'G-Espacos_Vetoriais' : 'G - Espaços Vetoriais',
+        'H-Diagonalizacao'    : 'H - Diagonalização',
+        'I-Conicas'           : 'I - Cônicas',
     }
 
     try:
@@ -78,7 +80,7 @@ def pdf_name(name: str) -> str:
         'E-06-Angulo'                               : 'E - 06 - Ângulo',
         'E-07-Projecao'                             : 'E - 07 - Projeção',
         'E-08-Produto_vetorial'                     : 'E - 08 - Produto Vetorial',
-        'E-09-Area_paralelogramo'                   : 'E - 09 - Area do Paralelogramo',
+        'E-09-Area_paralelogramo'                   : 'E - 09 - Área do Paralelogramo',
         'E-10-Produto_misto'                        : 'E - 10 - Produto Misto',
         'E-11-Volume_paralelepipedo'                : 'E - 11 - Volume Paralelepípedo',
         'F-01-Equacao_da_reta'                      : 'F - 01 - Equação da Reta',
@@ -97,6 +99,16 @@ def pdf_name(name: str) -> str:
         'G-07-Subespacos'                           : 'G - 07 - Subespaços',
         'G-08-Bases_ortogonais'                     : 'G - 08 - Bases Ortogonais',
         'G-09-Gram-Schmidt'                         : 'G - 09 - Gram-Schmidt',
+        'H-01-Autovalores'                          : 'H - 01 - Autovalores',
+        'H-02-Diagonalizacao'                       : 'H - 02 - Diagonalização',
+        'H-03-Diagonalizacao_Simetricas'            : 'H - 03 - Diagonalização de Matrizes Simétricas',
+        'I-01-Equacoes_Matriciais'                  : 'I - 01 - Equações Matriciais',
+        'I-02-Conicas'                              : 'I - 02 - Cônicas',
+        'I-03-Circunferencia'                       : 'I - 03 - Circunferência',
+        'I-04-Elipse'                               : 'I - 04 - Elipse',
+        'I-05-Parabola'                             : 'I - 05 - Parábola',
+        'I-06-Hiperbole'                            : 'I - 06 - Hipérbole',
+        'I-07-Classificacao'                        : 'I - 07 - Classificação',
     }
 
     name = name.replace('pres_', '').replace('.pdf', '')
