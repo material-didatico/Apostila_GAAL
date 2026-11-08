@@ -9,56 +9,128 @@
     \end{bmatrix}
   \]
 \end{question}
-
 %------------------------------------------------------------------------------%
 \begin{resolution}{Autovalores}
+\begin{columns}
+\column{0.4\textwidth}
+  \onslide<+->{Polinômio característico}
   \begin{align*}
-    \det(C-\lambda I)          & =0 \\
-    (2-\lambda)^2-1            & =0 \\
-    (2-\lambda-1)(2-\lambda+1) & =0 \\
-    (1-\lambda)(3-\lambda)     & =0
+    \onslide<+->{p(\lambda)}
+    \onslide<+->{& = \det(A-\lambda I)}
+    \\
+    \onslide<+->{& = \begin{vmatrix}[c]
+      2-\lambda & 1         \\
+      1         & 2-\lambda
+    \end{vmatrix}}
+    \\
+  \onslide<+->{& = (2-\lambda)^2 - 1 \\}
+  \onslide<+->{& = 4 - 4\lambda + \lambda^2 - 1 \\}
+  \onslide<+->{& = \lambda^{2} - 4 \lambda + 3}
   \end{align*}
-  Logo
+\column{0.6\textwidth}
   \[
-    \lambda_{1}=3
-    \qquad
-    \lambda_{2}=1
+    \onslide<+->{\Delta}
+    \onslide<+->{= b^2 - 4ac}
+    \onslide<+->{= (-4)^2 - 4 \times 1 \times 3}
+    \onslide<+->{= 4}
   \]
+
+  \smallskip
+  \[
+    \onslide<+->{\sqrt{\Delta}}
+    \onslide<+->{= \sqrt{4}}
+    \onslide<+->{= 2}
+  \]
+
+  \smallskip
+  \[
+    \onslide<+->{\lambda_1}
+    \onslide<+->{= \frac{-b+\sqrt{\Delta}}{2a}}
+    \onslide<+->{= \frac{4+2}{2}}
+    \onslide<+->{= 3}
+  \]
+
+  \smallskip
+  \[
+    \onslide<+->{\lambda_2}
+    \onslide<+->{= \frac{-b-\sqrt{\Delta}}{2a}}
+    \onslide<+->{= \frac{4-2}{2}}
+    \onslide<+->{= 1}
+  \]
+\end{columns}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Autovetores}
+\begin{resolution}{Autovetores para $\lambda_1=3$}
 \begin{columns}
 \column{0.4\textwidth}
-  Para \(\lambda_{1}=3\)
   \begin{align*}
-    (C-3I)\vec{v}_{1} & =\vec{0} \\
-    -x+y              & =0       \\
-    y                 & =x
-  \end{align*}
-  Escolhemos
-  \[
-    \vec{v}_{1}=
-    \begin{bmatrix}
-      1 \\
-      1
+    \onslide<+->{(A-3I)\vec{x}&=\vec{0}}
+    \\
+    \onslide<+->{\begin{bmatrix}[c]
+      2 - 3 & 1     \\
+      1     & 2 - 3
     \end{bmatrix}
-  \]
+    \vetor{x}{y} & = \vetor{0}{0}}
+    \\
+    \onslide<+->{\begin{bmatrix}
+      -1 &  1 \\
+       1 & -1
+    \end{bmatrix}
+    \vetor{x}{y} & = \vetor{0}{0}}
+  \end{align*}
+  \begin{align*}
+    \onslide<+->{-x + y & = 0} \\
+    \onslide<+->{     y & = x} \\
+  \end{align*}
 \column{0.4\textwidth}
-  Para \(\lambda_{2}=1\)
+  \onslide<+->{Escolhendo $x=1$}
+  \onslide<+->{\[
+    y = 1
+  \]}
+  \onslide<+->{\[
+    \vec{v}_1 = \vetor{1}{1}
+  \]}
+  \onslide<+->{\[
+    E(3) = \ger \left\{ \vetor{1}{1} \right\}
+  \]}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores para $\lambda_2=1$}
+\begin{columns}
+\column{0.4\textwidth}
   \begin{align*}
-    (C-I)\vec{v}_{2} & =\vec{0} \\
-    x+y              & =0       \\
-    y                & =-x
-  \end{align*}
-  Escolhemos
-  \[
-    \vec{v}_{2}=
-    \begin{bmatrix}
-      1  \\
-      -1
+    \onslide<+->{(A-I)\vec{x}&=\vec{0}}
+    \\
+    \onslide<+->{\begin{bmatrix}[c]
+      2 - 1 & 1     \\
+      1     & 2 - 1
     \end{bmatrix}
-  \]
+    \vetor{x}{y} & = \vetor{0}{0}}
+    \\
+    \onslide<+->{\begin{bmatrix}
+      1 & 1 \\
+      1 & 1
+    \end{bmatrix}
+    \vetor{x}{y} & = \vetor{0}{0}}
+  \end{align*}
+  \begin{align*}
+    \onslide<+->{x + y & =  0} \\
+    \onslide<+->{    y & = -x} \\
+  \end{align*}
+\column{0.4\textwidth}
+  \onslide<+->{Escolhendo $x=1$}
+  \onslide<+->{\[
+    y = -1
+  \]}
+  \onslide<+->{\[
+    \vec{v}_2 = \vetor{1}{-1}
+  \]}
+  \onslide<+->{\[
+    E(1) = \ger \left\{ \vetor{1}{-1} \right\}
+  \]}
 \end{columns}
 \end{resolution}
 
@@ -71,34 +143,12 @@
       1 & 1  \\
       1 & -1
     \end{bmatrix}
-    \qquad
+    \qquad\qquad
     D=
     \begin{bmatrix}
       3 & 0 \\
       0 & 1
     \end{bmatrix}
-  \]
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Diagonalização}
-  Como
-  \[
-    \det(P)=-2\neq 0
-  \]
-  a matriz \(P\) é invertível
-
-  Sua inversa é
-  \[
-    P^{-1}=
-    \begin{bmatrix}
-      \frac{1}{2} & \frac{1}{2}  \\
-      \frac{1}{2} & -\frac{1}{2}
-    \end{bmatrix}
-  \]
-  Portanto
-  \[
-    C=PDP^{-1}
   \]
 \end{resolution}
 

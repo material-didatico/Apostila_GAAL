@@ -1,15 +1,19 @@
 %------------------------------------------------------------------------------%
 \begin{question}
   Verifique se a matriz
-  \[
-    B=
+  \(
+    B =
     \begin{bmatrix}
       2 & 1 & 0 \\
       0 & 2 & 0 \\
       0 & 0 & 5
     \end{bmatrix}
-  \]
+  \)
   é diagonalizável
+
+  \pause
+  \bigskip
+  Precisamos de 3 autovetores linearmente independentes
 \end{question}
 
 %------------------------------------------------------------------------------%
@@ -18,72 +22,92 @@
   \[
     p_{B}(\lambda)=(2-\lambda)^2(5-\lambda)
   \]
+  \pause
   Os autovalores são
   \[
     \lambda_{1}=2
     \qquad
     \lambda_{2}=5
   \]
-  As multiplicidades algébricas são
-  \[
-    m_{a}(2)=2
-    \qquad
-    m_{a}(5)=1
-  \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Autoespaços}
-  Para \(\lambda=2\)
-  \[
-    (B-2I)\vec{v}=\vec{0}
-  \]
-  implica
-  \[
-    y=0
-    \qquad
-    z=0
-  \]
-  Logo
-  \[
-    E_{2}=\operatorname{span}
-    \left\{
-    \begin{bmatrix}
-    1\\0\\0
+\begin{resolution}{Autovetores para $\lambda_1=2$}
+\begin{columns}
+\column{0.4\textwidth}
+  \begin{align*}
+    \onslide<+->{(A-2I)\vec{x}&=\vec{0}}
+    \\
+    \onslide<+->{\begin{bmatrix}[c]
+      2 - 2 & 1     & 0     \\
+      0     & 2 - 2 & 0     \\
+      0     & 0     & 5 - 2
     \end{bmatrix}
-    \right\}
-  \]
-  Assim
-  \[
-    \dim(E_{2})=1
-  \]
+    \vetortri{x}{y}{z} & = \vetortri{0}{0}{0}}
+    \\
+    \onslide<+->{\begin{bmatrix}[c]
+      0 & 1 & 0 \\
+      0 & 0 & 0 \\
+      0 & 0 & 3
+    \end{bmatrix}
+    \vetortri{x}{y}{z} & = \vetortri{0}{0}{0}}
+    \\[5mm]
+    \onslide<+->{x \in \R} \qquad
+    \onslide<+->{y = 0}    \qquad
+    \onslide<+->{z = 0}
+  \end{align*}
+\column{0.4\textwidth}
+  \onslide<+->{Escolhendo $x=1$}
+  \onslide<+->{\[
+    \vec{v}_1 = \vetortri{1}{0}{0}
+  \]}
+  \onslide<+->{\[
+    E(2) = \ger \left\{ \vetortri{1}{0}{0} \right\}
+  \]}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores para $\lambda_2=5$}
+\begin{columns}
+\column{0.4\textwidth}
+  \begin{align*}
+    \onslide<+->{(A-5I)\vec{x}&=\vec{0}}
+    \\
+    \onslide<+->{\begin{bmatrix}[c]
+      2 - 5 & 1     & 0     \\
+      0     & 2 - 5 & 0     \\
+      0     & 0     & 5 - 5
+    \end{bmatrix}
+    \vetortri{x}{y}{z} & = \vetortri{0}{0}{0}}
+    \\
+    \onslide<+->{\begin{bmatrix}[c]
+      -3 &  1 & 0 \\
+       0 & -3 & 0 \\
+       0 &  0 & 0
+    \end{bmatrix}
+    \vetortri{x}{y}{z} & = \vetortri{0}{0}{0}}
+    \\[5mm]
+    \onslide<+->{z \in \R} \qquad
+    \onslide<+->{y = 0}    \qquad
+    \onslide<+->{x = 0}
+  \end{align*}
+\column{0.4\textwidth}
+  \onslide<+->{Escolhendo $z=1$}
+  \onslide<+->{\[
+    \vec{v}_2 = \vetortri{0}{0}{1}
+  \]}
+  \onslide<+->{\[
+    E(5) = \ger \left\{ \vetortri{0}{0}{1} \right\}
+  \]}
+\end{columns}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Conclusão}
-  Para \(\lambda=5\)
-  \[
-    E_{5}=\operatorname{span}
-    \left\{
-    \begin{bmatrix}
-      0 \\
-      0 \\
-      1
-    \end{bmatrix}
-    \right\}
-  \]
-\end{resolution}
+  Falta um autovalor independente
 
-%------------------------------------------------------------------------------%
-\begin{resolution}{Conclusão}
-  Portanto, a soma das dimensões dos autoespaços é
-  \[
-    \dim(E_{2})+\dim(E_{5})=1+1=2
-  \]
-  Para diagonalizar uma matriz de ordem \(3\),
-
-  precisamos de três autovetores linearmente independentes.
-
+  \pause
   Logo \(B\) não é diagonalizável
 \end{resolution}
 
