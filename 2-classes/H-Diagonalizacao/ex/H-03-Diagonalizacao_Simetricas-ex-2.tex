@@ -1,0 +1,125 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+    Diagonalize ortogonalmente a matriz
+    \[
+      B =
+      \begin{pmatrix}
+        4 & 0 \\
+        0 & 4
+      \end{pmatrix}
+    \]
+    Determine as matrizes $P$ e $D$ tais que
+    \(
+      B = P D P^t
+    \)
+
+    \bigskip
+    \textit{Essa matriz já é diagonal, este exercício é apenas um treino}
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovalores}
+  Polinômio característico
+  \pause
+  \[
+    p(\lambda)
+    \pause
+    = \det(B-\lambda I)
+    \pause
+    = \begin{vmatrix}
+      4-\lambda & 0         \\
+      0         & 4-\lambda
+    \end{vmatrix}
+    \pause
+    = (4-\lambda)^{2}
+  \]
+
+  \pause
+  Autovalor
+  \[
+    \lambda = 4
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autoespaço}
+\begin{columns}[t]
+\column{0.4\textwidth}
+  \onslide<+->{Equação característica}
+  \begin{align*}
+    \onslide<+->{(B-4I)\vec{x}&=\vec{0}}
+    \\
+    \onslide<+->{\begin{pmatrix}
+      0 & 0 \\
+      0 & 0
+    \end{pmatrix}
+    \begin{pmatrix}
+        x\\y
+    \end{pmatrix}
+    &=
+    \begin{pmatrix}
+        0\\0
+    \end{pmatrix}}
+  \end{align*}
+  \onslide<+->{Não há restrições}
+\column{0.4\textwidth}
+  \onslide<+->{Autoespaço
+  \[
+    E(4) = \R^2
+  \]}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Base ortonormal}
+  Podemos escolher os vetores ortonormais
+  \[
+    \pause
+    \vec{u}_{1} =
+    \begin{pmatrix}
+      1 \\
+      0
+    \end{pmatrix}
+    \qquad\qquad
+    \pause
+    \vec{u}_{2} =
+    \begin{pmatrix}
+      0 \\
+      1
+    \end{pmatrix}
+  \]
+  \pause
+  \begin{align*}
+    \norm{\vec{u}_{1}}          & =1 \\
+    \norm{\vec{u}_{2}}          & =1 \\
+    \vec{u}_{1}\cdot\vec{u}_{2} & =0
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Diagonalização}
+  Organizamos os autovetores nas colunas de $P$
+  \[
+    P =
+    \begin{pmatrix}
+      1 & 0 \\
+      0 & 1
+    \end{pmatrix}
+  \]
+
+  A matriz diagonal é
+  \[
+    D =
+    \begin{pmatrix}
+      4 & 0 \\
+      0 & 4
+    \end{pmatrix}
+  \]
+
+  Portanto
+  \[
+    B = P D P^t
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%

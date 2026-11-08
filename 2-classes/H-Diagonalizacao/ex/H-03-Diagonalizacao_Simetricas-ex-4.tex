@@ -1,0 +1,289 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Diagonalize ortogonalmente a matriz
+  \[
+    A =
+    \begin{pmatrix}
+      2 & 1 & 0 \\
+      1 & 2 & 0 \\
+      0 & 0 & 4
+    \end{pmatrix}
+  \]
+  Determine as matrizes $P$ e $D$ tais que
+  \(
+    A = P D P^t
+  \)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovalores}
+  Polinômio característico
+  \begin{align*}
+    \onslide<+->{p(\lambda)}
+    \onslide<+->{= \det(A-\lambda I) }
+    \onslide<+->{& = \begin{vmatrix}
+      2-\lambda & 1         & 0         \\
+      1         & 2-\lambda & 0         \\
+      0         & 0         & 4-\lambda
+    \end{vmatrix}}
+    \\
+    \onslide<+->{& = (-1)^{3+3} (4-\lambda)
+      \begin{vmatrix}
+        2-\lambda & 1         \\
+        1         & 2-\lambda
+      \end{vmatrix}}
+    \\
+    \onslide<+->{& = (4-\lambda) \left[ (2-\lambda)^2 - 1            \right]} \\
+    \onslide<+->{& = (4-\lambda) \left[ 4 - 4\lambda + \lambda^2 - 1 \right]} \\
+    \onslide<+->{& = (4-\lambda) \left( \lambda^2 - 4\lambda + 3     \right)}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovalores}
+  \[
+    \onslide<+->{(4-\lambda) \left( \lambda^2 - 4\lambda + 3 \right) = 0}
+  \]
+
+  \[
+    \onslide<+->{\lambda_1 = 4}
+    \onslide<+->{\qquad\text{ ou }\qquad
+    \lambda^2 - 4\lambda + 3 = 0}
+  \]
+
+  \[
+    \onslide<+->{\Delta}
+    \onslide<+->{= b^2 - 4ac}
+    \onslide<+->{= (-4)^2 - 4 \times 1 \times 3}
+    \onslide<+->{= 4}
+    \qquad\qquad
+    \onslide<+->{\sqrt{\Delta}}
+    \onslide<+->{= \sqrt{4}}
+    \onslide<+->{= 2}
+  \]
+
+  \[
+    \onslide<+->{\lambda_2}
+    \onslide<+->{= \frac{-b+\sqrt{\Delta}}{2a}}
+    \onslide<+->{= \frac{4+2}{2}}
+    \onslide<+->{= 3}
+  \]
+
+  \[
+    \onslide<+->{\lambda_3}
+    \onslide<+->{= \frac{-b-\sqrt{\Delta}}{2a}}
+    \onslide<+->{= \frac{4-2}{2}}
+    \onslide<+->{= 1}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores para $\lambda_1=4$}
+\begin{columns}
+\column{0.4\textwidth}
+  \begin{align*}
+    \onslide<+->{(A-4I)\vec{x}&=\vec{0}}
+    \\
+    \onslide<+->{\begin{bmatrix}
+      -2 & 1  & 0 \\
+      1  & -2 & 0 \\
+      0  & 0  & 0
+    \end{bmatrix}
+    \vetortri{x}{y}{z} & = \vetortri{0}{0}{0}}
+  \end{align*}
+  \vspace{-\baselineskip}
+  \begin{align*}
+    \onslide<+->{-2x +  y & = 0 \\}
+    \onslide<+->{y & = 2x}
+    \\[2mm]
+    \onslide<+->{x - 2y & =}
+    \onslide<+->{x - 4x =}
+    \onslide<+->{-x = 0} \\
+    \onslide<+->{y & = 0}
+  \end{align*}
+\column{0.4\textwidth}
+  \onslide<+->{Escolhendo $z=1$}
+  \onslide<+->{\[
+    \vec{v}_1 = \vetortri{0}{0}{1}
+  \]}
+  \onslide<+->{\[
+    E(4) = \ger \left\{ \vetortri{0}{0}{1} \right\}
+  \]}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Normalização de $\vec{v}_1$}
+  Norma de
+  \(
+    \vec{v}_1 = \vetortri{0}{0}{1}
+  \)
+  \pause
+  \[
+    \norm{\vec{v}_{2}}
+    \pause
+    = \sqrt{0^2 +0^2 + 1^2}
+    \pause
+    = 1
+  \]
+
+  \pause
+  Autovetor unitário
+  \[
+    \pause
+    \vec{u}_1
+    \pause
+    = \vetortri{0}{0}{1}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores para $\lambda_2=3$}
+\begin{columns}
+\column{0.4\textwidth}
+  \begin{align*}
+    \onslide<+->{(A-3I)\vec{x}&=\vec{0}}
+    \\
+    \onslide<+->{\begin{bmatrix}
+      -1 & 1  & 0 \\
+      1  & -1 & 0 \\
+      0  & 0  & 1
+    \end{bmatrix}
+    \vetortri{x}{y}{z} & = \vetortri{0}{0}{0}}
+  \end{align*}
+  \onslide<+->{\begin{align*}
+    -x + y & = 0 \\
+    z      & = 0
+  \end{align*}}
+\column{0.4\textwidth}
+  \onslide<+->{Escolhendo $x=1$}
+  \onslide<+->{\[
+    y = 1
+  \]}
+  \onslide<+->{\[
+    \vec{v}_2 = \vetortri{1}{1}{0}
+  \]}
+  \onslide<+->{\[
+    E(3) = \ger \left\{ \vetortri{1}{1}{0} \right\}
+  \]}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Normalização de $\vec{v}_2$}
+  Norma de
+  \(
+    \vec{v}_2 = \vetortri{1}{1}{0}
+  \)
+  \pause
+  \[
+    \norm{\vec{v}_{2}}
+    \pause
+    = \sqrt{1^2 +1^2 + 0^2}
+    \pause
+    = \sqrt{2}
+  \]
+
+  \pause
+  Autovetor unitário
+  \[
+    \pause
+    \vec{u}_2
+    \pause
+    = \frac{1}{\sqrt{2}}
+      \vetortri{1}{1}{0}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores para $\lambda_3=1$}
+\begin{columns}
+\column{0.4\textwidth}
+  \begin{align*}
+    \onslide<+->{(A-I)\vec{x}&=\vec{0}}
+    \\
+    \onslide<+->{\begin{bmatrix}
+      1 & 1 & 0 \\
+      1 & 1 & 0 \\
+      0 & 0 & 3
+    \end{bmatrix}
+    \vetortri{x}{y}{z} & = \vetortri{0}{0}{0}}
+  \end{align*}
+  \onslide<+->{\begin{align*}
+    x+y & = 0 \\
+    z   & = 0
+  \end{align*}}
+\column{0.4\textwidth}
+  \onslide<+->{Escolhendo $x=1$}
+  \onslide<+->{\[
+    y = -1
+  \]}
+  \onslide<+->{\[
+    \vec{v}_3 = \vetortri{1}{-1}{0}
+  \]}
+  \onslide<+->{\[
+    E(1) = \ger \left\{ \vetortri{1}{-1}{0} \right\}
+  \]}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Normalização de $\vec{v}_3$}
+  Norma de
+  \(
+    \vec{v}_3 = \vetortri{1}{-1}{0}
+  \)
+  \pause
+  \[
+    \norm{\vec{v}_{3}}
+    \pause
+    = \sqrt{1^2 +(-1)^2 + 0^2}
+    \pause
+    = \sqrt{2}
+  \]
+
+  \pause
+  Autovetor unitário
+  \[
+    \pause
+    \vec{u}_3
+    \pause
+    = \frac{1}{\sqrt{2}}
+      \vetortri{1}{-1}{0}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Base Ortonormal}
+  Autovetores unitários
+  \[
+    \vec{u}_{1} = \vetortri{0}{0}{1}                     \qquad
+    \vec{u}_{2} = \frac{1}{\sqrt{2}} \vetortri{1}{1}{0}  \qquad
+    \vec{u}_{3} = \frac{1}{\sqrt{2}} \vetortri{1}{-1}{0}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Diagonalização}
+  Organizamos os autovetores nas colunas de $P$
+  \[
+    P =
+    \begin{pmatrix}
+      \dfrac{1}{\sqrt{2}}  & \dfrac{1}{\sqrt{2}} & 0 \\[0.3cm]
+      -\dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} & 0 \\[0.3cm]
+      0                    & 0                   & 1
+    \end{pmatrix}
+  \]
+
+  Organizamos os autovalores na diagonal de $D$
+  \[
+    D =
+    \begin{pmatrix}
+      1 & 0 & 0 \\
+      0 & 3 & 0 \\
+      0 & 0 & 4
+    \end{pmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%

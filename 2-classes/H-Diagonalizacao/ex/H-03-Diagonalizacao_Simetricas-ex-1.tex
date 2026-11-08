@@ -1,0 +1,205 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Diagonalize ortogonalmente a matriz
+  \[
+    A =
+    \begin{pmatrix}
+      5 & 2 \\
+      2 & 2
+    \end{pmatrix}
+  \]
+  Determine as matrizes $P$ e $D$ tais que
+  \(
+    A = P D P^t
+  \)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovalores}
+\begin{columns}
+\column{0.4\textwidth}
+  \onslide<+->{Polinômio característico}
+  \begin{align*}
+    \onslide<+->{p(\lambda)}
+    \onslide<+->{& = \det(A-\lambda I)}
+    \\
+    \onslide<+->{& = \begin{vmatrix}[c]
+      5-\lambda & 2         \\
+      2         & 2-\lambda
+    \end{vmatrix}}
+    \\
+  \onslide<+->{  & = (5-\lambda)(2-\lambda) - 4 \\}
+    \onslide<+->{& = \lambda^{2} - 7\lambda + 6}
+  \end{align*}
+\column{0.6\textwidth}
+  \[
+    \onslide<+->{\Delta}
+    \onslide<+->{= b^2 - 4ac}
+    \onslide<+->{= (-7)^2 - 4 \times 1 \times 6}
+    \onslide<+->{= 25}
+  \]
+
+  \smallskip
+  \[
+    \onslide<+->{\sqrt{\Delta}}
+    \onslide<+->{= \sqrt{25}}
+    \onslide<+->{= 5}
+  \]
+
+  \smallskip
+  \[
+    \onslide<+->{\lambda_1}
+    \onslide<+->{= \frac{-b-\sqrt{\Delta}}{2a}}
+    \onslide<+->{= \frac{7-5}{2}}
+    \onslide<+->{= 1}
+  \]
+
+  \smallskip
+  \[
+    \onslide<+->{\lambda_2}
+    \onslide<+->{= \frac{-b+\sqrt{\Delta}}{2a}}
+    \onslide<+->{= \frac{7+5}{2}}
+    \onslide<+->{= 6}
+  \]
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores para $\lambda=1$}
+\begin{columns}
+\column{0.4\textwidth}
+  \begin{align*}
+    \onslide<+->{(A-I)\vec{x}&=\vec{0}}
+    \\
+    \onslide<+->{\begin{bmatrix}
+      4 & 2 \\
+      2 & 1
+    \end{bmatrix}
+    \vetor{x}{y} & = \vetor{0}{0}}
+  \end{align*}
+  \onslide<+->{\begin{align*}
+    4x + 2y & = 0 \\
+    2x +  y  & = 0
+  \end{align*}}
+\column{0.4\textwidth}
+  \onslide<+->{Escolhendo $x=1$}
+  \onslide<+->{\[
+    y = -2
+  \]}
+  \onslide<+->{\[
+    \vec{v}_1 = \vetor{1}{-2}
+  \]}
+  \onslide<+->{\[
+    E(1) = \ger \left\{ \vetor{1}{-2} \right\}
+  \]}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Normalização de $\vec{v}_1$}
+  Norma de
+  \(
+    \vec{v}_1 = \vetor{1}{-2}
+  \)
+  \pause
+  \[
+    \norm{\vec{v}_{1}}
+    \pause
+    = \sqrt{1^{2}+(-2)^{2}}
+    \pause
+    = \sqrt{5}
+  \]
+
+  \pause
+  Autovetor unitário
+  \[
+    \pause
+    \vec{u}_{1}
+    \pause
+    = \frac{1}{\sqrt{5}}
+      \vetor{1}{-2}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores para $\lambda=6$}
+\begin{columns}
+\column{0.4\textwidth}
+  \begin{align*}
+    \onslide<+->{(A-6I)\vec{x}&=\vec{0}}
+    \\
+    \onslide<+->{\begin{bmatrix}
+      -1 & 2  \\
+      2  & -4
+    \end{bmatrix}
+    \vetor{x}{y} & = \vetor{0}{0}}
+  \end{align*}
+  \begin{align*}
+    \onslide<+->{-x + 2y & = 0 \\}
+    \onslide<+->{ x      & = 2y}
+  \end{align*}
+\column{0.4\textwidth}
+  \onslide<+->{Escolhendo $y=1$}
+  \onslide<+->{\[
+    x = 2
+  \]}
+  \onslide<+->{\[
+    \vec{v}_2 = \vetor{2}{1}
+  \]}
+  \onslide<+->{\[
+    E(6) = \ger \left\{ \vetor{2}{1} \right\}
+  \]}
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Normalização de $\vec{v}_2$}
+  Norma de
+  \(
+    \vec{v}_2 = \vetor{2}{1}
+  \)
+
+  \pause
+  \[
+    \norm{\vec{v}_{2}}
+    \pause
+    = \sqrt{2^{2}+1^{2}}
+    \pause
+    = \sqrt{5}
+  \]
+
+  \pause
+  Autovetor unitário
+  \[
+    \pause
+    \vec{u}_{2}
+    \pause
+    = \frac{1}{\sqrt{5}}
+      \vetor{2}{1}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Diagonalização}
+  Organizamos os autovetores unitário nas colunas de $P$
+  \[
+    P =
+    \frac{1}{\sqrt{5}}
+    \begin{pmatrix}
+      1  & 2 \\
+      -2 & 1
+    \end{pmatrix}
+  \]
+
+  \pause
+  A matriz diagonal correspondente é
+  \[
+    D =
+    \begin{pmatrix}
+        1 & 0\\
+        0 & 6
+    \end{pmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
