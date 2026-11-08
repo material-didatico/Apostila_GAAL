@@ -1,0 +1,168 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,utf8,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Diagonalização de Matrizes}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Diagonalização}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Matriz Diagonal}
+  Uma matriz quadrada \(D\) é \emph{diagonal}
+
+  \pause
+  quando todos os elementos fora da diagonal principal são nulos
+  \pause
+  \[
+    D =
+    \begin{bmatrix}
+      \lambda_{1}          & \z                   & {\color{gray}\cdots} & \z                   \\
+      \z                   & \lambda_{2}          & {\color{gray}\cdots} & \z                   \\
+      {\color{gray}\vdots} & {\color{gray}\vdots} & {\color{gray}\ddots} & {\color{gray}\vdots} \\
+      \z                   & \z                   & {\color{gray}\cdots} & \lambda_{n}
+    \end{bmatrix}
+    \pause
+    \diag(\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n})
+  \]
+
+  \bigskip
+  \pause
+  Todas as operações com matrizes diagonais são especialmente simples
+  \end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Matrizes Semelhantes}
+  Duas matrizes \(A\) e \(D\) são \emph{semelhantes}
+
+  \pause
+  quando existe uma matriz invertível \(P\)
+  \pause
+  tal que
+  \[
+    D=P^{-1}AP
+  \]
+  \pause
+  Equivalentemente
+  \[
+    A=PDP^{-1}
+  \]
+
+  \pause
+  Uma matriz \(A\) é \emph{diagonalizável} quando é semelhante a uma matriz diagonal
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Autovetores e Diagonalização}
+  Considere que $A_n$ possui $n$ \emph{autovetores} (\(A\vec{v}=\lambda\vec{v}\))
+
+  \pause
+  \emph{linearmente independentes}
+  \[
+    \vec{v}_{1},
+    \vec{v}_{2},
+    \ldots,
+    \vec{v}_{n}
+  \]
+  \pause
+  associados ao \emph{autovalores}
+  \(
+    \lambda_{1},
+    \lambda_{2},
+    \ldots,
+    \lambda_{n}
+  \)
+
+  \pause
+  Definimos
+  \[
+    P =
+    \begin{bmatrix}[c]
+      |              & |           &        & |              \\
+      \; \vec{v}_{1} & \vec{v}_{2} & \cdots & \vec{v}_{n} \; \\
+      |              & |           &        & |
+    \end{bmatrix}
+    \pause
+    \qquad\text{ e }\qquad
+    D = \diag(\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n})
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Calculando $AP$}
+  \begin{align*}
+    \onslide<+->{AP}
+    \onslide<+->{& = A
+    \begin{bmatrix}[c]
+      |              & |           &        & |              \\
+      \; \vec{v}_{1} & \vec{v}_{2} & \cdots & \vec{v}_{n} \; \\
+      |              & |           &        & |
+    \end{bmatrix}}
+    \onslide<+->{=
+    \begin{bmatrix}[c]
+      |             & |             &        & |             \\
+      A \vec{v}_{1} & A \vec{v}_{2} & \cdots & A \vec{v}_{n} \\
+      |             & |             &        & |
+    \end{bmatrix}}
+    \\[2mm]
+    \onslide<+->{& =
+    \begin{bmatrix}[c]
+      |                       & |                       &        & |                       \\
+      \lambda_{1} \vec{v}_{1} & \lambda_{2} \vec{v}_{2} & \cdots & \lambda_{n} \vec{v}_{n} \\
+      |                       & |                       &        & |
+    \end{bmatrix}}
+    \onslide<+->{= P \diag(\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n})}
+    \\[5mm]
+    \onslide<+->{AP & = PD}
+    \\
+    \onslide<+->{A & = PDP^{-1}}
+    \\
+    \onslide<+->{P^{-1}AP & = D}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Critério de Diagonalização}
+\begin{enumerate}[<+->]
+  \setlength{\itemsep}{2em}
+
+  \item Uma matriz \(A\in\mathbb{R}^{n\times n}\) é diagonalizável
+        \\ \medskip
+        \onslide<+->{se, e somente se, possui \(n\) autovetores linearmente independentes}
+
+  \item Se \(A\) possui \(n\) autovalores distintos, então é diagonalizável
+
+  \item Autovalores repetidos não impedem a diagonalização
+\end{enumerate}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Exemplos}
+
+%------------------------------------------------------------------------------%
+\input{ex/H-02-Diagonalizacao-ex-1}
+\input{ex/H-02-Diagonalizacao-ex-2}
+\input{ex/H-02-Diagonalizacao-ex-3}
+
+%%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

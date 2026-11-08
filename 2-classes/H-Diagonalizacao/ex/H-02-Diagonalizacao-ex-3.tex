@@ -1,0 +1,106 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Diagonalize, se possível, a matriz
+  \[
+    C=
+    \begin{bmatrix}
+      2 & 1 \\
+      1 & 2
+    \end{bmatrix}
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovalores}
+  \begin{align*}
+    \det(C-\lambda I)          & =0 \\
+    (2-\lambda)^2-1            & =0 \\
+    (2-\lambda-1)(2-\lambda+1) & =0 \\
+    (1-\lambda)(3-\lambda)     & =0
+  \end{align*}
+  Logo
+  \[
+    \lambda_{1}=3
+    \qquad
+    \lambda_{2}=1
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores}
+\begin{columns}
+\column{0.4\textwidth}
+  Para \(\lambda_{1}=3\)
+  \begin{align*}
+    (C-3I)\vec{v}_{1} & =\vec{0} \\
+    -x+y              & =0       \\
+    y                 & =x
+  \end{align*}
+  Escolhemos
+  \[
+    \vec{v}_{1}=
+    \begin{bmatrix}
+      1 \\
+      1
+    \end{bmatrix}
+  \]
+\column{0.4\textwidth}
+  Para \(\lambda_{2}=1\)
+  \begin{align*}
+    (C-I)\vec{v}_{2} & =\vec{0} \\
+    x+y              & =0       \\
+    y                & =-x
+  \end{align*}
+  Escolhemos
+  \[
+    \vec{v}_{2}=
+    \begin{bmatrix}
+      1  \\
+      -1
+    \end{bmatrix}
+  \]
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Diagonalização}
+  As matrizes são
+  \[
+    P=
+    \begin{bmatrix}
+      1 & 1  \\
+      1 & -1
+    \end{bmatrix}
+    \qquad
+    D=
+    \begin{bmatrix}
+      3 & 0 \\
+      0 & 1
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Diagonalização}
+  Como
+  \[
+    \det(P)=-2\neq 0
+  \]
+  a matriz \(P\) é invertível
+
+  Sua inversa é
+  \[
+    P^{-1}=
+    \begin{bmatrix}
+      \frac{1}{2} & \frac{1}{2}  \\
+      \frac{1}{2} & -\frac{1}{2}
+    \end{bmatrix}
+  \]
+  Portanto
+  \[
+    C=PDP^{-1}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
