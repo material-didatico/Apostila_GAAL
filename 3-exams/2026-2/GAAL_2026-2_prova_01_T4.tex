@@ -291,7 +291,7 @@ A matriz escalonada reduzida representa o sistema
     z-w=-1
   }
 \]
-A variável $w$ é livre pois não possui pivô
+A variável $w$ é livre, pois não possui pivô
 \[
   w=t
   \qquad t \in \R
@@ -308,11 +308,18 @@ Então
 \]
 Portanto, a solução geral do sistema é
 \[
-  \begin{pmatrix}
+  \begin{pmatrix}[c]
     x \\
     y \\
     z \\
     w
+  \end{pmatrix}
+  =
+  \begin{pmatrix}[c]
+    2t - 4 \\
+    3 - t  \\
+    t - 1  \\
+    t
   \end{pmatrix}
   =
   \begin{pmatrix}
