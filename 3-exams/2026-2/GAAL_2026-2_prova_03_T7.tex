@@ -1,0 +1,126 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{gaal}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{GAAL}{Prova 3 -- Turma 7}{26/10/2026}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{20\%}
+Determine a posição relativa das retas.
+\[
+  r\colon\ \vetortri{x}{y}{z} = \vetortri{1}{0}{2} + t\vetortri{1}{1}{-1}
+  \qquad\text{e}\qquad
+  s\colon\ \vetortri{x}{y}{z} = \lambda\vetortri{2}{1}{0} + \vetortri{0}{1}{1}
+\]
+
+\begin{answer}
+  Os vetores diretores $(1, 1, -1)$ e $(2, 1, 0)$ não são proporcionais.
+
+  Para verificar se há interseção:
+  \begin{align*}
+    1+t & =2\lambda  \\
+    t   & =1+\lambda \\
+    2-t & =1
+  \end{align*}
+  A última equação dá $t=1$ e a segunda dá $\lambda=0$.
+
+  A primeira exigiria $2=0$, impossível.
+
+  Portanto, as retas são reversas.
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{20\%}
+Determine a posição relativa das retas
+\[
+  r\colon (x, y, z) = (0, 1, 1) + t(1, -1, 2) \qquad
+  s\colon (x, y, z) = (2, 0, 0) + \lambda(1, 1, 0)
+\]
+
+\begin{answer}
+  Os vetores diretores $(1,-1,2)$ e $(1,1,0)$ não são proporcionais. Igualando as coordenadas:
+  \begin{align*}
+    t    & =2+\lambda \\
+    1-t  & =\lambda   \\
+    1+2t & =0
+  \end{align*}
+  A última dá $t=-1/2$ e a segunda dá $\lambda=3/2$
+
+  A primeira exigiria $-1/2=7/2$, impossível
+
+  As retas são reversas
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{20\%}
+Determine o ângulo entre os vetores $\vec{v}=(1,0,1)$ e $\vec{w}=(0,1,1)$
+
+\begin{answer}
+  \[
+    \vec{v}\cdot\vec{w}=1
+    \qquad
+    \norm{\vec{v}}=\norm{\vec{w}}=\sqrt{2}
+  \]
+  Logo $\cos\theta=1/2$ e $\theta=60^\circ$
+\end{answer}
+
+% 04
+%------------------------------------------------------------------------------%
+\exercise{20\%}
+Verifique se $\vec{w}=(2, 5, 3)$
+é combinação linear de $\vec{v}_1 = (1, 1, 0)$ e $\vec{v}_2=(0,1,1)$
+
+\begin{answer}
+  Procuramos $a$, $b$ tais que
+  \[
+    a(1,1,0)+b(0,1,1)=(2,5,3)
+  \]
+  Comparando coordenadas, $a=2$, $a+b=5$ e $b=3$, compatíveis.
+
+  Portanto,
+  \[
+    \vec{w} = 2\vec{v}_1 + 3\vec{v}_2
+  \]
+\end{answer}
+
+% 05
+%------------------------------------------------------------------------------%
+\exercise{20\%}
+Obtenha, por Gram--Schmidt, uma base ortonormal que gere o mesmo espaço
+que os vetores
+$\vec{v}_1 = (1, 0)$ e
+$\vec{v}_2 = (1, 1)$
+
+\begin{answer}
+  \[
+    \vec{u}_1 = (1, 0)
+    \qquad
+    \vec{e}_1 = (1, 0)
+  \]
+  Em seguida,
+  \begin{align*}
+    \vec{u}_2 & =\vec{v}_2-\frac{\vec{v}_2\cdot\vec{u}_1}{\norm{\vec{u}_1}^{2}}\vec{u}_1 \\
+              & =(1, 1) - (1, 0)                                                         \\
+              & =(0, 1)
+  \end{align*}
+  Como $\norm{\vec{u}_2} = 1$, temos $\vec{e}_2 = (0, 1)$
+
+  A base ortonormal é
+  \[
+    \{(1, 0), (0, 1)\}
+  \]
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+
