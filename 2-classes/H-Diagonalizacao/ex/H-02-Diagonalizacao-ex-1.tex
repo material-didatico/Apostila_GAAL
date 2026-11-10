@@ -97,7 +97,7 @@
     \vec{v}_1 = \vetor{1}{1}
   \]}
   \onslide<+->{\[
-    E(1) = \ger \left\{ \vetor{1}{1} \right\}
+    E(5) = \ger \left\{ \vetor{1}{1} \right\}
   \]}
 \end{columns}
 \end{resolution}
@@ -144,8 +144,11 @@
   Colocamos os autovetores nas colunas de \(P\)
   \pause
   \[
-    P=
-    \begin{bmatrix}
+    P
+    \pause
+    = \left[ \vec{v}_2 \quad \vec{v}_2 \right]
+    \pause
+    = \begin{bmatrix}
       1 &  1  \\
       1 & -2
     \end{bmatrix}
@@ -156,6 +159,9 @@
   \pause
   \[
     D
+    \pause
+    = \diag(\lambda_1, \lambda_2)
+    \pause
     = \diag(5, 2)
     \pause
     = \begin{bmatrix}
@@ -167,8 +173,6 @@
 
 %------------------------------------------------------------------------------%
 \begin{proofframe}{Exemplo 1 -- Verificação -- Cálculo de \(P^{-1}\)}
-\begin{columns}
-\column{0.5\textwidth}
   Para uma matriz de ordem \(2\)
   \[
     \begin{bmatrix}
@@ -184,74 +188,73 @@
   \]
   \pause
   Calculamos o determinante de \(P\)
+  \pause
   \[
-    \det(P)=-2-1=-3
+    \det(P)
+    \pause
+    = \begin{vmatrix}
+      1 &  1  \\
+      1 & -2
+    \end{vmatrix}
+    \pause
+    = -2 -1
+    \pause
+    = -3
+    \neq 0
   \]
   \pause
-  Como \(\det(P)\neq 0\), existe \(P^{-1}\)
-\column{0.4\textwidth}
-  \pause
-  \begin{align*}
+  \[
     P^{-1}
-    & = \frac{1}{-3}
+    \pause
+    = \frac{1}{-3}
     \begin{bmatrix}
       -2 & -1 \\
       -1 & 1
     \end{bmatrix}
-    \\[3mm]
-    & =
+    \pause
+    =
     \begin{bmatrix}
       \sfrac{2}{3} &  \sfrac{1}{3}  \\[3mm]
       \sfrac{1}{3} & -\sfrac{1}{3}
     \end{bmatrix}
-  \end{align*}
-\end{columns}
+  \]
 \end{proofframe}
 
 %------------------------------------------------------------------------------%
 \begin{proofframe}{Exemplo 1 -- Verificação -- Diagonalização}
-\begin{columns}
-\column{0.3\textwidth}
   \begin{align*}
-    PD
-    &=
-    \begin{bmatrix}
-      1 & 1  \\
-      1 & -2
-    \end{bmatrix}
-    \begin{bmatrix}
-    5&0\\
-    0&2
-    \end{bmatrix}\\
-    &=
-    \begin{bmatrix}
-      5 & 2  \\
-      5 & -4
-    \end{bmatrix}
+    \onslide<+->{PDP^{-1}}
+    \onslide<+->{& = \begin{bmatrix}
+          1 & 1  \\
+          1 & -2
+        \end{bmatrix}
+        \begin{bmatrix}
+          5 & 0 \\
+          0 & 2
+        \end{bmatrix}
+        P^{-1}}
+    \\[2mm]
+    \onslide<+->{& = \begin{bmatrix}
+          5 & 2  \\
+          5 & -4
+        \end{bmatrix}
+    P^{-1}}
+    \\[2mm]
+    \onslide<+->{& = \begin{bmatrix}
+          5 & 2  \\
+          5 & -4
+        \end{bmatrix}
+        \begin{bmatrix}
+          \sfrac{2}{3} &  \sfrac{1}{3}  \\[3mm]
+          \sfrac{1}{3} & -\sfrac{1}{3}
+        \end{bmatrix}}
+    \\[2mm]
+    \onslide<+->{& = \begin{bmatrix}
+          4 & 1 \\
+          2 & 3
+        \end{bmatrix}}
+    \onslide<+->{= A}
   \end{align*}
-\column{0.4\textwidth}
-  \pause
-  \begin{align*}
-    PDP^{-1}
-    &=
-    \begin{bmatrix}
-      5 & 2  \\
-      5 & -4
-    \end{bmatrix}
-    \begin{bmatrix}
-      \sfrac{2}{3} &  \sfrac{1}{3}  \\[3mm]
-      \sfrac{1}{3} & -\sfrac{1}{3}
-    \end{bmatrix}\\
-    &=
-    \begin{bmatrix}
-      4 & 1 \\
-      2 & 3
-    \end{bmatrix}\\
-    &=A
-  \end{align*}
-  \pause
-  Logo \(A=PDP^{-1}\)
-\end{columns}
 \end{proofframe}
 
 %------------------------------------------------------------------------------%

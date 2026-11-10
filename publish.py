@@ -117,7 +117,7 @@ def pdf_name(name: str) -> str:
         return names[name]
 
     except KeyError:
-        return name.replace('_', ' ').replace('-', ' - ')
+        return name.replace('_', ' ').replace('-', ' ')
 
 
 #------------------------------------------------------------------------------#

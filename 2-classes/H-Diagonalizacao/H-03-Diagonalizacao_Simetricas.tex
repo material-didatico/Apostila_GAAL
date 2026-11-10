@@ -8,240 +8,240 @@
 %------------------------------------------------------------------------------%
 \begin{document}
 
-%\addtitle
-%
-%%------------------------------------------------------------------------------%
-%\section{Matrizes Simétricas e Matizes Ortogonais}
-%
-%%------------------------------------------------------------------------------%
-%\begin{frame}{Matrizes simétricas}
-%  Uma matriz quadrada $A$ é \emph{simétrica} quando
-%  \[
-%      A^t = A
-%  \]
-%
-%  \pause
-%  Exemplo
-%  \[
-%    A =
-%    \begin{pmatrix}
-%        2 & 1 & 0\\
-%        1 & 2 & 0\\
-%        0 & 0 & 4
-%    \end{pmatrix}
-%  \]
-%\end{frame}
-%
-%%------------------------------------------------------------------------------%
-%\begin{frame}{Diagonalização}
-%  $A$ é diagonalizável se existe $P$ invertível e $D$ diagonal,
-%  \pause
-%  \[
-%    A = P D P^{-1}
-%  \]
-%
-%  \pause
-%  \bigskip
-%  As colunas de $P$ são autovetores de $A$
-%
-%  \pause
-%  \bigskip
-%  Os elementos da diagonal de $D$ são os autovalores correspondentes
-%\end{frame}
-%
-%%------------------------------------------------------------------------------%
-%\begin{frame}{Matriz Ortogonal}
-%  Uma matriz quadrada $P$ é \emph{ortogonal} quando
-%  \[
-%    P^t P = I
-%  \]
-%
-%  \pause
-%  isto é
-%  \[
-%    P^{-1} = P^t
-%  \]
-%\end{frame}
-%
-%%------------------------------------------------------------------------------%
-%\begin{frame}{Colunas de uma Matriz Ortogonal}
-%  \[
-%    P =
-%    \begin{bmatrix}[c]
-%      \; \vec{v}_{1} & \vec{v}_{2} & \cdots & \vec{v}_{n} \;
-%    \end{bmatrix}
-%  \]
-%
-%  \[
-%    \pause
-%    P^t P
-%    \pause
-%    =
-%    \begin{bmatrix}[c]
-%      \;\vec{v}^{\,t}_{1}\; \\
-%      \vec{v}^{\,t}_{2} \\
-%      \vdots  \\
-%      \vec{v}^{\,t}_{n}
-%    \end{bmatrix}
-%    \begin{bmatrix}[c]
-%      \; \vec{v}_{1} & \vec{v}_{2} & \cdots & \vec{v}_{n} \; \\
-%    \end{bmatrix}
-%    \pause
-%    =
-%    \begin{bmatrix}[c]
-%      \; \vec{v}^{\,t}_{1}\vec{v}_{1} & \vec{v}^{\,t}_{1}\vec{v}_{2} & \cdots & \vec{v}^{\,t}_{1}\vec{v}_{n} \; \\[2mm]
-%      \; \vec{v}^{\,t}_{2}\vec{v}_{1} & \vec{v}^{\,t}_{2}\vec{v}_{2} & \cdots & \vec{v}^{\,t}_{2}\vec{v}_{n} \; \\[2mm]
-%      \vdots                          & \vdots                       & \ddots & \vdots                          \\[2mm]
-%      \; \vec{v}^{\,t}_{n}\vec{v}_{1} & \vec{v}^{\,t}_{n}\vec{v}_{2} & \cdots & \vec{v}^{\,t}_{n}\vec{v}_{n} \;
-%    \end{bmatrix}
-%    \pause
-%    = I
-%  \]
-%\end{frame}
-%
-%%------------------------------------------------------------------------------%
-%\begin{frame}{Colunas de uma Matriz Ortogonal}
-%  \[
-%    \vec{v}^{\,t}_{i}\vec{v}_{j}
-%    \pause
-%    \;=\; \delta_{ij}
-%    \pause
-%    \;=\; \begin{cases}
-%      1, & i = j\\
-%      0, & i \neq j
-%    \end{cases}
-%  \]
-%
-%  \pause
-%  As colunas de $P$ são vetores ortonormais
-%\end{frame}
-%
-%%------------------------------------------------------------------------------%
-%\section{Diagonalização de Matrizes Simétricas}
-%
-%%------------------------------------------------------------------------------%
-%\begin{frame}{Diagonalização Ortogonal}
-%  Uma matriz $A$ é \emph{ortogonalmente diagonalizável}
-%
-%  \pause
-%  quando existem uma \emph{matriz ortogonal} $P$ e uma matriz diagonal $D$
-%
-%  \pause
-%  tais que
-%  \[
-%    A = PDP^t
-%  \]
-%\end{frame}
-%
-%%------------------------------------------------------------------------------%
-%\begin{frame}{Teorema Espectral para Matrizes Simétricas}
-%  Toda matriz real simétrica é ortogonalmente diagonalizável
-%
-%  \pause
-%  \bigskip
-%  Existe uma matriz ortogonal $P$ e uma matriz diagonal $D$ tais que
-%  \[
-%    A = PDP^t
-%  \]
-%\end{frame}
-%
-%%------------------------------------------------------------------------------%
-%\begin{frame}{Propriedades das Matrizes Simétricas}
-%  \begin{itemize}[<+->]
-%    \setlength{\itemsep}{2em}
-%    \item Todos os autovalores de $A$ são reais
-%    \item Autovetores associados a autovalores distintos são ortogonais
-%    \item É possível construir uma base ortonormal de autovetores
-%  \end{itemize}
-%\end{frame}
-%
-%%------------------------------------------------------------------------------%
-%\begin{proofframe}{Autovetores de Autovalores Distintos}
-%  Verificando que autovetores associados a autovalores distintos são ortogonais
-%
-%  \pause
-%  \bigskip
-%  Seja $A$ uma matriz simétrica e $\vec{v}$ e $\vec{w}$ autovetores
-%
-%  \pause
-%  associados aos autovalores distintos $\lambda$ e $\mu$
-%\end{proofframe}
-%
-%%------------------------------------------------------------------------------%
-%\begin{proofframe}{Autovetores de autovalores distintos}
-%  \[
-%    \onslide<+->{A\vec{v} = \lambda\vec{v}}  \qquad\qquad
-%    \onslide<+->{A\vec{w} = \mu\vec{w}}      \qquad\qquad
-%    \onslide<+->{\lambda  \neq  \mu}
-%  \]
-%  \vspace{-1.5\baselineskip}
-%\begin{columns}[t]
-%\column{0.25\textwidth}
-%  \begin{align*}
-%    \onslide<+->{\vec{v}^{\,t} A \vec{w}}
-%    \onslide<+->{& = \vec{v}^{\,t} (A \vec{w}) \\}
-%    \onslide<+->{& = \vec{v}^{\,t}(\mu\vec{w}) \\}
-%    \onslide<+->{& = \mu\vec{v}^{\,t}\vec{w}}
-%  \end{align*}
-%\column{0.25\textwidth}
-%  \begin{align*}
-%    \onslide<+->{\vec{v}^{\,t} A \vec{w}}
-%    \onslide<+->{& = (\vec{v}^{\,t} A )   \vec{w} \\}
-%    \onslide<+->{& = (\vec{v}^{\,t} A^t ) \vec{w} \\}
-%    \onslide<+->{& = (A \vec{v})^t    \vec{w} \\}
-%    \onslide<+->{& = \lambda\vec{v}^{\,t} \vec{w}}
-%  \end{align*}
-%\column{0.4\textwidth}
-%  \begin{align*}
-%    \onslide<+->{\lambda\vec{v}^{\,t}\vec{w}       & = \mu\vec{v}^{\,t}\vec{w} \\}
-%    \onslide<+->{\lambda\vec{v}^{\,t}\vec{w} - \mu\vec{v}^{\,t}\vec{w} & = 0   \\}
-%    \onslide<+->{(\lambda-\mu)\vec{v}^{\,t}\vec{w} & = 0                       \\}
-%    \onslide<+->{\vec{v}^{\,t}\vec{w}              & = 0                       \\}
-%    \onslide<+->{\vec{v}                           & \perp \vec{w}}
-%  \end{align*}
-%\end{columns}
-%\end{proofframe}
-%
-%%------------------------------------------------------------------------------%
-%\begin{frame}{Passo a Passo}
-%  \onslide<+->{Para diagonalizar ortogonalmente uma matriz simétrica $A$}
-%  \begin{enumerate}[<+->]
-%      \item Determine os autovalores de $A$
-%      \item Determine uma base de cada autoespaço
-%      \item Construa uma base ortonormal de autovetores
-%      \item Organize os autovetores nas colunas de $P$
-%      \item Organize os autovalores correspondentes na diagonal de $D$
-%  \end{enumerate}
-%  \onslide<+->{Ao final
-%  \[
-%      A = P D P^t
-%  \]}
-%\end{frame}
-%
-%%------------------------------------------------------------------------------%
-%\begin{frame}{Autovalores Repetidos?}
-%  Uma matriz simétrica pode possuir autovalores repetidos
-%
-%  \pause
-%  \bigskip
-%  Nesse caso, o autoespaço associado ao autovalor pode ter dimensão maior que um
-%
-%  \pause
-%  \bigskip
-%  É possível escolher uma base ortonormal para cada autoespaço
-%
-%  \pause
-%  \bigskip
-%  Se necessário, podemos utilizar o processo de Gram-Schmidt
-%\end{frame}
-%
-%%------------------------------------------------------------------------------%
-%\section{Exemplos}
-%
-%%------------------------------------------------------------------------------%
-%\input{ex/H-03-Diagonalizacao_Simetricas-ex-1}
-%\input{ex/H-03-Diagonalizacao_Simetricas-ex-2}
-%\input{ex/H-03-Diagonalizacao_Simetricas-ex-3}
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Matrizes Simétricas e Matizes Ortogonais}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Matrizes simétricas}
+  Uma matriz quadrada $A$ é \emph{simétrica} quando
+  \[
+      A^t = A
+  \]
+
+  \pause
+  Exemplo
+  \[
+    A =
+    \begin{pmatrix}
+        2 & 1 & 0\\
+        1 & 2 & 0\\
+        0 & 0 & 4
+    \end{pmatrix}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Diagonalização}
+  $A$ é diagonalizável se existe $P$ invertível e $D$ diagonal,
+  \pause
+  \[
+    A = P D P^{-1}
+  \]
+
+  \pause
+  \bigskip
+  As colunas de $P$ são autovetores de $A$
+
+  \pause
+  \bigskip
+  Os elementos da diagonal de $D$ são os autovalores correspondentes
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Matriz Ortogonal}
+  Uma matriz quadrada $P$ é \emph{ortogonal} quando
+  \[
+    P^t P = I
+  \]
+
+  \pause
+  isto é
+  \[
+    P^{-1} = P^t
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Colunas de uma Matriz Ortogonal}
+  \[
+    P =
+    \begin{bmatrix}[c]
+      \; \vec{v}_{1} & \vec{v}_{2} & \cdots & \vec{v}_{n} \;
+    \end{bmatrix}
+  \]
+
+  \[
+    \pause
+    P^t P
+    \pause
+    =
+    \begin{bmatrix}[c]
+      \;\vec{v}^{\,t}_{1}\; \\
+      \vec{v}^{\,t}_{2} \\
+      \vdots  \\
+      \vec{v}^{\,t}_{n}
+    \end{bmatrix}
+    \begin{bmatrix}[c]
+      \; \vec{v}_{1} & \vec{v}_{2} & \cdots & \vec{v}_{n} \; \\
+    \end{bmatrix}
+    \pause
+    =
+    \begin{bmatrix}[c]
+      \; \vec{v}^{\,t}_{1}\vec{v}_{1} & \vec{v}^{\,t}_{1}\vec{v}_{2} & \cdots & \vec{v}^{\,t}_{1}\vec{v}_{n} \; \\[2mm]
+      \; \vec{v}^{\,t}_{2}\vec{v}_{1} & \vec{v}^{\,t}_{2}\vec{v}_{2} & \cdots & \vec{v}^{\,t}_{2}\vec{v}_{n} \; \\[2mm]
+      \vdots                          & \vdots                       & \ddots & \vdots                          \\[2mm]
+      \; \vec{v}^{\,t}_{n}\vec{v}_{1} & \vec{v}^{\,t}_{n}\vec{v}_{2} & \cdots & \vec{v}^{\,t}_{n}\vec{v}_{n} \;
+    \end{bmatrix}
+    \pause
+    = I
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Colunas de uma Matriz Ortogonal}
+  \[
+    \vec{v}^{\,t}_{i}\vec{v}_{j}
+    \pause
+    \;=\; \delta_{ij}
+    \pause
+    \;=\; \begin{cases}
+      1, & i = j\\
+      0, & i \neq j
+    \end{cases}
+  \]
+
+  \pause
+  As colunas de $P$ são vetores ortonormais
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Diagonalização de Matrizes Simétricas}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Diagonalização Ortogonal}
+  Uma matriz $A$ é \emph{ortogonalmente diagonalizável}
+
+  \pause
+  quando existem uma \emph{matriz ortogonal} $P$ e uma matriz diagonal $D$
+
+  \pause
+  tais que
+  \[
+    A = PDP^t
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Teorema Espectral para Matrizes Simétricas}
+  Toda matriz real simétrica é ortogonalmente diagonalizável
+
+  \pause
+  \bigskip
+  Existe uma matriz ortogonal $P$ e uma matriz diagonal $D$ tais que
+  \[
+    A = PDP^t
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Propriedades das Matrizes Simétricas}
+  \begin{itemize}[<+->]
+    \setlength{\itemsep}{2em}
+    \item Todos os autovalores de $A$ são reais
+    \item Autovetores associados a autovalores distintos são ortogonais
+    \item É possível construir uma base ortonormal de autovetores
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Autovetores de Autovalores Distintos}
+  Verificando que autovetores associados a autovalores distintos são ortogonais
+
+  \pause
+  \bigskip
+  Seja $A$ uma matriz simétrica e $\vec{v}$ e $\vec{w}$ autovetores
+
+  \pause
+  associados aos autovalores distintos $\lambda$ e $\mu$
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Autovetores de autovalores distintos}
+  \[
+    \onslide<+->{A\vec{v} = \lambda\vec{v}}  \qquad\qquad
+    \onslide<+->{A\vec{w} = \mu\vec{w}}      \qquad\qquad
+    \onslide<+->{\lambda  \neq  \mu}
+  \]
+  \vspace{-1.5\baselineskip}
+\begin{columns}[t]
+\column{0.25\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{v}^{\,t} A \vec{w}}
+    \onslide<+->{& = \vec{v}^{\,t} (A \vec{w}) \\}
+    \onslide<+->{& = \vec{v}^{\,t}(\mu\vec{w}) \\}
+    \onslide<+->{& = \mu\vec{v}^{\,t}\vec{w}}
+  \end{align*}
+\column{0.25\textwidth}
+  \begin{align*}
+    \onslide<+->{\vec{v}^{\,t} A \vec{w}}
+    \onslide<+->{& = (\vec{v}^{\,t} A )   \vec{w} \\}
+    \onslide<+->{& = (\vec{v}^{\,t} A^t ) \vec{w} \\}
+    \onslide<+->{& = (A \vec{v})^t    \vec{w} \\}
+    \onslide<+->{& = \lambda\vec{v}^{\,t} \vec{w}}
+  \end{align*}
+\column{0.4\textwidth}
+  \begin{align*}
+    \onslide<+->{\lambda\vec{v}^{\,t}\vec{w}       & = \mu\vec{v}^{\,t}\vec{w} \\}
+    \onslide<+->{\lambda\vec{v}^{\,t}\vec{w} - \mu\vec{v}^{\,t}\vec{w} & = 0   \\}
+    \onslide<+->{(\lambda-\mu)\vec{v}^{\,t}\vec{w} & = 0                       \\}
+    \onslide<+->{\vec{v}^{\,t}\vec{w}              & = 0                       \\}
+    \onslide<+->{\vec{v}                           & \perp \vec{w}}
+  \end{align*}
+\end{columns}
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Passo a Passo}
+  \onslide<+->{Para diagonalizar ortogonalmente uma matriz simétrica $A$}
+  \begin{enumerate}[<+->]
+      \item Determine os autovalores de $A$
+      \item Determine uma base de cada autoespaço
+      \item Construa uma base ortonormal de autovetores
+      \item Organize os autovetores nas colunas de $P$
+      \item Organize os autovalores correspondentes na diagonal de $D$
+  \end{enumerate}
+  \onslide<+->{Ao final
+  \[
+      A = P D P^t
+  \]}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Autovalores Repetidos?}
+  Uma matriz simétrica pode possuir autovalores repetidos
+
+  \pause
+  \bigskip
+  Nesse caso, o autoespaço associado ao autovalor pode ter dimensão maior que um
+
+  \pause
+  \bigskip
+  É possível escolher uma base ortonormal para cada autoespaço
+
+  \pause
+  \bigskip
+  Se necessário, podemos utilizar o processo de Gram-Schmidt
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\section{Exemplos}
+
+%------------------------------------------------------------------------------%
+\input{ex/H-03-Diagonalizacao_Simetricas-ex-1}
+\input{ex/H-03-Diagonalizacao_Simetricas-ex-2}
+\input{ex/H-03-Diagonalizacao_Simetricas-ex-3}
 \input{ex/H-03-Diagonalizacao_Simetricas-ex-4}
 \input{ex/H-03-Diagonalizacao_Simetricas-ex-5}
 
