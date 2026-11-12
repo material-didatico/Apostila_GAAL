@@ -1,0 +1,63 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Expanda a equação
+  \(
+    r^tAr + p^tr + f = 0
+  \)
+  com
+  \[
+    r = \begin{bmatrix} x \\ y \\ z \\ w \end{bmatrix}
+    \qquad
+    A = \begin{bmatrix}
+       2 & -3 &  0 &  1 \\
+      -3 &  0 & -1 &  2 \\
+       0 & -1 &  4 &  5 \\
+       1 &  2 &  5 & -1
+    \end{bmatrix}
+    \qquad
+    p = \begin{bmatrix} 2 \\ -1 \\ 0 \\ -3 \end{bmatrix}
+    \qquad
+    f = -10
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \[
+    \onslide<+->{r^tAr + p^tr + f = 0}
+  \]
+  \[
+    \onslide<+->{
+    \begin{bmatrix} x & y & z & w \end{bmatrix}
+    \begin{bmatrix}
+       2 & -3 &  0 &  1 \\
+      -3 &  0 & -1 &  2 \\
+       0 & -1 &  4 &  5 \\
+       1 &  2 &  5 & -1
+    \end{bmatrix}
+    \begin{bmatrix} x \\ y \\ z \\ w \end{bmatrix}
+    +
+    \begin{bmatrix} 2 \\ -1 \\ 0 \\ -3 \end{bmatrix}
+    \begin{bmatrix} x \\ y \\ z \\ w \end{bmatrix}
+    + (-10)
+    = 0}
+  \]
+  \begin{gather*}
+    \onslide<+->{2x^2 + 2(-3) xy + 2\times 0xz + 2\times 1xw}
+    \onslide<+->{+ 0y^2 + 2(-1)yz + 2\times 2 yw} \\
+    \onslide<+->{+ 4z^2 + 2\times 5zw + (-1)w^2}
+    \onslide<+->{+ 2x + (-1)y + 0z + (-3)w}
+    \onslide<+->{- 10}
+    \onslide<+->{= 0}
+  \end{gather*}
+  \[
+    \onslide<+->{2x^2 -6xy + 2xw}
+    \onslide<+->{-2yz + 4yw}
+    \onslide<+->{+ 4z^2 + 10zw -w^2}
+    \onslide<+->{+ 2x -y -3w}
+    \onslide<+->{= 10}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

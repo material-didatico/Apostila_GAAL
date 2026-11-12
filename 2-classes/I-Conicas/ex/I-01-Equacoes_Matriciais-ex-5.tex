@@ -1,0 +1,80 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Represente matricialmente a equação
+  \[
+    x^2 + y^2 = 9
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.5\textwidth}
+  Equação
+  \[
+    x^2 + y^2 = 9
+  \]
+
+  \pause
+  Parte quadrática
+  \[
+    \pause
+    ax^2 + 2bxy + cy^2
+    \pause
+    = x^2 + 2y^2
+  \]
+  \[
+    \pause
+    A = \begin{bmatrix}
+      1 & 0 \\
+      0 & 2
+    \end{bmatrix}
+  \]
+
+\column{0.4\textwidth}
+  \pause
+  Termos lineares
+  \[
+    \pause
+    p = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+  \]
+
+  \bigskip
+  \pause
+  Termo constante
+  \[
+    f = -9
+  \]
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
+
+\begin{frame}{Exemplo 3 — Enunciado}
+Represente matricialmente a equação
+\[
+x^2+y^2=9
+\]
+\end{frame}
+
+\begin{frame}{Exemplo 3 — Resolução}
+Definimos
+\[
+A=\begin{bmatrix}1&0\\0&1\end{bmatrix}
+\qquad
+\vec{x}=\begin{bmatrix}x\\y\end{bmatrix}
+\]
+Então
+\[
+\vec{x}^{\,t}A\vec{x}=9
+\]
+pois
+\[
+\begin{bmatrix}x&y\end{bmatrix}
+\begin{bmatrix}1&0\\0&1\end{bmatrix}
+\begin{bmatrix}x\\y\end{bmatrix}
+=x^2+y^2
+\]
+A equação é a de uma circunferência centrada na origem.
+\end{frame}

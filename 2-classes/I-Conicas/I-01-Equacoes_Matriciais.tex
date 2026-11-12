@@ -1,0 +1,180 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Representação Matricial de Equações}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Representação Matricial de Equações}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Representação Matricial de Equações}
+  É conveniente escrever equações utilizando matrizes
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equação da Reta no Plano}
+  \onslide<+->{Definindo}
+  \[
+    \onslide<+->{r = \begin{bmatrix} x \\ y \end{bmatrix}}
+    \qquad
+    \onslide<+->{p = \begin{bmatrix} a \\ b \end{bmatrix} \neq \vec{0}}
+    \qquad
+    \onslide<+->{d \in \R}
+  \]
+
+  \onslide<+->{Podemos escrever a equação da reta no plano}
+  \begin{align*}
+    \onslide<+->{p^t r & = d} \\
+    \onslide<+->{\begin{bmatrix} a & b \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} & = d}\\
+    \onslide<+->{ax + by              & = d}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Planos em Forma Matricial}
+  \onslide<+->{Definindo}
+  \[
+    \onslide<+->{r = \begin{bmatrix} x \\ y \\ z \end{bmatrix}}
+    \qquad
+    \onslide<+->{p = \begin{bmatrix} a \\ b \\ c \end{bmatrix} \neq \vec{0}}
+    \qquad
+    \onslide<+->{d \in \R}
+  \]
+
+  \onslide<+->{Podemos escrever a equação do plano no espaço}
+  \begin{align*}
+    \onslide<+->{p^tr & = d} \\
+    \onslide<+->{ax + by +cz          & = d}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Formas Quadráticas}
+  \onslide<+->{Definindo}
+  \[
+    \onslide<+->{r = \begin{bmatrix} x \\ y \end{bmatrix}}
+    \qquad
+    \onslide<+->{A = \begin{bmatrix}
+      a & b \\
+      b & c
+    \end{bmatrix} }
+  \]
+
+  \onslide<+->{Podemos escrever a expressão do segundo grau}
+  \begin{align*}
+    \onslide<+->{r^tAr}
+    \onslide<+->{& = \begin{bmatrix}
+      x & y
+    \end{bmatrix}
+    \begin{bmatrix}
+      a & b \\
+      b & c
+    \end{bmatrix}
+    \begin{bmatrix}
+      x \\
+      y
+    \end{bmatrix}}
+    \onslide<+->{\;=\;
+    \begin{bmatrix}
+      x & y
+    \end{bmatrix}
+    \begin{bmatrix}
+      ax + by \\
+      bx + cy
+    \end{bmatrix}}
+    \\
+    \onslide<+->{& = x(ax + by) + y(bx + cy)}
+    \\
+    \onslide<+->{& = ax^2 + 2bxy + cy^2}
+  \end{align*}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equação Geral de Segundo Grau}
+  \onslide<+->{Definindo}
+  \[
+    \onslide<+->{r = \begin{bmatrix} x \\ y \end{bmatrix}}
+    \qquad
+    \onslide<+->{A = \begin{bmatrix}
+      a & b \\
+      b & c
+    \end{bmatrix}}
+    \qquad
+    \onslide<+->{p = \begin{bmatrix} d \\ e \end{bmatrix}}
+    \qquad
+    \onslide<+->{f \in \R}
+  \]
+
+  \onslide<+->{Qualquer equação de primeiro ou segundo grau pode ser escrita como}
+  \[
+    \onslide<+->{r^tAr \;+\; p^tr \;+\; f = 0}
+  \]
+  \onslide<+->{Forma expandida
+  \[
+    ax^2 + 2bxy + cy^2 + dx + ey + f = 0
+  \]}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/I-01-Equacoes_Matriciais-ex-1}
+\input{ex/I-01-Equacoes_Matriciais-ex-2}
+\input{ex/I-01-Equacoes_Matriciais-ex-3}
+\input{ex/I-01-Equacoes_Matriciais-ex-4}
+\input{ex/I-01-Equacoes_Matriciais-ex-5}
+
+%------------------------------------------------------------------------------%
+\section{Soluções de Equações de Segundo Grau em $\R^n$}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equações degeneradas}
+  \onslide<+->{Estamos interessados nas soluções das equações de segundo grau}
+
+  \onslide<+->{Em \(\R^2\) elas são chamadas \emph{cônicas}}
+  \begin{itemize}[<+->]
+    \item elipses (circunferências)
+    \item parábolas
+    \item hipérboles
+  \end{itemize}
+
+  \onslide<+->{Em \(\R^3\) elas são chamadas \emph{quádricas}}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equações Degeneradas}
+  Algumas equações de segundo grau representam curvas degeneradas
+
+  \pause
+  \bigskip
+  Mesmo que a expressão envolva termos de segundo grau
+
+  a solução é uma reta, ponto ou vazia
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/I-01-Equacoes_Matriciais-ex-6}
+\input{ex/I-01-Equacoes_Matriciais-ex-7}
+\input{ex/I-01-Equacoes_Matriciais-ex-8}
+
+%%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

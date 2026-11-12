@@ -1,0 +1,56 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Escreva a equação
+  \[
+    2x - 3y + z = 5
+  \]
+  na forma matricial
+  \(
+    r^tAr + p^tr + f = 0
+  \)
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+\begin{columns}[t]
+\column{0.5\textwidth}
+  Equação
+  \[
+    2x - 3y + z = 5
+  \]
+
+  \pause
+  Parte quadrática
+  \[
+    A = \begin{bmatrix}
+      0 & 0 \\
+      0 & 0
+    \end{bmatrix}
+  \]
+
+\column{0.4\textwidth}
+  \pause
+  Termos lineares
+  \[
+    \pause
+    2x - 3y =
+    \pause
+    \begin{bmatrix} 2 & -3 \end{bmatrix}
+    \begin{bmatrix} x \\ y \end{bmatrix}
+  \]
+  \[
+    \pause
+    p = \begin{bmatrix} 2 \\ -3 \end{bmatrix}
+  \]
+
+  \bigskip
+  \pause
+  Termo constante
+  \[
+    f = -5
+  \]
+\end{columns}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

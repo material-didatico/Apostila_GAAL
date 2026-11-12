@@ -43,6 +43,7 @@ clean:
 
 .PHONY: distclean
 distclean: 
+	rm -rf pdf
 	@ set -e ;                                     \
 	for D in ${SUBDIRS}; do                        \
 	  make --no-print-directory -C $$D distclean ; \

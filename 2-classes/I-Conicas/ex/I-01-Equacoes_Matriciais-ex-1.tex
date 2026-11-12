@@ -1,0 +1,48 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Expanda a equação
+  \(
+    r^tAr + p^tr + f = 0
+  \)
+  com
+  \[
+    r = \begin{bmatrix} x \\ y \end{bmatrix}
+    \qquad
+    A = \begin{bmatrix}
+      2 & -3 \\
+      -3 & 0
+    \end{bmatrix}
+    \qquad
+    p = \begin{bmatrix} 4 \\ -7 \end{bmatrix}
+    \qquad
+    f = -1
+  \]
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Solução}
+  \begin{align*}
+    \onslide<+->{r^tAr + p^tr + f & = 0 }
+    \\[2mm]
+    \onslide<+->{\begin{bmatrix} x & y \end{bmatrix}
+    \begin{bmatrix}
+      2 & -3 \\
+      -3 & 0
+    \end{bmatrix}
+    \begin{bmatrix} x \\ y \end{bmatrix}
+    +
+    \begin{bmatrix} 4 &  -7 \end{bmatrix}
+    \begin{bmatrix} x \\ y \end{bmatrix}
+    + (-1)
+    & = 0}
+    \\[2mm]
+    \onslide<+->{2x^2 + 2(-3) xy + 0y^2}
+    \onslide<+->{+ 4x + (-7)y - 1}
+    \onslide<+->{& = 0}
+    \\[2mm]
+    \onslide<+->{2x^2 -6xy + 4x -7y & = 1}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
