@@ -16,11 +16,14 @@
 %------------------------------------------------------------------------------%
 \begin{frame}{Equação Canônica da Circunferência}
   Equação \emph{canônica da circunferência}
+  \pause
   \[
     x^2 + y^2 = r^2
   \]
+  \pause
   com \(r > 0\)
 
+  \pause
   \bigskip
   Circunferência centrada na origem de raio $r$
 \end{frame}
@@ -28,21 +31,25 @@
 %------------------------------------------------------------------------------%
 \begin{frame}{Equação Matricial da Circunferência}
   Equação \emph{matricial da circunferência}
+  \pause
   \[
     v^t I v = r^2
   \]
   com
   \[
+    \pause
     v = \begin{bmatrix}
       x \\
       y
     \end{bmatrix}
     \qquad\qquad
+    \pause
     I = \begin{bmatrix}
       1 & 0 \\
       0 & 1
     \end{bmatrix}
     \qquad\qquad
+    \pause
     r > 0
   \]
 \end{frame}
@@ -51,21 +58,21 @@
 \begin{proofframe}{Pontos Relevantes da Circunferência}
 \begin{columns}[t]
 \column{0.4\textwidth}
-  Fazendo \(y=0\)
+  \onslide<+->Fazendo \(y=0\){}
   \begin{align*}
-    x^2 + y^2 & = r^2 \\
-    x^2       & = r^2 \\
-    \abs{x}   & = r   \\
-    x         & = \pm r
+    \onslide<+->{x^2 + y^2 & = r^2 \\}
+    \onslide<+->{x^2       & = r^2 \\}
+    \onslide<+->{\abs{x}   & = r   \\}
+    \onslide<+->{x         & = \pm r}
   \end{align*}
 
 \column{0.4\textwidth}
-  Fazendo \(x=0\)
+  \onslide<+->{Fazendo \(x=0\)}
   \begin{align*}
-    x^2 + y^2 & = r^2 \\
-    y^2       & = r^2 \\
-    \abs{y}   & = r   \\
-    y         & = \pm r
+    \onslide<+->{x^2 + y^2 & = r^2 \\}
+    \onslide<+->{y^2       & = r^2 \\}
+    \onslide<+->{\abs{y}   & = r   \\}
+    \onslide<+->{y         & = \pm r}
   \end{align*}
 \end{columns}
 \end{proofframe}
@@ -77,8 +84,10 @@
     C = (0, 0)
   \]
 
+  \pause
   \emph{Raio} da circunferência \(r\)
 
+  \pause
   A circunferência cruza os eixos nos pontos
   \[
     (-r, 0) \qquad
@@ -89,9 +98,11 @@
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Gráfico da Circunferência}{}
-{\color{red} Incluir gráficos}
-\end{frame}
+\framedgraphic*{Gráfico da Circunferência}{definicao_circunferencia_1}{}
+\framedgraphic*{Gráfico da Circunferência}{definicao_circunferencia_2}{}
+\framedgraphic*{Gráfico da Circunferência}{definicao_circunferencia_3}{}
+\framedgraphic*{Gráfico da Circunferência}{definicao_circunferencia_4}{}
+\framedgraphic*{Gráfico da Circunferência}{definicao_circunferencia_5}{}
 
 %------------------------------------------------------------------------------%
 \input{ex/I-03-Circunferencia-ex-1}
@@ -108,18 +119,24 @@
 \begin{frame}{Equação da Circunferência Transladada}
   Novo centro \(C = (h, k)\)
 
+  \pause
   Novas coordenadas
   \[
+    \pause
     X = x - h
     \qquad
+    \pause
     Y = y - k
   \]
 
+  \pause
   Equação canônica nas novas coordenadas
   \[
+    \pause
     X^2 + Y^2 = r^2
   \]
   \[
+    \pause
     (x-h)^2 + (y-k)^2 = r^2
   \]
 \end{frame}
@@ -128,22 +145,29 @@
 \begin{proofframe}{Equação Matricial da Circunferência Transladada}
   Novo de centro
   \[
+    \pause
     C
+    \pause
     = \begin{bmatrix}
       h \\
       k
     \end{bmatrix}
   \]
 
+  \pause
   \bigskip
   Novas coordenadas
   \[
+    \pause
     V
+    \pause
     = \begin{bmatrix}
       X \\
       Y
     \end{bmatrix}
+    \pause
     = v - C
+    \pause
     = \begin{bmatrix}
       x \\
       y
@@ -153,6 +177,7 @@
       h \\
       k
     \end{bmatrix}
+    \pause
     = \begin{bmatrix}
       x - h \\
       y - k
@@ -163,16 +188,17 @@
 %------------------------------------------------------------------------------%
 \begin{proofframe}{Equação Matricial da Circunferência Transladada}
   \begin{align*}
-    \emph{V^t I V}           & = \emph{r^2} \\
-    (v-C)^t I (v-C)   & = r^2 \\
-    \emph{(x-h)^2 + (y-k)^2} & = \emph{r^2} \\
-    x^2 - 2hx + h^2 + y^2 - 2ky + k^2 & = r^2 \\
-    x^2 + y^2 - 2hx - 2ky + h^2 + k^2 & = r^2 \\
-    \begin{bmatrix}
+    \onslide<+->{\emph{V^t I V}                    & = \emph{r^2}}   \\
+    \onslide<+->{(v-C)^t I (v-C)                   & = r^2}          \\
+    \onslide<+->{\emph{(x-h)^2 + (y-k)^2}          & = \emph{r^2}}   \\
+    \onslide<+->{x^2 - 2hx + h^2 + y^2 - 2ky + k^2 & = r^2}          \\
+    \onslide<+->{x^2 + y^2 - 2hx - 2ky + h^2 + k^2 & = r^2}
+    \\
+    \onslide<+->{\begin{bmatrix}
       x \\
       y
     \end{bmatrix}^t
-    {\color{magenta}\begin{bmatrix}
+    {\color<8->{magenta}\begin{bmatrix}
       1 & 0 \\
       0 & 1
     \end{bmatrix}}
@@ -181,7 +207,7 @@
       y
     \end{bmatrix}
     +
-    {\color{purple}\begin{bmatrix}
+    {\color<9->{purple}\begin{bmatrix}
       -2h \\
       -2k
     \end{bmatrix}^t}
@@ -189,10 +215,11 @@
       x \\
       y
     \end{bmatrix}
-    + {\color{violet}(h^2 + k^2 - r^2)} & = 0 \\
-    v^t {\color{magenta} I} v
-    + {\color{purple} B^t}v
-    + {\color{violet} f} & = 0
+    + {\color<10->{violet}(h^2 + k^2 - r^2)} & = 0}
+    \\
+    \onslide<+->{v^t {\color<8->{magenta} I} v
+    + {\color<9->{purple} B^t}v
+    + {\color<10->{violet} f} & = 0}
   \end{align*}
 \end{proofframe}
 
