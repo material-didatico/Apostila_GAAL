@@ -31,7 +31,7 @@ draw( O--A, p_dist );
 dot(O, p_dot);
 dot(A, p_dot);
 
-label("$ r = " + string(r) + "$", (-5, 5), NE, p_curve );
+label("$r = " + string(r) + "$", (-5, 5), NE, p_curve );
 
 clip_to_axis();
 

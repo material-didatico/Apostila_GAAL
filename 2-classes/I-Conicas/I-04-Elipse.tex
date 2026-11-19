@@ -17,10 +17,13 @@
 \begin{frame}{Equação Canônica da Elipse}
   Equação \emph{canônica da elipse}
   \[
+    \pause
     \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1
   \]
+  \pause
   com \(a > 0\) e \(b > 0\)
 
+  \pause
   \bigskip
   Elipse centrada na origem e alinhada com os eixos $x$ e $y$
 \end{frame}
@@ -29,8 +32,10 @@
 \begin{frame}{Equação Matricial da Elipse}
   Equação \emph{matricial da elipse}
   \[
+    \pause
     v^t A v = 1
   \]
+  \pause
   com
   \[
     v = \begin{bmatrix}
@@ -38,11 +43,13 @@
       y
     \end{bmatrix}
     \qquad\qquad
+    \pause
     A = \begin{bmatrix}
       \dfrac{1}{a^2} & 0              \\[2mm]
       0              & \dfrac{1}{b^2}
     \end{bmatrix}
     \qquad\qquad
+    \pause
     a > 0
     \qquad
     b > 0
@@ -53,25 +60,25 @@
 \begin{proofframe}{Pontos Relevantes da Elipse}
 \begin{columns}[t]
 \column{0.4\textwidth}
-  Fazendo \(y=0\)
+  \onslide<+->{Fazendo \(y=0\)}
   \begin{align*}
-    \frac{x^2}{a^2} + \frac{y^2}{b^2} & = 1     \\
-    \frac{x^2}{a^2} + \frac{0}{b^2}   & = 1     \\
-    \frac{x^2}{a^2}                   & = 1     \\
-    x^2                               & = a^2   \\
-    \abs{x}                           & = a     \\
-    x                                 & = \pm a
+    \onslide<+->{\frac{x^2}{a^2} + \frac{y^2}{b^2} & = 1     \\}
+    \onslide<+->{\frac{x^2}{a^2} + \frac{0}{b^2}   & = 1     \\}
+    \onslide<+->{\frac{x^2}{a^2}                   & = 1     \\}
+    \onslide<+->{x^2                               & = a^2   \\}
+    \onslide<+->{\abs{x}                           & = a     \\}
+    \onslide<+->{x                                 & = \pm a}
   \end{align*}
 
 \column{0.4\textwidth}
-  Fazendo \(x=0\)
+  \onslide<+->{Fazendo \(x=0\)}
   \begin{align*}
-    \frac{x^2}{a^2} + \frac{y^2}{b^2} & = 1     \\
-    \frac{0}{a^2} + \frac{y^2}{b^2}   & = 1     \\
-    \frac{y^2}{b^2}                   & = 1     \\
-    y^2                               & = b^2   \\
-    \abs{y}                           & = b     \\
-    y                                 & = \pm b
+    \onslide<+->{\frac{x^2}{a^2} + \frac{y^2}{b^2} & = 1     \\}
+    \onslide<+->{\frac{0}{a^2} + \frac{y^2}{b^2}   & = 1     \\}
+    \onslide<+->{\frac{y^2}{b^2}                   & = 1     \\}
+    \onslide<+->{y^2                               & = b^2   \\}
+    \onslide<+->{\abs{y}                           & = b     \\}
+    \onslide<+->{y                                 & = \pm b}
   \end{align*}
 \end{columns}
 \end{proofframe}
@@ -80,28 +87,37 @@
 \begin{frame}{Elementos Geométricos da Elipse}
   \emph{Centro} da elipse
   \[
+    \pause
     C = (0, 0)
   \]
-
-  A elipse cruza os eixos nos pontos
+  \pause
+  A elipse cruza os \emph{eixos} nos pontos
   \[
     (-a, 0) \qquad
     ( a, 0) \qquad
     (0, -b) \qquad
     (0,  b)
   \]
+  \pause
+  Se \emph{\(a>b\)}, o eixo maior é horizontal
 
-  Se \(a>b\), o eixo maior é horizontal
+  \pause
+  Se \emph{\(b>a\)}, o eixo maior é vertical
 
-  Se \(b>a\), o eixo maior é vertical
-
-  Se \(a=b\), a equação representa uma circunferência
+  \pause
+  Se \emph{\(a=b\)}, a equação representa uma circunferência
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Gráfico da Elipse}{}
-{\color{red} Incluir gráficos}
-\end{frame}
+\framedgraphic*{Gráfico da Elipse}{definicao_elipse_1}{}
+\framedgraphic*{Gráfico da Elipse}{definicao_elipse_2}{}
+\framedgraphic*{Gráfico da Elipse}{definicao_elipse_3}{}
+\framedgraphic*{Gráfico da Elipse}{definicao_elipse_4}{}
+\framedgraphic*{Gráfico da Elipse}{definicao_elipse_5}{}
+\framedgraphic*{Gráfico da Elipse}{definicao_elipse_6}{}
+\framedgraphic*{Gráfico da Elipse}{definicao_elipse_7}{}
+\framedgraphic*{Gráfico da Elipse}{definicao_elipse_8}{}
+\framedgraphic*{Gráfico da Elipse}{definicao_elipse_9}{}
 
 %------------------------------------------------------------------------------%
 \input{ex/I-04-Elipse-ex-1}
@@ -113,18 +129,24 @@
 \begin{frame}{Translação da Elipse}
   Novo centro \(C = (h, k)\)
 
+  \pause
   Novas coordenadas
   \[
+    \pause
     X = x - h
-    \qquad
+    \qquad\qquad
+    \pause
     Y = y - k
   \]
 
-  Equação canônica nas novas coordenadas
+  \pause
+  Equação canônica transladada
   \[
+    \pause
     \frac{X^2}{a^2} + \frac{Y^2}{b^2} = 1
   \]
   \[
+    \pause
     \frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1
   \]
 \end{frame}
@@ -140,6 +162,7 @@
     \end{bmatrix}
   \]
 
+  \pause
   \bigskip
   Novas coordenadas
   \[
@@ -148,7 +171,9 @@
       X \\
       Y
     \end{bmatrix}
+    \pause
     = v - C
+    \pause
     = \begin{bmatrix}
       x \\
       y
@@ -158,6 +183,7 @@
       h \\
       k
     \end{bmatrix}
+    \pause
     = \begin{bmatrix}
       x - h \\
       y - k
@@ -168,9 +194,9 @@
 %------------------------------------------------------------------------------%
 \begin{proofframe}{Equação Matricial da Elipse Transladada}
   \begin{align*}
-    \emph{V^t A V}    & = \emph{1} \\
-    (v-C)^t A (v-C)   & = 1 \\
-    \begin{bmatrix}
+    \onslide<+->{\emph{V^t A V}  & = \emph{1} \\}
+    \onslide<+->{(v-C)^t A (v-C) & = 1        \\}
+    \onslide<+->{\begin{bmatrix}
       x - h \\
       y - k
     \end{bmatrix}^t
@@ -181,25 +207,26 @@
     \begin{bmatrix}
       x - h \\
       y - k
-    \end{bmatrix} & = 1 \\
-    \emph{\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2}} & = \emph{1} \\
-    \frac{b^2(x-h)^2 + a^2(y-k)^2}{a^2b^2}    & = 1 \\
-    b^2(x-h)^2 + a^2(y-k)^2                   & = a^2b^2
+    \end{bmatrix} & = 1}
+    \\
+    \onslide<+->{\emph{\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2}} & = \emph{1} \\}
+    \onslide<+->{\frac{b^2(x-h)^2 + a^2(y-k)^2}{a^2b^2}    & = 1 \\}
+    \onslide<+->{b^2(x-h)^2 + a^2(y-k)^2                   & = a^2b^2}
   \end{align*}
 \end{proofframe}
 
 %------------------------------------------------------------------------------%
 \begin{proofframe}{Equação Matricial da Elipse Transladada}
   \begin{align*}
-    b^2(x-h)^2 + a^2(y-k)^2                             & = a^2b^2 \\
-    b^2(x^2 -2hx + h^2) + a^2(y^2 - 2ky + k^2)          & = a^2b^2 \\
-    b^2x^2 - 2b^2hx + b^2h^2 + a^2y^2 - 2a^2ky + a^2k^2 & = a^2b^2 \\
-    b^2x^2 + a^2y^2 - 2b^2hx - 2a^2ky + b^2h^2 + a^2k^2 & = a^2b^2 \\
-    \begin{bmatrix}
+    \onslide<+->{b^2(x-h)^2 + a^2(y-k)^2                             & = a^2b^2 \\}
+    \onslide<+->{b^2(x^2 -2hx + h^2) + a^2(y^2 - 2ky + k^2)          & = a^2b^2 \\}
+    \onslide<+->{b^2x^2 - 2b^2hx + b^2h^2 + a^2y^2 - 2a^2ky + a^2k^2 & = a^2b^2 \\}
+    \onslide<+->{b^2x^2 + a^2y^2 - 2b^2hx - 2a^2ky + b^2h^2 + a^2k^2 & = a^2b^2 \\}
+    \onslide<+->{\begin{bmatrix}
       x \\
       y
     \end{bmatrix}^t
-    {\color{magenta}\begin{bmatrix}[c]
+    {\color<7->{magenta}\begin{bmatrix}[c]
       b^2 & 0   \\
       0   & a^2
     \end{bmatrix}}
@@ -208,7 +235,7 @@
       y
     \end{bmatrix}
     +
-    {\color{purple}\begin{bmatrix}
+    {\color<8->{purple}\begin{bmatrix}
       - 2b^2h \\
       - 2a^2k
     \end{bmatrix}^t}
@@ -216,10 +243,11 @@
       x \\
       y
     \end{bmatrix}
-    + {\color{violet} (b^2h^2 + a^2k^2 - a^2b^2)} & = 0 \\
-    v^t {\color{magenta} M} v
-    + {\color{purple} B^t}v
-    + {\color{violet} f} & = 0
+    + {\color<9->{violet} (b^2h^2 + a^2k^2 - a^2b^2)} & = 0}
+    \\
+    \onslide<+->{v^t {\color<7->{magenta} M} v
+    + {\color<8->{purple} B^t}v
+    + {\color<9->{violet} f} & = 0}
   \end{align*}
 \end{proofframe}
 
