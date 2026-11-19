@@ -2,11 +2,11 @@
 \begin{question}
   Dada a equação da parábola
   \[
-    (x - 3)^2 = 12(y + 1)
+    y^2 = 4x
   \]
   \vspace{-1.5\baselineskip}
   \begin{enumerate}
-    \item identifique vértice e o parâmetro $p$
+    \item identifique o parâmetro $p$
     \item escreva a equação matricial
     \item esboce a curva
   \end{enumerate}
@@ -16,68 +16,57 @@
 \begin{resolution}{Parâmetro $p$}
   Comparando
   \[
-    (x - 3)^2 = 12(y + 1)
+    y^2 = 4x
   \]
-  com a equação canônica transladada
+  \pause
+  com a equação da parábola com simetria no eixo $x$
   \[
-    (x-h)^2 = 4p(y-k)
+    y^2 = 4px
   \]
-  obtemos
+  \pause
+  identificamos
   \[
-    4p = 12
+    \pause
+    4p = 4
     \qquad
-    p = 3
+    \pause
+    p = 1
   \]
-  vértice:
-  \(
-    \mathcal{V}
-    = (h, k)
-    = (3, -1)
-  \)
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Equação Matricial}
   Equação Matricial
   \[
-    V^tAv + 2B^tV = 0
+    v^tAv + 2B^tv = 0
   \]
+  \pause
   com
   \[
+    \pause
     A = \begin{bmatrix}
-      1 & 0 \\
-      0 & 0
+      0 & 0 \\
+      0 & 1
     \end{bmatrix}
     \qquad\qquad
+    \pause
     B
     = \begin{bmatrix}[c]
-      0   \\
-      -2p
+      -2p  \\
+       0
     \end{bmatrix}
+    \pause
     = \begin{bmatrix}
-      0  \\
-      -6
-    \end{bmatrix}
-  \]
-  \[
-    V
-    = \begin{bmatrix}
-      x - h  \\
-      y - k
-    \end{bmatrix}
-    = \begin{bmatrix}[c]
-      x - 3  \\
-      y - (-1)
-    \end{bmatrix}
-    = \begin{bmatrix}
-      x - 3  \\
-      y + 1
+      -2 \\
+       0
     \end{bmatrix}
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Esboço}
+  \centering
+  \includegraphics{I-05-Parabola-ex-2}
 \end{resolution}
 
 %------------------------------------------------------------------------------%

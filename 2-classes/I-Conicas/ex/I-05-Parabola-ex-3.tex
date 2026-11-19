@@ -1,28 +1,101 @@
 %------------------------------------------------------------------------------%
 \begin{question}
-  Determine o conjunto de soluções reais da equação
+  Dada a equação da parábola
   \[
-    (x-2)^2 = 0
+    (x - 3)^2 = 12(y + 1)
   \]
+  \vspace{-1.5\baselineskip}
+  \begin{enumerate}
+    \item identifique vértice e o parâmetro $p$
+    \item escreva a equação matricial
+    \item esboce a curva
+  \end{enumerate}
 \end{question}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  \begin{align*}
-    (x-2)^2 & = 0 \\
-    x-2     & = 0 \\
-    x       & = 2
-  \end{align*}
-  Não há restrição para $y$
-
-  O conjunto de soluções é a reta vertical
-  \(
-    x = 2
-  \)
+\begin{resolution}{Parâmetro $p$}
+  Comparando
   \[
-    S = \left\{ (x, y) \in \R^2 \st x = 2 \right\}
+    (x - 3)^2 = 12(y + 1)
   \]
-  A equação é um caso degenerado de equação quadrática no plano
+  \pause
+  com a equação canônica transladada
+  \[
+    (x-h)^2 = 4p(y-k)
+  \]
+  \pause
+  identificamos
+  \[
+    \pause
+    4p = 12
+    \qquad
+    \pause
+    p = 3
+  \]
+  \pause
+  vértice:
+  \(
+    \pause
+    \mathcal{V}
+    \pause
+    = (h, k)
+    \pause
+    = (3, -1)
+  \)
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Equação Matricial}
+  Equação Matricial
+  \[
+    V^tAV + 2B^tV = 0
+  \]
+  \pause
+  com
+  \[
+    \pause
+    A = \begin{bmatrix}
+      1 & 0 \\
+      0 & 0
+    \end{bmatrix}
+    \qquad\qquad
+    \pause
+    B
+    = \begin{bmatrix}[c]
+      0   \\
+      -2p
+    \end{bmatrix}
+    \pause
+    = \begin{bmatrix}
+      0  \\
+      -6
+    \end{bmatrix}
+  \]
+  \[
+    \pause
+    V
+    \pause
+    = \begin{bmatrix}
+      x - h  \\
+      y - k
+    \end{bmatrix}
+    \pause
+    = \begin{bmatrix}[c]
+      x - 3  \\
+      y - (-1)
+    \end{bmatrix}
+    \pause
+    = \begin{bmatrix}
+      x - 3  \\
+      y + 1
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Esboço}
+  \centering
+  \includegraphics{I-05-Parabola-ex-3}
 \end{resolution}
 
 %------------------------------------------------------------------------------%

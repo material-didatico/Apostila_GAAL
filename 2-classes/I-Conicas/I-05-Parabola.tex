@@ -21,45 +21,47 @@
   \]
   com \(p \neq 0\)
 
+  \pause
   \bigskip
-  Parábola com vértice na origem e alinhada com os eixos $x$ e $y$
-\end{frame}
-
-%------------------------------------------------------------------------------%
-\begin{frame}{Formas Alternativas da Equação da Parábola}
-  Formas alternativas da equação da parábola
+  Forma alternativa
   \[
-    x^2 - 4py = 0
-    \qquad\qquad
-    x^2 = 4py
-    \qquad\qquad
     y = \frac{1}{4p} x^2
   \]
+
+  \pause
+  \medskip
+  Parábola com vértice na origem e alinhada com os eixos $x$ e $y$
 \end{frame}
 
 %------------------------------------------------------------------------------%
 \begin{frame}{Equação Matricial da Parábola}
   Equação \emph{matricial da parábola}
   \[
+    \pause
     v^tAv + 2B^tv = 0
   \]
+  \pause
   com
   \[
+    \pause
     v = \begin{bmatrix}
       x \\
       y
     \end{bmatrix}
     \qquad\qquad
+    \pause
     A = \begin{bmatrix}
       1 & 0 \\
       0 & 0
     \end{bmatrix}
     \qquad\qquad
+    \pause
     B = \begin{bmatrix}[c]
       0   \\
       -2p
     \end{bmatrix}
     \qquad\qquad
+    \pause
     p \neq 0
   \]
 \end{frame}
@@ -71,23 +73,87 @@
     \mathcal{V}  = (0, 0)
   \]
 
-  A parábola é simétrica em relação ao eixo \(y\)
+  \pause
+  A parábola é simétrica em relação ao eixo $y$
 
+  \pause
   O valor de $p$ determina a abertura da parábola
   ($\abs{p}$ maior = parábola mais aberta)
 
+  \pause
   Se \(p > 0\) a parábola abre para cima
 
-  Se \(p <0 \) a parábola abre para baixo
+  \pause
+  Se \(p < 0 \) a parábola abre para baixo
 \end{frame}
 
 %------------------------------------------------------------------------------%
-\begin{frame}{Gráfico da Parábola}{}
-{\color{red} Incluir gráficos}
-\end{frame}
+\framedgraphic*{Gráfico da Parábola}{definicao_parabola_1}{}
+\framedgraphic*{Gráfico da Parábola}{definicao_parabola_2}{}
+\framedgraphic*{Gráfico da Parábola}{definicao_parabola_3}{}
+\framedgraphic*{Gráfico da Parábola}{definicao_parabola_4}{}
+\framedgraphic*{Gráfico da Parábola}{definicao_parabola_5}{}
+\framedgraphic*{Gráfico da Parábola}{definicao_parabola_6}{}
+\framedgraphic*{Gráfico da Parábola}{definicao_parabola_7}{}
+\framedgraphic*{Gráfico da Parábola}{definicao_parabola_8}{}
 
 %------------------------------------------------------------------------------%
 \input{ex/I-05-Parabola-ex-1}
+
+%------------------------------------------------------------------------------%
+\section{Parábola Simétrica no Eixo $x$}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equações da Parábola Simétrica no Eixo $x$}
+  Equação canônica da parábola \emph{simétrica no eixo $x$}
+  \[
+    y^2 = 4px
+    \qquad\qquad
+    p \neq 0
+  \]
+  \pause
+  Forma alternativa
+  \[
+    x = \frac{1}{4p} y^2
+  \]
+  \pause
+  Equação matricial:
+  \(
+    v^tAv + 2B^tv = 0
+  \)
+  \[
+    \pause
+    v = \begin{bmatrix}
+      x \\
+      y
+    \end{bmatrix}
+    \qquad\qquad
+    \pause
+    A = \begin{bmatrix}
+      0 & 0 \\
+      0 & 1
+    \end{bmatrix}
+    \qquad\qquad
+    \pause
+    B = \begin{bmatrix}[c]
+      -2p   \\
+      0
+    \end{bmatrix}
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Gráfico da Parábola Simétrica no Eixo $x$}{definicao_parabola_y_1}{}
+\framedgraphic*{Gráfico da Parábola Simétrica no Eixo $x$}{definicao_parabola_y_2}{}
+\framedgraphic*{Gráfico da Parábola Simétrica no Eixo $x$}{definicao_parabola_y_3}{}
+\framedgraphic*{Gráfico da Parábola Simétrica no Eixo $x$}{definicao_parabola_y_4}{}
+\framedgraphic*{Gráfico da Parábola Simétrica no Eixo $x$}{definicao_parabola_y_5}{}
+\framedgraphic*{Gráfico da Parábola Simétrica no Eixo $x$}{definicao_parabola_y_6}{}
+\framedgraphic*{Gráfico da Parábola Simétrica no Eixo $x$}{definicao_parabola_y_7}{}
+\framedgraphic*{Gráfico da Parábola Simétrica no Eixo $x$}{definicao_parabola_y_8}{}
+
+%------------------------------------------------------------------------------%
+\input{ex/I-05-Parabola-ex-2}
 
 %------------------------------------------------------------------------------%
 \section{Translação da Parábola}
@@ -96,18 +162,24 @@
 \begin{frame}{Translação da Parábola}
   Novo vértice \(C = (h, k)\)
 
+  \pause
   Novas coordenadas
   \[
+    \pause
     X = x - h
     \qquad
+    \pause
     Y = y - k
   \]
 
-  Equação canônica nas novas coordenadas
+  \pause
+  Equação da parábola transladada
   \[
+    \pause
     X^2 = 4pY
   \]
   \[
+    \pause
     (x-h)^2 = 4p(y-k)
   \]
 \end{frame}
@@ -116,6 +188,7 @@
 \begin{proofframe}{Equação Matricial da Parábola Transladada}
   Novo vértice
   \[
+    \pause
     C
     = \begin{bmatrix}
       h \\
@@ -124,14 +197,19 @@
   \]
 
   \bigskip
+  \pause
   Novas variáveis
   \[
+    \pause
     V
+    \pause
     = \begin{bmatrix}
       X \\
       Y
     \end{bmatrix}
+    \pause
     = v - C
+    \pause
     = \begin{bmatrix}
       x \\
       y
@@ -141,6 +219,7 @@
       h \\
       k
     \end{bmatrix}
+    \pause
     = \begin{bmatrix}
       x - h \\
       y - k
@@ -151,9 +230,9 @@
 %------------------------------------------------------------------------------%
 \begin{proofframe}{Equação Matricial da Parábola Transladada}
   \begin{align*}
-    \emph{V^tAV + 2B^tV} & \emph{= 0} \\
-    (v-C)^tA(v-C) + 2B^t(v-C) & = 0 \\
-    \begin{bmatrix}
+    \onslide<+->{\emph{V^tAV + 2B^tV} & \emph{= 0} \\}
+    \onslide<+->{(v-C)^tA(v-C) + 2B^t(v-C) & = 0 \\}
+    \onslide<+->{\begin{bmatrix}
       x - h \\
       y - k
     \end{bmatrix}^t
@@ -174,22 +253,23 @@
       x - h \\
       y - k
     \end{bmatrix}
-    & = 0 \\
-    \emph{(x - h)^2 -2p (y - k)} & \emph{= 0}
+    & = 0}
+    \\
+    \onslide<+->{\emph{(x - h)^2 -2p (y - k)} & \emph{= 0}}
   \end{align*}
 \end{proofframe}
 
 %------------------------------------------------------------------------------%
 \begin{proofframe}{Equação Matricial da Parábola Transladada}
   \begin{align*}
-    (x - h)^2 -2p (y - k)       & = 0 \\
-    x^2 - 2hx + h^2 - 2py + 2pk & = 0 \\
-    x^2 - 2hx - 2py + h^2 + 2pk & = 0 \\
-    \begin{bmatrix}
+    \onslide<+->{(x - h)^2 -2p (y - k)       & = 0 \\}
+    \onslide<+->{x^2 - 2hx + h^2 - 2py + 2pk & = 0 \\}
+    \onslide<+->{x^2 - 2hx - 2py + h^2 + 2pk & = 0 \\}
+    \onslide<+->{\begin{bmatrix}
       x \\
       y
     \end{bmatrix}^t
-    {\color{magenta}\begin{bmatrix}
+    {\color<6->{magenta}\begin{bmatrix}
       1 & 0              \\
       0 & 0
     \end{bmatrix}}
@@ -198,7 +278,7 @@
       y
     \end{bmatrix}
     +
-    {\color{purple} \begin{bmatrix}[c]
+    {\color<7->{purple} \begin{bmatrix}[c]
       -2h   \\
       -2p
     \end{bmatrix}^t}
@@ -206,17 +286,18 @@
       x \\
       y
     \end{bmatrix}
-    + {\color{violet}(h^2 + 2pk)}
-    & = 0 \\
-    v^t {\color{magenta} A} v
-    + {\color{purple} H^t}v
-    + {\color{violet} f} & = 0
+    + {\color<8->{violet}(h^2 + 2pk)}
+    & = 0}
+    \\
+    \onslide<+->{v^t {\color<6->{magenta} A} v
+    + {\color<7->{purple} H^t}v
+    + {\color<8->{violet} f} & = 0}
   \end{align*}
 \end{proofframe}
 
 %------------------------------------------------------------------------------%
-\input{ex/I-05-Parabola-ex-2}
 \input{ex/I-05-Parabola-ex-3}
+\input{ex/I-05-Parabola-ex-4}
 
 %%------------------------------------------------------------------------------%
 %\section{Lista Mínima}
