@@ -1,0 +1,82 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Dada a equação da circunferência
+  \[
+    (x-2)^2 + (y+3)^2 = 25
+  \]
+  \vspace{-1.5\baselineskip}
+  \begin{enumerate}
+    \item encontre seu raio e o centro
+    \item escreva a equação matricial transladada
+    \item esboce a curva
+  \end{enumerate}
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Raio de Centro}
+  Comparando
+  \[
+    (x-2)^2 + (y+3)^2 = 25
+  \]
+  com a equação canônica transladada
+  \[
+    (x-h)^2 + (y-k)^2 = 25
+  \]
+
+  Identificamos
+
+  \quad o centro:
+  \(
+    C
+    = (h, k)
+    = (2, -3)
+  \)
+
+  \quad o raio:
+  \(
+    r
+    = \sqrt{25}
+    = 5
+  \)
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Equação Matricial}
+  Equação Matricial
+  \[
+    V^t I V = r^2
+  \]
+  com
+  \[
+    I = \begin{bmatrix}
+      1 & 0 \\
+      0 & 1
+    \end{bmatrix}
+  \]
+  \[
+    V
+    = \begin{bmatrix}
+      x - h  \\
+      y - k
+    \end{bmatrix}
+    = \begin{bmatrix}[c]
+      x - 2  \\
+      y - (-3)
+    \end{bmatrix}
+    = \begin{bmatrix}
+      x - 2  \\
+      y + 3
+    \end{bmatrix}
+  \]
+
+  \[
+    r = 5
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Esboço}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
