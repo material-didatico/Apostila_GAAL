@@ -22,16 +22,16 @@
 \begin{frame}{Equação da Reta no Plano}
   \onslide<+->{Definindo}
   \[
-    \onslide<+->{r = \begin{bmatrix} x \\ y \end{bmatrix}}
+    \onslide<+->{v = \begin{bmatrix} x \\ y \end{bmatrix}}
     \qquad
-    \onslide<+->{p = \begin{bmatrix} a \\ b \end{bmatrix} \neq \vec{0}}
+    \onslide<+->{B = \begin{bmatrix} a \\ b \end{bmatrix} \neq \vec{0}}
     \qquad
     \onslide<+->{d \in \R}
   \]
 
   \onslide<+->{Podemos escrever a equação da reta no plano}
   \begin{align*}
-    \onslide<+->{p^t r & = d} \\
+    \onslide<+->{B^t v & = d} \\
     \onslide<+->{\begin{bmatrix} a & b \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} & = d}\\
     \onslide<+->{ax + by              & = d}
   \end{align*}
@@ -41,16 +41,16 @@
 \begin{frame}{Planos em Forma Matricial}
   \onslide<+->{Definindo}
   \[
-    \onslide<+->{r = \begin{bmatrix} x \\ y \\ z \end{bmatrix}}
+    \onslide<+->{v = \begin{bmatrix} x \\ y \\ z \end{bmatrix}}
     \qquad
-    \onslide<+->{p = \begin{bmatrix} a \\ b \\ c \end{bmatrix} \neq \vec{0}}
+    \onslide<+->{B = \begin{bmatrix} a \\ b \\ c \end{bmatrix} \neq \vec{0}}
     \qquad
     \onslide<+->{d \in \R}
   \]
 
   \onslide<+->{Podemos escrever a equação do plano no espaço}
   \begin{align*}
-    \onslide<+->{p^tr & = d} \\
+    \onslide<+->{B^tv & = d} \\
     \onslide<+->{ax + by +cz          & = d}
   \end{align*}
 \end{frame}
@@ -59,7 +59,7 @@
 \begin{frame}{Formas Quadráticas}
   \onslide<+->{Definindo}
   \[
-    \onslide<+->{r = \begin{bmatrix} x \\ y \end{bmatrix}}
+    \onslide<+->{v = \begin{bmatrix} x \\ y \end{bmatrix}}
     \qquad
     \onslide<+->{A = \begin{bmatrix}
       a & b \\
@@ -69,7 +69,7 @@
 
   \onslide<+->{Podemos escrever a expressão do segundo grau}
   \begin{align*}
-    \onslide<+->{r^tAr}
+    \onslide<+->{v^tAv}
     \onslide<+->{& = \begin{bmatrix}
       x & y
     \end{bmatrix}
@@ -100,21 +100,21 @@
 \begin{frame}{Equação Geral de Segundo Grau}
   \onslide<+->{Definindo}
   \[
-    \onslide<+->{r = \begin{bmatrix} x \\ y \end{bmatrix}}
+    \onslide<+->{v = \begin{bmatrix} x \\ y \end{bmatrix}}
     \qquad
     \onslide<+->{A = \begin{bmatrix}
       a & b \\
       b & c
     \end{bmatrix}}
     \qquad
-    \onslide<+->{p = \begin{bmatrix} d \\ e \end{bmatrix}}
+    \onslide<+->{B = \begin{bmatrix} d \\ e \end{bmatrix}}
     \qquad
     \onslide<+->{f \in \R}
   \]
 
   \onslide<+->{Qualquer equação de primeiro ou segundo grau pode ser escrita como}
   \[
-    \onslide<+->{r^tAr \;+\; p^tr \;+\; f = 0}
+    \onslide<+->{v^tAv \;+\; B^tv \;+\; f = 0}
   \]
   \onslide<+->{Forma expandida
   \[
