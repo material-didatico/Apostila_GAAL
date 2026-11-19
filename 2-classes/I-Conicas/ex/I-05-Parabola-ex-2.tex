@@ -1,0 +1,84 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Dada a equação da parábola
+  \[
+    (x - 3)^2 = 12(y + 1)
+  \]
+  \vspace{-1.5\baselineskip}
+  \begin{enumerate}
+    \item identifique vértice e o parâmetro $p$
+    \item escreva a equação matricial
+    \item esboce a curva
+  \end{enumerate}
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Parâmetro $p$}
+  Comparando
+  \[
+    (x - 3)^2 = 12(y + 1)
+  \]
+  com a equação canônica transladada
+  \[
+    (x-h)^2 = 4p(y-k)
+  \]
+  obtemos
+  \[
+    4p = 12
+    \qquad
+    p = 3
+  \]
+  vértice:
+  \(
+    \mathcal{V}
+    = (h, k)
+    = (3, -1)
+  \)
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Equação Matricial}
+  Equação Matricial
+  \[
+    V^tAv + 2B^tV = 0
+  \]
+  com
+  \[
+    A = \begin{bmatrix}
+      1 & 0 \\
+      0 & 0
+    \end{bmatrix}
+    \qquad\qquad
+    B
+    = \begin{bmatrix}[c]
+      0   \\
+      -2p
+    \end{bmatrix}
+    = \begin{bmatrix}
+      0  \\
+      -6
+    \end{bmatrix}
+  \]
+  \[
+    V
+    = \begin{bmatrix}
+      x - h  \\
+      y - k
+    \end{bmatrix}
+    = \begin{bmatrix}[c]
+      x - 3  \\
+      y - (-1)
+    \end{bmatrix}
+    = \begin{bmatrix}
+      x - 3  \\
+      y + 1
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Esboço}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput
