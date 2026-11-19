@@ -1,0 +1,208 @@
+//-----------------------------------------------------------------------------
+
+import graph;
+import three;
+
+// Cone duplo 3D
+//-----------------------------------------------------------------------------
+void drawCone(real h=2, pen col=lightblue+opacity(0.6)) 
+{
+    int N = 30;
+    int M = 60;
+
+    for (int i = 0; i < N; ++i) 
+    {
+        real z1 = h * i     / N;
+        real z2 = h * (i+1) / N;
+    
+        for (int j = 0; j < M; ++j) 
+        {
+            real t1 = 2*pi * j     / M;
+            real t2 = 2*pi * (j+1) / M;
+            
+            triple p1 = (z1*cos(t1), z1*sin(t1), z1);
+            triple p2 = (z1*cos(t2), z1*sin(t2), z1);
+            triple p3 = (z2*cos(t2), z2*sin(t2), z2);
+            triple p4 = (z2*cos(t1), z2*sin(t1), z2);
+        
+            draw(surface(p1--p2--p3--p4--cycle), col);
+
+            triple q1 = (-z1*cos(t1), -z1*sin(t1), -z1);
+            triple q2 = (-z1*cos(t2), -z1*sin(t2), -z1);
+            triple q3 = (-z2*cos(t2), -z2*sin(t2), -z2);
+            triple q4 = (-z2*cos(t1), -z2*sin(t1), -z2);
+            
+            draw(surface(q1--q2--q3--q4--cycle), col);
+        }
+    }
+}
+
+// Curvas de interseção
+//-----------------------------------------------------------------------------
+void curvaElipse( real zo, 
+                  real s,
+                  real t, 
+                  real h,
+                  int  N = 800, 
+                  pen  cor = red+1.2bp)
+{
+    real L = sqrt(s*s + t*t);
+    
+    if (L < 1e-12) 
+    {
+        draw(circle((0,0,zo), abs(zo), Z), cor);
+        return;
+    }
+    
+    if (L >= 1-1e-12) { return; }
+    
+    real A = zo /     (1 - L*L);            
+    real B = zo / sqrt(1 - L*L);        
+    real c = zo * L / (1 - L*L);          
+    
+    triple ex = ( s/L, t/L, 0);        
+    triple ey = (-t/L, s/L, 0);       
+
+    path3 P;
+    bool started = false;
+    
+    for (int k = 0; k <= N; ++k) 
+    {
+        real th = 2*pi * k / N;
+        real a  = c + A * cos(th);
+        real b  =     B * sin(th);
+        
+        real x = a*ex.x + b*ey.x;
+        real y = a*ex.y + b*ey.y;
+        real z = zo + s*x + t*y;
+
+        if (abs(z) <= h) 
+        {
+            if (!started) { P = (x,y,z); started=true; }
+            else          { P = P .. (x,y,z); }
+        } else 
+        {
+            if (started) { draw(P, cor); started=false; }
+        }
+    }
+
+    if (started) draw(P, cor);
+}
+
+
+//-----------------------------------------------------------------------------
+void curvaParabola(real zo, 
+                   real s, 
+                   real t, 
+                   real h,
+                   real bmin = -3, 
+                   real bmax =  3, 
+                   int  N = 800,
+                   pen  cor = red+1.2bp) 
+{
+    real L = sqrt(s*s + t*t);
+
+    if (abs(L-1)>1e-9) 
+    { 
+      s /= L; 
+      t /= L;
+    }
+    
+    real ds = (bmax - bmin)/N;
+    
+    path3 P;
+    
+    for (int i=0; i<=N; ++i) 
+    {
+        real b = bmin + i*ds;
+        real a = b*b/(2*zo) - zo/2;
+        real x = a*s - b*t;
+        real y = a*t + b*s;
+        real z = zo + a;
+
+        if (abs(z)<=h) 
+        {
+            if (i==0) P = (x,y,z);
+            else      P = P..(x,y,z);
+        }
+    }
+
+    draw(P, cor);
+}
+
+//-----------------------------------------------------------------------------
+void curvaHiperbole(real zo, 
+                    real s, 
+                    real t, 
+                    real h,
+                    real amin = -2, 
+                    real amax =  2, 
+                    int  N = 800,
+                    pen  cor = red+1.2bp) 
+{
+    real L = sqrt(s*s + t*t);
+    real s_norm = s/L;
+    real t_norm = t/L;
+    real k2 = L*L - 1;
+
+    path3 ramo1, ramo2;
+    
+    bool aberto1 = false;
+    bool aberto2 = false;
+    
+    real da=(amax-amin)/N;
+    
+    for (int i=0; i<=N; ++i) 
+    {
+        real a = amin + i*da;
+        real radicando = k2*a*a + 2*zo*L*a + zo*zo;
+
+        if (radicando >= 0) 
+        {
+            real b = sqrt(radicando);
+            real x1 = a*s_norm - b*t_norm;
+            real y1 = a*t_norm + b*s_norm;
+            real z1 = zo + s*x1 + t*y1;
+            
+            if (abs(z1)<=h) 
+            { 
+              if (!aberto1) 
+              { 
+                ramo1=(x1,y1,z1); 
+                aberto1=true; 
+              } 
+              else 
+              { 
+                ramo1=ramo1..(x1,y1,z1); 
+              } 
+            }
+
+            real x2 = a*s_norm + b*t_norm;
+            real y2 = a*t_norm - b*s_norm;
+            real z2 = zo + s*x2 + t*y2;
+            
+            if (abs(z2)<=h) 
+            { 
+              if (!aberto2) 
+              { 
+                ramo2=(x2,y2,z2); 
+                aberto2=true; 
+              } 
+              else 
+              { 
+                ramo2=ramo2..(x2,y2,z2); 
+              } 
+            }
+        } 
+        else 
+        {
+            if (aberto1) { draw(ramo1,cor); aberto1=false; }
+            if (aberto2) { draw(ramo2,cor); aberto2=false; }
+        }
+    }
+
+    if (aberto1) draw(ramo1,cor);
+    if (aberto2) draw(ramo2,cor);
+}
+
+//-----------------------------------------------------------------------------
