@@ -1,0 +1,79 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Dada a equação da elipse
+  \[
+    \frac{(x-2)^2}{16} + \frac{(y+1)^2}{9} = 1
+  \]
+  \vspace{-1.5\baselineskip}
+  \begin{enumerate}
+    \item identifique o centro e os semieixos ($a$ e $b$)
+    \item escreva a equação matricial
+    \item esboce a curva
+  \end{enumerate}
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Semieixos $a$ e $b$}
+  Comparando
+  \[
+    \frac{(x-2)^2}{16} + \frac{(y+1)^2}{9} = 1
+  \]
+  com a equação canônica transladada
+  \[
+    \frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1
+  \]
+  obtemos
+  \[
+    a^2 = 16
+    \qquad
+    a = 4
+  \]
+  \[
+    b^2 = 9
+    \qquad
+    b = 3
+  \]
+  o centro é
+  \(
+    C
+    = (h, k)
+    = (2, -1)
+  \)
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Equação Matricial}
+  Equação Matricial
+  \[
+    V^t A V = 1
+  \]
+  com
+  \[
+    A = \begin{bmatrix}
+      \dfrac{1}{16} & 0            \\[2mm]
+      0             & \dfrac{1}{9}
+    \end{bmatrix}
+  \]
+  \[
+    V
+    = \begin{bmatrix}
+      x - h  \\
+      y - k
+    \end{bmatrix}
+    = \begin{bmatrix}[c]
+      x - 2  \\
+      y - (-1)
+    \end{bmatrix}
+    = \begin{bmatrix}
+      x - 2  \\
+      y + 1
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Esboço}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\endinput

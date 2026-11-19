@@ -1,0 +1,245 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Elipse}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\section{Equação Canônica da Elipse}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equação Canônica da Elipse}
+  Equação \emph{canônica da elipse}
+  \[
+    \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1
+  \]
+  com \(a > 0\) e \(b > 0\)
+
+  \bigskip
+  Elipse centrada na origem e alinhada com os eixos $x$ e $y$
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Equação Matricial da Elipse}
+  Equação \emph{matricial da elipse}
+  \[
+    v^t A v = 1
+  \]
+  com
+  \[
+    v = \begin{bmatrix}
+      x \\
+      y
+    \end{bmatrix}
+    \qquad\qquad
+    A = \begin{bmatrix}
+      \dfrac{1}{a^2} & 0              \\[2mm]
+      0              & \dfrac{1}{b^2}
+    \end{bmatrix}
+    \qquad\qquad
+    a > 0
+    \qquad
+    b > 0
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Pontos Relevantes da Elipse}
+\begin{columns}[t]
+\column{0.4\textwidth}
+  Fazendo \(y=0\)
+  \begin{align*}
+    \frac{x^2}{a^2} + \frac{y^2}{b^2} & = 1     \\
+    \frac{x^2}{a^2} + \frac{0}{b^2}   & = 1     \\
+    \frac{x^2}{a^2}                   & = 1     \\
+    x^2                               & = a^2   \\
+    \abs{x}                           & = a     \\
+    x                                 & = \pm a
+  \end{align*}
+
+\column{0.4\textwidth}
+  Fazendo \(x=0\)
+  \begin{align*}
+    \frac{x^2}{a^2} + \frac{y^2}{b^2} & = 1     \\
+    \frac{0}{a^2} + \frac{y^2}{b^2}   & = 1     \\
+    \frac{y^2}{b^2}                   & = 1     \\
+    y^2                               & = b^2   \\
+    \abs{y}                           & = b     \\
+    y                                 & = \pm b
+  \end{align*}
+\end{columns}
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Elementos Geométricos da Elipse}
+  \emph{Centro} da elipse
+  \[
+    C = (0, 0)
+  \]
+
+  A elipse cruza os eixos nos pontos
+  \[
+    (-a, 0) \qquad
+    ( a, 0) \qquad
+    (0, -b) \qquad
+    (0,  b)
+  \]
+
+  Se \(a>b\), o eixo maior é horizontal
+
+  Se \(b>a\), o eixo maior é vertical
+
+  Se \(a=b\), a equação representa uma circunferência
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Gráfico da Elipse}{}
+{\color{red} Incluir gráficos}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/I-04-Elipse-ex-1}
+
+%------------------------------------------------------------------------------%
+\section{Translação da Elipse}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Translação da Elipse}
+  Novo centro \(C = (h, k)\)
+
+  Novas coordenadas
+  \[
+    X = x - h
+    \qquad
+    Y = y - k
+  \]
+
+  Equação canônica nas novas coordenadas
+  \[
+    \frac{X^2}{a^2} + \frac{Y^2}{b^2} = 1
+  \]
+  \[
+    \frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Equação Matricial da Elipse Transladada}
+  Novo de centro
+  \[
+    C
+    = \begin{bmatrix}
+      h \\
+      k
+    \end{bmatrix}
+  \]
+
+  \bigskip
+  Novas coordenadas
+  \[
+    V
+    = \begin{bmatrix}
+      X \\
+      Y
+    \end{bmatrix}
+    = v - C
+    = \begin{bmatrix}
+      x \\
+      y
+    \end{bmatrix}
+    -
+    \begin{bmatrix}
+      h \\
+      k
+    \end{bmatrix}
+    = \begin{bmatrix}
+      x - h \\
+      y - k
+    \end{bmatrix}
+  \]
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Equação Matricial da Elipse Transladada}
+  \begin{align*}
+    \emph{V^t A V}    & = \emph{1} \\
+    (v-C)^t A (v-C)   & = 1 \\
+    \begin{bmatrix}
+      x - h \\
+      y - k
+    \end{bmatrix}^t
+    \begin{bmatrix}
+      \sfrac{1}{a^2} & 0              \\
+      0              & \sfrac{1}{b^2}
+    \end{bmatrix}
+    \begin{bmatrix}
+      x - h \\
+      y - k
+    \end{bmatrix} & = 1 \\
+    \emph{\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2}} & = \emph{1} \\
+    \frac{b^2(x-h)^2 + a^2(y-k)^2}{a^2b^2}    & = 1 \\
+    b^2(x-h)^2 + a^2(y-k)^2                   & = a^2b^2
+  \end{align*}
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\begin{proofframe}{Equação Matricial da Elipse Transladada}
+  \begin{align*}
+    b^2(x-h)^2 + a^2(y-k)^2                             & = a^2b^2 \\
+    b^2(x^2 -2hx + h^2) + a^2(y^2 - 2ky + k^2)          & = a^2b^2 \\
+    b^2x^2 - 2b^2hx + b^2h^2 + a^2y^2 - 2a^2ky + a^2k^2 & = a^2b^2 \\
+    b^2x^2 + a^2y^2 - 2b^2hx - 2a^2ky + b^2h^2 + a^2k^2 & = a^2b^2 \\
+    \begin{bmatrix}
+      x \\
+      y
+    \end{bmatrix}^t
+    {\color{magenta}\begin{bmatrix}[c]
+      b^2 & 0   \\
+      0   & a^2
+    \end{bmatrix}}
+    \begin{bmatrix}
+      x \\
+      y
+    \end{bmatrix}
+    +
+    {\color{purple}\begin{bmatrix}
+      - 2b^2h \\
+      - 2a^2k
+    \end{bmatrix}^t}
+    \begin{bmatrix}
+      x \\
+      y
+    \end{bmatrix}
+    + {\color{violet} (b^2h^2 + a^2k^2 - a^2b^2)} & = 0 \\
+    v^t {\color{magenta} M} v
+    + {\color{purple} B^t}v
+    + {\color{violet} f} & = 0
+  \end{align*}
+\end{proofframe}
+
+%------------------------------------------------------------------------------%
+\input{ex/I-04-Elipse-ex-2}
+\input{ex/I-04-Elipse-ex-3}
+
+%%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
