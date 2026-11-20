@@ -1,32 +1,154 @@
 %------------------------------------------------------------------------------%
 \begin{question}
-  Determine o conjunto de soluções reais da equação
+  Dada a equação da hipérbole
   \[
-    x^2 - y^2 = 0
+    \frac{(x-1)^2}{16} - \frac{(y+2)^2}{9} = 1
   \]
+  \vspace{-1.5\baselineskip}
+  \begin{enumerate}
+    \item encontre o centro e os vértices
+    \item escreva a equação matricial
+    \item esboce a curva
+  \end{enumerate}
 \end{question}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Solução}
-  \begin{align*}
-    x^2 - y^2  & = 0                              \\
-    (x-y)(x+y) & = 0                              \\
-    x-y        & = 0  \qquad\text{ou}\qquad x+y=0
-  \end{align*}
-
-  O conjunto de soluções é a união das retas
-  \(
-    y = x
-  \) e
-  \(
-    y = -x
-  \)
+\begin{resolution}{Centro}
+  Comparando
   \[
-    S = \left\{ (x, y) \in \R^2 \st y = x \;\text{ ou }\; y = -x \right\}
+    \frac{(x-1)^2}{16} - \frac{(y+2)^2}{9} = 1
   \]
-
-  Essa equação é um caso degenerado da equação quadrática
+  \pause
+  com a equação canônica transladada
+  \[
+    \frac{(x-h)^2}{a^2} - \frac{(y-k)^2}{b^2} = 1
+  \]
+  \pause
+  identificamos
+  \[
+    \pause
+    a^2 = 16
+    \qquad
+    \pause
+    a = 4
+    \qquad\qquad\qquad
+    \pause
+    b^2 = 9
+    \qquad
+    \pause
+    b = 3
+  \]
+  \pause
+  Centro: \quad
+  \(
+    \pause
+    C
+    = (h, k)
+    \pause
+    = (1, -2)
+  \)
 \end{resolution}
 
 %------------------------------------------------------------------------------%
+\begin{resolution}{Vértices}
+\begin{columns}[t]
+\column{0.6\textwidth}
+  \onslide<+->{Novas coordenadas}
+  \[
+    \onslide<+->{V
+    = \begin{bmatrix}
+      x - h  \\
+      y - k
+    \end{bmatrix}}
+    \onslide<+->{= \begin{bmatrix}[c]
+      x - 1 \\
+      y - (-2)
+    \end{bmatrix}}
+    \onslide<+->{= \begin{bmatrix}
+      x - 1  \\
+      y + 2
+    \end{bmatrix}}
+  \]
+\column{0.4\textwidth}
+  \onslide<+->{Condição nos vértices}
+  \[
+    \onslide<+->{V
+    = \begin{bmatrix}
+      x - 1  \\
+      y + 2
+    \end{bmatrix}
+    = \begin{bmatrix}
+      \pm 4  \\
+      0
+    \end{bmatrix}}
+  \]
+\end{columns}
+
+\medskip
+\onslide<+->{Resolvendo a condição nos vértices}
+\vspace{-1.5\baselineskip}
+\begin{columns}[t]
+\column{0.2\textwidth}
+  \begin{gather*}
+    \onslide<+->{y + 2 = 0 \\}
+    \onslide<+->{y     = - 2 }
+  \end{gather*}
+\column{0.2\textwidth}
+  \begin{gather*}
+    \onslide<+->{x - 1 = 4     \\}
+    \onslide<+->{x     = 4 + 1 \\}
+    \onslide<+->{x     = 5}
+  \end{gather*}
+\column{0.2\textwidth}
+  \begin{gather*}
+    \onslide<+->{x - 1 = -4 \\}
+    \onslide<+->{x     = -4 + 1 \\}
+    \onslide<+->{x     = -3}
+  \end{gather*}
+\end{columns}
+
+  \medskip
+  \onslide<+->{Vértices:}
+  \(
+    \quad
+    \onslide<+->{\mathcal{V}_1 = (-3, -2)}
+    \quad
+    \onslide<+->{\mathcal{V}_1 = (5, -2)}
+  \)
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Equação Matricial}
+  Equação Matricial
+  \[
+    \pause
+    V^t A V = 1
+  \]
+  \pause
+  com
+  \[
+    \pause
+    A
+    = \begin{bmatrix}
+      \dfrac{1}{16} & 0            \\[2mm]
+      0             & -\dfrac{1}{9}
+    \end{bmatrix}
+    \qquad\qquad
+    \pause
+    V = \begin{bmatrix}
+      x - 2  \\
+      y + 1
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Esboço}
+  \centering
+  \includegraphics{I-06-Hiperbole-ex-3}
+\end{resolution}
+
+
+%------------------------------------------------------------------------------%
 \endinput
+

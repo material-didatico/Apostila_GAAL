@@ -2,137 +2,82 @@
 \begin{question}
   Dada a equação da hipérbole
   \[
-    \frac{(x-1)^2}{16} - \frac{(y+2)^2}{9} = 1
+    \frac{y^2}{16} - \frac{x^2}{4} = 1
   \]
   \vspace{-1.5\baselineskip}
   \begin{enumerate}
-    \item encontre o centro e os vértices
+    \item encontre os vértices
     \item escreva a equação matricial
     \item esboce a curva
   \end{enumerate}
 \end{question}
 
 %------------------------------------------------------------------------------%
-\begin{resolution}{Centro}
+\begin{resolution}{Vértices}
   Comparando
   \[
-    \frac{(x-1)^2}{16} - \frac{(y+2)^2}{9} = 1
+    \frac{y^2}{16} - \frac{x^2}{4} = 1
   \]
-  com a equação canônica transladada
+  \pause
+  com a equação canônica com os vértices no eixo $y$
   \[
-    \frac{(x-h)^2}{a^2} - \frac{(y-k)^2}{b^2} = 1
+    \frac{y^2}{a^2} - \frac{x^2}{b^2} = 1
   \]
-  obtemos
+  \pause
+  identificamos
   \[
+    \pause
     a^2 = 16
     \qquad
+    \pause
     a = 4
-  \]
-  \[
-    b^2 = 9
+    \qquad\qquad\qquad
+    \pause
+    b^2 = 4
     \qquad
-    b = 3
+    \pause
+    b = 2
   \]
-  o centro é
-  \(
-    C
-    = (h, k)
-    = (1, -2)
-  \)
-\end{resolution}
-
-%------------------------------------------------------------------------------%
-\begin{resolution}{Vértices}
-\begin{columns}[t]
-\column{0.6\textwidth}
-  Novas coordenadas
+  \pause
+  os vértices são os pontos
   \[
-    V
-    = \begin{bmatrix}
-      x - h  \\
-      y - k
-    \end{bmatrix}
-    = \begin{bmatrix}[c]
-      x - 2  \\
-      y - (-1)
-    \end{bmatrix}
-    = \begin{bmatrix}
-      x - 2  \\
-      y + 1
-    \end{bmatrix}
+    \pause
+    (0, -a) = (0, -4)
+    \qquad\qquad
+    \pause
+    (0, a) = (0, 4)
   \]
-\column{0.4\textwidth}
-  Vértices
-  \[
-    V
-    = \begin{bmatrix}
-      x - 2  \\
-      y + 1
-    \end{bmatrix}
-    = \begin{bmatrix}
-      \pm 4  \\
-      0
-    \end{bmatrix}
-  \]
-\end{columns}
-
-\medskip
-Resolvendo
-\vspace{-1.5\baselineskip}
-\begin{columns}[t]
-\column{0.2\textwidth}
-  \begin{gather*}
-    y + 1 = 0 \\
-    y     = -1
-  \end{gather*}
-\column{0.2\textwidth}
-  \begin{gather*}
-    x - 2 = 4     \\
-    x     = 4 + 2 \\
-    x     = 6
-  \end{gather*}
-\column{0.2\textwidth}
-  \begin{gather*}
-    x - 2 = -4 \\
-    x     = -4 + 2 \\
-    x     = -2
-  \end{gather*}
-\end{columns}
-
-  \medskip
-  Vértices:
-  \(
-    \quad
-    \mathcal{V}_1 = (-2, -1)
-    \quad
-    \mathcal{V}_1 = (6, -1)
-  \)
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Equação Matricial}
   Equação Matricial
   \[
-    V^t A V = 1
+    v^t A v = 1
   \]
+  \pause
   com
   \[
-    A = \begin{bmatrix}
-      \dfrac{1}{16} & 0            \\[2mm]
-      0             & -\dfrac{1}{9}
+    \pause
+    A
+    \pause
+    = \begin{bmatrix}
+      -\dfrac{1}{b^2} & 0              \\[2mm]
+      0               & \dfrac{1}{a^2}
     \end{bmatrix}
-    \qquad\qquad
-    V = \begin{bmatrix}
-      x - 2  \\
-      y + 1
+    \pause
+    = \begin{bmatrix}
+      -\dfrac{1}{4} & 0            \\[2mm]
+      0             & \dfrac{1}{16}
     \end{bmatrix}
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Esboço}
+  \centering
+  \includegraphics{I-06-Hiperbole-ex-2}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \endinput
-
