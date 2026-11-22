@@ -1,0 +1,77 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Considerando a equação
+  \[
+    4x^2 + 9y^2 - 8x + 36y + 4 = 0
+  \]
+  \vspace{-\baselineskip}
+  \begin{enumerate}
+    \item identifique a curva
+    \item determine seus principais valores e pontos
+    \item esboce a curva
+  \end{enumerate}
+\end{question}
+
+%------------------------------------------------------------------------------%
+{
+\definecolor{cx}{RGB}{  0, 0, 255}
+\definecolor{cy}{RGB}{255, 0, 255}
+\begin{resolution}{Completando Quadrados}
+  \begin{align*}
+    \onslide<+->{4x^2 + 9y^2 - 8x + 36y + 4 & = 0}
+    \\
+    \onslide<+->{\mathcolor{cx}{4x^2 -  8x} \hphantom{+1)\;} +}
+    \onslide<+->{\mathcolor{cy}{9y^2 + 36y} \hphantom{+2)\;}}
+    \onslide<+->{& = -4}
+    \\
+    \onslide<+->{\mathcolor{cx}{4(x^2 - 2x)} \hphantom{+1)} +}
+    \onslide<+->{\mathcolor{cy}{9(y^2 + 4y)} \hphantom{+2)} & = -4}
+    \\
+    \onslide<+->{\mathcolor{cx}{4(x^2 - 2x + 1)} +}
+    \onslide<+->{\mathcolor{cy}{9(y^2 + 4y + 4)}}
+    \onslide<7->{& = -4}
+    \onslide<7->{\mathcolor{cx}{+ 4\times 1}}
+    \onslide<8->{\mathcolor{cy}{+ 9\times 4}}
+    \\
+    \onslide<+->{\mathcolor{cx}{4(x - 1)^2} + \mathcolor{cy}{9(y - 2)^2} & = 36} \\
+    \onslide<+->{\mathcolor{cx}{\frac{4(x - 1)^2}{36}} + \mathcolor{cy}{\frac{9(y - 2)^2}{36}} & = 1} \\
+    \onslide<+->{\mathcolor{cx}{\frac{(x - 1)^2}{9}} + \mathcolor{cy}{\frac{(y - 2)^2}{4}} & = 1}
+  \end{align*}
+\end{resolution}
+}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Identificação}
+  Comparando
+  \[
+    \frac{(x - 1)^2}{9} + \frac{(y - 2)^2}{4} = 1
+  \]
+  \pause
+  com a equação da elipse transladada
+  \[
+    \frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1
+  \]
+  \pause
+  Identificamos
+  \[
+    \pause
+    h = 1
+    \qquad\qquad
+    \pause
+    k = 2
+    \qquad\qquad
+    \pause
+    a = 3
+    \qquad\qquad
+    \pause
+    b = 2
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Esboço}
+  \centering
+  \includegraphics{I-07-Identificacao-ex-B}
+\end{resolution}
+
+%------------------------------------------------------------------------------%

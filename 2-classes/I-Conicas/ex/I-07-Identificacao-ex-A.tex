@@ -1,0 +1,62 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Considerando a equação
+  \[
+    x^2 + y^2 - 4x + 6y + 9 = 0
+  \]
+  \vspace{-\baselineskip}
+  \begin{enumerate}
+    \item identifique a curva
+    \item determine seus principais valores e pontos
+    \item esboce a curva
+  \end{enumerate}
+
+  Dica: Complete quadrados usando
+  \begin{align*}
+    a^2 - 2ab + b^2 & = (a - b)^2 \\
+    a^2 + 2ab + b^2 & = (a + b)^2
+  \end{align*}
+\end{question}
+
+%------------------------------------------------------------------------------%
+{
+\definecolor{cx}{RGB}{  0, 0, 255}
+\definecolor{cy}{RGB}{255, 0, 255}
+\begin{resolution}{Completando Quadrados}
+  \begin{align*}
+    \onslide<+->{x^2 + y^2 - 4x + 6y + 9 & = 0}
+    \\
+    \onslide<+->{\mathcolor{cx}{x^2 - 4x} \hphantom{+4}\;\,}
+    \onslide<+->{+ \mathcolor{cy}{y^2 + 6y} \hphantom{+9}\;\,}
+    \onslide<+->{& = -9}
+    \\
+    \onslide<+->{\mathcolor{cx}{x^2 - 4x + 4}}
+    \onslide<+->{+ \mathcolor{cy}{y^2 + 6y + 9}}
+    \onslide<5->{ & = -9}
+    \onslide<5->{\mathcolor{cx}{+ 4 }}
+    \onslide<6->{\mathcolor{cy}{+ 9 }}
+    \\
+    \onslide<+->{\mathcolor{cx}{(x-2)^2} \hspace{3mm} + \hspace{3mm}
+                 \mathcolor{cy}{(y+3)^2} \hspace{3mm} & = 4}
+    \\
+    \onslide<+->{(x-h)^2  \hspace{2.8mm} + \hspace{2.8mm} (y-k)^2 \hspace{3mm} & = r^2}
+  \end{align*}
+  \onslide<+->{Identificamos}
+  \[
+    \onslide<+->{h = 2}
+    \qquad
+    \onslide<+->{k = -3}
+    \qquad
+    \onslide<+->{r = 2}
+  \]
+  \onslide<+->{Circunferência de centro $(2,-3)$ e raio $2$}
+\end{resolution}
+}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Esboço}
+  \centering
+  \includegraphics{I-07-Identificacao-ex-A}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
