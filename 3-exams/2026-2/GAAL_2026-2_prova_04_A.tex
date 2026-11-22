@@ -1,0 +1,292 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{gaal}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{GAAL}{Prova 4 -- A}{2026-2}
+
+\bigskip
+Dada a matriz
+\(
+  B = \begin{pmatrix}
+    4 & 0 & 0 \\
+    0 & 3 & 1 \\
+    0 & 1 & 3
+  \end{pmatrix}
+\)
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Determine os autovalores de $B$
+
+\begin{answer}
+  Polinômio característico
+  \begin{align*}
+    p(\lambda)
+    & = \det(B-\lambda I) \\
+    & = (-1)^{1+1}(4-\lambda)
+        \begin{vmatrix}
+          3-\lambda & 1         \\
+          1         & 3-\lambda
+        \end{vmatrix}\\
+    & = (4-\lambda) \left[(3-\lambda)^2-1\right] \\
+    & = (4-\lambda)(9-6\lambda +\lambda^2 - 1) \\
+    & = (4-\lambda)(\lambda^2 - 6\lambda + 8)
+  \end{align*}
+  Temos \(\lambda=4\) ou \(\lambda^2 - 6\lambda + 8=0\)
+  \[
+    \Delta
+    = b^2 - 4ac
+    = (-6)^2 - 4 \times 1 \times 8
+    = 36 - 32
+    = 4
+  \]
+  \[
+    \sqrt{\Delta} = \sqrt{4} = 2
+  \]
+  \[
+    \lambda
+    = \frac{-b - \sqrt{\Delta}}{2a}
+    = \frac{6+2}{2}
+    = 4
+  \]
+  \[
+    \lambda
+    = \frac{-b - \sqrt{\Delta}}{2a}
+    = \frac{6-2}{2}
+    = 2
+  \]
+  O autovalor $4$ possui multiplicidade algébrica dois, isto é,
+  ele aparece duas vezes como solução da equação característica
+  \[
+    \lambda_1 = 2 \qquad
+    \lambda_2 = 4 \qquad
+    \lambda_3 = 4
+  \]
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Determine os autovetores e autoespaços de $B$
+
+\begin{answer}
+\begin{multicols}{2}
+\textbf{Autoespaço associado à $\lambda_1=2$}
+  \begin{align*}
+    (B-2I)\vec{v} & = \vec{0} \\
+    \begin{pmatrix}
+      2 & 0 & 0 \\
+      0 & 1 & 1 \\
+      0 & 1 & 1
+    \end{pmatrix}
+    \vetortri{x}{y}{z} & = \vetortri{0}{0}{0}
+  \end{align*}
+  O sistema é
+  \begin{align*}
+    2x  & = 0 \\
+    y+z & = 0
+  \end{align*}
+  com solução
+  \(
+    x=0
+  \) e
+  \(
+    z=-y
+  \)
+
+  tomando $y=1$ temos o autovetor
+  \[
+    \vec{v}_1 = \vetortri{0}{1}{-1}
+  \]
+  e o autoespaço
+  \[
+    E(2) = \ger \left\{ \vetortri{0}{1}{-1} \right\}
+  \]
+
+\bigskip
+\textbf{Autoespaço associado à $\lambda_2=\lambda_3=4$}
+  \begin{align*}
+    (B-4I)\vec{v} & = \vec{0} \\
+    \begin{pmatrix}
+      0 & 0  & 0  \\
+      0 & -1 & 1  \\
+      0 & 1  & -1
+    \end{pmatrix}
+    \vetortri{x}{y}{z} & = \vetortri{0}{0}{0}
+  \end{align*}
+  O valor de $x$ é livre e temos
+  \(
+    -y + z = 0
+  \) que corresponde a
+  \(
+    z = y
+  \).
+  A solução do sistema é
+  \[
+    \vetortri{x}{y}{z}
+    = x \vetortri{1}{0}{0}
+    + y \vetortri{0}{1}{1}
+  \]
+  Os dois autovetores são
+  \[
+    \vec{v}_2 = \vetortri{1}{0}{0} \qquad
+    \vec{v}_3 = \vetortri{0}{1}{1}
+  \]
+  O autoespaço é
+  \[
+    E(4) = \ger \left\{ \vetortri{1}{0}{0}, \vetortri{0}{1}{1} \right\}
+  \]
+\end{multicols}
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Diagonalize ortogonalmente a matriz $B$
+
+\begin{answer}
+  A matriz $B$ é simétrica, portanto poder ser diagonalizada ortogonalmente
+
+  Precisamos normalizar os autovetores de $B$
+
+  Normas
+  \begin{align*}
+    \norm{\vec{v}_1}
+    & = \norm{\vetortri{0}{1}{-1}}
+    = \sqrt{0^2 + 1^2 + (-1)^2}
+    = \sqrt{2}
+    \\[5mm]
+    \norm{\vec{v}_2}
+    & = \norm{\vetortri{1}{0}{0}}
+    = \sqrt{1^2 + 0^2 + 0^2}
+    = 1
+    \\[5mm]
+    \norm{\vec{v}_3}
+    & = \norm{\vetortri{0}{1}{1}}
+    = \sqrt{1^2 + 1^2 + 0^2}
+    = \sqrt{2}
+  \end{align*}
+
+  Autovetores normalizados
+  \begin{align*}
+    \vec{u}_1
+    & = \frac{\vec{v}_1}{\norm{\vec{v}_1}}
+    = \frac{1}{\sqrt{2}} \vetortri{0}{1}{-1}
+    = \Vetortri{0}{\sfrac{1}{\sqrt{2}}}{\sfrac{-1}{\sqrt{2}}}
+    \\[5mm]
+    \vec{u}_2
+    & = \frac{\vec{v}_2}{\norm{\vec{v}_2}}
+    = \frac{1}{1} \vetortri{1}{0}{0}
+    = \vetortri{1}{0}{0}
+    \\[5mm]
+    \vec{u}_3
+    & = \frac{\vec{v}_3}{\norm{\vec{v}_3}}
+    = \frac{1}{\sqrt{2}} \vetortri{0}{1}{1}
+    = \Vetortri{0}{\sfrac{1}{\sqrt{2}}}{\sfrac{1}{\sqrt{2}}}
+  \end{align*}
+
+  Matriz ortogonal
+  \[
+    P
+    = \begin{bmatrix}
+      \vec{u}_1 & \vec{u}_2 & \vec{u}_3
+    \end{bmatrix}
+    = \begin{bmatrix}
+      0                    & 1 & 0                   \\[3mm]
+      \dfrac{1}{\sqrt{2}}  & 0 & \dfrac{1}{\sqrt{2}} \\[3mm]
+      \dfrac{-1}{\sqrt{2}} & 0 & \dfrac{1}{\sqrt{2}}
+    \end{bmatrix}
+    = \frac{1}{\sqrt{2}} \begin{bmatrix}[c]
+      0  & \sqrt{2} & 0 \\
+      1  & 0        & 1 \\
+      -1 & 0        & 1
+    \end{bmatrix}
+  \]
+  Matriz diagonal
+  \[
+    D
+    = \diag( \lambda_1, \lambda_2, \lambda_3 )
+    = \begin{bmatrix}
+      2 & 0 & 0 \\
+      0 & 4 & 0 \\
+      0 & 0 & 4
+    \end{bmatrix}
+  \]
+\end{answer}
+
+% 04
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Mostre que as matrizes produzidas no exercício anterior realmente diagonalizam $B$
+
+\begin{answer}
+  Queremos mostrar que \(B = PDP^t\)
+  \begin{align*}
+    PDP^t
+    & = \frac{1}{\sqrt{2}} \begin{bmatrix}[c]
+      0  & \sqrt{2} & 0 \\
+      1  & 0        & 1 \\
+      -1 & 0        & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+      2 & 0 & 0 \\
+      0 & 4 & 0 \\
+      0 & 0 & 4
+    \end{bmatrix} P^t
+    \\
+    & = \frac{1}{\sqrt{2}} \begin{bmatrix}[c]
+       0  & 4\sqrt{2} & 0 \\
+       2  & 0         & 4 \\
+      -2  & 0         & 4
+    \end{bmatrix} P^t
+    \\
+    & = \frac{1}{\sqrt{2}} \begin{bmatrix}[c]
+       0  & 4\sqrt{2} & 0 \\
+       2  & 0         & 4 \\
+      -2  & 0         & 4
+    \end{bmatrix}
+    \frac{1}{\sqrt{2}} \begin{bmatrix}[c]
+      0        & 1 & -1  \\
+      \sqrt{2} & 0 &  0  \\
+      0        & 1 &  1
+    \end{bmatrix}
+    \\
+    & = \frac{1}{2} \begin{bmatrix}[c]
+      0 \times 0  + 4\sqrt{2} \sqrt{2}  + 4 \times 0 &
+      0 \times 1  + 4\sqrt{2} \times 0  + 0 \times 1 &
+      0 (-1)      + 4\sqrt{2} \times 0  + 4 \times 0
+      \\
+      2 \times 0 + 0 \sqrt{2} + 4 \times 0 &
+      2 \times 1 + 0 \times 0 + 4 \times 1 &
+      2 (-1)     + 0 \times 0 + 4 \times 1
+      \\
+      (-2) 0   + 0 \sqrt{2} + 4 \times 0 &
+      (-2) 1   + 0 \times 0 + 4 \times 1 &
+      (-2)(-1) + 0 \times 0 + 4 \times 1
+    \end{bmatrix}
+    \\
+    & = \frac{1}{2} \begin{bmatrix}[c]
+      8 & 0 & 0 \\
+      0 & 6 & 2 \\
+      0 & 2 & 6
+    \end{bmatrix}
+    \\
+    & = \begin{bmatrix}[c]
+      4 & 0 & 0 \\
+      0 & 3 & 1 \\
+      0 & 1 & 3
+    \end{bmatrix}
+  \end{align*}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
+

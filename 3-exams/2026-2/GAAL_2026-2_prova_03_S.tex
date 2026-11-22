@@ -1,0 +1,444 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{gaal}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{GAAL}{Prova 3 -- S}{2026-2}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Determine um vetor normal e uma equação cartesiana do plano que passa pelos pontos
+\[
+  P = (1,2,-1)
+  \qquad
+  Q = (3,1,0)
+  \qquad
+  R = (0,0,2)
+\]
+
+\begin{answer}
+  Calculamos dois vetores contidos no plano
+
+  \begin{align*}
+    \overrightarrow{PQ}
+    & = Q-P
+    \\
+    & = (3,1,0)-(1,2,-1)
+    \\
+    & = (2,-1,1)
+  \end{align*}
+
+  \begin{align*}
+    \overrightarrow{PR}
+    & = R-P
+    \\
+    & = (0,0,2)-(1,2,-1)
+    \\
+    & = (-1,-2,3)
+  \end{align*}
+
+  Um vetor normal ao plano é dado pelo produto vetorial
+
+  \begin{align*}
+    \vec{n}
+    & = \overrightarrow{PQ}\times\overrightarrow{PR}
+    \\
+    & = \begin{vmatrix}
+          \vec{i} & \vec{j} & \vec{k} \\
+          2       & -1      & 1       \\
+          -1      & -2      & 3
+        \end{vmatrix}
+    \\
+    & = \vec{i}(-3+2)
+      -\vec{j}(6+1)
+      +\vec{k}(-4-1)
+    \\
+    & = -\vec{i}-7\vec{j}-5\vec{k}
+    \\
+    & = (-1,-7,-5)
+  \end{align*}
+
+  Podemos utilizar também o vetor normal oposto
+  \[
+    \vec{n}=(1,7,5)
+  \]
+
+  A equação do plano que passa por $P=(1,2,-1)$ é
+
+  \begin{align*}
+    \vec{n}\cdot(X-P)&=0
+    \\
+    (1,7,5)\cdot(x-1,y-2,z+1)&=0
+    \\
+    (x-1)+7(y-2)+5(z+1)&=0
+    \\
+    x-1+7y-14+5z+5&=0
+    \\
+    x+7y+5z&=10
+  \end{align*}
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Determine a posição relativa entre os planos e obtenha uma equação paramétrica
+da interseção
+\[
+  \pi_1\colon 2x-y+z=3
+  \qquad
+  \pi_2\colon x+y-2z=0
+\]
+
+\begin{answer}
+  Os vetores normais dos planos são
+
+  \[
+    \vec{n}_1=(2,-1,1)
+    \qquad
+    \vec{n}_2=(1,1,-2)
+  \]
+
+  Como os vetores normais não são proporcionais, os planos são secantes
+  e sua interseção é uma reta
+
+  Um vetor diretor da reta é dado pelo produto vetorial dos vetores normais
+
+  \begin{align*}
+    \vec{d}
+    & = \vec{n}_1\times\vec{n}_2
+    \\
+    & = \begin{vmatrix}
+          \vec{i} & \vec{j} & \vec{k} \\
+          2       & -1      & 1       \\
+          1       & 1       & -2
+        \end{vmatrix}
+    \\
+    & = \vec{i}(2-1)
+      -\vec{j}(-4-1)
+      +\vec{k}(2+1)
+    \\
+    & = (1,5,3)
+  \end{align*}
+
+  Para encontrar um ponto da reta, fazemos $z=0$
+
+  \begin{align*}
+    2x-y&=3
+    \\
+    x+y&=0
+  \end{align*}
+
+  Somando as equações
+
+  \begin{align*}
+    3x&=3
+    \\
+    x&=1
+    \\
+    y&=-1
+  \end{align*}
+
+  Portanto, o ponto $P=(1,-1,0)$ pertence à reta de interseção
+
+  Uma equação paramétrica da reta é
+
+  \[
+    (x,y,z)=(1,-1,0)+t(1,5,3)
+  \]
+
+  Ou, equivalentemente,
+
+  \[
+    \begin{cases}
+      x=1+t\\
+      y=-1+5t\\
+      z=3t
+    \end{cases}
+    \qquad t\in\mathbb{R}
+  \]
+\end{answer}
+
+%% 03
+%%------------------------------------------------------------------------------%
+%\exercise{20\%}
+%Determine o ângulo entre os vetores
+%\[
+%  \vec{v}=(1,2,-2)
+%  \qquad
+%  \vec{w}=(2,-1,1)
+%\]
+%
+%\begin{answer}
+%  Calculamos inicialmente o produto escalar
+%
+%  \begin{align*}
+%    \vec{v}\cdot\vec{w}
+%    & = 1\cdot 2+2\cdot(-1)+(-2)\cdot 1
+%    \\
+%    & = 2-2-2
+%    \\
+%    & = -2
+%  \end{align*}
+%
+%  As normas dos vetores são
+%
+%  \begin{align*}
+%    \norm{\vec{v}}
+%    & = \sqrt{1^2+2^2+(-2)^2}
+%    \\
+%    & = \sqrt{1+4+4}
+%    \\
+%    & = 3
+%  \end{align*}
+%
+%  \begin{align*}
+%    \norm{\vec{w}}
+%    & = \sqrt{2^2+(-1)^2+1^2}
+%    \\
+%    & = \sqrt{4+1+1}
+%    \\
+%    & = \sqrt{6}
+%  \end{align*}
+%
+%  Pela definição de produto escalar
+%
+%  \begin{align*}
+%    \cos(\theta)
+%    & = \frac{\vec{v}\cdot\vec{w}}
+%             {\norm{\vec{v}}\norm{\vec{w}}}
+%    \\
+%    & = \frac{-2}{3\sqrt{6}}
+%  \end{align*}
+%
+%  Portanto
+%
+%  \[
+%    \theta=\arccos\left(-\frac{2}{3\sqrt{6}}\right)
+%  \]
+%
+%  \[
+%    {\color{gray}
+%      \theta\approx\ang{105.79}
+%    }
+%  \]
+%\end{answer}
+
+% 04
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Verifique se os vetores
+\[
+  \vec{v}_1=(1,2,0)
+  \qquad
+  \vec{v}_2=(0,1,1)
+  \qquad
+  \vec{w}=(1,4,2)
+\]
+são linearmente independentes
+
+Caso sejam linearmente dependentes, determine uma relação de dependência
+linear entre eles
+
+\begin{answer}
+  Procuramos escalares $a$ e $b$ tais que
+
+  \[
+    a\vec{v}_1+b\vec{v}_2=\vec{w}
+  \]
+
+  Substituindo os vetores
+
+  \[
+    a(1,2,0)+b(0,1,1)=(1,4,2)
+  \]
+
+  Comparando as coordenadas, obtemos o sistema
+
+  \[
+    \begin{cases}
+      a=1\\
+      2a+b=4\\
+      b=2
+    \end{cases}
+  \]
+
+  A solução é $a=1$ e $b=2$
+
+  Portanto
+
+  \[
+    \vec{w}=\vec{v}_1+2\vec{v}_2
+  \]
+
+  Assim, os três vetores são linearmente dependentes
+
+  Uma relação de dependência linear é
+
+  \[
+    \vec{v}_1+2\vec{v}_2-\vec{w}=\vec{0}
+  \]
+
+  Além disso, os vetores $\vec{v}_1$ e $\vec{v}_2$ são
+  linearmente independentes, pois
+
+  \[
+    a\vec{v}_1+b\vec{v}_2=\vec{0}
+  \]
+
+  implica
+
+  \[
+    \begin{cases}
+      a=0\\
+      2a+b=0\\
+      b=0
+    \end{cases}
+  \]
+
+  Logo, $a=b=0$
+\end{answer}
+
+% 05
+%------------------------------------------------------------------------------%
+\exercise{20\%}
+Obtenha, pelo processo de Gram--Schmidt, uma base ortonormal que gere
+o mesmo espaço que os vetores
+\[
+  \vec{v}_1=(1,1,0)
+  \qquad
+  \vec{v}_2=(1,0,1)
+  \qquad
+  \vec{v}_3=(0,1,1)
+\]
+
+\begin{answer}
+  Aplicamos o processo de Gram--Schmidt
+
+  **Primeiro vetor**
+
+  \begin{align*}
+    \vec{u}_1
+    & = \vec{v}_1
+    \\
+    & = (1,1,0)
+  \end{align*}
+
+  Sua norma é
+
+  \begin{align*}
+    \norm{\vec{u}_1}
+    & = \sqrt{1^2+1^2}
+    \\
+    & = \sqrt{2}
+  \end{align*}
+
+  Portanto
+
+  \[
+    \vec{e}_1
+    = \frac{\vec{u}_1}{\norm{\vec{u}_1}}
+    = \frac{1}{\sqrt{2}}(1,1,0)
+  \]
+
+  **Segundo vetor**
+
+  \begin{align*}
+    \vec{u}_2
+    & = \vec{v}_2
+      -\frac{\vec{v}_2\cdot\vec{u}_1}
+             {\norm{\vec{u}_1}^2}\vec{u}_1
+    \\
+    & = (1,0,1)
+      -\frac{1}{2}(1,1,0)
+    \\
+    & = \left(\frac{1}{2},-\frac{1}{2},1\right)
+  \end{align*}
+
+  Sua norma é
+
+  \begin{align*}
+    \norm{\vec{u}_2}
+    & = \sqrt{\frac{1}{4}+\frac{1}{4}+1}
+    \\
+    & = \sqrt{\frac{3}{2}}
+    \\
+    & = \frac{\sqrt{6}}{2}
+  \end{align*}
+
+  Assim
+
+  \begin{align*}
+    \vec{e}_2
+    & = \frac{\vec{u}_2}{\norm{\vec{u}_2}}
+    \\
+    & = \frac{2}{\sqrt{6}}
+      \left(\frac{1}{2},-\frac{1}{2},1\right)
+    \\
+    & = \frac{1}{\sqrt{6}}(1,-1,2)
+  \end{align*}
+
+  **Terceiro vetor**
+
+  \begin{align*}
+    \vec{u}_3
+    & = \vec{v}_3
+      -\frac{\vec{v}_3\cdot\vec{u}_1}
+             {\norm{\vec{u}_1}^2}\vec{u}_1
+      -\frac{\vec{v}_3\cdot\vec{u}_2}
+             {\norm{\vec{u}_2}^2}\vec{u}_2
+    \\
+    & = (0,1,1)
+      -\frac{1}{2}(1,1,0)
+      -\frac{1}{3}
+       \left(\frac{1}{2},-\frac{1}{2},1\right)
+    \\
+    & = \left(-\frac{2}{3},\frac{2}{3},\frac{2}{3}\right)
+  \end{align*}
+
+  Sua norma é
+
+  \begin{align*}
+    \norm{\vec{u}_3}
+    & = \sqrt{
+        \frac{4}{9}+\frac{4}{9}+\frac{4}{9}
+      }
+    \\
+    & = \sqrt{\frac{4}{3}}
+    \\
+    & = \frac{2}{\sqrt{3}}
+  \end{align*}
+
+  Portanto
+
+  \begin{align*}
+    \vec{e}_3
+    & = \frac{\vec{u}_3}{\norm{\vec{u}_3}}
+    \\
+    & = \frac{\sqrt{3}}{2}
+      \left(-\frac{2}{3},\frac{2}{3},\frac{2}{3}\right)
+    \\
+    & = \frac{1}{\sqrt{3}}(-1,1,1)
+  \end{align*}
+
+  A base ortonormal procurada é
+
+  \[
+    \left\{
+      \frac{1}{\sqrt{2}}(1,1,0)
+      \qquad
+      \frac{1}{\sqrt{6}}(1,-1,2)
+      \qquad
+      \frac{1}{\sqrt{3}}(-1,1,1)
+    \right\}
+  \]
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

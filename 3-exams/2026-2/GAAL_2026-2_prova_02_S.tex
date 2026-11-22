@@ -1,0 +1,329 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{gaal}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{GAAL}{Prova 2 -- S}{2026-2}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{20\%}
+Determine o volume do paralelogramo determinado pelos vetores
+\[
+  \qquad
+  \vec{p} = \vetortri{1}{2}{-1}
+  \qquad
+  \vec{q} = \vetortri{2}{-1}{3}
+  \qquad
+  \vec{r} = \vetortri{0}{4}{1}
+\]
+
+\begin{answer}
+  \begin{align*}
+    p
+    & = \left(\vec{p} \times \vec{q}\right) \cdot \vec{r} \\
+    & = \begin{vmatrix}
+          1 & 2  & -1 \\
+          2 & -1 & 3  \\
+          0 & 4  & 1
+        \end{vmatrix}
+    \\
+    & = 1 \begin{vmatrix}
+        -1 & 3 \\
+        4  & 1
+      \end{vmatrix}
+      - 2 \begin{vmatrix}
+        2 & 3 \\
+        0 & 1
+      \end{vmatrix}
+      - 1 \begin{vmatrix}
+        2  & -1 \\
+        0  & 4
+      \end{vmatrix}
+    \\
+    & = (-1-12) - 2(2) - (8)
+    \\
+    & = -13 - 4 - 8
+    \\
+    & = -25
+  \end{align*}
+  Volume
+  \[
+    V = \abs{p} = 25
+  \]
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{20\%}
+Determine o ângulo entre os vetores
+\(
+  \vec{v} = \vetortri{2}{-1}{2}
+\) e
+\(
+  \vec{w} = \vetortri{-1}{3}{2}
+\)
+
+\begin{answer}
+  \begin{align*}
+    \vec{v} \cdot \vec{w}
+    & = \vetortri{2}{-1}{2} \cdot \vetortri{-1}{3}{2}
+    \\
+    & = 2(-1) + (-1)(3) + 2(2)
+    \\
+    & = -2 - 3 + 4
+    \\
+    & = -1
+  \end{align*}
+
+  \begin{align*}
+    \norm{\vec{v}}
+    & = \sqrt{2^2 + (-1)^2 + 2^2}
+    \\
+    & = \sqrt{4+1+4}
+    \\
+    & = 3
+  \end{align*}
+
+  \begin{align*}
+    \norm{\vec{w}}
+    & = \sqrt{(-1)^2 + 3^2 + 2^2}
+    \\
+    & = \sqrt{1+9+4}
+    \\
+    & = \sqrt{14}
+  \end{align*}
+
+  \begin{align*}
+    \cos(\theta)
+    & = \frac{\vec{v}\cdot\vec{w}}
+             {\norm{\vec{v}}\norm{\vec{w}}}
+    \\
+    & = \frac{-1}{3\sqrt{14}}
+  \end{align*}
+
+  \[
+    \theta = \arccos\left(-\frac{1}{3\sqrt{14}}\right)
+  \]
+
+  \[
+    {\color{gray}
+      \theta \approx \ang{95.11}
+    }
+  \]
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{20\%}
+Determine a norma do vetor
+\(
+  \vec{\psi}
+  = 2\vetortri{1}{-2}{3}
+  - 3\vetortri{2}{1}{-1}
+  + 2\vetortri{-1}{0}{2}
+\)
+
+\begin{answer}
+  \begin{align*}
+    \vec{\psi}
+    & = 2\vetortri{1}{-2}{3}
+      - 3\vetortri{2}{1}{-1}
+      + 2\vetortri{-1}{0}{2}
+    \\
+    & = \vetortri{2}{-4}{6}
+      + \vetortri{-6}{-3}{3}
+      + \vetortri{-2}{0}{4}
+    \\
+    & = \vetortri{-6}{-7}{13}
+  \end{align*}
+
+  \begin{align*}
+    \norm{\vec{\psi}}
+    & = \sqrt{(-6)^2+(-7)^2+13^2}
+    \\
+    & = \sqrt{36+49+169}
+    \\
+    & = \sqrt{254}
+  \end{align*}
+\end{answer}
+
+% 04
+%------------------------------------------------------------------------------%
+\exercise{20\%}
+Calcule o determinante da matriz
+\[
+  A =
+  \begin{pmatrix}
+    3 & 1 & 0 & 1 \\
+    1 & 3 & 1 & 0 \\
+    0 & 1 & 3 & 1 \\
+    1 & 0 & 1 & 3
+  \end{pmatrix}
+\]
+e determine se a matriz é invertível
+
+\begin{answer}
+  Expandindo o determinante pela primeira linha
+
+  \begin{align*}
+    \det(A)
+    & = 3M_{11} - M_{12} - M_{14}
+  \end{align*}
+
+  Calculando os menores
+
+  \begin{align*}
+    M_{11}
+    & = \begin{vmatrix}
+          3 & 1 & 0 \\
+          1 & 3 & 1 \\
+          0 & 1 & 3
+        \end{vmatrix}
+    \\
+    & = 3(9-1) - 1(3)
+    \\
+    & = 24-3
+    \\
+    & = 21
+  \end{align*}
+
+  \begin{align*}
+    M_{12}
+    & = \begin{vmatrix}
+          1 & 1 & 0 \\
+          0 & 3 & 1 \\
+          1 & 1 & 3
+        \end{vmatrix}
+    \\
+    & = 1(9-1) - 1(0-3)
+    \\
+    & = 8+1
+    \\
+    & = 9
+  \end{align*}
+
+  \begin{align*}
+    M_{14}
+    & = \begin{vmatrix}
+          1 & 3 & 1 \\
+          0 & 1 & 3 \\
+          1 & 0 & 1
+        \end{vmatrix}
+    \\
+    & = 1(1) - 3(0-3) + 1(0-1)
+    \\
+    & = 1+9-1
+    \\
+    & = 9
+  \end{align*}
+
+  Portanto
+
+  \begin{align*}
+    \det(A)
+    & = 3(21)-9-9
+    \\
+    & = 63-18
+    \\
+    & = 45
+  \end{align*}
+
+  Como
+  \[
+    \det(A) = 45 \neq 0
+  \]
+  a matriz $A$ é invertível
+\end{answer}
+
+% 05
+%------------------------------------------------------------------------------%
+\exercise{20\%}
+Encontre o vetor unitário na direção e sentido de
+\(
+  \vec{p}\times\vec{q}
+\), sendo
+\(
+  \vec{p} = \vetortri{1}{2}{2}
+\) e
+\(
+  \vec{q} = \vetortri{2}{-1}{1}
+\)
+
+\begin{answer}
+  Inicialmente, calculamos o produto vetorial
+
+  \begin{align*}
+    \vec{\psi}
+    & = \vec{p}\times\vec{q}
+    \\
+    & = \begin{vmatrix}
+          \vec{i} & \vec{j} & \vec{k} \\
+          1       & 2       & 2       \\
+          2       & -1      & 1
+        \end{vmatrix}
+    \\
+    & = \vec{i}
+        \begin{vmatrix}
+          2 & 2 \\
+          -1 & 1
+        \end{vmatrix}
+      - \vec{j}
+        \begin{vmatrix}
+          1 & 2 \\
+          2 & 1
+        \end{vmatrix}
+      + \vec{k}
+        \begin{vmatrix}
+          1 & 2 \\
+          2 & -1
+        \end{vmatrix}
+    \\
+    & = \vec{i}(2+2)
+      - \vec{j}(1-4)
+      + \vec{k}(-1-4)
+    \\
+    & = 4\vec{i}+3\vec{j}-5\vec{k}
+    \\
+    & = \vetortri{4}{3}{-5}
+  \end{align*}
+
+  Calculamos agora a norma do vetor
+
+  \begin{align*}
+    \norm{\vec{\psi}}
+    & = \sqrt{4^2+3^2+(-5)^2}
+    \\
+    & = \sqrt{16+9+25}
+    \\
+    & = \sqrt{50}
+    \\
+    & = 5\sqrt{2}
+  \end{align*}
+
+  O vetor unitário procurado é
+
+  \begin{align*}
+    \hat{\psi}
+    & = \frac{\vec{\psi}}{\norm{\vec{\psi}}}
+    \\
+    & = \frac{1}{5\sqrt{2}}\vetortri{4}{3}{-5}
+    \\
+    & = \Vetortri{
+          \frac{4}{5\sqrt{2}}
+        }{
+          \frac{3}{5\sqrt{2}}
+        }{
+          \frac{-5}{5\sqrt{2}}
+        }
+  \end{align*}
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

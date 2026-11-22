@@ -1,0 +1,490 @@
+%------------------------------------------------------------------------------%
+\documentclass[a4paper,12pt,fleqn]{article}
+
+\usepackage{gaal}
+
+\ShowAnswers
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\makeHeader{GAAL}{Prova 1 -- S}{2026-2}
+
+% 01
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Dados
+\[
+A=
+\begin{bmatrix}
+  1 &  2 & -1\\
+  0 &  1 &  3
+\end{bmatrix}
+\qquad
+B=
+\begin{bmatrix}
+  2 & -1 &  0\\
+ -1 &  2 &  1
+\end{bmatrix}
+\qquad
+C=
+\begin{bmatrix}
+  1 &  0 &  2\\
+  2 & -1 &  1
+\end{bmatrix}
+\]
+calcule
+\[
+(A+B)C^t+C(B^t+A^t)
+\]
+
+\begin{answer}
+Utilizamos a propriedade da transposta de uma soma
+\[
+B^t+A^t=(A+B)^t
+\]
+Assim
+\begin{align*}
+&(A+B)C^t+C(B^t+A^t)
+\\
+&=(A+B)C^t+C(A+B)^t
+\end{align*}
+Primeiramente
+\begin{align*}
+A+B
+&=
+\begin{bmatrix}
+  1 &  2 & -1\\
+  0 &  1 &  3
+\end{bmatrix}
++
+\begin{bmatrix}
+  2 & -1 &  0\\
+ -1 &  2 &  1
+\end{bmatrix}
+\\[2mm]
+&=
+\begin{bmatrix}
+  3 & 1 & -1\\
+ -1 & 3 &  4
+\end{bmatrix}
+\end{align*}
+Calculamos o primeiro produto
+\begin{align*}
+(A+B)C^t
+&=
+\begin{bmatrix}
+  3 & 1 & -1\\
+ -1 & 3 &  4
+\end{bmatrix}
+\begin{bmatrix}
+  1 & 2\\
+  0 & -1\\
+  2 & 1
+\end{bmatrix}
+\\[2mm]
+&=
+\begin{bmatrix}
+  3-2 & 6-1-1\\
+ -1+8 & -2-3+4
+\end{bmatrix}
+\\[2mm]
+&=
+\begin{bmatrix}
+  1 & 4\\
+  7 & -1
+\end{bmatrix}
+\end{align*}
+Pela propriedade da transposta de um produto
+\[
+\left[(A+B)C^t\right]^t=C(A+B)^t
+\]
+Portanto
+\[
+C(B^t+A^t)=
+\begin{bmatrix}
+  1 & 7\\
+  4 & -1
+\end{bmatrix}
+\]
+Somando as matrizes
+\begin{align*}
+&(A+B)C^t+C(B^t+A^t)
+\\[2mm]
+&=
+\begin{bmatrix}
+  1 & 4\\
+  7 & -1
+\end{bmatrix}
++
+\begin{bmatrix}
+  1 & 7\\
+  4 & -1
+\end{bmatrix}
+\\[2mm]
+&=
+\begin{bmatrix}
+  2 & 11\\
+  11 & -2
+\end{bmatrix}
+\end{align*}
+Portanto
+\[
+\boxed{
+\begin{bmatrix}
+  2 & 11\\
+  11 & -2
+\end{bmatrix}
+}
+\]
+Observe que o resultado é uma matriz simétrica.
+\end{answer}
+
+% 02
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Resolva o sistema linear por Gauss--Jordan
+\[
+\systeme[sort={x,y,z,w}]{
+  2x+y-z=9,
+  x+y+z+4w=4,
+  -x+2y+z-w=0
+}
+\]
+
+\begin{answer}
+A matriz aumentada do sistema é
+\[
+\begin{amatrix}{4}
+  2 & 1 & -1 &  0 & 9\\
+  1 & 1 &  1 &  4 & 4\\
+ -1 & 2 &  1 & -1 & 0
+\end{amatrix}
+\]
+Trocamos a primeira linha pela segunda
+\[
+L_1\leftrightarrow L_2
+\]
+Obtemos
+\[
+\begin{amatrix}{4}
+  1 & 1 &  1 &  4 & 4\\
+  2 & 1 & -1 &  0 & 9\\
+ -1 & 2 &  1 & -1 & 0
+\end{amatrix}
+\]
+Utilizamos a primeira linha para eliminar os elementos abaixo do primeiro pivô
+\[
+L_2\leftarrow L_2-2L_1
+\]
+\[
+L_3\leftarrow L_3+L_1
+\]
+Assim
+\[
+\begin{amatrix}{4}
+  1 & 1  &  1 &  4 & 4\\
+  0 & -1 & -3 & -8 & 1\\
+  0 & 3  &  2 &  3 & 4
+\end{amatrix}
+\]
+Multiplicamos a segunda linha por $-1$
+\[
+L_2\leftarrow -L_2
+\]
+Logo
+\[
+\begin{amatrix}{4}
+  1 & 1 & 1 & 4 & 4\\
+  0 & 1 & 3 & 8 & -1\\
+  0 & 3 & 2 & 3 & 4
+\end{amatrix}
+\]
+Eliminamos o elemento abaixo do segundo pivô
+\[
+L_3\leftarrow L_3-3L_2
+\]
+Obtemos
+\[
+\begin{amatrix}{4}
+  1 & 1 &  1 &  4 &  4\\
+  0 & 1 &  3 &  8 & -1\\
+  0 & 0 & -7 & -21 & 7
+\end{amatrix}
+\]
+Dividimos a terceira linha por $-7$
+\[
+L_3\leftarrow -\frac{1}{7}L_3
+\]
+Assim
+\[
+\begin{amatrix}{4}
+  1 & 1 & 1 & 4 &  4\\
+  0 & 1 & 3 & 8 & -1\\
+  0 & 0 & 1 & 3 & -1
+\end{amatrix}
+\]
+Eliminamos os elementos acima do terceiro pivô
+\[
+L_2\leftarrow L_2-3L_3
+\]
+\[
+L_1\leftarrow L_1-L_3
+\]
+Resulta
+\[
+\begin{amatrix}{4}
+  1 & 1 & 0 &  1 & 5\\
+  0 & 1 & 0 & -1 & 2\\
+  0 & 0 & 1 &  3 & -1
+\end{amatrix}
+\]
+Finalmente eliminamos o elemento acima do segundo pivô
+\[
+L_1\leftarrow L_1-L_2
+\]
+Obtemos
+\[
+\begin{amatrix}{4}
+  1 & 0 & 0 &  2 &  3\\
+  0 & 1 & 0 & -1 &  2\\
+  0 & 0 & 1 &  3 & -1
+\end{amatrix}
+\]
+A matriz escalonada reduzida representa o sistema
+\[
+\systeme[sort={x,y,z,w}]{
+  x+2w=3,
+  y-w=2,
+  z+3w=-1
+}
+\]
+A variável $w$ é livre
+\[
+w=t
+\qquad t\in\R
+\]
+Então
+\begin{align*}
+x&=3-2t\\
+y&=2+t\\
+z&=-1-3t
+\end{align*}
+Portanto, a solução geral é
+\[
+\begin{pmatrix}
+x\\y\\z\\w
+\end{pmatrix}
+=
+\begin{pmatrix}
+3-2t\\
+2+t\\
+-1-3t\\
+t
+\end{pmatrix}
+\]
+ou
+\[
+\boxed{
+\begin{pmatrix}
+x\\y\\z\\w
+\end{pmatrix}
+=
+\begin{pmatrix}
+3\\2\\-1\\0
+\end{pmatrix}
++
+t
+\begin{pmatrix}
+-2\\1\\-3\\1
+\end{pmatrix}
+\qquad t\in\R
+}
+\]
+\end{answer}
+
+% 03
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Utilize o método de Gauss--Jordan para inverter a matriz
+\[
+A=
+\begin{bmatrix}
+  1 & 2 & 1\\
+  2 & 5 & 3\\
+  1 & 1 & 2
+\end{bmatrix}
+\]
+
+\begin{answer}
+Construímos a matriz aumentada
+\[
+\begin{amatrix}[3]{3}
+  1 & 2 & 1 & 1 & 0 & 0\\
+  2 & 5 & 3 & 0 & 1 & 0\\
+  1 & 1 & 2 & 0 & 0 & 1
+\end{amatrix}
+\]
+Eliminamos os elementos abaixo do primeiro pivô
+\[
+L_2\leftarrow L_2-2L_1
+\]
+\[
+L_3\leftarrow L_3-L_1
+\]
+Obtemos
+\[
+\begin{amatrix}[3]{3}
+  1 &  2 &  1 &  1 &  0 &  0\\
+  0 &  1 &  1 & -2 &  1 &  0\\
+  0 & -1 &  1 & -1 &  0 &  1
+\end{amatrix}
+\]
+Eliminamos o elemento abaixo do segundo pivô
+\[
+L_3\leftarrow L_3+L_2
+\]
+Assim
+\[
+\begin{amatrix}[3]{3}
+  1 & 2 & 1 &  1 & 0 & 0\\
+  0 & 1 & 1 & -2 & 1 & 0\\
+  0 & 0 & 2 & -3 & 1 & 1
+\end{amatrix}
+\]
+Dividimos a terceira linha por $2$
+\[
+L_3\leftarrow\frac{1}{2}L_3
+\]
+Logo
+\[
+\begin{amatrix}[3]{3}
+  1 & 2 & 1 &  1 & 0 & 0\\
+  0 & 1 & 1 & -2 & 1 & 0\\
+  0 & 0 & 1 & -\frac{3}{2} & \frac{1}{2} & \frac{1}{2}
+\end{amatrix}
+\]
+Eliminamos os elementos acima do terceiro pivô
+\[
+L_2\leftarrow L_2-L_3
+\]
+\[
+L_1\leftarrow L_1-L_3
+\]
+Obtemos
+\[
+\begin{amatrix}[3]{3}
+  1 & 2 & 0 & \frac{5}{2} & -\frac{1}{2} & -\frac{1}{2}\\
+  0 & 1 & 0 & -\frac{1}{2} & \frac{1}{2} & -\frac{1}{2}\\
+  0 & 0 & 1 & -\frac{3}{2} & \frac{1}{2} & \frac{1}{2}
+\end{amatrix}
+\]
+Finalmente eliminamos o elemento acima do segundo pivô
+\[
+L_1\leftarrow L_1-2L_2
+\]
+Resulta
+\[
+\begin{amatrix}[3]{3}
+  1 & 0 & 0 & \frac{7}{2} & -\frac{3}{2} & \frac{1}{2}\\
+  0 & 1 & 0 & -\frac{1}{2} & \frac{1}{2} & -\frac{1}{2}\\
+  0 & 0 & 1 & -\frac{3}{2} & \frac{1}{2} & \frac{1}{2}
+\end{amatrix}
+\]
+Portanto
+\[
+\boxed{
+A^{-1}=
+\begin{bmatrix}
+ \frac{7}{2} & -\frac{3}{2} &  \frac{1}{2}\\
+-\frac{1}{2} &  \frac{1}{2} & -\frac{1}{2}\\
+-\frac{3}{2} &  \frac{1}{2} &  \frac{1}{2}
+\end{bmatrix}
+}
+\]
+\end{answer}
+
+% 04
+%------------------------------------------------------------------------------%
+\exercise{25\%}
+Utilize a inversa para resolver o sistema linear
+\[
+\systeme{
+  x+2y+z=7,
+  2x+5y+3z=13,
+  x+y+2z=8
+}
+\]
+\hint{Utilize a matriz inversa calculada no exercício anterior}
+
+\begin{answer}
+A matriz do sistema é
+\[
+A=
+\begin{bmatrix}
+  1 & 2 & 1\\
+  2 & 5 & 3\\
+  1 & 1 & 2
+\end{bmatrix}
+\]
+e o vetor dos termos independentes é
+\[
+\mathbf{b}=
+\begin{bmatrix}
+7\\13\\8
+\end{bmatrix}
+\]
+Do exercício anterior temos
+\[
+A^{-1}=
+\begin{bmatrix}
+ \frac{7}{2} & -\frac{3}{2} &  \frac{1}{2}\\
+-\frac{1}{2} &  \frac{1}{2} & -\frac{1}{2}\\
+-\frac{3}{2} &  \frac{1}{2} &  \frac{1}{2}
+\end{bmatrix}
+\]
+A solução do sistema é
+\begin{align*}
+\mathbf{x}
+&=A^{-1}\mathbf{b}
+\\[2mm]
+&=
+\begin{bmatrix}
+ \frac{7}{2} & -\frac{3}{2} &  \frac{1}{2}\\
+-\frac{1}{2} &  \frac{1}{2} & -\frac{1}{2}\\
+-\frac{3}{2} &  \frac{1}{2} &  \frac{1}{2}
+\end{bmatrix}
+\begin{bmatrix}
+7\\13\\8
+\end{bmatrix}
+\\[2mm]
+&=
+\begin{bmatrix}
+\frac{49}{2}-\frac{39}{2}+\frac{8}{2}\\
+-\frac{7}{2}+\frac{13}{2}-\frac{8}{2}\\
+-\frac{21}{2}+\frac{13}{2}+\frac{8}{2}
+\end{bmatrix}
+\\[2mm]
+&=
+\begin{bmatrix}
+\frac{18}{2}\\
+-\frac{2}{2}\\
+0
+\end{bmatrix}
+\\[2mm]
+&=
+\begin{bmatrix}
+9\\-1\\0
+\end{bmatrix}
+\end{align*}
+Portanto
+\[
+\boxed{
+(x,y,z)=(9,-1,0)
+}
+\]
+\end{answer}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%
