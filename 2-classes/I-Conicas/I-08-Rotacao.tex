@@ -1,0 +1,194 @@
+%------------------------------------------------------------------------------%
+\documentclass[fleqn,aspectratio=169,12pt]{beamer}
+
+\usepackage{gaal}
+
+\title{Cônicas Rotacionadas}
+
+%------------------------------------------------------------------------------%
+\begin{document}
+
+\addtitle
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Cônicas}
+  Equação geral
+  \[
+    ax^2 + 2bxy + cy^2 + dx + ey + f = 0
+  \]
+
+  \pause
+  Forma matricial
+  \[
+    v^tAv \;+\; B^tv \;+\; f = 0
+  \]
+  \pause
+  com
+  \[
+    \pause
+    v = \begin{bmatrix} x \\ y \end{bmatrix}
+    \qquad
+    \pause
+    A = \begin{bmatrix}
+      a & b \\
+      b & c
+    \end{bmatrix}
+    \qquad
+    \pause
+    B = \begin{bmatrix} d \\ e \end{bmatrix}
+    \qquad
+    \pause
+    f \in \R
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Identificação de Uma Cônica}
+
+  \emph{Forma canônica}
+
+  \pause
+  \qquad cônica centrada na origem e alinhada com os eixos
+
+  \pause
+  \bigskip
+  \emph{Cônica transladada}
+
+  \pause
+  \qquad é colocada na forma canônica pela transformação de coordenadas
+  \[
+    \pause
+    \qquad
+    X = x - h
+    \qquad
+    Y = y - k
+  \]
+  \pause
+  \qquad pode ser necessário completar quadrados
+
+  \pause
+  \bigskip
+  \emph{Se a cônica estiver rotacionada?}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\framedgraphic*{Translação e Rotação}{transformacao_rotacao-1}{}
+\framedgraphic*{Translação e Rotação}{transformacao_rotacao-2}{}
+\framedgraphic*{Translação e Rotação}{transformacao_rotacao-3}{}
+\framedgraphic*{Translação e Rotação}{transformacao_rotacao-4}{}
+\framedgraphic*{Translação e Rotação}{transformacao_rotacao-5}{}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Rotação}
+  A rotação da cônica está relacionada ao termo misto \(2bxy\)
+
+  \pause
+  \bigskip
+  Se \(b=0\) temos uma cônica alinhada com os eixos
+
+  \pause
+  \bigskip
+  Precisamos diagonalizar a matriz $A$ que é simétrica
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Diagonalização da Parte Quadrática}
+  Como \(A\) é \emph{simétrica}
+
+  \pause
+  As matrizes
+
+  \pause
+  $D$ \emph{diagonal},
+  \pause
+  com os autovalores de $A$
+  \[
+    \pause
+    D = \diag(\lambda_1, \lambda_2)
+  \]
+
+  \pause
+  $P$ \emph{ortogonal},
+  \pause
+  com os autovetores de $A$
+  \[
+    \pause
+    P = \left[ \, v_1\;, v_2\, \right]
+  \]
+  \pause
+  Satisfazem
+  \[
+    \pause
+    A = P D P^t
+    \pause
+    \qquad\text{ou}\qquad
+    P^t A P = D
+  \]
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Mudança de Variáveis}
+  \onslide<+->{Definimos novas variáveis \(w=\vetor{\mu}{\nu}\)}
+  \[
+    \onslide<+->{w = P^t v}
+    \onslide<+->{\qquad\text{ou}\qquad v = Pw}
+  \]
+  \onslide<+->{Então}
+  \begin{align*}
+    \onslide<+->{v^t A v}
+    \onslide<+->{& = v^t P D P^t v \\}
+    \onslide<+->{& = (P^tv)^t D P^t v \\}
+    \onslide<+->{& = w^t D w}
+  \end{align*}
+  \onslide<+->{Nas novas variáveis, $w$,}
+  \onslide<+->{a matriz não possui termo misto}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\begin{frame}{Transformação da Equação Matricial}
+\begin{columns}
+\column{0.46\textwidth}
+  \onslide<+->{Aplicando a transformação \(v = Pw\)}
+  \begin{align*}
+    \onslide<+->{v^tAv \;+\; B^tv \;+\; f               & = 0 \\}
+    \onslide<+->{(Pw)^tA(Pw) \;+\; B^t(Pw) \;+\; f      & = 0 \\}
+    \onslide<+->{w^t (P^t A P) w \;+\; (B^tP) w \;+\; f & = 0 \\}
+    \onslide<+->{\emph{w^t D w \;+\; E^t w \;+\; f}     & = \emph{0}}
+  \end{align*}
+\column{0.4\textwidth}
+  \emph{\[
+    \onslide<+->{D \;=\; P^t A P}
+    \onslide<+->{  \;=\; \diag(\lambda_1, \lambda_2)}
+  \]}
+  \emph{\[
+    \onslide<+->{E \;=\; PB}
+    \onslide<+->{  \;=\; \left[ \, v_1\; v_2\, \right] \begin{bmatrix} d \\ e \end{bmatrix}}
+  \]}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------------------------------------%
+\input{ex/I-08-Rotacao-ex-1}
+\input{ex/I-08-Rotacao-ex-2}
+\input{ex/I-08-Rotacao-ex-3}
+\input{ex/I-08-Rotacao-ex-4}
+\input{ex/I-08-Rotacao-ex-5}
+\input{ex/I-08-Rotacao-ex-6}
+\input{ex/I-08-Rotacao-ex-7}
+
+%------------------------------------------------------------------------------%
+%\section{Lista Mínima}
+%
+%%------------------------------------------------------------------------------%
+%\begin{frame}{Lista Mínima}
+%  \begin{enumerate}
+%    \item
+%  \end{enumerate}
+%
+%  \vfill
+%  Atenção: A prova é baseada no livro, não nas apresentações
+%\end{frame}
+
+%------------------------------------------------------------------------------%
+\end{document}
+%------------------------------------------------------------------------------%

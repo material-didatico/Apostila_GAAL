@@ -1,0 +1,237 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Considerando a equação
+  \[
+    x^2+8xy+y^2+10x+10y-5=0
+  \]
+  \vspace{-\baselineskip}
+  \begin{enumerate}
+    \item escreva a equação na forma matricial
+    \item diagonalize a matriz da parte quadrática
+    \item faça a mudança de variáveis
+    \item transforme a equação e complete os quadrados
+    \item identifique a cônica
+  \end{enumerate}
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Equação Matricial}
+  Equação na forma matricial
+  \[
+    v^tAv+B^tv+f=0
+  \]
+  \[
+    v=\begin{bmatrix}x\\y\end{bmatrix}
+    \qquad
+    A=\begin{bmatrix}
+      1&4\\
+      4&1
+    \end{bmatrix}
+  \]
+  \[
+    B=\begin{bmatrix}10\\10\end{bmatrix}
+    \qquad
+    f=-5
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Diagonalizando $A$ -- Polinômio Característico}
+  \begin{align*}
+    p(\lambda)
+    & = \det(A-\lambda I)
+    \\
+    & = \begin{vmatrix}
+      1-\lambda&4\\
+      4&1-\lambda
+    \end{vmatrix}
+    \\
+    & = (1-\lambda)^2-16
+    \\
+    & = \lambda^2-2\lambda-15
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Diagonalizando $A$ -- Autovalores}
+  Equação característica
+  \[
+    \lambda^2-2\lambda-15=0
+  \]
+  \[
+    (\lambda-5)(\lambda+3)=0
+  \]
+  Autovalores
+  \[
+    \lambda_1=5
+    \qquad
+    \lambda_2=-3
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores Associados a $\lambda_1=5$}
+  \begin{align*}
+    (A-5I)v_1 & = \vec{0} \\
+    \begin{bmatrix}
+      -4&4\\
+      4&-4
+    \end{bmatrix}
+    \vetor{x}{y}
+    & = \vetor{0}{0}
+  \end{align*}
+  \[
+    -4x+4y=0
+    \qquad
+    y=x
+  \]
+  Escolhendo \(x=1\)
+  \[
+    v_1=\vetor{1}{1}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores Associados a $\lambda_2=-3$}
+  \begin{align*}
+    (A+3I)v_2 & = \vec{0} \\
+    \begin{bmatrix}
+      4&4\\
+      4&4
+    \end{bmatrix}
+    \vetor{x}{y}
+    & = \vetor{0}{0}
+  \end{align*}
+  \[
+    4x+4y=0
+    \qquad
+    y=-x
+  \]
+  Escolhendo \(x=1\)
+  \[
+    v_2=\vetor{1}{-1}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Matriz Ortogonal}
+  Normalizando os autovetores
+  \[
+    u_1=\frac{1}{\sqrt{2}}\vetor{1}{1}
+    \qquad
+    u_2=\frac{1}{\sqrt{2}}\vetor{1}{-1}
+  \]
+  Matriz ortogonal
+  \[
+    P=\frac{1}{\sqrt{2}}
+    \begin{bmatrix}
+      1&1\\
+      1&-1
+    \end{bmatrix}
+  \]
+  Matriz diagonal
+  \[
+    D=P^tAP
+    =\begin{bmatrix}
+      5&0\\
+      0&-3
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Mudança de Variáveis}
+  Mudança de variáveis
+  \[
+    v=Pw
+    \qquad
+    w=\vetor{\mu}{\nu}
+  \]
+  \[
+    x=\frac{\mu+\nu}{\sqrt{2}}
+    \qquad
+    y=\frac{\mu-\nu}{\sqrt{2}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Transformando o Vetor $B$}
+  \[
+    E=P^tB
+  \]
+  \[
+    E=
+    \frac{1}{\sqrt{2}}
+    \begin{bmatrix}
+      1&1\\
+      1&-1
+    \end{bmatrix}
+    \begin{bmatrix}
+      10\\10
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      10\sqrt{2}\\0
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Equação Transformada}
+  \begin{align*}
+    w^tDw+E^tw+f & = 0
+    \\
+    5\mu^2-3\nu^2+10\sqrt{2}\mu-5 & = 0
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Completando Quadrados}
+  Agrupando os termos
+  \begin{align*}
+    5\mu^2+10\sqrt{2}\mu-3\nu^2-5 & = 0
+    \\
+    5\left(\mu^2+2\sqrt{2}\mu\right)-3\nu^2 & = 5
+    \\
+    5\left[\left(\mu+\sqrt{2}\right)^2-2\right]-3\nu^2 & = 5
+    \\
+    5\left(\mu+\sqrt{2}\right)^2-3\nu^2 & = 15
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Identificação}
+  Dividindo a equação por \(15\)
+  \[
+    \frac{\left(\mu+\sqrt{2}\right)^2}{3}
+    -\frac{\nu^2}{5}=1
+  \]
+  A cônica é uma hipérbole.
+
+  Centro no sistema rotacionado
+  \[
+    C'=(-\sqrt{2},0)
+  \]
+
+  Centro no sistema original
+  \[
+    C=(-1,-1)
+  \]
+
+  Semieixos
+  \[
+    a=\sqrt{3}
+    \qquad
+    b=\sqrt{5}
+  \]
+
+  O eixo real está na direção de \(\mu\).
+\end{resolution}
+
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Esboço}
+  \centering
+  \includegraphics{I-08-Rotacao-ex-6}
+\end{resolution}
+%------------------------------------------------------------------------------%

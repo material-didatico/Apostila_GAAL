@@ -1,0 +1,223 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Considerando a equação
+  \[
+    3x^2 + 4xy + 3y^2 - 15 = 0
+  \]
+  \vspace{-\baselineskip}
+  \begin{enumerate}
+    \item escreva a equação na forma matricial
+    \item diagonalize a matriz da parte quadrática
+    \item faça a mudança de variáveis
+    \item identifique a cônica
+  \end{enumerate}
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Equação Matricial}
+  Equação
+  \[
+    3x^2 + 4xy + 3y^2 - 15 = 0
+  \]
+  Equação na forma matricial
+  \[
+    v^tAv + B^tv + f = 0
+  \]
+  \[
+    v = \begin{bmatrix} x \\ y \end{bmatrix}
+    \qquad
+    A = \begin{bmatrix}
+      3 & 2 \\
+      2 & 3
+    \end{bmatrix}
+    \qquad
+    B = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+    \qquad
+    f = -15
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Diagonalizando $A$ -- Polinômio Característico}
+  Polinômio característico
+  \begin{align*}
+    p(\lambda)
+    & = \det(A-\lambda I)
+    \\
+    & = \begin{vmatrix}
+      3-\lambda & 2 \\
+      2 & 3-\lambda
+    \end{vmatrix}
+    \\
+    & = (3-\lambda)^2 - 4
+    \\
+    & = 9 - 6\lambda + \lambda^2 - 4
+    \\
+    & = \lambda^2 - 6\lambda + 5
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Diagonalizando $A$ -- Autovalores}
+  Equação característica
+  \[
+    \lambda^2 - 6\lambda + 5 = 0
+  \]
+  \[
+    (\lambda-5)(\lambda-1)=0
+  \]
+  Autovalores
+  \[
+    \lambda_1=5
+    \qquad
+    \lambda_2=1
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores Associados a $\lambda_1=5$}
+  \begin{align*}
+    (A-5I)v_1 & = \vec{0} \\
+    \begin{bmatrix}
+      -2 & 2 \\
+      2 & -2
+    \end{bmatrix}
+    \vetor{x}{y}
+    & = \vetor{0}{0}
+  \end{align*}
+  Portanto
+  \[
+    -2x+2y=0
+    \qquad
+    y=x
+  \]
+  Escolhendo \(x=1\)
+  \[
+    v_1=\vetor{1}{1}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores Associados a $\lambda_2=1$}
+  \begin{align*}
+    (A-I)v_2 & = \vec{0} \\
+    \begin{bmatrix}
+      2 & 2 \\
+      2 & 2
+    \end{bmatrix}
+    \vetor{x}{y}
+    & = \vetor{0}{0}
+  \end{align*}
+  Portanto
+  \[
+    2x+2y=0
+    \qquad
+    y=-x
+  \]
+  Escolhendo \(x=1\)
+  \[
+    v_2=\vetor{1}{-1}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Matriz Ortogonal}
+  Normalizando os autovetores
+  \[
+    u_1=\frac{1}{\sqrt{2}}\vetor{1}{1}
+    \qquad
+    u_2=\frac{1}{\sqrt{2}}\vetor{1}{-1}
+  \]
+  Matriz ortogonal
+  \[
+    P=\left[u_1\;u_2\right]
+    =\frac{1}{\sqrt{2}}
+    \begin{bmatrix}
+      1 & 1 \\
+      1 & -1
+    \end{bmatrix}
+  \]
+  Matriz diagonal
+  \[
+    D=P^tAP
+    =\begin{bmatrix}
+      5 & 0 \\
+      0 & 1
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Mudança de Variáveis}
+  Mudança de variáveis
+  \[
+    v=Pw
+    \qquad
+    w=\vetor{\mu}{\nu}
+  \]
+  \[
+    \begin{bmatrix}
+      x \\ y
+    \end{bmatrix}
+    =
+    \frac{1}{\sqrt{2}}
+    \begin{bmatrix}
+      1 & 1 \\
+      1 & -1
+    \end{bmatrix}
+    \begin{bmatrix}
+      \mu \\ \nu
+    \end{bmatrix}
+  \]
+  Portanto
+  \[
+    x=\frac{\mu+\nu}{\sqrt{2}}
+    \qquad
+    y=\frac{\mu-\nu}{\sqrt{2}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Equação Transformada}
+  Como \(B=\vec{0}\), temos \(E=P^tB=\vec{0}\).
+
+  \begin{align*}
+    w^tDw+E^tw+f & = 0
+    \\
+    \begin{bmatrix}\mu&\nu\end{bmatrix}
+    \begin{bmatrix}
+      5&0\\
+      0&1
+    \end{bmatrix}
+    \begin{bmatrix}\mu\\\nu\end{bmatrix}
+    -15 & = 0
+    \\
+    5\mu^2+\nu^2 & = 15
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Identificação}
+  Dividindo a equação por \(15\)
+  \[
+    \frac{\mu^2}{3}+\frac{\nu^2}{15}=1
+  \]
+  A cônica é uma elipse com centro na origem.
+
+  Semieixos
+  \[
+    a=\sqrt{15}
+    \qquad
+    b=\sqrt{3}
+  \]
+
+  O eixo maior está na direção de \(\nu\)
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Esboço}
+  \centering
+  \includegraphics{I-08-Rotacao-ex-1}
+\end{resolution}
+%------------------------------------------------------------------------------%
+

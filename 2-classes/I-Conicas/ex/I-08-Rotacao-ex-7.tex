@@ -1,0 +1,219 @@
+%------------------------------------------------------------------------------%
+\begin{question}
+  Considerando a equação
+  \[
+    x^2+2xy+y^2+4x-4y-8=0
+  \]
+  \vspace{-\baselineskip}
+  \begin{enumerate}
+    \item escreva a equação na forma matricial
+    \item diagonalize a matriz da parte quadrática
+    \item faça a mudança de variáveis
+    \item transforme a equação
+    \item identifique a cônica
+  \end{enumerate}
+\end{question}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Equação Matricial}
+  Equação na forma matricial
+  \[
+    v^tAv+B^tv+f=0
+  \]
+  \[
+    v=\begin{bmatrix}x\\y\end{bmatrix}
+    \qquad
+    A=\begin{bmatrix}
+      1&1\\
+      1&1
+    \end{bmatrix}
+  \]
+  \[
+    B=\begin{bmatrix}4\\-4\end{bmatrix}
+    \qquad
+    f=-8
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Diagonalizando $A$ -- Polinômio Característico}
+  \begin{align*}
+    p(\lambda)
+    & = \det(A-\lambda I)
+    \\
+    & = \begin{vmatrix}
+      1-\lambda&1\\
+      1&1-\lambda
+    \end{vmatrix}
+    \\
+    & = (1-\lambda)^2-1
+    \\
+    & = \lambda^2-2\lambda
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Diagonalizando $A$ -- Autovalores}
+  Equação característica
+  \[
+    \lambda^2-2\lambda=0
+  \]
+  \[
+    \lambda(\lambda-2)=0
+  \]
+  Autovalores
+  \[
+    \lambda_1=2
+    \qquad
+    \lambda_2=0
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores Associados a $\lambda_1=2$}
+  \begin{align*}
+    (A-2I)v_1 & = \vec{0} \\
+    \begin{bmatrix}
+      -1&1\\
+      1&-1
+    \end{bmatrix}
+    \vetor{x}{y}
+    & = \vetor{0}{0}
+  \end{align*}
+  \[
+    -x+y=0
+    \qquad
+    y=x
+  \]
+  Escolhendo \(x=1\)
+  \[
+    v_1=\vetor{1}{1}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores Associados a $\lambda_2=0$}
+  \begin{align*}
+    Av_2 & = \vec{0} \\
+    \begin{bmatrix}
+      1&1\\
+      1&1
+    \end{bmatrix}
+    \vetor{x}{y}
+    & = \vetor{0}{0}
+  \end{align*}
+  \[
+    x+y=0
+    \qquad
+    y=-x
+  \]
+  Escolhendo \(x=1\)
+  \[
+    v_2=\vetor{1}{-1}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Matriz Ortogonal}
+  Normalizando os autovetores
+  \[
+    u_1=\frac{1}{\sqrt{2}}\vetor{1}{1}
+    \qquad
+    u_2=\frac{1}{\sqrt{2}}\vetor{1}{-1}
+  \]
+  Matriz ortogonal
+  \[
+    P=\frac{1}{\sqrt{2}}
+    \begin{bmatrix}
+      1&1\\
+      1&-1
+    \end{bmatrix}
+  \]
+  Matriz diagonal
+  \[
+    D=P^tAP
+    =\begin{bmatrix}
+      2&0\\
+      0&0
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Mudança de Variáveis}
+  Mudança de variáveis
+  \[
+    v=Pw
+    \qquad
+    w=\vetor{\mu}{\nu}
+  \]
+  \[
+    x=\frac{\mu+\nu}{\sqrt{2}}
+    \qquad
+    y=\frac{\mu-\nu}{\sqrt{2}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Transformando o Vetor $B$}
+  \[
+    E=P^tB
+  \]
+  \[
+    E=
+    \frac{1}{\sqrt{2}}
+    \begin{bmatrix}
+      1&1\\
+      1&-1
+    \end{bmatrix}
+    \begin{bmatrix}
+      4\\-4
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      0\\4\sqrt{2}
+    \end{bmatrix}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Equação Transformada}
+  \begin{align*}
+    w^tDw+E^tw+f & = 0
+    \\
+    2\mu^2+4\sqrt{2}\nu-8 & = 0
+    \\
+    \mu^2+2\sqrt{2}\nu & = 4
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Identificação}
+  Isolando o termo quadrático
+  \[
+    \mu^2=-2\sqrt{2}\left(\nu-\sqrt{2}\right)
+  \]
+  A cônica é uma parábola.
+
+  Vértice no sistema rotacionado
+  \[
+    V'=(0,\sqrt{2})
+  \]
+
+  Vértice no sistema original
+  \[
+    V=(1,-1)
+  \]
+
+  O eixo de simetria está na direção de \(\nu\).
+
+  A parábola tem concavidade voltada para o sentido negativo
+  desse eixo.
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Esboço}
+  \centering
+  \includegraphics{I-08-Rotacao-ex-7}
+\end{resolution}
+%------------------------------------------------------------------------------%
