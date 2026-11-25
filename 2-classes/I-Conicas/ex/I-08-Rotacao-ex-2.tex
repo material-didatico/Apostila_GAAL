@@ -1,361 +1,419 @@
-
-
-\newcommand{\mat}[1]{\begin{bmatrix}#1\end{bmatrix}}
-\newcommand{\vet}[1]{\begin{bmatrix}#1\end{bmatrix}}
-
+%------------------------------------------------------------------------------%
 \begin{question}
-  \begin{block}{}
-    Considerando a equação
-    \[
-      x^2+4xy+y^2-2x-2y-3=0
-    \]
-  \end{block}
-
+  Considerando a equação
+  \[
+    x^2 + 4xy + y^2 - 2x - 2y - 3 = 0
+  \]
+  \vspace{-1.5\baselineskip}
   \begin{enumerate}
-    \setlength{\itemsep}{0.45cm}
     \item escreva a equação na forma matricial
-    \item diagonalize matriz da parte quadrática
-    \item faça a mudança de variáveis
-
-      (apresente a transformação e transforme a equação)
+    \item diagonalize a matriz da parte quadrática
+    \item faça a mudança de variáveis \\
+          (apresente a transformação e transforme a equação)
     \item identifique a cônica
   \end{enumerate}
 \end{question}
 
+%------------------------------------------------------------------------------%
 \begin{resolution}{Equação Matricial}
-  \textbf{Equação}
+  Equação
   \[
-    x^2+4xy+y^2-2x-2y-3=0
+    x^2 + 4xy + y^2 - 2x - 2y - 3 = 0
   \]
   \[
-    ax^2+2bxy+cy^2+dx+ey+f=0
-  \]
-
-  \textbf{Equação na forma matricial}
-  \[
-    v^tAv+B^tv+f=0
+    \pause
+    ax^2 + 2bxy + cy^2 + dx + ey + f = 0
   \]
 
+  \pause
+  Equação na forma matricial \quad
   \[
-    v=\mat{x\\y}
+    v^tAv + B^tv + f = 0
+  \]
+  \[
+    \pause
+    v
+    = \mat{ x \\ y }
     \qquad
-    A=\mat{a&b\\b&c}
-     =\mat{1&2\\2&1}
+    \pause
+    A
+    = \mat{ a & b \\ b & c }
+    \pause
+    = \mat{ 1 & 2 \\ 2 & 1 }
     \qquad
-    B=\mat{d\\e}
-     =\mat{-2\\-2}
+    \pause
+    B
+    = \mat{  d \\  e }
+    \pause
+    = \mat{ -2 \\ -2 }
     \qquad
-    f=-3
+    \pause
+    f = -3
   \]
 \end{resolution}
 
-\begin{resolution}{Diagonalizando A -- Polinômio Característico}
-  \textbf{Polinômio característico}
+%------------------------------------------------------------------------------%
+\begin{resolution}{Diagonalizando $A$ -- Polinômio Característico}
+  \onslide<+->{Polinômio característico}
+  \begin{align*}
+    \onslide<+->{p(\lambda)}
+    \onslide<+->{& = \det(A-\lambda I)}
+    \\
+    \onslide<+->{& = \det\left(
+        \mat{ 1 & 2 \\ 2 & 1 }
+        -\mat{ \lambda & 0 \\ 0 & \lambda }
+    \right)}
+    \\
+    \onslide<+->{& = \begin{vmatrix}[c]
+      1-\lambda & 2 \\
+      2         & 1-\lambda
+    \end{vmatrix}}
+    \\
+    \onslide<+->{& = (1-\lambda)^2 - 4}
+    \\
+    \onslide<+->{& = 1 - 2\lambda + \lambda^2 - 4}
+    \\
+    \onslide<+->{& = \lambda^2 - 2\lambda - 3}
+  \end{align*}
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Diagonalizando $A$ -- Autovalores}
+  Equação característica \quad
+  \(
+    p(\lambda) = \lambda^2 - 2\lambda + 3 = 0
+  \)
+
   \[
-    p(\lambda)=\det(A-\lambda I)
+    \pause
+    \Delta
+     = b^2 - 4ac
+    \pause
+     = (-2)^2 - 4 \times 1 (-3)
+    \pause
+     = 16
+    \qquad
+    \pause
+    \sqrt{\Delta} = 4
   \]
+
   \[
-    =\det\left(
-      \mat{1&2\\2&1}
-      -\lambda\mat{1&0\\0&1}
+    \pause
+    \lambda_1
+    = \frac{-b+\sqrt{\Delta}}{2a}
+    \pause
+    = \frac{2 + 4}{2}
+    \pause
+    = 3
+  \]
+
+  \[
+    \pause
+    \lambda_2
+    = \frac{-b-\sqrt{\Delta}}{2a}
+    \pause
+    = \frac{2 - 4}{2}
+    \pause
+    = -1
+  \]
+
+  \pause
+  Autovalores
+  \[
+    \pause
+    \lambda_1 = 3
+    \qquad\qquad
+    \pause
+    \lambda_2 = -1
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores Associados a $\lambda_1=3$}
+\begin{columns}[t]
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{(A - 5I)v_1 = \vec{0}}
+    \\[3mm]
+    \onslide<+->{\left(
+      \mat{  1 & 2 \\ 2 & 1 }
+      -\mat{ 3 & 0 \\ 0 & 3 }
     \right)
-  \]
+    \mat{x\\y} = \mat{0\\0}}
+    \\[3mm]
+    \onslide<+->{\mat{-2&2\\2&-2}
+    \mat{x\\y} = \mat{0\\0}}
+  \end{align*}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{-x + y & = 0 \\}
+    \onslide<+->{y & = x}
+  \end{align*}
+
+  \onslide<+->{Escolhendo $x=1$}
   \[
-    =\begin{vmatrix}
-      1-\lambda&2\\
-      2&1-\lambda
-    \end{vmatrix}
+    \onslide<+->{v_1 = \mat{1\\1}}
   \]
-  \[
-    =(1-\lambda)^2-4
-  \]
-  \[
-    =1-2\lambda+\lambda^2-4
-  \]
-  \[
-    =\lambda^2-2\lambda-3
-  \]
+\end{columns}
 \end{resolution}
 
-\begin{resolution}{Diagonalizando A -- Equação Característica}
-  \textbf{Equação característica}
-  \[
-    p(\lambda)=\lambda^2-2\lambda-3=0
-  \]
-  \[
-    \Delta=b^2-4ac=(-2)^2-4\times1(-3)=16
-    \qquad
-    \sqrt{\Delta}=4
-  \]
-  \[
-    \lambda_1=\frac{-b+\sqrt{\Delta}}{2a}
-    =\frac{2+4}{2}=3
-  \]
-  \[
-    \lambda_2=\frac{-b-\sqrt{\Delta}}{2a}
-    =\frac{2-4}{2}=-1
-  \]
+%------------------------------------------------------------------------------%
+\begin{resolution}{Autovetores Associados a $\lambda_2=-1$}
+\begin{columns}[t]
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{(A - (-1)I)v_1 = \vec{0}}
+    \\[3mm]
+    \onslide<+->{\left(
+      \mat{ 3 & 2 \\ 2 & 3 }
+      -\mat{ -1 & 0 \\ 0 & -1 }
+    \right)
+    \mat{x\\y} = \mat{0\\0}}
+    \\[3mm]
+    \onslide<+->{\mat{2&2\\2&2}
+    \mat{x\\y} = \mat{0\\0}}
+  \end{align*}
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{x + y & = 0 \\}
+    \onslide<+->{y & = -x}
+  \end{align*}
 
-  \textbf{Autovalores}
+  \onslide<+->{Escolhendo $x=1$}
   \[
-    \lambda_1=3
-    \qquad
-    \lambda_2=-1
+    \onslide<+->{v_2 = \mat{1\\-1}}
   \]
+\end{columns}
 \end{resolution}
 
-\begin{resolution}{Autovetores Associados ao Autovalor $\lambda_1=3$}
-  \begin{columns}[T]
-    \begin{column}{0.58\textwidth}
-      \[
-        (A-3I)v_1=\vec{0}
-      \]
-      \[
-        \left(
-        \mat{1&2\\2&1}
-        -3\mat{1&0\\0&1}
-        \right)
-        \mat{x\\y}
-        =
-        \mat{0\\0}
-      \]
-      \[
-        \mat{-2&2\\2&-2}
-        \mat{x\\y}
-        =
-        \mat{0\\0}
-      \]
-    \end{column}
-    \begin{column}{0.37\textwidth}
-      \[
-        -x+y=0
-      \]
-      \[
-        y=x
-      \]
-      Escolhendo $x=1$
-      \[
-        v_1=\mat{1\\1}
-      \]
-    \end{column}
-  \end{columns}
-\end{resolution}
-
-\begin{resolution}{Autovetores Associados ao Autovalor $\lambda_2=-1$}
-  \begin{columns}[T]
-    \begin{column}{0.58\textwidth}
-      \[
-        (A-(-1)I)v_2=\vec{0}
-      \]
-      \[
-        \left(
-        \mat{1&2\\2&1}
-        +\mat{1&0\\0&1}
-        \right)
-        \mat{x\\y}
-        =
-        \mat{0\\0}
-      \]
-      \[
-        \mat{2&2\\2&2}
-        \mat{x\\y}
-        =
-        \mat{0\\0}
-      \]
-    \end{column}
-    \begin{column}{0.37\textwidth}
-      \[
-        2x+2y=0
-      \]
-      \[
-        y=-x
-      \]
-      Escolhendo $x=1$
-      \[
-        v_2=\mat{1\\-1}
-      \]
-    \end{column}
-  \end{columns}
-\end{resolution}
-
+%------------------------------------------------------------------------------%
 \begin{resolution}{Matriz Ortogonal}
-  \textbf{Normalizando o autovetor $v_1$}
+  Normalizando o autovetor $v_1$
   \[
-    \|v_1\|=\sqrt{1^2+1^2}=\sqrt{2}
-    \qquad
-    u_1=\frac{v_1}{\|v_1\|}
-    =\frac{1}{\sqrt{2}}\mat{1\\1}
+    \pause
+    \norm{v_1}
+    \pause
+    = \sqrt{ 1^2 + 1^2 }
+    \pause
+    = \sqrt{2}
+    \qquad\qquad\qquad
+    \pause
+    u_1
+    \pause
+    = \frac{v_1}{\norm{v_1}}
+    \pause
+    = \frac{1}{\sqrt{2}}\mat{1\\1}
   \]
 
-  \textbf{Normalizando o autovetor $v_2$}
+  \pause
+  Normalizando o autovetor $v_2$
   \[
-    \|v_2\|=\sqrt{1^2+(-1)^2}=\sqrt{2}
-    \qquad
-    u_2=\frac{v_2}{\|v_2\|}
-    =\frac{1}{\sqrt{2}}\mat{1\\-1}
+    \pause
+    \norm{v_2}
+    \pause
+    = \sqrt{ 1^2 + (-1)^2 }
+    \pause
+    = \sqrt{2}
+    \qquad\qquad\;\;
+    \pause
+    u_2
+    \pause
+    = \frac{v_2}{\norm{v_2}}
+    \pause
+    = \frac{1}{\sqrt{2}} \mat{1\\-1}
   \]
 
-  \textbf{Matriz ortogonal $P$ e matriz diagonal $D$}
+  \pause
+  Matriz ortogonal $P$ e matriz diagonal $D$
   \[
-    P=[u_1\ u_2]
-    =\frac{1}{\sqrt{2}}
-      \mat{1&1\\1&-1}
-    \qquad
-    D=\operatorname{diag}(\lambda_1,\lambda_2)
-    =\mat{3&0\\0&-1}
+    \pause
+    P
+    \pause
+    = \left[ u_1\; u_2 \right]
+    \pause
+    = \frac{1}{\sqrt{2}} \mat{ 1 & 1 \\ 1 & -1}
+    \qquad\qquad
+    \pause
+    D
+    \pause
+    = \diag( \lambda_1, \lambda_2 )
+    \pause
+    = \mat{ 3 & 0 \\ 0 & -1 }
   \]
 \end{resolution}
 
+%------------------------------------------------------------------------------%
 \begin{resolution}{Mudança de Variáveis}
-  \textbf{Mudança de variáveis $v=Pw$}
+  Mudança de variáveis \(v = Pw\)
   \[
+    \pause
     \mat{x\\y}
-    =
+    \pause
+    \;=\;
     \frac{1}{\sqrt{2}}
     \mat{1&1\\1&-1}
     \mat{\mu\\\nu}
-    =
+    \pause
+    \;=\;
     \frac{1}{\sqrt{2}}
     \mat{\mu+\nu\\\mu-\nu}
-    =
-    \mat{\dfrac{\mu+\nu}{\sqrt{2}}\\[2mm]
+    \pause
+    \;=\;
+    \mat{\dfrac{\mu+\nu}{\sqrt{2}}\\[4mm]
          \dfrac{\mu-\nu}{\sqrt{2}}}
   \]
   \[
-    x=\frac{\mu+\nu}{\sqrt{2}}
-    \qquad
-    y=\frac{\mu-\nu}{\sqrt{2}}
+    \pause
+    x = \frac{\mu+\nu}{\sqrt{2}}
+    \qquad\qquad
+    \pause
+    y = \frac{\mu-\nu}{\sqrt{2}}
   \]
 \end{resolution}
 
+%------------------------------------------------------------------------------%
 \begin{resolution}{Transformando as Matrizes}
   \[
-    D=P^tAP=\operatorname{diag}(\lambda_1,\lambda_2)
-    =\mat{3&0\\0&-1}
+    D
+    \;=\; P^tAP
+    \pause
+    \;=\; \diag(\lambda_1, \lambda_2)
+    \pause
+    \;=\; \mat{ 3 & 0 \\ 0 & -1 }
   \]
 
+  \bigskip
   \[
-    E=P^tB
-    =\frac{1}{\sqrt{2}}
+    \pause
+    E
+    \;=\; P^t B
+    \pause
+    \;=\; \frac{1}{\sqrt{2}}
       \mat{1&1\\1&-1}
       \mat{-2\\-2}
-    =\frac{1}{\sqrt{2}}
-      \mat{-4\\0}
-    =\mat{-2\sqrt{2}\\0}
+    \pause
+    \;=\; \frac{1}{\sqrt{2}} \mat{-4\\0}
+    \pause
+    \;=\; \mat{-2\sqrt{2}\\0}
   \]
 \end{resolution}
 
+%------------------------------------------------------------------------------%
 \begin{resolution}{Equação Transformada}
   \[
-    w^tDw+E^tw+f=0
+    w^tDw + E^tw + f = 0
   \]
 
+  \smallskip
   \[
-    \begin{bmatrix}\mu&\nu\end{bmatrix}
-    \mat{3&0\\0&-1}
-    \mat{\mu\\\nu}
+    \pause
+    \mat{ \mu & \nu }
+    \mat{ 3 & 0 \\ 0 & -1 }
+    \mat{ \mu \\ \nu }
+    \pause
     +
-    \begin{bmatrix}-2\sqrt{2}&0\end{bmatrix}
-    \mat{\mu\\\nu}
-    -3=0
+    \mat{-2\sqrt{2} & 0}
+    \mat{\mu \\ \nu}
+    \pause
+    - 3 = 0
   \]
 
+  \smallskip
   \[
-    3\mu^2-\nu^2-2\sqrt{2}\mu-3=0
+    \pause
+    3\mu^2 - \nu^2
+    \pause
+    - 2\sqrt{2}\mu
+    \pause
+    - 3 = 0
   \]
 \end{resolution}
 
+%------------------------------------------------------------------------------%
 \begin{resolution}{Completando Quadrados}
-  \[
-    3\mu^2-\nu^2-2\sqrt{2}\mu-3=0
-  \]
-  \[
-    (3\mu^2-2\sqrt{2}\mu)-\nu^2-3=0
-  \]
-  \[
-    3\left(\mu^2-\frac{2\sqrt{2}}{3}\mu\right)
-    -\nu^2-3=0
-  \]
+  \begin{align*}
+    \onslide<+->{3\mu^2 - \nu^2 - 2\sqrt{2}\mu - 3                     & = 0 \\}
+    \onslide<+->{\left(3\mu^2 - 2\sqrt{2}\mu \right) - \nu^2           & = 3 \\}
+    \onslide<+->{3\left(\mu^2 - 2\frac{\sqrt{2}}{3}\mu\right) - \nu^2  & = 3}
+  \end{align*}
 
+  \smallskip
   \[
-    \begin{aligned}
-      \mu^2-\frac{2\sqrt{2}}{3}\mu
-      &=
-      \mu^2-\frac{2\sqrt{2}}{3}\mu
-      +\left(\frac{\sqrt{2}}{3}\right)^2
-      -\left(\frac{\sqrt{2}}{3}\right)^2\\
-      &=
-      \left(\mu-\frac{\sqrt{2}}{3}\right)^2-\frac{2}{9}
-    \end{aligned}
+    \onslide<+->{\mu^2 - 2\frac{\sqrt{2}}{3}\mu}
+    \onslide<+->{\;=\; \mu^2 - 2\frac{\sqrt{2}}{3}\mu}
+    \onslide<+->{+ \left(\frac{\sqrt{2}}{3}\right)^2}
+    \onslide<+->{- \left(\frac{\sqrt{2}}{3}\right)^2}
+    \onslide<+->{\;=\; \left(\mu-\frac{\sqrt{2}}{3}\right)^2 - \frac{2}{9}}
   \]
 \end{resolution}
 
+%------------------------------------------------------------------------------%
 \begin{resolution}{Completando Quadrados}
-  \begin{columns}[T]
-    \begin{column}{0.49\textwidth}
-      \[
-        3\left(\mu^2-\frac{2\sqrt{2}}{3}\mu\right)
-        -\nu^2-3=0
-      \]
-      \[
-        3\left[
-        \left(\mu-\frac{\sqrt{2}}{3}\right)^2
-        -\frac{2}{9}
-        \right]-\nu^2=3
-      \]
-      \[
-        3\left(\mu-\frac{\sqrt{2}}{3}\right)^2
-        -\frac{2}{3}-\nu^2=3
-      \]
-      \[
-        3\left(\mu-\frac{\sqrt{2}}{3}\right)^2
-        -\nu^2=\frac{11}{3}
-      \]
-    \end{column}
-    \begin{column}{0.49\textwidth}
-      \[
-        \frac{
-        3\left(\mu-\frac{\sqrt{2}}{3}\right)^2
-        }{11/3}
-        -
-        \frac{\nu^2}{11/3}=1
-      \]
-      \[
-        \frac{
-        \left(\mu-\frac{\sqrt{2}}{3}\right)^2
-        }{11/9}
-        -
-        \frac{\nu^2}{11/3}=1
-      \]
-    \end{column}
-  \end{columns}
+\begin{columns}[t]
+\column{0.49\textwidth}
+  \begin{align*}
+    3\left( \mu^2 - \frac{2\sqrt{2}}{3}\mu \right) - \nu^2
+    & = 3
+    \\
+    3\left[
+      \left( \mu - \frac{\sqrt{2}}{3} \right)^2
+      -\frac{2}{9}
+    \right]
+    - \nu^2
+    & = 3
+    \\
+    3\left( \mu - \frac{\sqrt{2}}{3} \right)^2
+    - \frac{2}{3} - \nu^2
+    & = 3
+    \\
+    3\left( \mu - \frac{\sqrt{2}}{3} \right)^2 - \nu^2
+    & = 3 + \frac{2}{3}
+  \end{align*}
+\column{0.49\textwidth}
+  \begin{align*}
+    3\left( \mu - \frac{\sqrt{2}}{3} \right)^2 - \nu^2
+    & = \frac{11}{3}
+    \\
+    \frac{3\left( \mu - \frac{\sqrt{2}}{3} \right)^2 }{\sfrac{11}{3}} -
+    \frac{\nu^2}{\sfrac{11}{3}}
+    & = 1
+    \\
+    \frac{\left( \mu - \frac{\sqrt{2}}{3}\right)^2 }{\sfrac{11}{9}} -
+    \frac{\nu^2}{\sfrac{11}{3}}
+    & = 1
+  \end{align*}
+\end{columns}
 \end{resolution}
 
+%------------------------------------------------------------------------------%
 \begin{resolution}{Identificação}
-  \textbf{A cônica}
+  A cônica
   \[
-    \frac{\left(\mu-\frac{\sqrt{2}}{3}\right)^2}{11/9}
-    -\frac{\nu^2}{11/3}=1
+    \frac{\;\left( \mu - \frac{\sqrt{2}}{3}\right)^2 \;}{\sfrac{11}{9}} -
+    \frac{\nu^2}{\;\sfrac{11}{3}\;}
+    = 1
   \]
-
   é uma hipérbole com
 
-  \textbf{Centro}
+  Centro
   \[
-    C=\left(\frac{\sqrt{2}}{3},0\right)
-    \approx(0{,}816;0)
+    \left(\mu_0, \nu_0\right)
+    = \left( \frac{\sqrt{2}}{3}, 0 \right)
+    {\color{gray} \approx(0,816; 0)}
   \]
 
-  \textbf{Parâmetros}
+  Parâmetros
   \[
-    a=\sqrt{\frac{11}{9}}=\frac{\sqrt{11}}{3}
-    \approx1{,}105
+    a
+    = \sqrt{\frac{11}{9}}
+    = \frac{\sqrt{11}}{3}
+    {\color{gray} \approx 1,105}
     \qquad
-    b=\sqrt{\frac{11}{3}}
-    \approx1{,}915
+    b
+    = \sqrt{\frac{11}{3}}
+    {\color{gray} \approx 1,915}
   \]
 \end{resolution}
-
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Esboço}

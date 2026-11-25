@@ -12,12 +12,12 @@ real ymax =  5;
 draw_axes(xmin, xmax, 1, ymin, ymax, 1);
 
 pen p_curve = pens[0];
-pen p_dot   = pens[0] + 3pt;
+pen p_dot   = pens[0] + 4pt;
 
 //-----------------------------------------------------------------------------
 
-real a = sqrt(5); 
-real b = sqrt(3); 
+real a = sqrt(3); 
+real b = sqrt(15); 
 
 real r = 0;
 real s = 0;
@@ -40,6 +40,11 @@ label( "$\nu$", rotate(t) * (0, nmax), W, magenta );
 //-----------------------------------------------------------------------------
 
 draw( rotate(t) * scale(a, b) * unitcircle, p_curve );
+
+dot((-3,  2), p_dot);
+dot((-2,  3), p_dot);
+dot(( 2, -3), p_dot);
+dot(( 3, -2), p_dot);
 
 //-----------------------------------------------------------------------------
 

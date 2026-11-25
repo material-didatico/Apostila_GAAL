@@ -4,11 +4,12 @@
   \[
     3x^2 + 4xy + 3y^2 - 15 = 0
   \]
-  \vspace{-\baselineskip}
+  \vspace{-1.5\baselineskip}
   \begin{enumerate}
     \item escreva a equação na forma matricial
     \item diagonalize a matriz da parte quadrática
-    \item faça a mudança de variáveis
+    \item faça a mudança de variáveis \\
+          (apresente a transformação e transforme a equação)
     \item identifique a cônica
   \end{enumerate}
 \end{question}
@@ -19,199 +20,314 @@
   \[
     3x^2 + 4xy + 3y^2 - 15 = 0
   \]
-  Equação na forma matricial
+  \[
+    \pause
+    ax^2 + 2bxy + cy^2 + dx + ey + f = 0
+  \]
+
+  \pause
+  Equação na forma matricial \quad
   \[
     v^tAv + B^tv + f = 0
   \]
   \[
-    v = \begin{bmatrix} x \\ y \end{bmatrix}
+    \pause
+    v
+    = \mat{ x \\ y }
     \qquad
-    A = \begin{bmatrix}
-      3 & 2 \\
-      2 & 3
-    \end{bmatrix}
+    \pause
+    A
+    = \mat{ a & b \\ b & c }
+    \pause
+    = \mat{ 3 & 2 \\ 2 & 3 }
     \qquad
-    B = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+    \pause
+    B
+    = \mat{ d \\ e }
+    \pause
+    = \mat{ 0 \\ 0 }
     \qquad
-    f = -15
+    \pause
+    f=-15
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Diagonalizando $A$ -- Polinômio Característico}
-  Polinômio característico
+  \onslide<+->{Polinômio característico}
   \begin{align*}
-    p(\lambda)
-    & = \det(A-\lambda I)
+    \onslide<+->{p(\lambda)}
+    \onslide<+->{& = \det(A-\lambda I)}
     \\
-    & = \begin{vmatrix}
+    \onslide<+->{& = \det\left(
+        \mat{ 3 & 2 \\ 2 & 3 }
+        -\mat{ \lambda & 0 \\ 0 & \lambda }
+    \right)}
+    \\
+    \onslide<+->{& = \begin{vmatrix}[c]
       3-\lambda & 2 \\
-      2 & 3-\lambda
-    \end{vmatrix}
+      2         & 3-\lambda
+    \end{vmatrix}}
     \\
-    & = (3-\lambda)^2 - 4
+    \onslide<+->{& = (3-\lambda)^2 - 4}
     \\
-    & = 9 - 6\lambda + \lambda^2 - 4
+    \onslide<+->{& = 9 - 6\lambda + \lambda^2 - 4}
     \\
-    & = \lambda^2 - 6\lambda + 5
+    \onslide<+->{& = \lambda^2 - 6\lambda + 5}
   \end{align*}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Diagonalizando $A$ -- Autovalores}
-  Equação característica
+  Equação característica \quad
+  \(
+    p(\lambda) = \lambda^2 - 6\lambda + 5 = 0
+  \)
+
   \[
-    \lambda^2 - 6\lambda + 5 = 0
+    \pause
+    \Delta
+     = b^2 - 4ac
+    \pause
+     = (-6)^2 - 4 \times 1 (-5)
+    \pause
+     = 16
+    \qquad
+    \pause
+    \sqrt{\Delta} = 4
   \]
+
   \[
-    (\lambda-5)(\lambda-1)=0
+    \pause
+    \lambda_1
+    = \frac{-b+\sqrt{\Delta}}{2a}
+    \pause
+    = \frac{6 + 4}{2}
+    \pause
+    = 5
   \]
+
+  \[
+    \pause
+    \lambda_2
+    = \frac{-b-\sqrt{\Delta}}{2a}
+    \pause
+    = \frac{6 - 4}{2}
+    \pause
+    = 1
+  \]
+
+  \pause
   Autovalores
   \[
-    \lambda_1=5
-    \qquad
-    \lambda_2=1
+    \pause
+    \lambda_1 = 5
+    \qquad\qquad
+    \pause
+    \lambda_2 = 1
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Autovetores Associados a $\lambda_1=5$}
+\begin{columns}[t]
+\column{0.5\textwidth}
   \begin{align*}
-    (A-5I)v_1 & = \vec{0} \\
-    \begin{bmatrix}
-      -2 & 2 \\
-      2 & -2
-    \end{bmatrix}
-    \vetor{x}{y}
-    & = \vetor{0}{0}
+    \onslide<+->{(A - 5I)v_1 = \vec{0}}
+    \\[3mm]
+    \onslide<+->{\left(
+      \mat{ 3 & 2 \\ 2 & 3 }
+      -\mat{ 5 & 0 \\ 0 & 5 }
+    \right)
+    \mat{x\\y} = \mat{0\\0}}
+    \\[3mm]
+    \onslide<+->{\mat{-2&2\\2&-2}
+    \mat{x\\y} = \mat{0\\0}}
   \end{align*}
-  Portanto
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{-x + y & = 0 \\}
+    \onslide<+->{y & = x}
+  \end{align*}
+
+  \onslide<+->{Escolhendo $x=1$}
   \[
-    -2x+2y=0
-    \qquad
-    y=x
+    \onslide<+->{v_1 = \mat{1\\1}}
   \]
-  Escolhendo \(x=1\)
-  \[
-    v_1=\vetor{1}{1}
-  \]
+\end{columns}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Autovetores Associados a $\lambda_2=1$}
+\begin{columns}[t]
+\column{0.5\textwidth}
   \begin{align*}
-    (A-I)v_2 & = \vec{0} \\
-    \begin{bmatrix}
-      2 & 2 \\
-      2 & 2
-    \end{bmatrix}
-    \vetor{x}{y}
-    & = \vetor{0}{0}
+    \onslide<+->{(A - 1I)v_1 = \vec{0}}
+    \\[3mm]
+    \onslide<+->{\left(
+      \mat{ 3 & 2 \\ 2 & 3 }
+      -\mat{ 1 & 0 \\ 0 & 1 }
+    \right)
+    \mat{x\\y} = \mat{0\\0}}
+    \\[3mm]
+    \onslide<+->{\mat{2&2\\2&2}
+    \mat{x\\y} = \mat{0\\0}}
   \end{align*}
-  Portanto
+\column{0.5\textwidth}
+  \begin{align*}
+    \onslide<+->{x + y & = 0 \\}
+    \onslide<+->{y & = -x}
+  \end{align*}
+
+  \onslide<+->{Escolhendo $x=1$}
   \[
-    2x+2y=0
-    \qquad
-    y=-x
+    \onslide<+->{v_2 = \mat{1\\-1}}
   \]
-  Escolhendo \(x=1\)
-  \[
-    v_2=\vetor{1}{-1}
-  \]
+\end{columns}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Matriz Ortogonal}
-  Normalizando os autovetores
+  Normalizando o autovetor $v_1$
   \[
-    u_1=\frac{1}{\sqrt{2}}\vetor{1}{1}
-    \qquad
-    u_2=\frac{1}{\sqrt{2}}\vetor{1}{-1}
+    \pause
+    \norm{v_1}
+    \pause
+    = \sqrt{ 1^2 + 1^2 }
+    \pause
+    = \sqrt{2}
+    \qquad\qquad\qquad
+    \pause
+    u_1
+    \pause
+    = \frac{v_1}{\norm{v_1}}
+    \pause
+    = \frac{1}{\sqrt{2}}\mat{1\\1}
   \]
-  Matriz ortogonal
+
+  \pause
+  Normalizando o autovetor $v_2$
   \[
-    P=\left[u_1\;u_2\right]
-    =\frac{1}{\sqrt{2}}
-    \begin{bmatrix}
-      1 & 1 \\
-      1 & -1
-    \end{bmatrix}
+    \pause
+    \norm{v_2}
+    \pause
+    = \sqrt{ 1^2 + (-1)^2 }
+    \pause
+    = \sqrt{2}
+    \qquad\qquad\;\;
+    \pause
+    u_2
+    \pause
+    = \frac{v_2}{\norm{v_2}}
+    \pause
+    = \frac{1}{\sqrt{2}} \mat{1\\-1}
   \]
-  Matriz diagonal
+
+  \pause
+  Matriz ortogonal $P$ e matriz diagonal $D$
   \[
-    D=P^tAP
-    =\begin{bmatrix}
-      5 & 0 \\
-      0 & 1
-    \end{bmatrix}
+    \pause
+    P
+    \pause
+    = \left[ u_1\; u_2 \right]
+    \pause
+    = \frac{1}{\sqrt{2}} \mat{ 1 & 1 \\ 1 & -1}
+    \qquad\qquad
+    \pause
+    D
+    \pause
+    = \diag( \lambda_1, \lambda_2 )
+    \pause
+    = \mat{ 5 & 0 \\ 0 & 1 }
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Mudança de Variáveis}
-  Mudança de variáveis
+  Mudança de variáveis \(v = Pw\)
   \[
-    v=Pw
-    \qquad
-    w=\vetor{\mu}{\nu}
-  \]
-  \[
-    \begin{bmatrix}
-      x \\ y
-    \end{bmatrix}
-    =
+    \pause
+    \mat{x\\y}
+    \pause
+    \;=\;
     \frac{1}{\sqrt{2}}
-    \begin{bmatrix}
-      1 & 1 \\
-      1 & -1
-    \end{bmatrix}
-    \begin{bmatrix}
-      \mu \\ \nu
-    \end{bmatrix}
+    \mat{1&1\\1&-1}
+    \mat{\mu\\\nu}
+    \pause
+    \;=\;
+    \frac{1}{\sqrt{2}}
+    \mat{\mu+\nu\\\mu-\nu}
+    \pause
+    \;=\;
+    \mat{\dfrac{\mu+\nu}{\sqrt{2}}\\[5mm]
+         \dfrac{\mu-\nu}{\sqrt{2}}}
   \]
-  Portanto
   \[
-    x=\frac{\mu+\nu}{\sqrt{2}}
-    \qquad
-    y=\frac{\mu-\nu}{\sqrt{2}}
+    \pause
+    x = \frac{\mu+\nu}{\sqrt{2}}
+    \qquad\qquad
+    \pause
+    y = \frac{\mu-\nu}{\sqrt{2}}
+  \]
+\end{resolution}
+
+%------------------------------------------------------------------------------%
+\begin{resolution}{Transformando as Matrizes}
+  \[
+    D
+    \;=\; P^tAP
+    \pause
+    \;=\; \diag(\lambda_1, \lambda_2)
+    \pause
+    \;=\; \mat{ 5 & 0 \\ 0 & 1 }
+  \]
+
+  \bigskip
+  \[
+    \pause
+    E
+    \;=\; P^t B
+    \pause
+    \;=\; P^t \vec{0}
+    \pause
+    \;=\; \vec{0}
   \]
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Equação Transformada}
-  Como \(B=\vec{0}\), temos \(E=P^tB=\vec{0}\).
-
   \begin{align*}
-    w^tDw+E^tw+f & = 0
-    \\
-    \begin{bmatrix}\mu&\nu\end{bmatrix}
-    \begin{bmatrix}
-      5&0\\
-      0&1
-    \end{bmatrix}
-    \begin{bmatrix}\mu\\\nu\end{bmatrix}
-    -15 & = 0
-    \\
-    5\mu^2+\nu^2 & = 15
+    \onslide<+->{w^tDw + E^tw + f & = 0}
+    \\[3mm]
+    \onslide<+->{\mat{ \mu & \nu }
+    \mat{ 5 & 0 \\ 0 & 1 }
+    \mat{ \mu \\ \nu }
+    + \vec{0} \mat{\mu \\ \nu} - 15 & = 0}
+    \\[3mm]
+    \onslide<+->{5\mu^2 + \nu^2 & = 15}
+    \\[3mm]
+    \onslide<+->{\frac{\mu^2}{3} + \frac{\nu^2}{15} & = 1}
   \end{align*}
 \end{resolution}
 
 %------------------------------------------------------------------------------%
 \begin{resolution}{Identificação}
-  Dividindo a equação por \(15\)
+  A cônica
   \[
-    \frac{\mu^2}{3}+\frac{\nu^2}{15}=1
+    \frac{\mu^2}{3} + \frac{\nu^2}{15} = 1
   \]
-  A cônica é uma elipse com centro na origem.
+  \pause
+  é uma elipse com centro na origem com
 
+  \pause
   Semieixos
   \[
-    a=\sqrt{15}
-    \qquad
-    b=\sqrt{3}
+    \pause
+    a = \sqrt{3}
+    \qquad\qquad
+    \pause
+    b = \sqrt{15}
   \]
-
-  O eixo maior está na direção de \(\nu\)
 \end{resolution}
 
 %------------------------------------------------------------------------------%
@@ -220,4 +336,3 @@
   \includegraphics{I-08-Rotacao-ex-1}
 \end{resolution}
 %------------------------------------------------------------------------------%
-

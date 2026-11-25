@@ -12,7 +12,7 @@ real ymax =  5;
 draw_axes(xmin, xmax, 1, ymin, ymax, 1);
 
 pen p_curve = pens[0];
-pen p_dot   = pens[0] + 3pt;
+pen p_dot   = pens[0] + 4pt;
 pen p_asymp = gray + dashed + linetype(new real[] {8, 5});
 
 //-----------------------------------------------------------------------------
@@ -32,24 +32,29 @@ real mmax =  6;
 real nmin = -6;
 real nmax =  6;
 
-draw( shift((r,s)) * rotate(t) * ((mmin, 0)--(mmax, 0)), magenta, Arrows(7pt) );
-draw( shift((r,s)) * rotate(t) * ((0, nmin)--(0, nmax)), magenta, Arrows(7pt) );
+draw( rotate(t) * ((mmin, 0)--(mmax, 0)), magenta, Arrows(7pt) );
+draw( rotate(t) * ((0, nmin)--(0, nmax)), magenta, Arrows(7pt) );
 
-label( "$\mu$", shift((r,s)) * rotate(t) * (mmax, 0), E, magenta );
-label( "$\nu$", shift((r,s)) * rotate(t) * (0, nmax), W, magenta );
+label( "$\mu$", rotate(t) * (mmax, 0), E, magenta );
+label( "$\nu$", rotate(t) * (0, nmax), W, magenta );
 
 //-----------------------------------------------------------------------------
 
-pair h_dir(real t) { return ( b*sinh(t),  a*cosh(t) ); }
-pair h_esq(real t) { return ( b*sinh(t), -a*cosh(t) ); }
+pair h_dir(real t) { return (  a*cosh(t), b*sinh(t) ); }
+pair h_esq(real t) { return ( -a*cosh(t), b*sinh(t) ); }
 
-draw( shift((r,s)) * rotate(t) * (h_dir(-8) -- h_esq( 8)), p_asymp );
-draw( shift((r,s)) * rotate(t) * (h_dir( 8) -- h_esq(-8)), p_asymp );
-                     
-draw( shift((r,s)) * rotate(t) * graph( h_dir, -4, 4), p_curve );
-draw( shift((r,s)) * rotate(t) * graph( h_esq, -4, 4), p_curve );
+draw( rotate(t) * shift((r,s)) * (h_dir(-8) -- h_esq( 8)), p_asymp );
+draw( rotate(t) * shift((r,s)) * (h_dir( 8) -- h_esq(-8)), p_asymp );
+                                 
+draw( rotate(t) * shift((r,s)) * graph( h_dir, -4, 4), p_curve );
+draw( rotate(t) * shift((r,s)) * graph( h_esq, -4, 4), p_curve );
 
-draw( (r, s), p_dot);
+draw( rotate(t) * (r, s), p_dot);
+
+dot((0,  3), p_dot);
+dot((0, -1), p_dot);
+dot((-1, 0), p_dot);
+dot(( 3, 0), p_dot);
 
 //-----------------------------------------------------------------------------
 
